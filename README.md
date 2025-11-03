@@ -1,11 +1,11 @@
 # Computer Vision
-<!-- ![](./resources/img/map-animation.gif) -->
+![computer-vision](./code/data/computer-vision2.png)
 
 This repository contains material for the Computer Vision course, taught at the Colorado School of Mines Computer Science Department.
 
 
 ## Course Description
-Computer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms of training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular CV software tools.
+Computer vision is the study of how computers can gain high-level understanding of the visual world from images or videos. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, and mechanisms of training and running these networks in these applications. Hands-on homework will be assigned to practice popular CV software tools.
 By the end of the semester, students should be able to:
 - Understand the fundamental and modern concepts, problems, and solution techniques in computer vision
 - Apply computer vision techniques to solve common problems in research and industrial applications, such as image filtering, 3D reconstruction, and recognition
