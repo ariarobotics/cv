@@ -84,6 +84,7 @@ jobs:
             echo "Generating ${output}"
 
             npx --yes decktape reveal \
+              --chrome-arg=--no-sandbox \
               --size=1600x900 \
               "$url" \
               "$output"
