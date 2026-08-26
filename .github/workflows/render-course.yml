@@ -1,14 +1,11 @@
 name: Generate Lecture PDFs
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
 
   push:
     branches:
       - main
-    paths:
-      - "docs/lectures/*.html"
-      - ".github/workflows/render-course.yml"
 
 permissions:
   contents: write
@@ -18,18 +15,36 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  pdf:
+  generate-pdfs:
+    name: Generate lecture PDFs
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Verify lecture HTML files
+        shell: bash
+        run: |
+          echo "Files in docs/lectures:"
+          find docs/lectures -maxdepth 1 -type f -print || true
+
+          shopt -s nullglob
+          files=(docs/lectures/[0-9][0-9]_*.html)
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "Error: No lecture HTML files were found."
+            echo "Expected files such as docs/lectures/01_intro.html."
+            exit 1
+          fi
+
+          echo "Found ${#files[@]} lecture HTML file(s)."
 
       - name: Start local website server
         shell: bash
@@ -45,10 +60,11 @@ jobs:
               exit 0
             fi
 
+            echo "Waiting for website server..."
             sleep 1
           done
 
-          echo "Website server did not start."
+          echo "Error: Website server did not start."
           cat /tmp/cv-http.log
           exit 1
 
@@ -60,23 +76,21 @@ jobs:
 
           files=(docs/lectures/[0-9][0-9]_*.html)
 
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No lecture HTML files were found in docs/lectures/."
-            echo "Available files:"
-            find docs/lectures -maxdepth 1 -type f -print || true
-            exit 1
-          fi
-
           for html in "${files[@]}"; do
             filename=$(basename "$html" .html)
+            output="docs/lectures/pdf/${filename}.pdf"
+            url="http://127.0.0.1:8000/lectures/${filename}.html"
 
-            echo "Generating PDF for ${filename}"
+            echo "Generating ${output}"
 
             npx --yes decktape reveal \
               --size=1600x900 \
-              "http://127.0.0.1:8000/lectures/${filename}.html" \
-              "docs/lectures/pdf/${filename}.pdf"
+              "$url" \
+              "$output"
           done
+
+          echo "Generated PDFs:"
+          find docs/lectures/pdf -maxdepth 1 -type f -name "*.pdf" -print
 
       - name: Stop local website server
         if: always()
@@ -86,14 +100,14 @@ jobs:
             kill "$(cat /tmp/cv-http.pid)" || true
           fi
 
-      - name: Upload generated PDFs
+      - name: Upload PDFs as workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: lecture-pdfs
           path: docs/lectures/pdf/*.pdf
           if-no-files-found: error
 
-      - name: Commit lecture PDFs
+      - name: Commit PDFs to repository
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -103,7 +117,7 @@ jobs:
           git add -f docs/lectures/pdf/*.pdf
 
           if git diff --cached --quiet; then
-            echo "No PDF changes to commit."
+            echo "PDFs are already up to date."
           else
             git commit -m "Update lecture PDFs [skip ci]"
             git push origin HEAD:main
