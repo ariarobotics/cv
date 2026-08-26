@@ -1,0 +1,1346 @@
+[
+  {
+    "objectID": "tutorials/index.html",
+    "href": "tutorials/index.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "These tutorials cover the software and programming tools used throughout the course. They are designed for self-study and can be revisited whenever you need a refresher."
+  },
+  {
+    "objectID": "tutorials/index.html#recommended-order",
+    "href": "tutorials/index.html#recommended-order",
+    "title": "Tutorials",
+    "section": "Recommended order",
+    "text": "Recommended order\n\nWSL and Ubuntu — Windows users only\nGit and GitHub\nPython and Conda\nVisual Studio Code\nNumPy for Computer Vision\n\nWindows users should use WSL 2 + Ubuntu for the Linux development environment. macOS and Linux users can skip the WSL tutorial.\nNote that the course repository contains code, notebooks, assignments, and supporting files:\nhttps://github.com/ariarobotics/cv"
+  },
+  {
+    "objectID": "tutorials/04_vscode.html",
+    "href": "tutorials/04_vscode.html",
+    "title": "04 — Visual Studio Code",
+    "section": "",
+    "text": "Visual Studio Code (VS Code) is the officially supported IDE for this course.\nDownload it from:\nhttps://code.visualstudio.com/\nThis guide assumes that you have already created the course Conda environment named cv."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#vs-code-for-this-course",
+    "href": "tutorials/04_vscode.html#vs-code-for-this-course",
+    "title": "04 — Visual Studio Code",
+    "section": "",
+    "text": "Visual Studio Code (VS Code) is the officially supported IDE for this course.\nDownload it from:\nhttps://code.visualstudio.com/\nThis guide assumes that you have already created the course Conda environment named cv."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#install-vs-code",
+    "href": "tutorials/04_vscode.html#install-vs-code",
+    "title": "04 — Visual Studio Code",
+    "section": "1. Install VS Code",
+    "text": "1. Install VS Code\nInstall VS Code on your main operating system.\n\nWindows + WSL\nInstall VS Code on Windows. Do not install a separate Linux copy of the VS Code desktop application inside WSL.\nThe VS Code WSL extension will allow the Windows application to work directly with files and tools inside Ubuntu.\nOfficial WSL documentation:\nhttps://code.visualstudio.com/docs/remote/wsl-tutorial"
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#install-the-recommended-extensions",
+    "href": "tutorials/04_vscode.html#install-the-recommended-extensions",
+    "title": "04 — Visual Studio Code",
+    "section": "2. Install the recommended extensions",
+    "text": "2. Install the recommended extensions\nOpen the Extensions view using the left sidebar or:\nCtrl+Shift+X\nInstall these Microsoft extensions:\n\nPython\nPylance\nJupyter\n\nWindows users using WSL should also install:\n\nWSL\n\n\n\n\n\n\n\nTip\n\n\n\nWhen VS Code suggests installing Python-related extensions the first time you open a .py file, accept the recommendation."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#create-a-course-projects-folder",
+    "href": "tutorials/04_vscode.html#create-a-course-projects-folder",
+    "title": "04 — Visual Studio Code",
+    "section": "3. Create a course projects folder",
+    "text": "3. Create a course projects folder\nKeeping course projects together makes environments and file paths easier to manage.\n\nWindows + WSL\nInside Ubuntu:\nmkdir -p ~/cv_projects\ncd ~/cv_projects\nThen open the folder in VS Code:\ncode .\nVS Code should open a new window connected to WSL.\nLook at the bottom-left corner of VS Code. It should indicate that the window is connected to WSL, for example:\nWSL: Ubuntu\n\n\nmacOS/Linux\nCreate a projects folder:\nmkdir -p ~/cv_projects\ncd ~/cv_projects\ncode .\nYou can also use File → Open Folder from VS Code."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#confirm-the-integrated-terminal",
+    "href": "tutorials/04_vscode.html#confirm-the-integrated-terminal",
+    "title": "04 — Visual Studio Code",
+    "section": "4. Confirm the integrated terminal",
+    "text": "4. Confirm the integrated terminal\nOpen a VS Code terminal:\nTerminal → New Terminal\nor:\nCtrl+`\nOn Windows with WSL, this terminal should be running inside Ubuntu.\nCheck:\npwd\nThen activate the course environment:\nconda activate cv"
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#select-the-cv-python-interpreter",
+    "href": "tutorials/04_vscode.html#select-the-cv-python-interpreter",
+    "title": "04 — Visual Studio Code",
+    "section": "5. Select the cv Python interpreter",
+    "text": "5. Select the cv Python interpreter\nOpen a Python file, then open the Command Palette:\nCtrl+Shift+P\nSearch for:\nPython: Select Interpreter\nChoose the interpreter associated with the Conda environment:\ncv\nThe exact Python version shown next to the environment may change as the course environment is updated. The important part is that the selected environment is cv.\n\n\n\n\n\n\nImportant\n\n\n\nDo not select an interpreter simply because its Python version looks correct. Make sure it belongs to the cv Conda environment."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#if-vs-code-cannot-find-the-environment",
+    "href": "tutorials/04_vscode.html#if-vs-code-cannot-find-the-environment",
+    "title": "04 — Visual Studio Code",
+    "section": "6. If VS Code cannot find the environment",
+    "text": "6. If VS Code cannot find the environment\nActivate the environment in a terminal:\nconda activate cv\nOn macOS/Linux/WSL, run:\nwhich python\nCopy the returned path.\nThen in VS Code:\n\nOpen Python: Select Interpreter.\nChoose Enter interpreter path if necessary.\nSelect or paste the Python path from the cv environment.\n\nYou can verify the selected interpreter in the integrated terminal:\npython --version\nand:\npython -c \"import sys; print(sys.executable)\""
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#test-the-environment",
+    "href": "tutorials/04_vscode.html#test-the-environment",
+    "title": "04 — Visual Studio Code",
+    "section": "7. Test the environment",
+    "text": "7. Test the environment\nCreate a file named:\ntest_environment.py\nAdd:\nimport numpy as np\nimport cv2\n\nprint(\"NumPy:\", np.__version__)\nprint(\"OpenCV:\", cv2.__version__)\nRun the file using the Run Python File button or from the terminal:\npython test_environment.py\nIf the imports work, VS Code is using an environment with the required packages."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#working-with-notebooks",
+    "href": "tutorials/04_vscode.html#working-with-notebooks",
+    "title": "04 — Visual Studio Code",
+    "section": "8. Working with notebooks",
+    "text": "8. Working with notebooks\nOpen a .ipynb file in VS Code.\nAt the top-right of the notebook, choose Select Kernel and select the Python environment associated with:\ncv\nRun a cell such as:\nimport sys\nprint(sys.executable)\nThe printed path should point into the cv environment."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#debugging-python",
+    "href": "tutorials/04_vscode.html#debugging-python",
+    "title": "04 — Visual Studio Code",
+    "section": "9. Debugging Python",
+    "text": "9. Debugging Python\nThe VS Code debugger lets you pause code, inspect variables, and step through execution. This is often much more useful than adding many print() statements.\n\nSet a breakpoint\nClick in the margin to the left of a line number. A red dot indicates a breakpoint.\n\n\nStart debugging\nPress:\nF5\nIf VS Code asks for a debug configuration, choose:\nPython File\n\n\nDebugger controls\nThe debugger lets you:\n\nContinue — run until the next breakpoint;\nStep Over — execute the current line without entering called functions;\nStep Into — enter a called function;\nStep Out — finish the current function and return to its caller;\nRestart — restart the debugging session;\nStop — end the session.\n\nThe Variables panel shows local and global variables while execution is paused.\nThe Debug Console can evaluate Python expressions using the current program state."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#a-useful-debugging-example",
+    "href": "tutorials/04_vscode.html#a-useful-debugging-example",
+    "title": "04 — Visual Studio Code",
+    "section": "10. A useful debugging example",
+    "text": "10. A useful debugging example\nCreate:\nimport numpy as np\n\nimage = np.zeros((100, 200, 3), dtype=np.uint8)\nimage[:, :100, 0] = 255\n\nmean_value = image.mean()\nprint(mean_value)\nSet a breakpoint on:\nmean_value = image.mean()\nStart debugging with F5.\nWhile paused, inspect:\nimage.shape\nand:\nimage.dtype\nin the Debug Console.\nThis is especially useful when working with images because shape and data type errors are common."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#recommended-vs-code-workflow",
+    "href": "tutorials/04_vscode.html#recommended-vs-code-workflow",
+    "title": "04 — Visual Studio Code",
+    "section": "11. Recommended VS Code workflow",
+    "text": "11. Recommended VS Code workflow\nFor a typical course programming session:\n\nOpen your project folder in VS Code.\nVerify that Windows users are connected to WSL.\nOpen the integrated terminal.\nRun conda activate cv.\nVerify that the selected Python interpreter is cv.\nPull recent Git changes if applicable.\nWrite and test code.\nUse the debugger when behavior is unclear.\nCommit and push your work."
+  },
+  {
+    "objectID": "tutorials/04_vscode.html#common-problems",
+    "href": "tutorials/04_vscode.html#common-problems",
+    "title": "04 — Visual Studio Code",
+    "section": "12. Common problems",
+    "text": "12. Common problems\n\nPython works in the terminal but not when using the Run button\nVS Code is probably using a different interpreter.\nUse:\nPython: Select Interpreter\nand choose cv.\n\n\nNotebook imports fail but Python scripts work\nThe notebook kernel may be different from the selected Python interpreter.\nUse Select Kernel in the notebook and choose cv.\n\n\nWindows user sees Windows paths instead of Linux paths\nMake sure the VS Code window is connected to WSL. The bottom-left status area should indicate a WSL connection.\nA reliable way to open the correct environment is:\ncd ~/cv_projects\ncode .\nfrom an Ubuntu/WSL terminal.\n\n\nThe debugger runs the wrong Python version\nCheck:\nimport sys\nprint(sys.executable)\nThen reselect the cv interpreter."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html",
+    "href": "tutorials/02_git_github.html",
+    "title": "02 — Git and GitHub",
+    "section": "",
+    "text": "Git is a version-control system that tracks changes to files on your computer.\nGitHub is an online service that hosts Git repositories and makes it easier to share code, collaborate, and distribute projects.\nIn this course, GitHub may also be used through GitHub Classroom to distribute starter code for assignments."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#git-vs.-github",
+    "href": "tutorials/02_git_github.html#git-vs.-github",
+    "title": "02 — Git and GitHub",
+    "section": "",
+    "text": "Git is a version-control system that tracks changes to files on your computer.\nGitHub is an online service that hosts Git repositories and makes it easier to share code, collaborate, and distribute projects.\nIn this course, GitHub may also be used through GitHub Classroom to distribute starter code for assignments."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#why-use-git",
+    "href": "tutorials/02_git_github.html#why-use-git",
+    "title": "02 — Git and GitHub",
+    "section": "Why use Git?",
+    "text": "Why use Git?\nGit helps you:\n\nkeep a history of your code;\nrecover earlier versions after a mistake;\nwork on the same project from multiple computers;\ncollaborate without constantly emailing files;\nback up committed work by pushing it to GitHub.\n\n\n\n\n\n\n\nTip\n\n\n\nCommit regularly and push important work to GitHub. A file that only exists on your laptop is not a backup."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#install-git",
+    "href": "tutorials/02_git_github.html#install-git",
+    "title": "02 — Git and GitHub",
+    "section": "1. Install Git",
+    "text": "1. Install Git\n\nWindows using WSL\nIf you are following the recommended WSL workflow, install Git inside Ubuntu:\nsudo apt update\nsudo apt install git -y\n\n\nUbuntu/Linux\nsudo apt update\nsudo apt install git -y\n\n\nmacOS\nTry:\ngit --version\nIf Git is not installed, macOS may offer to install the Xcode Command Line Tools.\nGit downloads and documentation:\nhttps://git-scm.com/downloads\nVerify the installation:\ngit --version"
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#configure-your-identity",
+    "href": "tutorials/02_git_github.html#configure-your-identity",
+    "title": "02 — Git and GitHub",
+    "section": "2. Configure your identity",
+    "text": "2. Configure your identity\nGit records an author name and email with each commit.\nSet them once:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your_email@example.com\"\nCheck the configuration:\ngit config --global --list\nUsing the email associated with your GitHub account makes it easier for GitHub to associate commits with your profile."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#clone-a-repository",
+    "href": "tutorials/02_git_github.html#clone-a-repository",
+    "title": "02 — Git and GitHub",
+    "section": "3. Clone a repository",
+    "text": "3. Clone a repository\ngit clone downloads an entire repository and its version history.\nFor example:\ngit clone https://github.com/ariarobotics/cv.git\nThen enter the repository:\ncd cv\nThe course materials are maintained on the repository’s main branch, which is the default branch. A normal clone therefore downloads the correct version:\ngit clone https://github.com/ariarobotics/cv.git\nFor assignments distributed through GitHub Classroom, use the repository link provided for that assignment."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#the-basic-git-workflow",
+    "href": "tutorials/02_git_github.html#the-basic-git-workflow",
+    "title": "02 — Git and GitHub",
+    "section": "4. The basic Git workflow",
+    "text": "4. The basic Git workflow\nThe commands you will use most often are:\ngit status\ngit pull\ngit add -A\ngit commit -m \"Describe what changed\"\ngit push\nA typical workflow is:\n\nStep 1 — Check the repository\ngit status\nThis shows:\n\nmodified files;\nnew/untracked files;\nstaged files;\nyour current branch.\n\n\n\nStep 2 — Pull recent changes\nBefore beginning work on a shared repository:\ngit pull\n\n\nStep 3 — Edit your files\nUse VS Code or another appropriate editor.\n\n\nStep 4 — Review what changed\ngit status\ngit diff\ngit diff is especially useful before committing because it shows the exact line-by-line changes.\n\n\nStep 5 — Stage changes\nStage everything:\ngit add -A\nOr stage a specific file:\ngit add path/to/file.py\n\n\nStep 6 — Commit\ngit commit -m \"Implement image filtering\"\nA commit saves a snapshot in the local Git repository.\n\n\nStep 7 — Push\ngit push\nThis sends your local commits to GitHub.\n\n\n\n\n\n\nImportant\n\n\n\ngit commit and git push are different operations. A commit saves the change locally; a push sends committed changes to GitHub."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#essential-commands",
+    "href": "tutorials/02_git_github.html#essential-commands",
+    "title": "02 — Git and GitHub",
+    "section": "5. Essential commands",
+    "text": "5. Essential commands\n\n\n\nCommand\nPurpose\n\n\n\n\ngit clone URL\nDownload a repository\n\n\ngit status\nShow repository status\n\n\ngit pull\nDownload and integrate remote changes\n\n\ngit add FILE\nStage a file\n\n\ngit add -A\nStage all changes\n\n\ngit diff\nInspect unstaged changes\n\n\ngit diff --staged\nInspect staged changes\n\n\ngit commit -m \"message\"\nCreate a commit\n\n\ngit push\nUpload commits\n\n\ngit log --oneline\nShow compact commit history\n\n\ngit branch\nList branches\n\n\ngit switch BRANCH\nSwitch branches\n\n\ngit switch -c NAME\nCreate and switch to a branch"
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#branches",
+    "href": "tutorials/02_git_github.html#branches",
+    "title": "02 — Git and GitHub",
+    "section": "6. Branches",
+    "text": "6. Branches\nA branch provides an independent line of development.\nMost individual course assignments will not require you to create branches, but branches are useful for experiments and collaborative projects.\nCreate and switch to a new branch:\ngit switch -c experiment\nList branches:\ngit branch\nReturn to main:\ngit switch main\nPush a new branch the first time:\ngit push -u origin experiment\nMerge a branch into the branch you currently have checked out:\ngit merge experiment\nOlder documentation often uses:\ngit checkout -b experiment\nThat command still works, but git switch -c is clearer for creating and switching branches."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#github-authentication",
+    "href": "tutorials/02_git_github.html#github-authentication",
+    "title": "02 — Git and GitHub",
+    "section": "7. GitHub authentication",
+    "text": "7. GitHub authentication\nFor public repositories, cloning normally requires no authentication. Pushing to GitHub or accessing private assignment repositories requires you to sign in.\nGitHub documentation:\nhttps://docs.github.com/en/authentication\nIf Git or VS Code opens a browser window asking you to authenticate with GitHub, follow the browser sign-in flow.\n\n\n\n\n\n\nWarning\n\n\n\nNever commit passwords, access tokens, API keys, or other secrets to a Git repository."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#github-classroom",
+    "href": "tutorials/02_git_github.html#github-classroom",
+    "title": "02 — Git and GitHub",
+    "section": "8. GitHub Classroom",
+    "text": "8. GitHub Classroom\nWhen an assignment uses GitHub Classroom, the workflow is generally:\n\nOpen the assignment link.\nAccept the assignment.\nGitHub creates a repository for you or your team.\nClone that repository to your computer.\nWork locally.\nCommit and push your work.\n\nAlways check that your latest commit appears on GitHub after pushing."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#github-desktop",
+    "href": "tutorials/02_git_github.html#github-desktop",
+    "title": "02 — Git and GitHub",
+    "section": "9. GitHub Desktop",
+    "text": "9. GitHub Desktop\nIf you prefer a graphical interface, GitHub Desktop is available:\nhttps://desktop.github.com/\nIt can visualize changed files, commits, branches, pulls, and pushes.\nThe command-line Git workflow is still worth learning because it works consistently on local computers, WSL, servers, and remote machines."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#common-problems",
+    "href": "tutorials/02_git_github.html#common-problems",
+    "title": "02 — Git and GitHub",
+    "section": "10. Common problems",
+    "text": "10. Common problems\n\n“Nothing to commit”\nRun:\ngit status\nYou may not have changed a tracked file, or you may already have committed the changes.\n\n\nPush rejected because the remote has newer commits\nStart with:\ngit pull\nResolve any conflicts if Git reports them, then commit if necessary and push again.\n\n\nYou are not sure what Git is about to do\nUse:\ngit status\nThis is usually the best first command when troubleshooting Git."
+  },
+  {
+    "objectID": "tutorials/02_git_github.html#good-habits",
+    "href": "tutorials/02_git_github.html#good-habits",
+    "title": "02 — Git and GitHub",
+    "section": "Good habits",
+    "text": "Good habits\n\nRun git status often.\nPull before starting work on a shared repository.\nWrite short, meaningful commit messages.\nCommit logical pieces of work rather than one enormous end-of-project commit.\nPush regularly.\nDo not commit large datasets, generated files, model weights, or secrets unless explicitly required."
+  },
+  {
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\n\n\nPrerequisites\n\nLinear algebra, calculus, probability, and statistics\nAlgorithms and Python (or C++). We require you to program in Python.\n\nCourse Website: https://ariarobotics.github.io/cv/\nCourse Repository: https://github.com/ariarobotics/cv"
+  },
+  {
+    "objectID": "syllabus.html#instructor",
+    "href": "syllabus.html#instructor",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\n\n\n\nKaveh Fathian\nAssistant Professor, Computer Science Department\n\nOffice: Brown 280-N\nOffice hours: Monday/Wednesday, 4:15–5:00 PM (after class)\nLab website: https://www.ariarobotics.com/"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Description",
+    "text": "Course Description\nComputer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.\n\nLearning Objectives\n\nCLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.\nCLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.\nCLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.\nCLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.\nCLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.\nCLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.\nCLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data."
+  },
+  {
+    "objectID": "syllabus.html#assessments-and-grading",
+    "href": "syllabus.html#assessments-and-grading",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Assessments and Grading",
+    "text": "Assessments and Grading\n\nHomework — 60 points\nThere will be up to 12 homework assignments. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework individually. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will not be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The lowest homework grade, including a missed assignment, will automatically be dropped and will not count toward the final grade. Two or more missed homework assignments will result in an Incomplete grade.\n\n\nExams — 40 points\nThere will be 4 exams scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered in person, in the classroom. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. Documentation must be provided to justify such an exception. Any missed exam will receive a grade of zero. Two or more missed exams will result in an Incomplete grade.\n\n\nBonus Points — up to 10 points\nAt the instructor’s discretion, optional assignments, projects, or other activities may be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.\n\n\nAttendance\nAttendance is mandatory but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will not be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence."
+  },
+  {
+    "objectID": "syllabus.html#final-grade",
+    "href": "syllabus.html#final-grade",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Final Grade",
+    "text": "Final Grade\nThe regular course grade consists of:\n\n\n\nComponent\nPoints\n\n\n\n\nHomework\n60\n\n\nExams\n40\n\n\nTotal\n100\n\n\n\nBonus points are then added to the final grade:\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\nA maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.\n\nGrading Rubric\n\n\n\nAmended Final Grade\nLetter Grade\n\n\n\n\n93–100\nA\n\n\n90–&lt;93\nA−\n\n\n87–&lt;90\nB+\n\n\n83–&lt;87\nB\n\n\n80–&lt;83\nB−\n\n\n77–&lt;80\nC+\n\n\n73–&lt;77\nC\n\n\n70–&lt;73\nC−\n\n\n67–&lt;70\nD+\n\n\n63–&lt;67\nD\n\n\n60–&lt;63\nD−\n\n\n&lt;60\nF"
+  },
+  {
+    "objectID": "syllabus.html#logistics",
+    "href": "syllabus.html#logistics",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Logistics",
+    "text": "Logistics\n\nThe primary communication channel between students and the instructor/TAs is the Ed Discussion server, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.\nStudents are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.\nInformation about the course TAs and their office hours is available through the course repository: https://github.com/ariarobotics/cv"
+  },
+  {
+    "objectID": "syllabus.html#resources",
+    "href": "syllabus.html#resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Resources",
+    "text": "Resources\nThere is no required textbook. Lecture slides and other course materials will be provided through the course website: https://ariarobotics.github.io/cv/\n\nRecommended Books\nMany of the following are available online.\n\nComputer Vision\n\nSzeliski, Computer Vision: Algorithms and Applications, Springer, 2010.\nKlette, Concise Computer Vision: An Introduction into Theory and Algorithms, 2014.\nHartley and Zisserman, Multiple View Geometry in Computer Vision, Cambridge University Press, 2004.\nForsyth and Ponce, Computer Vision: A Modern Approach, Prentice Hall, 2002.\nPalmer, Vision Science, MIT Press, 1999.\n\n\n\nLearning\n\nGoodfellow, Bengio, and Courville, Deep Learning, MIT Press, 2016.\nMitchell, Machine Learning, McGraw-Hill, 1997.\nDuda, Hart, and Stork, Pattern Classification, 2nd Edition, Wiley-Interscience, 2000.\nSutton and Barto, online book; a classic reference in reinforcement learning.\n\n\n\nGraphical Models\n\nKoller and Friedman, Probabilistic Graphical Models: Principles and Techniques, MIT Press, 2009."
+  },
+  {
+    "objectID": "syllabus.html#course-schedule",
+    "href": "syllabus.html#course-schedule",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Schedule",
+    "text": "Course Schedule\nThe detailed class schedule is available on the course website: https://ariarobotics.github.io/cv/. The schedule is subject to change. Exam and homework dates will not change except in extraordinary circumstances."
+  },
+  {
+    "objectID": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "href": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Policy on Missed Classes, Exams, or Late Assignments",
+    "text": "Policy on Missed Classes, Exams, or Late Assignments\n\nThe lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade.\nThe lowest homework grade, including a missed submission, will automatically be dropped and will not count toward the final grade.\nIn-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.\nThe maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.\nExceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate documentation.\nAny missed exam will receive a grade of zero before application of the lowest-exam-drop policy.\nTwo or more missed exams will result in an Incomplete grade.\nTwo or more missed homework assignments will result in an Incomplete grade."
+  },
+  {
+    "objectID": "syllabus.html#other-important-course-policies",
+    "href": "syllabus.html#other-important-course-policies",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Other Important Course Policies",
+    "text": "Other Important Course Policies\n\nAny form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.\nNo resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.\nProfessional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor."
+  },
+  {
+    "objectID": "syllabus.html#absences",
+    "href": "syllabus.html#absences",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Absences",
+    "text": "Absences\nMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: https://www.mines.edu/student-life/student-absences/"
+  },
+  {
+    "objectID": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "href": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Sexual Misconduct, Discrimination, and Retaliation",
+    "text": "Sexual Misconduct, Discrimination, and Retaliation\nMines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact OIE@Mines.edu or use the appropriate Discriminatory Harassment and Retaliation Reporting Form. Confidential resources are also available through Mines."
+  },
+  {
+    "objectID": "syllabus.html#preferred-first-name",
+    "href": "syllabus.html#preferred-first-name",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Preferred First Name",
+    "text": "Preferred First Name\nMines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the Office for Institutional Equity Preferred First Name resources. Students may also contact the Title IX Coordinator at OIE@Mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#pregnant-and-parenting-students",
+    "href": "syllabus.html#pregnant-and-parenting-students",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Pregnant and Parenting Students",
+    "text": "Pregnant and Parenting Students\nIf you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at oie@mines.edu for more information or to request support or modifications."
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the full academic misconduct and academic integrity policy for definitions of academic misconduct. Resources provided by the Department of Community Standards are also available for guidance regarding academic misconduct and integrity procedures."
+  },
+  {
+    "objectID": "syllabus.html#generative-artificial-intelligence",
+    "href": "syllabus.html#generative-artificial-intelligence",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Generative Artificial Intelligence",
+    "text": "Generative Artificial Intelligence\nThe Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the current course policy, the use of generative AI is allowed outside of class but prohibited during class, including coding sessions and exams."
+  },
+  {
+    "objectID": "syllabus.html#copyrighted-materials",
+    "href": "syllabus.html#copyrighted-materials",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Copyrighted Materials",
+    "text": "Copyrighted Materials\nReadings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/"
+  },
+  {
+    "objectID": "syllabus.html#grading-policy",
+    "href": "syllabus.html#grading-policy",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Grading Policy",
+    "text": "Grading Policy\nExtra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed."
+  },
+  {
+    "objectID": "syllabus.html#course-issues-and-concerns",
+    "href": "syllabus.html#course-issues-and-concerns",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Issues and Concerns",
+    "text": "Course Issues and Concerns\nAs part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions."
+  },
+  {
+    "objectID": "syllabus.html#disability-support-services",
+    "href": "syllabus.html#disability-support-services",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Disability Support Services",
+    "text": "Disability Support Services\nDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: https://www.mines.edu/disability-support-services/"
+  },
+  {
+    "objectID": "syllabus.html#digital-accessibility",
+    "href": "syllabus.html#digital-accessibility",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Digital Accessibility",
+    "text": "Digital Accessibility\nColorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: https://www.mines.edu/accessibility/"
+  },
+  {
+    "objectID": "syllabus.html#student-outreach-support-sos-resources",
+    "href": "syllabus.html#student-outreach-support-sos-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Student Outreach & Support (SOS) Resources",
+    "text": "Student Outreach & Support (SOS) Resources\nIf you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a referral for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: https://student-life.mines.edu/student-outreach-and-support/\nStudent Outreach and Support can help connect students with resources including:\n\nCounseling Center: https://counseling.mines.edu/\nLocated on the second floor of the Wellness Center, 1770 Elm St.\nStudent Health Center: https://studenthealth.mines.edu/\nLocated on the first floor of the Wellness Center.\nSHAPE Office: https://shape.mines.edu/\nProvides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.\n988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit https://www.988colorado.com/en.\n\nIn an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate."
+  },
+  {
+    "objectID": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "href": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Center for Academic Services and Advising (CASA)",
+    "text": "Center for Academic Services and Advising (CASA)\nCASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: https://www.mines.edu/casa/academic-support/ Questions may be directed to casa@mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#writing-center",
+    "href": "syllabus.html#writing-center",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Writing Center",
+    "text": "Writing Center\nThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: https://writing.mines.edu/ Questions may be directed to ryandeanlambert@mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#tutoring-resources",
+    "href": "syllabus.html#tutoring-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Tutoring Resources",
+    "text": "Tutoring Resources\nThe Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: https://www.mines.edu/undergraduate-studies/tutoring/"
+  },
+  {
+    "objectID": "lectures/index.html",
+    "href": "lectures/index.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-overview",
+    "href": "lectures/01_intro.html#course-overview",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\n\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\nCourse Repository:\nhttps://github.com/ariarobotics/cv\n\n\nCourse Website:\nhttps://ariarobotics.github.io/cv/"
+  },
+  {
+    "objectID": "lectures/01_intro.html#instructor",
+    "href": "lectures/01_intro.html#instructor",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Instructor",
+    "text": "Instructor\n\n\nKaveh Fathian:\n\nComputer Science Assistant Professor\nDirector of Autonomy, Robotics, & Intelligent Algorithms (ARIA) Lab\nMS/PhD @ UT Dallas; Postdoc @ MIT\nPreferred form of address: Please call me Kaveh.\nPronunciation: Kaveh — kah-VEH (/kɑːˈvɛ/)\n\nTeaching:\n\nFall semester: “Computer Vision”\nSpring semester: “Robotic Mapping & Localization”\n\nEmail: \n\nfathian@ariarobotics.com\nkaveh.fathian@mines.edu"
+  },
+  {
+    "objectID": "lectures/01_intro.html#aria-lab",
+    "href": "lectures/01_intro.html#aria-lab",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "ARIA Lab",
+    "text": "ARIA Lab\n\n\nOur Spot robot at Edgar mine  \n\n3D map of Mines campus \n\n\nMission: Develop robust algorithms for robotic perception and autonomy.\nResearch: 3D mapping, localization, and perception.\nStudent opportunities: Projects are available for students from CS, EE, ME, and related areas.\nLearn more / join the lab: https://www.ariarobotics.com/join-us"
+  },
+  {
+    "objectID": "lectures/01_intro.html#mailab",
+    "href": "lectures/01_intro.html#mailab",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "MAILab",
+    "text": "MAILab"
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-learning-objectives",
+    "href": "lectures/01_intro.html#course-learning-objectives",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Learning Objectives",
+    "text": "Course Learning Objectives\n\nExplain fundamentals of image formation, representation, color, and processing.\nApply filtering, convolution, Fourier analysis, edge detection, and Hough methods.\nDetect, describe, and match visual features.\nApply camera geometry, calibration, stereo vision, and motion estimation for 3D vision.\nImplement classical recognition and detection methods, including SIFT and HOG.\nApply machine learning and deep learning to classification, detection, and segmentation.\nDevelop and evaluate computer vision pipelines using Python and OpenCV."
+  },
+  {
+    "objectID": "lectures/01_intro.html#computer-vision-and-nearby-fields",
+    "href": "lectures/01_intro.html#computer-vision-and-nearby-fields",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computer Vision and Nearby Fields",
+    "text": "Computer Vision and Nearby Fields\n\n\nComputer Vision\nReal world\n  ↓ images, videos, sensor data\nComputer Vision\n  ↓ information / understanding\nModel of the visual world\nComputer vision tries to infer useful information about the real world from images, videos, and other visual sensor data.\n\nComputer Graphics\nModel of the visual world\n  ↓ rendering / simulation\nComputer Graphics\n  ↓ images, videos, interaction\nDigital world\nComputer graphics often works in the opposite direction: from models to images.\n\n\n\n Real-world image\n\n Rendered / digital world"
+  },
+  {
+    "objectID": "lectures/01_intro.html#scope-of-computer-vision",
+    "href": "lectures/01_intro.html#scope-of-computer-vision",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Scope of Computer Vision",
+    "text": "Scope of Computer Vision\n\n\n\nComputer vision uses ideas from many fields. In this course, in addition to theory, we focus on practical computer vision algorithms and tools."
+  },
+  {
+    "objectID": "lectures/01_intro.html#cv-applications",
+    "href": "lectures/01_intro.html#cv-applications",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "CV Applications",
+    "text": "CV Applications\n\nSmartphones & Consumer Devices: QR codes, computational photography, panorama stitching, face detection/recognition, face filters, depth sensing, pose estimation, visual search\nWearables: Heart-rate estimation, gesture recognition, activity monitoring, proximity sensing\nSecurity & Biometrics: Fingerprint, iris, and face recognition; access control; CCTV monitoring; identity verification\nWeb & Social Media: Image search, photo organization, image captioning, content moderation, visual recommendations, geolocalization\nAR/VR & Virtual Worlds: Head/hand tracking, SLAM, gesture recognition, virtual try-on, digital humans, mixed reality\nTelepresence: Virtual backgrounds, face/person tracking, gaze correction, video enhancement\nMedia & Entertainment: Visual effects, motion capture, sports replay, video editing, automatic content analysis\nTransportation: Autonomous driving, driver monitoring, lane/object detection, traffic analysis, navigation\nRetail & Supermarkets: Cashier-less checkout, inventory monitoring, theft detection, product recognition, automated sorting\nMedical Imaging: CT/MRI reconstruction, assisted diagnosis, pathology, endoscopy, surgical guidance\nRobotics & Embodied AI: Perception, localization, mapping, navigation, manipulation, human-robot interaction\nManufacturing: Visual inspection, defect detection, quality control, process monitoring, automation\nAgriculture & Environment: Crop monitoring, precision agriculture, wildlife monitoring, environmental inspection\nRemote Sensing & Geospatial: Satellite/aerial imagery, mapping, change detection, disaster response\nSpace Exploration: Planetary rovers, telescope imagery, terrain analysis, autonomous exploration\nAccessibility: Scene description, OCR, object recognition, visual assistance for users with impairments\nMultimodal & Generative AI: Vision-language models, visual assistants, image/video generation, editing, and understanding"
+  },
+  {
+    "objectID": "lectures/01_intro.html#computer-vision-on-smartphones",
+    "href": "lectures/01_intro.html#computer-vision-on-smartphones",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computer Vision on Smartphones",
+    "text": "Computer Vision on Smartphones\n\n\n QR codes\n\n Panorama\n\n Face and emotion detection"
+  },
+  {
+    "objectID": "lectures/01_intro.html#smartphones-face-filters",
+    "href": "lectures/01_intro.html#smartphones-face-filters",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Smartphones: Face Filters",
+    "text": "Smartphones: Face Filters"
+  },
+  {
+    "objectID": "lectures/01_intro.html#security-biometrics",
+    "href": "lectures/01_intro.html#security-biometrics",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Security & Biometrics",
+    "text": "Security & Biometrics\n\n\n\n\n\n\n\n\n\nIris recognition:\n\n“How the Afghan Girl was Identified by Her Iris Patterns”\nRead the story | Wikipedia"
+  },
+  {
+    "objectID": "lectures/01_intro.html#visual-search-recognition",
+    "href": "lectures/01_intro.html#visual-search-recognition",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Visual Search & Recognition",
+    "text": "Visual Search & Recognition\n\n\n\n\n\n\n\n\nGoogle Lens: recognize objects, products, landmarks, plants, text, and other visual content"
+  },
+  {
+    "objectID": "lectures/01_intro.html#arvr-spatial-computing",
+    "href": "lectures/01_intro.html#arvr-spatial-computing",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "AR/VR & Spatial Computing",
+    "text": "AR/VR & Spatial Computing\n\n\n\n\n\n\nVirtual and mixed reality"
+  },
+  {
+    "objectID": "lectures/01_intro.html#d-reconstruction",
+    "href": "lectures/01_intro.html#d-reconstruction",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "3D Reconstruction",
+    "text": "3D Reconstruction\n\n\n\nRecovering the 3D structure of a scene from multiple images taken from different viewpoints."
+  },
+  {
+    "objectID": "lectures/01_intro.html#visual-effects-motion-capture",
+    "href": "lectures/01_intro.html#visual-effects-motion-capture",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Visual Effects & Motion Capture",
+    "text": "Visual Effects & Motion Capture\n\n Dawn of the Planet of the Apes\nMotion capture and computer vision algorithms transform actors into digital character."
+  },
+  {
+    "objectID": "lectures/01_intro.html#transportation-autonomous-driving",
+    "href": "lectures/01_intro.html#transportation-autonomous-driving",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Transportation: Autonomous Driving",
+    "text": "Transportation: Autonomous Driving\n\n Waymo: https://www.youtube.com/watch?v=B8R148hFxPw\n\nComputer vision enables detection, tracking, localization, scene understanding, and navigation for automomous cars."
+  },
+  {
+    "objectID": "lectures/01_intro.html#medical-imaging",
+    "href": "lectures/01_intro.html#medical-imaging",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Medical Imaging",
+    "text": "Medical Imaging\n\n\nMRI / CT\n\nReconstruction, segmentation, detection, and diagnosis\n\nUltrasound\n\nImaging, measurement, diagnosis, and surgical guidance"
+  },
+  {
+    "objectID": "lectures/01_intro.html#astronomy-remote-sensing",
+    "href": "lectures/01_intro.html#astronomy-remote-sensing",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Astronomy & Remote Sensing",
+    "text": "Astronomy & Remote Sensing\n\n\n\nCloudy\n\n\nClear\n\nExample application: Cloud detection in astronomical imaging\nImage by Charlie Hagen (Mines alumnus): https://www.nightphotons.com/"
+  },
+  {
+    "objectID": "lectures/01_intro.html#space-exploration-visual-navigation",
+    "href": "lectures/01_intro.html#space-exploration-visual-navigation",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Space Exploration: Visual Navigation",
+    "text": "Space Exploration: Visual Navigation\n\n\n\n\n\n\n\n\nMars 2020 mission used vision-based localizatoin during landing:\n\nCapture descent images\nCompare images with an orbital map\nEstimate location and adjust if necessary"
+  },
+  {
+    "objectID": "lectures/01_intro.html#robotics-embodied-ai",
+    "href": "lectures/01_intro.html#robotics-embodied-ai",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Robotics & Embodied AI",
+    "text": "Robotics & Embodied AI\n\n\nBoston Dynamics: https://blog.bostondynamics.com/flipping-the-script-with-atlas\n\nRobots use vision for perception, localization, mapping, navigation, manipulation, and interaction with the physical world."
+  },
+  {
+    "objectID": "lectures/01_intro.html#vision-language-generative-ai",
+    "href": "lectures/01_intro.html#vision-language-generative-ai",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Vision-Language & Generative AI",
+    "text": "Vision-Language & Generative AI\n\n\n “Teddy bears working on new AI research underwater with 1990s technology”\n\n “Cats playing chess”\n\n “A teddy bear sitting at the Colorado School of Mines”\n\nModern vision systems increasingly combine visual understanding, language, reasoning, and generation."
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-structure",
+    "href": "lectures/01_intro.html#course-structure",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Structure",
+    "text": "Course Structure\n\n\n\nThe course covers both classical and modern computer vision.\n\nClassical CV: image formation, filtering, Fourier analysis, features, geometry, stereo, motion, and 3D vision\nModern CV: machine learning, image classification, object detection, segmentation, and deep learning\nThis is not a machine learning course, but we will introduce the ML/DL concepts needed for computer vision. Good follwo-up courses:\n\nDeep Learning (Prof. Zibo Wang)\nComputer Applied Computer Vision for Engineering Systems (Prof. Minghan Li)\n\n\n400 vs. 500 level: There is no difference in course content. If appropriate, ask to count as 500."
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-resources",
+    "href": "lectures/01_intro.html#course-resources",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Resources",
+    "text": "Course Resources\n\n\n\nCourse Website: https://ariarobotics.github.io/cv/\n\nPrimary place to access the syllabus, course schedule, TA information, lectures, and other course information\nUse this as your main entry point for the course\n\nGitHub Repository: https://github.com/ariarobotics/cv\n\nContains course source files, code, notebooks, and downloadable materials\nUseful when you need to clone/download code or inspect the underlying files\n\nLectures:\n\nAre grouped by topic and may be convered over multiple class sessions"
+  },
+  {
+    "objectID": "lectures/01_intro.html#attendance-matters",
+    "href": "lectures/01_intro.html#attendance-matters",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Attendance Matters",
+    "text": "Attendance Matters\n\nIn-person attendance is mandatory, although will not be monitored.\nSome material will be discussed/developed only during class.\nMaterial added/discussed during class will not be recorded or posted later.\nYou are responsible for material covered during any class you miss.\n\nBottom line: Being physically present and engaged in class is an important part of this course."
+  },
+  {
+    "objectID": "lectures/01_intro.html#homework",
+    "href": "lectures/01_intro.html#homework",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Homework",
+    "text": "Homework\n\nHomework accounts for 60% of the regular course grade.\nThere will be up to 12 homework assignments.\nHomework must be prepared and submitted individually.\nYou may discuss problems, help each other, and use appropriate resources, but you must understand and create your own solution.\nIdentical submissions are considered plagiarism and receive a grade of zero.\nHomework solutions will not be posted.\nThe lowest homework grade, including one missed assignment, is automatically dropped.\n\nTwo or more missed homework assignments result in an Incomplete grade."
+  },
+  {
+    "objectID": "lectures/01_intro.html#late-homework",
+    "href": "lectures/01_intro.html#late-homework",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Late Homework",
+    "text": "Late Homework\n\nHomework due dates and times are on Canvas (and course schedule)\nHomework deadlines will not normally be extended.\nThe maximum possible score decreases by 25% for each week late:\n\n\n\n\nSubmission Time\nMaximum Score\n\n\n\n\nOn time\n100%\n\n\nUp to 1 week late\n75%\n\n\nUp to 2 weeks late\n50%\n\n\nUp to 3 weeks late\n25%\n\n\n4+ weeks late\n0%\n\n\n\nPlan ahead and submit homework on time."
+  },
+  {
+    "objectID": "lectures/01_intro.html#exams",
+    "href": "lectures/01_intro.html#exams",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Exams",
+    "text": "Exams\n\nExams account for 40% of the regular course grade.\nThere will be 4 exams during regular class hours.\nExams are around 30 minutes long and will be during the second half of the class.\nExam dates are posted on Canvas (and course schedule).\nExams are in person.\nExams are based on:\n\nLecture slides\nMaterial discussed in class\nHomework\n\nNo resources are allowed during exams, including notes, internet searches, GenAI, calculators, or smartphones.\nThe lowest exam grade, including one missed exam, is automatically dropped.\n\nTwo or more missed exams result in an Incomplete grade."
+  },
+  {
+    "objectID": "lectures/01_intro.html#missed-exams-excused-absences",
+    "href": "lectures/01_intro.html#missed-exams-excused-absences",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Missed Exams & Excused Absences",
+    "text": "Missed Exams & Excused Absences\n\nAny missed exam receives a grade of zero before the lowest-exam grade is dropped.\nA make-up exam may be considered only under extraordinary circumstances for excused-absence.\nAppropriate documentation must be provided when requesting an exception.\nStudents are responsible for submitting excused-absence requests through the appropriate Mines process.\n\nDo not assume that an excused absence automatically means a make-up exam."
+  },
+  {
+    "objectID": "lectures/01_intro.html#grading",
+    "href": "lectures/01_intro.html#grading",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Grading",
+    "text": "Grading\nRegular course grade:\n\nHomework: 60 points\nExams: 40 points\nTotal: 100 points\n\nOptional bonus assignments/projects may be offered at the instructor’s discretion.\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\n\nMaximum bonus: 10 points\nAmended grades above 100 are capped at 100.\nLetter grades are based on the amended final grade; see the syllabus."
+  },
+  {
+    "objectID": "lectures/01_intro.html#prior-grade-distribution",
+    "href": "lectures/01_intro.html#prior-grade-distribution",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Prior Grade Distribution",
+    "text": "Prior Grade Distribution\n\n\n\n\nYou can get a good grade by completing homework on time, keeping up with the material, and preparing for the exams."
+  },
+  {
+    "objectID": "lectures/01_intro.html#generative-ai-use-it-carefully",
+    "href": "lectures/01_intro.html#generative-ai-use-it-carefully",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Generative AI: Use It Carefully",
+    "text": "Generative AI: Use It Carefully\nGenerative AI can be useful, but do not use it to solve your homework for you.\n\nGood use: help remembering syntax, understanding an error message, or explaining a programming concept\nBad use: asking GenAI to solve the problem and copy-pasting the generated code into your submission\nIf AI writes your code, you will complete the assignment without actually learning how to program.\nYou are responsible for understanding every line of code you submit.\nDuring exams, GenAI use is prohibited.\n\nYou need to be able to code without AI.\n\nMany robotics, research, industrial, secure, and field environments have limited or no internet access.\nCompanies hire you to solve problems that GenAI cannot solve.\nUse GenAI as a learning aid, not as a replacement for learning."
+  },
+  {
+    "objectID": "lectures/01_intro.html#academic-integrity",
+    "href": "lectures/01_intro.html#academic-integrity",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic dishonesty will be taken very seriously.\nExamples include:\n\nCopying another student’s homework\nUsing prohibited resources during an exam\nMisrepresenting or abusing an excused absence\n\nYou may collaborate and discuss homework, but the work you submit must be your own."
+  },
+  {
+    "objectID": "lectures/01_intro.html#communication-ed-discussion",
+    "href": "lectures/01_intro.html#communication-ed-discussion",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Communication: Ed Discussion",
+    "text": "Communication: Ed Discussion\n\nEd Discussion is the primary communication channel for this course.\n\n\nUse Ed Discussion for:\n\nAnnouncements\nCourse/technical questions\nHomework clarification\nQuestions that may also help other students\n\nDo not use Canvas messages or email for routine course questions.\nPlan ahead: Do not expect responses after normal working hours or during weekends. Ask questions early rather than waiting until shortly before a deadline."
+  },
+  {
+    "objectID": "lectures/01_intro.html#office-hours-tas",
+    "href": "lectures/01_intro.html#office-hours-tas",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Office Hours & TAs",
+    "text": "Office Hours & TAs\nInstructor office hours\n\nMonday/Wednesday, 4:15–5:00 PM — immediately after class\n\nBrown 280-N\n\nTeaching Assistants\n\nTA names, office hours, and contact information are available on the Course Website\nTA information/schedule may change, so check the website or Ed Discussion announcements for the current information.\n\nNote:\n\nTAs are instructed not to pre-grade homework.\nDo not ask them if your solution is correct or expect them to provide the answer.\nUse office hours to ask questions about concepts or course material that you do not understand."
+  },
+  {
+    "objectID": "lectures/01_intro.html#getting-help",
+    "href": "lectures/01_intro.html#getting-help",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Getting Help",
+    "text": "Getting Help\nThis is a large class, so please use the following process when you need help:\n\nTry the problem yourself first (search course resources or online for 30 minutes).\nAsk classmates / post the question on Ed Discussion.\nAsk the TAs, preferably through Ed Discussion when the question may help others.\nAsk the instructor or come to office hours.\n\nWhen asking for help:\n\nExplain what you are trying to do.\nShow what you have already tried.\nInclude relevant error messages/code when appropriate.\n\nAsk early. Waiting until the deadline makes it much harder for us to help you."
+  },
+  {
+    "objectID": "lectures/01_intro.html#computers-programming",
+    "href": "lectures/01_intro.html#computers-programming",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computers & Programming",
+    "text": "Computers & Programming\n\nYou are expected to have access to a computer for programming and in-class activities.\nClassroom computers are available if needed.\nLoaner laptops may also be available through the library.\nThe only programming language used for this course is Python (OpenCV and PyTorch libraries).\nWe will not use other languages (C++, MATLAB, etc.) because this will complicate TA help and grading."
+  },
+  {
+    "objectID": "lectures/01_intro.html#expected-workload",
+    "href": "lectures/01_intro.html#expected-workload",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Expected Workload",
+    "text": "Expected Workload\n\nExpect this course to require approximately 10 hours per week on average, including:\n\nAttending class\nReviewing lecture material\nProgramming\nCompleting homework\nPreparing for exams\n\n\n\nSome students will need substantially more time, particularly if they are less comfortable with:\n\nPython/programming\nCalculus\nLinear algebra (matrix computations)\n\n\n\n\n\n\n\nDo not fall behind early."
+  },
+  {
+    "objectID": "lectures/01_intro.html#key-things-to-remember",
+    "href": "lectures/01_intro.html#key-things-to-remember",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Key Things to Remember",
+    "text": "Key Things to Remember\n\nAttend class — important material may only be presented in person.\nComplete every homework assignment.\nTwo missed homework assignments → Incomplete\nTwo missed exams → Incomplete\nLate homework loses 25% of the maximum score per week.\nUse GenAI to learn, not to avoid learning how to code.\nUse Ed Discussion and ask questions early.\nCheck the course website regularly for the schedule, lectures, and updates.\nAcademic dishonesty is taken very seriously.\nBe professional, be kind.\n\nMost importantly: keep up with the course and ask for help before small problems become large ones."
+  },
+  {
+    "objectID": "code/index.html",
+    "href": "code/index.html",
+    "title": "Code & Demos",
+    "section": "",
+    "text": "Code examples, notebooks, and demonstrations will be posted here throughout the semester."
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignments and supporting materials will be posted here throughout the semester."
+  },
+  {
+    "objectID": "index.html#computer-vision-colorado-school-of-mines",
+    "href": "index.html#computer-vision-colorado-school-of-mines",
+    "title": "Computer Vision",
+    "section": "Computer Vision | Colorado School of Mines",
+    "text": "Computer Vision | Colorado School of Mines\nWelcome to the course website for Computer Vision. This site is the main entry point for course information, lecture material, schedules, and resources."
+  },
+  {
+    "objectID": "index.html#course-material",
+    "href": "index.html#course-material",
+    "title": "Computer Vision",
+    "section": "Course Material",
+    "text": "Course Material\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions covering classical and modern computer vision.\nView Lectures\n\n\nCode & Demos\nPython, OpenCV, PyTorch, and interactive examples used throughout the course.\nView Code\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
+  },
+  {
+    "objectID": "index.html#about-the-course",
+    "href": "index.html#about-the-course",
+    "title": "Computer Vision",
+    "section": "About the Course",
+    "text": "About the Course\nThe course covers both classical and modern computer vision, including:\n\nImage formation and image processing\nFiltering, convolution, and Fourier analysis\nFeature detection and matching\nCamera geometry and calibration\nStereo vision, motion, and 3D reconstruction\nImage classification and object detection\nDeep learning and convolutional neural networks\nPractical computer vision using Python, OpenCV, and PyTorch"
+  },
+  {
+    "objectID": "index.html#course-at-a-glance",
+    "href": "index.html#course-at-a-glance",
+    "title": "Computer Vision",
+    "section": "Course at a Glance",
+    "text": "Course at a Glance\n\n\n\nInstructor\nKaveh Fathian\n\n\nSemester\nFall 2026\n\n\nClass\nMonday & Wednesday, 3:00–4:15 PM\n\n\nLocation\nCoorsTek 130\n\n\nProgramming\nPython\n\n\nPrimary Communication\nEd Discussion"
+  },
+  {
+    "objectID": "index.html#course-website-vs.-github-repository",
+    "href": "index.html#course-website-vs.-github-repository",
+    "title": "Computer Vision",
+    "section": "Course Website vs. GitHub Repository",
+    "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
+  },
+  {
+    "objectID": "lectures/02_image.html#what-is-an-image-and-how-is-it-formed",
+    "href": "lectures/02_image.html#what-is-an-image-and-how-is-it-formed",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "What is an Image and how is it formed?",
+    "text": "What is an Image and how is it formed?\n\n Blue Marble, NASA / Apollo 17"
+  },
+  {
+    "objectID": "lectures/02_image.html#image-formation",
+    "href": "lectures/02_image.html#image-formation",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Image Formation",
+    "text": "Image Formation\n\n\n Scene / object\n\n Light as a signal\n\n Camera / sensor\n\nA camera measures light from the world and turns it into a digital image."
+  },
+  {
+    "objectID": "lectures/02_image.html#signal",
+    "href": "lectures/02_image.html#signal",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Signal",
+    "text": "Signal\n\n\n\n\n\n\n\n\nSignal: A (multi-dimensional) function that contains information about a phenomenon (e.g., light, heat, gravity, sound, pressure, motion).\n\nSignals can be continuous, such as light in the physical world.\nMeasurements are often discrete samples of that continuous signal.\nSampling reduces a continuous signal to a finite set of values."
+  },
+  {
+    "objectID": "lectures/02_image.html#sampling-in-1d",
+    "href": "lectures/02_image.html#sampling-in-1d",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Sampling in 1D",
+    "text": "Sampling in 1D\n\n\n\n\nSampling a 1D continuous function returns a vector whose elements are values of that function at selected sample points.\nInstead of the full function, we store values at selected locations."
+  },
+  {
+    "objectID": "lectures/02_image.html#sampling-in-2d",
+    "href": "lectures/02_image.html#sampling-in-2d",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Sampling in 2D",
+    "text": "Sampling in 2D\n\n\n\nSampling a 2D function returns a matrix."
+  },
+  {
+    "objectID": "lectures/02_image.html#d-image",
+    "href": "lectures/02_image.html#d-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "2D Image",
+    "text": "2D Image\n\n\n\n\n\n\n\n\nImage: A sampling of a function that contains information about a 2D signal.\n\nThe function stores brightness or intensity.\nThe image samples brightness along the \\(x\\) and \\(y\\) dimensions.\nA video can be viewed as a time-varying 2D image signal: \\((x, y, t)\\).\n\n\n\n\n\n\n\nNote\n\n\nCameras observe a 2D projection of the 3D world."
+  },
+  {
+    "objectID": "lectures/02_image.html#examples-of-2d-images",
+    "href": "lectures/02_image.html#examples-of-2d-images",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Examples of 2D Images",
+    "text": "Examples of 2D Images\n\n\n2D images appear in many sensing modalities:\n\nNatural images\nThermal images\nSatellite/aerial images\nMicroscopy\nUltrasound\nMRI / CT slices\nRadar images\nDepth images\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe signal may not always be visible light. An image arranges what we have measured over a 2D domain."
+  },
+  {
+    "objectID": "lectures/02_image.html#sampling-in-practice",
+    "href": "lectures/02_image.html#sampling-in-practice",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Sampling in Practice",
+    "text": "Sampling in Practice\n\n\n World / scene\n\n Continuous signal\n\n Camera\n\nThe imaging pipeline converts a continuous physical signal into discrete sensor measurements."
+  },
+  {
+    "objectID": "lectures/02_image.html#sampling-in-practice-digital-image",
+    "href": "lectures/02_image.html#sampling-in-practice-digital-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Sampling in Practice: Digital Image",
+    "text": "Sampling in Practice: Digital Image\n\n\n Scene / image plane\n\n Light signal\n\n CMOS / CCD sensor\n\nDigital cameras use sensor arrays to sample light and produce a grid of pixel values."
+  },
+  {
+    "objectID": "lectures/02_image.html#sensor-array",
+    "href": "lectures/02_image.html#sensor-array",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Sensor Array",
+    "text": "Sensor Array\n\n\n Camera / sensor hardware\n\n CMOS sensor array\n\nContinuous light is sampled and quantized by the 2D sensor array (pixels) to produce a digital image."
+  },
+  {
+    "objectID": "lectures/02_image.html#elements-of-a-digital-image",
+    "href": "lectures/02_image.html#elements-of-a-digital-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Elements of a Digital Image",
+    "text": "Elements of a Digital Image\n\n\nA pixel is a picture element.\nFor a grayscale image:\n\\[\nI(x, y) = \\text{intensity at image location} (x,y)\n\\]\n\n\\(x\\): horizontal coordinate\n\\(y\\): vertical coordinate\n\nExample:\nI(x1, y1) = 101\nI(x2, y2) = 191\nDifferent pixel locations can have different intensity values."
+  },
+  {
+    "objectID": "lectures/02_image.html#digital-image-is-a-2d-signal",
+    "href": "lectures/02_image.html#digital-image-is-a-2d-signal",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Digital Image is a 2D Signal",
+    "text": "Digital Image is a 2D Signal\n\n\n\n\n\n\n\n\nA digital image can be interpreted as a 2D function whose value is brightness or intensity."
+  },
+  {
+    "objectID": "lectures/02_image.html#light-integration-over-a-pixel-region",
+    "href": "lectures/02_image.html#light-integration-over-a-pixel-region",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Light Integration Over a Pixel Region",
+    "text": "Light Integration Over a Pixel Region\n\n\n\nA single pixel does not measure an infinitely thin ray.\nIt measures light integrated over a small region of the sensor and the corresponding cone/frustum of incoming light.\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThis is one reason why cameras blur, average, and alias details that are smaller than a pixel can represent."
+  },
+  {
+    "objectID": "lectures/02_image.html#resolution-geometric-vs.-spatial",
+    "href": "lectures/02_image.html#resolution-geometric-vs.-spatial",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Resolution: Geometric vs. Spatial",
+    "text": "Resolution: Geometric vs. Spatial\nBoth images can have the same number of pixels, but the amount of scene detail represented can be different.\n\n\n Low geometric resolution\n\n High geometric resolution\n\n\n\n\n\n\n\nNote\n\n\nSpatial resolution counts pixels. Geometric resolution is how accurately those pixels represent the positions of objects in the real world."
+  },
+  {
+    "objectID": "lectures/02_image.html#quantization",
+    "href": "lectures/02_image.html#quantization",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Quantization",
+    "text": "Quantization\n\n\n\n\nSampling chooses where to measure a signal.\nQuantization chooses which values can be represented.\nFor example, an 3 bits can represent: \\[\n2^3 = 8\n\\] possible intensity levels in a grayscale image."
+  },
+  {
+    "objectID": "lectures/02_image.html#quantization-effects-radiometric-resolution",
+    "href": "lectures/02_image.html#quantization-effects-radiometric-resolution",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Quantization Effects — Radiometric Resolution",
+    "text": "Quantization Effects — Radiometric Resolution\n\n\n\n\nRadiometric resolution is the number of distinct intensity levels available.\n\n\n\n\nBit depth\nNumber of levels\n\n\n\n\n1 bit\n2 levels\n\n\n2 bit\n4 levels\n\n\n4 bit\n16 levels\n\n\n8 bit\n256 levels\n\n\n\n\nHigher bit depth can represent more subtle intensity differences.\nIn photography, this is closely related to dynamic range."
+  },
+  {
+    "objectID": "lectures/02_image.html#dimensionality-of-an-image",
+    "href": "lectures/02_image.html#dimensionality-of-an-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Dimensionality of an Image",
+    "text": "Dimensionality of an Image\n\n\n\n\nAn image of size \\(1000 \\times 1000\\) with 8-bit quantization per pixel has: \\[\n256^{1000 \\times 1000} \\approx 10^{2,408,239}\n\\] possible intensity configurations.\nThis is an enormous high-dimensional space – the known universe has only about \\(10^{80}\\) atoms!\nComputer vision works in this extremely high dimensional space – but real images are not arbitrary arrays and they occupy a small, structured subset of this space."
+  },
+  {
+    "objectID": "lectures/02_image.html#images-in-python-grayscale-arrays",
+    "href": "lectures/02_image.html#images-in-python-grayscale-arrays",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Images in Python: Grayscale Arrays",
+    "text": "Images in Python: Grayscale Arrays\nFor an \\(N \\times M\\) grayscale image im:\nim[0, 0]        # top-left pixel value\nim[y, x]        # y rows down, x columns right\nim[N-1, M-1]    # bottom-right pixel value\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIn NumPy, image indexing is usually row first, column second: im[y, x], not im[x, y]."
+  },
+  {
+    "objectID": "lectures/02_image.html#grayscale-intensity",
+    "href": "lectures/02_image.html#grayscale-intensity",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Grayscale Intensity",
+    "text": "Grayscale Intensity\n\n\n\nA grayscale image is a matrix that stores one intensity value per pixel."
+  },
+  {
+    "objectID": "lectures/02_image.html#color-images",
+    "href": "lectures/02_image.html#color-images",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Color Images",
+    "text": "Color Images\n\n\n\nA color image stores multiple intensity values per pixel.\nFor RGB images, each pixel has three channels:\n\nRed intensity\nGreen intensity\nBlue intensity\n\n\nimage shape: height × width × 3\n\n\n\n\n\n\n\n\n\nNote\n\n\nDifferent libraries may use different channel order conventions. OpenCV commonly uses BGR; Matplotlib commonly expects RGB."
+  },
+  {
+    "objectID": "lectures/02_image.html#images-in-python-color-arrays",
+    "href": "lectures/02_image.html#images-in-python-color-arrays",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Images in Python: Color Arrays",
+    "text": "Images in Python: Color Arrays\nFor an \\(N \\times M\\) color image im with three channels:\nim[0, 0, 0]          # top-left pixel, first channel\nim[y, x, 1]          # pixel at row y, column x, second channel\nim[N-1, M-1, 2]      # bottom-right pixel, third channel\nTypical shape:\nim.shape  # (height, width, channels)\nFor an RGB image:\nchannel 0 = red\nchannel 1 = green\nchannel 2 = blue\nFor OpenCV-loaded images:\nchannel 0 = blue\nchannel 1 = green\nchannel 2 = red"
+  },
+  {
+    "objectID": "lectures/02_image.html#images-in-python-data-types",
+    "href": "lectures/02_image.html#images-in-python-data-types",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Images in Python: Data Types",
+    "text": "Images in Python: Data Types\nTake care of image data types.\n# uint8 image: values 0 to 255\nim = cv2.imread(\"file.jpg\")\n\n# convert to float32, still values 0 to 255\nim_float = im.astype(np.float32)\n\n# normalize to 0 to 1\nim_norm = im.astype(np.float32) / 255.0\n\n\n\n\n\n\nImportant\n\n\nMany image-processing bugs come from mixing uint8, float32, and different value ranges."
+  },
+  {
+    "objectID": "lectures/02_image.html#random-images-in-python",
+    "href": "lectures/02_image.html#random-images-in-python",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Random Images in Python",
+    "text": "Random Images in Python\nfrom numpy import random as r\n\nI = r.rand(256, 256)\nr.rand(256, 256) creates a 256 by 256 array of random floating-point values in the range \\([0,1)\\).\nQuestions:\n\nWhat is I?\nWhat does it look like?\nWhich values does it contain?\nHow many values are there?"
+  },
+  {
+    "objectID": "lectures/02_image.html#displaying-an-image-in-python",
+    "href": "lectures/02_image.html#displaying-an-image-in-python",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Displaying an Image in Python",
+    "text": "Displaying an Image in Python\n\n\nfrom matplotlib import pyplot as plt\nfrom numpy import random as r\n\nI = r.rand(256, 256)\n\nplt.imshow(I, cmap=\"gray\")\nplt.axis(\"off\")\nplt.show()\n\n Is this an image?"
+  },
+  {
+    "objectID": "lectures/02_image.html#coding-in-this-course",
+    "href": "lectures/02_image.html#coding-in-this-course",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Coding in This Course",
+    "text": "Coding in This Course\nWe will use:\n\nPython for programming\nConda for managing the course environment\nNumPy for numerical arrays\nOpenCV for image processing and computer vision\nPyTorch for deep learning topics\nVS Code for editing, debugging, and notebooks\n\n\n\n\n\n\n\nImportant\n\n\nDo not use GenAI to solve homework for you. If you copy-paste code without understanding it, you will not learn how to code.\n\n\n\nBe kind and supportive: students come from different backgrounds and have different levels of Python experience."
+  },
+  {
+    "objectID": "lectures/02_image.html#python-tool-refresher",
+    "href": "lectures/02_image.html#python-tool-refresher",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Python / Tool Refresher",
+    "text": "Python / Tool Refresher\nCourse tutorials are available here:\nhttps://ariarobotics.github.io/cv/tutorials/\nReview as needed:\n\nWSL + Ubuntu — recommended Linux environment for Windows users\nGit & GitHub — cloning, committing, pulling, pushing, and GitHub Classroom\nPython & Conda — installing Conda and creating the course environment\nVisual Studio Code — Python interpreter, notebooks, and debugging\nNumPy — arrays, indexing, vectorization, matrices, and image-related operations\n\n\n\n\n\n\n\nTip\n\n\nThese tutorials are reference material. Use them when you need help with the tools so class time can focus on computer vision."
+  },
+  {
+    "objectID": "lectures/02_image.html#recommended-development-setup",
+    "href": "lectures/02_image.html#recommended-development-setup",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Recommended Development Setup",
+    "text": "Recommended Development Setup\n\n\nWindows\nRecommended workflow:\nWindows\n   ↓\nWSL 2 + Ubuntu\n   ↓\nMiniforge / Conda\n   ↓\ncv environment\n   ↓\nVS Code + WSL extension\nKeep course Python environments and projects inside WSL.\n\nmacOS / Linux\nRecommended workflow:\nmacOS / Linux\n      ↓\nTerminal\n      ↓\nMiniforge / Conda\n      ↓\ncv environment\n      ↓\nVS Code\nNo WSL is needed."
+  },
+  {
+    "objectID": "lectures/02_image.html#before-we-create-the-environment",
+    "href": "lectures/02_image.html#before-we-create-the-environment",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Before We Create the Environment",
+    "text": "Before We Create the Environment\nOpen a terminal and check the tools you already have.\nGit\ngit --version\nConda\nconda --version\nExisting Conda environments\nconda env list\nWindows users working in WSL can also check:\nuname -a\n\n\n\n\n\n\nTip\n\n\nIf conda is not installed yet, open the Python & Conda tutorial and follow the Miniforge installation section."
+  },
+  {
+    "objectID": "lectures/02_image.html#the-course-environment",
+    "href": "lectures/02_image.html#the-course-environment",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "The Course Environment",
+    "text": "The Course Environment\nWe use a dedicated Conda environment named:\ncv\nThe environment file is maintained in the course repository:\nhttps://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nIt defines the software stack used by the course, including:\n\nPython\nNumPy / SciPy\nOpenCV\nPyTorch / TorchVision\nMatplotlib\nscikit-image / scikit-learn\nJupyter and VS Code notebook support\n\nDo not manually assemble your own version of the environment."
+  },
+  {
+    "objectID": "lectures/02_image.html#get-the-environment-file",
+    "href": "lectures/02_image.html#get-the-environment-file",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Get the Environment File",
+    "text": "Get the Environment File\nOption 1 — Clone the course repository\ncd ~/cv_projects\ngit clone https://github.com/ariarobotics/cv.git\ncd cv/code\nYou should now see:\nls\nincluding:\ncv-environment.yml\nOption 2 — Download only the environment file\ncurl -L -o cv-environment.yml \\\nhttps://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml"
+  },
+  {
+    "objectID": "lectures/02_image.html#create-the-cv-environment",
+    "href": "lectures/02_image.html#create-the-cv-environment",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Create the cv Environment",
+    "text": "Create the cv Environment\nFrom the directory containing cv-environment.yml:\nconda env create -f cv-environment.yml\nThis may take several minutes.\nThe environment file already specifies the name:\ncv\nWhen installation finishes:\nconda activate cv\nYour terminal prompt should now begin with something similar to:\n(cv)\n\n\n\n\n\n\nImportant\n\n\nWhenever you run course Python code, make sure the cv environment is active."
+  },
+  {
+    "objectID": "lectures/02_image.html#verify-the-environment",
+    "href": "lectures/02_image.html#verify-the-environment",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Verify the Environment",
+    "text": "Verify the Environment\nWith cv activated:\npython --version\nCheck which Python is being used:\nwhich python\nThen verify the main packages:\npython -c \"import numpy; print('NumPy:', numpy.__version__)\"\npython -c \"import cv2; print('OpenCV:', cv2.__version__)\"\npython -c \"import torch; print('PyTorch:', torch.__version__)\"\npython -c \"import torchvision; print('TorchVision:', torchvision.__version__)\"\nIf all four commands work, the core environment is ready."
+  },
+  {
+    "objectID": "lectures/02_image.html#configure-vs-code",
+    "href": "lectures/02_image.html#configure-vs-code",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Configure VS Code",
+    "text": "Configure VS Code\nOpen the project folder from your terminal:\ncode .\nWindows + WSL users should see WSL: Ubuntu in the VS Code status area.\nThen:\n\nOpen the Command Palette: Ctrl+Shift+P\nSearch for Python: Select Interpreter\nSelect the interpreter associated with cv\n\nFor notebooks, use Select Kernel and choose the same cv environment.\nVerify from Python:\nimport sys\nprint(sys.executable)\nThe path should point into the cv Conda environment."
+  },
+  {
+    "objectID": "lectures/02_image.html#our-first-computer-vision-program",
+    "href": "lectures/02_image.html#our-first-computer-vision-program",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Our First Computer Vision Program",
+    "text": "Our First Computer Vision Program\nCreate a file named:\nfirst_cv.py\nStart by importing the libraries:\nfrom pathlib import Path\n\nimport cv2\nimport matplotlib.pyplot as plt\nimport numpy as np\nCreate a folder for output files:\noutput_dir = Path(\"outputs\")\noutput_dir.mkdir(exist_ok=True)"
+  },
+  {
+    "objectID": "lectures/02_image.html#create-and-save-a-simple-image",
+    "href": "lectures/02_image.html#create-and-save-a-simple-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Create and Save a Simple Image",
+    "text": "Create and Save a Simple Image\nFor today’s example, we will create a small synthetic image so everyone has the same input.\nheight = 360\nwidth = 640\n\nimage = np.full(\n    (height, width, 3),\n    235,\n    dtype=np.uint8,\n)\n\n# OpenCV uses BGR color ordering.\ncv2.rectangle(\n    image, (70, 80), (260, 280),\n    (255, 100, 0), thickness=-1\n)\n\ncv2.circle(\n    image, (470, 180), 90,\n    (0, 180, 255), thickness=-1\n)\n\ncv2.putText(\n    image, \"Computer Vision\",\n    (150, 335),\n    cv2.FONT_HERSHEY_SIMPLEX,\n    1.0, (30, 30, 30), 2\n)\n\ncv2.imwrite(str(output_dir / \"sample_image.png\"), image)\nWe now have a real image file on disk that we can load with OpenCV."
+  },
+  {
+    "objectID": "lectures/02_image.html#load-and-inspect-the-image",
+    "href": "lectures/02_image.html#load-and-inspect-the-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Load and Inspect the Image",
+    "text": "Load and Inspect the Image\nLoad the image:\nimage_bgr = cv2.imread(\n    str(output_dir / \"sample_image.png\")\n)\nInspect it:\nprint(\"Shape:\", image_bgr.shape)\nprint(\"Data type:\", image_bgr.dtype)\nYou should see something similar to:\nShape: (360, 640, 3)\nData type: uint8\nAn image is fundamentally a NumPy array."
+  },
+  {
+    "objectID": "lectures/02_image.html#display-the-image",
+    "href": "lectures/02_image.html#display-the-image",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Display the Image",
+    "text": "Display the Image\nOpenCV loads color images in BGR order.\nMatplotlib expects RGB, so convert before displaying:\nimage_rgb = cv2.cvtColor(\n    image_bgr,\n    cv2.COLOR_BGR2RGB\n)\n\nplt.imshow(image_rgb)\nplt.axis(\"off\")\nplt.show()\nA useful rule:\nOpenCV processing → usually BGR\nMatplotlib display → RGB\n\n\n\n\n\n\nNote\n\n\nUsing Matplotlib is also convenient in notebooks and avoids problems that can occur with cv2.imshow() in some WSL setups."
+  },
+  {
+    "objectID": "lectures/02_image.html#a-first-image-processing-operation",
+    "href": "lectures/02_image.html#a-first-image-processing-operation",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "A First Image-Processing Operation",
+    "text": "A First Image-Processing Operation\nConvert the image to grayscale:\ngray = cv2.cvtColor(\n    image_bgr,\n    cv2.COLOR_BGR2GRAY\n)\nDetect edges:\nedges = cv2.Canny(\n    gray,\n    100,\n    200\n)\nDisplay the result:\nplt.imshow(edges, cmap=\"gray\")\nplt.axis(\"off\")\nplt.show()"
+  },
+  {
+    "objectID": "lectures/02_image.html#what-just-happened",
+    "href": "lectures/02_image.html#what-just-happened",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "What Just Happened?",
+    "text": "What Just Happened?\nIn only a few lines, we used several ideas that will appear throughout the course:\n\nAn image is represented as a NumPy array\nImage dimensions are described by .shape\nPixel values have a data type such as uint8\nOpenCV can load, save, transform, and analyze images\nColor-channel conventions matter: BGR vs. RGB\nComputer vision pipelines are often sequences of simple operations\n\nimage\n  ↓\nload\n  ↓\nrepresent as an array\n  ↓\ntransform / analyze\n  ↓\ndisplay or use the result"
+  },
+  {
+    "objectID": "lectures/02_image.html#common-setup-problems",
+    "href": "lectures/02_image.html#common-setup-problems",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "Common Setup Problems",
+    "text": "Common Setup Problems\nconda: command not found\nRestart the terminal or reload your shell:\nsource ~/.bashrc\nPython imports fail\nFirst check:\nconda activate cv\nwhich python\nVS Code runs a different Python\nUse:\nPython: Select Interpreter\nand select cv.\nWindows paths and Linux paths are getting mixed\nIf you are using WSL, keep the course environment and projects inside the WSL/Linux filesystem."
+  },
+  {
+    "objectID": "lectures/02_image.html#after-class",
+    "href": "lectures/02_image.html#after-class",
+    "title": "Lecture 02 — Image Formation and Digital Images",
+    "section": "After Class",
+    "text": "After Class\nPlease go through any tutorials that cover tools you are not yet comfortable with:\nhttps://ariarobotics.github.io/cv/tutorials/\nIn particular, make sure you can:\n\nActivate the cv environment\nUse basic Git commands\nOpen a project in VS Code\nRun Python scripts and Jupyter notebooks\nWork with basic NumPy arrays\n\nYou do not need to memorize every Git, Conda, or NumPy command. The tutorials are there as references throughout the semester."
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule — Fall 2026",
+    "section": "",
+    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Filtering; Fourier Transform\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec04, Lec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec05\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec05, Lec06\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec06\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points & Matching\nLec06\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Matching\nLec06\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nHough Transform\nLec07\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nOptical Flow, Color\nLec08, Lec09\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nCamera Geometry\nLec10\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec10\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Calibration\nLec11\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec12\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec12\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nDepth Cameras\nLec13\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec14\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec15\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec16, Lec17\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec 18\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec 18\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec 19\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec20\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec21\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec22\nLast week of class; Classes end"
+  },
+  {
+    "objectID": "tas.html",
+    "href": "tas.html",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "",
+    "text": "Course-related questions should generally be posted on Ed Discussion so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.\nNote: TAs are instructed not to pre-grade homework. Please do not ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand."
+  },
+  {
+    "objectID": "tas.html#nathaniel-brazen",
+    "href": "tas.html#nathaniel-brazen",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Nathaniel Brazen",
+    "text": "Nathaniel Brazen\n\n\n\n\n\nEmail: nathaniel_brazen@mines.edu\nOffice hours: Tuesdays, 1:00 - 2:00 PM\nOffice location: TBD"
+  },
+  {
+    "objectID": "tas.html#praveen-krisna",
+    "href": "tas.html#praveen-krisna",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Praveen Krisna",
+    "text": "Praveen Krisna\n\n\n\n\n\nEmail: praveen_krisna@mines.edu\nOffice hours: Mondays, 1:00 - 2:00 PM\nOffice location: TBD"
+  },
+  {
+    "objectID": "tas.html#ryan-hartzell",
+    "href": "tas.html#ryan-hartzell",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Ryan Hartzell",
+    "text": "Ryan Hartzell\n\n\n\n\n\nEmail: ryan_hartzell@mines.edu\nOffice hours: Fridays, 12:30-1:30 PM\nOffice location: TBD"
+  },
+  {
+    "objectID": "tutorials/01_wsl.html",
+    "href": "tutorials/01_wsl.html",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "",
+    "text": "Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows. For this course, it provides a convenient way for Windows users to work with Ubuntu, Bash, Git, Python, Conda, and other tools commonly used in computer vision and robotics.\nWSL avoids the need for dual booting or maintaining a separate Linux computer.\n\n\n\n\n\n\nNote\n\n\n\nThis tutorial is only needed if you use Windows. macOS and Linux users can skip it."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#what-is-wsl",
+    "href": "tutorials/01_wsl.html#what-is-wsl",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "",
+    "text": "Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows. For this course, it provides a convenient way for Windows users to work with Ubuntu, Bash, Git, Python, Conda, and other tools commonly used in computer vision and robotics.\nWSL avoids the need for dual booting or maintaining a separate Linux computer.\n\n\n\n\n\n\nNote\n\n\n\nThis tutorial is only needed if you use Windows. macOS and Linux users can skip it."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#install-wsl",
+    "href": "tutorials/01_wsl.html#install-wsl",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "1. Install WSL",
+    "text": "1. Install WSL\nOpen PowerShell as Administrator and run:\nwsl --install\nRestart Windows if prompted.\nThe default installation uses WSL 2 and installs Ubuntu. If you want to explicitly install Ubuntu 24.04 LTS, first check the available distribution names:\nwsl --list --online\nThen install Ubuntu 24.04:\nwsl --install -d Ubuntu-24.04\nWhen Ubuntu launches for the first time, create a Linux username and password.\n\n\n\n\n\n\nTip\n\n\n\nYour Linux username and password do not need to match your Windows credentials. Remember the Linux password because you will need it when using sudo.\n\n\nOfficial documentation:\nhttps://learn.microsoft.com/windows/wsl/install"
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#verify-that-wsl-2-is-being-used",
+    "href": "tutorials/01_wsl.html#verify-that-wsl-2-is-being-used",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "2. Verify that WSL 2 is being used",
+    "text": "2. Verify that WSL 2 is being used\nIn PowerShell:\nwsl --list --verbose\nYou should see your Ubuntu distribution with version 2.\nExample:\n  NAME            STATE           VERSION\n* Ubuntu-24.04    Running         2\nIf an existing distribution is still using WSL 1, it can be converted with:\nwsl --set-version Ubuntu-24.04 2\nUse the exact distribution name shown by wsl --list --verbose."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#update-wsl",
+    "href": "tutorials/01_wsl.html#update-wsl",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "3. Update WSL",
+    "text": "3. Update WSL\nFrom PowerShell:\nwsl --update\nYou can check WSL information with:\nwsl --version"
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#install-windows-terminal",
+    "href": "tutorials/01_wsl.html#install-windows-terminal",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "4. Install Windows Terminal",
+    "text": "4. Install Windows Terminal\nWindows Terminal is optional but recommended because it provides a convenient interface for PowerShell, Command Prompt, and WSL terminals.\nhttps://aka.ms/terminal\nAfter installation, open Windows Terminal and choose Ubuntu from the dropdown menu."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#update-ubuntu",
+    "href": "tutorials/01_wsl.html#update-ubuntu",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "5. Update Ubuntu",
+    "text": "5. Update Ubuntu\nInside the Ubuntu terminal, run:\nsudo apt update\nsudo apt upgrade -y\nThe first command updates the package list. The second installs available updates.\nYou can verify the Ubuntu version with:\nlsb_release -a"
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#create-a-course-workspace",
+    "href": "tutorials/01_wsl.html#create-a-course-workspace",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "6. Create a course workspace",
+    "text": "6. Create a course workspace\nFor best performance with Linux tools, keep your Linux projects inside the WSL filesystem rather than under /mnt/c/.\nCreate a folder for course projects:\nmkdir -p ~/cv_projects\ncd ~/cv_projects\nCheck your current location:\npwd\nYou should see something similar to:\n/home/your_username/cv_projects\n\n\n\n\n\n\nImportant\n\n\n\nAvoid creating separate copies of the same Conda environment in both Windows and WSL. If you are using the WSL workflow, install Conda and the course cv environment inside WSL."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#access-files-across-windows-and-ubuntu",
+    "href": "tutorials/01_wsl.html#access-files-across-windows-and-ubuntu",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "7. Access files across Windows and Ubuntu",
+    "text": "7. Access files across Windows and Ubuntu\n\nWindows files from Ubuntu\nWindows drives are mounted under /mnt/.\nFor example, your Windows C: drive is available at:\n/mnt/c/\nYour Windows Downloads folder is usually:\ncd /mnt/c/Users/YOUR_WINDOWS_USERNAME/Downloads\n\n\nUbuntu files from Windows\nOpen File Explorer and enter:\n\\\\wsl$\nYou can browse the Ubuntu filesystem from there.\nYou can also open the current Ubuntu directory in File Explorer by running:\nexplorer.exe ."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#useful-wsl-commands",
+    "href": "tutorials/01_wsl.html#useful-wsl-commands",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "8. Useful WSL commands",
+    "text": "8. Useful WSL commands\nThese commands are run from PowerShell, not from inside Ubuntu.\nList installed distributions:\nwsl --list --verbose\nStop all running WSL instances:\nwsl --shutdown\nStart your default Linux distribution:\nwsl\nRun a specific distribution:\nwsl -d Ubuntu-24.04"
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#basic-linux-commands",
+    "href": "tutorials/01_wsl.html#basic-linux-commands",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "9. Basic Linux commands",
+    "text": "9. Basic Linux commands\nYou will use these frequently:\n\n\n\nCommand\nPurpose\n\n\n\n\npwd\nShow the current directory\n\n\nls\nList files\n\n\nls -la\nList files, including hidden files\n\n\ncd folder\nEnter a directory\n\n\ncd ..\nMove up one directory\n\n\ncd ~\nGo to your Linux home directory\n\n\nmkdir folder\nCreate a directory\n\n\ncp source destination\nCopy a file\n\n\nmv source destination\nMove or rename a file\n\n\nrm file\nDelete a file\n\n\nclear\nClear the terminal\n\n\nhistory\nShow recent commands\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nLinux commands such as rm normally do not move files to a recycle bin. Double-check paths before deleting files."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#troubleshooting",
+    "href": "tutorials/01_wsl.html#troubleshooting",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "10. Troubleshooting",
+    "text": "10. Troubleshooting\n\nA command was installed but is not recognized\nClose all Ubuntu terminals, then run this from PowerShell:\nwsl --shutdown\nOpen Ubuntu again and retry.\n\n\nWSL installation is stuck\nMicrosoft documents an alternate download option:\nwsl --install --web-download -d Ubuntu-24.04\n\n\nCheck that virtualization is available\nWSL 2 requires hardware virtualization. On most modern computers it is already enabled. If WSL reports a virtualization error, check Windows Task Manager → Performance → CPU → Virtualization."
+  },
+  {
+    "objectID": "tutorials/01_wsl.html#next-steps",
+    "href": "tutorials/01_wsl.html#next-steps",
+    "title": "01 — WSL and Ubuntu on Windows",
+    "section": "Next steps",
+    "text": "Next steps\nOnce Ubuntu is working, you can install Git and the course Python/Conda environment inside WSL."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html",
+    "href": "tutorials/03_python_conda.html",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "",
+    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment file:\nhttps://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nUse this file rather than creating a separate environment with arbitrary package versions."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#why-the-course-uses-conda",
+    "href": "tutorials/03_python_conda.html#why-the-course-uses-conda",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "",
+    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment file:\nhttps://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nUse this file rather than creating a separate environment with arbitrary package versions."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#install-a-conda-distribution",
+    "href": "tutorials/03_python_conda.html#install-a-conda-distribution",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "1. Install a Conda distribution",
+    "text": "1. Install a Conda distribution\nThe recommended distribution is Miniforge, a lightweight Conda installation that uses the conda-forge package channel.\nOfficial Miniforge repository:\nhttps://github.com/conda-forge/miniforge\n\nWindows users using WSL\nInstall Miniforge inside Ubuntu/WSL, not separately in Windows.\nOpen an Ubuntu terminal and check your architecture:\nuname -m\nMost Windows PCs will report:\nx86_64\nFor x86-64 Linux/WSL:\ncurl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh\nbash Miniforge3-Linux-x86_64.sh\nRead the prompts carefully. Use the default installation location unless you have a specific reason to change it, and choose yes when asked whether Conda should initialize your shell.\nThen reload the shell:\nsource ~/.bashrc\n\n\nLinux\nThe WSL/Linux instructions above also apply to standard x86-64 Ubuntu/Linux systems.\nIf uname -m does not report x86_64, download the installer corresponding to your architecture from the Miniforge releases page.\n\n\nmacOS — Apple Silicon\nCheck the architecture:\nuname -m\nFor Apple Silicon, this normally reports arm64.\nDownload and run:\ncurl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-arm64.sh\nbash Miniforge3-MacOSX-arm64.sh\n\n\nmacOS — Intel\nFor Intel Macs:\ncurl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-MacOSX-x86_64.sh\nbash Miniforge3-MacOSX-x86_64.sh\nAfter installation on macOS, close and reopen Terminal or reload your shell configuration.\n\n\nNative Windows alternative\nWindows students are encouraged to use the WSL workflow above. If you need a native Windows Conda installation, use the Windows installer from:\nhttps://github.com/conda-forge/miniforge/releases\nUse the Miniforge Prompt for Conda commands.\n\n\n\n\n\n\nWarning\n\n\n\nDo not maintain separate Windows and WSL copies of the cv environment unless you have a specific reason to do so. If you use WSL for the course, create and use the environment inside WSL."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#verify-conda",
+    "href": "tutorials/03_python_conda.html#verify-conda",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "2. Verify Conda",
+    "text": "2. Verify Conda\nRun:\nconda --version\nYou can also list available environments:\nconda env list\nIf you prefer not to activate Conda’s base environment every time a terminal opens:\nconda config --set auto_activate_base false\nRestart the terminal after changing this option."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#download-the-course-environment-file",
+    "href": "tutorials/03_python_conda.html#download-the-course-environment-file",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "3. Download the course environment file",
+    "text": "3. Download the course environment file\nThe official environment file is stored in:\ncode/cv-environment.yml\non the main branch of the course repository.\n\nOption A — Download it directly\nRun:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nVerify that the file exists:\nls -l cv-environment.yml\n\n\nOption B — Use the file from a cloned course repository\nIf you already cloned the course repository:\ngit clone https://github.com/ariarobotics/cv.git\ncd cv/code\nThe environment file should be:\ncv-environment.yml\n\n\n\n\n\n\nNote\n\n\n\nThe same cv-environment.yml is used for Windows/WSL, Linux, and macOS. You do not need a separate cv-mac-environment.yml."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#create-the-cv-environment",
+    "href": "tutorials/03_python_conda.html#create-the-cv-environment",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "4. Create the cv environment",
+    "text": "4. Create the cv environment\nFrom the directory containing cv-environment.yml, run:\nconda env create -f cv-environment.yml\nThe environment file already specifies the name cv, so you do not need to add -n cv.\nEnvironment creation may take several minutes."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#activate-the-environment",
+    "href": "tutorials/03_python_conda.html#activate-the-environment",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "5. Activate the environment",
+    "text": "5. Activate the environment\nEvery time you work on course Python code, activate:\nconda activate cv\nYour terminal prompt should now begin with something similar to:\n(cv)\nWhen finished, you can deactivate it:\nconda deactivate"
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#verify-that-you-are-using-the-correct-python",
+    "href": "tutorials/03_python_conda.html#verify-that-you-are-using-the-correct-python",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "6. Verify that you are using the correct Python",
+    "text": "6. Verify that you are using the correct Python\nActivate the environment:\nconda activate cv\nThen check:\npython --version\nOn macOS/Linux/WSL, verify the Python executable:\nwhich python\nThe path should point into the cv Conda environment rather than your system Python.\nYou can also inspect all Conda environments:\nconda env list\nThe active environment will have an asterisk next to it."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#verify-the-main-course-packages",
+    "href": "tutorials/03_python_conda.html#verify-the-main-course-packages",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "7. Verify the main course packages",
+    "text": "7. Verify the main course packages\nWith cv activated, run:\npython -c \"import numpy as np; print('NumPy:', np.__version__)\"\nCheck OpenCV:\npython -c \"import cv2; print('OpenCV:', cv2.__version__)\"\nCheck PyTorch:\npython -c \"import torch; print('PyTorch:', torch.__version__)\"\nCheck TorchVision:\npython -c \"import torchvision; print('TorchVision:', torchvision.__version__)\"\nYou can test all four at once:\npython -c \"import cv2, torch, torchvision, numpy; print('OpenCV:', cv2.__version__); print('PyTorch:', torch.__version__); print('TorchVision:', torchvision.__version__); print('NumPy:', numpy.__version__)\"\nIf these commands run without import errors, the main course packages are installed correctly."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#confirm-that-jupyter-can-use-the-environment",
+    "href": "tutorials/03_python_conda.html#confirm-that-jupyter-can-use-the-environment",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "8. Confirm that Jupyter can use the environment",
+    "text": "8. Confirm that Jupyter can use the environment\nThe course environment includes Jupyter and ipykernel.\nWith cv activated:\npython -m ipykernel --version\nYou can also list available Jupyter kernels:\njupyter kernelspec list\nWhen opening a notebook in VS Code, choose the Python kernel associated with the cv environment."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#updating-the-environment",
+    "href": "tutorials/03_python_conda.html#updating-the-environment",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "9. Updating the environment",
+    "text": "9. Updating the environment\nIf the course environment file changes during the semester, first download the newest copy:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nThen update the existing environment:\nconda env update -n cv -f cv-environment.yml --prune\nThe --prune option removes dependencies that are no longer listed in the environment definition.\nAfter updating:\nconda deactivate\nconda activate cv"
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#useful-conda-commands",
+    "href": "tutorials/03_python_conda.html#useful-conda-commands",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "10. Useful Conda commands",
+    "text": "10. Useful Conda commands\n\n\n\nCommand\nPurpose\n\n\n\n\nconda env list\nList environments\n\n\nconda activate cv\nActivate the course environment\n\n\nconda deactivate\nDeactivate the current environment\n\n\nconda list\nList packages in the active environment\n\n\nconda list numpy\nShow the installed NumPy package\n\n\nconda env remove -n cv\nDelete the cv environment\n\n\nconda clean --all\nRemove unused caches and downloaded packages"
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#recreating-a-broken-environment",
+    "href": "tutorials/03_python_conda.html#recreating-a-broken-environment",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "11. Recreating a broken environment",
+    "text": "11. Recreating a broken environment\nIf the environment becomes badly inconsistent, it is often simpler to recreate it from the official course environment file.\nDeactivate it:\nconda deactivate\nRemove it:\nconda env remove -n cv\nDownload the current environment file if needed:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nThen recreate the environment:\nconda env create -f cv-environment.yml"
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#avoid-common-environment-problems",
+    "href": "tutorials/03_python_conda.html#avoid-common-environment-problems",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "12. Avoid common environment problems",
+    "text": "12. Avoid common environment problems\n\nDo not install course packages into base\nBefore running course code, verify:\nconda activate cv\n\n\nDo not mix Windows and WSL environments\nA Python environment installed in Windows is different from one installed inside WSL. If you use WSL, install and use the cv environment inside WSL.\n\n\nBe careful with manual package installation\nInstalling additional packages can change dependencies in the environment. If you need an extra package for a course task, use the method specified with that task.\n\n\nCheck the Python executable when something looks wrong\nOn macOS/Linux/WSL:\nwhich python\nYou can also ask Python directly:\npython -c \"import sys; print(sys.executable)\"\nThis often reveals that the wrong environment is active."
+  },
+  {
+    "objectID": "tutorials/03_python_conda.html#next-step",
+    "href": "tutorials/03_python_conda.html#next-step",
+    "title": "03 — Python and Conda Environment Setup",
+    "section": "Next step",
+    "text": "Next step\nOnce the cv environment is working, continue with the Visual Studio Code tutorial and configure VS Code to use the cv interpreter."
+  },
+  {
+    "objectID": "tutorials/05_numpy.html",
+    "href": "tutorials/05_numpy.html",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "NumPy is the core numerical array library used throughout Python computer vision. Images, coordinates, filters, features, and many geometric computations are naturally represented as NumPy arrays.\nThis notebook reviews the NumPy concepts that are especially useful in this course.\n\n\nOpen this notebook in VS Code and select the cv Conda environment as the notebook kernel.\nThe notebook is designed to be run from top to bottom. If variables become inconsistent because cells were executed out of order, restart the kernel and use Run All.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nprint(\"NumPy version:\", np.__version__)\n\n\n\n\nA NumPy array stores values of a common data type in one or more dimensions.\n\na = np.array([1, 2, 3, 4, 5])\nprint(a)\nprint(\"shape:\", a.shape)\nprint(\"dtype:\", a.dtype)\nprint(\"ndim:\", a.ndim)\n\n\n\nSome of the most common constructors are:\n\nnp.array(...)\nnp.zeros(...)\nnp.ones(...)\nnp.full(...)\nnp.arange(...)\nnp.linspace(...)\n\n\nprint(np.zeros((2, 3)))\nprint(np.ones((2, 3)))\nprint(np.full((2, 3), 7))\nprint(np.arange(0, 10, 2))\nprint(np.linspace(0, 1, 5))\n\n\n\n\n\nA grayscale image is commonly represented as:\nheight × width\nA color image is commonly represented as:\nheight × width × channels\nFor an RGB image, the channel dimension usually has size 3.\n\nimage = np.zeros((300, 400, 3), dtype=np.float32)\n\n# First 100 columns: half-strength red\nimage[:, 0:100, 0] = 0.5\n\n# Next 100 columns: full red\nimage[:, 100:200, 0] = 1.0\n\n# Add a blue region in the top half\nimage[0:150, :, 2] += 0.35\n\nplt.figure(figsize=(8, 5))\nplt.imshow(np.clip(image, 0, 1))\nplt.axis(\"off\")\nplt.show()\n\nprint(\"shape:\", image.shape)\nprint(\"dtype:\", image.dtype)\n\n\n\n\nNumPy indexing is similar to Python list indexing, but it works across multiple dimensions.\nFor a color image:\nimage[row, column, channel]\nUseful slicing examples:\nimage[:, :, 0]       # red channel\nimage[0:100, :, :]   # first 100 rows\nimage[:, 50:150, :]  # columns 50 through 149\nimage[::2, ::2, :]   # every second row and column\n\na = np.arange(1, 11)\n\nprint(\"array:\", a)\nprint(\"first:\", a[0])\nprint(\"last:\", a[-1])\nprint(\"elements 2 through 5:\", a[1:5])\nprint(\"every other element:\", a[::2])\n\n\n\nA Boolean condition can select all elements that satisfy a criterion.\n\na = np.array([4, 17, 2, 25, 8, 31])\n\nmask = a &gt; 10\n\nprint(\"mask:\", mask)\nprint(\"values &gt; 10:\", a[mask])\n\na[a &gt; 10] = 100\nprint(\"modified:\", a)\n\nBoolean indexing is extremely useful in image processing. For example, it can threshold every pixel without writing nested loops.\n\ngray = np.linspace(0, 1, 400).reshape(20, 20)\n\nbinary = gray &gt; 0.5\n\nplt.figure(figsize=(4, 4))\nplt.imshow(binary, cmap=\"gray\")\nplt.axis(\"off\")\nplt.show()\n\n\n\n\n\n\na = np.array([\n    [1, 2, 3, 4],\n    [5, 6, 7, 8]\n])\n\nprint(\"a:\")\nprint(a)\nprint(\"shape:\", a.shape)\n\nprint(\"\\na.T:\")\nprint(a.T)\nprint(\"shape:\", a.T.shape)\n\n\na = np.arange(12)\n\nprint(\"original:\", a.shape)\n\nb = a.reshape(3, 4)\nprint(\"reshaped:\")\nprint(b)\nprint(\"shape:\", b.shape)\n\nc = np.expand_dims(a, axis=0)\nprint(\"expanded shape:\", c.shape)\n\nA dimension of size 1 is sometimes important because it controls how arrays interact during broadcasting or with machine-learning libraries.\n\n\n\nArithmetic operators such as +, -, *, and / operate element-by-element.\n\na = np.array([1, 2, 3])\nb = np.array([10, 20, 30])\n\nprint(\"a + b:\", a + b)\nprint(\"a * b:\", a * b)\nprint(\"a * 5:\", a * 5)\n\n\n\nBroadcasting lets NumPy combine arrays with compatible shapes without manually repeating data.\n\nimage = np.ones((4, 5, 3))\nchannel_scale = np.array([1.0, 0.5, 0.25])\n\nscaled = image * channel_scale\n\nprint(\"image shape:\", image.shape)\nprint(\"scale shape:\", channel_scale.shape)\nprint(\"result shape:\", scaled.shape)\nprint(\"pixel:\", scaled[0, 0])\n\n\n\n\n\nFunctions such as sum, mean, min, and max can operate over the entire array or along a selected axis.\n\na = np.array([\n    [1, 2, 3],\n    [4, 5, 6]\n])\n\nprint(\"sum all:\", np.sum(a))\nprint(\"sum axis=0:\", np.sum(a, axis=0))\nprint(\"sum axis=1:\", np.sum(a, axis=1))\n\nprint(\"mean all:\", np.mean(a))\nprint(\"mean axis=0:\", np.mean(a, axis=0))\n\nFor an image with shape (H, W, 3), averaging over axis=2 combines the color channels and produces an array with shape (H, W).\n\n\n\nFor arrays A and B:\nA * B\nperforms elementwise multiplication when the shapes are compatible.\nA @ B\nor\nnp.matmul(A, B)\nperforms matrix multiplication.\n\nA = np.array([\n    [1, 2],\n    [3, 4]\n])\n\nB = np.array([\n    [5, 6],\n    [7, 8]\n])\n\nprint(\"Elementwise A * B:\")\nprint(A * B)\n\nprint(\"\\nMatrix multiplication A @ B:\")\nprint(A @ B)\n\nnp.dot has different behavior depending on the dimensionality of its inputs. For straightforward matrix multiplication in this course, @ is often the clearest notation.\n\nu = np.array([1, 2, 3])\nv = np.array([4, 5, 6])\n\nprint(\"vector dot product:\", np.dot(u, v))\nprint(\"equivalently:\", u @ v)\n\n\n\n\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\n\nprint(\"concatenate rows:\")\nprint(np.concatenate([a, b], axis=0))\n\nprint(\"\\nconcatenate columns:\")\nprint(np.concatenate([a, b], axis=1))\n\nprint(\"\\nstack new axis:\")\nprint(np.stack([a, b], axis=0).shape)\n\n\n\n\nNumPy operations are implemented efficiently in compiled code. Whenever possible, operate on entire arrays instead of iterating over individual pixels in Python.\n\nimport time\n\nrng = np.random.default_rng(0)\nA = rng.integers(0, 256, size=(800, 800), dtype=np.uint8)\n\n# Python-loop version\nloop_result = A.copy()\n\nstart = time.perf_counter()\nfor i in range(loop_result.shape[0]):\n    for j in range(loop_result.shape[1]):\n        if loop_result[i, j] &gt; 100:\n            loop_result[i, j] = 255\nloop_time = time.perf_counter() - start\n\n# Vectorized version\nvector_result = A.copy()\n\nstart = time.perf_counter()\nvector_result[vector_result &gt; 100] = 255\nvector_time = time.perf_counter() - start\n\nprint(f\"Loop:       {loop_time:.4f} s\")\nprint(f\"Vectorized: {vector_time:.6f} s\")\nprint(\"Same result:\", np.array_equal(loop_result, vector_result))\n\nThe exact timing depends on your computer, but the vectorized approach should normally be much faster and is also easier to read.\n\n\n\nRepeatedly resizing an array is inefficient because data may need to be copied each time.\nPrefer creating the final-size array first when the size is known.\n\n# Preferred when the required size is known\na = np.empty(10, dtype=np.float32)\n\nfor i in range(10):\n    a[i] = i * 0.5\n\nprint(a)\n\n\n\n\nSlicing often creates a view into the original array rather than an independent copy. Changing the slice can therefore change the original array.\n\na = np.array([1, 2, 3, 4, 5])\n\nview = a[1:4]\nview[0] = 100\n\nprint(\"view:\", view)\nprint(\"original:\", a)\n\nCreate an independent array with .copy() when you do not want later modifications to affect the original.\n\na = np.array([1, 2, 3, 4, 5])\n\nindependent = a[1:4].copy()\nindependent[0] = 100\n\nprint(\"copy:\", independent)\nprint(\"original:\", a)\n\n\n\n\nNumPy arrays have an explicit dtype.\nCommon image types include:\n\nuint8: integer values from 0 to 255;\nfloat32 or float64: often normalized to the range 0 to 1.\n\nData type and value range both matter when performing image arithmetic or displaying images.\n\nuint_image = np.array([0, 64, 128, 255], dtype=np.uint8)\nfloat_image = uint_image.astype(np.float32) / 255.0\n\nprint(uint_image, uint_image.dtype)\nprint(float_image, float_image.dtype)\n\n\n\nUnsigned 8-bit values cannot represent numbers below 0 or above 255. Arithmetic may wrap around.\n\nx = np.array([250], dtype=np.uint8)\n\nprint(\"uint8:\", x + np.array([10], dtype=np.uint8))\nprint(\"float:\", x.astype(np.float32) + 10)\n\nFor many image-processing calculations, convert to floating point before arithmetic and convert back only when needed.\n\n\n\n\nOpenCV images are NumPy arrays.\nOne important convention is that cv2.imread() loads color images in BGR channel order, while Matplotlib expects RGB.\n\nimport cv2\n\n# Example for an image file:\n#\n# image_bgr = cv2.imread(\"image.jpg\")\n# image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)\n# plt.imshow(image_rgb)\n# plt.axis(\"off\")\n# plt.show()\n#\n# print(image_bgr.shape)\n# print(image_bgr.dtype)\n\nprint(\"OpenCV version:\", cv2.__version__)\n\n\n\n\nA compact reference:\n\n\n\nFunction\nPurpose\n\n\n\n\nnp.array\nCreate an array\n\n\nnp.zeros, np.ones, np.full\nCreate initialized arrays\n\n\nnp.arange, np.linspace\nCreate numerical sequences\n\n\narr.shape\nArray dimensions\n\n\narr.dtype\nData type\n\n\narr.reshape(...)\nChange shape without changing data\n\n\narr.T, np.transpose\nReorder axes\n\n\nnp.expand_dims\nInsert a dimension\n\n\nnp.squeeze\nRemove dimensions of size 1\n\n\nnp.concatenate\nJoin arrays along an existing axis\n\n\nnp.stack\nJoin arrays along a new axis\n\n\nnp.sum, np.mean\nReductions\n\n\nnp.min, np.max\nExtrema\n\n\nnp.argmin, np.argmax\nIndex of extrema\n\n\nnp.where\nConditional selection\n\n\nnp.clip\nLimit values to a range\n\n\nnp.linalg.norm\nVector/matrix norm\n\n\n@, np.matmul\nMatrix multiplication"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#before-you-begin",
+    "href": "tutorials/05_numpy.html#before-you-begin",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "Open this notebook in VS Code and select the cv Conda environment as the notebook kernel.\nThe notebook is designed to be run from top to bottom. If variables become inconsistent because cells were executed out of order, restart the kernel and use Run All.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nprint(\"NumPy version:\", np.__version__)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#arrays",
+    "href": "tutorials/05_numpy.html#arrays",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "A NumPy array stores values of a common data type in one or more dimensions.\n\na = np.array([1, 2, 3, 4, 5])\nprint(a)\nprint(\"shape:\", a.shape)\nprint(\"dtype:\", a.dtype)\nprint(\"ndim:\", a.ndim)\n\n\n\nSome of the most common constructors are:\n\nnp.array(...)\nnp.zeros(...)\nnp.ones(...)\nnp.full(...)\nnp.arange(...)\nnp.linspace(...)\n\n\nprint(np.zeros((2, 3)))\nprint(np.ones((2, 3)))\nprint(np.full((2, 3), 7))\nprint(np.arange(0, 10, 2))\nprint(np.linspace(0, 1, 5))"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#images-are-arrays",
+    "href": "tutorials/05_numpy.html#images-are-arrays",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "A grayscale image is commonly represented as:\nheight × width\nA color image is commonly represented as:\nheight × width × channels\nFor an RGB image, the channel dimension usually has size 3.\n\nimage = np.zeros((300, 400, 3), dtype=np.float32)\n\n# First 100 columns: half-strength red\nimage[:, 0:100, 0] = 0.5\n\n# Next 100 columns: full red\nimage[:, 100:200, 0] = 1.0\n\n# Add a blue region in the top half\nimage[0:150, :, 2] += 0.35\n\nplt.figure(figsize=(8, 5))\nplt.imshow(np.clip(image, 0, 1))\nplt.axis(\"off\")\nplt.show()\n\nprint(\"shape:\", image.shape)\nprint(\"dtype:\", image.dtype)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#indexing-and-slicing",
+    "href": "tutorials/05_numpy.html#indexing-and-slicing",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "NumPy indexing is similar to Python list indexing, but it works across multiple dimensions.\nFor a color image:\nimage[row, column, channel]\nUseful slicing examples:\nimage[:, :, 0]       # red channel\nimage[0:100, :, :]   # first 100 rows\nimage[:, 50:150, :]  # columns 50 through 149\nimage[::2, ::2, :]   # every second row and column\n\na = np.arange(1, 11)\n\nprint(\"array:\", a)\nprint(\"first:\", a[0])\nprint(\"last:\", a[-1])\nprint(\"elements 2 through 5:\", a[1:5])\nprint(\"every other element:\", a[::2])\n\n\n\nA Boolean condition can select all elements that satisfy a criterion.\n\na = np.array([4, 17, 2, 25, 8, 31])\n\nmask = a &gt; 10\n\nprint(\"mask:\", mask)\nprint(\"values &gt; 10:\", a[mask])\n\na[a &gt; 10] = 100\nprint(\"modified:\", a)\n\nBoolean indexing is extremely useful in image processing. For example, it can threshold every pixel without writing nested loops.\n\ngray = np.linspace(0, 1, 400).reshape(20, 20)\n\nbinary = gray &gt; 0.5\n\nplt.figure(figsize=(4, 4))\nplt.imshow(binary, cmap=\"gray\")\nplt.axis(\"off\")\nplt.show()"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#shape-transpose-reshape-and-dimensions",
+    "href": "tutorials/05_numpy.html#shape-transpose-reshape-and-dimensions",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "a = np.array([\n    [1, 2, 3, 4],\n    [5, 6, 7, 8]\n])\n\nprint(\"a:\")\nprint(a)\nprint(\"shape:\", a.shape)\n\nprint(\"\\na.T:\")\nprint(a.T)\nprint(\"shape:\", a.T.shape)\n\n\na = np.arange(12)\n\nprint(\"original:\", a.shape)\n\nb = a.reshape(3, 4)\nprint(\"reshaped:\")\nprint(b)\nprint(\"shape:\", b.shape)\n\nc = np.expand_dims(a, axis=0)\nprint(\"expanded shape:\", c.shape)\n\nA dimension of size 1 is sometimes important because it controls how arrays interact during broadcasting or with machine-learning libraries."
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#arithmetic-and-broadcasting",
+    "href": "tutorials/05_numpy.html#arithmetic-and-broadcasting",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "Arithmetic operators such as +, -, *, and / operate element-by-element.\n\na = np.array([1, 2, 3])\nb = np.array([10, 20, 30])\n\nprint(\"a + b:\", a + b)\nprint(\"a * b:\", a * b)\nprint(\"a * 5:\", a * 5)\n\n\n\nBroadcasting lets NumPy combine arrays with compatible shapes without manually repeating data.\n\nimage = np.ones((4, 5, 3))\nchannel_scale = np.array([1.0, 0.5, 0.25])\n\nscaled = image * channel_scale\n\nprint(\"image shape:\", image.shape)\nprint(\"scale shape:\", channel_scale.shape)\nprint(\"result shape:\", scaled.shape)\nprint(\"pixel:\", scaled[0, 0])"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#reductions-and-the-axis-argument",
+    "href": "tutorials/05_numpy.html#reductions-and-the-axis-argument",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "Functions such as sum, mean, min, and max can operate over the entire array or along a selected axis.\n\na = np.array([\n    [1, 2, 3],\n    [4, 5, 6]\n])\n\nprint(\"sum all:\", np.sum(a))\nprint(\"sum axis=0:\", np.sum(a, axis=0))\nprint(\"sum axis=1:\", np.sum(a, axis=1))\n\nprint(\"mean all:\", np.mean(a))\nprint(\"mean axis=0:\", np.mean(a, axis=0))\n\nFor an image with shape (H, W, 3), averaging over axis=2 combines the color channels and produces an array with shape (H, W)."
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#matrix-multiplication-vs.-elementwise-multiplication",
+    "href": "tutorials/05_numpy.html#matrix-multiplication-vs.-elementwise-multiplication",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "For arrays A and B:\nA * B\nperforms elementwise multiplication when the shapes are compatible.\nA @ B\nor\nnp.matmul(A, B)\nperforms matrix multiplication.\n\nA = np.array([\n    [1, 2],\n    [3, 4]\n])\n\nB = np.array([\n    [5, 6],\n    [7, 8]\n])\n\nprint(\"Elementwise A * B:\")\nprint(A * B)\n\nprint(\"\\nMatrix multiplication A @ B:\")\nprint(A @ B)\n\nnp.dot has different behavior depending on the dimensionality of its inputs. For straightforward matrix multiplication in this course, @ is often the clearest notation.\n\nu = np.array([1, 2, 3])\nv = np.array([4, 5, 6])\n\nprint(\"vector dot product:\", np.dot(u, v))\nprint(\"equivalently:\", u @ v)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#concatenating-and-stacking-arrays",
+    "href": "tutorials/05_numpy.html#concatenating-and-stacking-arrays",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "a = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\n\nprint(\"concatenate rows:\")\nprint(np.concatenate([a, b], axis=0))\n\nprint(\"\\nconcatenate columns:\")\nprint(np.concatenate([a, b], axis=1))\n\nprint(\"\\nstack new axis:\")\nprint(np.stack([a, b], axis=0).shape)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#vectorization-avoid-unnecessary-python-loops",
+    "href": "tutorials/05_numpy.html#vectorization-avoid-unnecessary-python-loops",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "NumPy operations are implemented efficiently in compiled code. Whenever possible, operate on entire arrays instead of iterating over individual pixels in Python.\n\nimport time\n\nrng = np.random.default_rng(0)\nA = rng.integers(0, 256, size=(800, 800), dtype=np.uint8)\n\n# Python-loop version\nloop_result = A.copy()\n\nstart = time.perf_counter()\nfor i in range(loop_result.shape[0]):\n    for j in range(loop_result.shape[1]):\n        if loop_result[i, j] &gt; 100:\n            loop_result[i, j] = 255\nloop_time = time.perf_counter() - start\n\n# Vectorized version\nvector_result = A.copy()\n\nstart = time.perf_counter()\nvector_result[vector_result &gt; 100] = 255\nvector_time = time.perf_counter() - start\n\nprint(f\"Loop:       {loop_time:.4f} s\")\nprint(f\"Vectorized: {vector_time:.6f} s\")\nprint(\"Same result:\", np.array_equal(loop_result, vector_result))\n\nThe exact timing depends on your computer, but the vectorized approach should normally be much faster and is also easier to read."
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#preallocation",
+    "href": "tutorials/05_numpy.html#preallocation",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "Repeatedly resizing an array is inefficient because data may need to be copied each time.\nPrefer creating the final-size array first when the size is known.\n\n# Preferred when the required size is known\na = np.empty(10, dtype=np.float32)\n\nfor i in range(10):\n    a[i] = i * 0.5\n\nprint(a)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#views-and-copies",
+    "href": "tutorials/05_numpy.html#views-and-copies",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "Slicing often creates a view into the original array rather than an independent copy. Changing the slice can therefore change the original array.\n\na = np.array([1, 2, 3, 4, 5])\n\nview = a[1:4]\nview[0] = 100\n\nprint(\"view:\", view)\nprint(\"original:\", a)\n\nCreate an independent array with .copy() when you do not want later modifications to affect the original.\n\na = np.array([1, 2, 3, 4, 5])\n\nindependent = a[1:4].copy()\nindependent[0] = 100\n\nprint(\"copy:\", independent)\nprint(\"original:\", a)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#data-types-and-pixel-ranges",
+    "href": "tutorials/05_numpy.html#data-types-and-pixel-ranges",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "NumPy arrays have an explicit dtype.\nCommon image types include:\n\nuint8: integer values from 0 to 255;\nfloat32 or float64: often normalized to the range 0 to 1.\n\nData type and value range both matter when performing image arithmetic or displaying images.\n\nuint_image = np.array([0, 64, 128, 255], dtype=np.uint8)\nfloat_image = uint_image.astype(np.float32) / 255.0\n\nprint(uint_image, uint_image.dtype)\nprint(float_image, float_image.dtype)\n\n\n\nUnsigned 8-bit values cannot represent numbers below 0 or above 255. Arithmetic may wrap around.\n\nx = np.array([250], dtype=np.uint8)\n\nprint(\"uint8:\", x + np.array([10], dtype=np.uint8))\nprint(\"float:\", x.astype(np.float32) + 10)\n\nFor many image-processing calculations, convert to floating point before arithmetic and convert back only when needed."
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#numpy-and-opencv",
+    "href": "tutorials/05_numpy.html#numpy-and-opencv",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "OpenCV images are NumPy arrays.\nOne important convention is that cv2.imread() loads color images in BGR channel order, while Matplotlib expects RGB.\n\nimport cv2\n\n# Example for an image file:\n#\n# image_bgr = cv2.imread(\"image.jpg\")\n# image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)\n# plt.imshow(image_rgb)\n# plt.axis(\"off\")\n# plt.show()\n#\n# print(image_bgr.shape)\n# print(image_bgr.dtype)\n\nprint(\"OpenCV version:\", cv2.__version__)"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#useful-numpy-functions",
+    "href": "tutorials/05_numpy.html#useful-numpy-functions",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "",
+    "text": "A compact reference:\n\n\n\nFunction\nPurpose\n\n\n\n\nnp.array\nCreate an array\n\n\nnp.zeros, np.ones, np.full\nCreate initialized arrays\n\n\nnp.arange, np.linspace\nCreate numerical sequences\n\n\narr.shape\nArray dimensions\n\n\narr.dtype\nData type\n\n\narr.reshape(...)\nChange shape without changing data\n\n\narr.T, np.transpose\nReorder axes\n\n\nnp.expand_dims\nInsert a dimension\n\n\nnp.squeeze\nRemove dimensions of size 1\n\n\nnp.concatenate\nJoin arrays along an existing axis\n\n\nnp.stack\nJoin arrays along a new axis\n\n\nnp.sum, np.mean\nReductions\n\n\nnp.min, np.max\nExtrema\n\n\nnp.argmin, np.argmax\nIndex of extrema\n\n\nnp.where\nConditional selection\n\n\nnp.clip\nLimit values to a range\n\n\nnp.linalg.norm\nVector/matrix norm\n\n\n@, np.matmul\nMatrix multiplication"
+  },
+  {
+    "objectID": "tutorials/05_numpy.html#additional-reference",
+    "href": "tutorials/05_numpy.html#additional-reference",
+    "title": "05 — NumPy for Computer Vision",
+    "section": "Additional reference",
+    "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
+  }
+]

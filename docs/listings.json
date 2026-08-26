@@ -1,0 +1,19 @@
+[
+  {
+    "listing": "/tutorials/index.html",
+    "items": [
+      "/tutorials/01_wsl.html",
+      "/tutorials/02_git_github.html",
+      "/tutorials/03_python_conda.html",
+      "/tutorials/04_vscode.html",
+      "/tutorials/05_numpy.html"
+    ]
+  },
+  {
+    "listing": "/lectures/index.html",
+    "items": [
+      "/lectures/01_intro.html",
+      "/lectures/02_image.html"
+    ]
+  }
+]

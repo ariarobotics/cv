@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Configure VS Code to use the course cv Conda environment, WSL, notebooks, and the Python debugger.">
+
+<title>04 — Visual Studio Code – Computer Vision</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e1f6b5b6641ef8455c08f02648c34504.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Computer Vision</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tas.html"> 
+<span class="menu-text">TAs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tutorials/"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lectures/"> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#vs-code-for-this-course" id="toc-vs-code-for-this-course" class="nav-link active" data-scroll-target="#vs-code-for-this-course">VS Code for this course</a></li>
+  <li><a href="#install-vs-code" id="toc-install-vs-code" class="nav-link" data-scroll-target="#install-vs-code">1. Install VS Code</a>
+  <ul class="collapse">
+  <li><a href="#windows-wsl" id="toc-windows-wsl" class="nav-link" data-scroll-target="#windows-wsl">Windows + WSL</a></li>
+  </ul></li>
+  <li><a href="#install-the-recommended-extensions" id="toc-install-the-recommended-extensions" class="nav-link" data-scroll-target="#install-the-recommended-extensions">2. Install the recommended extensions</a></li>
+  <li><a href="#create-a-course-projects-folder" id="toc-create-a-course-projects-folder" class="nav-link" data-scroll-target="#create-a-course-projects-folder">3. Create a course projects folder</a>
+  <ul class="collapse">
+  <li><a href="#windows-wsl-1" id="toc-windows-wsl-1" class="nav-link" data-scroll-target="#windows-wsl-1">Windows + WSL</a></li>
+  <li><a href="#macoslinux" id="toc-macoslinux" class="nav-link" data-scroll-target="#macoslinux">macOS/Linux</a></li>
+  </ul></li>
+  <li><a href="#confirm-the-integrated-terminal" id="toc-confirm-the-integrated-terminal" class="nav-link" data-scroll-target="#confirm-the-integrated-terminal">4. Confirm the integrated terminal</a></li>
+  <li><a href="#select-the-cv-python-interpreter" id="toc-select-the-cv-python-interpreter" class="nav-link" data-scroll-target="#select-the-cv-python-interpreter">5. Select the <code>cv</code> Python interpreter</a></li>
+  <li><a href="#if-vs-code-cannot-find-the-environment" id="toc-if-vs-code-cannot-find-the-environment" class="nav-link" data-scroll-target="#if-vs-code-cannot-find-the-environment">6. If VS Code cannot find the environment</a></li>
+  <li><a href="#test-the-environment" id="toc-test-the-environment" class="nav-link" data-scroll-target="#test-the-environment">7. Test the environment</a></li>
+  <li><a href="#working-with-notebooks" id="toc-working-with-notebooks" class="nav-link" data-scroll-target="#working-with-notebooks">8. Working with notebooks</a></li>
+  <li><a href="#debugging-python" id="toc-debugging-python" class="nav-link" data-scroll-target="#debugging-python">9. Debugging Python</a>
+  <ul class="collapse">
+  <li><a href="#set-a-breakpoint" id="toc-set-a-breakpoint" class="nav-link" data-scroll-target="#set-a-breakpoint">Set a breakpoint</a></li>
+  <li><a href="#start-debugging" id="toc-start-debugging" class="nav-link" data-scroll-target="#start-debugging">Start debugging</a></li>
+  <li><a href="#debugger-controls" id="toc-debugger-controls" class="nav-link" data-scroll-target="#debugger-controls">Debugger controls</a></li>
+  </ul></li>
+  <li><a href="#a-useful-debugging-example" id="toc-a-useful-debugging-example" class="nav-link" data-scroll-target="#a-useful-debugging-example">10. A useful debugging example</a></li>
+  <li><a href="#recommended-vs-code-workflow" id="toc-recommended-vs-code-workflow" class="nav-link" data-scroll-target="#recommended-vs-code-workflow">11. Recommended VS Code workflow</a></li>
+  <li><a href="#common-problems" id="toc-common-problems" class="nav-link" data-scroll-target="#common-problems">12. Common problems</a>
+  <ul class="collapse">
+  <li><a href="#python-works-in-the-terminal-but-not-when-using-the-run-button" id="toc-python-works-in-the-terminal-but-not-when-using-the-run-button" class="nav-link" data-scroll-target="#python-works-in-the-terminal-but-not-when-using-the-run-button">Python works in the terminal but not when using the Run button</a></li>
+  <li><a href="#notebook-imports-fail-but-python-scripts-work" id="toc-notebook-imports-fail-but-python-scripts-work" class="nav-link" data-scroll-target="#notebook-imports-fail-but-python-scripts-work">Notebook imports fail but Python scripts work</a></li>
+  <li><a href="#windows-user-sees-windows-paths-instead-of-linux-paths" id="toc-windows-user-sees-windows-paths-instead-of-linux-paths" class="nav-link" data-scroll-target="#windows-user-sees-windows-paths-instead-of-linux-paths">Windows user sees Windows paths instead of Linux paths</a></li>
+  <li><a href="#the-debugger-runs-the-wrong-python-version" id="toc-the-debugger-runs-the-wrong-python-version" class="nav-link" data-scroll-target="#the-debugger-runs-the-wrong-python-version">The debugger runs the wrong Python version</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">04 — Visual Studio Code</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Setup</div>
+    <div class="quarto-category">VS Code</div>
+    <div class="quarto-category">Python</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Configure VS Code to use the course cv Conda environment, WSL, notebooks, and the Python debugger.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="vs-code-for-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="vs-code-for-this-course">VS Code for this course</h2>
+<p>Visual Studio Code (VS Code) is the officially supported IDE for this course.</p>
+<p>Download it from:</p>
+<p><a href="https://code.visualstudio.com/" class="uri">https://code.visualstudio.com/</a></p>
+<p>This guide assumes that you have already created the course Conda environment named <code>cv</code>.</p>
+</section>
+<section id="install-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="install-vs-code">1. Install VS Code</h2>
+<p>Install VS Code on your main operating system.</p>
+<section id="windows-wsl" class="level3">
+<h3 class="anchored" data-anchor-id="windows-wsl">Windows + WSL</h3>
+<p>Install <strong>VS Code on Windows</strong>. Do not install a separate Linux copy of the VS Code desktop application inside WSL.</p>
+<p>The VS Code WSL extension will allow the Windows application to work directly with files and tools inside Ubuntu.</p>
+<p>Official WSL documentation:</p>
+<p><a href="https://code.visualstudio.com/docs/remote/wsl-tutorial" class="uri">https://code.visualstudio.com/docs/remote/wsl-tutorial</a></p>
+</section>
+</section>
+<section id="install-the-recommended-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="install-the-recommended-extensions">2. Install the recommended extensions</h2>
+<p>Open the Extensions view using the left sidebar or:</p>
+<pre class="text"><code>Ctrl+Shift+X</code></pre>
+<p>Install these Microsoft extensions:</p>
+<ul>
+<li><strong>Python</strong></li>
+<li><strong>Pylance</strong></li>
+<li><strong>Jupyter</strong></li>
+</ul>
+<p>Windows users using WSL should also install:</p>
+<ul>
+<li><strong>WSL</strong></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When VS Code suggests installing Python-related extensions the first time you open a <code>.py</code> file, accept the recommendation.</p>
+</div>
+</div>
+</section>
+<section id="create-a-course-projects-folder" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-course-projects-folder">3. Create a course projects folder</h2>
+<p>Keeping course projects together makes environments and file paths easier to manage.</p>
+<section id="windows-wsl-1" class="level3">
+<h3 class="anchored" data-anchor-id="windows-wsl-1">Windows + WSL</h3>
+<p>Inside Ubuntu:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/cv_projects</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/cv_projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open the folder in VS Code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>VS Code should open a new window connected to WSL.</p>
+<p>Look at the bottom-left corner of VS Code. It should indicate that the window is connected to WSL, for example:</p>
+<pre class="text"><code>WSL: Ubuntu</code></pre>
+</section>
+<section id="macoslinux" class="level3">
+<h3 class="anchored" data-anchor-id="macoslinux">macOS/Linux</h3>
+<p>Create a projects folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/cv_projects</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/cv_projects</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can also use <strong>File → Open Folder</strong> from VS Code.</p>
+</section>
+</section>
+<section id="confirm-the-integrated-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="confirm-the-integrated-terminal">4. Confirm the integrated terminal</h2>
+<p>Open a VS Code terminal:</p>
+<p><strong>Terminal → New Terminal</strong></p>
+<p>or:</p>
+<pre class="text"><code>Ctrl+`</code></pre>
+<p>On Windows with WSL, this terminal should be running inside Ubuntu.</p>
+<p>Check:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then activate the course environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="select-the-cv-python-interpreter" class="level2">
+<h2 class="anchored" data-anchor-id="select-the-cv-python-interpreter">5. Select the <code>cv</code> Python interpreter</h2>
+<p>Open a Python file, then open the Command Palette:</p>
+<pre class="text"><code>Ctrl+Shift+P</code></pre>
+<p>Search for:</p>
+<pre class="text"><code>Python: Select Interpreter</code></pre>
+<p>Choose the interpreter associated with the Conda environment:</p>
+<pre class="text"><code>cv</code></pre>
+<p>The exact Python version shown next to the environment may change as the course environment is updated. The important part is that the selected environment is <strong><code>cv</code></strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not select an interpreter simply because its Python version looks correct. Make sure it belongs to the <code>cv</code> Conda environment.</p>
+</div>
+</div>
+</section>
+<section id="if-vs-code-cannot-find-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="if-vs-code-cannot-find-the-environment">6. If VS Code cannot find the environment</h2>
+<p>Activate the environment in a terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>On macOS/Linux/WSL, run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copy the returned path.</p>
+<p>Then in VS Code:</p>
+<ol type="1">
+<li>Open <strong>Python: Select Interpreter</strong>.</li>
+<li>Choose <strong>Enter interpreter path</strong> if necessary.</li>
+<li>Select or paste the Python path from the <code>cv</code> environment.</li>
+</ol>
+<p>You can verify the selected interpreter in the integrated terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys; print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="test-the-environment" class="level2">
+<h2 class="anchored" data-anchor-id="test-the-environment">7. Test the environment</h2>
+<p>Create a file named:</p>
+<pre class="text"><code>test_environment.py</code></pre>
+<p>Add:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy:"</span>, np.__version__)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"OpenCV:"</span>, cv2.__version__)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run the file using the <strong>Run Python File</strong> button or from the terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_environment.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the imports work, VS Code is using an environment with the required packages.</p>
+</section>
+<section id="working-with-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-notebooks">8. Working with notebooks</h2>
+<p>Open a <code>.ipynb</code> file in VS Code.</p>
+<p>At the top-right of the notebook, choose <strong>Select Kernel</strong> and select the Python environment associated with:</p>
+<pre class="text"><code>cv</code></pre>
+<p>Run a cell such as:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The printed path should point into the <code>cv</code> environment.</p>
+</section>
+<section id="debugging-python" class="level2">
+<h2 class="anchored" data-anchor-id="debugging-python">9. Debugging Python</h2>
+<p>The VS Code debugger lets you pause code, inspect variables, and step through execution. This is often much more useful than adding many <code>print()</code> statements.</p>
+<section id="set-a-breakpoint" class="level3">
+<h3 class="anchored" data-anchor-id="set-a-breakpoint">Set a breakpoint</h3>
+<p>Click in the margin to the left of a line number. A red dot indicates a breakpoint.</p>
+</section>
+<section id="start-debugging" class="level3">
+<h3 class="anchored" data-anchor-id="start-debugging">Start debugging</h3>
+<p>Press:</p>
+<pre class="text"><code>F5</code></pre>
+<p>If VS Code asks for a debug configuration, choose:</p>
+<pre class="text"><code>Python File</code></pre>
+</section>
+<section id="debugger-controls" class="level3">
+<h3 class="anchored" data-anchor-id="debugger-controls">Debugger controls</h3>
+<p>The debugger lets you:</p>
+<ul>
+<li><strong>Continue</strong> — run until the next breakpoint;</li>
+<li><strong>Step Over</strong> — execute the current line without entering called functions;</li>
+<li><strong>Step Into</strong> — enter a called function;</li>
+<li><strong>Step Out</strong> — finish the current function and return to its caller;</li>
+<li><strong>Restart</strong> — restart the debugging session;</li>
+<li><strong>Stop</strong> — end the session.</li>
+</ul>
+<p>The <strong>Variables</strong> panel shows local and global variables while execution is paused.</p>
+<p>The <strong>Debug Console</strong> can evaluate Python expressions using the current program state.</p>
+</section>
+</section>
+<section id="a-useful-debugging-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-useful-debugging-example">10. A useful debugging example</h2>
+<p>Create:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> np.zeros((<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>image[:, :<span class="dv">100</span>, <span class="dv">0</span>] <span class="op">=</span> <span class="dv">255</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>mean_value <span class="op">=</span> image.mean()</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mean_value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Set a breakpoint on:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mean_value <span class="op">=</span> image.mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Start debugging with <code>F5</code>.</p>
+<p>While paused, inspect:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>image.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>image.dtype</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>in the Debug Console.</p>
+<p>This is especially useful when working with images because shape and data type errors are common.</p>
+</section>
+<section id="recommended-vs-code-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-vs-code-workflow">11. Recommended VS Code workflow</h2>
+<p>For a typical course programming session:</p>
+<ol type="1">
+<li>Open your project folder in VS Code.</li>
+<li>Verify that Windows users are connected to <strong>WSL</strong>.</li>
+<li>Open the integrated terminal.</li>
+<li>Run <code>conda activate cv</code>.</li>
+<li>Verify that the selected Python interpreter is <code>cv</code>.</li>
+<li>Pull recent Git changes if applicable.</li>
+<li>Write and test code.</li>
+<li>Use the debugger when behavior is unclear.</li>
+<li>Commit and push your work.</li>
+</ol>
+</section>
+<section id="common-problems" class="level2">
+<h2 class="anchored" data-anchor-id="common-problems">12. Common problems</h2>
+<section id="python-works-in-the-terminal-but-not-when-using-the-run-button" class="level3">
+<h3 class="anchored" data-anchor-id="python-works-in-the-terminal-but-not-when-using-the-run-button">Python works in the terminal but not when using the Run button</h3>
+<p>VS Code is probably using a different interpreter.</p>
+<p>Use:</p>
+<pre class="text"><code>Python: Select Interpreter</code></pre>
+<p>and choose <code>cv</code>.</p>
+</section>
+<section id="notebook-imports-fail-but-python-scripts-work" class="level3">
+<h3 class="anchored" data-anchor-id="notebook-imports-fail-but-python-scripts-work">Notebook imports fail but Python scripts work</h3>
+<p>The notebook kernel may be different from the selected Python interpreter.</p>
+<p>Use <strong>Select Kernel</strong> in the notebook and choose <code>cv</code>.</p>
+</section>
+<section id="windows-user-sees-windows-paths-instead-of-linux-paths" class="level3">
+<h3 class="anchored" data-anchor-id="windows-user-sees-windows-paths-instead-of-linux-paths">Windows user sees Windows paths instead of Linux paths</h3>
+<p>Make sure the VS Code window is connected to WSL. The bottom-left status area should indicate a WSL connection.</p>
+<p>A reliable way to open the correct environment is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/cv_projects</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>from an Ubuntu/WSL terminal.</p>
+</section>
+<section id="the-debugger-runs-the-wrong-python-version" class="level3">
+<h3 class="anchored" data-anchor-id="the-debugger-runs-the-wrong-python-version">The debugger runs the wrong Python version</h3>
+<p>Check:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then reselect the <code>cv</code> interpreter.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

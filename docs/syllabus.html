@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Computer Vision — Fall 2026 – Computer Vision</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4f89106398f917ea1ddfe100a25665dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Computer Vision</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./syllabus.html" aria-current="page"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tas.html"> 
+<span class="menu-text">TAs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorials/"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./lectures/"> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#course-overview" id="toc-course-overview" class="nav-link active" data-scroll-target="#course-overview">Course Overview</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course Description</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  </ul></li>
+  <li><a href="#assessments-and-grading" id="toc-assessments-and-grading" class="nav-link" data-scroll-target="#assessments-and-grading">Assessments and Grading</a>
+  <ul class="collapse">
+  <li><a href="#homework-60-points" id="toc-homework-60-points" class="nav-link" data-scroll-target="#homework-60-points">Homework — 60 points</a></li>
+  <li><a href="#exams-40-points" id="toc-exams-40-points" class="nav-link" data-scroll-target="#exams-40-points">Exams — 40 points</a></li>
+  <li><a href="#bonus-points-up-to-10-points" id="toc-bonus-points-up-to-10-points" class="nav-link" data-scroll-target="#bonus-points-up-to-10-points">Bonus Points — up to 10 points</a></li>
+  <li><a href="#attendance" id="toc-attendance" class="nav-link" data-scroll-target="#attendance">Attendance</a></li>
+  </ul></li>
+  <li><a href="#final-grade" id="toc-final-grade" class="nav-link" data-scroll-target="#final-grade">Final Grade</a>
+  <ul class="collapse">
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  </ul></li>
+  <li><a href="#logistics" id="toc-logistics" class="nav-link" data-scroll-target="#logistics">Logistics</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#recommended-books" id="toc-recommended-books" class="nav-link" data-scroll-target="#recommended-books">Recommended Books</a></li>
+  </ul></li>
+  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link" data-scroll-target="#course-schedule">Course Schedule</a></li>
+  <li><a href="#policy-on-missed-classes-exams-or-late-assignments" id="toc-policy-on-missed-classes-exams-or-late-assignments" class="nav-link" data-scroll-target="#policy-on-missed-classes-exams-or-late-assignments">Policy on Missed Classes, Exams, or Late Assignments</a></li>
+  <li><a href="#other-important-course-policies" id="toc-other-important-course-policies" class="nav-link" data-scroll-target="#other-important-course-policies">Other Important Course Policies</a></li>
+  <li><a href="#mines-policies-campus-resources" id="toc-mines-policies-campus-resources" class="nav-link" data-scroll-target="#mines-policies-campus-resources">Mines Policies &amp; Campus Resources</a>
+  <ul class="collapse">
+  <li><a href="#absences" id="toc-absences" class="nav-link" data-scroll-target="#absences">Absences</a></li>
+  <li><a href="#sexual-misconduct-discrimination-and-retaliation" id="toc-sexual-misconduct-discrimination-and-retaliation" class="nav-link" data-scroll-target="#sexual-misconduct-discrimination-and-retaliation">Sexual Misconduct, Discrimination, and Retaliation</a></li>
+  <li><a href="#preferred-first-name" id="toc-preferred-first-name" class="nav-link" data-scroll-target="#preferred-first-name">Preferred First Name</a></li>
+  <li><a href="#pregnant-and-parenting-students" id="toc-pregnant-and-parenting-students" class="nav-link" data-scroll-target="#pregnant-and-parenting-students">Pregnant and Parenting Students</a></li>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
+  <li><a href="#generative-artificial-intelligence" id="toc-generative-artificial-intelligence" class="nav-link" data-scroll-target="#generative-artificial-intelligence">Generative Artificial Intelligence</a></li>
+  <li><a href="#copyrighted-materials" id="toc-copyrighted-materials" class="nav-link" data-scroll-target="#copyrighted-materials">Copyrighted Materials</a></li>
+  <li><a href="#grading-policy" id="toc-grading-policy" class="nav-link" data-scroll-target="#grading-policy">Grading Policy</a></li>
+  <li><a href="#course-issues-and-concerns" id="toc-course-issues-and-concerns" class="nav-link" data-scroll-target="#course-issues-and-concerns">Course Issues and Concerns</a></li>
+  <li><a href="#disability-support-services" id="toc-disability-support-services" class="nav-link" data-scroll-target="#disability-support-services">Disability Support Services</a></li>
+  <li><a href="#digital-accessibility" id="toc-digital-accessibility" class="nav-link" data-scroll-target="#digital-accessibility">Digital Accessibility</a></li>
+  <li><a href="#student-outreach-support-sos-resources" id="toc-student-outreach-support-sos-resources" class="nav-link" data-scroll-target="#student-outreach-support-sos-resources">Student Outreach &amp; Support (SOS) Resources</a></li>
+  <li><a href="#center-for-academic-services-and-advising-casa" id="toc-center-for-academic-services-and-advising-casa" class="nav-link" data-scroll-target="#center-for-academic-services-and-advising-casa">Center for Academic Services and Advising (CASA)</a></li>
+  <li><a href="#writing-center" id="toc-writing-center" class="nav-link" data-scroll-target="#writing-center">Writing Center</a></li>
+  <li><a href="#tutoring-resources" id="toc-tutoring-resources" class="nav-link" data-scroll-target="#tutoring-resources">Tutoring Resources</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Computer Vision — Fall 2026</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="images/cv-banner.png" class="img-fluid" style="width:100.0%"></p>
+<section id="course-overview" class="level2">
+<h2 class="anchored" data-anchor-id="course-overview">Course Overview</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Course Code</strong></td>
+<td>CSCI/EENG/ROBO 437/507/517</td>
+</tr>
+<tr class="even">
+<td><strong>Semester</strong></td>
+<td>Fall 2026, August 24 – December 9</td>
+</tr>
+<tr class="odd">
+<td><strong>Credit Hours</strong></td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td><strong>Class Meeting Times</strong></td>
+<td>3:00–4:15 PM, Monday and Wednesday</td>
+</tr>
+<tr class="odd">
+<td><strong>Class Location</strong></td>
+<td>CoorsTek 130</td>
+</tr>
+</tbody>
+</table>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Linear algebra, calculus, probability, and statistics</li>
+<li>Algorithms and Python (or C++). We require you to program in <strong>Python</strong>.</li>
+</ul>
+<p><strong>Course Website:</strong> <a href="https://ariarobotics.github.io/cv/" class="uri">https://ariarobotics.github.io/cv/</a></p>
+<p><strong>Course Repository:</strong> <a href="https://github.com/ariarobotics/cv" class="uri">https://github.com/ariarobotics/cv</a></p>
+</section>
+</section>
+<section id="instructor" class="level2">
+<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
+<div class="columns">
+<div class="column" style="width:18%;">
+<p><img src="images/kaveh-fathian.jpeg" class="img-fluid" width="140"></p>
+</div><div class="column" style="width:78%;">
+<p><strong>Kaveh Fathian</strong><br>
+Assistant Professor, Computer Science Department</p>
+<ul>
+<li><strong>Office:</strong> Brown 280-N</li>
+<li><strong>Office hours:</strong> Monday/Wednesday, 4:15–5:00 PM (after class)</li>
+<li><strong>Lab website:</strong> <a href="https://www.ariarobotics.com/" class="uri">https://www.ariarobotics.com/</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>Computer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.</p>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<ul>
+<li>CLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.</li>
+<li>CLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.</li>
+<li>CLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.</li>
+<li>CLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.</li>
+<li>CLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.</li>
+<li>CLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.</li>
+<li>CLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data.</li>
+</ul>
+</section>
+</section>
+<section id="assessments-and-grading" class="level2">
+<h2 class="anchored" data-anchor-id="assessments-and-grading">Assessments and Grading</h2>
+<section id="homework-60-points" class="level3">
+<h3 class="anchored" data-anchor-id="homework-60-points">Homework — 60 points</h3>
+<p>There will be up to <strong>12 homework assignments</strong>. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework <strong>individually</strong>. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will <strong>not</strong> be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The <strong>lowest homework grade</strong>, including a missed assignment, will automatically be dropped and will not count toward the final grade. <strong>Two or more missed homework assignments will result in an Incomplete grade.</strong></p>
+</section>
+<section id="exams-40-points" class="level3">
+<h3 class="anchored" data-anchor-id="exams-40-points">Exams — 40 points</h3>
+<p>There will be <strong>4 exams</strong> scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered <strong>in person, in the classroom</strong>. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The <strong>lowest exam grade</strong>, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. <strong>Documentation</strong> must be provided to justify such an exception. Any missed exam will receive a grade of zero. <strong>Two or more missed exams will result in an Incomplete grade.</strong></p>
+</section>
+<section id="bonus-points-up-to-10-points" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-points-up-to-10-points">Bonus Points — up to 10 points</h3>
+<p>At the instructor’s discretion, optional assignments, projects, or other activities <strong>may</strong> be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.</p>
+</section>
+<section id="attendance" class="level3">
+<h3 class="anchored" data-anchor-id="attendance">Attendance</h3>
+<p>Attendance is <strong>mandatory</strong> but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will <strong>not</strong> be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence.</p>
+</section>
+</section>
+<section id="final-grade" class="level2">
+<h2 class="anchored" data-anchor-id="final-grade">Final Grade</h2>
+<p>The regular course grade consists of:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Homework</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="even">
+<td>Exams</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Bonus points are then added to the final grade:</p>
+<p><span class="math display">\[
+\text{Amended Final Grade}
+=
+\text{Final Grade}
++
+\text{Bonus Points}
+\]</span></p>
+<p>A maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.</p>
+<section id="grading-rubric" class="level3">
+<h3 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Amended Final Grade</th>
+<th style="text-align: center;">Letter Grade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">93–100</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">90–&lt;93</td>
+<td style="text-align: center;">A−</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">87–&lt;90</td>
+<td style="text-align: center;">B+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">83–&lt;87</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">80–&lt;83</td>
+<td style="text-align: center;">B−</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">77–&lt;80</td>
+<td style="text-align: center;">C+</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">73–&lt;77</td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">70–&lt;73</td>
+<td style="text-align: center;">C−</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">67–&lt;70</td>
+<td style="text-align: center;">D+</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">63–&lt;67</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">60–&lt;63</td>
+<td style="text-align: center;">D−</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&lt;60</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="logistics" class="level2">
+<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<ul>
+<li><p>The primary communication channel between students and the instructor/TAs is the <strong>Ed Discussion server</strong>, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.</p></li>
+<li><p>Students are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.</p></li>
+<li><p>Information about the course TAs and their office hours is available through the course repository: <a href="https://github.com/ariarobotics/cv" class="uri">https://github.com/ariarobotics/cv</a></p></li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p>There is <strong>no required textbook</strong>. Lecture slides and other course materials will be provided through the course website: <a href="https://ariarobotics.github.io/cv/" class="uri">https://ariarobotics.github.io/cv/</a></p>
+<section id="recommended-books" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-books">Recommended Books</h3>
+<p>Many of the following are available online.</p>
+<section id="computer-vision" class="level4">
+<h4 class="anchored" data-anchor-id="computer-vision">Computer Vision</h4>
+<ul>
+<li>Szeliski, <em>Computer Vision: Algorithms and Applications</em>, Springer, 2010.</li>
+<li>Klette, <em>Concise Computer Vision: An Introduction into Theory and Algorithms</em>, 2014.</li>
+<li>Hartley and Zisserman, <em>Multiple View Geometry in Computer Vision</em>, Cambridge University Press, 2004.</li>
+<li>Forsyth and Ponce, <em>Computer Vision: A Modern Approach</em>, Prentice Hall, 2002.</li>
+<li>Palmer, <em>Vision Science</em>, MIT Press, 1999.</li>
+</ul>
+</section>
+<section id="learning" class="level4">
+<h4 class="anchored" data-anchor-id="learning">Learning</h4>
+<ul>
+<li>Goodfellow, Bengio, and Courville, <em>Deep Learning</em>, MIT Press, 2016.</li>
+<li>Mitchell, <em>Machine Learning</em>, McGraw-Hill, 1997.</li>
+<li>Duda, Hart, and Stork, <em>Pattern Classification</em>, 2nd Edition, Wiley-Interscience, 2000.</li>
+<li>Sutton and Barto, online book; a classic reference in reinforcement learning.</li>
+</ul>
+</section>
+<section id="graphical-models" class="level4">
+<h4 class="anchored" data-anchor-id="graphical-models">Graphical Models</h4>
+<ul>
+<li>Koller and Friedman, <em>Probabilistic Graphical Models: Principles and Techniques</em>, MIT Press, 2009.</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="course-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="course-schedule">Course Schedule</h2>
+<p>The detailed class schedule is available on the course website: <a href="https://ariarobotics.github.io/cv/" class="uri">https://ariarobotics.github.io/cv/</a>. The schedule is subject to change. <strong>Exam and homework dates will not change except in extraordinary circumstances.</strong></p>
+</section>
+<section id="policy-on-missed-classes-exams-or-late-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="policy-on-missed-classes-exams-or-late-assignments">Policy on Missed Classes, Exams, or Late Assignments</h2>
+<ul>
+<li><p>The <strong>lowest exam grade</strong>, including an absent exam, will automatically be dropped and will not count toward the final grade.</p></li>
+<li><p>The <strong>lowest homework grade</strong>, including a missed submission, will automatically be dropped and will not count toward the final grade.</p></li>
+<li><p>In-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.</p></li>
+<li><p>The maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.</p></li>
+<li><p>Exceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate <strong>documentation</strong>.</p></li>
+<li><p>Any missed exam will receive a grade of zero before application of the lowest-exam-drop policy.</p></li>
+<li><p><strong>Two</strong> or more missed exams will result in an Incomplete grade.</p></li>
+<li><p><strong>Two</strong> or more missed homework assignments will result in an Incomplete grade.</p></li>
+</ul>
+</section>
+<section id="other-important-course-policies" class="level2">
+<h2 class="anchored" data-anchor-id="other-important-course-policies">Other Important Course Policies</h2>
+<ul>
+<li><p>Any form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.</p></li>
+<li><p>No resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.</p></li>
+<li><p>Professional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor.</p></li>
+</ul>
+</section>
+<section id="mines-policies-campus-resources" class="level1">
+<h1>Mines Policies &amp; Campus Resources</h1>
+<section id="absences" class="level2">
+<h2 class="anchored" data-anchor-id="absences">Absences</h2>
+<p>Mines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: <a href="https://www.mines.edu/student-life/student-absences/" class="uri">https://www.mines.edu/student-life/student-absences/</a></p>
+</section>
+<section id="sexual-misconduct-discrimination-and-retaliation" class="level2">
+<h2 class="anchored" data-anchor-id="sexual-misconduct-discrimination-and-retaliation">Sexual Misconduct, Discrimination, and Retaliation</h2>
+<p>Mines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact <strong><a href="mailto:OIE@Mines.edu">OIE@Mines.edu</a></strong> or use the appropriate <a href="https://cm.maxient.com/reportingform.php?COSchoolofMines&amp;layout_id=31">Discriminatory Harassment and Retaliation Reporting Form</a>. <a href="https://oie.mines.edu/resources/">Confidential resources</a> are also available through Mines.</p>
+</section>
+<section id="preferred-first-name" class="level2">
+<h2 class="anchored" data-anchor-id="preferred-first-name">Preferred First Name</h2>
+<p>Mines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the <a href="https://oie.mines.edu/preferred-first-name/">Office for Institutional Equity Preferred First Name resources</a>. Students may also contact the Title IX Coordinator at <strong><a href="mailto:OIE@Mines.edu">OIE@Mines.edu</a></strong>.</p>
+</section>
+<section id="pregnant-and-parenting-students" class="level2">
+<h2 class="anchored" data-anchor-id="pregnant-and-parenting-students">Pregnant and Parenting Students</h2>
+<p>If you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at <strong><a href="mailto:oie@mines.edu">oie@mines.edu</a></strong> for more information or to request support or modifications.</p>
+</section>
+<section id="academic-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h2>
+<p>Colorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the <a href="https://www.mines.edu/policy-library/academic-integrity-policy/">full academic misconduct and academic integrity policy</a> for definitions of academic misconduct. <a href="https://www.mines.edu/student-life/community-standards/academic-integrity/">Resources provided by the Department of Community Standards</a> are also available for guidance regarding academic misconduct and integrity procedures.</p>
+</section>
+<section id="generative-artificial-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="generative-artificial-intelligence">Generative Artificial Intelligence</h2>
+<p>The Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the <a href="https://www.mines.edu/academic-affairs/genai">current course policy</a>, the use of generative AI is <strong>allowed outside of class</strong> but <strong>prohibited during class</strong>, including coding sessions and exams.</p>
+</section>
+<section id="copyrighted-materials" class="level2">
+<h2 class="anchored" data-anchor-id="copyrighted-materials">Copyrighted Materials</h2>
+<p>Readings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: <a href="https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/" class="uri">https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/</a></p>
+</section>
+<section id="grading-policy" class="level2">
+<h2 class="anchored" data-anchor-id="grading-policy">Grading Policy</h2>
+<p>Extra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed.</p>
+</section>
+<section id="course-issues-and-concerns" class="level2">
+<h2 class="anchored" data-anchor-id="course-issues-and-concerns">Course Issues and Concerns</h2>
+<p>As part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions.</p>
+</section>
+<section id="disability-support-services" class="level2">
+<h2 class="anchored" data-anchor-id="disability-support-services">Disability Support Services</h2>
+<p>Disability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: <a href="https://www.mines.edu/disability-support-services/" class="uri">https://www.mines.edu/disability-support-services/</a></p>
+</section>
+<section id="digital-accessibility" class="level2">
+<h2 class="anchored" data-anchor-id="digital-accessibility">Digital Accessibility</h2>
+<p>Colorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: <a href="https://www.mines.edu/accessibility/" class="uri">https://www.mines.edu/accessibility/</a></p>
+</section>
+<section id="student-outreach-support-sos-resources" class="level2">
+<h2 class="anchored" data-anchor-id="student-outreach-support-sos-resources">Student Outreach &amp; Support (SOS) Resources</h2>
+<p>If you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a <a href="https://cm.maxient.com/reportingform.php?COSchoolofMines&amp;layout_id=20">referral</a> for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: <a href="https://student-life.mines.edu/student-outreach-and-support/" class="uri">https://student-life.mines.edu/student-outreach-and-support/</a></p>
+<p>Student Outreach and Support can help connect students with resources including:</p>
+<ul>
+<li><p>Counseling Center: <a href="https://counseling.mines.edu/" class="uri">https://counseling.mines.edu/</a><br>
+Located on the second floor of the Wellness Center, 1770 Elm St.</p></li>
+<li><p>Student Health Center: <a href="https://studenthealth.mines.edu/" class="uri">https://studenthealth.mines.edu/</a><br>
+Located on the first floor of the Wellness Center.</p></li>
+<li><p>SHAPE Office: <a href="https://shape.mines.edu/" class="uri">https://shape.mines.edu/</a><br>
+Provides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.</p></li>
+<li><p>988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit <a href="https://www.988colorado.com/en" class="uri">https://www.988colorado.com/en</a>.</p></li>
+</ul>
+<p>In an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate.</p>
+</section>
+<section id="center-for-academic-services-and-advising-casa" class="level2">
+<h2 class="anchored" data-anchor-id="center-for-academic-services-and-advising-casa">Center for Academic Services and Advising (CASA)</h2>
+<p>CASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: <a href="https://www.mines.edu/casa/academic-support/" class="uri">https://www.mines.edu/casa/academic-support/</a> Questions may be directed to <a href="mailto:casa@mines.edu">casa@mines.edu</a>.</p>
+</section>
+<section id="writing-center" class="level2">
+<h2 class="anchored" data-anchor-id="writing-center">Writing Center</h2>
+<p>The Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: <a href="https://writing.mines.edu/" class="uri">https://writing.mines.edu/</a> Questions may be directed to <a href="mailto:ryandeanlambert@mines.edu">ryandeanlambert@mines.edu</a>.</p>
+</section>
+<section id="tutoring-resources" class="level2">
+<h2 class="anchored" data-anchor-id="tutoring-resources">Tutoring Resources</h2>
+<p>The Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: <a href="https://www.mines.edu/undergraduate-studies/tutoring/" class="uri">https://www.mines.edu/undergraduate-studies/tutoring/</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

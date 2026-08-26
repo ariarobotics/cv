@@ -1,0 +1,44 @@
+name: cv
+
+channels:
+  - conda-forge
+
+dependencies:
+  # Core Python
+  - python=3.12
+  - pip
+  - setuptools
+  - wheel
+
+  # Scientific Python stack
+  - numpy>=2.0,<3
+  - scipy>=1.15,<2
+  - pandas>=2.2,<4
+  - matplotlib>=3.10,<4
+  - pillow>=11,<13
+  - scikit-image>=0.25,<1
+  - scikit-learn>=1.7,<2
+  - plotly>=6,<7
+  - tqdm>=4.67,<5
+
+  # Notebook / VS Code support
+  - ipykernel
+  - jupyterlab
+  - notebook
+  - ipywidgets
+
+  # Packages installed from PyPI
+  - pip:
+      # Full OpenCV build, including contrib modules.
+      # Contrib is important in OpenCV 5 because some functionality
+      # (including Haar/HOG-related components and ML modules) moved there.
+      - opencv-contrib-python==5.0.0.93
+
+      # Deep learning stack
+      - torch==2.13.0
+      - torchvision==0.28.0
+      - tensorboard
+
+      # Interpretability / utilities used or potentially useful in course notebooks
+      - lime
+      - captum

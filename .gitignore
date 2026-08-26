@@ -1,0 +1,72 @@
+# ============================================================
+# Quarto source and development files
+# ============================================================
+
+# Quarto source documents
+*.qmd
+
+# Quarto project configuration
+_quarto.yml
+_quarto.yaml
+
+# Quarto custom listing/source templates
+*.ejs.md
+
+# Lecture-level metadata should not be published
+lectures/_metadata.yml
+
+# Quarto generated working/cache directories
+.quarto/
+_quarto/
+_freeze/
+**/*.quarto_ipynb
+
+# ============================================================
+# Source styling files
+# Rendered CSS needed by the public website is copied into docs/
+# ============================================================
+
+styles/
+
+# ============================================================
+# Python / Jupyter temporary files
+# ============================================================
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# ============================================================
+# Conda / Python environments
+# ============================================================
+
+.venv/
+venv/
+env/
+.conda/
+
+# ============================================================
+# OS / editor files
+# ============================================================
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.bak
+*.swp
+*~
+
+# ============================================================
+# Helper files
+# ============================================================
+
+find_unused_assets*.*
+/.quarto/
+temp
