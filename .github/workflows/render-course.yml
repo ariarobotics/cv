@@ -1,6 +1,8 @@
 name: Generate Lecture PDFs
 
 on:
+  workflow_dispatch:
+
   push:
     branches:
       - main
@@ -11,9 +13,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: lecture-pdf-generation
+  cancel-in-progress: true
+
 jobs:
   pdf:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -27,9 +34,23 @@ jobs:
       - name: Start local website server
         shell: bash
         run: |
-          python3 -m http.server 8000 --directory docs > /tmp/cv-http.log 2>&1 &
+          python3 -m http.server 8000 --directory docs \
+            > /tmp/cv-http.log 2>&1 &
+
           echo $! > /tmp/cv-http.pid
-          sleep 2
+
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8000/ > /dev/null; then
+              echo "Website server is ready."
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "Website server did not start."
+          cat /tmp/cv-http.log
+          exit 1
 
       - name: Generate lecture PDFs
         shell: bash
@@ -40,17 +61,19 @@ jobs:
           files=(docs/lectures/[0-9][0-9]_*.html)
 
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No lecture HTML files found."
-            exit 0
+            echo "No lecture HTML files were found in docs/lectures/."
+            echo "Available files:"
+            find docs/lectures -maxdepth 1 -type f -print || true
+            exit 1
           fi
 
           for html in "${files[@]}"; do
             filename=$(basename "$html" .html)
 
-            echo "Generating PDF for $filename"
+            echo "Generating PDF for ${filename}"
 
-            npx -y decktape reveal \
-              --size 1600x900 \
+            npx --yes decktape reveal \
+              --size=1600x900 \
               "http://127.0.0.1:8000/lectures/${filename}.html" \
               "docs/lectures/pdf/${filename}.pdf"
           done
@@ -63,17 +86,25 @@ jobs:
             kill "$(cat /tmp/cv-http.pid)" || true
           fi
 
+      - name: Upload generated PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: lecture-pdfs
+          path: docs/lectures/pdf/*.pdf
+          if-no-files-found: error
+
       - name: Commit lecture PDFs
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add docs/lectures/pdf/
+          git add -f docs/lectures/pdf/*.pdf
 
           if git diff --cached --quiet; then
             echo "No PDF changes to commit."
           else
             git commit -m "Update lecture PDFs [skip ci]"
-            git push
+            git push origin HEAD:main
           fi
