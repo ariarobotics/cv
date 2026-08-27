@@ -389,7 +389,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/01_intro.html#course-overview",
@@ -1342,5 +1342,348 @@
     "title": "05 — NumPy for Computer Vision",
     "section": "Additional reference",
     "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#review-an-image-is-an-array",
+    "href": "lectures/03_filtering.html#review-an-image-is-an-array",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Review: An Image Is an Array",
+    "text": "Review: An Image Is an Array\n\n\nA grayscale image with height \\(N\\) and width \\(M\\) is represented as\n\\[\nI \\in \\mathbb{R}^{N \\times M}.\n\\]\n\nI[0, 0]: top-left pixel\nI[y, x]: row \\(y\\), column \\(x\\)\nI[N-1, M-1]: bottom-right pixel\n\nThe first index moves down; the second moves right."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#grayscale-intensity",
+    "href": "lectures/03_filtering.html#grayscale-intensity",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Grayscale Intensity",
+    "text": "Grayscale Intensity\n\n\n\n\n\nEach pixel stores one intensity value.\nLow values appear dark; high values appear bright.\nThe numeric range depends on the data type:\n\nuint8: typically \\(0\\) to \\(255\\)\nfloating point: often \\(0\\) to \\(1\\)\n\n\n\n\n\n\n\n\nImportant\n\n\nAlways check an image’s shape, data type, and value range before processing it."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#color-images-have-multiple-channels",
+    "href": "lectures/03_filtering.html#color-images-have-multiple-channels",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Color Images Have Multiple Channels",
+    "text": "Color Images Have Multiple Channels\n\n\n Color image\n\n Red channel\n\n Green channel\n\n Blue channel\n\nFor an RGB image, \\(I[y,x,c]\\) stores the value at row \\(y\\), column \\(x\\), and channel \\(c\\)."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#review-checkpoint",
+    "href": "lectures/03_filtering.html#review-checkpoint",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Review Checkpoint",
+    "text": "Review Checkpoint\n\n\n\n\n\n\nNote\n\n\nSuppose image.shape == (480, 640, 3).\n\n\n\n\nWhat are the image height and width?\nWhat does image[100, 250, 1] represent?\nWhy might OpenCV display unexpected colors if the image is passed directly to Matplotlib?\n\n\nAnswers: height \\(=480\\), width \\(=640\\); the selected value is the green-channel intensity at \\((x,y)=(250,100)\\); OpenCV normally uses BGR channel order while Matplotlib expects RGB."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#learning-objectives",
+    "href": "lectures/03_filtering.html#learning-objectives",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain filtering as a local neighborhood operation.\nDistinguish low-pass, high-pass, correlation, and convolution operations.\nPredict the behavior of common kernels.\nExplain linearity, shift invariance, boundary handling, and separability.\nApply Gaussian, Sobel, sharpening, and median filters.\nUse correlation for basic template matching and recognize its limitations."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-modifies-a-signal",
+    "href": "lectures/03_filtering.html#filtering-modifies-a-signal",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering Modifies a Signal",
+    "text": "Filtering Modifies a Signal\n\n\nFiltering transforms a measured signal to:\n\nsuppress unwanted components,\nemphasize useful structure,\nestimate local trends, or\nextract features such as edges.\n\nFilters can operate on continuous or discrete signals in one or more dimensions.\n\n\nNoisy samples and a smoothed estimate\n\n\n\n\n\n\n\nImportant\n\n\nIn images, filtering usually computes each output pixel from a neighborhood around the corresponding input pixel."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#a-1d-moving-average",
+    "href": "lectures/03_filtering.html#a-1d-moving-average",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "A 1D Moving Average",
+    "text": "A 1D Moving Average\nFor an odd window size \\(K=2r+1\\),\n\\[\nh[n] = \\frac{1}{K}\\sum_{i=-r}^{r} I[n+i].\n\\]\n\n\nrng = np.random.default_rng(7)\nx = np.linspace(0, 4 * np.pi, 160)\nnoisy = np.sin(x) + 0.28 * rng.normal(size=x.size)\n\nK = 9\nkernel = np.ones(K) / K\nsmoothed = np.convolve(noisy, kernel, mode=\"same\")\n\nfig, ax = plt.subplots(figsize=(7.2, 4.2))\nax.plot(x, noisy, color=\"0.65\", linewidth=1.2, label=\"Measured signal\")\nax.plot(x, smoothed, color=\"#1565c0\", linewidth=3, label=\"Moving average\")\nax.set_xlabel(\"Sample position\")\nax.set_ylabel(\"Value\")\nax.legend(frameon=False)\nax.grid(alpha=0.2)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-window-size-controls-the-tradeoff",
+    "href": "lectures/03_filtering.html#the-window-size-controls-the-tradeoff",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Window Size Controls the Tradeoff",
+    "text": "The Window Size Controls the Tradeoff\n\n\nA larger averaging window:\n\nremoves more rapid variation,\nproduces a smoother output,\nspreads local changes over a wider region, and\ncan erase narrow but meaningful features.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nSmoothing is useful when rapid variation is noise—but harmful when that variation is the signal we care about."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#interactive-1d-filtering-demo",
+    "href": "lectures/03_filtering.html#interactive-1d-filtering-demo",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Interactive 1D Filtering Demo",
+    "text": "Interactive 1D Filtering Demo\n\n\n\nExplore how cutoff frequency and responsiveness change the filtered signal:\nhttps://gery.casiez.net/1euro/InteractiveDemo/\n\n\n\n\n\n\nNote\n\n\nThe 1€ filter adapts its smoothing based on signal speed, illustrating that a filter can trade off jitter reduction and responsiveness dynamically."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#low-pass-and-high-pass-filters",
+    "href": "lectures/03_filtering.html#low-pass-and-high-pass-filters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Low-Pass and High-Pass Filters",
+    "text": "Low-Pass and High-Pass Filters\n\n\n\n\n\n\n\n\n\nFilter type\nPreserves\nSuppresses\nTypical use\n\n\n\n\nLow-pass\nSlowly varying content\nRapid intensity changes\nSmoothing and denoising\n\n\nHigh-pass\nRapid intensity changes\nSlowly varying content\nEdge detection and sharpening\n\n\n\n\nEdges are rapid spatial changes in image intensity, so high-pass filters respond strongly near boundaries.\n\n\n\n\n\n\n\n\nImportant\n\n\n“Low” and “high” refer to spatial frequency, not pixel intensity."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#a-2d-filter-uses-a-local-neighborhood",
+    "href": "lectures/03_filtering.html#a-2d-filter-uses-a-local-neighborhood",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "A 2D Filter Uses a Local Neighborhood",
+    "text": "A 2D Filter Uses a Local Neighborhood\nLet \\(I\\) be the input image, \\(f\\) the filter kernel, and \\(h\\) the output:\n\\[\nh[m,n] = \\sum_k \\sum_l f[k,l]\\,I[m+k,n+l].\n\\]\n\n\nInput \\(I\\)\nNeighborhood around \\((m,n)\\)\n\nKernel \\(f\\)\nWeights indexed by \\((k,l)\\)\n\nOutput \\(h\\)\nOne value at \\((m,n)\\)\n\n\nMove the kernel across the image, multiply overlapping values, and sum the products."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-is-a-fundamental-vision-operation",
+    "href": "lectures/03_filtering.html#filtering-is-a-fundamental-vision-operation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering Is a Fundamental Vision Operation",
+    "text": "Filtering Is a Fundamental Vision Operation\nSeveral major computer-vision problems can be expressed through compact mathematical models:\n\nImage filtering: combine local measurements with a kernel.\nOptical flow: relate spatial and temporal image changes.\nCamera geometry: project 3D points into an image.\nMachine learning: fit model parameters to examples and objectives.\n\n\n\n\n\n\n\nImportant\n\n\nFiltering is both a useful operation by itself and a building block inside larger vision pipelines."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-kernel-defines-the-operation",
+    "href": "lectures/03_filtering.html#the-kernel-defines-the-operation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Kernel Defines the Operation",
+    "text": "The Kernel Defines the Operation\nA kernel is a small matrix of weights. Different weights create different effects.\n\n\nAverage\n\\[\n\\frac{1}{9}\n\\begin{bmatrix}\n1&1&1\\\\\n1&1&1\\\\\n1&1&1\n\\end{bmatrix}\n\\]\nSmoothing\n\nHorizontal derivative\n\\[\n\\begin{bmatrix}\n-1&0&1\n\\end{bmatrix}\n\\]\nVertical-edge response\n\nSharpen\n\\[\n\\begin{bmatrix}\n0&-1&0\\\\\n-1&5&-1\\\\\n0&-1&0\n\\end{bmatrix}\n\\]\nLocal contrast enhancement"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#worked-example-one-output-pixel",
+    "href": "lectures/03_filtering.html#worked-example-one-output-pixel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Worked Example: One Output Pixel",
+    "text": "Worked Example: One Output Pixel\nSuppose the neighborhood and kernel are\n\\[\nI_{\\mathcal N}=\\begin{bmatrix}\n10&20&30\\\\\n20&40&60\\\\\n30&60&90\n\\end{bmatrix}, \\qquad\nf=\\frac{1}{9}\\begin{bmatrix}\n1&1&1\\\\\n1&1&1\\\\\n1&1&1\n\\end{bmatrix}.\n\\]\n\nElementwise multiplication gives the nine weighted contributions.\n\n\n\\[\nh[m,n]=\\frac{10+20+30+20+40+60+30+60+90}{9}=40.\n\\]\n\n\n\n\n\n\n\n\nNote\n\n\nThe output is assigned to the pixel aligned with the kernel center."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#sliding-the-kernel-produces-the-output-image",
+    "href": "lectures/03_filtering.html#sliding-the-kernel-produces-the-output-image",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Sliding the Kernel Produces the Output Image",
+    "text": "Sliding the Kernel Produces the Output Image\nFor each valid location:\n\nCenter the kernel at \\((m,n)\\).\nMultiply each kernel weight by the corresponding image value.\nSum the products.\nStore the result in \\(h[m,n]\\).\nMove to the next pixel.\n\n\n\n\n\n\n\nImportant\n\n\nThe same kernel weights are reused at every location. This repeated local computation is what gives linear filtering its shift-invariant behavior."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-box-filter-computes-a-local-mean",
+    "href": "lectures/03_filtering.html#the-box-filter-computes-a-local-mean",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Box Filter Computes a Local Mean",
+    "text": "The Box Filter Computes a Local Mean\n\\[\nf=\\frac{1}{9}\n\\begin{bmatrix}\n1&1&1\\\\\n1&1&1\\\\\n1&1&1\n\\end{bmatrix}\n\\]\n\nReplaces each pixel with the average of its \\(3\\times3\\) neighborhood.\nReduces noise and fine-scale variation.\nBlurs edges and other sharp features.\nThe weights sum to one, so constant-intensity regions keep the same brightness.\n\n\n\n\n\n\n\nNote\n\n\nFor an \\(r\\times c\\) averaging kernel, every weight is \\(1/(rc)\\)."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-smoothing-removes-fine-detail",
+    "href": "lectures/03_filtering.html#box-smoothing-removes-fine-detail",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Smoothing Removes Fine Detail",
+    "text": "Box Smoothing Removes Fine Detail\n\n\n\nThe larger the kernel, the more aggressively the filter suppresses small structures and noise."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#gaussian-smoothing-uses-distance-weighted-averaging",
+    "href": "lectures/03_filtering.html#gaussian-smoothing-uses-distance-weighted-averaging",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Gaussian Smoothing Uses Distance-Weighted Averaging",
+    "text": "Gaussian Smoothing Uses Distance-Weighted Averaging\nThe continuous 2D Gaussian is\n\\[\nG_\\sigma(x,y)=\\frac{1}{2\\pi\\sigma^2}\n\\exp\\left(-\\frac{x^2+y^2}{2\\sigma^2}\\right).\n\\]\n\n\n\n\n\nNearby pixels receive larger weights.\nDistant pixels receive smaller weights.\nThe weights are normalized to sum to one.\n\\(\\sigma\\) controls the smoothing scale."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-and-gaussian-filters-behave-differently",
+    "href": "lectures/03_filtering.html#box-and-gaussian-filters-behave-differently",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box and Gaussian Filters Behave Differently",
+    "text": "Box and Gaussian Filters Behave Differently"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#why-gaussian-smoothing-is-often-preferred",
+    "href": "lectures/03_filtering.html#why-gaussian-smoothing-is-often-preferred",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Why Gaussian Smoothing Is Often Preferred",
+    "text": "Why Gaussian Smoothing Is Often Preferred\n\nThe kernel changes smoothly with distance from its center.\nThe result usually has fewer block-like artifacts than box filtering.\nApplying two Gaussian filters produces another Gaussian:\n\n\\[\nG_{\\sigma_1} * G_{\\sigma_2}\n=G_{\\sqrt{\\sigma_1^2+\\sigma_2^2}}.\n\\]\n\nGaussian filters are separable, allowing efficient implementation.\n\n\n\n\n\n\n\nNote\n\n\nKernel size should be large enough to include the meaningful support of the Gaussian—often several standard deviations on each side."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#two-properties-define-linear-shift-invariant-filters",
+    "href": "lectures/03_filtering.html#two-properties-define-linear-shift-invariant-filters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Two Properties Define Linear Shift-Invariant Filters",
+    "text": "Two Properties Define Linear Shift-Invariant Filters\nLinearity\n\\[\n\\mathcal F(aI_1+bI_2)=a\\mathcal F(I_1)+b\\mathcal F(I_2).\n\\]\nShift invariance\n\\[\n\\mathcal F(T_\\Delta I)=T_\\Delta\\mathcal F(I).\n\\]\nThe filter applies the same rule everywhere; shifting the input shifts the output by the same amount.\n\n\n\n\n\n\n\nImportant\n\n\nEvery linear, shift-invariant image operator can be represented as convolution with a kernel."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-supports-many-vision-tasks",
+    "href": "lectures/03_filtering.html#filtering-supports-many-vision-tasks",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering Supports Many Vision Tasks",
+    "text": "Filtering Supports Many Vision Tasks\n\n\nImprove an image\n\nRemove noise\nSmooth before downsampling\nSharpen local detail\nEstimate illumination or background\n\n\nExtract information\n\nDetect edges and corners\nMeasure texture\nFind repeated patterns\nMatch a template to image regions"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-predict-the-filter-output",
+    "href": "lectures/03_filtering.html#practice-predict-the-filter-output",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice: Predict the Filter Output",
+    "text": "Practice: Predict the Filter Output\nBefore applying a kernel, inspect its structure:\n\nWhat do its weights sum to?\nIs it symmetric?\nDoes it compare opposite sides of the center?\nAre any weights negative?\nWhich direction contains the strongest change in weights?\n\n\n\n\n\n\n\nNote\n\n\nThese questions often reveal whether a kernel smooths, shifts, differentiates, or sharpens—without running any code."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#identity-and-shift-kernels",
+    "href": "lectures/03_filtering.html#identity-and-shift-kernels",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Identity and Shift Kernels",
+    "text": "Identity and Shift Kernels\n\n\nIdentity\n\\[\n\\begin{bmatrix}\n0&0&0\\\\\n0&1&0\\\\\n0&0&0\n\\end{bmatrix}\n\\]\nReturns the original image.\n\nShift sample location\n\\[\n\\begin{bmatrix}\n0&0&0\\\\\n1&0&0\\\\\n0&0&0\n\\end{bmatrix}\n\\]\nCopies a neighboring pixel, shifting the image.\n\n\n\n\n\n\n\n\nWarning\n\n\nThe apparent shift direction depends on whether the operation is correlation or convolution because convolution rotates the kernel."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#difference-kernels-detect-change",
+    "href": "lectures/03_filtering.html#difference-kernels-detect-change",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Difference Kernels Detect Change",
+    "text": "Difference Kernels Detect Change\n\n\nHorizontal intensity derivative\n\\[\n\\begin{bmatrix}-1&0&1\\end{bmatrix}\n\\]\nResponds to vertical edges.\n\nVertical intensity derivative\n\\[\n\\begin{bmatrix}-1\\\\0\\\\1\\end{bmatrix}\n\\]\nResponds to horizontal edges.\n\nThe signs encode the direction of intensity change; the magnitude encodes its strength."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#sharpening-adds-back-local-detail",
+    "href": "lectures/03_filtering.html#sharpening-adds-back-local-detail",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Sharpening Adds Back Local Detail",
+    "text": "Sharpening Adds Back Local Detail\nOne sharpening kernel is\n\\[\n\\begin{bmatrix}\n0&-1&0\\\\\n-1&5&-1\\\\\n0&-1&0\n\\end{bmatrix}.\n\\]\nIt can be interpreted as\n\\[\n\\text{sharpened image}\n=\\text{original image}+\\text{high-frequency detail}.\n\\]\n\n\n\n\n\n\nWarning\n\n\nSharpening can also amplify noise and create halos around strong edges."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#boundary-handling-is-part-of-the-filter",
+    "href": "lectures/03_filtering.html#boundary-handling-is-part-of-the-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Boundary Handling Is Part of the Filter",
+    "text": "Boundary Handling Is Part of the Filter\nNear an image boundary, part of the kernel falls outside the available data.\n\n\n\n\n\n\n\n\nStrategy\nAssumption outside the image\nCommon consequence\n\n\n\n\nConstant / zero\nMissing pixels have a fixed value\nDark or bright border artifacts\n\n\nReplicate\nRepeat the closest boundary pixel\nFlat extension at the edge\n\n\nReflect\nMirror the image across the boundary\nOften smoothest for natural images\n\n\nWrap\nOpposite edges are adjacent\nAppropriate for periodic data\n\n\nValid only\nSkip incomplete neighborhoods\nSmaller output image\n\n\n\n\n\n\n\n\n\nImportant\n\n\nTwo implementations using the same kernel can disagree near the boundary if their padding modes differ."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#correlation-applies-the-kernel-as-written",
+    "href": "lectures/03_filtering.html#correlation-applies-the-kernel-as-written",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation Applies the Kernel As Written",
+    "text": "Correlation Applies the Kernel As Written\nFor 2D correlation,\n\\[\nh[m,n]=\\sum_k\\sum_l f[k,l]I[m+k,n+l].\n\\]\n\nMove the kernel across the image.\nMultiply corresponding entries.\nSum the products.\nKeep the kernel orientation unchanged.\n\nIn SciPy:"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#convolution-rotates-the-kernel",
+    "href": "lectures/03_filtering.html#convolution-rotates-the-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Convolution Rotates the Kernel",
+    "text": "Convolution Rotates the Kernel\nFor 2D convolution,\n\\[\nh[m,n]=\\sum_k\\sum_l f[k,l]I[m-k,n-l].\n\\]\nEquivalently:\n\nRotate the kernel by \\(180^\\circ\\).\nApply correlation with the rotated kernel.\n\n\n\n\n\n\n\nNote\n\n\nCorrelation and convolution are identical for a kernel that is symmetric under a \\(180^\\circ\\) rotation, including box and Gaussian kernels."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
+    "href": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation and Convolution Differ for Asymmetric Kernels",
+    "text": "Correlation and Convolution Differ for Asymmetric Kernels\n\n\nCorrelation\n\\[\n\\begin{bmatrix}-1&0&1\\end{bmatrix}\n\\]\nKernel used as written\n\nConvolution\n\\[\n\\begin{bmatrix}1&0&-1\\end{bmatrix}\n\\]\nKernel rotated by \\(180^\\circ\\)\n\nFor a derivative filter, this rotation reverses the sign of the response but not its absolute magnitude."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#convolution-has-useful-algebraic-properties",
+    "href": "lectures/03_filtering.html#convolution-has-useful-algebraic-properties",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Convolution Has Useful Algebraic Properties",
+    "text": "Convolution Has Useful Algebraic Properties\n\nCommutative: \\(a*b=b*a\\)\nAssociative: \\(a*(b*c)=(a*b)*c\\)\nDistributive: \\(a*(b+c)=a*b+a*c\\)\nScalar compatibility: \\((\\alpha a)*b=\\alpha(a*b)\\)\nIdentity: \\(a*\\delta=a\\), where \\(\\delta\\) is the unit impulse\n\n\n\n\n\n\n\nNote\n\n\nFinite images and boundary rules can make practical implementations appear to violate ideal infinite-signal identities near the edges."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
+    "href": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "“Convolution” Layers Usually Compute Correlation",
+    "text": "“Convolution” Layers Usually Compute Correlation\nConvolutional neural networks learn kernel weights from data rather than selecting them manually.\n\n\n\nMost deep-learning libraries apply learned kernels without explicitly rotating them—mathematically, this is cross-correlation. Because the kernel is learned, the distinction does not reduce the model’s expressive power."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#a-separable-kernel-factors-into-two-1d-kernels",
+    "href": "lectures/03_filtering.html#a-separable-kernel-factors-into-two-1d-kernels",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "A Separable Kernel Factors into Two 1D Kernels",
+    "text": "A Separable Kernel Factors into Two 1D Kernels\nA 2D kernel is separable if\n\\[\nf = v u^T,\n\\]\nwhere \\(v\\) is a vertical 1D kernel and \\(u^T\\) is a horizontal 1D kernel.\nFor example,\n\\[\n\\frac{1}{16}\n\\begin{bmatrix}\n1&2&1\\\\\n2&4&2\\\\\n1&2&1\n\\end{bmatrix}\n=\n\\frac{1}{4}\n\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}\n\\frac{1}{4}\n\\begin{bmatrix}1&2&1\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
+    "href": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Gaussian Filter Is Separable",
+    "text": "The Gaussian Filter Is Separable\nBecause\n\\[\nG_\\sigma(x,y)=G_\\sigma(x)G_\\sigma(y),\n\\]\nwe can:\n\nFilter every row with a 1D Gaussian.\nFilter every column with the same 1D Gaussian.\n\n\n\n\nThe result is the same as applying the full 2D Gaussian kernel, apart from numerical rounding."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#separability-reduces-computation",
+    "href": "lectures/03_filtering.html#separability-reduces-computation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Separability Reduces Computation",
+    "text": "Separability Reduces Computation\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\nMethod\nApproximate multiply-adds\n\n\n\n\nFull 2D filtering\n\\(MNPQ\\)\n\n\nSeparable filtering\n\\(MN(P+Q)\\)\n\n\n\nFor a square \\(K\\times K\\) kernel, the per-pixel cost drops from \\(K^2\\) to \\(2K\\).\n\n\n\n\n\n\n\nImportant\n\n\nA separable \\(9\\times9\\) filter needs about \\(81/18=4.5\\) times fewer multiply-adds than direct 2D filtering."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#sobel-combines-differentiation-and-smoothing",
+    "href": "lectures/03_filtering.html#sobel-combines-differentiation-and-smoothing",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Sobel Combines Differentiation and Smoothing",
+    "text": "Sobel Combines Differentiation and Smoothing\nThe Sobel kernels estimate intensity derivatives:\n\n\n\\[\nG_x=\n\\begin{bmatrix}\n-1&0&1\\\\\n-2&0&2\\\\\n-1&0&1\n\\end{bmatrix}\n\\]\nDerivative along \\(x\\); responds to vertical edges\n\n\\[\nG_y=\n\\begin{bmatrix}\n-1&-2&-1\\\\\n0&0&0\\\\\n1&2&1\n\\end{bmatrix}\n\\]\nDerivative along \\(y\\); responds to horizontal edges"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#gradient-magnitude-combines-both-directions",
+    "href": "lectures/03_filtering.html#gradient-magnitude-combines-both-directions",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Gradient Magnitude Combines Both Directions",
+    "text": "Gradient Magnitude Combines Both Directions"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#signed-responses-encode-edge-polarity",
+    "href": "lectures/03_filtering.html#signed-responses-encode-edge-polarity",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Signed Responses Encode Edge Polarity",
+    "text": "Signed Responses Encode Edge Polarity\nThe derivative response can be positive or negative:\n\nPositive: intensity rises in the kernel’s positive direction.\nNegative: intensity falls in that direction.\nNear zero: little change or balanced changes.\n\nCommon visualizations include:\n\nsigned color maps,\nadding an offset such as \\(0.5\\) after normalization,\nabsolute response \\(|G_x|\\) or \\(|G_y|\\), and\ngradient magnitude \\(\\sqrt{G_x^2+G_y^2}\\).\n\n\n\n\n\n\n\nWarning\n\n\nClipping negative values to zero discards half of the edge-polarity information."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#three-common-output-modes",
+    "href": "lectures/03_filtering.html#three-common-output-modes",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Three Common Output Modes",
+    "text": "Three Common Output Modes\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\n\n\n\n\n\nMode\nOutput size\nInterpretation\n\n\n\n\nfull\n\\((M+P-1)\\times(N+Q-1)\\)\nEvery partial overlap, with padding\n\n\nsame\n\\(M\\times N\\)\nCenter portion matching the input size\n\n\nvalid\n\\((M-P+1)\\times(N-Q+1)\\)\nOnly complete overlaps; no padding\n\n\n\nFor example, full convolution of a \\(275\\times175\\) image with another \\(275\\times175\\) image produces a \\(549\\times349\\) output.\n\n\n\n\n\n\nNote\n\n\nLibrary defaults differ. Specify the mode and boundary behavior explicitly when reproducibility matters."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#correlation-measures-local-similarity",
+    "href": "lectures/03_filtering.html#correlation-measures-local-similarity",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation Measures Local Similarity",
+    "text": "Correlation Measures Local Similarity\nTreat a template \\(f\\) as a kernel and correlate it with the image:\n\\[\nh[m,n]=\\sum_k\\sum_l f[k,l]I[m+k,n+l].\n\\]\n\nLarge positive responses indicate strong agreement.\nA response map evaluates the template at every location.\nThe response peak provides a candidate match location.\n\n\n\n\n\n\n\nImportant\n\n\nUse correlation—not convolution—when the orientation of an asymmetric template must be preserved."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#raw-correlation-is-sensitive-to-brightness",
+    "href": "lectures/03_filtering.html#raw-correlation-is-sensitive-to-brightness",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Raw Correlation Is Sensitive to Brightness",
+    "text": "Raw Correlation Is Sensitive to Brightness\n\n\nRaw dot products become larger when:\n\nthe image region is globally brighter,\nthe template has a positive mean, or\nthe local contrast is larger.\n\nTherefore, the brightest region may win even when its pattern is incorrect."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#zero-mean-correlation-removes-additive-brightness-bias",
+    "href": "lectures/03_filtering.html#zero-mean-correlation-removes-additive-brightness-bias",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Zero-Mean Correlation Removes Additive Brightness Bias",
+    "text": "Zero-Mean Correlation Removes Additive Brightness Bias\nSubtract the mean from both the template and each candidate region:\n\\[\n\\tilde f=f-\\bar f, \\qquad\n\\tilde I_{m,n}=I_{m,n}-\\bar I_{m,n}.\n\\]\nThen compute\n\\[\nh[m,n]=\\sum_k\\sum_l \\tilde f[k,l]\\tilde I_{m,n}[k,l].\n\\]\n\n\n\n\n\n\n\nNote\n\n\nNormalized cross-correlation additionally divides by local magnitudes, improving robustness to contrast scaling."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#correlation-and-convolution-give-different-matches",
+    "href": "lectures/03_filtering.html#correlation-and-convolution-give-different-matches",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation and Convolution Give Different Matches",
+    "text": "Correlation and Convolution Give Different Matches\n\n\nCorrelation compares the template in its original orientation.\nUse it for template matching.\n\nConvolution compares against a \\(180^\\circ\\)-rotated template.\nFor an asymmetric template, the peak can move or weaken.\n\n\n\n\n\n\n\nImportant\n\n\nFor symmetric smoothing kernels, the distinction disappears. For asymmetric templates and derivative kernels, it matters."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#median-filtering-is-not-convolution",
+    "href": "lectures/03_filtering.html#median-filtering-is-not-convolution",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Median Filtering Is Not Convolution",
+    "text": "Median Filtering Is Not Convolution\nA median filter:\n\nCollects intensities in a local window.\nSorts or ranks them.\nSelects the median value.\n\nBecause ranking is nonlinear,\n\\[\n\\operatorname{median}(aI_1+bI_2)\n\\neq\na\\operatorname{median}(I_1)+b\\operatorname{median}(I_2)\n\\]\nin general.\nOther rank filters include minimum, maximum, percentile, and range filters."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#salt-and-pepper-noise-creates-extreme-outliers",
+    "href": "lectures/03_filtering.html#salt-and-pepper-noise-creates-extreme-outliers",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Salt-and-Pepper Noise Creates Extreme Outliers",
+    "text": "Salt-and-Pepper Noise Creates Extreme Outliers\n\n\n\nSome pixels are replaced by very low or very high values. These impulses can strongly influence a local mean."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#mean-and-median-filters-respond-differently",
+    "href": "lectures/03_filtering.html#mean-and-median-filters-respond-differently",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Mean and Median Filters Respond Differently",
+    "text": "Mean and Median Filters Respond Differently"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#why-the-median-rejects-impulse-noise",
+    "href": "lectures/03_filtering.html#why-the-median-rejects-impulse-noise",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Why the Median Rejects Impulse Noise",
+    "text": "Why the Median Rejects Impulse Noise\nConsider a \\(3\\times3\\) neighborhood:\n\\[\n[48,49,49,50,50,51,51,52,255].\n\\]\n\nMean: \\(72.8\\)—pulled upward by the outlier.\nMedian: \\(50\\)—representative of the local neighborhood.\n\n\n\n\n\n\n\nImportant\n\n\nMedian filtering removes isolated extreme values while often preserving edges better than averaging.\n\n\n\n\n\n\n\n\n\nWarning\n\n\nLarge median windows can remove small structures and produce piecewise-flat regions."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#choosing-a-filter",
+    "href": "lectures/03_filtering.html#choosing-a-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Choosing a Filter",
+    "text": "Choosing a Filter\n\n\n\n\n\n\n\n\nGoal\nUseful starting point\nMain tradeoff\n\n\n\n\nReduce Gaussian-like noise\nGaussian smoothing\nBlurs fine details\n\n\nRemove impulse noise\nMedian filtering\nCan remove small structures\n\n\nDetect edges\nSobel or derivative kernels\nAmplifies noise\n\n\nEnhance local detail\nSharpening / high-pass\nMay create noise or halos\n\n\nFind a known pattern\nNormalized correlation\nSensitive to scale and rotation\n\n\n\nNo filter is universally best—the noise model and downstream task determine the right choice."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#key-takeaways",
+    "href": "lectures/03_filtering.html#key-takeaways",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nA filter maps each output location to a function of a local input neighborhood.\nA kernel’s weights determine whether it smooths, differentiates, shifts, or sharpens.\nCorrelation uses the kernel as written; convolution rotates it by \\(180^\\circ\\).\nGaussian filters are smooth, composable, and separable.\nSobel filters estimate signed spatial derivatives and edge strength.\nBoundary rules and output modes are part of the algorithm.\nMedian filtering is nonlinear and robust to isolated extreme values.\n\n\n\n\n\n\n\nNote\n\n\nBefore running a filter, predict what it should do from the kernel. Then verify that prediction experimentally."
   }
 ]

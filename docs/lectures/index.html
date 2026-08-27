@@ -85,9 +85,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-author','listing-institute','listing-subtitle','listing-title-slide-attributes','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-author','listing-institute','listing-subtitle','listing-title-slide-attributes','listing-path','listing-outputHref','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-jupyter',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-author","listing-institute","listing-subtitle","listing-title-slide-attributes","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-author","listing-institute","listing-subtitle","listing-title-slide-attributes","listing-path","listing-outputHref","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-jupyter"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -254,6 +254,25 @@ window.Quarto = {
         View Slides
       </a>
       <a class="btn btn-outline-secondary btn-sm" href="pdf/02_image.pdf">
+        PDF
+      </a>
+    </div>
+  </div>
+
+  <div class="lecture-item mb-4 pb-3 border-bottom" data-index="2" data-listing-file-modified-sort="1787861587838" data-listing-reading-time-sort="13" data-listing-word-count-sort="2595">
+    <h3 class="listing-title mb-1 anchored">
+      <a href="03_filtering.html">Lecture 03 — Image Filtering</a>
+    </h3>
+
+    
+    <p class="listing-description mb-2">Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.</p>
+    
+
+    <div class="d-flex gap-2 flex-wrap">
+      <a class="btn btn-outline-primary btn-sm" href="03_filtering.html">
+        View Slides
+      </a>
+      <a class="btn btn-outline-secondary btn-sm" href="pdf/03_filtering.pdf">
         PDF
       </a>
     </div>

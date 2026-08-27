@@ -3,6 +3,9 @@ name: cv
 channels:
   - conda-forge
 
+variables:
+  PYTHONNOUSERSITE: "1"
+  
 dependencies:
   # Core Python
   - python=3.12
