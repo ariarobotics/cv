@@ -70,3 +70,4 @@ Thumbs.db
 find_unused_assets*.*
 /.quarto/
 temp
+code_private

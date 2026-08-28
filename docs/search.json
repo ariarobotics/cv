@@ -1383,14 +1383,14 @@
     "href": "lectures/03_filtering.html#filtering-modifies-a-signal",
     "title": "Lecture 03 — Image Filtering",
     "section": "Filtering Modifies a Signal",
-    "text": "Filtering Modifies a Signal\n\n\nFiltering transforms a measured signal to:\n\nsuppress unwanted components,\nemphasize useful structure,\nestimate local trends, or\nextract features such as edges.\n\nFilters can operate on continuous or discrete signals in one or more dimensions.\n\n\nNoisy samples and a smoothed estimate\n\n\n\n\n\n\n\nImportant\n\n\nIn images, filtering usually computes each output pixel from a neighborhood around the corresponding input pixel."
+    "text": "Filtering Modifies a Signal\n\n Noisy samples and a smoothed estimate\n\n\nFiltering transforms a signal to:\n\nsuppress undesired components such as noise\nemphasize useful structure\nextract specific features\n\nFilters can operate on continuous or discrete signals in one or more dimensions."
   },
   {
     "objectID": "lectures/03_filtering.html#a-1d-moving-average",
     "href": "lectures/03_filtering.html#a-1d-moving-average",
     "title": "Lecture 03 — Image Filtering",
     "section": "A 1D Moving Average",
-    "text": "A 1D Moving Average\nFor an odd window size \\(K=2r+1\\),\n\\[\nh[n] = \\frac{1}{K}\\sum_{i=-r}^{r} I[n+i].\n\\]\n\n\nrng = np.random.default_rng(7)\nx = np.linspace(0, 4 * np.pi, 160)\nnoisy = np.sin(x) + 0.28 * rng.normal(size=x.size)\n\nK = 9\nkernel = np.ones(K) / K\nsmoothed = np.convolve(noisy, kernel, mode=\"same\")\n\nfig, ax = plt.subplots(figsize=(7.2, 4.2))\nax.plot(x, noisy, color=\"0.65\", linewidth=1.2, label=\"Measured signal\")\nax.plot(x, smoothed, color=\"#1565c0\", linewidth=3, label=\"Moving average\")\nax.set_xlabel(\"Sample position\")\nax.set_ylabel(\"Value\")\nax.legend(frameon=False)\nax.grid(alpha=0.2)\nplt.tight_layout()\nplt.show()"
+    "text": "A 1D Moving Average\nFor an odd window size \\(K=2r+1\\),\n\\[\nh[n] =\n\\frac{1}{k}\n\\sum_{i=n-k+1}^{n} I[i]\n\\]\n\\[\nh[n]\n=\n\\frac{1}{k}\n\\begin{bmatrix}\n1 \\\\\n1 \\\\\n\\vdots \\\\\n1\n\\end{bmatrix}^{\\!T}\nI[n-k+1:n]\n\\]\n\n\nx = np.linspace(0, 4 * np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28 * rng.normal(size=x.size)\nK = 10\nsmoothed = np.convolve(noisy, np.ones(K) / K, mode=\"same\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average filter\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
   },
   {
     "objectID": "lectures/03_filtering.html#the-window-size-controls-the-tradeoff",
@@ -1685,5 +1685,327 @@
     "title": "Lecture 03 — Image Filtering",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nA filter maps each output location to a function of a local input neighborhood.\nA kernel’s weights determine whether it smooths, differentiates, shifts, or sharpens.\nCorrelation uses the kernel as written; convolution rotates it by \\(180^\\circ\\).\nGaussian filters are smooth, composable, and separable.\nSobel filters estimate signed spatial derivatives and edge strength.\nBoundary rules and output modes are part of the algorithm.\nMedian filtering is nonlinear and robust to isolated extreme values.\n\n\n\n\n\n\n\nNote\n\n\nBefore running a filter, predict what it should do from the kernel. Then verify that prediction experimentally."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#d-moving-average-filter",
+    "href": "lectures/03_filtering.html#d-moving-average-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "1D Moving Average Filter",
+    "text": "1D Moving Average Filter\nFor a window size \\(k\\):\n\\[\ny[n] =\n\\frac{1}{k}\n\\sum_{i=n-k+1}^{n} (1) I[i]\n\\qquad \\qquad \\text{or} \\qquad \\qquad\ny[n]\n=\n\\frac{1}{k}\n\\begin{bmatrix}\n1 & 1 & \\cdots & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 10\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-window-size",
+    "href": "lectures/03_filtering.html#the-window-size",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Window Size $$",
+    "text": "The Window Size $$\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\nx = np.linspace(0, 4 * np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28 * rng.normal(size=x.size)\nk = 50\nsmoothed = np.convolve(noisy, np.ones(k) / k, mode=\"same\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average filter\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filter-kernel",
+    "href": "lectures/03_filtering.html#filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filter Kernel",
+    "text": "Filter Kernel\nWhat is this filter doing?\n\\[\ny[n]\n=\n\\begin{bmatrix}\n0 & 0 & \\cdots & 0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 20\nker = np.zeros(k); ker[-1] = 1\noutput = np.correlate(np.pad(noisy, (k-1, 0)), ker, mode=\"valid\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=4, label=\"Input\")\nax.plot(x, output, \"b--\", lw=2.5, label=\"Output\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
+    "href": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Fundamental Equations of Computer Vision",
+    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\mathbf{x}=\\mathbf{K}\\begin{bmatrix}\\mathbf{R}&\\mathbf{t}\\end{bmatrix}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-1",
+    "href": "lectures/03_filtering.html#image-filtering-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering",
+    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\ny[m,n] =\n\\sum_{k,l}\nh[k,l]\\,I[m+k,n+l]\n\\]\nFilter window/kernel size: “\\(k\\)” and “\\(l\\)”"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#interpreting-the-image-filtering-equation",
+    "href": "lectures/03_filtering.html#interpreting-the-image-filtering-equation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Interpreting the Image-Filtering Equation",
+    "text": "Interpreting the Image-Filtering Equation\nCompute a function of the local neighborhood at each image position:\n\\[\n\\underbrace{y[m,n]}_{\\text{output}}\n=\n\\sum_{k,l}\n\\underbrace{h[k,l]}_{\\text{filter kernel weights}~~~}\n\\underbrace{I[m+k,n+l]}_{\\text{neighboring image value}}\n\\]\n\n\\(y[m,n]\\): output value at image coordinate \\((m,n)\\)\n\\(h[k,l]\\): filter coefficient at local offset \\((k,l)\\)\n\\(I[m+k,n+l]\\): input image value at the corresponding neighboring location\n\\((m,n)\\)$: output-image coordinates\n\\((k,l)\\): local filter-window coordinates"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-first-position",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-first-position",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: First Position",
+    "text": "Image Filtering: First Position\n\n\n\n\n\n\n\n\n\n\\[\ny[1,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-move-one-pixel-right",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-move-one-pixel-right",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Move One Pixel Right",
+    "text": "Image Filtering: Move One Pixel Right\n\n\n\n\n\n\n\n\n\n\\[\ny[2,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-continue-the-sweep",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-continue-the-sweep",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Continue the Sweep",
+    "text": "Image Filtering: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[3,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[3+k,1+l]=20\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-a-larger-response",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-a-larger-response",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: A Larger Response",
+    "text": "Image Filtering: A Larger Response\n\n\n\n\n\n\n\n\n\n\\[\ny[4,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[4+k,1+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-continue-across-the-row",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-continue-across-the-row",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Continue Across the Row",
+    "text": "Image Filtering: Continue Across the Row\n\n\n\n\n\n\n\n\n\n\\[\ny[5,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[5+k,1+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-try-this-position",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-try-this-position",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Try This Position",
+    "text": "Image Filtering: Try This Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[4,6]\\)? Add the nine pixels under the red window, then divide by nine."
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-another-position",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-another-position",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Another Position",
+    "text": "Image Filtering: Another Position\n\n\n\n\n\n\n\n\n\nThe previous answer was \\(y[4,6]=50\\). What is \\(y[6,4]\\)?"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#image-filtering-complete-output",
+    "href": "lectures/03_filtering_recreated_slides.html#image-filtering-complete-output",
+    "title": "Example: Box Filter Kernel",
+    "section": "Image Filtering: Complete Output",
+    "text": "Image Filtering: Complete Output\n\n\n\n\n\n\n\n\n\n\\[\ny[m,n]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[m+k,n+l]\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#box-filter-what-does-it-do",
+    "href": "lectures/03_filtering_recreated_slides.html#box-filter-what-does-it-do",
+    "title": "Example: Box Filter Kernel",
+    "section": "Box Filter: What Does It Do?",
+    "text": "Box Filter: What Does It Do?\n\n\n\nReplaces each pixel by the average of its local neighborhood.\nSmooths small intensity variations and noise.\nSuppresses sharp edges and fine details.\nUses coefficients that sum to one, preserving constant regions and average brightness.\n\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#smoothing-with-a-box-filter",
+    "href": "lectures/03_filtering_recreated_slides.html#smoothing-with-a-box-filter",
+    "title": "Example: Box Filter Kernel",
+    "section": "Smoothing with a Box Filter",
+    "text": "Smoothing with a Box Filter\nFor a \\(K\\times K\\) box filter, \\(h[k,l]=1/K^2\\). A larger \\(K\\) produces stronger smoothing."
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#gaussian-filter-kernel",
+    "href": "lectures/03_filtering_recreated_slides.html#gaussian-filter-kernel",
+    "title": "Example: Box Filter Kernel",
+    "section": "Gaussian Filter Kernel",
+    "text": "Gaussian Filter Kernel\nThe Gaussian gives the largest weight to the center pixel and smoothly decreases with distance:\n\\[\nh_\\sigma[k,l]\n=\n\\frac{1}{2\\pi\\sigma^2}\n\\exp\\left(-\\frac{k^2+l^2}{2\\sigma^2}\\right).\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#smoothing-with-a-gaussian-filter",
+    "href": "lectures/03_filtering_recreated_slides.html#smoothing-with-a-gaussian-filter",
+    "title": "Example: Box Filter Kernel",
+    "section": "Smoothing with a Gaussian Filter",
+    "text": "Smoothing with a Gaussian Filter\nA Gaussian filter smooths noise while weighting nearby pixels more strongly than distant pixels."
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#box-versus-gaussian-smoothing",
+    "href": "lectures/03_filtering_recreated_slides.html#box-versus-gaussian-smoothing",
+    "title": "Example: Box Filter Kernel",
+    "section": "Box versus Gaussian Smoothing",
+    "text": "Box versus Gaussian Smoothing\n\n\n\n\n\n\n\n\n\n\nThe box filter weights every pixel in the window equally.\nThe Gaussian filter changes weights smoothly, which usually produces fewer artifacts."
+  },
+  {
+    "objectID": "lectures/03_filtering_recreated_slides.html#linear-filter-properties",
+    "href": "lectures/03_filtering_recreated_slides.html#linear-filter-properties",
+    "title": "Example: Box Filter Kernel",
+    "section": "Linear Filter Properties",
+    "text": "Linear Filter Properties\nLet the filtered image be \\(y=\\mathcal{H}(I)=I\\star h\\).\nLinearity:\n\\[\n\\mathcal{H}(aI_1+bI_2)\n=a\\,\\mathcal{H}(I_1)+b\\,\\mathcal{H}(I_2)\n\\]\nShift invariance:\n\\[\n\\mathcal{H}\\!\\left(T_{\\Delta m,\\Delta n}I\\right)\n=T_{\\Delta m,\\Delta n}\\!\\left(\\mathcal{H}(I)\\right)\n\\]\nTogether, these properties make spatial convolution and correlation linear shift-invariant operations."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-2",
+    "href": "lectures/03_filtering.html#image-filtering-2",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering",
+    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\n\\underbrace{y[m,n]}_{\\text{output}}\n=\n\\sum_{k,l}\n\\underbrace{h[k,l]}_{\\text{filter kernel weights}~~~}\n\\underbrace{I[m+k,n+l]}_{\\text{neighboring image value}}\n\\]\n\n\\(y[m,n]\\): output value at image coordinate \\((m,n)\\)\n\\(h[k,l]\\): filter coefficient at local offset \\((k,l)\\)\n\\(I[m+k,n+l]\\): input image value at the corresponding neighboring location"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#example-box-filter-kernel",
+    "href": "lectures/03_filtering.html#example-box-filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Example: Box Filter Kernel",
+    "text": "Example: Box Filter Kernel\n\nThe box filter replaces each pixel with the average of its neighborhood.\nThe size of the neighborhood is determiend by the size of the filter kernel\nFor example, a \\(3\\times 3\\) box filter has the kernel:\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-first-position",
+    "href": "lectures/03_filtering.html#image-filtering-first-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: First Position",
+    "text": "Image Filtering: First Position\n\n\n\n\n\n\n\n\n\n\\[\ny[1,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-move-one-pixel-right",
+    "href": "lectures/03_filtering.html#image-filtering-move-one-pixel-right",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Move One Pixel Right",
+    "text": "Image Filtering: Move One Pixel Right\n\n\n\n\n\n\n\n\n\n\\[\ny[2,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-continue-the-sweep",
+    "href": "lectures/03_filtering.html#image-filtering-continue-the-sweep",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Continue the Sweep",
+    "text": "Image Filtering: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[3,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[3+k,1+l]=20\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-a-larger-response",
+    "href": "lectures/03_filtering.html#image-filtering-a-larger-response",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: A Larger Response",
+    "text": "Image Filtering: A Larger Response\n\n\n\n\n\n\n\n\n\n\\[\ny[4,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[4+k,1+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-continue-across-the-row",
+    "href": "lectures/03_filtering.html#image-filtering-continue-across-the-row",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Continue Across the Row",
+    "text": "Image Filtering: Continue Across the Row\n\n\n\n\n\n\n\n\n\n\\[\ny[5,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[5+k,1+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-try-this-position",
+    "href": "lectures/03_filtering.html#image-filtering-try-this-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Try This Position",
+    "text": "Image Filtering: Try This Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[4,6]\\)? Add the nine pixels under the red window, then divide by nine."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-another-position",
+    "href": "lectures/03_filtering.html#image-filtering-another-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Another Position",
+    "text": "Image Filtering: Another Position\n\n\n\n\n\n\n\n\n\nThe previous answer was \\(y[4,6]=50\\). What is \\(y[6,4]\\)?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-complete-output",
+    "href": "lectures/03_filtering.html#image-filtering-complete-output",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering: Complete Output",
+    "text": "Image Filtering: Complete Output\n\n\n\n\n\n\n\n\n\n\\[\ny[m,n]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[m+k,n+l]\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-what-does-it-do",
+    "href": "lectures/03_filtering.html#box-filter-what-does-it-do",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: What Does It Do?",
+    "text": "Box Filter: What Does It Do?\n\n\n\nReplaces each pixel by the average of its local neighborhood.\nSmooths small intensity variations and noise.\nSuppresses sharp edges and fine details.\n\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}\n\\]\n\n\nWhy does the kernel sum to one?\n\n\n\n\n\n\n\n\nNote\n\n\nThe coefficients sum to one, so the filter preserves constant image regions."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#smoothing-with-a-box-filter",
+    "href": "lectures/03_filtering.html#smoothing-with-a-box-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Smoothing with a Box Filter",
+    "text": "Smoothing with a Box Filter\nFor a \\(K\\times K\\) box filter, \\(h[k,l]=1/K^2\\). A larger \\(K\\) produces stronger smoothing."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#gaussian-filter-kernel",
+    "href": "lectures/03_filtering.html#gaussian-filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Gaussian Filter Kernel",
+    "text": "Gaussian Filter Kernel\nThe Gaussian gives the largest weight to the center pixel and smoothly decreases with distance:\n\\[\nh_\\sigma[k,l]\n=\n\\frac{1}{2\\pi\\sigma^2}\n\\exp\\left(-\\frac{k^2+l^2}{2\\sigma^2}\\right).\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
+    "href": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Smoothing with a Gaussian Filter",
+    "text": "Smoothing with a Gaussian Filter\nA Gaussian filter smooths noise while weighting nearby pixels more strongly than distant pixels."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-versus-gaussian-smoothing",
+    "href": "lectures/03_filtering.html#box-versus-gaussian-smoothing",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box versus Gaussian Smoothing",
+    "text": "Box versus Gaussian Smoothing\n\n\n\n\n\n\n\n\n\n\nThe box filter weights every pixel in the window equally.\nThe Gaussian filter changes weights smoothly, which usually produces fewer artifacts."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#linear-filter-properties",
+    "href": "lectures/03_filtering.html#linear-filter-properties",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Linear Filter Properties",
+    "text": "Linear Filter Properties\nLet the filtered image be \\(y=\\mathcal{H}(I)=I\\star h\\).\nLinearity:\n\\[\n\\mathcal{H}(aI_1+bI_2)\n=a\\,\\mathcal{H}(I_1)+b\\,\\mathcal{H}(I_2)\n\\]\nShift invariance:\n\\[\n\\mathcal{H}\\!\\left(T_{\\Delta m,\\Delta n}I\\right)\n=T_{\\Delta m,\\Delta n}\\!\\left(\\mathcal{H}(I)\\right)\n\\]\nTogether, these properties make spatial convolution and correlation linear shift-invariant operations."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-first-position",
+    "href": "lectures/03_filtering.html#box-filter-first-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: First Position",
+    "text": "Box Filter: First Position\n\n\n\n\n\n\n\n\n\n\\[\ny[1,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
+    "href": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Move One Pixel Right",
+    "text": "Box Filter: Move One Pixel Right\n\n\n\n\n\n\n\n\n\n\\[\ny[1,2]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,2+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,3]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,3+l]=20\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,4]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,4+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-across-the-column",
+    "href": "lectures/03_filtering.html#box-filter-continue-across-the-column",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue Across the Column",
+    "text": "Box Filter: Continue Across the Column\n\n\n\n\n\n\n\n\n\n\\[\ny[2,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-try-this-position",
+    "href": "lectures/03_filtering.html#box-filter-try-this-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Try This Position",
+    "text": "Box Filter: Try This Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[6,4]\\)?\nAdd the nine pixels under the red window, then divide by nine."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-another-position",
+    "href": "lectures/03_filtering.html#box-filter-another-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Another Position",
+    "text": "Box Filter: Another Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[4,6]\\)?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-complete-output",
+    "href": "lectures/03_filtering.html#box-filter-complete-output",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Complete Output",
+    "text": "Box Filter: Complete Output\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny[m,n]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[m+k,n+l]\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,8]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,8+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-window-size-k",
+    "href": "lectures/03_filtering.html#the-window-size-k",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Window Size \\(k\\)",
+    "text": "The Window Size \\(k\\)\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 50\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
   }
 ]
