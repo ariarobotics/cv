@@ -21,6 +21,9 @@ _quarto/
 _freeze/
 **/*.quarto_ipynb
 
+# Quarto generated working/cache files
+.vdoc.*
+
 # ============================================================
 # Source styling files
 # Rendered CSS needed by the public website is copied into docs/
