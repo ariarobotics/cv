@@ -210,186 +210,788 @@
     "text": "Good habits\n\nRun git status often.\nPull before starting work on a shared repository.\nWrite short, meaningful commit messages.\nCommit logical pieces of work rather than one enormous end-of-project commit.\nPush regularly.\nDo not commit large datasets, generated files, model weights, or secrets unless explicitly required."
   },
   {
-    "objectID": "syllabus.html#course-overview",
-    "href": "syllabus.html#course-overview",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Overview",
-    "text": "Course Overview\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\n\n\nPrerequisites\n\nLinear algebra, calculus, probability, and statistics\nAlgorithms and Python (or C++). We require you to program in Python.\n\nCourse Website: https://ariarobotics.github.io/cv/\nCourse Repository: https://github.com/ariarobotics/cv"
-  },
-  {
-    "objectID": "syllabus.html#instructor",
-    "href": "syllabus.html#instructor",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Instructor",
-    "text": "Instructor\n\n\n\n\nKaveh Fathian\nAssistant Professor, Computer Science Department\n\nOffice: Brown 280-N\nOffice hours: Monday/Wednesday, 4:15–5:00 PM (after class)\nLab website: https://www.ariarobotics.com/"
-  },
-  {
-    "objectID": "syllabus.html#course-description",
-    "href": "syllabus.html#course-description",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Description",
-    "text": "Course Description\nComputer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.\n\nLearning Objectives\n\nCLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.\nCLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.\nCLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.\nCLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.\nCLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.\nCLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.\nCLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data."
-  },
-  {
-    "objectID": "syllabus.html#assessments-and-grading",
-    "href": "syllabus.html#assessments-and-grading",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Assessments and Grading",
-    "text": "Assessments and Grading\n\nHomework — 60 points\nThere will be up to 12 homework assignments. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework individually. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will not be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The lowest homework grade, including a missed assignment, will automatically be dropped and will not count toward the final grade. Two or more missed homework assignments will result in an Incomplete grade.\n\n\nExams — 40 points\nThere will be 4 exams scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered in person, in the classroom. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. Documentation must be provided to justify such an exception. Any missed exam will receive a grade of zero. Two or more missed exams will result in an Incomplete grade.\n\n\nBonus Points — up to 10 points\nAt the instructor’s discretion, optional assignments, projects, or other activities may be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.\n\n\nAttendance\nAttendance is mandatory but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will not be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence."
-  },
-  {
-    "objectID": "syllabus.html#final-grade",
-    "href": "syllabus.html#final-grade",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Final Grade",
-    "text": "Final Grade\nThe regular course grade consists of:\n\n\n\nComponent\nPoints\n\n\n\n\nHomework\n60\n\n\nExams\n40\n\n\nTotal\n100\n\n\n\nBonus points are then added to the final grade:\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\nA maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.\n\nGrading Rubric\n\n\n\nAmended Final Grade\nLetter Grade\n\n\n\n\n93–100\nA\n\n\n90–&lt;93\nA−\n\n\n87–&lt;90\nB+\n\n\n83–&lt;87\nB\n\n\n80–&lt;83\nB−\n\n\n77–&lt;80\nC+\n\n\n73–&lt;77\nC\n\n\n70–&lt;73\nC−\n\n\n67–&lt;70\nD+\n\n\n63–&lt;67\nD\n\n\n60–&lt;63\nD−\n\n\n&lt;60\nF"
-  },
-  {
-    "objectID": "syllabus.html#logistics",
-    "href": "syllabus.html#logistics",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Logistics",
-    "text": "Logistics\n\nThe primary communication channel between students and the instructor/TAs is the Ed Discussion server, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.\nStudents are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.\nInformation about the course TAs and their office hours is available through the course repository: https://github.com/ariarobotics/cv"
-  },
-  {
-    "objectID": "syllabus.html#resources",
-    "href": "syllabus.html#resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Resources",
-    "text": "Resources\nThere is no required textbook. Lecture slides and other course materials will be provided through the course website: https://ariarobotics.github.io/cv/\n\nRecommended Books\nMany of the following are available online.\n\nComputer Vision\n\nSzeliski, Computer Vision: Algorithms and Applications, Springer, 2010.\nKlette, Concise Computer Vision: An Introduction into Theory and Algorithms, 2014.\nHartley and Zisserman, Multiple View Geometry in Computer Vision, Cambridge University Press, 2004.\nForsyth and Ponce, Computer Vision: A Modern Approach, Prentice Hall, 2002.\nPalmer, Vision Science, MIT Press, 1999.\n\n\n\nLearning\n\nGoodfellow, Bengio, and Courville, Deep Learning, MIT Press, 2016.\nMitchell, Machine Learning, McGraw-Hill, 1997.\nDuda, Hart, and Stork, Pattern Classification, 2nd Edition, Wiley-Interscience, 2000.\nSutton and Barto, online book; a classic reference in reinforcement learning.\n\n\n\nGraphical Models\n\nKoller and Friedman, Probabilistic Graphical Models: Principles and Techniques, MIT Press, 2009."
-  },
-  {
-    "objectID": "syllabus.html#course-schedule",
-    "href": "syllabus.html#course-schedule",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Schedule",
-    "text": "Course Schedule\nThe detailed class schedule is available on the course website: https://ariarobotics.github.io/cv/. The schedule is subject to change. Exam and homework dates will not change except in extraordinary circumstances."
-  },
-  {
-    "objectID": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
-    "href": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Policy on Missed Classes, Exams, or Late Assignments",
-    "text": "Policy on Missed Classes, Exams, or Late Assignments\n\nThe lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade.\nThe lowest homework grade, including a missed submission, will automatically be dropped and will not count toward the final grade.\nIn-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.\nThe maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.\nExceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate documentation.\nAny missed exam will receive a grade of zero before application of the lowest-exam-drop policy.\nTwo or more missed exams will result in an Incomplete grade.\nTwo or more missed homework assignments will result in an Incomplete grade."
-  },
-  {
-    "objectID": "syllabus.html#other-important-course-policies",
-    "href": "syllabus.html#other-important-course-policies",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Other Important Course Policies",
-    "text": "Other Important Course Policies\n\nAny form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.\nNo resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.\nProfessional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor."
-  },
-  {
-    "objectID": "syllabus.html#absences",
-    "href": "syllabus.html#absences",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Absences",
-    "text": "Absences\nMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: https://www.mines.edu/student-life/student-absences/"
-  },
-  {
-    "objectID": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
-    "href": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Sexual Misconduct, Discrimination, and Retaliation",
-    "text": "Sexual Misconduct, Discrimination, and Retaliation\nMines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact OIE@Mines.edu or use the appropriate Discriminatory Harassment and Retaliation Reporting Form. Confidential resources are also available through Mines."
-  },
-  {
-    "objectID": "syllabus.html#preferred-first-name",
-    "href": "syllabus.html#preferred-first-name",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Preferred First Name",
-    "text": "Preferred First Name\nMines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the Office for Institutional Equity Preferred First Name resources. Students may also contact the Title IX Coordinator at OIE@Mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#pregnant-and-parenting-students",
-    "href": "syllabus.html#pregnant-and-parenting-students",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Pregnant and Parenting Students",
-    "text": "Pregnant and Parenting Students\nIf you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at oie@mines.edu for more information or to request support or modifications."
-  },
-  {
-    "objectID": "syllabus.html#academic-integrity",
-    "href": "syllabus.html#academic-integrity",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the full academic misconduct and academic integrity policy for definitions of academic misconduct. Resources provided by the Department of Community Standards are also available for guidance regarding academic misconduct and integrity procedures."
-  },
-  {
-    "objectID": "syllabus.html#generative-artificial-intelligence",
-    "href": "syllabus.html#generative-artificial-intelligence",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Generative Artificial Intelligence",
-    "text": "Generative Artificial Intelligence\nThe Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the current course policy, the use of generative AI is allowed outside of class but prohibited during class, including coding sessions and exams."
-  },
-  {
-    "objectID": "syllabus.html#copyrighted-materials",
-    "href": "syllabus.html#copyrighted-materials",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Copyrighted Materials",
-    "text": "Copyrighted Materials\nReadings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/"
-  },
-  {
-    "objectID": "syllabus.html#grading-policy",
-    "href": "syllabus.html#grading-policy",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Grading Policy",
-    "text": "Grading Policy\nExtra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed."
-  },
-  {
-    "objectID": "syllabus.html#course-issues-and-concerns",
-    "href": "syllabus.html#course-issues-and-concerns",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Issues and Concerns",
-    "text": "Course Issues and Concerns\nAs part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions."
-  },
-  {
-    "objectID": "syllabus.html#disability-support-services",
-    "href": "syllabus.html#disability-support-services",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Disability Support Services",
-    "text": "Disability Support Services\nDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: https://www.mines.edu/disability-support-services/"
-  },
-  {
-    "objectID": "syllabus.html#digital-accessibility",
-    "href": "syllabus.html#digital-accessibility",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Digital Accessibility",
-    "text": "Digital Accessibility\nColorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: https://www.mines.edu/accessibility/"
-  },
-  {
-    "objectID": "syllabus.html#student-outreach-support-sos-resources",
-    "href": "syllabus.html#student-outreach-support-sos-resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Student Outreach & Support (SOS) Resources",
-    "text": "Student Outreach & Support (SOS) Resources\nIf you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a referral for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: https://student-life.mines.edu/student-outreach-and-support/\nStudent Outreach and Support can help connect students with resources including:\n\nCounseling Center: https://counseling.mines.edu/\nLocated on the second floor of the Wellness Center, 1770 Elm St.\nStudent Health Center: https://studenthealth.mines.edu/\nLocated on the first floor of the Wellness Center.\nSHAPE Office: https://shape.mines.edu/\nProvides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.\n988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit https://www.988colorado.com/en.\n\nIn an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate."
-  },
-  {
-    "objectID": "syllabus.html#center-for-academic-services-and-advising-casa",
-    "href": "syllabus.html#center-for-academic-services-and-advising-casa",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Center for Academic Services and Advising (CASA)",
-    "text": "Center for Academic Services and Advising (CASA)\nCASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: https://www.mines.edu/casa/academic-support/ Questions may be directed to casa@mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#writing-center",
-    "href": "syllabus.html#writing-center",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Writing Center",
-    "text": "Writing Center\nThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: https://writing.mines.edu/ Questions may be directed to ryandeanlambert@mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#tutoring-resources",
-    "href": "syllabus.html#tutoring-resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Tutoring Resources",
-    "text": "Tutoring Resources\nThe Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: https://www.mines.edu/undergraduate-studies/tutoring/"
-  },
-  {
-    "objectID": "lectures/index.html",
-    "href": "lectures/index.html",
-    "title": "Lectures",
+    "objectID": "tas.html",
+    "href": "tas.html",
+    "title": "Teaching Assistants — Fall 2026",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Course-related questions should generally be posted on Ed Discussion so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.\nNote: TAs are instructed not to pre-grade homework. Please do not ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand."
+  },
+  {
+    "objectID": "tas.html#nathaniel-brazen",
+    "href": "tas.html#nathaniel-brazen",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Nathaniel Brazen",
+    "text": "Nathaniel Brazen\n\n\n\n\n\nEmail: nathaniel_brazen@mines.edu\nOffice hours: Tuesdays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
+  },
+  {
+    "objectID": "tas.html#praveen-krisna",
+    "href": "tas.html#praveen-krisna",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Praveen Krisna",
+    "text": "Praveen Krisna\n\n\n\n\n\nEmail: praveen_krisna@mines.edu\nOffice hours: Mondays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
+  },
+  {
+    "objectID": "tas.html#ryan-hartzell",
+    "href": "tas.html#ryan-hartzell",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Ryan Hartzell",
+    "text": "Ryan Hartzell\n\n\n\n\n\nEmail: ryan_hartzell@mines.edu\nOffice hours: Fridays, 12:30-1:30 PM\nOffice location: Brown 280-K"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule — Fall 2026",
+    "section": "",
+    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Filtering; Fourier Transform\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec04, Lec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec05\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec05, Lec06\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec06\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points & Matching\nLec06\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Matching\nLec06\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nHough Transform\nLec07\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nOptical Flow, Color\nLec08, Lec09\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nCamera Geometry\nLec10\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec10\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Calibration\nLec11\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec12\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec12\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nDepth Cameras\nLec13\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec14\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec15\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec16, Lec17\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec 18\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec 18\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec 19\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec20\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec21\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec22\nLast week of class; Classes end"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#learning-objectives",
+    "href": "lectures/03_filtering.html#learning-objectives",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain filtering as a local neighborhood operation.\nDistinguish correlation and convolution operations.\nPredict the behavior of common kernels.\nExplain linearity, shift invariance, boundary handling, and separability.\nApply Gaussian, Sobel, sharpening, and median filters.\nUse correlation for basic template matching and recognize its limitations."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
+    "href": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Fundamental Equations of Computer Vision",
+    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\mathbf{x}=\\mathbf{K}\\begin{bmatrix}\\mathbf{R}&\\mathbf{t}\\end{bmatrix}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-modifies-a-signal",
+    "href": "lectures/03_filtering.html#filtering-modifies-a-signal",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering Modifies a Signal",
+    "text": "Filtering Modifies a Signal\n\n Noisy samples and a smoothed estimate\n\n\nFiltering transforms a signal to:\n\nsuppress undesired components such as noise\nemphasize useful structure\nextract specific features\n\nFilters can operate on continuous or discrete signals in one or more dimensions."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#d-moving-average-filter",
+    "href": "lectures/03_filtering.html#d-moving-average-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "1D Moving Average Filter",
+    "text": "1D Moving Average Filter\nFor a window size \\(k\\):\n\\[\ny[n] =\n\\frac{1}{k}\n\\sum_{i=n-k+1}^{n} (1) I[i]\n\\qquad \\qquad \\text{or} \\qquad \\qquad\ny[n]\n=\n\\frac{1}{k}\n\\begin{bmatrix}\n1 & 1 & \\cdots & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 10\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-window-size-k",
+    "href": "lectures/03_filtering.html#the-window-size-k",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Window Size \\(k\\)",
+    "text": "The Window Size \\(k\\)\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 50\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filter-kernel",
+    "href": "lectures/03_filtering.html#filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filter Kernel",
+    "text": "Filter Kernel\nWhat is this filter doing?\n\\[\ny[n]\n=\n\\begin{bmatrix}\n0 & 0 & \\cdots & 0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 20\nker = np.zeros(k); ker[-1] = 1\noutput = np.correlate(np.pad(noisy, (k-1, 0)), ker, mode=\"valid\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=4, label=\"Input\")\nax.plot(x, output, \"b--\", lw=2.5, label=\"Output\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-1",
+    "href": "lectures/03_filtering.html#image-filtering-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering",
+    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\ny[m,n] =\n\\sum_{k,l}\nh[k,l]\\,I[m+k,n+l]\n\\]\nFilter window/kernel size: “\\(k\\)” and “\\(l\\)”"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#image-filtering-2",
+    "href": "lectures/03_filtering.html#image-filtering-2",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Image Filtering",
+    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\n\\underbrace{y[m,n]}_{\\text{output}}\n=\n\\sum_{k,l}\n\\underbrace{h[k,l]}_{\\text{filter kernel weights}~~~}\n\\underbrace{I[m+k,n+l]}_{\\text{neighboring image value}}\n\\]\n\n\\(y[m,n]\\): output value at image coordinate \\((m,n)\\)\n\\(h[k,l]\\): filter coefficient at local offset \\((k,l)\\)\n\\(I[m+k,n+l]\\): input image value at the corresponding neighboring location"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#example-box-filter-kernel",
+    "href": "lectures/03_filtering.html#example-box-filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Example: Box Filter Kernel",
+    "text": "Example: Box Filter Kernel\n\nThe box filter replaces each pixel with the average of its neighborhood.\nThe size of the neighborhood is determiend by the size of the filter kernel\nFor example, a \\(3\\times 3\\) box filter has the kernel:\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-first-position",
+    "href": "lectures/03_filtering.html#box-filter-first-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: First Position",
+    "text": "Box Filter: First Position\n\n\n\n\n\n\n\n\n\n\\[\ny[1,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
+    "href": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Move One Pixel Right",
+    "text": "Box Filter: Move One Pixel Right\n\n\n\n\n\n\n\n\n\n\\[\ny[1,2]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,2+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,3]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,3+l]=20\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,4]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,4+l]=30\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
+    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue the Sweep",
+    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,8]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,8+l]=10\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-continue-across-the-column",
+    "href": "lectures/03_filtering.html#box-filter-continue-across-the-column",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Continue Across the Column",
+    "text": "Box Filter: Continue Across the Column\n\n\n\n\n\n\n\n\n\n\\[\ny[2,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-try-this-position",
+    "href": "lectures/03_filtering.html#box-filter-try-this-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Try This Position",
+    "text": "Box Filter: Try This Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[6,4]\\)?\nAdd the nine pixels under the red window, then divide by nine."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-another-position",
+    "href": "lectures/03_filtering.html#box-filter-another-position",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Another Position",
+    "text": "Box Filter: Another Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[4,6]\\)?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-complete-output",
+    "href": "lectures/03_filtering.html#box-filter-complete-output",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Complete Output",
+    "text": "Box Filter: Complete Output"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-complete-output-1",
+    "href": "lectures/03_filtering.html#box-filter-complete-output-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: Complete Output",
+    "text": "Box Filter: Complete Output\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny[m,n]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[m+k,n+l]\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-filter-what-does-it-do",
+    "href": "lectures/03_filtering.html#box-filter-what-does-it-do",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box Filter: What Does It Do?",
+    "text": "Box Filter: What Does It Do?\n\n\n\nReplaces each pixel by the average of its local neighborhood.\nSmooths small intensity variations and noise.\nSuppresses sharp edges and fine details.\n\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}\n\\]\n\n\nWhy does the kernel sum to one?\n\n\n\n\n\n\n\n\nImportant\n\n\nThe coefficients sum to one, so the filter preserves constant image regions."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#smoothing-with-a-box-filter",
+    "href": "lectures/03_filtering.html#smoothing-with-a-box-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Smoothing with a Box Filter",
+    "text": "Smoothing with a Box Filter\n\nFor a \\(k\\times k\\) box filter, \\(h[k,k]=1/k^2\\).\nA larger \\(k\\) produces stronger smoothing\n\n\n\n\nimport cv2\n\nimg_path = Path(\"assets/03_filtering/bloom_original.jpg\")\nimg_col = cv2.imread(str(img_path))\n\nimg_gray = cv2.cvtColor(img_col, cv2.COLOR_BGR2GRAY)\nimg_flt = img_gray.astype(np.float32) / 255.0\nimg = cv2.resize(img_flt, None, fx=0.2, fy=0.2)\n\nbox3 = cv2.blur(img, (3, 3), borderType=cv2.BORDER_CONSTANT)\nbox9 = cv2.blur(img, (9, 9), borderType=cv2.BORDER_CONSTANT)\n\nfig, axes = plt.subplots(1, 3, figsize=(6.5, 3))\nfor ax, result, title in zip(\n    axes, [img, box3, box9], [\"Original\", \"$k=3$\", \"$k=9$\"]):\n    ax.imshow(result, cmap=\"gray\", vmin=0, vmax=1)\n    ax.set_title(title); ax.axis(\"off\")\nplt.tight_layout(pad=0.5)\nplt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#gaussian-filter-kernel",
+    "href": "lectures/03_filtering.html#gaussian-filter-kernel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Gaussian Filter Kernel",
+    "text": "Gaussian Filter Kernel\nA Gaussian kernel gives the largest weight to the center pixel and smoothly decreases with distance:\n\\[\nh_\\sigma[k,l]\n=\n\\frac{1}{2\\pi\\sigma^2}\n\\exp\\left(-\\frac{k^2+l^2}{2\\sigma^2}\\right).\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#gaussian-filter-kernel-1",
+    "href": "lectures/03_filtering.html#gaussian-filter-kernel-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Gaussian Filter Kernel",
+    "text": "Gaussian Filter Kernel\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nGaussian kernel weights sums to one (aside from negligible floating-point errors) – why?\nThe continuous Gaussian integrates to one over the infinite plane. A truncated (5) sample does not automatically sum to one, so the explicit normalization line is necessary.\nSampled kernel size should be large enough to include the meaningful support of the Gaussian—often several standard deviations on each side."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
+    "href": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Smoothing with a Gaussian Filter",
+    "text": "Smoothing with a Gaussian Filter\n\nA Gaussian filter smooths noises.\n\n\n\nimport cv2\n\ngau3 = cv2.GaussianBlur(img, (3, 3), sigmaX=0, borderType=cv2.BORDER_CONSTANT)\ngau9 = cv2.GaussianBlur(img, (9, 9), sigmaX=0, borderType=cv2.BORDER_CONSTANT)\n\nfig, axes = plt.subplots(1, 3, figsize=(6.5, 5))\nfor ax, im, title in zip(\n    axes, [img, gau3, gau9],\n    [\"Original\", r\"Gaussian ($k=3$)\", r\"Gaussian ($k=9$)\"]):\n    ax.imshow(im, cmap=\"gray\", vmin=0, vmax=1)\n    ax.set_title(title)\n    ax.axis(\"off\")\nplt.tight_layout(pad=0.3)\nplt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#box-versus-gaussian-filter-smoothing",
+    "href": "lectures/03_filtering.html#box-versus-gaussian-filter-smoothing",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Box versus Gaussian Filter Smoothing",
+    "text": "Box versus Gaussian Filter Smoothing\n\n\n\n\n\n\n\n\n\n\nThe box filter weights every pixel in the window equally.\nThe Gaussian filter changes weights smoothly, which produces fewer artifacts."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#linear-filter-properties",
+    "href": "lectures/03_filtering.html#linear-filter-properties",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Linear Filter Properties",
+    "text": "Linear Filter Properties\n\n\nLinearity:\n\\[\n\\text{filter}(I, h_1 + h_2)=\\text{filter}(I, h_1)+\\text{filter}(I, h_2)\n\\]\n\nShift/translation invariance:\n\\[\n\\text{filter}(I, \\text{shift}(h))= \\text{shift}(\\text{filter}(I, h))\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#separable-filters",
+    "href": "lectures/03_filtering.html#separable-filters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Separable Filters",
+    "text": "Separable Filters\nA 2D kernel \\(h\\) is separable if\n\\[\nh = v \\, u^T,\n\\]\nwhere \\(v\\) is a vertical 1D kernel and \\(u^T\\) is a horizontal 1D kernel.\nFor example,\n\\[\n\\frac{1}{16}\n\\begin{bmatrix}\n1&2&1\\\\\n2&4&2\\\\\n1&2&1\n\\end{bmatrix}\n=\n\\frac{1}{4}\n\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}\n\\frac{1}{4}\n\\begin{bmatrix}1&2&1\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#separability-example",
+    "href": "lectures/03_filtering.html#separability-example",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Separability Example",
+    "text": "Separability Example"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#separability-reduces-computation",
+    "href": "lectures/03_filtering.html#separability-reduces-computation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Separability Reduces Computation",
+    "text": "Separability Reduces Computation\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\nMethod\nApproximate multiply-adds\n\n\n\n\nFull 2D filtering\n\\(MNPQ\\)\n\n\nSeparable filtering\n\\(MN(P+Q)\\)\n\n\n\nFor a square \\(K\\times K\\) kernel, the per-pixel cost drops from \\(K^2\\) to \\(2K\\).\nExample: A separable \\(9\\times9\\) filter needs about \\(81/18=4.5\\) times fewer multiply-adds than direct 2D filtering."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
+    "href": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "The Gaussian Filter Is Separable",
+    "text": "The Gaussian Filter Is Separable\nBecause\n\\[\n\\frac{1}{2\\pi\\sigma^2}e^{\\left(-\\frac{x^2+y^2}{2\\sigma^2}\\right)}=\\left(\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{\\left(-\\frac{x^2}{2\\sigma^2}\\right)}\\right) \\left(\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{\\left(-\\frac{y^2}{2\\sigma^2}\\right)}\\right) \\implies\n\\] \\[\nG_\\sigma(x,y)=G_\\sigma(x)\\, G_\\sigma(y),\n\\]\nwe can:\n\nFilter every row with a 1D Gaussian.\nFilter every column with the same 1D Gaussian.\n\n\nRepeated filtering with smaller Gaussian kernels can produce the same result as filtering once with a larger Gaussian kernel.\nApplying a Gaussian filter with standard deviation \\(\\sigma\\) twice is equivalent to applying one Gaussian filter with \\(\\sigma_{\\text{combined}}=\\sqrt{2}\\,\\sigma\\).\nThis produces the same result with substantially fewer computations."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-correlation-and-convolution",
+    "href": "lectures/03_filtering.html#filtering-correlation-and-convolution",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering: Correlation and Convolution",
+    "text": "Filtering: Correlation and Convolution\n\n\n2D Correlation:\nThe kernel is applied without changing its orientation:\n\\[\ny[m,n]\n=\n\\sum_{k,l}\nh[k,l]\\,I[m{\\color{#C62828}+}k,n{\\color{#C62828}+}l].\n\\]\nOpenCV’s filter2D computes correlation:\ny_corr = cv2.filter2D(\n    I, -1, h, borderType=cv2.BORDER_CONSTANT)\n\n2D Convolution:\nThe kernel indices are reversed:\n\\[\ny[m,n]\n=\n\\sum_{k,l}\nh[k,l]\\,I[m{\\color{#C62828}-}k,n{\\color{#C62828}-}l].\n\\]\nFor convolution, rotate the kernel by \\(180^\\circ\\) first:\nh_rotated = cv2.flip(h, -1)\n\ny_conv = cv2.filter2D(\n    I, -1, h_rotated, borderType=cv2.BORDER_CONSTANT)\n\n\nConvolution is equivalent to correlation with a \\(180^\\circ\\) rotated kernel: \\[\n\\widetilde{h}[k,l]=h[-k,-l].\n\\]\nCorrelation and convolution are identical when the kernel has \\(180^\\circ\\) rotational symmetry: \\[\nh[k,l]=h[-k,-l].\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
+    "href": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation and Convolution Differ for Asymmetric Kernels",
+    "text": "Correlation and Convolution Differ for Asymmetric Kernels\nA kernel rotated by \\(180^\\circ\\):  \\(\\widetilde{h}[k,l]=h[-k,-l]\\).\n\n\n\n\n\n\n\n\n\n\nSince \\(h_s=\\widetilde{h}_s\\), correlation and convolution produce the same result.\nBut \\(h_a\\neq\\widetilde{h}_a\\), so correlation and convolution produce different responses."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#convolution-properties",
+    "href": "lectures/03_filtering.html#convolution-properties",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Convolution (\\(*\\)) Properties",
+    "text": "Convolution (\\(*\\)) Properties\n\n\n\nCommutative: \\(I*h=h*I\\)\n\nMathematically, the input and kernel can be interchanged.\n\nAssociative: \\((I*h_1)*h_2 = I*(h_1*h_2)\\)\n\nA sequence of filters can be combined into a single kernel.\nThis can reduce the number of filtering operations.\nNote that correlation is not associative in general.\n\nDistributive: \\(I*(h_1+h_2)=I*h_1+I*h_2\\)\n\n\n\nScalar factor out: \\((\\alpha I)*h=\\alpha(I*h)\\)\nIdentity: \\(I*\\delta=I\\), where \\(\\delta\\) is the unit impulse\n\nThe identity kernel is the unit impulse: \\[\n  \\delta[m,n]\n  =\n  \\begin{cases}\n  1, & m=0,\\ n=0,\\\\\n  0, & \\text{otherwise}.\n  \\end{cases}\n  \\]\nConvolving with the unit impulse leaves the image unchanged\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFinite images and boundary rules can make practical implementations appear to violate these identities near the edges.\nConvolution filters are both linear and shift-invariant – why?\nEvery liner filter can be represented as convolution with some kernel – why?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
+    "href": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "“Convolution” Layers Usually Compute Correlation",
+    "text": "“Convolution” Layers Usually Compute Correlation\n\n\n\n\nConvolutional neural networks learn their kernel weights from data rather than using predefined filters.\nDespite the name, most deep-learning libraries apply learned kernels without rotating them, which is, correlation.\nThis does not reduce the network’s expressive power since the kernel is learned, and the network can learn either a kernel or its rotated version."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#boundary-handling",
+    "href": "lectures/03_filtering.html#boundary-handling",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Boundary Handling",
+    "text": "Boundary Handling\n\n\n\n\n\n\nNear an image boundary, part of the kernel falls outside the available data. Need to extrapolate (padding) to compute the output edge pixels.\n\n\n\n\n\n\n\n\nStrategy\nAssumption outside the image\nCommon consequence\n\n\n\n\nConstant / zero\nMissing pixels have a fixed value\nDark or bright border artifacts\n\n\nReplicate\nRepeat the closest boundary pixel\nFlat extension at the edge\n\n\nReflect\nMirror the image across the boundary\nOften smoothest for natural images\n\n\nWrap\nOpposite edges are adjacent\nAppropriate for periodic data\n\n\nValid only\nSkip incomplete neighborhoods\nSmaller output image\n\n\n\n\n\n\n\n\n\nNote\n\n\nTwo implementations using the same kernel can disagree near the boundary if their padding modes differ."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#common-output-modes",
+    "href": "lectures/03_filtering.html#common-output-modes",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Common Output Modes",
+    "text": "Common Output Modes\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\n\n\n\n\n\nMode\nOutput size\nInterpretation\n\n\n\n\nfull\n\\((M+P-1)\\times(N+Q-1)\\)\nEvery partial overlap, with padding\n\n\nsame\n\\(M\\times N\\)\nCenter portion matching the input size\n\n\nvalid\n\\((M-P+1)\\times(N-Q+1)\\)\nOnly complete overlaps; no padding\n\n\n\nExample: convolving a \\(275\\times175\\) image with another \\(275\\times175\\) image produces:\n\nfull: \\(549\\times349\\)\nsame: \\(275\\times175\\)\nvalid: \\(1\\times1\\)\n\n\n\n\n\n\n\nNote\n\n\nLibrary defaults differ. Specify the mode and boundary behavior explicitly when reproducibility matters."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#output-modes",
+    "href": "lectures/03_filtering.html#output-modes",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Three Common Output Modes",
+    "text": "Three Common Output Modes\n\n\n\nimport cv2\n\nx = cv2.imread(\"assets/03_filtering/colorado-flower.jpg\", 0)\nx = cv2.resize(x, (200,120), interpolation=cv2.INTER_AREA).astype(np.float32)/255\nh, w = x.shape\n\np = cv2.copyMakeBorder(x, h-1,0,w-1,0, cv2.BORDER_CONSTANT)\nfull = cv2.filter2D(p, cv2.CV_32F, x, anchor=(0,0), borderType=cv2.BORDER_CONSTANT)\nsame = cv2.filter2D(x, cv2.CV_32F, x, borderType=cv2.BORDER_CONSTANT)\nvalid = full[h-1:h, w-1:w]\n\nims, names = [x,full,same,valid], [\"Input\",\"full\",\"same\",\"valid\"]\nH, W = full.shape\nfig, ax = plt.subplots(2,2,figsize=(6.5,5))\n\nfor a, im, name in zip(ax.flat, ims, names):\n    ih, iw = im.shape\n    a.imshow(im, cmap=\"gray\", extent=(0,iw,ih,0), interpolation=\"nearest\")\n    a.set(xlim=(0,W), ylim=(H,0), title=fr\"{name}: ${iw}\\times{ih}$\")\n    a.axis(\"off\")\n\nplt.tight_layout(pad=.4)\nplt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-with-linear-filters",
+    "href": "lectures/03_filtering.html#practice-with-linear-filters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice with Linear Filters",
+    "text": "Practice with Linear Filters\nPredict the effect of each kernel before viewing the following examples."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice",
+    "href": "lectures/03_filtering.html#practice",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice:",
+    "text": "Practice:\nWhat will this kernel do to the image?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#identity-kernel-leaves-the-image-unchanged",
+    "href": "lectures/03_filtering.html#identity-kernel-leaves-the-image-unchanged",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Identity Kernel Leaves the Image Unchanged",
+    "text": "Identity Kernel Leaves the Image Unchanged\nThe center coefficient copies the current pixel:\n\\[\ny[m,n]=I[m,n].\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-1",
+    "href": "lectures/03_filtering.html#practice-1",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice:",
+    "text": "Practice:\nWhat will happen when the kernel selects the pixel immediately to the right?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#shift-kernel-copies-a-neighboring-pixel",
+    "href": "lectures/03_filtering.html#shift-kernel-copies-a-neighboring-pixel",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Shift Kernel Copies a Neighboring Pixel",
+    "text": "Shift Kernel Copies a Neighboring Pixel\nFor correlation, the kernel produces\n\\[\ny[m,n]=I[m,n+1],\n\\]\nso the image content shifts left by one pixel."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-2",
+    "href": "lectures/03_filtering.html#practice-2",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice:",
+    "text": "Practice:\nExamine the kernel and predict which image structures will produce the strongest response.\n\n\n\n\n\n\n\n\n\n\nWill the kernel respond to horizontal or vertical edges?\nWhich regions of the image will have a response near zero?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#sobel-x-detecting-vertical-edges",
+    "href": "lectures/03_filtering.html#sobel-x-detecting-vertical-edges",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Sobel \\(x\\): Detecting Vertical Edges",
+    "text": "Sobel \\(x\\): Detecting Vertical Edges\nThis kernel responds strongly to vertical edges.\n\n\n\n\n\n\n\n\n\nThe absolute value displays both dark-to-light and light-to-dark transitions as bright edges."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-3",
+    "href": "lectures/03_filtering.html#practice-3",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice:",
+    "text": "Practice:\nExamine the kernel and predict which image structures will produce the strongest response.\n\n\n\n\n\n\n\n\n\n\nWill the kernel respond to horizontal or vertical edges?\nWhich regions of the image will have a response near zero?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#sobel-y-detecting-horizontal-edges",
+    "href": "lectures/03_filtering.html#sobel-y-detecting-horizontal-edges",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Sobel \\(y\\): Detecting Horizontal Edges",
+    "text": "Sobel \\(y\\): Detecting Horizontal Edges\nThis kernel responds strongly to horizontal edges.\n\n\n\n\n\n\n\n\n\nThe sign of the original response indicates the direction of the intensity transition."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-subtracting-the-local-average",
+    "href": "lectures/03_filtering.html#practice-subtracting-the-local-average",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice: Subtracting the Local Average",
+    "text": "Practice: Subtracting the Local Average\nWhat remains after subtracting the local \\(3\\times3\\) average from the center pixel?\n\\[\nh_{\\text{detail}}\n=\n\\delta-h_{\\text{box}}.\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#local-detail-kernel-extracts-high-frequencies",
+    "href": "lectures/03_filtering.html#local-detail-kernel-extracts-high-frequencies",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Local-Detail Kernel Extracts High Frequencies",
+    "text": "Local-Detail Kernel Extracts High Frequencies\nThe kernel removes smooth content and preserves rapid intensity changes:\n\\[\ny\n=\nI-\\operatorname{boxblur}(I).\n\\]\n\n\n\n\n\n\n\n\n\nMid-gray represents weak response; brighter or darker values represent strong filter response."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#adding-local-detail-sharpens-the-image",
+    "href": "lectures/03_filtering.html#adding-local-detail-sharpens-the-image",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Adding Local Detail Sharpens the Image",
+    "text": "Adding Local Detail Sharpens the Image\nSharpening adds the extracted high-frequency detail back to the original image:\n\\[\nh_{\\text{sharp}} = \\delta+\\left(\\delta-h_{\\text{box}}\\right)\n\\] \\[\ny = I+\\left(I-\\operatorname{boxblur}(I)\\right)\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filter-responses-can-be-negative",
+    "href": "lectures/03_filtering.html#filter-responses-can-be-negative",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filter Responses Can Be Negative",
+    "text": "Filter Responses Can Be Negative\n\n\n\nConsider the horizontal-edge Sobel kernel \\(h\\).\nA Sobel filter estimates an image derivative, so output is not restricted to the range \\([0,255]\\) or \\([0, 1]\\).\nPositive and negative values represent opposite edge polarities.\nValues near zero indicate little intensity change.\n\n\n\\[\nh=\n\\begin{bmatrix}\n1&2&1\\\\\n0&0&0\\\\\n-1&-2&-1\n\\end{bmatrix}\n\\]\n\n\n\n\nimg = cv2.imread(\"assets/03_filtering/red-rock.jpg\", cv2.IMREAD_GRAYSCALE)\nh_y = np.array([[1, 2, 1],\n                [0, 0, 0],\n                [-1, -2, -1]], dtype=np.float32)\nimg_out = cv2.filter2D(img, cv2.CV_32F, h_y, borderType=cv2.BORDER_CONSTANT)\nlimit = np.abs(img_out).max()\n\nfig, ax = plt.subplots(1, 2, figsize=(6.5, 4))\nax[0].imshow(img, cmap=\"gray\"); ax[0].set_title(\"Input\")\nax[1].imshow(img_out, cmap=\"gray\", vmin=-limit, vmax=limit)\nax[1].set_title(\"Signed filter response\")\nfor a in ax: a.axis(\"off\")\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#visualizing-signed-filter-responses",
+    "href": "lectures/03_filtering.html#visualizing-signed-filter-responses",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Visualizing Signed Filter Responses",
+    "text": "Visualizing Signed Filter Responses\nThe signed filter response can be transformed differently depending on what we want to visualize.\n\nIn the signed response, zero is centered at gray.\nClipping negative values removes one edge polarity.\nThe absolute response shows edge strength but discards polarity.\n\n\n\nlimit = max(float(np.abs(img_out).max()), 1)\n\nimages = [img_out, np.clip(img_out, 0, None), np.abs(img_out)]\n\ntitles = [\"Signed\", \"Neg clipped\", \"Absolute val\"]\nfig, ax = plt.subplots(1, 3, figsize=(6.5, 4))\nfor a, image, title in zip(ax, images, titles):\n    signed = title == \"Signed\"\n    a.imshow(image, cmap=\"gray\", vmin=-limit if signed else 0, vmax=limit)\n    a.set_title(title); a.axis(\"off\")\nplt.tight_layout(); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
+    "href": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice: Match Each Convolution to Its Output",
+    "text": "Practice: Match Each Convolution to Its Output\nSelect E, F, G, H, or I for each filter. One candidate is not used.\n\\[\n1.\\;A*B=?\n\\qquad\n2.\\;B*C=?\n\\qquad\n3.\\;A*D=?\n\\qquad\n4.\\;A*A=?\n\\]"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#practice-answers",
+    "href": "lectures/03_filtering.html#practice-answers",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Practice: Answers",
+    "text": "Practice: Answers\n\n\n\n\n\n\n\n\n\n\n\\(A*B=E\\): the derivative kernel produces an edge response.\n\\(B*C=F\\): smoothing the derivative kernel produces a derivative-of-Gaussian kernel.\n\\(A*D=G\\): convolution with the shifted impulse shifts the image.\n\\(A*A=H\\): convolving the image with itself produces a broad self-convolution response.\n\nThe unused candidate is \\(I=A*C\\), the Gaussian-smoothed image."
+  },
+  {
+    "objectID": "lectures/03_filtering.html#template-matching",
+    "href": "lectures/03_filtering.html#template-matching",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Correlation as Template Matching",
+    "text": "Correlation as Template Matching\n\nUse an image patch as the filter kernel and correlate it across the image: \\[\ny[m,n]=\\sum_k\\sum_l h[k,l]\\,I[m+k,n+l]\n\\]\nThe largest response is the location that best matches the template.\n\n\n\n\nimport cv2\n\npath = \"assets/03_filtering/colorado-flowers.jpg\"\nbox = (60, 65, 125, 135) # x0, y0, width, height\n\nI = cv2.imread(path, cv2.IMREAD_GRAYSCALE).astype(np.float32)/255\nx0, y0, w, ht = box\nh = I[y0:y0+ht, x0:x0+w]\n\ny = cv2.filter2D(I, cv2.CV_32F, h, borderType=cv2.BORDER_CONSTANT)\n_, score, _, (px,py) = cv2.minMaxLoc(y)\n\nselected = I.copy(); cv2.rectangle(selected,(x0,y0),(x0+w,y0+ht),1,3)\nmatch = I.copy()\ncv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4))\nims = [selected,h,y,match]\ntitles = [\"Selected template\",\"Template $h$\",\"Correlation output $y$\",\"Largest response\"]\n\nfor a, im, title in zip(ax.flat,ims,titles):\n    a.imshow(im,cmap=\"gray\"); a.set_title(title); a.axis(\"off\")\n\nplt.tight_layout(pad=.3); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#brightness-can-dominate-correlation",
+    "href": "lectures/03_filtering.html#brightness-can-dominate-correlation",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Brightness Can Dominate Correlation",
+    "text": "Brightness Can Dominate Correlation\n\nRaw correlation computes a dot product, so brighter regions can produce larger responses.\nSubtract the template mean: \\(f_0 = f-\\bar f\\)\nNow positive and negative values describe the pattern relative to its local brightness.\n\n\n\n\nh0 = h - h.mean()\ny = cv2.filter2D(I, cv2.CV_32F, h0, borderType=cv2.BORDER_CONSTANT)\n\n_, score, _, (px,py) = cv2.minMaxLoc(y)\nmatch = I.copy()\ncv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4.5))\nax[0,0].imshow(h0,cmap=\"gray\"); ax[0,0].set_title(\"Zero-mean $h$\")\nax[1,0].imshow(y,cmap=\"gray\"); ax[1,0].plot(px,py,\"r.\",ms=8)\nax[1,0].set_title(\"Correlation output $y$\")\nax[1,1].imshow(match,cmap=\"gray\"); ax[1,1].set_title(f\"Peak: ({px}, {py})\")\nfor a in ax.flat: a.axis(\"off\")\nplt.tight_layout(pad=.3); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#use-correlation-not-convolution-for-template-matching",
+    "href": "lectures/03_filtering.html#use-correlation-not-convolution-for-template-matching",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Use Correlation, Not Convolution, for Template Matching",
+    "text": "Use Correlation, Not Convolution, for Template Matching\n\nCorrelation compares the template in its original orientation.\nConvolution compares against a template rotated by \\(180^\\circ\\).\nFor template matching, use correlation so the template orientation is preserved.\n\n\n\n\nkernels = [h0, cv2.flip(h0,-1)]\nnames = [\"Correlation\",\"Convolution\"]\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4.4))\n\nfor r, (hk,name) in enumerate(zip(kernels,names)):\n    y = cv2.filter2D(I, cv2.CV_32F, hk, borderType=cv2.BORDER_CONSTANT)\n    _, score, _, (px,py) = cv2.minMaxLoc(y)\n\n    match = I.copy()\n    cv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\n    ax[r,0].imshow(hk,cmap=\"gray\")\n    ax[r,1].imshow(match,cmap=\"gray\")\n    ax[r,0].set_title(f\"{name} kernel\")\n    ax[r,1].set_title(f\"Peak response = {score:.1f}\")\n\nfor a in ax.flat: a.axis(\"off\")\nplt.tight_layout(pad=.3); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#median-filter",
+    "href": "lectures/03_filtering.html#median-filter",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Median Filter",
+    "text": "Median Filter\n\nA median filter is a nonlinear rank filter: \\[\ny[m,n]=\\operatorname{median}\\{I[m+k,n+l]\\}_{(k,l)\\in\\Omega}.\n\\]\nIt replaces the center pixel by the middle value in the local neighborhood.\nUnlike a linear filter, there is no kernel \\(h[k,l]\\) such that \\(y[m,n]=\\sum_k\\sum_l h[k,l]\\,I[m+k,n+l].\\)"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#salt-and-pepper",
+    "href": "lectures/03_filtering.html#salt-and-pepper",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Salt-and-Pepper Noise: Mean vs. Median",
+    "text": "Salt-and-Pepper Noise: Mean vs. Median\n\nImpulse noise replaces some pixels with 0 or 255.\nA mean filter averages these outliers with their neighbors, while a median filter can reject them.\n\n\n\n\npath = \"assets/03_filtering/colorado-flower.jpg\"   \nI0 = cv2.imread(path, cv2.IMREAD_GRAYSCALE)\nI0 = cv2.resize(I0, (380,255))\n\n# Add salt-and-pepper noise\nrng, p = np.random.default_rng(7), 0.03\nIsp = I0.copy(); M = rng.random(I0.shape)\nIsp[M &lt; p] = 0; Isp[M &gt; 1-p] = 255\n\n# Compare mean and median filtering\nImean3 = cv2.blur(Isp, (3,3), borderType=cv2.BORDER_REFLECT)\nImed3  = cv2.medianBlur(Isp, 3)\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4.4))\nfor a, im, t in zip(ax.flat,\n    [I0, Isp, Imean3, Imed3],\n    [\"Original $I$\", \"Salt-and-pepper noise\", \"3×3 mean\", \"3×3 median\"]):\n    panel(a, im, t)\nplt.tight_layout(pad=.3); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#window-size-matters",
+    "href": "lectures/03_filtering.html#window-size-matters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Window Size Matters",
+    "text": "Window Size Matters\n\nLarger windows remove more noise, but they also remove more image detail.\n\n\n\n# Mean filters\nImean3  = cv2.blur(Isp, (3,3),   borderType=cv2.BORDER_REFLECT)\nImean11 = cv2.blur(Isp, (11,11), borderType=cv2.BORDER_REFLECT)\n\n# Median filters\nImed3  = cv2.medianBlur(Isp, 3)\nImed11 = cv2.medianBlur(Isp, 11)\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4.4))\nfor a, im, t in zip(ax.flat,\n    [Imean3, Imean11, Imed3, Imed11],\n    [\"3×3 mean\", \"11×11 mean\", \"3×3 median\", \"11×11 median\"]):\n    panel(a, im, t)\nplt.tight_layout(pad=.3); plt.show()"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#median-filters",
+    "href": "lectures/03_filtering.html#median-filters",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Median Filters",
+    "text": "Median Filters\n\nThe median filter operates over a window by selecting the median intensity in the window.\nBecause ordering is nonlinear, in general,\n\n\\[\n\\operatorname{median}(I_1+I_2)\\neq\n\\operatorname{median}(I_1)+\\operatorname{median}(I_2)\n\\]\n\n\n\n\n\n\nNote\n\n\n\nWhat advantage does a median filter have over a mean filter?\nIs a median filter a kind of convolution?"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#filtering-applications",
+    "href": "lectures/03_filtering.html#filtering-applications",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Filtering Applications",
+    "text": "Filtering Applications\n\n\nImprove an image:\n\nRemove noise\nSmooth before downsampling\nSharpen local detail\nEstimate illumination or background\n\n\nExtract information:\n\nDetect edges and corners\nMeasure texture\nFind repeated patterns\nMatch a template to image regions\n\n\n\n\n\n\n\n\n\n\nGoal\nUseful starting point\nMain tradeoff\n\n\n\n\nReduce noise\nGaussian smoothing\nBlurs fine details\n\n\nRemove impulse noise\nMedian filtering\nCan remove small structures\n\n\nDetect edges\nSobel or derivative kernels\nAmplifies noise\n\n\nEnhance local detail\nSharpening / high-pass\nMay create noise or halos\n\n\nFind a known pattern\nNormalized correlation\nSensitive to scale and rotation"
+  },
+  {
+    "objectID": "lectures/03_filtering.html#key-takeaways",
+    "href": "lectures/03_filtering.html#key-takeaways",
+    "title": "Lecture 03 — Image Filtering",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nA filter maps each output location to a function of a local input neighborhood.\nA kernel’s weights determine whether the filter smooths, differentiates, shifts, or sharpens.\nCorrelation uses the kernel as written; convolution rotates it by \\(180^\\circ\\).\nGaussian filters are composable and separable.\nSobel filters estimate signed spatial derivatives and edge strength.\nBoundary rules and output modes are part of the algorithm.\nMedian filtering is nonlinear and robust to isolated extreme values."
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-overview",
+    "href": "lectures/01_intro.html#course-overview",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\n\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\nCourse Repository:\nhttps://github.com/ariarobotics/cv\n\n\nCourse Website:\nhttps://ariarobotics.github.io/cv/"
+  },
+  {
+    "objectID": "lectures/01_intro.html#instructor",
+    "href": "lectures/01_intro.html#instructor",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Instructor",
+    "text": "Instructor\n\n\nKaveh Fathian:\n\nComputer Science Assistant Professor\nDirector of Autonomy, Robotics, & Intelligent Algorithms (ARIA) Lab\nMS/PhD @ UT Dallas; Postdoc @ MIT\nPreferred form of address: Please call me Kaveh.\nPronunciation: Kaveh — kah-VEH (/kɑːˈvɛ/)\n\nTeaching:\n\nFall semester: “Computer Vision”\nSpring semester: “Robotic Mapping & Localization”\n\nEmail: \n\nfathian@ariarobotics.com\nkaveh.fathian@mines.edu"
+  },
+  {
+    "objectID": "lectures/01_intro.html#aria-lab",
+    "href": "lectures/01_intro.html#aria-lab",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "ARIA Lab",
+    "text": "ARIA Lab\n\n\nOur Spot robot at Edgar mine  \n\n3D map of Mines campus \n\n\nMission: Develop robust algorithms for robotic perception and autonomy.\nResearch: 3D mapping, localization, and perception.\nStudent opportunities: Projects are available for students from CS, EE, ME, and related areas.\nLearn more / join the lab: https://www.ariarobotics.com/join-us"
+  },
+  {
+    "objectID": "lectures/01_intro.html#mailab",
+    "href": "lectures/01_intro.html#mailab",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "MAILab",
+    "text": "MAILab"
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-learning-objectives",
+    "href": "lectures/01_intro.html#course-learning-objectives",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Learning Objectives",
+    "text": "Course Learning Objectives\n\nExplain fundamentals of image formation, representation, color, and processing.\nApply filtering, convolution, Fourier analysis, edge detection, and Hough methods.\nDetect, describe, and match visual features.\nApply camera geometry, calibration, stereo vision, and motion estimation for 3D vision.\nImplement classical recognition and detection methods, including SIFT and HOG.\nApply machine learning and deep learning to classification, detection, and segmentation.\nDevelop and evaluate computer vision pipelines using Python and OpenCV."
+  },
+  {
+    "objectID": "lectures/01_intro.html#computer-vision-and-nearby-fields",
+    "href": "lectures/01_intro.html#computer-vision-and-nearby-fields",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computer Vision and Nearby Fields",
+    "text": "Computer Vision and Nearby Fields\n\n\nComputer Vision\nReal world\n  ↓ images, videos, sensor data\nComputer Vision\n  ↓ information / understanding\nModel of the visual world\nComputer vision tries to infer useful information about the real world from images, videos, and other visual sensor data.\n\nComputer Graphics\nModel of the visual world\n  ↓ rendering / simulation\nComputer Graphics\n  ↓ images, videos, interaction\nDigital world\nComputer graphics often works in the opposite direction: from models to images.\n\n\n\n Real-world image\n\n Rendered / digital world"
+  },
+  {
+    "objectID": "lectures/01_intro.html#scope-of-computer-vision",
+    "href": "lectures/01_intro.html#scope-of-computer-vision",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Scope of Computer Vision",
+    "text": "Scope of Computer Vision\n\n\n\nComputer vision uses ideas from many fields. In this course, in addition to theory, we focus on practical computer vision algorithms and tools."
+  },
+  {
+    "objectID": "lectures/01_intro.html#cv-applications",
+    "href": "lectures/01_intro.html#cv-applications",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "CV Applications",
+    "text": "CV Applications\n\nSmartphones & Consumer Devices: QR codes, computational photography, panorama stitching, face detection/recognition, face filters, depth sensing, pose estimation, visual search\nWearables: Heart-rate estimation, gesture recognition, activity monitoring, proximity sensing\nSecurity & Biometrics: Fingerprint, iris, and face recognition; access control; CCTV monitoring; identity verification\nWeb & Social Media: Image search, photo organization, image captioning, content moderation, visual recommendations, geolocalization\nAR/VR & Virtual Worlds: Head/hand tracking, SLAM, gesture recognition, virtual try-on, digital humans, mixed reality\nTelepresence: Virtual backgrounds, face/person tracking, gaze correction, video enhancement\nMedia & Entertainment: Visual effects, motion capture, sports replay, video editing, automatic content analysis\nTransportation: Autonomous driving, driver monitoring, lane/object detection, traffic analysis, navigation\nRetail & Supermarkets: Cashier-less checkout, inventory monitoring, theft detection, product recognition, automated sorting\nMedical Imaging: CT/MRI reconstruction, assisted diagnosis, pathology, endoscopy, surgical guidance\nRobotics & Embodied AI: Perception, localization, mapping, navigation, manipulation, human-robot interaction\nManufacturing: Visual inspection, defect detection, quality control, process monitoring, automation\nAgriculture & Environment: Crop monitoring, precision agriculture, wildlife monitoring, environmental inspection\nRemote Sensing & Geospatial: Satellite/aerial imagery, mapping, change detection, disaster response\nSpace Exploration: Planetary rovers, telescope imagery, terrain analysis, autonomous exploration\nAccessibility: Scene description, OCR, object recognition, visual assistance for users with impairments\nMultimodal & Generative AI: Vision-language models, visual assistants, image/video generation, editing, and understanding"
+  },
+  {
+    "objectID": "lectures/01_intro.html#computer-vision-on-smartphones",
+    "href": "lectures/01_intro.html#computer-vision-on-smartphones",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computer Vision on Smartphones",
+    "text": "Computer Vision on Smartphones\n\n\n QR codes\n\n Panorama\n\n Face and emotion detection"
+  },
+  {
+    "objectID": "lectures/01_intro.html#smartphones-face-filters",
+    "href": "lectures/01_intro.html#smartphones-face-filters",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Smartphones: Face Filters",
+    "text": "Smartphones: Face Filters"
+  },
+  {
+    "objectID": "lectures/01_intro.html#security-biometrics",
+    "href": "lectures/01_intro.html#security-biometrics",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Security & Biometrics",
+    "text": "Security & Biometrics\n\n\n\n\n\n\n\n\n\nIris recognition:\n\n“How the Afghan Girl was Identified by Her Iris Patterns”\nRead the story | Wikipedia"
+  },
+  {
+    "objectID": "lectures/01_intro.html#visual-search-recognition",
+    "href": "lectures/01_intro.html#visual-search-recognition",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Visual Search & Recognition",
+    "text": "Visual Search & Recognition\n\n\n\n\n\n\n\n\nGoogle Lens: recognize objects, products, landmarks, plants, text, and other visual content"
+  },
+  {
+    "objectID": "lectures/01_intro.html#arvr-spatial-computing",
+    "href": "lectures/01_intro.html#arvr-spatial-computing",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "AR/VR & Spatial Computing",
+    "text": "AR/VR & Spatial Computing\n\n\n\n\n\n\nVirtual and mixed reality"
+  },
+  {
+    "objectID": "lectures/01_intro.html#d-reconstruction",
+    "href": "lectures/01_intro.html#d-reconstruction",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "3D Reconstruction",
+    "text": "3D Reconstruction\n\n\n\nRecovering the 3D structure of a scene from multiple images taken from different viewpoints."
+  },
+  {
+    "objectID": "lectures/01_intro.html#visual-effects-motion-capture",
+    "href": "lectures/01_intro.html#visual-effects-motion-capture",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Visual Effects & Motion Capture",
+    "text": "Visual Effects & Motion Capture\n\n Dawn of the Planet of the Apes\nMotion capture and computer vision algorithms transform actors into digital character."
+  },
+  {
+    "objectID": "lectures/01_intro.html#transportation-autonomous-driving",
+    "href": "lectures/01_intro.html#transportation-autonomous-driving",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Transportation: Autonomous Driving",
+    "text": "Transportation: Autonomous Driving\n\n Waymo: https://www.youtube.com/watch?v=B8R148hFxPw\n\nComputer vision enables detection, tracking, localization, scene understanding, and navigation for automomous cars."
+  },
+  {
+    "objectID": "lectures/01_intro.html#medical-imaging",
+    "href": "lectures/01_intro.html#medical-imaging",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Medical Imaging",
+    "text": "Medical Imaging\n\n\nMRI / CT\n\nReconstruction, segmentation, detection, and diagnosis\n\nUltrasound\n\nImaging, measurement, diagnosis, and surgical guidance"
+  },
+  {
+    "objectID": "lectures/01_intro.html#astronomy-remote-sensing",
+    "href": "lectures/01_intro.html#astronomy-remote-sensing",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Astronomy & Remote Sensing",
+    "text": "Astronomy & Remote Sensing\n\n\n\nCloudy\n\n\nClear\n\nExample application: Cloud detection in astronomical imaging\nImage by Charlie Hagen (Mines alumnus): https://www.nightphotons.com/"
+  },
+  {
+    "objectID": "lectures/01_intro.html#space-exploration-visual-navigation",
+    "href": "lectures/01_intro.html#space-exploration-visual-navigation",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Space Exploration: Visual Navigation",
+    "text": "Space Exploration: Visual Navigation\n\n\n\n\n\n\n\n\nMars 2020 mission used vision-based localizatoin during landing:\n\nCapture descent images\nCompare images with an orbital map\nEstimate location and adjust if necessary"
+  },
+  {
+    "objectID": "lectures/01_intro.html#robotics-embodied-ai",
+    "href": "lectures/01_intro.html#robotics-embodied-ai",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Robotics & Embodied AI",
+    "text": "Robotics & Embodied AI\n\n\nBoston Dynamics: https://blog.bostondynamics.com/flipping-the-script-with-atlas\n\nRobots use vision for perception, localization, mapping, navigation, manipulation, and interaction with the physical world."
+  },
+  {
+    "objectID": "lectures/01_intro.html#vision-language-generative-ai",
+    "href": "lectures/01_intro.html#vision-language-generative-ai",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Vision-Language & Generative AI",
+    "text": "Vision-Language & Generative AI\n\n\n “Teddy bears working on new AI research underwater with 1990s technology”\n\n “Cats playing chess”\n\n “A teddy bear sitting at the Colorado School of Mines”\n\nModern vision systems increasingly combine visual understanding, language, reasoning, and generation."
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-structure",
+    "href": "lectures/01_intro.html#course-structure",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Structure",
+    "text": "Course Structure\n\n\n\nThe course covers both classical and modern computer vision.\n\nClassical CV: image formation, filtering, Fourier analysis, features, geometry, stereo, motion, and 3D vision\nModern CV: machine learning, image classification, object detection, segmentation, and deep learning\nThis is not a machine learning course, but we will introduce the ML/DL concepts needed for computer vision. Good follwo-up courses:\n\nDeep Learning (Prof. Zibo Wang)\nComputer Applied Computer Vision for Engineering Systems (Prof. Minghan Li)\n\n\n400 vs. 500 level: There is no difference in course content. If appropriate, ask to count as 500."
+  },
+  {
+    "objectID": "lectures/01_intro.html#course-resources",
+    "href": "lectures/01_intro.html#course-resources",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Course Resources",
+    "text": "Course Resources\n\n\n\nCourse Website: https://ariarobotics.github.io/cv/\n\nPrimary place to access the syllabus, course schedule, TA information, lectures, and other course information\nUse this as your main entry point for the course\n\nGitHub Repository: https://github.com/ariarobotics/cv\n\nContains course source files, code, notebooks, and downloadable materials\nUseful when you need to clone/download code or inspect the underlying files\n\nLectures:\n\nAre grouped by topic and may be convered over multiple class sessions"
+  },
+  {
+    "objectID": "lectures/01_intro.html#attendance-matters",
+    "href": "lectures/01_intro.html#attendance-matters",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Attendance Matters",
+    "text": "Attendance Matters\n\nIn-person attendance is mandatory, although will not be monitored.\nSome material will be discussed/developed only during class.\nMaterial added/discussed during class will not be recorded or posted later.\nYou are responsible for material covered during any class you miss.\n\nBottom line: Being physically present and engaged in class is an important part of this course."
+  },
+  {
+    "objectID": "lectures/01_intro.html#homework",
+    "href": "lectures/01_intro.html#homework",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Homework",
+    "text": "Homework\n\nHomework accounts for 60% of the regular course grade.\nThere will be up to 12 homework assignments.\nHomework must be prepared and submitted individually.\nYou may discuss problems, help each other, and use appropriate resources, but you must understand and create your own solution.\nIdentical submissions are considered plagiarism and receive a grade of zero.\nHomework solutions will not be posted.\nThe lowest homework grade, including one missed assignment, is automatically dropped.\n\nTwo or more missed homework assignments result in an Incomplete grade."
+  },
+  {
+    "objectID": "lectures/01_intro.html#late-homework",
+    "href": "lectures/01_intro.html#late-homework",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Late Homework",
+    "text": "Late Homework\n\nHomework due dates and times are on Canvas (and course schedule)\nHomework deadlines will not normally be extended.\nThe maximum possible score decreases by 25% for each week late:\n\n\n\n\nSubmission Time\nMaximum Score\n\n\n\n\nOn time\n100%\n\n\nUp to 1 week late\n75%\n\n\nUp to 2 weeks late\n50%\n\n\nUp to 3 weeks late\n25%\n\n\n4+ weeks late\n0%\n\n\n\nPlan ahead and submit homework on time."
+  },
+  {
+    "objectID": "lectures/01_intro.html#exams",
+    "href": "lectures/01_intro.html#exams",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Exams",
+    "text": "Exams\n\nExams account for 40% of the regular course grade.\nThere will be 4 exams during regular class hours.\nExams are around 30 minutes long and will be during the second half of the class.\nExam dates are posted on Canvas (and course schedule).\nExams are in person.\nExams are based on:\n\nLecture slides\nMaterial discussed in class\nHomework\n\nNo resources are allowed during exams, including notes, internet searches, GenAI, calculators, or smartphones.\nThe lowest exam grade, including one missed exam, is automatically dropped.\n\nTwo or more missed exams result in an Incomplete grade."
+  },
+  {
+    "objectID": "lectures/01_intro.html#missed-exams-excused-absences",
+    "href": "lectures/01_intro.html#missed-exams-excused-absences",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Missed Exams & Excused Absences",
+    "text": "Missed Exams & Excused Absences\n\nAny missed exam receives a grade of zero before the lowest-exam grade is dropped.\nA make-up exam may be considered only under extraordinary circumstances for excused-absence.\nAppropriate documentation must be provided when requesting an exception.\nStudents are responsible for submitting excused-absence requests through the appropriate Mines process.\n\nDo not assume that an excused absence automatically means a make-up exam."
+  },
+  {
+    "objectID": "lectures/01_intro.html#grading",
+    "href": "lectures/01_intro.html#grading",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Grading",
+    "text": "Grading\nRegular course grade:\n\nHomework: 60 points\nExams: 40 points\nTotal: 100 points\n\nOptional bonus assignments/projects may be offered at the instructor’s discretion.\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\n\nMaximum bonus: 10 points\nAmended grades above 100 are capped at 100.\nLetter grades are based on the amended final grade; see the syllabus."
+  },
+  {
+    "objectID": "lectures/01_intro.html#prior-grade-distribution",
+    "href": "lectures/01_intro.html#prior-grade-distribution",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Prior Grade Distribution",
+    "text": "Prior Grade Distribution\n\n\n\n\nYou can get a good grade by completing homework on time, keeping up with the material, and preparing for the exams."
+  },
+  {
+    "objectID": "lectures/01_intro.html#generative-ai-use-it-carefully",
+    "href": "lectures/01_intro.html#generative-ai-use-it-carefully",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Generative AI: Use It Carefully",
+    "text": "Generative AI: Use It Carefully\nGenerative AI can be useful, but do not use it to solve your homework for you.\n\nGood use: help remembering syntax, understanding an error message, or explaining a programming concept\nBad use: asking GenAI to solve the problem and copy-pasting the generated code into your submission\nIf AI writes your code, you will complete the assignment without actually learning how to program.\nYou are responsible for understanding every line of code you submit.\nDuring exams, GenAI use is prohibited.\n\nYou need to be able to code without AI.\n\nMany robotics, research, industrial, secure, and field environments have limited or no internet access.\nCompanies hire you to solve problems that GenAI cannot solve.\nUse GenAI as a learning aid, not as a replacement for learning."
+  },
+  {
+    "objectID": "lectures/01_intro.html#academic-integrity",
+    "href": "lectures/01_intro.html#academic-integrity",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nAcademic dishonesty will be taken very seriously.\nExamples include:\n\nCopying another student’s homework\nUsing prohibited resources during an exam\nMisrepresenting or abusing an excused absence\n\nYou may collaborate and discuss homework, but the work you submit must be your own."
+  },
+  {
+    "objectID": "lectures/01_intro.html#communication-ed-discussion",
+    "href": "lectures/01_intro.html#communication-ed-discussion",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Communication: Ed Discussion",
+    "text": "Communication: Ed Discussion\n\nEd Discussion is the primary communication channel for this course.\n\n\nUse Ed Discussion for:\n\nAnnouncements\nCourse/technical questions\nHomework clarification\nQuestions that may also help other students\n\nDo not use Canvas messages or email for routine course questions.\nPlan ahead: Do not expect responses after normal working hours or during weekends. Ask questions early rather than waiting until shortly before a deadline."
+  },
+  {
+    "objectID": "lectures/01_intro.html#office-hours-tas",
+    "href": "lectures/01_intro.html#office-hours-tas",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Office Hours & TAs",
+    "text": "Office Hours & TAs\nInstructor office hours\n\nMonday/Wednesday, 4:15–5:00 PM — immediately after class\n\nBrown 280-N\n\nTeaching Assistants\n\nTA names, office hours, and contact information are available on the Course Website\nTA information/schedule may change, so check the website or Ed Discussion announcements for the current information.\n\nNote:\n\nTAs are instructed not to pre-grade homework.\nDo not ask them if your solution is correct or expect them to provide the answer.\nUse office hours to ask questions about concepts or course material that you do not understand."
+  },
+  {
+    "objectID": "lectures/01_intro.html#getting-help",
+    "href": "lectures/01_intro.html#getting-help",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Getting Help",
+    "text": "Getting Help\nThis is a large class, so please use the following process when you need help:\n\nTry the problem yourself first (search course resources or online for 30 minutes).\nAsk classmates / post the question on Ed Discussion.\nAsk the TAs, preferably through Ed Discussion when the question may help others.\nAsk the instructor or come to office hours.\n\nWhen asking for help:\n\nExplain what you are trying to do.\nShow what you have already tried.\nInclude relevant error messages/code when appropriate.\n\nAsk early. Waiting until the deadline makes it much harder for us to help you."
+  },
+  {
+    "objectID": "lectures/01_intro.html#computers-programming",
+    "href": "lectures/01_intro.html#computers-programming",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Computers & Programming",
+    "text": "Computers & Programming\n\nYou are expected to have access to a computer for programming and in-class activities.\nClassroom computers are available if needed.\nLoaner laptops may also be available through the library.\nThe only programming language used for this course is Python (OpenCV and PyTorch libraries).\nWe will not use other languages (C++, MATLAB, etc.) because this will complicate TA help and grading."
+  },
+  {
+    "objectID": "lectures/01_intro.html#expected-workload",
+    "href": "lectures/01_intro.html#expected-workload",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Expected Workload",
+    "text": "Expected Workload\n\nExpect this course to require approximately 10 hours per week on average, including:\n\nAttending class\nReviewing lecture material\nProgramming\nCompleting homework\nPreparing for exams\n\n\n\nSome students will need substantially more time, particularly if they are less comfortable with:\n\nPython/programming\nCalculus\nLinear algebra (matrix computations)\n\n\n\n\n\n\n\nDo not fall behind early."
+  },
+  {
+    "objectID": "lectures/01_intro.html#key-things-to-remember",
+    "href": "lectures/01_intro.html#key-things-to-remember",
+    "title": "Lecture 01 — Introduction to Computer Vision",
+    "section": "Key Things to Remember",
+    "text": "Key Things to Remember\n\nAttend class — important material may only be presented in person.\nComplete every homework assignment.\nTwo missed homework assignments → Incomplete\nTwo missed exams → Incomplete\nLate homework loses 25% of the maximum score per week.\nUse GenAI to learn, not to avoid learning how to code.\nUse Ed Discussion and ask questions early.\nCheck the course website regularly for the schedule, lectures, and updates.\nAcademic dishonesty is taken very seriously.\nBe professional, be kind.\n\nMost importantly: keep up with the course and ask for help before small problems become large ones."
+  },
+  {
+    "objectID": "code/index.html",
+    "href": "code/index.html",
+    "title": "Code & Demos",
+    "section": "",
+    "text": "Code examples, notebooks, and demonstrations will be posted here throughout the semester."
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "Assignments and supporting materials will be posted here throughout the semester."
+  },
+  {
+    "objectID": "index.html#computer-vision-colorado-school-of-mines",
+    "href": "index.html#computer-vision-colorado-school-of-mines",
+    "title": "Computer Vision",
+    "section": "Computer Vision | Colorado School of Mines",
+    "text": "Computer Vision | Colorado School of Mines\nWelcome to the course website for Computer Vision. This site is the main entry point for course information, lecture material, schedules, and resources."
+  },
+  {
+    "objectID": "index.html#course-material",
+    "href": "index.html#course-material",
+    "title": "Computer Vision",
+    "section": "Course Material",
+    "text": "Course Material\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions covering classical and modern computer vision.\nView Lectures\n\n\nCode & Demos\nPython, OpenCV, PyTorch, and interactive examples used throughout the course.\nView Code\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
+  },
+  {
+    "objectID": "index.html#about-the-course",
+    "href": "index.html#about-the-course",
+    "title": "Computer Vision",
+    "section": "About the Course",
+    "text": "About the Course\nThe course covers both classical and modern computer vision, including:\n\nImage formation and image processing\nFiltering, convolution, and Fourier analysis\nFeature detection and matching\nCamera geometry and calibration\nStereo vision, motion, and 3D reconstruction\nImage classification and object detection\nDeep learning and convolutional neural networks\nPractical computer vision using Python, OpenCV, and PyTorch"
+  },
+  {
+    "objectID": "index.html#course-at-a-glance",
+    "href": "index.html#course-at-a-glance",
+    "title": "Computer Vision",
+    "section": "Course at a Glance",
+    "text": "Course at a Glance\n\n\n\nInstructor\nKaveh Fathian\n\n\nSemester\nFall 2026\n\n\nClass\nMonday & Wednesday, 3:00–4:15 PM\n\n\nLocation\nCoorsTek 130\n\n\nProgramming\nPython\n\n\nPrimary Communication\nEd Discussion"
+  },
+  {
+    "objectID": "index.html#course-website-vs.-github-repository",
+    "href": "index.html#course-website-vs.-github-repository",
+    "title": "Computer Vision",
+    "section": "Course Website vs. GitHub Repository",
+    "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
   },
   {
     "objectID": "lectures/02_image.html#what-is-an-image-and-how-is-it-formed",
@@ -679,767 +1281,186 @@
     "text": "After Class\nPlease go through any tutorials that cover tools you are not yet comfortable with:\nhttps://ariarobotics.github.io/cv/tutorials/\nIn particular, make sure you can:\n\nActivate the cv environment\nUse basic Git commands\nOpen a project in VS Code\nRun Python scripts and Jupyter notebooks\nWork with basic NumPy arrays\n\nYou do not need to memorize every Git, Conda, or NumPy command. The tutorials are there as references throughout the semester."
   },
   {
-    "objectID": "index.html#computer-vision-colorado-school-of-mines",
-    "href": "index.html#computer-vision-colorado-school-of-mines",
-    "title": "Computer Vision",
-    "section": "Computer Vision | Colorado School of Mines",
-    "text": "Computer Vision | Colorado School of Mines\nWelcome to the course website for Computer Vision. This site is the main entry point for course information, lecture material, schedules, and resources."
-  },
-  {
-    "objectID": "index.html#course-material",
-    "href": "index.html#course-material",
-    "title": "Computer Vision",
-    "section": "Course Material",
-    "text": "Course Material\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions covering classical and modern computer vision.\nView Lectures\n\n\nCode & Demos\nPython, OpenCV, PyTorch, and interactive examples used throughout the course.\nView Code\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
-  },
-  {
-    "objectID": "index.html#about-the-course",
-    "href": "index.html#about-the-course",
-    "title": "Computer Vision",
-    "section": "About the Course",
-    "text": "About the Course\nThe course covers both classical and modern computer vision, including:\n\nImage formation and image processing\nFiltering, convolution, and Fourier analysis\nFeature detection and matching\nCamera geometry and calibration\nStereo vision, motion, and 3D reconstruction\nImage classification and object detection\nDeep learning and convolutional neural networks\nPractical computer vision using Python, OpenCV, and PyTorch"
-  },
-  {
-    "objectID": "index.html#course-at-a-glance",
-    "href": "index.html#course-at-a-glance",
-    "title": "Computer Vision",
-    "section": "Course at a Glance",
-    "text": "Course at a Glance\n\n\n\nInstructor\nKaveh Fathian\n\n\nSemester\nFall 2026\n\n\nClass\nMonday & Wednesday, 3:00–4:15 PM\n\n\nLocation\nCoorsTek 130\n\n\nProgramming\nPython\n\n\nPrimary Communication\nEd Discussion"
-  },
-  {
-    "objectID": "index.html#course-website-vs.-github-repository",
-    "href": "index.html#course-website-vs.-github-repository",
-    "title": "Computer Vision",
-    "section": "Course Website vs. GitHub Repository",
-    "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
+    "objectID": "lectures/index.html",
+    "href": "lectures/index.html",
+    "title": "Lectures",
     "section": "",
-    "text": "Assignments and supporting materials will be posted here throughout the semester."
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
-    "objectID": "code/index.html",
-    "href": "code/index.html",
-    "title": "Code & Demos",
-    "section": "",
-    "text": "Code examples, notebooks, and demonstrations will be posted here throughout the semester."
-  },
-  {
-    "objectID": "lectures/01_intro.html#course-overview",
-    "href": "lectures/01_intro.html#course-overview",
-    "title": "Lecture 01 — Introduction to Computer Vision",
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
+    "title": "Computer Vision — Fall 2026",
     "section": "Course Overview",
-    "text": "Course Overview\n\n\n\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\nCourse Repository:\nhttps://github.com/ariarobotics/cv\n\n\nCourse Website:\nhttps://ariarobotics.github.io/cv/"
+    "text": "Course Overview\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\n\n\nPrerequisites\n\nLinear algebra, calculus, probability, and statistics\nAlgorithms and Python (or C++). We require you to program in Python.\n\nCourse Website: https://ariarobotics.github.io/cv/\nCourse Repository: https://github.com/ariarobotics/cv"
   },
   {
-    "objectID": "lectures/01_intro.html#instructor",
-    "href": "lectures/01_intro.html#instructor",
-    "title": "Lecture 01 — Introduction to Computer Vision",
+    "objectID": "syllabus.html#instructor",
+    "href": "syllabus.html#instructor",
+    "title": "Computer Vision — Fall 2026",
     "section": "Instructor",
-    "text": "Instructor\n\n\nKaveh Fathian:\n\nComputer Science Assistant Professor\nDirector of Autonomy, Robotics, & Intelligent Algorithms (ARIA) Lab\nMS/PhD @ UT Dallas; Postdoc @ MIT\nPreferred form of address: Please call me Kaveh.\nPronunciation: Kaveh — kah-VEH (/kɑːˈvɛ/)\n\nTeaching:\n\nFall semester: “Computer Vision”\nSpring semester: “Robotic Mapping & Localization”\n\nEmail: \n\nfathian@ariarobotics.com\nkaveh.fathian@mines.edu"
+    "text": "Instructor\n\n\n\n\nKaveh Fathian\nAssistant Professor, Computer Science Department\n\nOffice: Brown 280-N\nOffice hours: Monday/Wednesday, 4:15–5:00 PM (after class)\nLab website: https://www.ariarobotics.com/"
   },
   {
-    "objectID": "lectures/01_intro.html#aria-lab",
-    "href": "lectures/01_intro.html#aria-lab",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "ARIA Lab",
-    "text": "ARIA Lab\n\n\nOur Spot robot at Edgar mine  \n\n3D map of Mines campus \n\n\nMission: Develop robust algorithms for robotic perception and autonomy.\nResearch: 3D mapping, localization, and perception.\nStudent opportunities: Projects are available for students from CS, EE, ME, and related areas.\nLearn more / join the lab: https://www.ariarobotics.com/join-us"
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Description",
+    "text": "Course Description\nComputer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.\n\nLearning Objectives\n\nCLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.\nCLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.\nCLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.\nCLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.\nCLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.\nCLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.\nCLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data."
   },
   {
-    "objectID": "lectures/01_intro.html#mailab",
-    "href": "lectures/01_intro.html#mailab",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "MAILab",
-    "text": "MAILab"
+    "objectID": "syllabus.html#assessments-and-grading",
+    "href": "syllabus.html#assessments-and-grading",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Assessments and Grading",
+    "text": "Assessments and Grading\n\nHomework — 60 points\nThere will be up to 12 homework assignments. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework individually. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will not be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The lowest homework grade, including a missed assignment, will automatically be dropped and will not count toward the final grade. Two or more missed homework assignments will result in an Incomplete grade.\n\n\nExams — 40 points\nThere will be 4 exams scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered in person, in the classroom. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. Documentation must be provided to justify such an exception. Any missed exam will receive a grade of zero. Two or more missed exams will result in an Incomplete grade.\n\n\nBonus Points — up to 10 points\nAt the instructor’s discretion, optional assignments, projects, or other activities may be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.\n\n\nAttendance\nAttendance is mandatory but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will not be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence."
   },
   {
-    "objectID": "lectures/01_intro.html#course-learning-objectives",
-    "href": "lectures/01_intro.html#course-learning-objectives",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Course Learning Objectives",
-    "text": "Course Learning Objectives\n\nExplain fundamentals of image formation, representation, color, and processing.\nApply filtering, convolution, Fourier analysis, edge detection, and Hough methods.\nDetect, describe, and match visual features.\nApply camera geometry, calibration, stereo vision, and motion estimation for 3D vision.\nImplement classical recognition and detection methods, including SIFT and HOG.\nApply machine learning and deep learning to classification, detection, and segmentation.\nDevelop and evaluate computer vision pipelines using Python and OpenCV."
+    "objectID": "syllabus.html#final-grade",
+    "href": "syllabus.html#final-grade",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Final Grade",
+    "text": "Final Grade\nThe regular course grade consists of:\n\n\n\nComponent\nPoints\n\n\n\n\nHomework\n60\n\n\nExams\n40\n\n\nTotal\n100\n\n\n\nBonus points are then added to the final grade:\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\nA maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.\n\nGrading Rubric\n\n\n\nAmended Final Grade\nLetter Grade\n\n\n\n\n93–100\nA\n\n\n90–&lt;93\nA−\n\n\n87–&lt;90\nB+\n\n\n83–&lt;87\nB\n\n\n80–&lt;83\nB−\n\n\n77–&lt;80\nC+\n\n\n73–&lt;77\nC\n\n\n70–&lt;73\nC−\n\n\n67–&lt;70\nD+\n\n\n63–&lt;67\nD\n\n\n60–&lt;63\nD−\n\n\n&lt;60\nF"
   },
   {
-    "objectID": "lectures/01_intro.html#computer-vision-and-nearby-fields",
-    "href": "lectures/01_intro.html#computer-vision-and-nearby-fields",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Computer Vision and Nearby Fields",
-    "text": "Computer Vision and Nearby Fields\n\n\nComputer Vision\nReal world\n  ↓ images, videos, sensor data\nComputer Vision\n  ↓ information / understanding\nModel of the visual world\nComputer vision tries to infer useful information about the real world from images, videos, and other visual sensor data.\n\nComputer Graphics\nModel of the visual world\n  ↓ rendering / simulation\nComputer Graphics\n  ↓ images, videos, interaction\nDigital world\nComputer graphics often works in the opposite direction: from models to images.\n\n\n\n Real-world image\n\n Rendered / digital world"
+    "objectID": "syllabus.html#logistics",
+    "href": "syllabus.html#logistics",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Logistics",
+    "text": "Logistics\n\nThe primary communication channel between students and the instructor/TAs is the Ed Discussion server, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.\nStudents are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.\nInformation about the course TAs and their office hours is available through the course repository: https://github.com/ariarobotics/cv"
   },
   {
-    "objectID": "lectures/01_intro.html#scope-of-computer-vision",
-    "href": "lectures/01_intro.html#scope-of-computer-vision",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Scope of Computer Vision",
-    "text": "Scope of Computer Vision\n\n\n\nComputer vision uses ideas from many fields. In this course, in addition to theory, we focus on practical computer vision algorithms and tools."
+    "objectID": "syllabus.html#resources",
+    "href": "syllabus.html#resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Resources",
+    "text": "Resources\nThere is no required textbook. Lecture slides and other course materials will be provided through the course website: https://ariarobotics.github.io/cv/\n\nRecommended Books\nMany of the following are available online.\n\nComputer Vision\n\nSzeliski, Computer Vision: Algorithms and Applications, Springer, 2010.\nKlette, Concise Computer Vision: An Introduction into Theory and Algorithms, 2014.\nHartley and Zisserman, Multiple View Geometry in Computer Vision, Cambridge University Press, 2004.\nForsyth and Ponce, Computer Vision: A Modern Approach, Prentice Hall, 2002.\nPalmer, Vision Science, MIT Press, 1999.\n\n\n\nLearning\n\nGoodfellow, Bengio, and Courville, Deep Learning, MIT Press, 2016.\nMitchell, Machine Learning, McGraw-Hill, 1997.\nDuda, Hart, and Stork, Pattern Classification, 2nd Edition, Wiley-Interscience, 2000.\nSutton and Barto, online book; a classic reference in reinforcement learning.\n\n\n\nGraphical Models\n\nKoller and Friedman, Probabilistic Graphical Models: Principles and Techniques, MIT Press, 2009."
   },
   {
-    "objectID": "lectures/01_intro.html#cv-applications",
-    "href": "lectures/01_intro.html#cv-applications",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "CV Applications",
-    "text": "CV Applications\n\nSmartphones & Consumer Devices: QR codes, computational photography, panorama stitching, face detection/recognition, face filters, depth sensing, pose estimation, visual search\nWearables: Heart-rate estimation, gesture recognition, activity monitoring, proximity sensing\nSecurity & Biometrics: Fingerprint, iris, and face recognition; access control; CCTV monitoring; identity verification\nWeb & Social Media: Image search, photo organization, image captioning, content moderation, visual recommendations, geolocalization\nAR/VR & Virtual Worlds: Head/hand tracking, SLAM, gesture recognition, virtual try-on, digital humans, mixed reality\nTelepresence: Virtual backgrounds, face/person tracking, gaze correction, video enhancement\nMedia & Entertainment: Visual effects, motion capture, sports replay, video editing, automatic content analysis\nTransportation: Autonomous driving, driver monitoring, lane/object detection, traffic analysis, navigation\nRetail & Supermarkets: Cashier-less checkout, inventory monitoring, theft detection, product recognition, automated sorting\nMedical Imaging: CT/MRI reconstruction, assisted diagnosis, pathology, endoscopy, surgical guidance\nRobotics & Embodied AI: Perception, localization, mapping, navigation, manipulation, human-robot interaction\nManufacturing: Visual inspection, defect detection, quality control, process monitoring, automation\nAgriculture & Environment: Crop monitoring, precision agriculture, wildlife monitoring, environmental inspection\nRemote Sensing & Geospatial: Satellite/aerial imagery, mapping, change detection, disaster response\nSpace Exploration: Planetary rovers, telescope imagery, terrain analysis, autonomous exploration\nAccessibility: Scene description, OCR, object recognition, visual assistance for users with impairments\nMultimodal & Generative AI: Vision-language models, visual assistants, image/video generation, editing, and understanding"
+    "objectID": "syllabus.html#course-schedule",
+    "href": "syllabus.html#course-schedule",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Schedule",
+    "text": "Course Schedule\nThe detailed class schedule is available on the course website: https://ariarobotics.github.io/cv/. The schedule is subject to change. Exam and homework dates will not change except in extraordinary circumstances."
   },
   {
-    "objectID": "lectures/01_intro.html#computer-vision-on-smartphones",
-    "href": "lectures/01_intro.html#computer-vision-on-smartphones",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Computer Vision on Smartphones",
-    "text": "Computer Vision on Smartphones\n\n\n QR codes\n\n Panorama\n\n Face and emotion detection"
+    "objectID": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "href": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Policy on Missed Classes, Exams, or Late Assignments",
+    "text": "Policy on Missed Classes, Exams, or Late Assignments\n\nThe lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade.\nThe lowest homework grade, including a missed submission, will automatically be dropped and will not count toward the final grade.\nIn-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.\nThe maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.\nExceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate documentation.\nAny missed exam will receive a grade of zero before application of the lowest-exam-drop policy.\nTwo or more missed exams will result in an Incomplete grade.\nTwo or more missed homework assignments will result in an Incomplete grade."
   },
   {
-    "objectID": "lectures/01_intro.html#smartphones-face-filters",
-    "href": "lectures/01_intro.html#smartphones-face-filters",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Smartphones: Face Filters",
-    "text": "Smartphones: Face Filters"
+    "objectID": "syllabus.html#other-important-course-policies",
+    "href": "syllabus.html#other-important-course-policies",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Other Important Course Policies",
+    "text": "Other Important Course Policies\n\nAny form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.\nNo resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.\nProfessional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor."
   },
   {
-    "objectID": "lectures/01_intro.html#security-biometrics",
-    "href": "lectures/01_intro.html#security-biometrics",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Security & Biometrics",
-    "text": "Security & Biometrics\n\n\n\n\n\n\n\n\n\nIris recognition:\n\n“How the Afghan Girl was Identified by Her Iris Patterns”\nRead the story | Wikipedia"
+    "objectID": "syllabus.html#absences",
+    "href": "syllabus.html#absences",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Absences",
+    "text": "Absences\nMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: https://www.mines.edu/student-life/student-absences/"
   },
   {
-    "objectID": "lectures/01_intro.html#visual-search-recognition",
-    "href": "lectures/01_intro.html#visual-search-recognition",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Visual Search & Recognition",
-    "text": "Visual Search & Recognition\n\n\n\n\n\n\n\n\nGoogle Lens: recognize objects, products, landmarks, plants, text, and other visual content"
+    "objectID": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "href": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Sexual Misconduct, Discrimination, and Retaliation",
+    "text": "Sexual Misconduct, Discrimination, and Retaliation\nMines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact OIE@Mines.edu or use the appropriate Discriminatory Harassment and Retaliation Reporting Form. Confidential resources are also available through Mines."
   },
   {
-    "objectID": "lectures/01_intro.html#arvr-spatial-computing",
-    "href": "lectures/01_intro.html#arvr-spatial-computing",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "AR/VR & Spatial Computing",
-    "text": "AR/VR & Spatial Computing\n\n\n\n\n\n\nVirtual and mixed reality"
+    "objectID": "syllabus.html#preferred-first-name",
+    "href": "syllabus.html#preferred-first-name",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Preferred First Name",
+    "text": "Preferred First Name\nMines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the Office for Institutional Equity Preferred First Name resources. Students may also contact the Title IX Coordinator at OIE@Mines.edu."
   },
   {
-    "objectID": "lectures/01_intro.html#d-reconstruction",
-    "href": "lectures/01_intro.html#d-reconstruction",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "3D Reconstruction",
-    "text": "3D Reconstruction\n\n\n\nRecovering the 3D structure of a scene from multiple images taken from different viewpoints."
+    "objectID": "syllabus.html#pregnant-and-parenting-students",
+    "href": "syllabus.html#pregnant-and-parenting-students",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Pregnant and Parenting Students",
+    "text": "Pregnant and Parenting Students\nIf you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at oie@mines.edu for more information or to request support or modifications."
   },
   {
-    "objectID": "lectures/01_intro.html#visual-effects-motion-capture",
-    "href": "lectures/01_intro.html#visual-effects-motion-capture",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Visual Effects & Motion Capture",
-    "text": "Visual Effects & Motion Capture\n\n Dawn of the Planet of the Apes\nMotion capture and computer vision algorithms transform actors into digital character."
-  },
-  {
-    "objectID": "lectures/01_intro.html#transportation-autonomous-driving",
-    "href": "lectures/01_intro.html#transportation-autonomous-driving",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Transportation: Autonomous Driving",
-    "text": "Transportation: Autonomous Driving\n\n Waymo: https://www.youtube.com/watch?v=B8R148hFxPw\n\nComputer vision enables detection, tracking, localization, scene understanding, and navigation for automomous cars."
-  },
-  {
-    "objectID": "lectures/01_intro.html#medical-imaging",
-    "href": "lectures/01_intro.html#medical-imaging",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Medical Imaging",
-    "text": "Medical Imaging\n\n\nMRI / CT\n\nReconstruction, segmentation, detection, and diagnosis\n\nUltrasound\n\nImaging, measurement, diagnosis, and surgical guidance"
-  },
-  {
-    "objectID": "lectures/01_intro.html#astronomy-remote-sensing",
-    "href": "lectures/01_intro.html#astronomy-remote-sensing",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Astronomy & Remote Sensing",
-    "text": "Astronomy & Remote Sensing\n\n\n\nCloudy\n\n\nClear\n\nExample application: Cloud detection in astronomical imaging\nImage by Charlie Hagen (Mines alumnus): https://www.nightphotons.com/"
-  },
-  {
-    "objectID": "lectures/01_intro.html#space-exploration-visual-navigation",
-    "href": "lectures/01_intro.html#space-exploration-visual-navigation",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Space Exploration: Visual Navigation",
-    "text": "Space Exploration: Visual Navigation\n\n\n\n\n\n\n\n\nMars 2020 mission used vision-based localizatoin during landing:\n\nCapture descent images\nCompare images with an orbital map\nEstimate location and adjust if necessary"
-  },
-  {
-    "objectID": "lectures/01_intro.html#robotics-embodied-ai",
-    "href": "lectures/01_intro.html#robotics-embodied-ai",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Robotics & Embodied AI",
-    "text": "Robotics & Embodied AI\n\n\nBoston Dynamics: https://blog.bostondynamics.com/flipping-the-script-with-atlas\n\nRobots use vision for perception, localization, mapping, navigation, manipulation, and interaction with the physical world."
-  },
-  {
-    "objectID": "lectures/01_intro.html#vision-language-generative-ai",
-    "href": "lectures/01_intro.html#vision-language-generative-ai",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Vision-Language & Generative AI",
-    "text": "Vision-Language & Generative AI\n\n\n “Teddy bears working on new AI research underwater with 1990s technology”\n\n “Cats playing chess”\n\n “A teddy bear sitting at the Colorado School of Mines”\n\nModern vision systems increasingly combine visual understanding, language, reasoning, and generation."
-  },
-  {
-    "objectID": "lectures/01_intro.html#course-structure",
-    "href": "lectures/01_intro.html#course-structure",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Course Structure",
-    "text": "Course Structure\n\n\n\nThe course covers both classical and modern computer vision.\n\nClassical CV: image formation, filtering, Fourier analysis, features, geometry, stereo, motion, and 3D vision\nModern CV: machine learning, image classification, object detection, segmentation, and deep learning\nThis is not a machine learning course, but we will introduce the ML/DL concepts needed for computer vision. Good follwo-up courses:\n\nDeep Learning (Prof. Zibo Wang)\nComputer Applied Computer Vision for Engineering Systems (Prof. Minghan Li)\n\n\n400 vs. 500 level: There is no difference in course content. If appropriate, ask to count as 500."
-  },
-  {
-    "objectID": "lectures/01_intro.html#course-resources",
-    "href": "lectures/01_intro.html#course-resources",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Course Resources",
-    "text": "Course Resources\n\n\n\nCourse Website: https://ariarobotics.github.io/cv/\n\nPrimary place to access the syllabus, course schedule, TA information, lectures, and other course information\nUse this as your main entry point for the course\n\nGitHub Repository: https://github.com/ariarobotics/cv\n\nContains course source files, code, notebooks, and downloadable materials\nUseful when you need to clone/download code or inspect the underlying files\n\nLectures:\n\nAre grouped by topic and may be convered over multiple class sessions"
-  },
-  {
-    "objectID": "lectures/01_intro.html#attendance-matters",
-    "href": "lectures/01_intro.html#attendance-matters",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Attendance Matters",
-    "text": "Attendance Matters\n\nIn-person attendance is mandatory, although will not be monitored.\nSome material will be discussed/developed only during class.\nMaterial added/discussed during class will not be recorded or posted later.\nYou are responsible for material covered during any class you miss.\n\nBottom line: Being physically present and engaged in class is an important part of this course."
-  },
-  {
-    "objectID": "lectures/01_intro.html#homework",
-    "href": "lectures/01_intro.html#homework",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Homework",
-    "text": "Homework\n\nHomework accounts for 60% of the regular course grade.\nThere will be up to 12 homework assignments.\nHomework must be prepared and submitted individually.\nYou may discuss problems, help each other, and use appropriate resources, but you must understand and create your own solution.\nIdentical submissions are considered plagiarism and receive a grade of zero.\nHomework solutions will not be posted.\nThe lowest homework grade, including one missed assignment, is automatically dropped.\n\nTwo or more missed homework assignments result in an Incomplete grade."
-  },
-  {
-    "objectID": "lectures/01_intro.html#late-homework",
-    "href": "lectures/01_intro.html#late-homework",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Late Homework",
-    "text": "Late Homework\n\nHomework due dates and times are on Canvas (and course schedule)\nHomework deadlines will not normally be extended.\nThe maximum possible score decreases by 25% for each week late:\n\n\n\n\nSubmission Time\nMaximum Score\n\n\n\n\nOn time\n100%\n\n\nUp to 1 week late\n75%\n\n\nUp to 2 weeks late\n50%\n\n\nUp to 3 weeks late\n25%\n\n\n4+ weeks late\n0%\n\n\n\nPlan ahead and submit homework on time."
-  },
-  {
-    "objectID": "lectures/01_intro.html#exams",
-    "href": "lectures/01_intro.html#exams",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Exams",
-    "text": "Exams\n\nExams account for 40% of the regular course grade.\nThere will be 4 exams during regular class hours.\nExams are around 30 minutes long and will be during the second half of the class.\nExam dates are posted on Canvas (and course schedule).\nExams are in person.\nExams are based on:\n\nLecture slides\nMaterial discussed in class\nHomework\n\nNo resources are allowed during exams, including notes, internet searches, GenAI, calculators, or smartphones.\nThe lowest exam grade, including one missed exam, is automatically dropped.\n\nTwo or more missed exams result in an Incomplete grade."
-  },
-  {
-    "objectID": "lectures/01_intro.html#missed-exams-excused-absences",
-    "href": "lectures/01_intro.html#missed-exams-excused-absences",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Missed Exams & Excused Absences",
-    "text": "Missed Exams & Excused Absences\n\nAny missed exam receives a grade of zero before the lowest-exam grade is dropped.\nA make-up exam may be considered only under extraordinary circumstances for excused-absence.\nAppropriate documentation must be provided when requesting an exception.\nStudents are responsible for submitting excused-absence requests through the appropriate Mines process.\n\nDo not assume that an excused absence automatically means a make-up exam."
-  },
-  {
-    "objectID": "lectures/01_intro.html#grading",
-    "href": "lectures/01_intro.html#grading",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Grading",
-    "text": "Grading\nRegular course grade:\n\nHomework: 60 points\nExams: 40 points\nTotal: 100 points\n\nOptional bonus assignments/projects may be offered at the instructor’s discretion.\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\n\nMaximum bonus: 10 points\nAmended grades above 100 are capped at 100.\nLetter grades are based on the amended final grade; see the syllabus."
-  },
-  {
-    "objectID": "lectures/01_intro.html#prior-grade-distribution",
-    "href": "lectures/01_intro.html#prior-grade-distribution",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Prior Grade Distribution",
-    "text": "Prior Grade Distribution\n\n\n\n\nYou can get a good grade by completing homework on time, keeping up with the material, and preparing for the exams."
-  },
-  {
-    "objectID": "lectures/01_intro.html#generative-ai-use-it-carefully",
-    "href": "lectures/01_intro.html#generative-ai-use-it-carefully",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Generative AI: Use It Carefully",
-    "text": "Generative AI: Use It Carefully\nGenerative AI can be useful, but do not use it to solve your homework for you.\n\nGood use: help remembering syntax, understanding an error message, or explaining a programming concept\nBad use: asking GenAI to solve the problem and copy-pasting the generated code into your submission\nIf AI writes your code, you will complete the assignment without actually learning how to program.\nYou are responsible for understanding every line of code you submit.\nDuring exams, GenAI use is prohibited.\n\nYou need to be able to code without AI.\n\nMany robotics, research, industrial, secure, and field environments have limited or no internet access.\nCompanies hire you to solve problems that GenAI cannot solve.\nUse GenAI as a learning aid, not as a replacement for learning."
-  },
-  {
-    "objectID": "lectures/01_intro.html#academic-integrity",
-    "href": "lectures/01_intro.html#academic-integrity",
-    "title": "Lecture 01 — Introduction to Computer Vision",
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Computer Vision — Fall 2026",
     "section": "Academic Integrity",
-    "text": "Academic Integrity\nAcademic dishonesty will be taken very seriously.\nExamples include:\n\nCopying another student’s homework\nUsing prohibited resources during an exam\nMisrepresenting or abusing an excused absence\n\nYou may collaborate and discuss homework, but the work you submit must be your own."
+    "text": "Academic Integrity\nColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the full academic misconduct and academic integrity policy for definitions of academic misconduct. Resources provided by the Department of Community Standards are also available for guidance regarding academic misconduct and integrity procedures."
   },
   {
-    "objectID": "lectures/01_intro.html#communication-ed-discussion",
-    "href": "lectures/01_intro.html#communication-ed-discussion",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Communication: Ed Discussion",
-    "text": "Communication: Ed Discussion\n\nEd Discussion is the primary communication channel for this course.\n\n\nUse Ed Discussion for:\n\nAnnouncements\nCourse/technical questions\nHomework clarification\nQuestions that may also help other students\n\nDo not use Canvas messages or email for routine course questions.\nPlan ahead: Do not expect responses after normal working hours or during weekends. Ask questions early rather than waiting until shortly before a deadline."
+    "objectID": "syllabus.html#generative-artificial-intelligence",
+    "href": "syllabus.html#generative-artificial-intelligence",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Generative Artificial Intelligence",
+    "text": "Generative Artificial Intelligence\nThe Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the current course policy, the use of generative AI is allowed outside of class but prohibited during class, including coding sessions and exams."
   },
   {
-    "objectID": "lectures/01_intro.html#office-hours-tas",
-    "href": "lectures/01_intro.html#office-hours-tas",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Office Hours & TAs",
-    "text": "Office Hours & TAs\nInstructor office hours\n\nMonday/Wednesday, 4:15–5:00 PM — immediately after class\n\nBrown 280-N\n\nTeaching Assistants\n\nTA names, office hours, and contact information are available on the Course Website\nTA information/schedule may change, so check the website or Ed Discussion announcements for the current information.\n\nNote:\n\nTAs are instructed not to pre-grade homework.\nDo not ask them if your solution is correct or expect them to provide the answer.\nUse office hours to ask questions about concepts or course material that you do not understand."
+    "objectID": "syllabus.html#copyrighted-materials",
+    "href": "syllabus.html#copyrighted-materials",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Copyrighted Materials",
+    "text": "Copyrighted Materials\nReadings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/"
   },
   {
-    "objectID": "lectures/01_intro.html#getting-help",
-    "href": "lectures/01_intro.html#getting-help",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Getting Help",
-    "text": "Getting Help\nThis is a large class, so please use the following process when you need help:\n\nTry the problem yourself first (search course resources or online for 30 minutes).\nAsk classmates / post the question on Ed Discussion.\nAsk the TAs, preferably through Ed Discussion when the question may help others.\nAsk the instructor or come to office hours.\n\nWhen asking for help:\n\nExplain what you are trying to do.\nShow what you have already tried.\nInclude relevant error messages/code when appropriate.\n\nAsk early. Waiting until the deadline makes it much harder for us to help you."
+    "objectID": "syllabus.html#grading-policy",
+    "href": "syllabus.html#grading-policy",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Grading Policy",
+    "text": "Grading Policy\nExtra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed."
   },
   {
-    "objectID": "lectures/01_intro.html#computers-programming",
-    "href": "lectures/01_intro.html#computers-programming",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Computers & Programming",
-    "text": "Computers & Programming\n\nYou are expected to have access to a computer for programming and in-class activities.\nClassroom computers are available if needed.\nLoaner laptops may also be available through the library.\nThe only programming language used for this course is Python (OpenCV and PyTorch libraries).\nWe will not use other languages (C++, MATLAB, etc.) because this will complicate TA help and grading."
+    "objectID": "syllabus.html#course-issues-and-concerns",
+    "href": "syllabus.html#course-issues-and-concerns",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Issues and Concerns",
+    "text": "Course Issues and Concerns\nAs part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions."
   },
   {
-    "objectID": "lectures/01_intro.html#expected-workload",
-    "href": "lectures/01_intro.html#expected-workload",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Expected Workload",
-    "text": "Expected Workload\n\nExpect this course to require approximately 10 hours per week on average, including:\n\nAttending class\nReviewing lecture material\nProgramming\nCompleting homework\nPreparing for exams\n\n\n\nSome students will need substantially more time, particularly if they are less comfortable with:\n\nPython/programming\nCalculus\nLinear algebra (matrix computations)\n\n\n\n\n\n\n\nDo not fall behind early."
+    "objectID": "syllabus.html#disability-support-services",
+    "href": "syllabus.html#disability-support-services",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Disability Support Services",
+    "text": "Disability Support Services\nDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: https://www.mines.edu/disability-support-services/"
   },
   {
-    "objectID": "lectures/01_intro.html#key-things-to-remember",
-    "href": "lectures/01_intro.html#key-things-to-remember",
-    "title": "Lecture 01 — Introduction to Computer Vision",
-    "section": "Key Things to Remember",
-    "text": "Key Things to Remember\n\nAttend class — important material may only be presented in person.\nComplete every homework assignment.\nTwo missed homework assignments → Incomplete\nTwo missed exams → Incomplete\nLate homework loses 25% of the maximum score per week.\nUse GenAI to learn, not to avoid learning how to code.\nUse Ed Discussion and ask questions early.\nCheck the course website regularly for the schedule, lectures, and updates.\nAcademic dishonesty is taken very seriously.\nBe professional, be kind.\n\nMost importantly: keep up with the course and ask for help before small problems become large ones."
+    "objectID": "syllabus.html#digital-accessibility",
+    "href": "syllabus.html#digital-accessibility",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Digital Accessibility",
+    "text": "Digital Accessibility\nColorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: https://www.mines.edu/accessibility/"
   },
   {
-    "objectID": "lectures/03_filtering.html#learning-objectives",
-    "href": "lectures/03_filtering.html#learning-objectives",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain filtering as a local neighborhood operation.\nDistinguish low-pass, high-pass, correlation, and convolution operations.\nPredict the behavior of common kernels.\nExplain linearity, shift invariance, boundary handling, and separability.\nApply Gaussian, Sobel, sharpening, and median filters.\nUse correlation for basic template matching and recognize its limitations."
+    "objectID": "syllabus.html#student-outreach-support-sos-resources",
+    "href": "syllabus.html#student-outreach-support-sos-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Student Outreach & Support (SOS) Resources",
+    "text": "Student Outreach & Support (SOS) Resources\nIf you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a referral for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: https://student-life.mines.edu/student-outreach-and-support/\nStudent Outreach and Support can help connect students with resources including:\n\nCounseling Center: https://counseling.mines.edu/\nLocated on the second floor of the Wellness Center, 1770 Elm St.\nStudent Health Center: https://studenthealth.mines.edu/\nLocated on the first floor of the Wellness Center.\nSHAPE Office: https://shape.mines.edu/\nProvides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.\n988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit https://www.988colorado.com/en.\n\nIn an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate."
   },
   {
-    "objectID": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
-    "href": "lectures/03_filtering.html#fundamental-equations-of-computer-vision",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Fundamental Equations of Computer Vision",
-    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\mathbf{x}=\\mathbf{K}\\begin{bmatrix}\\mathbf{R}&\\mathbf{t}\\end{bmatrix}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+    "objectID": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "href": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Center for Academic Services and Advising (CASA)",
+    "text": "Center for Academic Services and Advising (CASA)\nCASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: https://www.mines.edu/casa/academic-support/ Questions may be directed to casa@mines.edu."
   },
   {
-    "objectID": "lectures/03_filtering.html#filtering-modifies-a-signal",
-    "href": "lectures/03_filtering.html#filtering-modifies-a-signal",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Filtering Modifies a Signal",
-    "text": "Filtering Modifies a Signal\n\n Noisy samples and a smoothed estimate\n\n\nFiltering transforms a signal to:\n\nsuppress undesired components such as noise\nemphasize useful structure\nextract specific features\n\nFilters can operate on continuous or discrete signals in one or more dimensions."
+    "objectID": "syllabus.html#writing-center",
+    "href": "syllabus.html#writing-center",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Writing Center",
+    "text": "Writing Center\nThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: https://writing.mines.edu/ Questions may be directed to ryandeanlambert@mines.edu."
   },
   {
-    "objectID": "lectures/03_filtering.html#d-moving-average-filter",
-    "href": "lectures/03_filtering.html#d-moving-average-filter",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "1D Moving Average Filter",
-    "text": "1D Moving Average Filter\nFor a window size \\(k\\):\n\\[\ny[n] =\n\\frac{1}{k}\n\\sum_{i=n-k+1}^{n} (1) I[i]\n\\qquad \\qquad \\text{or} \\qquad \\qquad\ny[n]\n=\n\\frac{1}{k}\n\\begin{bmatrix}\n1 & 1 & \\cdots & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 10\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#the-window-size-k",
-    "href": "lectures/03_filtering.html#the-window-size-k",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "The Window Size \\(k\\)",
-    "text": "The Window Size \\(k\\)\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 50\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#filter-kernel",
-    "href": "lectures/03_filtering.html#filter-kernel",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Filter Kernel",
-    "text": "Filter Kernel\nWhat is this filter doing?\n\\[\ny[n]\n=\n\\begin{bmatrix}\n0 & 0 & \\cdots & 0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 20\nker = np.zeros(k); ker[-1] = 1\noutput = np.correlate(np.pad(noisy, (k-1, 0)), ker, mode=\"valid\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=4, label=\"Input\")\nax.plot(x, output, \"b--\", lw=2.5, label=\"Output\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#image-filtering-1",
-    "href": "lectures/03_filtering.html#image-filtering-1",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Image Filtering",
-    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\ny[m,n] =\n\\sum_{k,l}\nh[k,l]\\,I[m+k,n+l]\n\\]\nFilter window/kernel size: “\\(k\\)” and “\\(l\\)”"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#image-filtering-2",
-    "href": "lectures/03_filtering.html#image-filtering-2",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Image Filtering",
-    "text": "Image Filtering\nImage filtering computes a function of the local neighborhood at each pixel position:\n\\[\n\\underbrace{y[m,n]}_{\\text{output}}\n=\n\\sum_{k,l}\n\\underbrace{h[k,l]}_{\\text{filter kernel weights}~~~}\n\\underbrace{I[m+k,n+l]}_{\\text{neighboring image value}}\n\\]\n\n\\(y[m,n]\\): output value at image coordinate \\((m,n)\\)\n\\(h[k,l]\\): filter coefficient at local offset \\((k,l)\\)\n\\(I[m+k,n+l]\\): input image value at the corresponding neighboring location"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#example-box-filter-kernel",
-    "href": "lectures/03_filtering.html#example-box-filter-kernel",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Example: Box Filter Kernel",
-    "text": "Example: Box Filter Kernel\n\nThe box filter replaces each pixel with the average of its neighborhood.\nThe size of the neighborhood is determiend by the size of the filter kernel\nFor example, a \\(3\\times 3\\) box filter has the kernel:\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}.\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-first-position",
-    "href": "lectures/03_filtering.html#box-filter-first-position",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: First Position",
-    "text": "Box Filter: First Position\n\n\n\n\n\n\n\n\n\n\\[\ny[1,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
-    "href": "lectures/03_filtering.html#box-filter-move-one-pixel-right",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Move One Pixel Right",
-    "text": "Box Filter: Move One Pixel Right\n\n\n\n\n\n\n\n\n\n\\[\ny[1,2]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,2+l]=10\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep",
-    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Continue the Sweep",
-    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,3]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,3+l]=20\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
-    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-1",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Continue the Sweep",
-    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,4]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,4+l]=30\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
-    "href": "lectures/03_filtering.html#box-filter-continue-the-sweep-2",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Continue the Sweep",
-    "text": "Box Filter: Continue the Sweep\n\n\n\n\n\n\n\n\n\n\\[\ny[1,8]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[1+k,8+l]=10\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-continue-across-the-column",
-    "href": "lectures/03_filtering.html#box-filter-continue-across-the-column",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Continue Across the Column",
-    "text": "Box Filter: Continue Across the Column\n\n\n\n\n\n\n\n\n\n\\[\ny[2,1]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-try-this-position",
-    "href": "lectures/03_filtering.html#box-filter-try-this-position",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Try This Position",
-    "text": "Box Filter: Try This Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[6,4]\\)?\nAdd the nine pixels under the red window, then divide by nine."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-another-position",
-    "href": "lectures/03_filtering.html#box-filter-another-position",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Another Position",
-    "text": "Box Filter: Another Position\n\n\n\n\n\n\n\n\n\nWhat is \\(y[4,6]\\)?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-complete-output",
-    "href": "lectures/03_filtering.html#box-filter-complete-output",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Complete Output",
-    "text": "Box Filter: Complete Output"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-complete-output-1",
-    "href": "lectures/03_filtering.html#box-filter-complete-output-1",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: Complete Output",
-    "text": "Box Filter: Complete Output\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny[m,n]=\\sum_{k=-1}^{1}\\sum_{l=-1}^{1}h[k,l]I[m+k,n+l]\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-filter-what-does-it-do",
-    "href": "lectures/03_filtering.html#box-filter-what-does-it-do",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box Filter: What Does It Do?",
-    "text": "Box Filter: What Does It Do?\n\n\n\nReplaces each pixel by the average of its local neighborhood.\nSmooths small intensity variations and noise.\nSuppresses sharp edges and fine details.\n\n\n\\[\nh[k,l]\n=\n\\frac{1}{9}\n\\begin{bmatrix}\n1 & 1 & 1 \\\\\n1 & 1 & 1 \\\\\n1 & 1 & 1\n\\end{bmatrix}\n\\]\n\n\nWhy does the kernel sum to one?\n\n\n\n\n\n\n\n\nImportant\n\n\nThe coefficients sum to one, so the filter preserves constant image regions."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#smoothing-with-a-box-filter",
-    "href": "lectures/03_filtering.html#smoothing-with-a-box-filter",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Smoothing with a Box Filter",
-    "text": "Smoothing with a Box Filter\n\nFor a \\(k\\times k\\) box filter, \\(h[k,l]=1/k^2\\).\nA larger \\(k\\) produces stronger smoothing\n\n\n\n\nimport cv2\n\nimg_path = Path(\"assets/03_filtering/bloom_original.jpg\")\nimg_col = cv2.imread(str(img_path))\n\nimg_gray = cv2.cvtColor(img_col, cv2.COLOR_BGR2GRAY)\nimg_flt = img_gray.astype(np.float32) / 255.0\nimg = cv2.resize(img_flt, None, fx=0.2, fy=0.2)\n\nbox3 = cv2.blur(img, (3, 3), borderType=cv2.BORDER_CONSTANT)\nbox9 = cv2.blur(img, (9, 9), borderType=cv2.BORDER_CONSTANT)\n\nfig, axes = plt.subplots(1, 3, figsize=(6.5, 3))\nfor ax, result, title in zip(\n    axes, [img, box3, box9], [\"Original\", \"$k=3$\", \"$k=9$\"]):\n    ax.imshow(result, cmap=\"gray\", vmin=0, vmax=1)\n    ax.set_title(title); ax.axis(\"off\")\nplt.tight_layout(pad=0.5)\nplt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#gaussian-filter-kernel",
-    "href": "lectures/03_filtering.html#gaussian-filter-kernel",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Gaussian Filter Kernel",
-    "text": "Gaussian Filter Kernel\nA Gaussian kernel gives the largest weight to the center pixel and smoothly decreases with distance:\n\\[\nh_\\sigma[k,l]\n=\n\\frac{1}{2\\pi\\sigma^2}\n\\exp\\left(-\\frac{k^2+l^2}{2\\sigma^2}\\right).\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#gaussian-filter-kernel-1",
-    "href": "lectures/03_filtering.html#gaussian-filter-kernel-1",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Gaussian Filter Kernel",
-    "text": "Gaussian Filter Kernel\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nGaussian kernel weights sums to one (aside from negligible floating-point errors) – why?\nThe continuous Gaussian integrates to one over the infinite plane. A truncated (5) sample does not automatically sum to one, so the explicit normalization line is necessary.\nSampled kernel size should be large enough to include the meaningful support of the Gaussian—often several standard deviations on each side."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
-    "href": "lectures/03_filtering.html#smoothing-with-a-gaussian-filter",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Smoothing with a Gaussian Filter",
-    "text": "Smoothing with a Gaussian Filter\n\nA Gaussian filter smooths noises.\n\n\n\nimport cv2\n\ngau3 = cv2.GaussianBlur(img, (3, 3), sigmaX=0, borderType=cv2.BORDER_CONSTANT)\ngau9 = cv2.GaussianBlur(img, (9, 9), sigmaX=0, borderType=cv2.BORDER_CONSTANT)\n\nfig, axes = plt.subplots(1, 3, figsize=(6.5, 5))\nfor ax, im, title in zip(\n    axes, [img, gau3, gau9],\n    [\"Original\", r\"Gaussian ($k=3$)\", r\"Gaussian ($k=9$)\"]):\n    ax.imshow(im, cmap=\"gray\", vmin=0, vmax=1)\n    ax.set_title(title)\n    ax.axis(\"off\")\nplt.tight_layout(pad=0.3)\nplt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#box-versus-gaussian-filter-smoothing",
-    "href": "lectures/03_filtering.html#box-versus-gaussian-filter-smoothing",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Box versus Gaussian Filter Smoothing",
-    "text": "Box versus Gaussian Filter Smoothing\n\n\n\n\n\n\n\n\n\n\nThe box filter weights every pixel in the window equally.\nThe Gaussian filter changes weights smoothly, which produces fewer artifacts."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#linear-filter-properties",
-    "href": "lectures/03_filtering.html#linear-filter-properties",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Linear Filter Properties",
-    "text": "Linear Filter Properties\n\n\nLinearity:\n\\[\n\\text{filter}(I, h_1 + h_2)=\\text{filter}(I, h_1)+\\text{filter}(I, h_2)\n\\]\n\nShift/translation invariance:\n\\[\n\\text{filter}(I, \\text{shift}(h))= \\text{shift}(\\text{filter}(I, h))\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#filtering-supports-many-vision-tasks",
-    "href": "lectures/03_filtering.html#filtering-supports-many-vision-tasks",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Filtering Supports Many Vision Tasks",
-    "text": "Filtering Supports Many Vision Tasks\n\\[y = \\text{filter}(I, h)\\]\n\n\nImprove an image:\n\nRemove noise\nSmooth before downsampling\nSharpen local detail\nEstimate illumination or background\n\n\nExtract information:\n\nDetect edges and corners\nMeasure texture\nFind repeated patterns\nMatch a template to image regions"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#separable-filters",
-    "href": "lectures/03_filtering.html#separable-filters",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Separable Filters",
-    "text": "Separable Filters\nA 2D kernel \\(h\\) is separable if\n\\[\nh = v \\, u^T,\n\\]\nwhere \\(v\\) is a vertical 1D kernel and \\(u^T\\) is a horizontal 1D kernel.\nFor example,\n\\[\n\\frac{1}{16}\n\\begin{bmatrix}\n1&2&1\\\\\n2&4&2\\\\\n1&2&1\n\\end{bmatrix}\n=\n\\frac{1}{4}\n\\begin{bmatrix}1\\\\2\\\\1\\end{bmatrix}\n\\frac{1}{4}\n\\begin{bmatrix}1&2&1\\end{bmatrix}.\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#separability-example",
-    "href": "lectures/03_filtering.html#separability-example",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Separability Example",
-    "text": "Separability Example"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#separability-reduces-computation",
-    "href": "lectures/03_filtering.html#separability-reduces-computation",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Separability Reduces Computation",
-    "text": "Separability Reduces Computation\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\nMethod\nApproximate multiply-adds\n\n\n\n\nFull 2D filtering\n\\(MNPQ\\)\n\n\nSeparable filtering\n\\(MN(P+Q)\\)\n\n\n\nFor a square \\(K\\times K\\) kernel, the per-pixel cost drops from \\(K^2\\) to \\(2K\\).\nExample: A separable \\(9\\times9\\) filter needs about \\(81/18=4.5\\) times fewer multiply-adds than direct 2D filtering."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
-    "href": "lectures/03_filtering.html#the-gaussian-filter-is-separable",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "The Gaussian Filter Is Separable",
-    "text": "The Gaussian Filter Is Separable\nBecause\n\\[\n\\frac{1}{2\\pi\\sigma^2}e^{\\left(-\\frac{x^2+y^2}{2\\sigma^2}\\right)}=\\left(\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{\\left(-\\frac{x^2}{2\\sigma^2}\\right)}\\right) \\left(\\frac{1}{\\sqrt{2\\pi}\\sigma}e^{\\left(-\\frac{y^2}{2\\sigma^2}\\right)}\\right) \\implies\n\\] \\[\nG_\\sigma(x,y)=G_\\sigma(x)\\, G_\\sigma(y),\n\\]\nwe can:\n\nFilter every row with a 1D Gaussian.\nFilter every column with the same 1D Gaussian.\n\n\nRepeated filtering with smaller Gaussian kernels can produce the same result as filtering once with a larger Gaussian kernel.\nApplying a Gaussian filter with standard deviation \\(\\sigma\\) twice is equivalent to applying one Gaussian filter with \\(\\sigma_{\\text{combined}}=\\sqrt{2}\\,\\sigma\\).\nThis produces the same result with substantially fewer computations."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#filtering-correlation-and-convolution",
-    "href": "lectures/03_filtering.html#filtering-correlation-and-convolution",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Filtering: Correlation and Convolution",
-    "text": "Filtering: Correlation and Convolution\n\n\n2D Correlation:\nThe kernel is applied without changing its orientation:\n\\[\ny[m,n]\n=\n\\sum_{k,l}\nh[k,l]\\,I[m{\\color{#C62828}+}k,n{\\color{#C62828}+}l].\n\\]\nOpenCV’s filter2D computes correlation:\ny_corr = cv2.filter2D(\n    I, -1, h, borderType=cv2.BORDER_CONSTANT)\n\n2D Convolution:\nThe kernel indices are reversed:\n\\[\ny[m,n]\n=\n\\sum_{k,l}\nh[k,l]\\,I[m{\\color{#C62828}-}k,n{\\color{#C62828}-}l].\n\\]\nFor convolution, rotate the kernel by \\(180^\\circ\\) first:\nh_rotated = cv2.flip(h, -1)\n\ny_conv = cv2.filter2D(\n    I, -1, h_rotated, borderType=cv2.BORDER_CONSTANT)\n\n\nConvolution is equivalent to correlation with a \\(180^\\circ\\) rotated kernel: \\[\n\\widetilde{h}[k,l]=h[-k,-l].\n\\]\nCorrelation and convolution are identical when the kernel has \\(180^\\circ\\) rotational symmetry: \\[\nh[k,l]=h[-k,-l].\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
-    "href": "lectures/03_filtering.html#correlation-and-convolution-differ-for-asymmetric-kernels",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Correlation and Convolution Differ for Asymmetric Kernels",
-    "text": "Correlation and Convolution Differ for Asymmetric Kernels\nA kernel rotated by \\(180^\\circ\\):  \\(\\widetilde{h}[k,l]=h[-k,-l]\\).\n\n\n\n\n\n\n\n\n\n\nSince \\(h_s=\\widetilde{h}_s\\), correlation and convolution produce the same result.\nBut \\(h_a\\neq\\widetilde{h}_a\\), so correlation and convolution produce different responses."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#convolution-properties",
-    "href": "lectures/03_filtering.html#convolution-properties",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Convolution (\\(*\\)) Properties",
-    "text": "Convolution (\\(*\\)) Properties\n\n\n\nCommutative: \\(I*h=h*I\\)\n\nMathematically, the input and kernel can be interchanged.\n\nAssociative: \\((I*h_1)*h_2 = I*(h_1*h_2)\\)\n\nA sequence of filters can be combined into a single kernel.\nThis can reduce the number of filtering operations.\nNote that correlation is not associative in general.\n\nDistributive: \\(I*(h_1+h_2)=I*h_1+I*h_2\\)\n\n\n\nScalar factor out: \\((\\alpha I)*h=\\alpha(I*h)\\)\nIdentity: \\(I*\\delta=I\\), where \\(\\delta\\) is the unit impulse\n\nThe identity kernel is the unit impulse: \\[\n  \\delta[m,n]\n  =\n  \\begin{cases}\n  1, & m=0,\\ n=0,\\\\\n  0, & \\text{otherwise}.\n  \\end{cases}\n  \\]\nConvolving with the unit impulse leaves the image unchanged\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFinite images and boundary rules can make practical implementations appear to violate these identities near the edges.\nConvolution filters are both linear and shift-invariant – why?\nEvery liner filter can be represented as convolution with some kernel – why?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
-    "href": "lectures/03_filtering.html#convolution-layers-usually-compute-correlation",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "“Convolution” Layers Usually Compute Correlation",
-    "text": "“Convolution” Layers Usually Compute Correlation\n\n\n\n\nConvolutional neural networks learn their kernel weights from data rather than using predefined filters.\nDespite the name, most deep-learning libraries apply learned kernels without rotating them, which is, correlation.\nThis does not reduce the network’s expressive power since the kernel is learned, and the network can learn either a kernel or its rotated version."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#boundary-handling",
-    "href": "lectures/03_filtering.html#boundary-handling",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Boundary Handling",
-    "text": "Boundary Handling\n\n\n\n\n\n\nNear an image boundary, part of the kernel falls outside the available data. Need to extrapolate (padding) to compute the output edge pixels.\n\n\n\n\n\n\n\n\nStrategy\nAssumption outside the image\nCommon consequence\n\n\n\n\nConstant / zero\nMissing pixels have a fixed value\nDark or bright border artifacts\n\n\nReplicate\nRepeat the closest boundary pixel\nFlat extension at the edge\n\n\nReflect\nMirror the image across the boundary\nOften smoothest for natural images\n\n\nWrap\nOpposite edges are adjacent\nAppropriate for periodic data\n\n\nValid only\nSkip incomplete neighborhoods\nSmaller output image\n\n\n\n\n\n\n\n\n\nNote\n\n\nTwo implementations using the same kernel can disagree near the boundary if their padding modes differ."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#common-output-modes",
-    "href": "lectures/03_filtering.html#common-output-modes",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Common Output Modes",
-    "text": "Common Output Modes\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel:\n\n\n\n\n\n\n\n\nMode\nOutput size\nInterpretation\n\n\n\n\nfull\n\\((M+P-1)\\times(N+Q-1)\\)\nEvery partial overlap, with padding\n\n\nsame\n\\(M\\times N\\)\nCenter portion matching the input size\n\n\nvalid\n\\((M-P+1)\\times(N-Q+1)\\)\nOnly complete overlaps; no padding\n\n\n\nExample: convolving a \\(275\\times175\\) image with another \\(275\\times175\\) image produces:\n\nfull: \\(549\\times349\\)\nsame: \\(275\\times175\\)\nvalid: \\(1\\times1\\)\n\n\n\n\n\n\n\nNote\n\n\nLibrary defaults differ. Specify the mode and boundary behavior explicitly when reproducibility matters."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#three-common-output-modes",
-    "href": "lectures/03_filtering.html#three-common-output-modes",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Three Common Output Modes",
-    "text": "Three Common Output Modes\n\n\n\nimport cv2\n\nx = cv2.imread(\"assets/03_filtering/colorado-flower.jpg\", 0)\nx = cv2.resize(x, (200,120), interpolation=cv2.INTER_AREA).astype(np.float32)/255\nh, w = x.shape\n\np = cv2.copyMakeBorder(x, h-1,0,w-1,0, cv2.BORDER_CONSTANT)\nfull = cv2.filter2D(p, cv2.CV_32F, x, anchor=(0,0), borderType=cv2.BORDER_CONSTANT)\nsame = cv2.filter2D(x, cv2.CV_32F, x, borderType=cv2.BORDER_CONSTANT)\nvalid = full[h-1:h, w-1:w]\n\nims, names = [x,full,same,valid], [\"Input\",\"full\",\"same\",\"valid\"]\nH, W = full.shape\nfig, ax = plt.subplots(2,2,figsize=(6.5,5))\n\nfor a, im, name in zip(ax.flat, ims, names):\n    ih, iw = im.shape\n    a.imshow(im, cmap=\"gray\", extent=(0,iw,ih,0), interpolation=\"nearest\")\n    a.set(xlim=(0,W), ylim=(H,0), title=fr\"{name}: ${iw}\\times{ih}$\")\n    a.axis(\"off\")\n\nplt.tight_layout(pad=.4)\nplt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-with-linear-filters",
-    "href": "lectures/03_filtering.html#practice-with-linear-filters",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice with Linear Filters",
-    "text": "Practice with Linear Filters\nPredict the effect of each kernel before viewing the following examples."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice",
-    "href": "lectures/03_filtering.html#practice",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice:",
-    "text": "Practice:\nWhat will this kernel do to the image?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#identity-kernel-leaves-the-image-unchanged",
-    "href": "lectures/03_filtering.html#identity-kernel-leaves-the-image-unchanged",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Identity Kernel Leaves the Image Unchanged",
-    "text": "Identity Kernel Leaves the Image Unchanged\nThe center coefficient copies the current pixel:\n\\[\ny[m,n]=I[m,n].\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-1",
-    "href": "lectures/03_filtering.html#practice-1",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice:",
-    "text": "Practice:\nWhat will happen when the kernel selects the pixel immediately to the right?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#shift-kernel-copies-a-neighboring-pixel",
-    "href": "lectures/03_filtering.html#shift-kernel-copies-a-neighboring-pixel",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Shift Kernel Copies a Neighboring Pixel",
-    "text": "Shift Kernel Copies a Neighboring Pixel\nFor correlation, the kernel produces\n\\[\ny[m,n]=I[m,n+1],\n\\]\nso the image content shifts left by one pixel."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-2",
-    "href": "lectures/03_filtering.html#practice-2",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice:",
-    "text": "Practice:\nExamine the kernel and predict which image structures will produce the strongest response.\n\n\n\n\n\n\n\n\n\n\nWill the kernel respond to horizontal or vertical edges?\nWhich regions of the image will have a response near zero?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#sobel-x-detecting-vertical-edges",
-    "href": "lectures/03_filtering.html#sobel-x-detecting-vertical-edges",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Sobel \\(x\\): Detecting Vertical Edges",
-    "text": "Sobel \\(x\\): Detecting Vertical Edges\nThis kernel responds strongly to vertical edges.\n\n\n\n\n\n\n\n\n\nThe absolute value displays both dark-to-light and light-to-dark transitions as bright edges."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-3",
-    "href": "lectures/03_filtering.html#practice-3",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice:",
-    "text": "Practice:\nExamine the kernel and predict which image structures will produce the strongest response.\n\n\n\n\n\n\n\n\n\n\nWill the kernel respond to horizontal or vertical edges?\nWhich regions of the image will have a response near zero?"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#sobel-y-detecting-horizontal-edges",
-    "href": "lectures/03_filtering.html#sobel-y-detecting-horizontal-edges",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Sobel \\(y\\): Detecting Horizontal Edges",
-    "text": "Sobel \\(y\\): Detecting Horizontal Edges\nThis kernel responds strongly to horizontal edges.\n\n\n\n\n\n\n\n\n\nThe sign of the original response indicates the direction of the intensity transition."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-subtracting-the-local-average",
-    "href": "lectures/03_filtering.html#practice-subtracting-the-local-average",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice: Subtracting the Local Average",
-    "text": "Practice: Subtracting the Local Average\nWhat remains after subtracting the local \\(3\\times3\\) average from the center pixel?\n\\[\nh_{\\text{detail}}\n=\n\\delta-h_{\\text{box}}.\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#local-detail-kernel-extracts-high-frequencies",
-    "href": "lectures/03_filtering.html#local-detail-kernel-extracts-high-frequencies",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Local-Detail Kernel Extracts High Frequencies",
-    "text": "Local-Detail Kernel Extracts High Frequencies\nThe kernel removes smooth content and preserves rapid intensity changes:\n\\[\ny\n=\nI-\\operatorname{boxblur}(I).\n\\]\n\n\n\n\n\n\n\n\n\nMid-gray represents weak response; brighter or darker values represent strong filter response."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#adding-local-detail-sharpens-the-image",
-    "href": "lectures/03_filtering.html#adding-local-detail-sharpens-the-image",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Adding Local Detail Sharpens the Image",
-    "text": "Adding Local Detail Sharpens the Image\nSharpening adds the extracted high-frequency detail back to the original image:\n\\[\nh_{\\text{sharp}} = \\delta+\\left(\\delta-h_{\\text{box}}\\right)\n\\] \\[\ny = I+\\left(I-\\operatorname{boxblur}(I)\\right)\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#filter-responses-can-be-negative",
-    "href": "lectures/03_filtering.html#filter-responses-can-be-negative",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Filter Responses Can Be Negative",
-    "text": "Filter Responses Can Be Negative\n\n\n\nConsider the horizontal-edge Sobel kernel \\(h\\).\nA Sobel filter estimates an image derivative, so output is not restricted to the range \\([0,255]\\) or \\([0, 1]\\).\nPositive and negative values represent opposite edge polarities.\nValues near zero indicate little intensity change.\n\n\n\\[\nh=\n\\begin{bmatrix}\n1&2&1\\\\\n0&0&0\\\\\n-1&-2&-1\n\\end{bmatrix}\n\\]\n\n\n\n\nimg = cv2.imread(\"assets/03_filtering/red-rock.jpg\", cv2.IMREAD_GRAYSCALE)\nh_y = np.array([[1, 2, 1],\n                [0, 0, 0],\n                [-1, -2, -1]], dtype=np.float32)\nimg_out = cv2.filter2D(img, cv2.CV_32F, h_y, borderType=cv2.BORDER_CONSTANT)\nlimit = np.abs(img_out).max()\n\nfig, ax = plt.subplots(1, 2, figsize=(6.5, 4))\nax[0].imshow(img, cmap=\"gray\"); ax[0].set_title(\"Input\")\nax[1].imshow(img_out, cmap=\"gray\", vmin=-limit, vmax=limit)\nax[1].set_title(\"Signed filter response\")\nfor a in ax: a.axis(\"off\")\nplt.tight_layout(); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#visualizing-signed-filter-responses",
-    "href": "lectures/03_filtering.html#visualizing-signed-filter-responses",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Visualizing Signed Filter Responses",
-    "text": "Visualizing Signed Filter Responses\nThe signed filter response can be transformed differently depending on what we want to visualize.\n\nIn the signed response, zero is centered at gray.\nClipping negative values removes one edge polarity.\nThe absolute response shows edge strength but discards polarity.\n\n\n\nlimit = max(float(np.abs(img_out).max()), 1)\n\nimages = [img_out, np.clip(img_out, 0, None), np.abs(img_out)]\n\ntitles = [\"Signed\", \"Neg clipped\", \"Absolute val\"]\nfig, ax = plt.subplots(1, 3, figsize=(6.5, 4))\nfor a, image, title in zip(ax, images, titles):\n    signed = title == \"Signed\"\n    a.imshow(image, cmap=\"gray\", vmin=-limit if signed else 0, vmax=limit)\n    a.set_title(title); a.axis(\"off\")\nplt.tight_layout(); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
-    "href": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice: Match Each Convolution to Its Output",
-    "text": "Practice: Match Each Convolution to Its Output\nSelect E, F, G, H, or I for each filter. One candidate is not used.\n\\[\n1.\\;A*B=?\n\\qquad\n2.\\;B*C=?\n\\qquad\n3.\\;A*D=?\n\\qquad\n4.\\;A*A=?\n\\]"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#practice-answers",
-    "href": "lectures/03_filtering.html#practice-answers",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Practice: Answers",
-    "text": "Practice: Answers\n\n\n\n\n\n\n\n\n\n\n\\(A*B=E\\): the derivative kernel produces an edge response.\n\\(B*C=F\\): smoothing the derivative kernel produces a derivative-of-Gaussian kernel.\n\\(A*D=G\\): convolution with the shifted impulse shifts the image.\n\\(A*A=H\\): convolving the image with itself produces a broad self-convolution response.\n\nThe unused candidate is \\(I=A*C\\), the Gaussian-smoothed image."
-  },
-  {
-    "objectID": "lectures/03_filtering.html#correlation-as-template-matching",
-    "href": "lectures/03_filtering.html#correlation-as-template-matching",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Correlation as Template Matching",
-    "text": "Correlation as Template Matching\n\nUse an image patch as the filter kernel and correlate it across the image.\n\n\\[\ny[m,n]=\\sum_k\\sum_l h[k,l]\\,I[m+k,n+l]\n\\]\n\nThe largest response is the location that best matches the template.\n\n\n\n\nimport cv2\n\npath = \"assets/03_filtering/colorado-flowers.jpg\"\nbox = (60, 65, 125, 135) # x0, y0, width, height\n\nI = cv2.imread(path, cv2.IMREAD_GRAYSCALE).astype(np.float32)/255\nx0, y0, w, ht = box\nh = I[y0:y0+ht, x0:x0+w]\n\ny = cv2.filter2D(I, cv2.CV_32F, h, borderType=cv2.BORDER_CONSTANT)\n_, score, _, (px,py) = cv2.minMaxLoc(y)\n\nselected = I.copy(); cv2.rectangle(selected,(x0,y0),(x0+w,y0+ht),1,3)\nmatch = I.copy()\ncv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4))\nims = [selected,h,y,match]\ntitles = [\"Selected template\",\"Template $h$\",\"Correlation output $y$\",\"Largest response\"]\n\nfor a, im, title in zip(ax.flat,ims,titles):\n    a.imshow(im,cmap=\"gray\"); a.set_title(title); a.axis(\"off\")\n\nplt.tight_layout(pad=.3); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#brightness-can-dominate-correlation",
-    "href": "lectures/03_filtering.html#brightness-can-dominate-correlation",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Brightness Can Dominate Correlation",
-    "text": "Brightness Can Dominate Correlation\n\nRaw correlation computes a dot product, so brighter regions can produce larger responses.\nSubtract the template mean: \\(f_0 = f-\\bar f\\)\nNow positive and negative values describe the pattern relative to its local brightness.\n\n\n\n\nh0 = h - h.mean()\ny = cv2.filter2D(I, cv2.CV_32F, h0, borderType=cv2.BORDER_CONSTANT)\n\n_, score, _, (px,py) = cv2.minMaxLoc(y)\nmatch = I.copy()\ncv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\nfig, ax = plt.subplots(1,3,figsize=(6.5,2.4))\nax[0].imshow(h0,cmap=\"gray\"); ax[0].set_title(\"Zero-mean $h$\")\nax[1].imshow(y,cmap=\"gray\"); ax[1].plot(px,py,\"r.\",ms=8)\nax[1].set_title(\"Correlation output $y$\")\nax[2].imshow(match,cmap=\"gray\"); ax[2].set_title(f\"Peak: ({px}, {py})\")\n\nfor a in ax: a.axis(\"off\")\nplt.tight_layout(pad=.3); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#use-correlation-not-convolution-for-template-matching",
-    "href": "lectures/03_filtering.html#use-correlation-not-convolution-for-template-matching",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Use Correlation, Not Convolution, for Template Matching",
-    "text": "Use Correlation, Not Convolution, for Template Matching\n\nCorrelation compares the template in its original orientation.\nConvolution compares against a template rotated by \\(180^\\circ\\).\nFor template matching, use correlation so the template orientation is preserved.\n\n\n\n\nkernels = [h0, cv2.flip(h0,-1)]\nnames = [\"Correlation\",\"Convolution\"]\n\nfig, ax = plt.subplots(2,2,figsize=(6.5,4.4))\n\nfor r, (hk,name) in enumerate(zip(kernels,names)):\n    y = cv2.filter2D(I, cv2.CV_32F, hk, borderType=cv2.BORDER_CONSTANT)\n    _, score, _, (px,py) = cv2.minMaxLoc(y)\n\n    match = I.copy()\n    cv2.rectangle(match,(px-w//2,py-ht//2),(px+w//2,py+ht//2),1,3)\n\n    ax[r,0].imshow(hk,cmap=\"gray\")\n    ax[r,1].imshow(match,cmap=\"gray\")\n    ax[r,0].set_title(f\"{name} kernel\")\n    ax[r,1].set_title(f\"Peak response = {score:.1f}\")\n\nfor a in ax.flat: a.axis(\"off\")\nplt.tight_layout(pad=.3); plt.show()"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#choosing-a-filter",
-    "href": "lectures/03_filtering.html#choosing-a-filter",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Choosing a Filter",
-    "text": "Choosing a Filter\n\n\n\n\n\n\n\n\nGoal\nUseful starting point\nMain tradeoff\n\n\n\n\nReduce noise\nGaussian smoothing\nBlurs fine details\n\n\nRemove impulse noise\nMedian filtering\nCan remove small structures\n\n\nDetect edges\nSobel or derivative kernels\nAmplifies noise\n\n\nEnhance local detail\nSharpening / high-pass\nMay create noise or halos\n\n\nFind a known pattern\nNormalized correlation\nSensitive to scale and rotation"
-  },
-  {
-    "objectID": "lectures/03_filtering.html#key-takeaways",
-    "href": "lectures/03_filtering.html#key-takeaways",
-    "title": "Lecture 03 — Image Filtering",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nA filter maps each output location to a function of a local input neighborhood.\nA kernel’s weights determine whether the filter smooths, differentiates, shifts, or sharpens.\nCorrelation uses the kernel as written; convolution rotates it by \\(180^\\circ\\).\nGaussian filters are composable and separable.\nSobel filters estimate signed spatial derivatives and edge strength.\nBoundary rules and output modes are part of the algorithm.\nMedian filtering is nonlinear and robust to isolated extreme values."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule — Fall 2026",
-    "section": "",
-    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Filtering; Fourier Transform\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec04, Lec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec05\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec05, Lec06\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec06\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points & Matching\nLec06\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Matching\nLec06\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nHough Transform\nLec07\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nOptical Flow, Color\nLec08, Lec09\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nCamera Geometry\nLec10\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec10\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Calibration\nLec11\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec12\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec12\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nDepth Cameras\nLec13\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec14\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec15\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec16, Lec17\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec 18\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec 18\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec 19\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec20\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec21\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec22\nLast week of class; Classes end"
-  },
-  {
-    "objectID": "tas.html",
-    "href": "tas.html",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "",
-    "text": "Course-related questions should generally be posted on Ed Discussion so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.\nNote: TAs are instructed not to pre-grade homework. Please do not ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand."
-  },
-  {
-    "objectID": "tas.html#nathaniel-brazen",
-    "href": "tas.html#nathaniel-brazen",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Nathaniel Brazen",
-    "text": "Nathaniel Brazen\n\n\n\n\n\nEmail: nathaniel_brazen@mines.edu\nOffice hours: Tuesdays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
-  },
-  {
-    "objectID": "tas.html#praveen-krisna",
-    "href": "tas.html#praveen-krisna",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Praveen Krisna",
-    "text": "Praveen Krisna\n\n\n\n\n\nEmail: praveen_krisna@mines.edu\nOffice hours: Mondays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
-  },
-  {
-    "objectID": "tas.html#ryan-hartzell",
-    "href": "tas.html#ryan-hartzell",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Ryan Hartzell",
-    "text": "Ryan Hartzell\n\n\n\n\n\nEmail: ryan_hartzell@mines.edu\nOffice hours: Fridays, 12:30-1:30 PM\nOffice location: Brown 280-K"
+    "objectID": "syllabus.html#tutoring-resources",
+    "href": "syllabus.html#tutoring-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Tutoring Resources",
+    "text": "Tutoring Resources\nThe Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: https://www.mines.edu/undergraduate-studies/tutoring/"
   },
   {
     "objectID": "tutorials/01_wsl.html",

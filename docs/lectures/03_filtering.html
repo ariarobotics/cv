@@ -228,7 +228,7 @@ Kaveh Fathian
 <p>By the end of this lecture, you should be able to:</p>
 <ul>
 <li>Explain filtering as a local neighborhood operation.</li>
-<li>Distinguish low-pass, high-pass, correlation, and convolution operations.</li>
+<li>Distinguish correlation and convolution operations.</li>
 <li>Predict the behavior of common kernels.</li>
 <li>Explain linearity, shift invariance, boundary handling, and separability.</li>
 <li>Apply Gaussian, Sobel, sharpening, and median filters.</li>
@@ -305,7 +305,7 @@ I[n]
   overflow-y: auto;
 }
 </style>
-<div id="65986349" class="cell code-block columns column-output-location" data-execution_count="3">
+<div id="891a5cd1" class="cell code-block columns column-output-location" data-execution_count="3">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb1-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -340,7 +340,7 @@ I[n]
 <li>spreads changes over a wider region</li>
 <li>can erase narrow but meaningful features</li>
 </ul>
-<div id="f853d68a" class="cell code-block columns column-output-location" data-execution_count="4">
+<div id="a94fab3c" class="cell code-block columns column-output-location" data-execution_count="4">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb2-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -383,7 +383,7 @@ I[n]
 \end{bmatrix}
 \]</span></p>
 <div class="fragment">
-<div id="f5eb7954" class="cell code-block columns column-output-location" data-execution_count="5">
+<div id="7f34bb76" class="cell code-block columns column-output-location" data-execution_count="5">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb3-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -456,7 +456,7 @@ h[k,l]
 </section>
 <section id="box-filter-first-position" class="slide level2">
 <h2>Box Filter: First Position</h2>
-<div id="cdf09535" class="cell" data-execution_count="6">
+<div id="688d3c22" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -471,7 +471,7 @@ y[1,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0
 </section>
 <section id="box-filter-move-one-pixel-right" class="slide level2">
 <h2>Box Filter: Move One Pixel Right</h2>
-<div id="3ea5b992" class="cell" data-execution_count="7">
+<div id="4e9c61d9" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -486,7 +486,7 @@ y[1,2]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,2+l]=10
 </section>
 <section id="box-filter-continue-the-sweep" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="8ebc5958" class="cell" data-execution_count="8">
+<div id="4bee72c8" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -501,7 +501,7 @@ y[1,3]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,3+l]=20
 </section>
 <section id="box-filter-continue-the-sweep-1" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="8bb563b4" class="cell" data-execution_count="9">
+<div id="fa049c5f" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -516,7 +516,7 @@ y[1,4]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,4+l]=30
 </section>
 <section id="box-filter-continue-the-sweep-2" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="eb3768cc" class="cell" data-execution_count="10">
+<div id="32464249" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -531,7 +531,7 @@ y[1,8]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,8+l]=10
 </section>
 <section id="box-filter-continue-across-the-column" class="slide level2">
 <h2>Box Filter: Continue Across the Column</h2>
-<div id="ec4a3d6a" class="cell" data-execution_count="11">
+<div id="a0c0420a" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -546,7 +546,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 </section>
 <section id="box-filter-try-this-position" class="slide level2">
 <h2>Box Filter: Try This Position</h2>
-<div id="29a8165a" class="cell" data-execution_count="12">
+<div id="bd12cc38" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -560,7 +560,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 </section>
 <section id="box-filter-another-position" class="slide level2">
 <h2>Box Filter: Another Position</h2>
-<div id="94f0d4ff" class="cell" data-execution_count="13">
+<div id="62eff270" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -578,7 +578,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 <section id="box-filter-complete-output-1" class="slide level2">
 <h2>Box Filter: Complete Output</h2>
 <div class="center">
-<div id="89bff453" class="cell" data-execution_count="14">
+<div id="6a51d32f" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -635,7 +635,7 @@ h[k,l]
 <section id="smoothing-with-a-box-filter" class="slide level2">
 <h2>Smoothing with a Box Filter</h2>
 <ul>
-<li>For a <span class="math inline">\(k\times k\)</span> box filter, <span class="math inline">\(h[k,l]=1/k^2\)</span>.</li>
+<li>For a <span class="math inline">\(k\times k\)</span> box filter, <span class="math inline">\(h[k,k]=1/k^2\)</span>.</li>
 <li>A larger <span class="math inline">\(k\)</span> produces stronger smoothing</li>
 </ul>
 <style>
@@ -644,7 +644,7 @@ h[k,l]
   overflow-y: auto;
 }
 </style>
-<div id="d94c1271" class="cell code-block columns column-output-location" data-execution_count="15">
+<div id="9abfcf84" class="cell code-block columns column-output-location" data-execution_count="15">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb4-2"><a aria-label="2"></a></span>
@@ -684,7 +684,7 @@ h_\sigma[k,l]
 \frac{1}{2\pi\sigma^2}
 \exp\left(-\frac{k^2+l^2}{2\sigma^2}\right).
 \]</span></p>
-<div id="3382276e" class="cell" data-execution_count="16">
+<div id="d2392cce" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -696,11 +696,11 @@ h_\sigma[k,l]
 </section>
 <section id="gaussian-filter-kernel-1" class="slide level2">
 <h2>Gaussian Filter Kernel</h2>
-<div id="c1199b2e" class="cell" data-execution_count="17">
+<div id="1ea225c5" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure>
-<p><img data-src="03_filtering_files/figure-revealjs/cell-18-output-1.png" class="quarto-figure quarto-figure-center" width="1449" height="435"></p>
+<p><img data-src="03_filtering_files/figure-revealjs/cell-18-output-1.png" width="1449" height="435"></p>
 </figure>
 </div>
 </div>
@@ -728,7 +728,7 @@ h_\sigma[k,l]
 <ul>
 <li>A Gaussian filter smooths noises.</li>
 </ul>
-<div id="02ce9207" class="cell code-block columns column-output-location" data-execution_count="18">
+<div id="9c6f8baa" class="cell code-block columns column-output-location" data-execution_count="18">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb5-2"><a aria-label="2"></a></span>
@@ -756,7 +756,7 @@ h_\sigma[k,l]
 </section>
 <section id="box-versus-gaussian-filter-smoothing" class="slide level2">
 <h2>Box versus Gaussian Filter Smoothing</h2>
-<div id="dd9dcba6" class="cell" data-execution_count="19">
+<div id="ca5a35f0" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -784,7 +784,7 @@ h_\sigma[k,l]
 \text{filter}(I, \text{shift}(h))= \text{shift}(\text{filter}(I, h))
 \]</span></p>
 </div></div>
-<div id="e38c373b" class="cell" data-execution_count="20">
+<div id="04569025" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -793,28 +793,6 @@ h_\sigma[k,l]
 </div>
 </div>
 </div>
-</section>
-<section id="filtering-supports-many-vision-tasks" class="slide level2">
-<h2>Filtering Supports Many Vision Tasks</h2>
-<p><span class="math display">\[y = \text{filter}(I, h)\]</span></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Improve an image:</strong></p>
-<ul>
-<li>Remove noise</li>
-<li>Smooth before downsampling</li>
-<li>Sharpen local detail</li>
-<li>Estimate illumination or background</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Extract information:</strong></p>
-<ul>
-<li>Detect edges and corners</li>
-<li>Measure texture</li>
-<li>Find repeated patterns</li>
-<li>Match a template to image regions</li>
-</ul>
-</div></div>
 </section>
 <section id="separable-filters" class="slide level2">
 <h2>Separable Filters</h2>
@@ -840,7 +818,7 @@ h = v \, u^T,
 </section>
 <section id="separability-example" class="slide level2">
 <h2>Separability Example</h2>
-<div id="8a8a5269" class="cell" data-execution_count="21">
+<div id="1ebe31cd" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -935,7 +913,7 @@ h[k,l]=h[-k,-l].
 <section id="correlation-and-convolution-differ-for-asymmetric-kernels" class="slide level2">
 <h2>Correlation and Convolution Differ for Asymmetric Kernels</h2>
 <p>A kernel rotated by <span class="math inline">\(180^\circ\)</span>: <sub></sub> <span class="math inline">\(\widetilde{h}[k,l]=h[-k,-l]\)</span>.</p>
-<div id="785475a1" class="cell" data-execution_count="22">
+<div id="45137899" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1130,15 +1108,15 @@ h[k,l]=h[-k,-l].
 </div>
 </div>
 </section>
-<section id="three-common-output-modes" class="slide level2">
+<section id="output-modes" class="slide level2">
 <h2>Three Common Output Modes</h2>
 <style>
-.code-block pre code {
-  max-height: 800px !important;
+#output-modes .code-block pre code {
+  max-height: 750px !important;
   overflow-y: auto;
 }
 </style>
-<div id="a69f477d" class="cell code-block columns column-output-location" data-execution_count="23">
+<div id="48315a10" class="cell code-block columns column-output-location" data-execution_count="23">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb8-2"><a aria-label="2"></a></span>
@@ -1176,7 +1154,7 @@ h[k,l]=h[-k,-l].
 <section id="practice-with-linear-filters" class="slide level2">
 <h2>Practice with Linear Filters</h2>
 <p>Predict the effect of each kernel before viewing the following examples.</p>
-<div id="a55cd383" class="cell" data-execution_count="24">
+<div id="8c44a000" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1189,7 +1167,7 @@ h[k,l]=h[-k,-l].
 <section id="practice" class="slide level2">
 <h2>Practice:</h2>
 <p>What will this kernel do to the image?</p>
-<div id="0e868563" class="cell" data-execution_count="25">
+<div id="080912ee" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1205,7 +1183,7 @@ h[k,l]=h[-k,-l].
 <p><span class="math display">\[
 y[m,n]=I[m,n].
 \]</span></p>
-<div id="ed96b1d0" class="cell" data-execution_count="26">
+<div id="9da67e93" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1218,7 +1196,7 @@ y[m,n]=I[m,n].
 <section id="practice-1" class="slide level2">
 <h2>Practice:</h2>
 <p>What will happen when the kernel selects the pixel immediately to the right?</p>
-<div id="c9a4c9d4" class="cell" data-execution_count="27">
+<div id="f966d4bd" class="cell" data-execution_count="27">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1235,7 +1213,7 @@ y[m,n]=I[m,n].
 y[m,n]=I[m,n+1],
 \]</span></p>
 <p>so the image content shifts left by one pixel.</p>
-<div id="d376309e" class="cell" data-execution_count="28">
+<div id="9b3251c7" class="cell" data-execution_count="28">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1248,7 +1226,7 @@ y[m,n]=I[m,n+1],
 <section id="practice-2" class="slide level2">
 <h2>Practice:</h2>
 <p>Examine the kernel and predict which image structures will produce the strongest response.</p>
-<div id="befa9a36" class="cell" data-execution_count="29">
+<div id="d7f5fcd6" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1265,7 +1243,7 @@ y[m,n]=I[m,n+1],
 <section id="sobel-x-detecting-vertical-edges" class="slide level2">
 <h2>Sobel <span class="math inline">\(x\)</span>: Detecting Vertical Edges</h2>
 <p>This kernel responds strongly to vertical edges.</p>
-<div id="beb66e1d" class="cell" data-execution_count="30">
+<div id="0449054a" class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1279,7 +1257,7 @@ y[m,n]=I[m,n+1],
 <section id="practice-3" class="slide level2">
 <h2>Practice:</h2>
 <p>Examine the kernel and predict which image structures will produce the strongest response.</p>
-<div id="ceecd2ba" class="cell" data-execution_count="31">
+<div id="233b1d5a" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1296,7 +1274,7 @@ y[m,n]=I[m,n+1],
 <section id="sobel-y-detecting-horizontal-edges" class="slide level2">
 <h2>Sobel <span class="math inline">\(y\)</span>: Detecting Horizontal Edges</h2>
 <p>This kernel responds strongly to horizontal edges.</p>
-<div id="8bf15d50" class="cell" data-execution_count="32">
+<div id="b372edcc" class="cell" data-execution_count="32">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1315,7 +1293,7 @@ h_{\text{detail}}
 =
 \delta-h_{\text{box}}.
 \]</span></p>
-<div id="ceeeccec" class="cell" data-execution_count="33">
+<div id="cc839ac5" class="cell" data-execution_count="33">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1333,7 +1311,7 @@ y
 =
 I-\operatorname{boxblur}(I).
 \]</span></p>
-<div id="4f6022ee" class="cell" data-execution_count="34">
+<div id="2d677009" class="cell" data-execution_count="34">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1352,7 +1330,7 @@ h_{\text{sharp}} = \delta+\left(\delta-h_{\text{box}}\right)
 \]</span> <span class="math display">\[
 y = I+\left(I-\operatorname{boxblur}(I)\right)
 \]</span></p>
-<div id="6db08cf9" class="cell" data-execution_count="35">
+<div id="c8b4053b" class="cell" data-execution_count="35">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1388,7 +1366,7 @@ h=
   overflow-y: auto;
 }
 </style>
-<div id="42556da9" class="cell code-block columns column-output-location" data-execution_count="36">
+<div id="02277124" class="cell code-block columns column-output-location" data-execution_count="36">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>img <span class="op">=</span> cv2.imread(<span class="st">"assets/03_filtering/red-rock.jpg"</span>, cv2.IMREAD_GRAYSCALE)</span>
 <span id="cb9-2"><a aria-label="2"></a>h_y <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
@@ -1421,7 +1399,7 @@ h=
 <li>Clipping negative values removes one edge polarity.</li>
 <li>The absolute response shows edge strength but discards polarity.</li>
 </ul>
-<div id="2d08a2f1" class="cell code-block columns column-output-location" data-execution_count="37">
+<div id="524db126" class="cell code-block columns column-output-location" data-execution_count="37">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>limit <span class="op">=</span> <span class="bu">max</span>(<span class="bu">float</span>(np.<span class="bu">abs</span>(img_out).<span class="bu">max</span>()), <span class="dv">1</span>)</span>
 <span id="cb10-2"><a aria-label="2"></a></span>
@@ -1456,7 +1434,7 @@ h=
 \qquad
 4.\;A*A=?
 \]</span></p>
-<div id="c58f6ffb" class="cell" data-execution_count="39">
+<div id="2e61a929" class="cell" data-execution_count="39">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1468,7 +1446,7 @@ h=
 </section>
 <section id="practice-answers" class="slide level2">
 <h2>Practice: Answers</h2>
-<div id="7be426cb" class="cell" data-execution_count="40">
+<div id="5bab82b5" class="cell" data-execution_count="40">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1485,24 +1463,21 @@ h=
 </ul>
 <p>The unused candidate is <span class="math inline">\(I=A*C\)</span>, the Gaussian-smoothed image.</p>
 </section>
-<section id="correlation-as-template-matching" class="slide level2">
+<section id="template-matching" class="slide level2">
 <h2>Correlation as Template Matching</h2>
 <ul>
-<li>Use an image patch as the filter kernel and correlate it across the image.</li>
-</ul>
-<p><span class="math display">\[
+<li>Use an image patch as the filter kernel and correlate it across the image: <span class="math display">\[
 y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
-\]</span></p>
-<ul>
+\]</span></li>
 <li>The largest response is the location that best matches the template.</li>
 </ul>
 <style>
-.code-block pre code {
-  max-height: 250px !important;
+#template-matching .code-block pre code {
+  max-height: 450px !important;
   overflow-y: auto;
 }
 </style>
-<div id="51edc7bb" class="cell code-block columns column-output-location" data-execution_count="41">
+<div id="dd6d5390" class="cell code-block columns column-output-location" data-execution_count="41">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb11-2"><a aria-label="2"></a></span>
@@ -1551,7 +1526,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
   overflow-y: auto;
 }
 </style>
-<div id="384b5eb2" class="cell code-block columns column-output-location" data-execution_count="42">
+<div id="1c605888" class="cell code-block columns column-output-location" data-execution_count="42">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>h0 <span class="op">=</span> h <span class="op">-</span> h.mean()</span>
 <span id="cb12-2"><a aria-label="2"></a>y <span class="op">=</span> cv2.filter2D(I, cv2.CV_32F, h0, borderType<span class="op">=</span>cv2.BORDER_CONSTANT)</span>
@@ -1560,19 +1535,18 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
 <span id="cb12-5"><a aria-label="5"></a>match <span class="op">=</span> I.copy()</span>
 <span id="cb12-6"><a aria-label="6"></a>cv2.rectangle(match,(px<span class="op">-</span>w<span class="op">//</span><span class="dv">2</span>,py<span class="op">-</span>ht<span class="op">//</span><span class="dv">2</span>),(px<span class="op">+</span>w<span class="op">//</span><span class="dv">2</span>,py<span class="op">+</span>ht<span class="op">//</span><span class="dv">2</span>),<span class="dv">1</span>,<span class="dv">3</span>)</span>
 <span id="cb12-7"><a aria-label="7"></a></span>
-<span id="cb12-8"><a aria-label="8"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">3</span>,figsize<span class="op">=</span>(<span class="fl">6.5</span>,<span class="fl">2.4</span>))</span>
-<span id="cb12-9"><a aria-label="9"></a>ax[<span class="dv">0</span>].imshow(h0,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">0</span>].set_title(<span class="st">"Zero-mean $h$"</span>)</span>
-<span id="cb12-10"><a aria-label="10"></a>ax[<span class="dv">1</span>].imshow(y,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">1</span>].plot(px,py,<span class="st">"r."</span>,ms<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb12-11"><a aria-label="11"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Correlation output $y$"</span>)</span>
-<span id="cb12-12"><a aria-label="12"></a>ax[<span class="dv">2</span>].imshow(match,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">2</span>].set_title(<span class="ss">f"Peak: (</span><span class="sc">{</span>px<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>py<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb12-13"><a aria-label="13"></a></span>
-<span id="cb12-14"><a aria-label="14"></a><span class="cf">for</span> a <span class="kw">in</span> ax: a.axis(<span class="st">"off"</span>)</span>
-<span id="cb12-15"><a aria-label="15"></a>plt.tight_layout(pad<span class="op">=</span><span class="fl">.3</span>)<span class="op">;</span> plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-8"><a aria-label="8"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="fl">6.5</span>,<span class="fl">4.5</span>))</span>
+<span id="cb12-9"><a aria-label="9"></a>ax[<span class="dv">0</span>,<span class="dv">0</span>].imshow(h0,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">"Zero-mean $h$"</span>)</span>
+<span id="cb12-10"><a aria-label="10"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].imshow(y,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">1</span>,<span class="dv">0</span>].plot(px,py,<span class="st">"r."</span>,ms<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb12-11"><a aria-label="11"></a>ax[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">"Correlation output $y$"</span>)</span>
+<span id="cb12-12"><a aria-label="12"></a>ax[<span class="dv">1</span>,<span class="dv">1</span>].imshow(match,cmap<span class="op">=</span><span class="st">"gray"</span>)<span class="op">;</span> ax[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="ss">f"Peak: (</span><span class="sc">{</span>px<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>py<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb12-13"><a aria-label="13"></a><span class="cf">for</span> a <span class="kw">in</span> ax.flat: a.axis(<span class="st">"off"</span>)</span>
+<span id="cb12-14"><a aria-label="14"></a>plt.tight_layout(pad<span class="op">=</span><span class="fl">.3</span>)<span class="op">;</span> plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="03_filtering_files/figure-revealjs/cell-43-output-1.png" width="786" height="314"></p>
+<p><img data-src="03_filtering_files/figure-revealjs/cell-43-output-1.png" width="792" height="525"></p>
 </figure>
 </div>
 </div>
@@ -1583,7 +1557,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
 <ul>
 <li><strong>Correlation</strong> compares the template in its original orientation.</li>
 <li><strong>Convolution</strong> compares against a template rotated by <span class="math inline">\(180^\circ\)</span>.</li>
-<li>For <strong>template matching</strong>, use correlation so the template orientation is preserved.</li>
+<li>For <strong>template matching</strong>, use <strong>correlation</strong> so the template orientation is preserved.</li>
 </ul>
 <style>
 .code-block pre code {
@@ -1591,7 +1565,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
   overflow-y: auto;
 }
 </style>
-<div id="af2c69d8" class="cell code-block columns column-output-location" data-execution_count="43">
+<div id="6987b2e6" class="cell code-block columns column-output-location" data-execution_count="43">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>kernels <span class="op">=</span> [h0, cv2.flip(h0,<span class="op">-</span><span class="dv">1</span>)]</span>
 <span id="cb13-2"><a aria-label="2"></a>names <span class="op">=</span> [<span class="st">"Correlation"</span>,<span class="st">"Convolution"</span>]</span>
@@ -1625,10 +1599,148 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
 <section>
 <section id="nonlinear-filters" class="title-slide slide level1 center">
 <h1>Nonlinear Filters</h1>
-
+<p><span class="math display">\[y = \text{filter}(I, h)\]</span></p>
 </section>
-<section id="choosing-a-filter" class="slide level2">
-<h2>Choosing a Filter</h2>
+<section id="median-filter" class="slide level2">
+<h2>Median Filter</h2>
+<ul>
+<li>A median filter is a nonlinear <strong>rank filter</strong>: <span class="math display">\[
+y[m,n]=\operatorname{median}\{I[m+k,n+l]\}_{(k,l)\in\Omega}.
+\]</span></li>
+<li>It replaces the center pixel by the middle value in the local neighborhood.</li>
+<li>Unlike a linear filter, there is <strong>no kernel</strong> <span class="math inline">\(h[k,l]\)</span> such that <span class="math inline">\(y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l].\)</span></li>
+</ul>
+<div id="e7f1e739" class="cell" data-execution_count="45">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="03_filtering_files/figure-revealjs/cell-46-output-1.png" class="quarto-figure quarto-figure-center" width="1149" height="487"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="salt-and-pepper" class="slide level2">
+<h2>Salt-and-Pepper Noise: Mean vs.&nbsp;Median</h2>
+<ul>
+<li><p>Impulse noise replaces some pixels with 0 or 255.</p></li>
+<li><p>A mean filter averages these outliers with their neighbors, while a median filter can reject them.</p></li>
+</ul>
+<style>
+#salt-and-pepper .code-block pre code {
+  max-height: 640px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="aea446bf" class="cell code-block columns column-output-location" data-execution_count="46">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a>path <span class="op">=</span> <span class="st">"assets/03_filtering/colorado-flower.jpg"</span>   </span>
+<span id="cb14-2"><a aria-label="2"></a>I0 <span class="op">=</span> cv2.imread(path, cv2.IMREAD_GRAYSCALE)</span>
+<span id="cb14-3"><a aria-label="3"></a>I0 <span class="op">=</span> cv2.resize(I0, (<span class="dv">380</span>,<span class="dv">255</span>))</span>
+<span id="cb14-4"><a aria-label="4"></a></span>
+<span id="cb14-5"><a aria-label="5"></a><span class="co"># Add salt-and-pepper noise</span></span>
+<span id="cb14-6"><a aria-label="6"></a>rng, p <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>), <span class="fl">0.03</span></span>
+<span id="cb14-7"><a aria-label="7"></a>Isp <span class="op">=</span> I0.copy()<span class="op">;</span> M <span class="op">=</span> rng.random(I0.shape)</span>
+<span id="cb14-8"><a aria-label="8"></a>Isp[M <span class="op">&lt;</span> p] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> Isp[M <span class="op">&gt;</span> <span class="dv">1</span><span class="op">-</span>p] <span class="op">=</span> <span class="dv">255</span></span>
+<span id="cb14-9"><a aria-label="9"></a></span>
+<span id="cb14-10"><a aria-label="10"></a><span class="co"># Compare mean and median filtering</span></span>
+<span id="cb14-11"><a aria-label="11"></a>Imean3 <span class="op">=</span> cv2.blur(Isp, (<span class="dv">3</span>,<span class="dv">3</span>), borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>
+<span id="cb14-12"><a aria-label="12"></a>Imed3  <span class="op">=</span> cv2.medianBlur(Isp, <span class="dv">3</span>)</span>
+<span id="cb14-13"><a aria-label="13"></a></span>
+<span id="cb14-14"><a aria-label="14"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="fl">6.5</span>,<span class="fl">4.4</span>))</span>
+<span id="cb14-15"><a aria-label="15"></a><span class="cf">for</span> a, im, t <span class="kw">in</span> <span class="bu">zip</span>(ax.flat,</span>
+<span id="cb14-16"><a aria-label="16"></a>    [I0, Isp, Imean3, Imed3],</span>
+<span id="cb14-17"><a aria-label="17"></a>    [<span class="st">"Original $I$"</span>, <span class="st">"Salt-and-pepper noise"</span>, <span class="st">"3×3 mean"</span>, <span class="st">"3×3 median"</span>]):</span>
+<span id="cb14-18"><a aria-label="18"></a>    panel(a, im, t)</span>
+<span id="cb14-19"><a aria-label="19"></a>plt.tight_layout(pad<span class="op">=</span><span class="fl">.3</span>)<span class="op">;</span> plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_filtering_files/figure-revealjs/cell-47-output-1.png" width="745" height="539"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="window-size-matters" class="slide level2">
+<h2>Window Size Matters</h2>
+<ul>
+<li>Larger windows remove more noise, but they also remove more image detail.</li>
+</ul>
+<div id="c89dc72e" class="cell code-block columns column-output-location" data-execution_count="47">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a><span class="co"># Mean filters</span></span>
+<span id="cb15-2"><a aria-label="2"></a>Imean3  <span class="op">=</span> cv2.blur(Isp, (<span class="dv">3</span>,<span class="dv">3</span>),   borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>
+<span id="cb15-3"><a aria-label="3"></a>Imean11 <span class="op">=</span> cv2.blur(Isp, (<span class="dv">11</span>,<span class="dv">11</span>), borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>
+<span id="cb15-4"><a aria-label="4"></a></span>
+<span id="cb15-5"><a aria-label="5"></a><span class="co"># Median filters</span></span>
+<span id="cb15-6"><a aria-label="6"></a>Imed3  <span class="op">=</span> cv2.medianBlur(Isp, <span class="dv">3</span>)</span>
+<span id="cb15-7"><a aria-label="7"></a>Imed11 <span class="op">=</span> cv2.medianBlur(Isp, <span class="dv">11</span>)</span>
+<span id="cb15-8"><a aria-label="8"></a></span>
+<span id="cb15-9"><a aria-label="9"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>,figsize<span class="op">=</span>(<span class="fl">6.5</span>,<span class="fl">4.4</span>))</span>
+<span id="cb15-10"><a aria-label="10"></a><span class="cf">for</span> a, im, t <span class="kw">in</span> <span class="bu">zip</span>(ax.flat,</span>
+<span id="cb15-11"><a aria-label="11"></a>    [Imean3, Imean11, Imed3, Imed11],</span>
+<span id="cb15-12"><a aria-label="12"></a>    [<span class="st">"3×3 mean"</span>, <span class="st">"11×11 mean"</span>, <span class="st">"3×3 median"</span>, <span class="st">"11×11 median"</span>]):</span>
+<span id="cb15-13"><a aria-label="13"></a>    panel(a, im, t)</span>
+<span id="cb15-14"><a aria-label="14"></a>plt.tight_layout(pad<span class="op">=</span><span class="fl">.3</span>)<span class="op">;</span> plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="03_filtering_files/figure-revealjs/cell-48-output-1.png" width="745" height="540"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="median-filters" class="slide level2">
+<h2>Median Filters</h2>
+<ul>
+<li><p>The median filter operates over a window by selecting the median intensity in the window.</p></li>
+<li><p>Because ordering is nonlinear, in general,</p></li>
+</ul>
+<p><span class="math display">\[
+\operatorname{median}(I_1+I_2)\neq
+\operatorname{median}(I_1)+\operatorname{median}(I_2)
+\]</span></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What advantage does a median filter have over a mean filter?</li>
+<li>Is a median filter a kind of convolution?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="filtering-applications" class="slide level2">
+<h2>Filtering Applications</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Improve an image:</strong></p>
+<ul>
+<li>Remove noise</li>
+<li>Smooth before downsampling</li>
+<li>Sharpen local detail</li>
+<li>Estimate illumination or background</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Extract information:</strong></p>
+<ul>
+<li>Detect edges and corners</li>
+<li>Measure texture</li>
+<li>Find repeated patterns</li>
+<li>Match a template to image regions</li>
+</ul>
+</div></div>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
