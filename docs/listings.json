@@ -16,5 +16,11 @@
       "/lectures/02_image.html",
       "/lectures/03_filtering.html"
     ]
+  },
+  {
+    "listing": "/assignments/index.html",
+    "items": [
+      "/assignments/hw01/index.html"
+    ]
   }
 ]

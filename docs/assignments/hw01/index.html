@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Set up the course cv environment and practice basic image operations with OpenCV and NumPy.">
 
-<title>Teaching Assistants — Fall 2026 – Computer Vision</title>
+<title>Homework 01: Working with Images – Computer Vision</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +27,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,14 +113,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computer Vision</span>
     </a>
   </div>
@@ -95,31 +131,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> 
+    <a class="nav-link" href="../../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> 
+    <a class="nav-link" href="../../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tas.html" aria-current="page"> 
+    <a class="nav-link" href="../../tas.html"> 
 <span class="menu-text">TAs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials/"> 
+    <a class="nav-link" href="../../tutorials/"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./assignments/"> 
+    <a class="nav-link" href="../../assignments/"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lectures/"> 
+    <a class="nav-link" href="../../lectures/"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
 </ul>
@@ -133,15 +169,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#personal-image-requirement" id="toc-personal-image-requirement" class="nav-link" data-scroll-target="#personal-image-requirement">Personal image requirement</a></li>
+  <li><a href="#starter-file" id="toc-starter-file" class="nav-link" data-scroll-target="#starter-file">Starter file</a></li>
+  <li><a href="#required-tasks" id="toc-required-tasks" class="nav-link" data-scroll-target="#required-tasks">Required tasks</a></li>
+  <li><a href="#run-your-program" id="toc-run-your-program" class="nav-link" data-scroll-target="#run-your-program">Run your program</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit-important" id="toc-submission-limit-important" class="nav-link" data-scroll-target="#submission-limit-important">Submission limit — important</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching Assistants — Fall 2026</h1>
+<h1 class="title">Homework 01: Working with Images</h1>
 </div>
 
+<div>
+  <div class="description">
+    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -156,49 +213,109 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Course-related questions should generally be posted on <strong>Ed Discussion</strong> so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.</p>
-<p><strong>Note:</strong> TAs are instructed <strong>not to pre-grade</strong> homework. Please do <strong>not</strong> ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand.</p>
-<section id="nathaniel-brazen" class="level2">
-<h2 class="anchored" data-anchor-id="nathaniel-brazen">Nathaniel Brazen</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img src="images/tas/nathaniel-brazen.jpg" class="img-fluid" width="180"></p>
-</div><div class="column" style="width:75%;">
-<ul>
-<li><strong>Email:</strong> <a href="mailto:nathaniel_brazen@mines.edu">nathaniel_brazen@mines.edu</a></li>
-<li><strong>Office hours:</strong> Tuesdays, 1:00 - 2:00 PM</li>
-<li><strong>Office location:</strong> Brown 280-K</li>
-</ul>
-</div>
-</div>
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>The objective of this homework is to verify that your course <code>cv</code> Conda environment is working and to practice basic image operations with <strong>OpenCV</strong> and NumPy.</p>
+<p>For this course, use <strong>OpenCV (<code>cv2</code>) for image loading and image processing</strong>. Do not use <code>skimage</code>, PIL/Pillow, or another image-processing library to implement the required operations in this homework.</p>
+<p>Do not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations.</p>
 </section>
-<section id="praveen-krisna" class="level2">
-<h2 class="anchored" data-anchor-id="praveen-krisna">Praveen Krisna</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img src="images/tas/praveen-krisna.jpg" class="img-fluid" width="180"></p>
-</div><div class="column" style="width:75%;">
-<ul>
-<li><strong>Email:</strong> <a href="mailto:praveen_krisna@mines.edu">praveen_krisna@mines.edu</a></li>
-<li><strong>Office hours:</strong> Mondays, 1:00 - 2:00 PM</li>
-<li><strong>Office location:</strong> Brown 280-K</li>
-</ul>
-</div>
-</div>
+<section id="personal-image-requirement" class="level2">
+<h2 class="anchored" data-anchor-id="personal-image-requirement">Personal image requirement</h2>
+<p>Use a <strong>personal headshot or selfie</strong> in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called <code>hw01_output.png</code>, and that grayscale result will be checked manually.</p>
 </section>
-<section id="ryan-hartzell" class="level2">
-<h2 class="anchored" data-anchor-id="ryan-hartzell">Ryan Hartzell</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img src="images/tas/ryan-hartzell.jpg" class="img-fluid" width="180"></p>
-</div><div class="column" style="width:75%;">
+<section id="starter-file" class="level2">
+<h2 class="anchored" data-anchor-id="starter-file">Starter file</h2>
+<p>Complete the provided <code>hw01.py</code> file. Do <strong>not</strong> rename the required functions or change their arguments because the Gradescope autograder calls them directly.</p>
+<p><a href="files/hw01.py" class="btn btn-primary">Download <code>hw01.py</code></a></p>
+</section>
+<section id="required-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="required-tasks">Required tasks</h2>
+<p>Complete the following functions:</p>
+<ol type="1">
+<li><code>load_image(filename)</code>
 <ul>
-<li><strong>Email:</strong> <a href="mailto:ryan_hartzell@mines.edu">ryan_hartzell@mines.edu</a></li>
-<li><strong>Office hours:</strong> Fridays, 12:30-1:30 PM</li>
-<li><strong>Office location:</strong> Brown 280-K</li>
+<li>Load the image from disk using <strong>OpenCV</strong>.</li>
+<li>Return the loaded color image as a NumPy array.</li>
+</ul></li>
+<li><code>convert_to_grayscale(image)</code>
+<ul>
+<li>Convert the OpenCV color image to grayscale using OpenCV.</li>
+<li>Return a <strong>2-D</strong> NumPy array.</li>
+<li>Convert the result to <code>numpy.float32</code>.</li>
+<li>Scale the grayscale values to the range <strong>[0, 1]</strong>.</li>
+</ul></li>
+<li><code>top_left_3x5(gray_image)</code>
+<ul>
+<li>Return the pixel values from the top-left corner as a matrix with exactly <strong>3 rows and 5 columns</strong>.</li>
+</ul></li>
+<li><code>get_pixel_value(gray_image, row, col)</code>
+<ul>
+<li>Return the requested grayscale pixel value on <strong>row <code>1</code>, column <code>2</code></strong>, using standard NumPy indexing.</li>
+<li>Row/column indexing starts at <strong>0</strong>.</li>
+</ul></li>
+<li><code>save_grayscale_image(gray_image, output_path)</code>
+<ul>
+<li>Save a viewable grayscale image using OpenCV.</li>
+<li>The program must produce <code>hw01_output.png</code>.</li>
+</ul></li>
+</ol>
+</section>
+<section id="run-your-program" class="level2">
+<h2 class="anchored" data-anchor-id="run-your-program">Run your program</h2>
+<p>Activate the course environment and run the script with your own image:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw01.py my_image.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.</p>
+<p>A successful run must:</p>
+<ul>
+<li>load your personal headshot;</li>
+<li>convert it to grayscale <code>float32</code> in the <code>[0, 1]</code> range;</li>
+<li>print the top-left <strong>3-row × 5-column</strong> grayscale matrix;</li>
+<li>print the grayscale pixel value at <strong>row 1, column 2</strong> using zero-based indexing; and</li>
+<li>save the grayscale image as <code>hw01_output.png</code>.</li>
 </ul>
-</div>
-</div>
+<p>Before submitting, open <code>hw01_output.png</code> and make sure your face is clearly visible and the image is grayscale.</p>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit exactly these two files to Gradescope:</p>
+<ol type="1">
+<li><code>hw01.py</code></li>
+<li><code>hw01_output.png</code></li>
+</ol>
+<p>Do <strong>not</strong> submit a PDF, screenshots of your code, or your original color headshot.</p>
+</section>
+<section id="submission-limit-important" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit-important">Submission limit — important</h2>
+<p>You may make at most <strong>3 Gradescope submissions</strong> for this homework. Use your local <code>cv</code> environment to test and debug your code before submitting.</p>
+<ul>
+<li>Submissions 1–3 are graded normally.</li>
+<li><strong>Submission 4 and every later submission receive a score of 0 for the homework.</strong></li>
+<li>A Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.</li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>The homework is worth 5 points:</p>
+<ul>
+<li><strong>4.0 points:</strong> automatic programming tests.</li>
+<li><strong>1.0 point:</strong> manual verification that <code>hw01_output.png</code> is the grayscale result of your <strong>personal headshot/selfie</strong> and that your face is clearly visible.</li>
+</ul>
+<p>The autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.</p>
+<p>Some basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does <strong>not</strong> guarantee full credit.</p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li>Use the course <code>cv</code> Conda environment.</li>
+<li>Use OpenCV (<code>cv2</code>) for the required image operations.</li>
+<li>Do not change the required function names or arguments.</li>
+<li>Do not hard-code the 3×5 matrix or the row-1, column-2 pixel value.</li>
+<li>Test locally before using one of your three Gradescope submissions.</li>
+</ul>
 
 
 </section>
