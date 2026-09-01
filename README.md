@@ -50,6 +50,8 @@ Director, Autonomy, Robotics & Intelligent Algorithms (ARIA) Lab
 ARIA Lab: https://www.ariarobotics.com/
 
 
-## License / Use
+## Acknowledgments and Use
 
-These materials are provided for free and for educational use. Please see any license information included with third-party resources before redistributing or reusing them.
+These course materials build significantly on slides and teaching materials developed by other instructors, especially James Tompkin, Srinath Sridhar, Phillip Isola, William Freeman, Antonio Torralba, Kris Kitani, Takeo Kanade, Matthew O'Toole, and Chen Wang.
+
+You are welcome to use and adapt these materials for academic, educational, or research purposes. If you reuse or redistribute them, please retain all acknowledgments and attributions to the original authors and sources. Some figures, examples, and other third-party materials may be subject to their own licenses or usage terms; please respect those requirements when reusing them.

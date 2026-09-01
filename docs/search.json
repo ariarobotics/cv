@@ -690,7 +690,7 @@
     "href": "index.html#course-material",
     "title": "Computer Vision",
     "section": "Course Material",
-    "text": "Course Material\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions covering classical and modern computer vision.\nView Lectures\n\n\nCode & Demos\nPython, OpenCV, PyTorch, and interactive examples used throughout the course.\nView Code\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
+    "text": "Course Material\n\nCourse Information\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\n\n\nLearning Materials\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions.\nView Lectures\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
   },
   {
     "objectID": "index.html#about-the-course",
@@ -712,6 +712,13 @@
     "title": "Computer Vision",
     "section": "Course Website vs. GitHub Repository",
     "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
+  },
+  {
+    "objectID": "index.html#acknowledgments-and-use",
+    "href": "index.html#acknowledgments-and-use",
+    "title": "Computer Vision",
+    "section": "Acknowledgments and Use",
+    "text": "Acknowledgments and Use\nThese course materials build significantly on slides and teaching materials developed by other instructors, especially James Tompkin, Srinath Sridhar, Phillip Isola, William Freeman, Antonio Torralba, Kris Kitani, Takeo Kanade, Matthew O’Toole, and Chen Wang.\nYou are welcome to use and adapt these materials for academic, educational, or research purposes. If you reuse or redistribute them, please retain all acknowledgments and attributions to the original authors and sources. Some figures, examples, and other third-party materials may be subject to their own licenses or usage terms; please respect those requirements when reusing them."
   },
   {
     "objectID": "assignments/index.html",
