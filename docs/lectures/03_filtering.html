@@ -101,7 +101,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a6e90b38403f5a8e9484a35c99accc14.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e29227cb4367bc74b13779e945f9984f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -305,7 +305,7 @@ I[n]
   overflow-y: auto;
 }
 </style>
-<div id="891a5cd1" class="cell code-block columns column-output-location" data-execution_count="3">
+<div id="c89b1f1f" class="cell code-block columns column-output-location" data-execution_count="3">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb1-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -331,7 +331,7 @@ I[n]
 </div>
 </div></div>
 </section>
-<section id="the-window-size-k" class="slide level2">
+<section id="window-size" class="slide level2">
 <h2>The Window Size <span class="math inline">\(k\)</span></h2>
 <p>A larger averaging window:</p>
 <ul>
@@ -340,7 +340,13 @@ I[n]
 <li>spreads changes over a wider region</li>
 <li>can erase narrow but meaningful features</li>
 </ul>
-<div id="a94fab3c" class="cell code-block columns column-output-location" data-execution_count="4">
+<style>
+#window-size .code-block pre code {
+  max-height: 420px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="0aa5a254" class="cell code-block columns column-output-location" data-execution_count="4">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb2-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -383,7 +389,13 @@ I[n]
 \end{bmatrix}
 \]</span></p>
 <div class="fragment">
-<div id="7f34bb76" class="cell code-block columns column-output-location" data-execution_count="5">
+<style>
+#filter-kernel .code-block pre code {
+  max-height: 410px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="45933c4b" class="cell code-block columns column-output-location" data-execution_count="5">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span>np.pi, <span class="dv">160</span>)</span>
 <span id="cb3-2"><a aria-label="2"></a>rng <span class="op">=</span> np.random.default_rng(<span class="dv">7</span>)</span>
@@ -456,7 +468,7 @@ h[k,l]
 </section>
 <section id="box-filter-first-position" class="slide level2">
 <h2>Box Filter: First Position</h2>
-<div id="688d3c22" class="cell" data-execution_count="6">
+<div id="86f2a481" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -471,7 +483,7 @@ y[1,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,1+l]=0
 </section>
 <section id="box-filter-move-one-pixel-right" class="slide level2">
 <h2>Box Filter: Move One Pixel Right</h2>
-<div id="4e9c61d9" class="cell" data-execution_count="7">
+<div id="36cda123" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -486,7 +498,7 @@ y[1,2]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,2+l]=10
 </section>
 <section id="box-filter-continue-the-sweep" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="4bee72c8" class="cell" data-execution_count="8">
+<div id="66dd9a8c" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -501,7 +513,7 @@ y[1,3]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,3+l]=20
 </section>
 <section id="box-filter-continue-the-sweep-1" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="fa049c5f" class="cell" data-execution_count="9">
+<div id="a2d6496f" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -516,7 +528,7 @@ y[1,4]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,4+l]=30
 </section>
 <section id="box-filter-continue-the-sweep-2" class="slide level2">
 <h2>Box Filter: Continue the Sweep</h2>
-<div id="32464249" class="cell" data-execution_count="10">
+<div id="8a0551bc" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -531,7 +543,7 @@ y[1,8]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[1+k,8+l]=10
 </section>
 <section id="box-filter-continue-across-the-column" class="slide level2">
 <h2>Box Filter: Continue Across the Column</h2>
-<div id="a0c0420a" class="cell" data-execution_count="11">
+<div id="a4e59d5b" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -546,7 +558,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 </section>
 <section id="box-filter-try-this-position" class="slide level2">
 <h2>Box Filter: Try This Position</h2>
-<div id="bd12cc38" class="cell" data-execution_count="12">
+<div id="ef3dd3f1" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -560,7 +572,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 </section>
 <section id="box-filter-another-position" class="slide level2">
 <h2>Box Filter: Another Position</h2>
-<div id="62eff270" class="cell" data-execution_count="13">
+<div id="39aaa195" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -578,7 +590,7 @@ y[2,1]=\sum_{k=-1}^{1}\sum_{l=-1}^{1}h[k,l]I[2+k,1+l]=0
 <section id="box-filter-complete-output-1" class="slide level2">
 <h2>Box Filter: Complete Output</h2>
 <div class="center">
-<div id="6a51d32f" class="cell" data-execution_count="14">
+<div id="cc291a26" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -644,7 +656,7 @@ h[k,l]
   overflow-y: auto;
 }
 </style>
-<div id="9abfcf84" class="cell code-block columns column-output-location" data-execution_count="15">
+<div id="0e62a70e" class="cell code-block columns column-output-location" data-execution_count="15">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb4-2"><a aria-label="2"></a></span>
@@ -684,7 +696,7 @@ h_\sigma[k,l]
 \frac{1}{2\pi\sigma^2}
 \exp\left(-\frac{k^2+l^2}{2\sigma^2}\right).
 \]</span></p>
-<div id="d2392cce" class="cell" data-execution_count="16">
+<div id="e0ccb315" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -696,7 +708,7 @@ h_\sigma[k,l]
 </section>
 <section id="gaussian-filter-kernel-1" class="slide level2">
 <h2>Gaussian Filter Kernel</h2>
-<div id="1ea225c5" class="cell" data-execution_count="17">
+<div id="38d04a92" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -728,7 +740,7 @@ h_\sigma[k,l]
 <ul>
 <li>A Gaussian filter smooths noises.</li>
 </ul>
-<div id="9c6f8baa" class="cell code-block columns column-output-location" data-execution_count="18">
+<div id="72255e2e" class="cell code-block columns column-output-location" data-execution_count="18">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb5-2"><a aria-label="2"></a></span>
@@ -756,7 +768,7 @@ h_\sigma[k,l]
 </section>
 <section id="box-versus-gaussian-filter-smoothing" class="slide level2">
 <h2>Box versus Gaussian Filter Smoothing</h2>
-<div id="ca5a35f0" class="cell" data-execution_count="19">
+<div id="124239ce" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -784,7 +796,7 @@ h_\sigma[k,l]
 \text{filter}(I, \text{shift}(h))= \text{shift}(\text{filter}(I, h))
 \]</span></p>
 </div></div>
-<div id="04569025" class="cell" data-execution_count="20">
+<div id="45127a7d" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -818,7 +830,7 @@ h = v \, u^T,
 </section>
 <section id="separability-example" class="slide level2">
 <h2>Separability Example</h2>
-<div id="1ebe31cd" class="cell" data-execution_count="21">
+<div id="640aa0c8" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -913,7 +925,7 @@ h[k,l]=h[-k,-l].
 <section id="correlation-and-convolution-differ-for-asymmetric-kernels" class="slide level2">
 <h2>Correlation and Convolution Differ for Asymmetric Kernels</h2>
 <p>A kernel rotated by <span class="math inline">\(180^\circ\)</span>: <sub></sub> <span class="math inline">\(\widetilde{h}[k,l]=h[-k,-l]\)</span>.</p>
-<div id="45137899" class="cell" data-execution_count="22">
+<div id="27485d20" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1116,7 +1128,7 @@ h[k,l]=h[-k,-l].
   overflow-y: auto;
 }
 </style>
-<div id="48315a10" class="cell code-block columns column-output-location" data-execution_count="23">
+<div id="7b14cd36" class="cell code-block columns column-output-location" data-execution_count="23">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb8-2"><a aria-label="2"></a></span>
@@ -1154,7 +1166,7 @@ h[k,l]=h[-k,-l].
 <section id="practice-with-linear-filters" class="slide level2">
 <h2>Practice with Linear Filters</h2>
 <p>Predict the effect of each kernel before viewing the following examples.</p>
-<div id="8c44a000" class="cell" data-execution_count="24">
+<div id="2ee5cc6d" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1167,7 +1179,7 @@ h[k,l]=h[-k,-l].
 <section id="practice" class="slide level2">
 <h2>Practice:</h2>
 <p>What will this kernel do to the image?</p>
-<div id="080912ee" class="cell" data-execution_count="25">
+<div id="fb191b70" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1183,7 +1195,7 @@ h[k,l]=h[-k,-l].
 <p><span class="math display">\[
 y[m,n]=I[m,n].
 \]</span></p>
-<div id="9da67e93" class="cell" data-execution_count="26">
+<div id="1f01b771" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1196,7 +1208,7 @@ y[m,n]=I[m,n].
 <section id="practice-1" class="slide level2">
 <h2>Practice:</h2>
 <p>What will happen when the kernel selects the pixel immediately to the right?</p>
-<div id="f966d4bd" class="cell" data-execution_count="27">
+<div id="66e09bce" class="cell" data-execution_count="27">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1213,7 +1225,7 @@ y[m,n]=I[m,n].
 y[m,n]=I[m,n+1],
 \]</span></p>
 <p>so the image content shifts left by one pixel.</p>
-<div id="9b3251c7" class="cell" data-execution_count="28">
+<div id="1545023d" class="cell" data-execution_count="28">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1226,7 +1238,7 @@ y[m,n]=I[m,n+1],
 <section id="practice-2" class="slide level2">
 <h2>Practice:</h2>
 <p>Examine the kernel and predict which image structures will produce the strongest response.</p>
-<div id="d7f5fcd6" class="cell" data-execution_count="29">
+<div id="2abdc269" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1243,7 +1255,7 @@ y[m,n]=I[m,n+1],
 <section id="sobel-x-detecting-vertical-edges" class="slide level2">
 <h2>Sobel <span class="math inline">\(x\)</span>: Detecting Vertical Edges</h2>
 <p>This kernel responds strongly to vertical edges.</p>
-<div id="0449054a" class="cell" data-execution_count="30">
+<div id="e5f4d0a3" class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1257,7 +1269,7 @@ y[m,n]=I[m,n+1],
 <section id="practice-3" class="slide level2">
 <h2>Practice:</h2>
 <p>Examine the kernel and predict which image structures will produce the strongest response.</p>
-<div id="233b1d5a" class="cell" data-execution_count="31">
+<div id="2453487f" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1274,7 +1286,7 @@ y[m,n]=I[m,n+1],
 <section id="sobel-y-detecting-horizontal-edges" class="slide level2">
 <h2>Sobel <span class="math inline">\(y\)</span>: Detecting Horizontal Edges</h2>
 <p>This kernel responds strongly to horizontal edges.</p>
-<div id="b372edcc" class="cell" data-execution_count="32">
+<div id="8de1e283" class="cell" data-execution_count="32">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1293,7 +1305,7 @@ h_{\text{detail}}
 =
 \delta-h_{\text{box}}.
 \]</span></p>
-<div id="cc839ac5" class="cell" data-execution_count="33">
+<div id="e4c62e94" class="cell" data-execution_count="33">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1311,7 +1323,7 @@ y
 =
 I-\operatorname{boxblur}(I).
 \]</span></p>
-<div id="2d677009" class="cell" data-execution_count="34">
+<div id="9dfcf42a" class="cell" data-execution_count="34">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1330,7 +1342,7 @@ h_{\text{sharp}} = \delta+\left(\delta-h_{\text{box}}\right)
 \]</span> <span class="math display">\[
 y = I+\left(I-\operatorname{boxblur}(I)\right)
 \]</span></p>
-<div id="c8b4053b" class="cell" data-execution_count="35">
+<div id="f51a5862" class="cell" data-execution_count="35">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1366,7 +1378,7 @@ h=
   overflow-y: auto;
 }
 </style>
-<div id="02277124" class="cell code-block columns column-output-location" data-execution_count="36">
+<div id="224b5a95" class="cell code-block columns column-output-location" data-execution_count="36">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>img <span class="op">=</span> cv2.imread(<span class="st">"assets/03_filtering/red-rock.jpg"</span>, cv2.IMREAD_GRAYSCALE)</span>
 <span id="cb9-2"><a aria-label="2"></a>h_y <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>],</span>
@@ -1399,7 +1411,7 @@ h=
 <li>Clipping negative values removes one edge polarity.</li>
 <li>The absolute response shows edge strength but discards polarity.</li>
 </ul>
-<div id="524db126" class="cell code-block columns column-output-location" data-execution_count="37">
+<div id="36c32e7b" class="cell code-block columns column-output-location" data-execution_count="37">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>limit <span class="op">=</span> <span class="bu">max</span>(<span class="bu">float</span>(np.<span class="bu">abs</span>(img_out).<span class="bu">max</span>()), <span class="dv">1</span>)</span>
 <span id="cb10-2"><a aria-label="2"></a></span>
@@ -1434,7 +1446,7 @@ h=
 \qquad
 4.\;A*A=?
 \]</span></p>
-<div id="2e61a929" class="cell" data-execution_count="39">
+<div id="9a42e60a" class="cell" data-execution_count="39">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1446,7 +1458,7 @@ h=
 </section>
 <section id="practice-answers" class="slide level2">
 <h2>Practice: Answers</h2>
-<div id="5bab82b5" class="cell" data-execution_count="40">
+<div id="53db37d5" class="cell" data-execution_count="40">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1477,7 +1489,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
   overflow-y: auto;
 }
 </style>
-<div id="dd6d5390" class="cell code-block columns column-output-location" data-execution_count="41">
+<div id="7954d409" class="cell code-block columns column-output-location" data-execution_count="41">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb11-2"><a aria-label="2"></a></span>
@@ -1526,7 +1538,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
   overflow-y: auto;
 }
 </style>
-<div id="1c605888" class="cell code-block columns column-output-location" data-execution_count="42">
+<div id="02e0d7fc" class="cell code-block columns column-output-location" data-execution_count="42">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>h0 <span class="op">=</span> h <span class="op">-</span> h.mean()</span>
 <span id="cb12-2"><a aria-label="2"></a>y <span class="op">=</span> cv2.filter2D(I, cv2.CV_32F, h0, borderType<span class="op">=</span>cv2.BORDER_CONSTANT)</span>
@@ -1565,7 +1577,7 @@ y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l]
   overflow-y: auto;
 }
 </style>
-<div id="6987b2e6" class="cell code-block columns column-output-location" data-execution_count="43">
+<div id="2a262e28" class="cell code-block columns column-output-location" data-execution_count="43">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>kernels <span class="op">=</span> [h0, cv2.flip(h0,<span class="op">-</span><span class="dv">1</span>)]</span>
 <span id="cb13-2"><a aria-label="2"></a>names <span class="op">=</span> [<span class="st">"Correlation"</span>,<span class="st">"Convolution"</span>]</span>
@@ -1610,7 +1622,7 @@ y[m,n]=\operatorname{median}\{I[m+k,n+l]\}_{(k,l)\in\Omega}.
 <li>It replaces the center pixel by the middle value in the local neighborhood.</li>
 <li>Unlike a linear filter, there is <strong>no kernel</strong> <span class="math inline">\(h[k,l]\)</span> such that <span class="math inline">\(y[m,n]=\sum_k\sum_l h[k,l]\,I[m+k,n+l].\)</span></li>
 </ul>
-<div id="e7f1e739" class="cell" data-execution_count="45">
+<div id="4ceb1154" class="cell" data-execution_count="45">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1632,7 +1644,7 @@ y[m,n]=\operatorname{median}\{I[m+k,n+l]\}_{(k,l)\in\Omega}.
   overflow-y: auto;
 }
 </style>
-<div id="aea446bf" class="cell code-block columns column-output-location" data-execution_count="46">
+<div id="ed69c857" class="cell code-block columns column-output-location" data-execution_count="46">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a>path <span class="op">=</span> <span class="st">"assets/03_filtering/colorado-flower.jpg"</span>   </span>
 <span id="cb14-2"><a aria-label="2"></a>I0 <span class="op">=</span> cv2.imread(path, cv2.IMREAD_GRAYSCALE)</span>
@@ -1668,7 +1680,7 @@ y[m,n]=\operatorname{median}\{I[m+k,n+l]\}_{(k,l)\in\Omega}.
 <ul>
 <li>Larger windows remove more noise, but they also remove more image detail.</li>
 </ul>
-<div id="c89dc72e" class="cell code-block columns column-output-location" data-execution_count="47">
+<div id="50de07dd" class="cell code-block columns column-output-location" data-execution_count="47">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a><span class="co"># Mean filters</span></span>
 <span id="cb15-2"><a aria-label="2"></a>Imean3  <span class="op">=</span> cv2.blur(Isp, (<span class="dv">3</span>,<span class="dv">3</span>),   borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>

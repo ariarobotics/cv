@@ -273,18 +273,18 @@
     "text": "1D Moving Average Filter\nFor a window size \\(k\\):\n\\[\ny[n] =\n\\frac{1}{k}\n\\sum_{i=n-k+1}^{n} (1) I[i]\n\\qquad \\qquad \\text{or} \\qquad \\qquad\ny[n]\n=\n\\frac{1}{k}\n\\begin{bmatrix}\n1 & 1 & \\cdots & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 10\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
   },
   {
-    "objectID": "lectures/03_filtering.html#the-window-size-k",
-    "href": "lectures/03_filtering.html#the-window-size-k",
+    "objectID": "lectures/03_filtering.html#window-size",
+    "href": "lectures/03_filtering.html#window-size",
     "title": "Lecture 03 — Image Filtering",
     "section": "The Window Size \\(k\\)",
-    "text": "The Window Size \\(k\\)\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 50\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+    "text": "The Window Size \\(k\\)\nA larger averaging window:\n\nremoves more rapid variation\nproduces a smoother output\nspreads changes over a wider region\ncan erase narrow but meaningful features\n\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 50\nker = np.ones(k)/k\nsmoothed = np.convolve(noisy, ker, mode=\"full\")[:noisy.size]\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=2, label=\"Signal\")\nax.plot(x, smoothed, c=\"blue\", lw=3, label=\"Moving average\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
   },
   {
     "objectID": "lectures/03_filtering.html#filter-kernel",
     "href": "lectures/03_filtering.html#filter-kernel",
     "title": "Lecture 03 — Image Filtering",
     "section": "Filter Kernel",
-    "text": "Filter Kernel\nWhat is this filter doing?\n\\[\ny[n]\n=\n\\begin{bmatrix}\n0 & 0 & \\cdots & 0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 20\nker = np.zeros(k); ker[-1] = 1\noutput = np.correlate(np.pad(noisy, (k-1, 0)), ker, mode=\"valid\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=4, label=\"Input\")\nax.plot(x, output, \"b--\", lw=2.5, label=\"Output\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
+    "text": "Filter Kernel\nWhat is this filter doing?\n\\[\ny[n]\n=\n\\begin{bmatrix}\n0 & 0 & \\cdots & 0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\nI[n-k+1] \\\\\nI[n-k+2] \\\\\n\\vdots \\\\\nI[n]\n\\end{bmatrix}\n\\]\n\n\n\n\nx = np.linspace(0, 4*np.pi, 160)\nrng = np.random.default_rng(7)\nnoisy = np.sin(x) + 0.28*rng.normal(size=x.size)\n\nk = 20\nker = np.zeros(k); ker[-1] = 1\noutput = np.correlate(np.pad(noisy, (k-1, 0)), ker, mode=\"valid\")\n\nfig, ax = plt.subplots(figsize=(6.5, 3.5))\nax.plot(x, noisy, c=\"0.65\", lw=4, label=\"Input\")\nax.plot(x, output, \"b--\", lw=2.5, label=\"Output\")\nax.set(xlabel=\"$x$\", ylabel=\"Value\")\nax.legend(frameon=False); ax.grid(alpha=0.2)\nplt.tight_layout(); plt.show()"
   },
   {
     "objectID": "lectures/03_filtering.html#image-filtering-1",
