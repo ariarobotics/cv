@@ -256,9 +256,12 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment file:</p>
-<p><a href="https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml" class="uri">https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml</a></p>
-<p>Use this file rather than creating a separate environment with arbitrary package versions.</p>
+<p>The exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment files:</p>
+<ul>
+<li><strong>Windows/WSL and Linux:</strong> <a href="https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml" class="uri">https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml</a></li>
+<li><strong>macOS:</strong> <a href="https://github.com/ariarobotics/cv/blob/main/code/cv-environment-mac.yml" class="uri">https://github.com/ariarobotics/cv/blob/main/code/cv-environment-mac.yml</a></li>
+</ul>
+<p>Use the environment file for your operating system rather than creating a separate environment with arbitrary package versions.</p>
 </div>
 </div>
 </section>
@@ -334,43 +337,37 @@ Warning
 </section>
 <section id="download-the-course-environment-file" class="level2">
 <h2 class="anchored" data-anchor-id="download-the-course-environment-file">3. Download the course environment file</h2>
-<p>The official environment file is stored in:</p>
-<pre class="text"><code>code/cv-environment.yml</code></pre>
-<p>on the <code>main</code> branch of the course repository.</p>
+<p>The official environment files are stored in the <code>code/</code> folder on the <code>main</code> branch of the course repository:</p>
+<ul>
+<li><strong>Windows/WSL and Linux:</strong> <code>code/cv-environment.yml</code></li>
+<li><strong>macOS:</strong> <code>code/cv-environment-mac.yml</code></li>
+</ul>
+<p>The macOS environment installs PyTorch and TorchVision from <code>conda-forge</code> to avoid conflicts between multiple OpenMP runtimes.</p>
 <section id="option-a-download-it-directly" class="level3">
 <h3 class="anchored" data-anchor-id="option-a-download-it-directly">Option A — Download it directly</h3>
-<p>Run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Verify that the file exists:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows/WSL and Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verify that the downloaded file exists:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> cv-environment<span class="pp">*</span>.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="option-b-use-the-file-from-a-cloned-course-repository" class="level3">
 <h3 class="anchored" data-anchor-id="option-b-use-the-file-from-a-cloned-course-repository">Option B — Use the file from a cloned course repository</h3>
 <p>If you already cloned the course repository:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/ariarobotics/cv.git</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> cv/code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The environment file should be:</p>
-<pre class="text"><code>cv-environment.yml</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The same <code>cv-environment.yml</code> is used for Windows/WSL, Linux, and macOS. You do not need a separate <code>cv-mac-environment.yml</code>.</p>
-</div>
-</div>
+<p>Use the environment file corresponding to your operating system.</p>
 </section>
 </section>
 <section id="create-the-cv-environment" class="level2">
 <h2 class="anchored" data-anchor-id="create-the-cv-environment">4. Create the <code>cv</code> environment</h2>
-<p>From the directory containing <code>cv-environment.yml</code>, run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The environment file already specifies the name <code>cv</code>, so you do not need to add <code>-n cv</code>.</p>
+<p>From the directory containing the environment file, run the command for your operating system.</p>
+<p><strong>Windows/WSL and Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment-mac.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Both environment files already specify the name <code>cv</code>, so you do not need to add <code>-n cv</code>.</p>
 <p>Environment creation may take several minutes.</p>
 </section>
 <section id="activate-the-environment" class="level2">
@@ -405,29 +402,47 @@ Note
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import torch; print('PyTorch:', torch.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Check TorchVision:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import torchvision; print('TorchVision:', torchvision.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You can test all four at once:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import cv2, torch, torchvision, numpy; print('OpenCV:', cv2.__version__); print('PyTorch:', torch.__version__); print('TorchVision:', torchvision.__version__); print('NumPy:', numpy.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check scikit-learn:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sklearn; print('scikit-learn:', sklearn.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can test the main packages together:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import cv2, sklearn, torch, torchvision, numpy; print('OpenCV:', cv2.__version__); print('scikit-learn:', sklearn.__version__); print('PyTorch:', torch.__version__); print('TorchVision:', torchvision.__version__); print('NumPy:', numpy.__version__)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>On macOS, the combined import test is especially important because it verifies that the scientific Python and PyTorch packages can load together without an OpenMP runtime conflict. Do not use <code>KMP_DUPLICATE_LIB_OK=TRUE</code> as a workaround.</p>
+</div>
+</div>
 <p>If these commands run without import errors, the main course packages are installed correctly.</p>
 </section>
 <section id="confirm-that-jupyter-can-use-the-environment" class="level2">
 <h2 class="anchored" data-anchor-id="confirm-that-jupyter-can-use-the-environment">8. Confirm that Jupyter can use the environment</h2>
 <p>The course environment includes Jupyter and <code>ipykernel</code>.</p>
 <p>With <code>cv</code> activated:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also list available Jupyter kernels:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When opening a notebook in VS Code, choose the Python kernel associated with the <strong><code>cv</code></strong> environment.</p>
 </section>
 <section id="updating-the-environment" class="level2">
 <h2 class="anchored" data-anchor-id="updating-the-environment">9. Updating the environment</h2>
-<p>If the course environment file changes during the semester, first download the newest copy:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then update the existing environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env update <span class="at">-n</span> cv <span class="at">-f</span> cv-environment.yml <span class="at">--prune</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If the course environment file changes during the semester, first download the newest copy for your operating system.</p>
+<p><strong>Windows/WSL and Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env update <span class="at">-n</span> cv <span class="at">-f</span> cv-environment.yml <span class="at">--prune</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env update <span class="at">-n</span> cv <span class="at">-f</span> cv-environment-mac.yml <span class="at">--prune</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>--prune</code> option removes dependencies that are no longer listed in the environment definition.</p>
 <p>After updating:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="useful-conda-commands" class="level2">
 <h2 class="anchored" data-anchor-id="useful-conda-commands">10. Useful Conda commands</h2>
@@ -474,20 +489,23 @@ Note
 <h2 class="anchored" data-anchor-id="recreating-a-broken-environment">11. Recreating a broken environment</h2>
 <p>If the environment becomes badly inconsistent, it is often simpler to recreate it from the official course environment file.</p>
 <p>Deactivate it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Remove it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">-n</span> cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Download the current environment file if needed:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then recreate the environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">-n</span> cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Download the current environment file if needed.</p>
+<p><strong>Windows/WSL and Linux:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> cv-environment-mac.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="avoid-common-environment-problems" class="level2">
 <h2 class="anchored" data-anchor-id="avoid-common-environment-problems">12. Avoid common environment problems</h2>
 <section id="do-not-install-course-packages-into-base" class="level3">
 <h3 class="anchored" data-anchor-id="do-not-install-course-packages-into-base">Do not install course packages into <code>base</code></h3>
 <p>Before running course code, verify:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="do-not-mix-windows-and-wsl-environments" class="level3">
 <h3 class="anchored" data-anchor-id="do-not-mix-windows-and-wsl-environments">Do not mix Windows and WSL environments</h3>
@@ -500,9 +518,9 @@ Note
 <section id="check-the-python-executable-when-something-looks-wrong" class="level3">
 <h3 class="anchored" data-anchor-id="check-the-python-executable-when-something-looks-wrong">Check the Python executable when something looks wrong</h3>
 <p>On macOS/Linux/WSL:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> python</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also ask Python directly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys; print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys; print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This often reveals that the wrong environment is active.</p>
 </section>
 </section>

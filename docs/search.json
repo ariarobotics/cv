@@ -1628,14 +1628,14 @@
     "href": "tutorials/03_python_conda.html",
     "title": "03 — Python and Conda Environment Setup",
     "section": "",
-    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment file:\nhttps://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nUse this file rather than creating a separate environment with arbitrary package versions."
+    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment files:\n\nWindows/WSL and Linux: https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nmacOS: https://github.com/ariarobotics/cv/blob/main/code/cv-environment-mac.yml\n\nUse the environment file for your operating system rather than creating a separate environment with arbitrary package versions."
   },
   {
     "objectID": "tutorials/03_python_conda.html#why-the-course-uses-conda",
     "href": "tutorials/03_python_conda.html#why-the-course-uses-conda",
     "title": "03 — Python and Conda Environment Setup",
     "section": "",
-    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment file:\nhttps://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nUse this file rather than creating a separate environment with arbitrary package versions."
+    "text": "Python projects often depend on specific versions of libraries. Installing everything into one global Python installation can cause conflicts between courses and projects.\nThis course uses a dedicated Conda environment named:\ncv\nAll course Python code should be run from this environment.\n\n\n\n\n\n\nImportant\n\n\n\nThe exact Python, OpenCV, PyTorch, NumPy, and other package versions are defined by the official course environment files:\n\nWindows/WSL and Linux: https://github.com/ariarobotics/cv/blob/main/code/cv-environment.yml\nmacOS: https://github.com/ariarobotics/cv/blob/main/code/cv-environment-mac.yml\n\nUse the environment file for your operating system rather than creating a separate environment with arbitrary package versions."
   },
   {
     "objectID": "tutorials/03_python_conda.html#install-a-conda-distribution",
@@ -1656,14 +1656,14 @@
     "href": "tutorials/03_python_conda.html#download-the-course-environment-file",
     "title": "03 — Python and Conda Environment Setup",
     "section": "3. Download the course environment file",
-    "text": "3. Download the course environment file\nThe official environment file is stored in:\ncode/cv-environment.yml\non the main branch of the course repository.\n\nOption A — Download it directly\nRun:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nVerify that the file exists:\nls -l cv-environment.yml\n\n\nOption B — Use the file from a cloned course repository\nIf you already cloned the course repository:\ngit clone https://github.com/ariarobotics/cv.git\ncd cv/code\nThe environment file should be:\ncv-environment.yml\n\n\n\n\n\n\nNote\n\n\n\nThe same cv-environment.yml is used for Windows/WSL, Linux, and macOS. You do not need a separate cv-mac-environment.yml."
+    "text": "3. Download the course environment file\nThe official environment files are stored in the code/ folder on the main branch of the course repository:\n\nWindows/WSL and Linux: code/cv-environment.yml\nmacOS: code/cv-environment-mac.yml\n\nThe macOS environment installs PyTorch and TorchVision from conda-forge to avoid conflicts between multiple OpenMP runtimes.\n\nOption A — Download it directly\nWindows/WSL and Linux:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nmacOS:\ncurl -L -o cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml\nVerify that the downloaded file exists:\nls -l cv-environment*.yml\n\n\nOption B — Use the file from a cloned course repository\nIf you already cloned the course repository:\ngit clone https://github.com/ariarobotics/cv.git\ncd cv/code\nUse the environment file corresponding to your operating system."
   },
   {
     "objectID": "tutorials/03_python_conda.html#create-the-cv-environment",
     "href": "tutorials/03_python_conda.html#create-the-cv-environment",
     "title": "03 — Python and Conda Environment Setup",
     "section": "4. Create the cv environment",
-    "text": "4. Create the cv environment\nFrom the directory containing cv-environment.yml, run:\nconda env create -f cv-environment.yml\nThe environment file already specifies the name cv, so you do not need to add -n cv.\nEnvironment creation may take several minutes."
+    "text": "4. Create the cv environment\nFrom the directory containing the environment file, run the command for your operating system.\nWindows/WSL and Linux:\nconda env create -f cv-environment.yml\nmacOS:\nconda env create -f cv-environment-mac.yml\nBoth environment files already specify the name cv, so you do not need to add -n cv.\nEnvironment creation may take several minutes."
   },
   {
     "objectID": "tutorials/03_python_conda.html#activate-the-environment",
@@ -1684,7 +1684,7 @@
     "href": "tutorials/03_python_conda.html#verify-the-main-course-packages",
     "title": "03 — Python and Conda Environment Setup",
     "section": "7. Verify the main course packages",
-    "text": "7. Verify the main course packages\nWith cv activated, run:\npython -c \"import numpy as np; print('NumPy:', np.__version__)\"\nCheck OpenCV:\npython -c \"import cv2; print('OpenCV:', cv2.__version__)\"\nCheck PyTorch:\npython -c \"import torch; print('PyTorch:', torch.__version__)\"\nCheck TorchVision:\npython -c \"import torchvision; print('TorchVision:', torchvision.__version__)\"\nYou can test all four at once:\npython -c \"import cv2, torch, torchvision, numpy; print('OpenCV:', cv2.__version__); print('PyTorch:', torch.__version__); print('TorchVision:', torchvision.__version__); print('NumPy:', numpy.__version__)\"\nIf these commands run without import errors, the main course packages are installed correctly."
+    "text": "7. Verify the main course packages\nWith cv activated, run:\npython -c \"import numpy as np; print('NumPy:', np.__version__)\"\nCheck OpenCV:\npython -c \"import cv2; print('OpenCV:', cv2.__version__)\"\nCheck PyTorch:\npython -c \"import torch; print('PyTorch:', torch.__version__)\"\nCheck TorchVision:\npython -c \"import torchvision; print('TorchVision:', torchvision.__version__)\"\nCheck scikit-learn:\npython -c \"import sklearn; print('scikit-learn:', sklearn.__version__)\"\nYou can test the main packages together:\npython -c \"import cv2, sklearn, torch, torchvision, numpy; print('OpenCV:', cv2.__version__); print('scikit-learn:', sklearn.__version__); print('PyTorch:', torch.__version__); print('TorchVision:', torchvision.__version__); print('NumPy:', numpy.__version__)\"\n\n\n\n\n\n\nNote\n\n\n\nOn macOS, the combined import test is especially important because it verifies that the scientific Python and PyTorch packages can load together without an OpenMP runtime conflict. Do not use KMP_DUPLICATE_LIB_OK=TRUE as a workaround.\n\n\nIf these commands run without import errors, the main course packages are installed correctly."
   },
   {
     "objectID": "tutorials/03_python_conda.html#confirm-that-jupyter-can-use-the-environment",
@@ -1698,7 +1698,7 @@
     "href": "tutorials/03_python_conda.html#updating-the-environment",
     "title": "03 — Python and Conda Environment Setup",
     "section": "9. Updating the environment",
-    "text": "9. Updating the environment\nIf the course environment file changes during the semester, first download the newest copy:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nThen update the existing environment:\nconda env update -n cv -f cv-environment.yml --prune\nThe --prune option removes dependencies that are no longer listed in the environment definition.\nAfter updating:\nconda deactivate\nconda activate cv"
+    "text": "9. Updating the environment\nIf the course environment file changes during the semester, first download the newest copy for your operating system.\nWindows/WSL and Linux:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nconda env update -n cv -f cv-environment.yml --prune\nmacOS:\ncurl -L -o cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml\nconda env update -n cv -f cv-environment-mac.yml --prune\nThe --prune option removes dependencies that are no longer listed in the environment definition.\nAfter updating:\nconda deactivate\nconda activate cv"
   },
   {
     "objectID": "tutorials/03_python_conda.html#useful-conda-commands",
@@ -1712,7 +1712,7 @@
     "href": "tutorials/03_python_conda.html#recreating-a-broken-environment",
     "title": "03 — Python and Conda Environment Setup",
     "section": "11. Recreating a broken environment",
-    "text": "11. Recreating a broken environment\nIf the environment becomes badly inconsistent, it is often simpler to recreate it from the official course environment file.\nDeactivate it:\nconda deactivate\nRemove it:\nconda env remove -n cv\nDownload the current environment file if needed:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nThen recreate the environment:\nconda env create -f cv-environment.yml"
+    "text": "11. Recreating a broken environment\nIf the environment becomes badly inconsistent, it is often simpler to recreate it from the official course environment file.\nDeactivate it:\nconda deactivate\nRemove it:\nconda env remove -n cv\nDownload the current environment file if needed.\nWindows/WSL and Linux:\ncurl -L -o cv-environment.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment.yml\nconda env create -f cv-environment.yml\nmacOS:\ncurl -L -o cv-environment-mac.yml https://raw.githubusercontent.com/ariarobotics/cv/main/code/cv-environment-mac.yml\nconda env create -f cv-environment-mac.yml"
   },
   {
     "objectID": "tutorials/03_python_conda.html#avoid-common-environment-problems",
