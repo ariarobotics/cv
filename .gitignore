@@ -24,6 +24,9 @@ _freeze/
 # Quarto generated working/cache files
 .vdoc.*
 
+# automatic pdfs generated
+docs/lectures/pdf/*
+
 # ============================================================
 # Source styling files
 # Rendered CSS needed by the public website is copied into docs/
