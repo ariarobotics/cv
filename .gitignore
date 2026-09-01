@@ -74,3 +74,4 @@ find_unused_assets*.*
 /.quarto/
 temp
 code_private
+assignments_private
