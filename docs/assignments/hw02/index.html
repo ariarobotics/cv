@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Implement correlation, convolution, common linear filters, and a median filter from scratch.">
 
-<title>Assignments – Computer Vision</title>
+<title>Homework 02: Filtering – Computer Vision</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,28 +27,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,76 +109,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-due','listing-points','listing-starter','listing-resources','listing-path','listing-outputHref','listing-author','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-due","listing-points","listing-starter","listing-resources","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computer Vision</span>
     </a>
   </div>
@@ -155,31 +131,31 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
+    <a class="nav-link" href="../../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
+    <a class="nav-link" href="../../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tas.html"> 
+    <a class="nav-link" href="../../tas.html"> 
 <span class="menu-text">TAs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials/"> 
+    <a class="nav-link" href="../../tutorials/"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignments/"> 
+    <a class="nav-link" href="../../assignments/"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/"> 
+    <a class="nav-link" href="../../lectures/"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
 </ul>
@@ -193,15 +169,39 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#starter-file" id="toc-starter-file" class="nav-link" data-scroll-target="#starter-file">Starter file</a></li>
+  <li><a href="#part-1-implement-2-d-correlation" id="toc-part-1-implement-2-d-correlation" class="nav-link" data-scroll-target="#part-1-implement-2-d-correlation">Part 1 — Implement 2-D correlation</a></li>
+  <li><a href="#part-2-implement-2-d-convolution" id="toc-part-2-implement-2-d-convolution" class="nav-link" data-scroll-target="#part-2-implement-2-d-convolution">Part 2 — Implement 2-D convolution</a></li>
+  <li><a href="#part-3-use-the-provided-linear-filter-kernels" id="toc-part-3-use-the-provided-linear-filter-kernels" class="nav-link" data-scroll-target="#part-3-use-the-provided-linear-filter-kernels">Part 3 — Use the provided linear-filter kernels</a></li>
+  <li><a href="#part-4-implement-a-3x3-median-filter" id="toc-part-4-implement-a-3x3-median-filter" class="nav-link" data-scroll-target="#part-4-implement-a-3x3-median-filter">Part 4 — Implement a 3x3 median filter</a></li>
+  <li><a href="#important-filtering-functions-you-may-not-use" id="toc-important-filtering-functions-you-may-not-use" class="nav-link" data-scroll-target="#important-filtering-functions-you-may-not-use">Important: filtering functions you may not use</a></li>
+  <li><a href="#run-your-program" id="toc-run-your-program" class="nav-link" data-scroll-target="#run-your-program">Run your program</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit-important" id="toc-submission-limit-important" class="nav-link" data-scroll-target="#submission-limit-important">Submission limit — important</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Homework 02: Filtering</h1>
 </div>
 
+<div>
+  <div class="description">
+    Implement correlation, convolution, common linear filters, and a median filter from scratch.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -216,75 +216,174 @@ window.Quarto = {
 </header>
 
 
-<p>Homework assignments and supporting materials will be posted here throughout the semester.</p>
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>The objective of this homework is to implement the core image filtering operation yourself, and use it to explore several topics such as correlatio, convolution, and nonlinear filters.</p>
+<p>Use the course <strong><code>cv</code> Conda environment</strong>, and <strong>OpenCV (<code>cv2</code>)</strong>. The filtering computations required below must be implemented by you rather than delegated to a library filtering function.</p>
+<p>Do not use generative AI to solve this homework. The purpose of this assignment is to make sure you can translate the filtering equations from lecture into working code.</p>
+</section>
+<section id="starter-file" class="level2">
+<h2 class="anchored" data-anchor-id="starter-file">Starter file</h2>
+<p>Complete the provided <code>hw02.py</code> file. Do <strong>not</strong> rename the required functions, change their arguments, or modify the three provided kernels because the Gradescope autograder calls/checks them directly.</p>
+<p><a href="files/hw02.py" class="btn btn-primary">Download <code>hw02.py</code></a></p>
+<p>The required functions are:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>correlate2d(image, kernel)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>convolve2d(image, kernel)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>median_filter3x3(image)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="part-1-implement-2-d-correlation" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-implement-2-d-correlation">Part 1 — Implement 2-D correlation</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> correlate2d(image, kernel):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Requirements:</p>
+<ul>
+<li><code>image</code> is a 2-D grayscale array.</li>
+<li><code>kernel</code> is a 2-D kernel with odd height and width.</li>
+<li>Use <strong>zero padding</strong> outside the image boundary.</li>
+<li>Return an output with the <strong>same height and width</strong> as the input image.</li>
+<li>Return <code>numpy.float32</code> output.</li>
+<li>Implement the kernel sweep yourself, e.g., using nested <code>for</code> loops.</li>
+</ul>
+<p>Your implementation should work for different odd kernel sizes, not only <code>3x3</code> kernels.</p>
+</section>
+<section id="part-2-implement-2-d-convolution" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-implement-2-d-convolution">Part 2 — Implement 2-D convolution</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convolve2d(image, kernel):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For convolution, rotate the kernel by <strong>180 degrees</strong> and then reuse your <code>correlate2d()</code> implementation.</p>
+<p>You may use <code>np.flip()</code> or <code>cv2.flip()</code> to rotate the kernel. Do not reimplement the filtering operation with a library function.</p>
+<p>The output must use the same zero-padding and same-size convention as <code>correlate2d()</code>.</p>
+</section>
+<section id="part-3-use-the-provided-linear-filter-kernels" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-use-the-provided-linear-filter-kernels">Part 3 — Use the provided linear-filter kernels</h2>
+<p>The starter file provides these kernels:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>BOX_3X3</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>SOBEL_X</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>SHARPEN_3X3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Do not modify them.</p>
+<p>When you run the script, your correlation/convolution implementation will be used to produce:</p>
+<ul>
+<li>box-filter smoothing;</li>
+<li>a horizontal derivative response using Sobel X; and</li>
+<li>a sharpened image.</li>
+</ul>
+<p>The script also compares correlation and convolution for the symmetric box kernel and the asymmetric Sobel X kernel.</p>
+</section>
+<section id="part-4-implement-a-3x3-median-filter" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-implement-a-3x3-median-filter">Part 4 — Implement a 3x3 median filter</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> median_filter3x3(image):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Requirements:</p>
+<ul>
+<li>Use a <code>3x3</code> neighborhood.</li>
+<li>Use <strong>zero padding</strong> outside the image boundary.</li>
+<li>Return an output with the same shape as the input image.</li>
+<li>Return <code>numpy.float32</code> output.</li>
+<li>Sweep the kernel yourself, e.g., using nested <code>for</code> loops.</li>
+<li>You may use <code>np.median()</code> to compute the median of one local <code>3x3</code> neighborhood.</li>
+</ul>
+<p>The provided script adds deterministic salt-and-pepper noise and uses your median filter so you can compare the noisy and filtered images.</p>
+</section>
+<section id="important-filtering-functions-you-may-not-use" class="level2">
+<h2 class="anchored" data-anchor-id="important-filtering-functions-you-may-not-use">Important: filtering functions you may not use</h2>
+<p>The filtering operation itself must be your implementation. We check your code for prohibited shortcuts. <strong>Using a prohibited library filtering implementation causes the homework to receive no credit.</strong></p>
+<p>Examples of functions you <strong>should not</strong> use to implement the required filters include:</p>
+<pre class="text"><code>cv2.filter2D
+cv2.blur
+cv2.boxFilter
+cv2.GaussianBlur
+cv2.Sobel
+cv2.Scharr
+cv2.sepFilter2D
+cv2.medianBlur
+cv2.Laplacian
+
+scipy.signal.correlate / correlate2d
+scipy.signal.convolve / convolve2d
+scipy.signal.fftconvolve
+scipy.ndimage.correlate / convolve
+scipy.ndimage.uniform_filter
+scipy.ndimage.gaussian_filter
+scipy.ndimage.median_filter
+scipy.ndimage.sobel
+
+np.convolve
+np.correlate
+np.lib.stride_tricks.sliding_window_view</code></pre>
+<p>Do not use <code>skimage</code>, PIL/Pillow, or another image-processing package as a replacement.</p>
+<p>You <strong>may</strong> use OpenCV for ordinary image I/O and visualization operations such as <code>cv2.imread</code>, <code>cv2.cvtColor</code>, <code>cv2.resize</code>, and <code>cv2.imwrite</code>. You may also use basic NumPy operations such as <code>np.pad</code>, slicing, <code>np.sum</code>, <code>np.median</code>, and <code>np.flip</code>.</p>
+</section>
+<section id="run-your-program" class="level2">
+<h2 class="anchored" data-anchor-id="run-your-program">Run your program</h2>
+<p>Activate the course environment and run the script with a JPG/JPEG or PNG image. You may reuse your HW01 headshot.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw02.py my_image.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For speed, the provided script downsizes large images before running your manual filters.</p>
+<p>A successful run must:</p>
+<ul>
+<li>execute without an error;</li>
+<li>print the maximum correlation/convolution difference for the box kernel;</li>
+<li>print the maximum correlation/convolution difference for the Sobel X kernel; and</li>
+<li>save <code>hw02_output.png</code> containing a montage of the filtering results.</li>
+</ul>
+<p>Inspect the output and notice that:</p>
+<ul>
+<li>correlation and convolution agree for the symmetric box kernel;</li>
+<li>correlation and convolution differ for the asymmetric Sobel X kernel; and</li>
+<li>the median filter suppresses isolated salt-and-pepper outliers better than ordinary averaging.</li>
+</ul>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit <strong>exactly one file</strong> to Gradescope:</p>
+<pre class="text"><code>hw02.py</code></pre>
+<p>Do <strong>not</strong> submit your input image, <code>hw02_output.png</code>, screenshots, or a PDF report. The autograder runs your script with instructor-provided images and arrays.</p>
+</section>
+<section id="submission-limit-important" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit-important">Submission limit — important</h2>
+<p>You may make at most <strong>3 Gradescope submissions</strong> for this homework. Test and debug thoroughly in your local <code>cv</code> environment before submitting.</p>
+<ul>
+<li>Submissions 1–3 are graded normally.</li>
+<li><strong>Submission 4 and every later submission receive a score of 0 for the homework.</strong></li>
+<li>A Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.</li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>HW02 is worth <strong>5 points and is autograded</strong>.</p>
+<p>The autograder checks:</p>
+<ul>
+<li>whether the required functions are present;</li>
+<li>whether prohibited filtering routines are used;</li>
+<li>correlation correctness, including boundary handling and different kernel shapes;</li>
+<li>convolution correctness;</li>
+<li>the provided box, Sobel X, and sharpening kernels;</li>
+<li>the 3x3 median filter; and</li>
+<li>whether <code>python hw02.py IMAGE</code> runs successfully in the <code>cv</code> environment and saves the expected output file.</li>
+</ul>
+<p>Some basic tests are public and provide feedback when you submit. More substantive numerical correctness tests are private. Passing all public tests does <strong>not</strong> guarantee full credit.</p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li>Use the course <code>cv</code> Conda environment, and the openCV (<code>cv2</code>) library.</li>
+<li>Do not use OpenCV to replace the filtering algorithms you are required to implement.</li>
+<li>Do not change the required function names or arguments.</li>
+<li>Do not modify <code>BOX_3X3</code>, <code>SOBEL_X</code>, or <code>SHARPEN_3X3</code>.</li>
+<li>Do not hard-code outputs for a particular image or kernel.</li>
+<li>Test locally before using one of your Gradescope submissions.</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="list">
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="0" data-listing-file-modified-sort="1788236968151" data-listing-reading-time-sort="4" data-listing-word-count-sort="610">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw01/index.html">Homework 01: Working with Images</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Set up the course cv environment and practice basic image operations with OpenCV and NumPy.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 7, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw01/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw01/files/hw01.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="1" data-listing-file-modified-sort="1788475917844" data-listing-reading-time-sort="5" data-listing-word-count-sort="836">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw02/index.html">Homework 02: Filtering</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Implement correlation, convolution, common linear filters, and a median filter from scratch.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> TBD
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw02/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw02/files/hw02.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -721,11 +721,158 @@
     "text": "Acknowledgments and Use\nThese course materials build significantly on slides and teaching materials developed by other instructors, especially James Tompkin, Srinath Sridhar, Phillip Isola, William Freeman, Antonio Torralba, Kris Kitani, Takeo Kanade, Matthew O’Toole, and Chen Wang.\nYou are welcome to use and adapt these materials for academic, educational, or research purposes. If you reuse or redistribute them, please retain all acknowledgments and attributions to the original authors and sources. Some figures, examples, and other third-party materials may be subject to their own licenses or usage terms; please respect those requirements when reusing them."
   },
   {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "HW02 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions + from-scratch implementation rules\nPublic\n0.50\n\n\nSimple 3x3 correlation\nPublic\n0.50\n\n\nExecutable script runs and saves hw02_output.png\nPublic\n0.50\n\n\nCorrelation numerical correctness\nPrivate\n0.75\n\n\nCorrelation boundary handling + non-square kernel\nPrivate\n0.50\n\n\nConvolution numerical correctness\nPrivate\n0.75\n\n\nRequired box, Sobel X, and sharpening kernels\nPrivate\n0.50\n\n\n3x3 median-filter numerical correctness\nPrivate\n0.50\n\n\nMedian-filter boundary handling\nPrivate\n0.50\n\n\nTotal\n\n5.00\n\n\n\n\n\n\nThe public source-inspection test parses hw02.py with Python’s AST. It checks that:\n\ncorrelate2d, convolve2d, and median_filter3x3 exist;\ncorrelate2d contains nested for loops;\nmedian_filter3x3 contains nested for loops;\nconvolve2d calls/reuses correlate2d;\nskimage and PIL/Pillow are not imported; and\ncommon OpenCV, SciPy, and NumPy filtering shortcuts are not called.\n\nIn addition, all direct function tests run student code in a separate unprivileged subprocess where common prohibited filtering functions are monkey-patched to raise an exception. This provides a second layer of enforcement in addition to source inspection.\nAll numerical and executable tests also invoke the source-compliance gate. A submission detected using a prohibited library filtering implementation therefore receives 0/5 rather than merely losing the 0.5-point source-check item.\nThis is intentionally strong but not intended as a formal proof against deliberately obfuscated code. For normal course submissions it should reliably detect the shortcuts students are most likely to use.\n\n\n\nBoth correlate2d and convolve2d use:\n\nzero padding;\nsame-size output;\nodd-height/odd-width kernels.\n\nmedian_filter3x3 also uses zero padding and same-size output.\n\n\n\nBOX_3X3 = np.ones((3, 3), dtype=np.float32) / 9.0\n\nSOBEL_X = np.array([\n    [-1, 0, 1],\n    [-2, 0, 2],\n    [-1, 0, 1],\n], dtype=np.float32)\n\nSHARPEN_3X3 = np.array([\n    [0, -1, 0],\n    [-1, 5, -1],\n    [0, -1, 0],\n], dtype=np.float32)\n\n\n\nThe autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–3 are graded normally.\nAttempt 4 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable (for example during Gradescope’s Test Autograder workflow), the tests run normally and no attempt is consumed/enforced.\n\n\n\n\nThe complete instructor package contains:\n\nsample_submissions/correct/ — expected 5.0/5.0;\nsample_submissions/incorrect_correlation/ — expected 2.0/5.0;\nsample_submissions/incorrect_convolution/ — expected 4.25/5.0; and\nsample_submissions/prohibited_filter2d/ — expected 0.0/5.0 because the compliance gate applies to all tests."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "HW02 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions + from-scratch implementation rules\nPublic\n0.50\n\n\nSimple 3x3 correlation\nPublic\n0.50\n\n\nExecutable script runs and saves hw02_output.png\nPublic\n0.50\n\n\nCorrelation numerical correctness\nPrivate\n0.75\n\n\nCorrelation boundary handling + non-square kernel\nPrivate\n0.50\n\n\nConvolution numerical correctness\nPrivate\n0.75\n\n\nRequired box, Sobel X, and sharpening kernels\nPrivate\n0.50\n\n\n3x3 median-filter numerical correctness\nPrivate\n0.50\n\n\nMedian-filter boundary handling\nPrivate\n0.50\n\n\nTotal\n\n5.00"
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#from-scratch-enforcement",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#from-scratch-enforcement",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "The public source-inspection test parses hw02.py with Python’s AST. It checks that:\n\ncorrelate2d, convolve2d, and median_filter3x3 exist;\ncorrelate2d contains nested for loops;\nmedian_filter3x3 contains nested for loops;\nconvolve2d calls/reuses correlate2d;\nskimage and PIL/Pillow are not imported; and\ncommon OpenCV, SciPy, and NumPy filtering shortcuts are not called.\n\nIn addition, all direct function tests run student code in a separate unprivileged subprocess where common prohibited filtering functions are monkey-patched to raise an exception. This provides a second layer of enforcement in addition to source inspection.\nAll numerical and executable tests also invoke the source-compliance gate. A submission detected using a prohibited library filtering implementation therefore receives 0/5 rather than merely losing the 0.5-point source-check item.\nThis is intentionally strong but not intended as a formal proof against deliberately obfuscated code. For normal course submissions it should reliably detect the shortcuts students are most likely to use."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#boundary-convention",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#boundary-convention",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "Both correlate2d and convolve2d use:\n\nzero padding;\nsame-size output;\nodd-height/odd-width kernels.\n\nmedian_filter3x3 also uses zero padding and same-size output."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#required-kernels",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#required-kernels",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "BOX_3X3 = np.ones((3, 3), dtype=np.float32) / 9.0\n\nSOBEL_X = np.array([\n    [-1, 0, 1],\n    [-2, 0, 2],\n    [-1, 0, 1],\n], dtype=np.float32)\n\nSHARPEN_3X3 = np.array([\n    [0, -1, 0],\n    [-1, 5, -1],\n    [0, -1, 0],\n], dtype=np.float32)"
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "The autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–3 are graded normally.\nAttempt 4 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable (for example during Gradescope’s Test Autograder workflow), the tests run normally and no attempt is consumed/enforced."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#suggested-sample-submission-checks",
+    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#suggested-sample-submission-checks",
+    "title": "HW02 — Gradescope Rubric and Test Plan",
+    "section": "",
+    "text": "The complete instructor package contains:\n\nsample_submissions/correct/ — expected 5.0/5.0;\nsample_submissions/incorrect_correlation/ — expected 2.0/5.0;\nsample_submissions/incorrect_convolution/ — expected 4.25/5.0; and\nsample_submissions/prohibited_filter2d/ — expected 0.0/5.0 because the compliance gate applies to all tests."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual\n\n\nThe objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations.\n\n\n\nUse a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually.\n\n\n\nComplete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly.\n\n\n\nComplete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png.\n\n\n\n\n\nActivate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale.\n\n\n\nSubmit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot.\n\n\n\nYou may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.\n\n\n\n\nThe homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit.\n\n\n\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#objective",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#objective",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "The objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Use a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#starter-file",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#starter-file",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Complete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#required-tasks",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#required-tasks",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Complete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#run-your-program",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#run-your-program",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Activate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#what-to-submit",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#what-to-submit",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Submit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#submission-limit-important",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#submission-limit-important",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "You may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#grading",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#grading",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "The homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#notes",
+    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#notes",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Use the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html",
+    "title": "HW01 Grading Plan",
+    "section": "",
+    "text": "Autograder: 4.0 points\nManual personal-headshot check: 1.0 point\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nRequired functions and OpenCV\n0.25\nhw01.py parses, required functions exist, cv2 is imported, and skimage is not imported\n\n\nload_image OpenCV values\n0.50\nLoads an instructor PNG with the same BGR pixel values returned by cv2.imread\n\n\nTop-left block shape\n0.25\ntop_left_3x5 returns exactly (3, 5)\n\n\nExecutable script\n0.50\npython hw01.py my_image.png runs, prints a 3×5 matrix and pixel value using the required labels, and saves a readable grayscale PNG\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nGrayscale properties\n0.50\nResult is 2-D, numpy.float32, finite, and in [0, 1]\n\n\nGrayscale numerical values\n0.75\nExact OpenCV BGR→grayscale values followed by float32 scaling to [0,1]\n\n\nTop-left 3×5 numerical values\n0.75\nExact values of gray_image[:3, :5]\n\n\nRow/column pixel indexing\n0.50\nget_pixel_value(gray, 1, 2) returns gray[1, 2] using zero-based row/column indexing\n\n\n\nThe grayscale dtype/range test is intentionally private.\n\n\n\n\nQuestion title: Personal headshot\nRecommended rubric:\n\n1.0: hw01_output.png is clearly the student’s personal headshot/selfie, the face is visible, and the submitted output is a viewable grayscale image.\n0.5: A personal headshot appears to have been used, but the face/output is not clearly visible or the submitted image is not a proper grayscale result.\n0.0: Missing/unusable image, or clearly not the student’s personal headshot.\n\n\n\nStudents are allowed at most 3 Gradescope submissions.\nThe autograder counts previous submissions using /autograder/submission_metadata.json. Previous submissions with autograder_error: true do not count. On submission 4 or later, the autograder immediately returns 0/4 and does not run the tests.\nCourse policy for HW01 is that submission 4+ receives 0 for the homework, not merely 0/4 on the automatic portion. Therefore, if a student’s final submission is attempt 4 or later, assign 0/1 on the manual headshot item as well so the total is 0/5."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
+    "title": "HW01 Grading Plan",
+    "section": "",
+    "text": "Autograder: 4.0 points\nManual personal-headshot check: 1.0 point"
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#autograder-tests-4.0-points",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#autograder-tests-4.0-points",
+    "title": "HW01 Grading Plan",
+    "section": "",
+    "text": "Test\nPoints\nWhat it checks\n\n\n\n\nRequired functions and OpenCV\n0.25\nhw01.py parses, required functions exist, cv2 is imported, and skimage is not imported\n\n\nload_image OpenCV values\n0.50\nLoads an instructor PNG with the same BGR pixel values returned by cv2.imread\n\n\nTop-left block shape\n0.25\ntop_left_3x5 returns exactly (3, 5)\n\n\nExecutable script\n0.50\npython hw01.py my_image.png runs, prints a 3×5 matrix and pixel value using the required labels, and saves a readable grayscale PNG\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nGrayscale properties\n0.50\nResult is 2-D, numpy.float32, finite, and in [0, 1]\n\n\nGrayscale numerical values\n0.75\nExact OpenCV BGR→grayscale values followed by float32 scaling to [0,1]\n\n\nTop-left 3×5 numerical values\n0.75\nExact values of gray_image[:3, :5]\n\n\nRow/column pixel indexing\n0.50\nget_pixel_value(gray, 1, 2) returns gray[1, 2] using zero-based row/column indexing\n\n\n\nThe grayscale dtype/range test is intentionally private."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#manual-item-1.0-point",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#manual-item-1.0-point",
+    "title": "HW01 Grading Plan",
+    "section": "",
+    "text": "Question title: Personal headshot\nRecommended rubric:\n\n1.0: hw01_output.png is clearly the student’s personal headshot/selfie, the face is visible, and the submitted output is a viewable grayscale image.\n0.5: A personal headshot appears to have been used, but the face/output is not clearly visible or the submitted image is not a proper grayscale result.\n0.0: Missing/unusable image, or clearly not the student’s personal headshot.\n\n\n\nStudents are allowed at most 3 Gradescope submissions.\nThe autograder counts previous submissions using /autograder/submission_metadata.json. Previous submissions with autograder_error: true do not count. On submission 4 or later, the autograder immediately returns 0/4 and does not run the tests.\nCourse policy for HW01 is that submission 4+ receives 0 for the homework, not merely 0/4 on the automatic portion. Therefore, if a student’s final submission is attempt 4 or later, assign 0/1 on the manual headshot item as well so the total is 0/5."
+  },
+  {
     "objectID": "assignments/index.html",
     "href": "assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: TBD\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments/hw01/index.html",
@@ -796,6 +943,244 @@
     "title": "Homework 01: Working with Images",
     "section": "Notes",
     "text": "Notes\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
+  },
+  {
+    "objectID": "assignments/hw02/index.html",
+    "href": "assignments/hw02/index.html",
+    "title": "Homework 02: Filtering",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
+  },
+  {
+    "objectID": "assignments/hw02/index.html#objective",
+    "href": "assignments/hw02/index.html#objective",
+    "title": "Homework 02: Filtering",
+    "section": "Objective",
+    "text": "Objective\nThe objective of this homework is to implement the core image filtering operation yourself, and use it to explore several topics such as correlatio, convolution, and nonlinear filters.\nUse the course cv Conda environment, and OpenCV (cv2). The filtering computations required below must be implemented by you rather than delegated to a library filtering function.\nDo not use generative AI to solve this homework. The purpose of this assignment is to make sure you can translate the filtering equations from lecture into working code."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#starter-file",
+    "href": "assignments/hw02/index.html#starter-file",
+    "title": "Homework 02: Filtering",
+    "section": "Starter file",
+    "text": "Starter file\nComplete the provided hw02.py file. Do not rename the required functions, change their arguments, or modify the three provided kernels because the Gradescope autograder calls/checks them directly.\nDownload hw02.py\nThe required functions are:\ncorrelate2d(image, kernel)\nconvolve2d(image, kernel)\nmedian_filter3x3(image)"
+  },
+  {
+    "objectID": "assignments/hw02/index.html#part-1-implement-2-d-correlation",
+    "href": "assignments/hw02/index.html#part-1-implement-2-d-correlation",
+    "title": "Homework 02: Filtering",
+    "section": "Part 1 — Implement 2-D correlation",
+    "text": "Part 1 — Implement 2-D correlation\nComplete:\ndef correlate2d(image, kernel):\n    ...\nRequirements:\n\nimage is a 2-D grayscale array.\nkernel is a 2-D kernel with odd height and width.\nUse zero padding outside the image boundary.\nReturn an output with the same height and width as the input image.\nReturn numpy.float32 output.\nImplement the kernel sweep yourself, e.g., using nested for loops.\n\nYour implementation should work for different odd kernel sizes, not only 3x3 kernels."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#part-2-implement-2-d-convolution",
+    "href": "assignments/hw02/index.html#part-2-implement-2-d-convolution",
+    "title": "Homework 02: Filtering",
+    "section": "Part 2 — Implement 2-D convolution",
+    "text": "Part 2 — Implement 2-D convolution\nComplete:\ndef convolve2d(image, kernel):\n    ...\nFor convolution, rotate the kernel by 180 degrees and then reuse your correlate2d() implementation.\nYou may use np.flip() or cv2.flip() to rotate the kernel. Do not reimplement the filtering operation with a library function.\nThe output must use the same zero-padding and same-size convention as correlate2d()."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#part-3-use-the-provided-linear-filter-kernels",
+    "href": "assignments/hw02/index.html#part-3-use-the-provided-linear-filter-kernels",
+    "title": "Homework 02: Filtering",
+    "section": "Part 3 — Use the provided linear-filter kernels",
+    "text": "Part 3 — Use the provided linear-filter kernels\nThe starter file provides these kernels:\nBOX_3X3\nSOBEL_X\nSHARPEN_3X3\nDo not modify them.\nWhen you run the script, your correlation/convolution implementation will be used to produce:\n\nbox-filter smoothing;\na horizontal derivative response using Sobel X; and\na sharpened image.\n\nThe script also compares correlation and convolution for the symmetric box kernel and the asymmetric Sobel X kernel."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#part-4-implement-a-3x3-median-filter",
+    "href": "assignments/hw02/index.html#part-4-implement-a-3x3-median-filter",
+    "title": "Homework 02: Filtering",
+    "section": "Part 4 — Implement a 3x3 median filter",
+    "text": "Part 4 — Implement a 3x3 median filter\nComplete:\ndef median_filter3x3(image):\n    ...\nRequirements:\n\nUse a 3x3 neighborhood.\nUse zero padding outside the image boundary.\nReturn an output with the same shape as the input image.\nReturn numpy.float32 output.\nSweep the kernel yourself, e.g., using nested for loops.\nYou may use np.median() to compute the median of one local 3x3 neighborhood.\n\nThe provided script adds deterministic salt-and-pepper noise and uses your median filter so you can compare the noisy and filtered images."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#important-filtering-functions-you-may-not-use",
+    "href": "assignments/hw02/index.html#important-filtering-functions-you-may-not-use",
+    "title": "Homework 02: Filtering",
+    "section": "Important: filtering functions you may not use",
+    "text": "Important: filtering functions you may not use\nThe filtering operation itself must be your implementation. We check your code for prohibited shortcuts. Using a prohibited library filtering implementation causes the homework to receive no credit.\nExamples of functions you should not use to implement the required filters include:\ncv2.filter2D\ncv2.blur\ncv2.boxFilter\ncv2.GaussianBlur\ncv2.Sobel\ncv2.Scharr\ncv2.sepFilter2D\ncv2.medianBlur\ncv2.Laplacian\n\nscipy.signal.correlate / correlate2d\nscipy.signal.convolve / convolve2d\nscipy.signal.fftconvolve\nscipy.ndimage.correlate / convolve\nscipy.ndimage.uniform_filter\nscipy.ndimage.gaussian_filter\nscipy.ndimage.median_filter\nscipy.ndimage.sobel\n\nnp.convolve\nnp.correlate\nnp.lib.stride_tricks.sliding_window_view\nDo not use skimage, PIL/Pillow, or another image-processing package as a replacement.\nYou may use OpenCV for ordinary image I/O and visualization operations such as cv2.imread, cv2.cvtColor, cv2.resize, and cv2.imwrite. You may also use basic NumPy operations such as np.pad, slicing, np.sum, np.median, and np.flip."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#run-your-program",
+    "href": "assignments/hw02/index.html#run-your-program",
+    "title": "Homework 02: Filtering",
+    "section": "Run your program",
+    "text": "Run your program\nActivate the course environment and run the script with a JPG/JPEG or PNG image. You may reuse your HW01 headshot.\nconda activate cv\npython hw02.py my_image.png\nFor speed, the provided script downsizes large images before running your manual filters.\nA successful run must:\n\nexecute without an error;\nprint the maximum correlation/convolution difference for the box kernel;\nprint the maximum correlation/convolution difference for the Sobel X kernel; and\nsave hw02_output.png containing a montage of the filtering results.\n\nInspect the output and notice that:\n\ncorrelation and convolution agree for the symmetric box kernel;\ncorrelation and convolution differ for the asymmetric Sobel X kernel; and\nthe median filter suppresses isolated salt-and-pepper outliers better than ordinary averaging."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#what-to-submit",
+    "href": "assignments/hw02/index.html#what-to-submit",
+    "title": "Homework 02: Filtering",
+    "section": "What to submit",
+    "text": "What to submit\nSubmit exactly one file to Gradescope:\nhw02.py\nDo not submit your input image, hw02_output.png, screenshots, or a PDF report. The autograder runs your script with instructor-provided images and arrays."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#submission-limit-important",
+    "href": "assignments/hw02/index.html#submission-limit-important",
+    "title": "Homework 02: Filtering",
+    "section": "Submission limit — important",
+    "text": "Submission limit — important\nYou may make at most 3 Gradescope submissions for this homework. Test and debug thoroughly in your local cv environment before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#grading",
+    "href": "assignments/hw02/index.html#grading",
+    "title": "Homework 02: Filtering",
+    "section": "Grading",
+    "text": "Grading\nHW02 is worth 5 points and is autograded.\nThe autograder checks:\n\nwhether the required functions are present;\nwhether prohibited filtering routines are used;\ncorrelation correctness, including boundary handling and different kernel shapes;\nconvolution correctness;\nthe provided box, Sobel X, and sharpening kernels;\nthe 3x3 median filter; and\nwhether python hw02.py IMAGE runs successfully in the cv environment and saves the expected output file.\n\nSome basic tests are public and provide feedback when you submit. More substantive numerical correctness tests are private. Passing all public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "assignments/hw02/index.html#notes",
+    "href": "assignments/hw02/index.html#notes",
+    "title": "Homework 02: Filtering",
+    "section": "Notes",
+    "text": "Notes\n\nUse the course cv Conda environment, and the openCV (cv2) library.\nDo not use OpenCV to replace the filtering algorithms you are required to implement.\nDo not change the required function names or arguments.\nDo not modify BOX_3X3, SOBEL_X, or SHARPEN_3X3.\nDo not hard-code outputs for a particular image or kernel.\nTest locally before using one of your Gradescope submissions."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "Your Gradescope assignment is already created with:\n\nProgramming Assignment\n4.0 autograder points\nManual grading enabled\n1.0-point Personal headshot outline item\n\nYou do not need to recreate the assignment.\n\n\nOpen HW01 in Gradescope and select Configure Autograder.\n\nChoose Zip file upload.\nClick Select Autograder (.zip).\nUpload HW01_Gradescope_Autograder_OpenCV_cv.zip.\nKeep:\n\nBase Image OS: Ubuntu\nBase Image Version: 22.04\nBase Image Variant: Base\n\nClick Update Autograder.\n\nThe setup uses Miniforge/conda-forge and recreates the bundled snapshot of the course cv environment. Near the end of a successful build, the log should show cv environment ready, Python 3.12.x, and an OpenCV version.\n\n\n\nAfter the build succeeds, click Test Autograder.\nFrom the complete instructor package, use the files in:\ninstructor/sample_submissions/correct/\nUpload both:\n\nhw01.py\nhw01_output.png\n\nExpected score: 4.0 / 4.0.\nOptional failure checks:\n\nincorrect_rowcol/ should fail the private row/column test.\nincorrect_grayscale/ should fail the private grayscale tests and the public executable test.\n\nThe Gradescope Test Autograder interface may not provide normal student submission metadata. The autograder therefore skips the three-submission enforcement when /autograder/submission_metadata.json is unavailable. Normal student submissions do include that metadata.\n\n\n\nThe assignment outline should contain:\n\nAutograder — 4.0 points\nPersonal headshot — 1.0 point\n\nFor Personal headshot, use the rubric in RUBRIC_AND_TESTS.md.\nImportant: if the student’s final submission is attempt 4+, the autograder gives 0/4. Set the manual headshot item to 0/1 as well so the homework total is 0/5, as stated in the student instructions.\n\n\n\nDistribute HW01_Student_Files_OpenCV.zip through the course website/repository.\nStudents should run:\nconda activate cv\npython hw01.py my_image.png\nThey submit exactly:\n\nhw01.py\nhw01_output.png\n\n\n\n\nConfirm:\n\nAssignment total is 5 points.\nAutograder points are 4.0.\nManual grading is enabled.\nPersonal headshot is 1.0 point.\nThe new OpenCV autograder builds successfully.\nThe correct sample gets 4.0/4.0.\nYour release/due-date/late-submission settings match the course policy."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#replace-the-autograder",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#replace-the-autograder",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "Open HW01 in Gradescope and select Configure Autograder.\n\nChoose Zip file upload.\nClick Select Autograder (.zip).\nUpload HW01_Gradescope_Autograder_OpenCV_cv.zip.\nKeep:\n\nBase Image OS: Ubuntu\nBase Image Version: 22.04\nBase Image Variant: Base\n\nClick Update Autograder.\n\nThe setup uses Miniforge/conda-forge and recreates the bundled snapshot of the course cv environment. Near the end of a successful build, the log should show cv environment ready, Python 3.12.x, and an OpenCV version."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#test-the-new-autograder",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#test-the-new-autograder",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "After the build succeeds, click Test Autograder.\nFrom the complete instructor package, use the files in:\ninstructor/sample_submissions/correct/\nUpload both:\n\nhw01.py\nhw01_output.png\n\nExpected score: 4.0 / 4.0.\nOptional failure checks:\n\nincorrect_rowcol/ should fail the private row/column test.\nincorrect_grayscale/ should fail the private grayscale tests and the public executable test.\n\nThe Gradescope Test Autograder interface may not provide normal student submission metadata. The autograder therefore skips the three-submission enforcement when /autograder/submission_metadata.json is unavailable. Normal student submissions do include that metadata."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#confirm-the-manual-rubric",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#confirm-the-manual-rubric",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "The assignment outline should contain:\n\nAutograder — 4.0 points\nPersonal headshot — 1.0 point\n\nFor Personal headshot, use the rubric in RUBRIC_AND_TESTS.md.\nImportant: if the student’s final submission is attempt 4+, the autograder gives 0/4. Set the manual headshot item to 0/1 as well so the homework total is 0/5, as stated in the student instructions."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#give-students-the-new-starter-files",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#give-students-the-new-starter-files",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "Distribute HW01_Student_Files_OpenCV.zip through the course website/repository.\nStudents should run:\nconda activate cv\npython hw01.py my_image.png\nThey submit exactly:\n\nhw01.py\nhw01_output.png"
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#before-release",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#before-release",
+    "title": "Updating the Existing HW01 Gradescope Assignment",
+    "section": "",
+    "text": "Confirm:\n\nAssignment total is 5 points.\nAutograder points are 4.0.\nManual grading is enabled.\nPersonal headshot is 1.0 point.\nThe new OpenCV autograder builds successfully.\nThe correct sample gets 4.0/4.0.\nYour release/due-date/late-submission settings match the course policy."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual\n\n\nThe objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations.\n\n\n\nUse a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually.\n\n\n\nComplete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly.\n\n\n\nComplete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png.\n\n\n\n\n\nActivate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale.\n\n\n\nSubmit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot.\n\n\n\nYou may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.\n\n\n\n\nThe homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit.\n\n\n\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#objective",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#objective",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "The objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Use a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#starter-file",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#starter-file",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Complete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#required-tasks",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#required-tasks",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Complete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#run-your-program",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#run-your-program",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Activate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#what-to-submit",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#what-to-submit",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Submit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#submission-limit-important",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#submission-limit-important",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "You may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#grading",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#grading",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "The homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#notes",
+    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#notes",
+    "title": "Homework 01: Working with Images",
+    "section": "",
+    "text": "Use the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html",
+    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html",
+    "title": "HW02 — Gradescope Setup",
+    "section": "",
+    "text": "Create a Programming Assignment in Gradescope.\nRecommended settings:\n\nAssignment name: HW02: Filtering\nTotal/autograder points: 5.0\nManual grading: disabled\nGroup submission: off\nLate submissions: follow the course policy\nStudent submission method: Upload\n\nThe three-submission policy is enforced inside the autograder. Gradescope may still display a resubmit button after attempt 3, but attempt 4+ receives 0/5.\n\n\n\nUpload:\nHW02_Gradescope_Autograder_cv.zip\nDo not unzip it before uploading.\nUse the same Gradescope base image settings as HW01:\n\nUbuntu 22.04\nBase variant\n\nClick Update Autograder.\nThe setup script installs Miniforge and recreates the bundled snapshot of the course cv environment. A successful build should end with output similar to:\ncv environment ready\nPython: 3.12...\nNumPy: ...\nSciPy: ...\nMatplotlib: ...\nOpenCV: ...\n\n\n\nUse Test Autograder with:\ninstructor/sample_submissions/correct/hw02.py\nExpected score: 5.0 / 5.0.\nAlso test the intentionally incorrect samples if desired:\n\nincorrect_correlation\nincorrect_convolution\nprohibited_filter2d\n\nThe Test Autograder workflow generally does not provide normal student submission-history metadata, so the three-submission limit is intentionally not enforced there.\n\n\n\nProvide students the starter hw02.py from the Quarto assignment page. Students submit exactly:\nhw02.py\nThey do not submit their input image, hw02_output.png, or a PDF."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
+    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
+    "title": "HW02 — Gradescope Setup",
+    "section": "",
+    "text": "Create a Programming Assignment in Gradescope.\nRecommended settings:\n\nAssignment name: HW02: Filtering\nTotal/autograder points: 5.0\nManual grading: disabled\nGroup submission: off\nLate submissions: follow the course policy\nStudent submission method: Upload\n\nThe three-submission policy is enforced inside the autograder. Gradescope may still display a resubmit button after attempt 3, but attempt 4+ receives 0/5."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#configure-the-autograder",
+    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#configure-the-autograder",
+    "title": "HW02 — Gradescope Setup",
+    "section": "",
+    "text": "Upload:\nHW02_Gradescope_Autograder_cv.zip\nDo not unzip it before uploading.\nUse the same Gradescope base image settings as HW01:\n\nUbuntu 22.04\nBase variant\n\nClick Update Autograder.\nThe setup script installs Miniforge and recreates the bundled snapshot of the course cv environment. A successful build should end with output similar to:\ncv environment ready\nPython: 3.12...\nNumPy: ...\nSciPy: ...\nMatplotlib: ...\nOpenCV: ..."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#test-before-release",
+    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#test-before-release",
+    "title": "HW02 — Gradescope Setup",
+    "section": "",
+    "text": "Use Test Autograder with:\ninstructor/sample_submissions/correct/hw02.py\nExpected score: 5.0 / 5.0.\nAlso test the intentionally incorrect samples if desired:\n\nincorrect_correlation\nincorrect_convolution\nprohibited_filter2d\n\nThe Test Autograder workflow generally does not provide normal student submission-history metadata, so the three-submission limit is intentionally not enforced there."
+  },
+  {
+    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#student-release",
+    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#student-release",
+    "title": "HW02 — Gradescope Setup",
+    "section": "",
+    "text": "Provide students the starter hw02.py from the Quarto assignment page. Students submit exactly:\nhw02.py\nThey do not submit their input image, hw02_output.png, or a PDF."
   },
   {
     "objectID": "code/index.html",
