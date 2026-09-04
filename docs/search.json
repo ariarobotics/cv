@@ -11,7 +11,7 @@
     "href": "tutorials/index.html#recommended-order",
     "title": "Tutorials",
     "section": "Recommended order",
-    "text": "Recommended order\n\nWSL and Ubuntu — Windows users only\nGit and GitHub\nPython and Conda\nVisual Studio Code\nNumPy for Computer Vision\n\nWindows users should use WSL 2 + Ubuntu for the Linux development environment. macOS and Linux users can skip the WSL tutorial.\nNote that the course repository contains code, notebooks, assignments, and supporting files:\nhttps://github.com/ariarobotics/cv"
+    "text": "Recommended order\n\nWSL and Ubuntu — Windows users only\nGit and GitHub\nPython and Conda\nVisual Studio Code\nNumPy for Computer Vision\n\nWindows users should use WSL 2 + Ubuntu for the Linux development environment. macOS and Linux users can skip the WSL tutorial."
   },
   {
     "objectID": "tutorials/04_vscode.html",
@@ -1824,7 +1824,7 @@
     "href": "lectures/03_filtering.html#practice-answers",
     "title": "Lecture 03 — Image Filtering",
     "section": "Practice: Answers",
-    "text": "Practice: Answers\n\n\n\n\n\n\n\n\n\n\n\\(A*B=E\\): the derivative kernel produces an edge response.\n\\(B*C=F\\): smoothing the derivative kernel produces a derivative-of-Gaussian kernel.\n\\(A*D=G\\): convolution with the shifted impulse shifts the image.\n\\(A*A=H\\): convolving the image with itself produces a broad self-convolution response.\n\nThe unused candidate is \\(I=A*C\\), the Gaussian-smoothed image."
+    "text": "Practice: Answers\n\n\n\n\n\n\n\n\n\n\n\\(A*B=E\\): the derivative kernel produces an edge response.\n\\(B*C=F\\): smoothing the derivative kernel produces a derivative-of-Gaussian kernel.\n\\(A*D=G\\): correlation with the shifted impulse shifts the image.\n\\(A*A=H\\): correlation the image with itself produces a broad self-correlation response.\n\nThe unused candidate is \\(I=A*C\\), the Gaussian-smoothed image."
   },
   {
     "objectID": "lectures/03_filtering.html#template-matching",
