@@ -41,6 +41,7 @@ styles/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+.jupyter_cache/
 
 # ============================================================
 # Conda / Python environments
