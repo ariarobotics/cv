@@ -872,7 +872,7 @@
     "href": "assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: TBD\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments/hw01/index.html",
@@ -1813,11 +1813,11 @@
     "text": "Visualizing Signed Filter Responses\nThe signed filter response can be transformed differently depending on what we want to visualize.\n\nIn the signed response, zero is centered at gray.\nClipping negative values removes one edge polarity.\nThe absolute response shows edge strength but discards polarity.\n\n\n\nlimit = max(float(np.abs(img_out).max()), 1)\n\nimages = [img_out, np.clip(img_out, 0, None), np.abs(img_out)]\n\ntitles = [\"Signed\", \"Neg clipped\", \"Absolute val\"]\nfig, ax = plt.subplots(1, 3, figsize=(6.5, 4))\nfor a, image, title in zip(ax, images, titles):\n    signed = title == \"Signed\"\n    a.imshow(image, cmap=\"gray\", vmin=-limit if signed else 0, vmax=limit)\n    a.set_title(title); a.axis(\"off\")\nplt.tight_layout(); plt.show()"
   },
   {
-    "objectID": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
-    "href": "lectures/03_filtering.html#practice-match-each-convolution-to-its-output",
+    "objectID": "lectures/03_filtering.html#practice-match-each-filter-to-its-output",
+    "href": "lectures/03_filtering.html#practice-match-each-filter-to-its-output",
     "title": "Lecture 03 — Image Filtering",
-    "section": "Practice: Match Each Convolution to Its Output",
-    "text": "Practice: Match Each Convolution to Its Output\nSelect E, F, G, H, or I for each filter. One candidate is not used.\n\\[\n1.\\;A*B=?\n\\qquad\n2.\\;B*C=?\n\\qquad\n3.\\;A*D=?\n\\qquad\n4.\\;A*A=?\n\\]"
+    "section": "Practice: Match Each Filter to Its Output",
+    "text": "Practice: Match Each Filter to Its Output\nSelect E, F, G, H, or I for each filter. One candidate is not used.\n\\[\n1.\\;A*B=?\n\\qquad\n2.\\;B*C=?\n\\qquad\n3.\\;A*D=?\n\\qquad\n4.\\;A*A=?\n\\]"
   },
   {
     "objectID": "lectures/03_filtering.html#practice-answers",
