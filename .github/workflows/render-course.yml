@@ -1,4 +1,4 @@
-name: Generate Lecture PDFs
+name: Generate PDFs and Deploy Course Website
 
 on:
   workflow_dispatch: {}
@@ -8,21 +8,27 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: lecture-pdf-generation
-  cancel-in-progress: true
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
   generate-pdfs:
     name: Generate lecture PDFs
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
+      pages: read
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -107,19 +113,26 @@ jobs:
           name: lecture-pdfs
           path: docs/lectures/pdf/*.pdf
           if-no-files-found: error
+          retention-days: 7
 
-      - name: Commit PDFs to repository
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+      # Publish the rendered website and freshly generated PDFs together.
+      # This uploads a deployment artifact; it does not commit files to Git.
+      - name: Upload complete website for GitHub Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
 
-          git add -f docs/lectures/pdf/*.pdf
-
-          if git diff --cached --quiet; then
-            echo "PDFs are already up to date."
-          else
-            git commit -m "Update lecture PDFs [skip ci]"
-            git push origin HEAD:main
-          fi
+  deploy:
+    name: Deploy course website
+    needs: generate-pdfs
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
