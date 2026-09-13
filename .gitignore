@@ -1,0 +1,85 @@
+# ============================================================
+# Quarto source and development files
+# ============================================================
+
+# Quarto source documents
+*.qmd
+
+# Quarto project configuration
+_quarto.yml
+_quarto.yaml
+
+# Quarto custom listing/source templates
+*.ejs.md
+
+# Lecture-level metadata should not be published
+lectures/_metadata.yml
+
+# Quarto generated working/cache directories
+.quarto/
+_quarto/
+_freeze/
+**/*.quarto_ipynb
+
+# Quarto generated working/cache files
+.vdoc.*
+
+# Generated lecture PDFs
+docs/lectures/pdf/*.pdf
+
+# Private lecture sources and assets
+/lectures/
+
+# ============================================================
+# Source styling files
+# Rendered CSS needed by the public website is copied into docs/
+# ============================================================
+
+styles/
+
+# ============================================================
+# Python / Jupyter temporary files
+# ============================================================
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.jupyter_cache/
+
+# ============================================================
+# Conda / Python environments
+# ============================================================
+
+.venv/
+venv/
+env/
+.conda/
+
+# ============================================================
+# OS / editor files
+# ============================================================
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.bak
+*.swp
+*~
+
+# ============================================================
+# Helper files
+# ============================================================
+
+find_unused_assets*.*
+/.quarto/
+temp
+code_private
+assignments_private
+_instructions_and_notes.txt

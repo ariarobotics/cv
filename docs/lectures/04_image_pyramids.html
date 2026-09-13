@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Kaveh Fathian">
+  <title>Computer Vision – Lecture 04 — Image Pyramids</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e29227cb4367bc74b13779e945f9984f.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="assets/04_image_pyramids/slide001_img01.png" data-background-opacity="0.18" class="quarto-title-block center">
+  <h1 class="title">Lecture 04 — Image Pyramids</h1>
+  <p class="subtitle">Lecture 4</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Kaveh Fathian
+</div>
+        <p class="quarto-title-affiliation">
+            Computer Science Department, Colorado School of Mines
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you should be able to:</p>
+<ul>
+<li>Explain why naïve downsampling can create <strong>aliasing</strong>.</li>
+<li>Describe how <strong>smoothing before downsampling</strong> reduces aliasing.</li>
+<li>Construct and interpret a <strong>Gaussian pyramid</strong>.</li>
+<li>Construct and interpret a <strong>Laplacian pyramid</strong>.</li>
+<li>Explain why Laplacian pyramids are useful for <strong>compression and reconstruction</strong>.</li>
+<li>Recognize how multi-scale representations appear in applications such as blending, tracking, detail enhancement, steerable pyramids, and wavelets.</li>
+</ul>
+</section>
+<section id="downsampling-image" class="slide level2" data-background-image="assets/04_image_pyramids/downsampling_gray.png" data-background-size="cover">
+<h2></h2>
+<div class="absolute" style="background: rgba(0,0,0,0.7); color: white; padding: 24px 32px; border-radius: 12px; font-size: 40px;left: 80px; bottom: 80px; right: 80px; ">
+<p>This image is too big to fit on the screen!</p>
+<p><strong>How would you reduce it to half its size?</strong></p>
+</div>
+</section>
+<section id="window-size" class="slide level2">
+<h2>Naïve Image Downsampling</h2>
+<p>Keep every other row and column, then repeat.</p>
+<div style="height: 30px;">
+
+</div>
+<style>
+#window-size .code-block pre code {
+  max-height: 650px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="317facc9" class="cell code-block columns column-output-location" data-execution_count="3">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a aria-label="2"></a></span>
+<span id="cb1-3"><a aria-label="3"></a>y2 <span class="op">=</span> I[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb1-4"><a aria-label="4"></a>y4 <span class="op">=</span> y2[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb1-5"><a aria-label="5"></a>y8 <span class="op">=</span> y4[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb1-6"><a aria-label="6"></a></span>
+<span id="cb1-7"><a aria-label="7"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>),</span>
+<span id="cb1-8"><a aria-label="8"></a>    gridspec_kw<span class="op">=</span>{<span class="st">"width_ratios"</span>: [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>]})</span>
+<span id="cb1-9"><a aria-label="9"></a></span>
+<span id="cb1-10"><a aria-label="10"></a><span class="cf">for</span> a, y, s <span class="kw">in</span> <span class="bu">zip</span>(ax, [y2, y4, y8], [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]):</span>
+<span id="cb1-11"><a aria-label="11"></a>    a.imshow(y, cmap<span class="op">=</span><span class="st">"gray"</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>,</span>
+<span id="cb1-12"><a aria-label="12"></a>             interpolation<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb1-13"><a aria-label="13"></a>    a.set_title(<span class="ss">f"1/</span><span class="sc">{</span>s<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-14"><a aria-label="14"></a>    a.axis(<span class="st">"off"</span>)</span>
+<span id="cb1-15"><a aria-label="15"></a>plt.tight_layout()</span>
+<span id="cb1-16"><a aria-label="16"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-3-output-1.png" width="758" height="309"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="naïve-image-downsampling" class="slide level2">
+<h2>Naïve Image Downsampling</h2>
+<div id="aed47127" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-4-output-1.png" width="1574" height="382"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Why is the 1/8 image so pixelated (and do you know what this effect is called)?</p>
+</section>
+<section id="reminder" class="slide level2">
+<h2>Reminder</h2>
+<div class="columns image-center">
+<div class="column" style="width:50%;">
+<p><img data-src="assets/02_image/slide13_img02.jpg" height="450"> <strong>Camera / sensor hardware</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/02_image/image-quantization.jpg" height="450"> <strong>CMOS sensor array</strong></p>
+</div></div>
+<div style="height: 30px;">
+
+</div>
+<p>Images are a <strong>discrete</strong>, or <strong>sampled</strong>, representation of a <strong>continuous</strong> world.</p>
+</section>
+<section id="sampling" class="slide level2">
+<h2>Sampling</h2>
+<p>A simple example: a sine wave</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide010_img01.jpg" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p><strong>How would you discretize this signal?</strong></p>
+</section>
+<section id="sampling-1" class="slide level2">
+<h2>Sampling</h2>
+<p>Sample the signal at regularly spaced locations.</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide011_img01.png" height="400"></p>
+</div>
+</section>
+<section id="sampling-2" class="slide level2">
+<h2>Sampling</h2>
+<p>The sampled signal consists of discrete values.</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide012_img01.png" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p>How many samples should I take?</p>
+<p>Can I take as <strong>many</strong> samples as I want?</p>
+</section>
+<section id="sampling-3" class="slide level2">
+<h2>Sampling</h2>
+<p>The sampled signal consists of discrete values.</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide012_img01.png" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p>How many samples should I take?</p>
+<p>Can I take as <strong>few</strong> samples as I want?</p>
+</section>
+<section id="undersampling" class="slide level2">
+<h2>Undersampling</h2>
+<p>What happens when we take fewer samples?</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide014_img01.jpg" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p>Unsurprising effect: <strong>information is lost</strong>.</p>
+</section>
+<section id="undersampling-1" class="slide level2">
+<h2>Undersampling</h2>
+<p>A different signal can agree with the same samples.</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide015_img01.jpg" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p>Unsurprising effect: <strong>information is lost</strong>.</p>
+<p>Surprising effect: we can confuse the signal with one of <strong>lower frequency</strong>.</p>
+</section>
+<section id="undersampling-2" class="slide level2">
+<h2>Undersampling</h2>
+<p>The same samples can also match a signal of higher frequency.</p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide016_img01.jpg" height="400"></p>
+</div>
+<div style="height: 30px;">
+
+</div>
+<p>The samples alone do not uniquely identify the original signal.</p>
+<p>We need an assumption about its <strong>highest frequency</strong>.</p>
+</section>
+<section id="aliasing" class="slide level2">
+<h2>Aliasing</h2>
+<p><strong>Aliasing: Undersampling disguises a signal as one of a lower frequency.</strong></p>
+<div style="height: 30px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide015_img01.jpg" height="400"></p>
+</div>
+</section>
+<section id="aliasing-in-textures" class="slide level2">
+<h2>Aliasing in Textures</h2>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide018_img01.jpg" height="750"></p>
+</div>
+</section>
+<section id="aliasing-in-photographs" class="slide level2">
+<h2>Aliasing in Photographs</h2>
+<p>These patterns are also known as <strong>moiré patterns</strong>.</p>
+<div style="height: 40px;">
+
+</div>
+<div class="columns">
+<div class="column image-center" style="width:33%;">
+<p><img data-src="assets/04_image_pyramids/slide019_img03.jpeg" style="width:100.0%" height="300"></p>
+<p>Striped fabric</p>
+</div><div class="column image-center" style="width:33%;">
+<p><img data-src="assets/04_image_pyramids/slide019_img02.jpg" style="width:100.0%" height="300"></p>
+<p>Building façades</p>
+</div><div class="column image-center" style="width:33%;">
+<p><img data-src="assets/04_image_pyramids/slide019_img01.jpg" style="width:100.0%" height="300"></p>
+<p>AC grille</p>
+</div></div>
+</section>
+<section id="temporal-aliasing" class="slide level2">
+<h2>Temporal Aliasing</h2>
+<ul>
+<li>The camera records <strong>separate snapshots</strong>; we do not see the motion between frames.</li>
+<li>Follow the <strong>dot</strong>: the wheel is rotating <strong>clockwise</strong></li>
+</ul>
+<div style="height: 20px;">
+
+</div>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/slide020_img01.png" width="1200"></p>
+</div>
+<div style="height: 20px;">
+
+</div>
+<ul>
+<li>Without the dot, the four spokes are <strong>indistinguishable</strong>.</li>
+<li>A large clockwise step produces the <strong>same spoke positions</strong> as a small counterclockwise step.</li>
+</ul>
+<p><strong>The wheel can therefore appear to rotate backward—an example of temporal aliasing.</strong></p>
+</section>
+<section id="temporal-aliasing-wagon-wheel-effect" class="slide level2">
+<h2>Temporal Aliasing: Wagon-Wheel Effect</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/HqKfCUW17QM" width="100%" height="85%" title="Wagon-wheel effect" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="temporal-aliasing-helicopter-rotor" class="slide level2">
+<h2>Temporal Aliasing: Helicopter Rotor</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/yr3ngmRuGUc" width="100%" height="85%" title="Temporal aliasing of a helicopter rotor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="anti-aliasing-oversampling" class="slide level2">
+<h2>Anti-aliasing: Oversampling</h2>
+<p><strong>How would you deal with aliasing?</strong></p>
+<p><strong>Approach 1:</strong> Use more samples to represent fine detail.</p>
+<div style="height: 20px;">
+
+</div>
+<div id="dc901c18" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="1542" height="572"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="anti-aliasing-smoothing" class="slide level2">
+<h2>Anti-aliasing: Smoothing</h2>
+<p><strong>Approach 2:</strong> Smooth the image <strong>before downsampling</strong>.</p>
+<div id="3b456bc6" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-6-output-1.png" class="quarto-figure quarto-figure-center" width="1542" height="572"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Some fine detail is lost, but aliasing artifacts are reduced.</p>
+<p><strong>How would you smooth a signal?</strong></p>
+</section>
+<section id="gaussian-downsampling" class="slide level2">
+<h2>Better Image Downsampling</h2>
+<p>Apply a Gaussian filter, then keep every other row and column. Repeat.</p>
+<div style="height: 30px;">
+
+</div>
+<style>
+#gaussian-downsampling .code-block pre code {
+  max-height: 650px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="d1c6167d" class="cell code-block columns column-output-location" data-execution_count="7">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
+<span id="cb2-2"><a aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a aria-label="3"></a></span>
+<span id="cb2-4"><a aria-label="4"></a>y2g <span class="op">=</span> cv2.GaussianBlur(I, (<span class="dv">3</span>,<span class="dv">3</span>), <span class="dv">2</span>)[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb2-5"><a aria-label="5"></a>y4g <span class="op">=</span> cv2.GaussianBlur(y2g, (<span class="dv">3</span>,<span class="dv">3</span>), <span class="dv">2</span>)[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb2-6"><a aria-label="6"></a>y8g <span class="op">=</span> cv2.GaussianBlur(y4g, (<span class="dv">3</span>,<span class="dv">3</span>), <span class="dv">2</span>)[::<span class="dv">2</span>, ::<span class="dv">2</span>]</span>
+<span id="cb2-7"><a aria-label="7"></a></span>
+<span id="cb2-8"><a aria-label="8"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>),</span>
+<span id="cb2-9"><a aria-label="9"></a>    gridspec_kw<span class="op">=</span>{<span class="st">"width_ratios"</span>: [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>]})</span>
+<span id="cb2-10"><a aria-label="10"></a><span class="cf">for</span> a, y, s <span class="kw">in</span> <span class="bu">zip</span>(ax, [y2g, y4g, y8g], [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]):</span>
+<span id="cb2-11"><a aria-label="11"></a>    a.imshow(y, cmap<span class="op">=</span><span class="st">"gray"</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>,</span>
+<span id="cb2-12"><a aria-label="12"></a>             interpolation<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb2-13"><a aria-label="13"></a>    a.set_title(<span class="ss">f"1/</span><span class="sc">{</span>s<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-14"><a aria-label="14"></a>    a.axis(<span class="st">"off"</span>)</span>
+<span id="cb2-15"><a aria-label="15"></a>plt.tight_layout()</span>
+<span id="cb2-16"><a aria-label="16"></a>plt.show()</span>
+<span id="cb2-17"><a aria-label="17"></a>plt.close(fig)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-7-output-1.png" width="758" height="309"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="comparison-of-downsampling-methods" class="slide level2">
+<h2>Comparison of Downsampling Methods</h2>
+<h3 id="naïve-image-downsampling-1">Naïve Image Downsampling:</h3>
+<div id="13917a50" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-8-output-1.png" class="quarto-figure quarto-figure-center" width="1142" height="286"></p>
+</figure>
+</div>
+</div>
+</div>
+<h3 id="smoothed-image-downsampling">Smoothed Image Downsampling:</h3>
+<div id="a3866341" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="1142" height="286"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="anti-aliasing-how-much-is-enough" class="slide level2">
+<h2>Anti-aliasing: How Much Is Enough?</h2>
+<ul>
+<li><p><strong>How much smoothing is enough?</strong></p></li>
+<li><p><strong>How many samples are enough?</strong></p></li>
+</ul>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Both depend on the <strong>Nyquist condition</strong>:</p>
+<p><span class="math display">\[
+f_s &gt; 2f_{\max}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(f_s\)</span>: sampling rate.</li>
+<li><span class="math inline">\(f_{\max}\)</span>: highest frequency.</li>
+</ul>
+<div style="height: 30px;">
+
+</div>
+<p><strong>We’ll see what this means soon.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="image-pyramids" class="title-slide slide level1 center">
+<h1>Image Pyramids</h1>
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/image_pyramid.png" height="600"></p>
+</div>
+</section>
+<section id="why-use-image-pyramids" class="slide level2">
+<h2>Why Use Image Pyramids?</h2>
+<div class="columns">
+<div class="column center" style="width:25%;">
+<p><strong>Image compression</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide038_img01.png" style="width:46.0%" height="180"> <img data-src="assets/04_image_pyramids/slide038_img02.png" style="width:46.0%" height="180"></p>
+</div><div class="column center" style="width:25%;">
+<p><strong>Texture mapping</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img01.png" style="width:100.0%" height="180"></p>
+</div><div class="column center" style="width:25%;">
+<p><strong>Image blending</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img03.jpg" style="width:100.0%" height="180"></p>
+</div><div class="column center" style="width:25%;">
+<p><strong>Denoising</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img04.jpg" style="width:100.0%" height="180"></p>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column center" style="width:33%;">
+<p><strong>Focal stack compositing</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img02.jpg" style="width:100.0%" height="220"></p>
+</div><div class="column center" style="width:33%;">
+<p><strong>Multiscale detection</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img05.jpg" style="width:100.0%" height="220"></p>
+</div><div class="column center" style="width:33%;">
+<p><strong>Multiscale registration</strong></p>
+<p><img data-src="assets/04_image_pyramids/slide060_img06.jpg" style="width:100.0%" height="220"></p>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<p><strong>Also:</strong> Optical flow and feature tracking estimate motion from a coarse to fine paradigm.</p>
+</section>
+<section id="gaussian-pyramid" class="slide level2">
+<h2>Gaussian Pyramid</h2>
+<p>A <strong>Gaussian pyramid</strong> represents an image at progressively coarser spatial scales.</p>
+<p><span class="math display">\[
+G_0 = I,
+\qquad
+G_{i+1} = \operatorname{downsample}(h_G * G_i)
+\]</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Construction</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Smooth</strong> the current image using a Gaussian kernel <span class="math inline">\(h_G\)</span>.</li>
+<li><strong>Downsample</strong> by a factor of 2, e.g., keep every other row and column.</li>
+<li><strong>Repeat</strong> until the desired minimum resolution is reached.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>How many pixels does <span class="math inline">\(G_{i+1}\)</span> have compared with <span class="math inline">\(G_i\)</span>?</strong></p>
+</div>
+<div class="fragment">
+<p>Approximately <span class="math inline">\(\frac{1}{4}\)</span> as many pixels.</p>
+</div>
+<div class="fragment">
+<p><strong>Why smooth first?</strong></p>
+</div>
+<div class="fragment">
+<p>To reduce aliasing before downsampling.</p>
+</div>
+<div class="fragment">
+<p><strong>Must the factor be 2?</strong></p>
+</div>
+<div class="fragment">
+<p>No! Other scale factors are possible. A factor of 2 is conventional and is used by <code>cv2.pyrDown()</code>.</p>
+</div>
+</section>
+<section id="gaussian-pyramid-code" class="slide level2">
+<h2>Constructing a Gaussian Pyramid</h2>
+<p><code>cv2.pyrDown()</code> combines Gaussian smoothing and downsampling.</p>
+<style>
+#gaussian-pyramid-code .code-block pre code {
+  max-height: 700px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="8fde9880" class="cell code-block columns column-output-location" data-execution_count="10">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
+<span id="cb3-2"><a aria-label="2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a aria-label="3"></a></span>
+<span id="cb3-4"><a aria-label="4"></a>G <span class="op">=</span> [I]</span>
+<span id="cb3-5"><a aria-label="5"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb3-6"><a aria-label="6"></a>    y <span class="op">=</span> cv2.pyrDown(G[<span class="op">-</span><span class="dv">1</span>], borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>
+<span id="cb3-7"><a aria-label="7"></a>    G.append(y)</span>
+<span id="cb3-8"><a aria-label="8"></a></span>
+<span id="cb3-9"><a aria-label="9"></a>heights <span class="op">=</span> [g.shape[<span class="dv">0</span>] <span class="cf">for</span> g <span class="kw">in</span> G[::<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb3-10"><a aria-label="10"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">4</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">7.5</span>),</span>
+<span id="cb3-11"><a aria-label="11"></a>                      gridspec_kw<span class="op">=</span>{<span class="st">"height_ratios"</span>: heights})</span>
+<span id="cb3-12"><a aria-label="12"></a></span>
+<span id="cb3-13"><a aria-label="13"></a>W <span class="op">=</span> I.shape[<span class="dv">1</span>]</span>
+<span id="cb3-14"><a aria-label="14"></a><span class="cf">for</span> a, i <span class="kw">in</span> <span class="bu">zip</span>(ax, <span class="bu">range</span>(<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>)):</span>
+<span id="cb3-15"><a aria-label="15"></a>    h, w <span class="op">=</span> G[i].shape</span>
+<span id="cb3-16"><a aria-label="16"></a>    a.imshow(G[i], cmap<span class="op">=</span><span class="st">"gray"</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>,</span>
+<span id="cb3-17"><a aria-label="17"></a>             interpolation<span class="op">=</span><span class="st">"nearest"</span>,</span>
+<span id="cb3-18"><a aria-label="18"></a>             extent<span class="op">=</span>((W<span class="op">-</span>w)<span class="op">/</span><span class="dv">2</span>, (W<span class="op">+</span>w)<span class="op">/</span><span class="dv">2</span>, h, <span class="dv">0</span>))</span>
+<span id="cb3-19"><a aria-label="19"></a>    a.set_xlim(<span class="dv">0</span>, W)</span>
+<span id="cb3-20"><a aria-label="20"></a>    a.text(<span class="fl">1.02</span>, <span class="fl">.5</span>, <span class="vs">rf"</span><span class="dv">$</span><span class="vs">G_</span><span class="sc">{</span>i<span class="sc">}</span><span class="dv">$</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">28</span>, transform<span class="op">=</span>a.transAxes, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb3-21"><a aria-label="21"></a>    a.axis(<span class="st">"off"</span>)</span>
+<span id="cb3-22"><a aria-label="22"></a>fig.subplots_adjust(left<span class="op">=</span><span class="fl">.03</span>, right<span class="op">=</span><span class="fl">.87</span>, bottom<span class="op">=</span><span class="fl">.02</span>, top<span class="op">=</span><span class="fl">.98</span>, hspace<span class="op">=</span><span class="fl">.12</span>)</span>
+<span id="cb3-23"><a aria-label="23"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-10-output-1.png" width="584" height="710"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="what-happens-at-coarser-levels" class="slide level2">
+<h2>What Happens at Coarser Levels?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>What happens to the details of the image?</strong></p>
+<div class="fragment">
+<ul>
+<li>Fine details get <strong>smoothed out</strong> as we move to higher, coarser levels.</li>
+<li>Small structures and texture become less distinguishable.</li>
+</ul>
+</div>
+<div style="height: 30px;">
+
+</div>
+<div class="fragment">
+<p><strong>What is preserved at the higher levels?</strong></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Mostly <strong>large uniform regions</strong> and broad intensity variations.</li>
+<li>The overall shape and arrangement of large structures.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/04_image_pyramids/gaussian_pyramid.png" height="700"></p>
+</div></div>
+</section>
+<section id="can-we-recover-the-original-image" class="slide level2">
+<h2>Can We Recover the Original Image?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>How would you reconstruct the original image from an upper level image?</strong></p>
+<div class="fragment">
+<ul>
+<li><strong>Exact reconstruction is not possible!</strong></li>
+<li>Smoothing suppresses fine details.</li>
+<li>Downsampling retains fewer samples.</li>
+<li>Enlarging the coarse image cannot recover the missing information!</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/04_image_pyramids/gaussian_pyramid.png" height="700"></p>
+</div></div>
+</section>
+<section id="blurring-removes-fine-detail" class="slide level2">
+<h2>Blurring Removes Fine Detail</h2>
+<p>Gaussian smoothing suppresses detail <strong>before we even downsample</strong>.</p>
+<div id="b080327e" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-12-output-1.png" class="quarto-figure quarto-figure-center" width="985" height="403"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What does the residual look like?</strong></p>
+<p>The residual is the original image <strong>minus</strong> the smoothed image.</p>
+</section>
+<section id="what-did-smoothing-remove" class="slide level2">
+<h2>What Did Smoothing Remove?</h2>
+<div id="9e6dba97" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-13-output-1.png" class="quarto-figure quarto-figure-center" width="1327" height="424"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The residual contains <strong>edges and fine texture</strong> suppressed by smoothing.</li>
+<li>Mid-gray represents zero; brighter and darker values represent positive and negative differences.</li>
+</ul>
+<p><strong>Can we make a pyramid that allows exact reconstruction?</strong></p>
+<div class="fragment">
+<p>Yes! Retain the residual information along with the coarse image. This is the idea behind a <strong>Laplacian pyramid</strong>.</p>
+</div>
+</section>
+<section id="start-with-one-level" class="slide level2">
+<h2>Start with One Level</h2>
+<p>The original image equals an <strong>expanded coarse image</strong> plus a <strong>residual</strong>.</p>
+<div id="aca36dab" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-14-output-1.png" class="quarto-figure quarto-figure-center" width="1334" height="470"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Do we need to store every blurred image as well as every residual?</strong></p>
+<div class="fragment">
+<p>No.&nbsp;We can recover each finer image from its residual and the next coarser image.</p>
+</div>
+</section>
+<section id="laplacian-pyramid" class="slide level2">
+<h2>Laplacian Pyramid</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Construction</strong></p>
+</div>
+<div class="callout-content">
+<p>Start with <span class="math inline">\(G_0 = I\)</span>. At each level:</p>
+<ol type="1">
+<li><strong>Smooth and downsample</strong> to obtain <span class="math inline">\(G_{i+1}\)</span>.</li>
+<li><strong>Expand</strong> <span class="math inline">\(G_{i+1}\)</span> back to the size of <span class="math inline">\(G_i\)</span>.</li>
+<li><strong>Subtract</strong> to obtain the residual:</li>
+</ol>
+<p><span class="math display">\[
+L_i = G_i - \operatorname{expand}(G_{i+1})
+\]</span></p>
+<p>Repeat until the desired minimum resolution is reached.</p>
+</div>
+</div>
+</div>
+<p>Here, <strong>expand</strong> means upsample and filter, using <code>cv2.pyrUp()</code>.</p>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<ul>
+<li><p>The sequence <span class="math inline">\(G_0, G_1, G_2, \ldots, G_n\)</span> is the <strong>Gaussian pyramid</strong>.</p></li>
+<li><p>The sequence <span class="math inline">\(L_0, L_1,  \ldots, L_{n-1}, G_n\)</span> is the <strong>Laplacian pyramid</strong>.</p></li>
+<li><p>The Laplacian pyramid stores the detail needed to move back from one Gaussian level to the next finer level.</p></li>
+</ul>
+</div>
+</section>
+<section id="upsampling-a-numerical-example" class="slide level2 small">
+<h2>Upsampling: A Numerical Example</h2>
+<div class="column" style="width:100%;">
+<p>In Laplacian pyramid, <strong>expand</strong> means:</p>
+<ol type="1">
+<li>Insert zeros between rows and columns to enlarge the pixel grid.</li>
+<li>Apply a Gaussian filter to interpolate pixel values.</li>
+</ol>
+</div><div class="columns">
+<div class="column" style="width:30%;">
+<p><strong>Original image:</strong> A <span class="math inline">\(2\times2\)</span> image.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+32 &amp; 96 \\
+160 &amp; 224
+\end{bmatrix}
+\]</span></p>
+</div><div class="column" style="width:35%;">
+<p><strong>Insert zeros:</strong> Double width &amp; height.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+32 &amp; 0 &amp; 96 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+160 &amp; 0 &amp; 224 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\]</span></p>
+</div><div class="column" style="width:35%;">
+<p><strong>Interpolation filter:</strong> <code>cv2.pyrUp()</code>.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+80 &amp; 96 &amp; 120 &amp; 128 \\
+112 &amp; 128 &amp; 152 &amp; 160 \\
+160 &amp; 176 &amp; 200 &amp; 208 \\
+176 &amp; 192 &amp; 216 &amp; 224
+\end{bmatrix}
+\]</span></p>
+</div></div>
+<ul>
+<li>The filter spreads pixel values into neighboring positions.</li>
+<li>Its weights are scaled to compensate for the inserted zeros.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Filtering changes values at the original pixel positions too. The enlarged image is a smooth estimate of the finer image.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="laplacian-pyramid-code" class="slide level2">
+<h2>Laplacian Pyramid in OpenCV</h2>
+<p>Use <strong>floating-point arrays</strong> to preserve <strong>negative residual values</strong>.</p>
+<style>
+#laplacian-pyramid-code .code-block pre code {
+  max-height: 700px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="d7f10d2d" class="cell code-block columns column-output-location" data-execution_count="15">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>G <span class="op">=</span> [I.astype(<span class="st">"float32"</span>)]</span>
+<span id="cb4-2"><a aria-label="2"></a>L <span class="op">=</span> []</span>
+<span id="cb4-3"><a aria-label="3"></a></span>
+<span id="cb4-4"><a aria-label="4"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb4-5"><a aria-label="5"></a>    y <span class="op">=</span> cv2.pyrDown(G[<span class="op">-</span><span class="dv">1</span>], borderType<span class="op">=</span>cv2.BORDER_REFLECT)</span>
+<span id="cb4-6"><a aria-label="6"></a>    u <span class="op">=</span> cv2.pyrUp(y, dstsize<span class="op">=</span>G[<span class="op">-</span><span class="dv">1</span>].shape[::<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb4-7"><a aria-label="7"></a>    L.append(G[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> u)</span>
+<span id="cb4-8"><a aria-label="8"></a>    G.append(y)</span>
+<span id="cb4-9"><a aria-label="9"></a></span>
+<span id="cb4-10"><a aria-label="10"></a>L.append(G[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Keep the smallest image too</span></span>
+<span id="cb4-11"><a aria-label="11"></a></span>
+<span id="cb4-12"><a aria-label="12"></a>heights <span class="op">=</span> [im.shape[<span class="dv">0</span>] <span class="cf">for</span> im <span class="kw">in</span> L[::<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb4-13"><a aria-label="13"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">4</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="fl">7.5</span>),</span>
+<span id="cb4-14"><a aria-label="14"></a>                      gridspec_kw<span class="op">=</span>{<span class="st">"height_ratios"</span>: heights})</span>
+<span id="cb4-15"><a aria-label="15"></a></span>
+<span id="cb4-16"><a aria-label="16"></a>W <span class="op">=</span> I.shape[<span class="dv">1</span>]</span>
+<span id="cb4-17"><a aria-label="17"></a><span class="cf">for</span> a, i <span class="kw">in</span> <span class="bu">zip</span>(ax, <span class="bu">range</span>(<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>)):</span>
+<span id="cb4-18"><a aria-label="18"></a>    h, w <span class="op">=</span> L[i].shape</span>
+<span id="cb4-19"><a aria-label="19"></a>    s <span class="op">=</span> <span class="bu">max</span>(<span class="bu">float</span>(<span class="bu">abs</span>(L[i]).<span class="bu">max</span>()), <span class="dv">1</span>)</span>
+<span id="cb4-20"><a aria-label="20"></a>    lo, hi <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>) <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span> <span class="cf">else</span> (<span class="op">-</span>s, s)</span>
+<span id="cb4-21"><a aria-label="21"></a>    a.imshow(L[i], cmap<span class="op">=</span><span class="st">"gray"</span>, vmin<span class="op">=</span>lo, vmax<span class="op">=</span>hi,</span>
+<span id="cb4-22"><a aria-label="22"></a>             interpolation<span class="op">=</span><span class="st">"nearest"</span>,</span>
+<span id="cb4-23"><a aria-label="23"></a>             extent<span class="op">=</span>((W<span class="op">-</span>w)<span class="op">/</span><span class="dv">2</span>, (W<span class="op">+</span>w)<span class="op">/</span><span class="dv">2</span>, h, <span class="dv">0</span>))</span>
+<span id="cb4-24"><a aria-label="24"></a>    a.set_xlim(<span class="dv">0</span>, W)</span>
+<span id="cb4-25"><a aria-label="25"></a>    label <span class="op">=</span> <span class="vs">r"</span><span class="dv">$</span><span class="vs">L_3=G_3</span><span class="dv">$</span><span class="vs">"</span> <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span> <span class="cf">else</span> <span class="vs">rf"</span><span class="dv">$</span><span class="vs">L_</span><span class="sc">{</span>i<span class="sc">}</span><span class="dv">$</span><span class="vs">"</span></span>
+<span id="cb4-26"><a aria-label="26"></a>    a.text(<span class="fl">1.02</span>, <span class="fl">.5</span>, label, fontsize<span class="op">=</span><span class="dv">28</span>,</span>
+<span id="cb4-27"><a aria-label="27"></a>           transform<span class="op">=</span>a.transAxes, va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb4-28"><a aria-label="28"></a>    a.axis(<span class="st">"off"</span>)</span>
+<span id="cb4-29"><a aria-label="29"></a>fig.subplots_adjust(left<span class="op">=</span><span class="fl">.03</span>, right<span class="op">=</span><span class="fl">.76</span>, bottom<span class="op">=</span><span class="fl">.02</span>,</span>
+<span id="cb4-30"><a aria-label="30"></a>                    top<span class="op">=</span><span class="fl">.98</span>, hspace<span class="op">=</span><span class="fl">.12</span>)</span>
+<span id="cb4-31"><a aria-label="31"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-15-output-1.png" width="668" height="710"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="what-must-we-store" class="slide level2">
+<h2>What Must We Store?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>What do we need to reconstruct the original image?</strong></p>
+<div class="fragment">
+<p><strong>1. The residuals</strong></p>
+<p><span class="math display">\[
+L_0,\quad L_1,\quad L_2
+\]</span></p>
+<p>These retain the detail lost between consecutive Gaussian levels.</p>
+<p><strong>2. The smallest Gaussian image</strong></p>
+<p><span class="math display">\[
+L_3 = G_3
+\]</span></p>
+<p>This provides the starting point for reconstruction.</p>
+</div>
+<div style="height: 40px;">
+
+</div>
+<div class="fragment">
+<p>The intermediate Gaussian images can also be recovered as needed.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/04_image_pyramids/laplacian_pyramid.png" height="680"></p>
+<div style="font-size: 0.65em; text-align: center;">
+<p>Residual contrast is scaled for display; <strong>mid-gray means zero</strong>.</p>
+<p>Reconstruction uses the original signed arrays.</p>
+</div>
+</div></div>
+</section>
+<section id="reconstructing-the-original-image" class="slide level2">
+<h2>Reconstructing the Original Image</h2>
+<div class="columns">
+<div class="column" style="width:38%;">
+<p><strong>Start with the smallest image.</strong></p>
+<p>At each step:</p>
+<ol type="1">
+<li><strong>Expand</strong> to the next finer resolution.</li>
+<li><strong>Add</strong> the residual at that level.</li>
+<li><strong>Repeat</strong> until reaching the original resolution.</li>
+</ol>
+<p><span class="math display">\[
+G_i = \operatorname{expand}(G_{i+1}) + L_i
+\]</span></p>
+<div class="fragment">
+<p>The residual restores the detail missing from the expanded image.</p>
+</div>
+<div class="fragment">
+<p>Keeping the residuals and smallest image allows <strong>exact reconstruction</strong>, apart from numerical roundoff.</p>
+</div>
+</div><div class="column" style="width:62%;">
+<div id="fdd395dd" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-17-output-1.png" width="912" height="780"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="gaussian-vs.-laplacian-pyramid" class="slide level2">
+<h2>Gaussian vs.&nbsp;Laplacian Pyramid</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Which pyramid takes more space to store?</strong></p>
+<div class="fragment">
+<ul>
+<li><p>Their raw storage is equal when using the same data type.</p></li>
+<li><p>A Laplacian pyramid can require <strong>more bits per value</strong> to represent signed differences and preserve precision.</p></li>
+<li><p>They take about <strong>33% more than the original image</strong>:</p></li>
+</ul>
+<p><span class="math display">\[
+N + \frac{N}{4} + \frac{N}{16} + \cdots
+\approx \frac{4}{3}N
+\]</span></p>
+</div>
+</div><div class="column" style="width:40%;">
+<div style="text-align: center;">
+<p><strong>Gaussian pyramid</strong></p>
+<p><img data-src="assets/04_image_pyramids/gaussian_pyramid.png" height="300"></p>
+<p><strong>Laplacian pyramid</strong></p>
+<p><img data-src="assets/04_image_pyramids/laplacian_pyramid.png" height="300"></p>
+</div>
+</div></div>
+</section>
+<section id="laplacian-pyramids-useful-for-compression" class="slide level2">
+<h2>Laplacian Pyramids Useful for Compression</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Raw array size and compressed file size are different.</strong></p>
+<ul>
+<li>Laplacian levels store <strong>differences between scales</strong>.</li>
+<li>In smooth regions, these differences are often <strong>zero or close to zero</strong>.</li>
+</ul>
+<p><strong>Frequently occurring values can be encoded using fewer bits</strong></p>
+<ul>
+<li>The residuals can be inexpensive to store after compression, even though the raw pyramid contains more values than the original image.</li>
+</ul>
+<p><strong>Lossy compression</strong></p>
+<ul>
+<li>We can round small residuals to zero or store them with less precision.</li>
+<li>This reduces storage further, at the cost of some image detail.</li>
+<li>Actual savings depend on the image and the encoding method.</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="image-center">
+<p><img data-src="assets/04_image_pyramids/laplacian_pyramid.png" height="500"></p>
+</div>
+</div></div>
+</section>
+<section id="where-are-image-pyramids-used" class="slide level2">
+<h2>Where Are Image Pyramids Used?</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Application</th>
+<th style="text-align: left;">How pyramids help</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Panorama stitching and blending</strong></td>
+<td style="text-align: left;">Combine images at multiple scales to reduce visible seams.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Exposure fusion</strong></td>
+<td style="text-align: left;">Combine well-exposed regions from photographs taken at different exposures.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Motion estimation and feature tracking</strong></td>
+<td style="text-align: left;">Estimate motion at coarse resolutions, then refine it at finer resolutions.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Detail and local-contrast adjustment</strong></td>
+<td style="text-align: left;">Strengthen or suppress image details at selected spatial scales.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="application-selective-detail-enhancement" class="slide level2">
+<h2>Application: Selective Detail Enhancement</h2>
+<div id="3f65d095" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-18-output-1.png" class="quarto-figure quarto-figure-center" width="1526" height="422"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Amplify foreground residuals, attenuate background residuals, then reconstruct:</li>
+</ul>
+<p><span class="math display">\[
+\widetilde{L}_i
+=
+\left[\alpha M_i+\beta(1-M_i)\right]L_i,
+\qquad
+\alpha=1.5,\quad \beta=0.25
+\]</span></p>
+<ul>
+<li><span class="math inline">\(M_i\)</span> is the foreground mask at level <span class="math inline">\(i\)</span>: white selects the foreground, black selects the background, and gray gives a gradual transition.</li>
+</ul>
+</section>
+<section id="steerable-pyramids" class="slide level2 small">
+<h2>Steerable Pyramids</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<ul>
+<li>A <strong>multi-scale, multi-orientation</strong> image representation.</li>
+<li>Each pyramid level contains responses to structures at several orientations.</li>
+<li>A filter is <strong>steerable</strong> when the response at an arbitrary orientation can be synthesized from a small set of basis filters.</li>
+</ul>
+<p>For first-order derivative <strong>basis responses</strong>:</p>
+<p><span class="math display">\[
+h_\theta
+=
+\cos(\theta)\,h_x
++
+\sin(\theta)\,h_y
+\]</span></p>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>Edge and contour analysis</li>
+<li>Texture and orientation analysis</li>
+<li>Image denoising and enhancement</li>
+<li>Image fusion</li>
+<li>Computational models of visual perception</li>
+</ul>
+</div><div class="column" style="width:58%;">
+<div id="4768bf16" class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-19-output-1.png" class="quarto-figure quarto-figure-center" width="855" height="695"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="font-size: 0.62em; margin-top: -0.3em;">
+<p>A simplified <strong>first-order steerable pyramid</strong>: rows correspond to Gaussian pyramid levels <span class="math inline">\(G_0\)</span>, <span class="math inline">\(G_1\)</span>, and <span class="math inline">\(G_2\)</span>, while columns show orientation-selective responses synthesized from the basis responses <span class="math inline">\(h_x\)</span> and <span class="math inline">\(h_y\)</span>.</p>
+</div>
+</div></div>
+</section>
+<section id="wavelets" class="slide level2 small">
+<h2>Wavelets</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p>A <strong>wavelet transform</strong> separates an image into spatial-frequency subbands:</p>
+<ul>
+<li><strong>LL:</strong> coarse approximation</li>
+<li><strong>LH:</strong> horizontal detail</li>
+<li><strong>HL:</strong> vertical detail</li>
+<li><strong>HH:</strong> diagonal detail</li>
+</ul>
+<p>The <strong>LL image can be decomposed again</strong>, producing a multi-scale representation.</p>
+<h3 id="applications-1">Applications</h3>
+<ul>
+<li>Image compression — e.g., <strong>JPEG 2000</strong></li>
+<li>Image denoising</li>
+<li>Feature extraction</li>
+<li>Image fusion</li>
+<li>Medical and scientific imaging</li>
+</ul>
+</div><div class="column" style="width:58%;">
+<div id="7c8d6261" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="04_image_pyramids_files/figure-revealjs/cell-20-output-1.png" class="quarto-figure quarto-figure-center" width="864" height="685"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="font-size: 0.62em; margin-top: -0.3em;">
+<p>Haar wavelet decomposition: at each level, the input is separated into a low-frequency approximation LL and three directional detail bands. The LL band becomes the input to the next level.</p>
+</div>
+</div></div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Downsampling reduces image size, but naïve subsampling can discard important structure and create <strong>aliasing</strong>.</li>
+<li>Anti-aliasing smooths the image before downsampling so high-frequency detail does not fold into lower frequencies.</li>
+<li>A <strong>Gaussian pyramid</strong> stores progressively smaller, smoother versions of an image.</li>
+<li>A <strong>Laplacian pyramid</strong> stores what is lost between Gaussian pyramid levels: the image details or residuals.</li>
+<li>Laplacian pyramids can reconstruct the original image when the residuals and coarsest image are preserved.</li>
+<li>Multi-scale image representations are widely used in compression, blending, tracking, enhancement, steerable pyramids, and wavelets.</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Computer Vision; Colorado School of Mines | Kaveh Fathian</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'pdfMaxPagesPerSlide': 1,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
