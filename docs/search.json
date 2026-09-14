@@ -2191,6 +2191,608 @@
     "text": "Key Takeaways\n\nA filter maps each output location to a function of a local input neighborhood.\nA kernel’s weights determine whether the filter smooths, differentiates, shifts, or sharpens.\nCorrelation uses the kernel as written; convolution rotates it by \\(180^\\circ\\).\nGaussian filters are composable and separable.\nSobel filters estimate signed spatial derivatives and edge strength.\nBoundary rules and output modes are part of the algorithm.\nMedian filtering is nonlinear and robust to isolated extreme values."
   },
   {
+    "objectID": "lectures/05_fourier_transform.html#learning-objectives",
+    "href": "lectures/05_fourier_transform.html#learning-objectives",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nDistinguish Fourier series, and the discrete Fourier transform (DFT)\nInterpret amplitude, phase, and frequency locations in an image spectrum.\nPredict how image structure, translation, rotation, and scale affect the Fourier transform.\nReconstruct images from selected complex coefficients and explain the connection to compression.\nApply the convolution theorem to image filtering, including our correlation convention.\nExplain aliasing using the Nyquist condition and choose low-pass filtering before downsampling."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#fouriers-idea",
+    "href": "lectures/05_fourier_transform.html#fouriers-idea",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Fourier’s Idea",
+    "text": "Fourier’s Idea\nCan we build a complicated signal from simple waves?\n\n\n\n\n\n Joseph Fourier (1768–1830)\n\n\nThe Fourier series claim (1807):\n\nAny univariate function can be rewritten as a weighted sum of sines and cosines of different frequencies.\n\n\n\n\n\n\n Malus\n\n Lagrange\n\n Legendre\n\n Laplace\n\n\n\nThe initial reviewers (Lagrange, Laplace, Monge, and Lacroix) were skeptical, partly because the proofs lacked rigor. Publication of his work was initially withheld.\nThe later committee, which included Lagrange, Laplace, Malus, and Legendre, awarded Fourier a prize but criticized the generality and rigor of his analysis."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#is-fouriers-claim-true",
+    "href": "lectures/05_fourier_transform.html#is-fouriers-claim-true",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Is Fourier’s Claim True?",
+    "text": "Is Fourier’s Claim True?\n\n\n\nWell, almost.\n\n\n\n\n\nThe theorem requires additional conditions:\n\nA sufficient condition is that the function is periodic and piecewise smooth.\n\nAt continuous points, the series converges to the function’s value.\nAt a jump, it converges to the average of the values on either side.\n\n\n\n\n\n\n\nVery surprising result at the time, because it implied that\n\nEven signals with sharp corners or jumps can have a representation built from smooth sine and cosine waves.\n\n\n\n Joseph Fourier"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#basic-building-block",
+    "href": "lectures/05_fourier_transform.html#basic-building-block",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Basic Building Block",
+    "text": "Basic Building Block\nA sinusoid:\n\\[\nA\\sin(\\omega x + \\phi)\n\\]\n\n\n\n\n\n\n\\(A\\): amplitude — controls the height of the oscillations.\n\\(\\omega\\): angular frequency — controls how rapidly the signal oscillates.\n\n\n\n\\(\\phi\\): phase — shifts the wave horizontally.\n\\(x\\): variable — for example, time or spatial position.\n\n\n\n\n\n\nFourier’s idea: Build a periodic signal by adding sinusoids with different frequencies, amplitudes, and phases:\n\\[\ny(x) = c_0 + \\sum_{k=1}^{\\infty}\nA_k \\sin(2\\pi k f_0 x + \\phi_k)\n\\]\n\n\\(c_0\\): mean value.\n\\(f_0\\): fundamental frequency."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#example-adding-sinusoids",
+    "href": "lectures/05_fourier_transform.html#example-adding-sinusoids",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Example: Adding Sinusoids",
+    "text": "Example: Adding Sinusoids\nHow would you generate this function?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny(x) = \\sin(2\\pi x) + \\frac{1}{3}\\sin(6\\pi x)\n\\]"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#example-approximating-a-square-wave",
+    "href": "lectures/05_fourier_transform.html#example-approximating-a-square-wave",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Example: Approximating a Square Wave",
+    "text": "Example: Approximating a Square Wave\nHow would you generate this function?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\n\\frac{4}{\\pi}\n\\left[\n\\sin(2\\pi x) + \\frac{1}{3}\\sin(6\\pi x)\n\\right]\n\\]\n\n\n\n\n\n\nWhat happens if we add higher-frequency sinusoids?"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#adding-more-harmonics",
+    "href": "lectures/05_fourier_transform.html#adding-more-harmonics",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Adding More Harmonics",
+    "text": "Adding More Harmonics\nAdd the next harmonic at each step:"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-square-wave-fourier-series",
+    "href": "lectures/05_fourier_transform.html#the-square-wave-fourier-series",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Square-Wave Fourier Series",
+    "text": "The Square-Wave Fourier Series\n\n\nHow would you express this mathematically?\n\n\n\n\n\n\n\n\n\n\n\nGeneral Fourier series:\n\\[\ny(x) = c_0 + \\sum_{k=1}^{\\infty}\nA_k \\sin(2\\pi k f_0 x + \\phi_k)\n\\]\n\n\nFor this square wave, \\(c_0=0\\) and \\(f_0=1\\):\n\\[\ny(x) =\n\\sum_{\\substack{k=1\\\\k\\text{ odd}}}^{\\infty}\n\\frac{4}{k\\pi}\\sin(2\\pi kx)\n\\]\n\nFrequencies: \\(1, 3, 5, 7, \\ldots\\)\nAmplitudes: \\(\\displaystyle \\frac{4}{\\pi}, \\frac{4}{3\\pi}, \\frac{4}{5\\pi}, \\ldots\\)\nPhases: \\(0, 0, 0, \\ldots\\)"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-square-wave-in-the-frequency-domain",
+    "href": "lectures/05_fourier_transform.html#the-square-wave-in-the-frequency-domain",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Square Wave in the Frequency Domain",
+    "text": "The Square Wave in the Frequency Domain\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\ny_6(x) =\n\\frac{4}{\\pi}\\sin(2\\pi x)\n+ \\frac{4}{3\\pi}\\sin(6\\pi x)\n+ \\frac{4}{5\\pi}\\sin(10\\pi x)\n+ \\frac{4}{7\\pi}\\sin(14\\pi x)\n+ \\frac{4}{9\\pi}\\sin(18\\pi x)\n+ \\frac{4}{11\\pi}\\sin(22\\pi x)\n\\]\n\n\n\nEach sinusoid produces two peaks at frequencies \\(\\pm f\\). Matching colors connect each sinusoid to its peaks.\nThe black curve in the middle shows the six-term sum; the ideal square wave requires infinitely many terms."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#visualizing-the-frequency-spectrum",
+    "href": "lectures/05_fourier_transform.html#visualizing-the-frequency-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Visualizing the Frequency Spectrum",
+    "text": "Visualizing the Frequency Spectrum\n\\[\nf(x) = c_0 + \\sin(2\\pi x) + \\frac{1}{3}\\sin(6\\pi x),\n\\qquad c_0 = 1\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe constant \\(c_0\\) shifts the signal vertically without changing its oscillations.\n\nHow does each term appear in the frequency domain?"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#visualizing-the-frequency-spectrum-1",
+    "href": "lectures/05_fourier_transform.html#visualizing-the-frequency-spectrum-1",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Visualizing the Frequency Spectrum",
+    "text": "Visualizing the Frequency Spectrum\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA sinusoid of amplitude \\(A\\) produces two peaks, each of height \\(A/2\\), at its positive and negative frequencies."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#what-is-at-zero-frequency",
+    "href": "lectures/05_fourier_transform.html#what-is-at-zero-frequency",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "What Is at Zero Frequency?",
+    "text": "What Is at Zero Frequency?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe DC component represents the signal’s mean value.\n\\[\nc_0 = \\frac{1}{N}\\sum_{n=0}^{N-1} f(x_n) = 1\n\\]\n\nThe constant contributes one peak at zero frequency, with magnitude \\(|c_0|\\). It is not split into two peaks.\nFor images, the DC component corresponds to the average pixel intensity."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#a-1d-signal-as-an-image",
+    "href": "lectures/05_fourier_transform.html#a-1d-signal-as-an-image",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "A 1D Signal as an Image",
+    "text": "A 1D Signal as an Image\nRepeat the same 1D intensity signal along every image row.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat do the three bright spots represent?\n\n\n\n\nCenter: the mean image intensity.\nSide pair: the sinusoidal variation along \\(x\\). Every row is identical, so there is no variation along \\(y\\)."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#stripe-spacing-and-frequency",
+    "href": "lectures/05_fourier_transform.html#stripe-spacing-and-frequency",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Stripe Spacing and Frequency",
+    "text": "Stripe Spacing and Frequency\nWhat changes when the stripes become narrower?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNarrower stripes mean higher spatial frequency.\nThe side peaks move farther from the center.\nThe center spot stays the same because the mean intensity is unchanged."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#diagonal-stripes",
+    "href": "lectures/05_fourier_transform.html#diagonal-stripes",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Diagonal Stripes",
+    "text": "Diagonal Stripes\nDoes the Fourier intensity change along \\(x\\), along \\(y\\), or both?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth. The sinusoid varies along a diagonal direction.\n\nIts frequency has both horizontal and vertical components.\nThe two side peaks lie off the horizontal and vertical axes.\nThe line joining the two side peaks is perpendicular to the stripes."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#combining-patterns",
+    "href": "lectures/05_fourier_transform.html#combining-patterns",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Combining Patterns",
+    "text": "Combining Patterns\nWhat happens when we average these two images?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth peaks appear in the combined spectrum.\nAveraging halves each pattern’s contribution, so its side peaks become dimmer.\nThe center spot stays the same because both images have the same mean intensity."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#what-about-nonperiodic-signals",
+    "href": "lectures/05_fourier_transform.html#what-about-nonperiodic-signals",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "What About Nonperiodic Signals?",
+    "text": "What About Nonperiodic Signals?\nFourier series represent periodic signals as sums of sinusoids.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFourier series\n\nSignal pattern repeats with period \\(T\\).\nUses a discrete set of frequencies.\n\nHow can we represent a signal that does not repeat?\n\n\nFourier transform: Extends the idea to nonperiodic signals, allowing a continuous range of frequencies."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#fourier-transform-pairs",
+    "href": "lectures/05_fourier_transform.html#fourier-transform-pairs",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Fourier Transform Pairs",
+    "text": "Fourier Transform Pairs\n\n\nSpatial domain: \\(f(x)\\)\n\n\n\n\n\n\n\n\n\n\nFrequency domain: \\(\\operatorname{Re}\\{F(\\nu)\\}\\)\n\n\n\n\n\n\n\n\n\n\n\nBox ↔︎ sinc: an example of Fourier-transform duality.\nA Gaussian transforms into another Gaussian; a broader Gaussian produces a narrower spectrum."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#complex-numbers-cartesian-form",
+    "href": "lectures/05_fourier_transform.html#complex-numbers-cartesian-form",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Complex Numbers: Cartesian Form",
+    "text": "Complex Numbers: Cartesian Form\n\n\nA complex number has two parts:\n\\[\nz = a + jb,\n\\qquad j^2=-1\n\\]\n\n\n\n\n\n\\(a\\): real part.\n\\(b\\): imaginary part.\n\n\n\n\n\n\nFor example:\n\\[\nz=3+j4\n\\]\nThe point has coordinates \\((a,b)=(3,4)\\) in the complex plane."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#complex-numbers-polar-form",
+    "href": "lectures/05_fourier_transform.html#complex-numbers-polar-form",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Complex Numbers: Polar Form",
+    "text": "Complex Numbers: Polar Form\n\n\nDescribe the same point using its distance and angle:\n\\[\nz = r(\\cos\\theta + j\\sin\\theta)\n\\]\n\n\n\nHow do we compute \\(r\\) and \\(\\theta\\)?\n\n\\[\nr = |z| = \\sqrt{a^2+b^2}\n\\]\n\\[\n\\theta = \\operatorname{atan2}(b,a)\n\\]\natan2 accounts for the correct quadrant.\n\n\nFor \\(z=3+j4\\):\n\\[\nr=5,\n\\qquad \\theta\\approx53.13^\\circ\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nSame complex number, different coordinates: \\((a,b)\\) or \\((r,\\theta)\\)."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#complex-numbers-exponential-form",
+    "href": "lectures/05_fourier_transform.html#complex-numbers-exponential-form",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Complex Numbers: Exponential Form",
+    "text": "Complex Numbers: Exponential Form\n\n\nEuler’s formula:\n\n\\[\ne^{j\\theta} = \\cos\\theta + j\\sin\\theta\n\\]\n\n\n\n\n\nTherefore:\n\\[\nz = r(\\cos\\theta+j\\sin\\theta)\n  = re^{j\\theta}\n\\]\n\n\\(r\\): magnitude.\n\\(\\theta\\): phase.\n\n\n\n\n\n\nFor our example, \\(\\theta\\approx0.9273\\) radians:\n\\[\n3+j4 \\approx 5e^{j\\,0.9273}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nEuler’s formula lets us express the sine and cosine components of the Fourier transform using complex exponentials."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-discrete-fourier-transform",
+    "href": "lectures/05_fourier_transform.html#the-discrete-fourier-transform",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Discrete Fourier Transform",
+    "text": "The Discrete Fourier Transform\nFor a sampled signal \\(f[n]\\) containing \\(N\\) samples:\n\n\n\n\n\nDiscrete Fourier transform (DFT)\n\\[\nF[k] =\n\\frac{1}{N}\n\\sum_{n=0}^{N-1}\nf[n]e^{-j2\\pi kn/N}\n\\]\n\nInverse DFT\n\\[\nf[n] =\n\\sum_{k=0}^{N-1}\nF[k]e^{j2\\pi kn/N}\n\\]\n\n\n\n\n\n\\(n=0,\\ldots,N-1\\): sample index.\n\\(k=0,\\ldots,N-1\\): frequency-bin index.\nContinuous spectrum becomes finite sums.\n\nWhere is the connection to our “ \\(f[n]\\) is a sum of sine waves” idea?"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-inverse-transform-adds-waves",
+    "href": "lectures/05_fourier_transform.html#the-inverse-transform-adds-waves",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Inverse Transform Adds Waves",
+    "text": "The Inverse Transform Adds Waves\nRecall Euler’s formula:\n\\[\ne^{j\\theta} = \\cos\\theta + j\\sin\\theta\n\\]\n\n\n\nSubstitute it into the inverse DFT:\n\\[\nf[n] =\n\\sum_{k=0}^{N-1}\nF[k]e^{j2\\pi kn/N}\n=\n\\sum_{k=0}^{N-1}\nF[k]\n\\left[\n\\cos\\left(\\frac{2\\pi kn}{N}\\right)\n+\nj\\sin\\left(\\frac{2\\pi kn}{N}\\right)\n\\right]\n\\]\n\n\n\n\nThe sines and cosines are the wave components.\nEach complex coefficient \\(F[k]\\) determines the component’s magnitude and phase.\nThe sum over \\(k\\) combines all frequency components.\nFor a real-valued signal, matching positive and negative frequencies combine so that the imaginary parts cancel."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-2d-dft-and-its-inverse",
+    "href": "lectures/05_fourier_transform.html#the-2d-dft-and-its-inverse",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The 2D DFT and Its Inverse",
+    "text": "The 2D DFT and Its Inverse\nFor an image \\(I[m,n]\\) with \\(M\\) rows and \\(N\\) columns:\n\n\nForward: image to frequency coefficients\n\n\\[\nF[v,u] =\n\\sum_{m=0}^{M-1}\\sum_{n=0}^{N-1}\nI[m,n]\\,\ne^{-j2\\pi\\left(\\frac{vm}{M}+\\frac{un}{N}\\right)}\n\\]\n\n\nInverse: frequency coefficients to image\n\n\\[\nI[m,n] =\n\\frac{1}{MN}\n\\sum_{v=0}^{M-1}\\sum_{u=0}^{N-1}\nF[v,u]\\,\ne^{j2\\pi\\left(\\frac{vm}{M}+\\frac{un}{N}\\right)}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\nNine pixel values become nine complex coefficients.\nThe inverse recovers exactly the same original pixel values."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-dft-as-a-matrix-multiplication",
+    "href": "lectures/05_fourier_transform.html#the-dft-as-a-matrix-multiplication",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The DFT as a Matrix Multiplication",
+    "text": "The DFT as a Matrix Multiplication\nA 1D DFT computes a weighted sum for each frequency:\n\\[\nF[k] =\n\\sum_{n=0}^{N-1}\nf[n]\\,\n\\underbrace{e^{-j2\\pi kn/N}}_{\\text{weight for sample }n}\n\\]\nCollect these weights into a matrix:\n\\[\nW_N[k,n]=\\omega^{kn},\n\\qquad\n\\omega=e^{-j2\\pi/N}\n\\]\n\n\\[\n\\begin{bmatrix}\nF[0]\\\\\nF[1]\\\\\n\\vdots\\\\\nF[N-1]\n\\end{bmatrix}\n=\n\\underbrace{\n\\begin{bmatrix}\n1 & 1 & \\cdots & 1\\\\\n1 & \\omega & \\cdots & \\omega^{N-1}\\\\\n\\vdots & \\vdots & \\ddots & \\vdots\\\\\n1 & \\omega^{N-1} & \\cdots & \\omega^{(N-1)^2}\n\\end{bmatrix}\n}_{\\mathbf{W}_N}\n\\begin{bmatrix}\nf[0]\\\\\nf[1]\\\\\n\\vdots\\\\\nf[N-1]\n\\end{bmatrix}\n\\]\n\nEach row of \\(\\mathbf{W}_N\\) computes one frequency coefficient:\n\\[\n\\mathbf{F}=\\mathbf{W}_N\\mathbf{f}\n\\]\nThe FFT computes this same DFT efficiently, without explicitly building large DFT matrices."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#computing-the-image-dft-with-matrices",
+    "href": "lectures/05_fourier_transform.html#computing-the-image-dft-with-matrices",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Computing the Image DFT with Matrices",
+    "text": "Computing the Image DFT with Matrices\nFor our \\(3\\times3\\) image, set \\(N=3\\) in the DFT matrix:\n\n\\[\n\\mathbf{W}_3 =\n\\begin{bmatrix}\n1 & 1 & 1\\\\\n1 & \\omega & \\omega^2\\\\\n1 & \\omega^2 & \\omega\n\\end{bmatrix},\n\\qquad\n\\omega=e^{-j2\\pi/3}\n\\]\n\nHere \\(\\omega^3=1\\), so \\(\\omega^4=\\omega\\).\n\n\\[\n\\underbrace{\\mathbf{B}=\\mathbf{I}\\mathbf{W}_3^T}\n_{\\text{Transform each row}}\n\\qquad\n\\underbrace{\\mathbf{F}=\\mathbf{W}_3\\mathbf{B}}\n_{\\text{Transform each column}}\n\\]\n\n\n\n\n\n\n\n\n\n\nThese are the same Fourier coefficients as before, computed using row and column transforms."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#magnitude-and-phase-of-the-same-transform",
+    "href": "lectures/05_fourier_transform.html#magnitude-and-phase-of-the-same-transform",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Magnitude and Phase of the Same Transform",
+    "text": "Magnitude and Phase of the Same Transform\nAt each frequency, the same coefficient has two representations:\n\n\nCartesian form:\n\\[\nF=a+jb\n\\]\n\nReal part: \\(a=\\operatorname{Re}\\{F\\}\\).\nImaginary part: \\(b=\\operatorname{Im}\\{F\\}\\).\n\n\nPolar form:\n\\[\nF=Ae^{j\\theta}\n\\]\n\nMagnitude: \\(A=|F|=\\sqrt{a^2+b^2}\\).\nPhase: \\(\\theta=\\operatorname{atan2}(b,a)\\).\n\n\n\n\n\n\n\n\n\n\n\nMagnitude and phase together retain the information needed for reconstruction."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#logo-dft-code",
+    "href": "lectures/05_fourier_transform.html#logo-dft-code",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Computing an Image DFT with OpenCV",
+    "text": "Computing an Image DFT with OpenCV\n\n\n\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nI = cv2.imread(\"assets/05_fourier_transform/co_logo.png\",\n               cv2.IMREAD_GRAYSCALE)\n\nI = cv2.resize(I, (64, 64), interpolation=cv2.INTER_AREA)\nI = I.astype(np.float32) / 255\nH, W = I.shape\n\nF_raw = cv2.dft(I, flags=cv2.DFT_COMPLEX_OUTPUT)\nF = np.roll(F_raw, (H//2, W//2), axis=(0, 1))\n\na, b = F[:, :, 0], F[:, :, 1]\nA, theta = cv2.cartToPolar(a, b)\ntheta = np.where(theta &gt; np.pi, theta - 2*np.pi, theta)\ntheta[A == 0] = np.nan\n\n# Compress contrast for display only.\nreal_view = np.sign(a) * np.log1p(np.abs(a))\nimag_view = np.sign(b) * np.log1p(np.abs(b))\nL = max(np.abs(real_view).max(), np.abs(imag_view).max())\n\nviews = [I, real_view, imag_view, np.log1p(A), theta]\ntitles = [\"Image\", \"Real (signed log)\", \"Imaginary (signed log)\",\n          \"Magnitude (log)\", \"Phase\"]\nlimits = [(0, 1), (-L, L), (-L, L), (0, None), (-np.pi, np.pi)]\n\nfig, ax = plt.subplots(2, 3, figsize=(8.2, 6))\nfor axis, view, title, (lo, hi) in zip(ax.flat, views, titles, limits):\n    axis.imshow(view, cmap=\"gray\", vmin=lo, vmax=hi,\n                interpolation=\"nearest\")\n    axis.set_title(title, fontsize=14)\n    axis.axis(\"off\")\nax.flat[-1].axis(\"off\")\n\nfig.tight_layout()\nplt.show()\nplt.close(fig)"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#why-center-the-fourier-spectrum",
+    "href": "lectures/05_fourier_transform.html#why-center-the-fourier-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Why Center the Fourier Spectrum?",
+    "text": "Why Center the Fourier Spectrum?\nOpenCV stores the zero-frequency coefficient at the upper-left corner.\nFor visualization, the convention is to move it to the center.\n\n\n\n\n\n\n\n\n\n\nThe center represents zero frequency, with positive and negative frequencies on opposite sides.\nFrequencies farther from the center represent more rapid intensity changes.\nCentering rearranges the coefficients; it does not change their values or the original image’s pixel coordinates."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#reading-a-fourier-spectrum",
+    "href": "lectures/05_fourier_transform.html#reading-a-fourier-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Reading a Fourier Spectrum",
+    "text": "Reading a Fourier Spectrum\nHow do these images appear in the spectrum?\n\n\n\n\n\n\n\n\n\n\nFiner stripes: the two side peaks move farther from the center.\nOrientation: the line joining the peaks is perpendicular to the stripes.\nCenter peak: these images have a nonzero mean intensity."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#two-extremes-a-point-and-a-constant-image",
+    "href": "lectures/05_fourier_transform.html#two-extremes-a-point-and-a-constant-image",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Two Extremes: A Point and a Constant Image",
+    "text": "Two Extremes: A Point and a Constant Image\nWhat frequencies are needed to represent each image?\n\n\n\n\n\n\n\n\n\n\nOne bright pixel: all frequencies contribute equally; every DFT magnitude is \\(1\\).\nConstant image: only the zero-frequency component remains; its value is the number of pixels in the image."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#from-a-point-to-a-line",
+    "href": "lectures/05_fourier_transform.html#from-a-point-to-a-line",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "From a Point to a Line",
+    "text": "From a Point to a Line\nA horizontal line is constant horizontally, but changes sharply vertically.\n\n\n\n\n\n\n\n\n\n\n\nAlong the line\nThere is no horizontal variation.\nOnly the horizontal frequency \\(u=0\\) is needed.\n\nAcross the line\nA one-pixel change requires all vertical frequencies.\nThe spectrum extends along the \\(v\\) axis.\n\nA horizontal line produces a vertical line in the Fourier magnitude."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#repeated-points-produce-repeated-peaks",
+    "href": "lectures/05_fourier_transform.html#repeated-points-produce-repeated-peaks",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Repeated Points Produce Repeated Peaks",
+    "text": "Repeated Points Produce Repeated Peaks\nA regular grid of bright pixels is called an impulse train or impulse comb.\n\n\n\n\n\n\n\n\n\n\nA regular grid in the image produces a regular grid in the spectrum.\nFarther-apart points → closer-together frequency peaks."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#translation-changes-phase-not-magnitude",
+    "href": "lectures/05_fourier_transform.html#translation-changes-phase-not-magnitude",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Translation Changes Phase, Not Magnitude",
+    "text": "Translation Changes Phase, Not Magnitude\nMove the square without changing its shape or brightness.\n\n\n\n\n\n\n\n\n\n\nThe magnitude stays the same: the same frequencies are present.\nThe phase changes: the waves must align at a different location.\nMagnitude alone cannot tell us where the square is located."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#spatial-size-and-frequency-spread",
+    "href": "lectures/05_fourier_transform.html#spatial-size-and-frequency-spread",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Spatial Size and Frequency Spread",
+    "text": "Spatial Size and Frequency Spread\nCompare the same shape at two different sizes.\n\n\n\n\n\n\n\n\n\n\nSmaller square → broader central lobe in the spectrum.\nLarger square → narrower central lobe.\nSpatial extent and frequency spread have an inverse relationship."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#rotating-an-image-rotates-its-spectrum",
+    "href": "lectures/05_fourier_transform.html#rotating-an-image-rotates-its-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Rotating an Image Rotates Its Spectrum",
+    "text": "Rotating an Image Rotates Its Spectrum\nThe spectrum follows the orientation of the image.\n\n\n\n\n\n\n\n\n\n\nRotating the bar rotates this frequency pattern by the same angle."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#quiz-match-each-image-to-its-fourier-spectrum",
+    "href": "lectures/05_fourier_transform.html#quiz-match-each-image-to-its-fourier-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Quiz: Match Each Image to Its Fourier Spectrum",
+    "text": "Quiz: Match Each Image to Its Fourier Spectrum\nMatch images A–H to the centered DFT amplitudes 1–8.\n\n\n\n\n\n\n\n\n\nExplain your matches using frequency spread, orientation, and repeated patterns.\n\nAnswer key:\n\nA → 3: Gaussian kernel. Its Fourier amplitude is also Gaussian-shaped.\nB → 5: Sobel x filter. It responds to horizontal intensity variation and has zero response at DC.\nC → 2: Honeycomb. Repeated structures produce frequency peaks away from the center.\nD → 7: Enlarged honeycomb. Larger cells move the characteristic frequencies closer to the center.\nE → 6: Manitou steps. The predominantly horizontal edges produce strong vertical frequency content.\nF → 8: Flower.\nG → 1: Rotated aspen trees. The diagonal trunks produce strong frequency content in the perpendicular diagonal direction.\nH → 4: Aspen trees. The predominantly vertical trunks produce strong horizontal frequency content.\n\nThe rotated aspen image is also cropped and enlarged to remove empty corners. Its spectrum therefore reflects rotation, a change in scale, and different image boundaries—not rotation alone.\nThe Sobel kernel is displayed as an enlarged 3 × 3 array, but its DFT is computed after zero-padding to 64 × 64.\nDisplay contrast is adjusted independently for each spectrum. Compare structure rather than absolute brightness across panels."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#reconstructing-an-image-from-fourier-coefficients",
+    "href": "lectures/05_fourier_transform.html#reconstructing-an-image-from-fourier-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Reconstructing an Image from Fourier Coefficients",
+    "text": "Reconstructing an Image from Fourier Coefficients\n\n\n\n\n\n\n\n\n\n\n\n\nThe inverse DFT reconstructs the image:\n\\[\nI = \\mathcal{F}^{-1}(F).\n\\]\nWhat if we retain only some coefficients?\n\nKeep the selected complex values.\nSet every other coefficient to zero.\nApply the inverse DFT.\n\n\\[\n\\widehat{I}_K\n=\n\\mathcal{F}^{-1}(M_K \\odot F)\n\\]\nHere, \\(M_K\\) is a binary mask selecting \\(K\\) coefficients.\n\nWhich selection works better: random frequencies or frequencies near the center?"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-1-coefficient",
+    "href": "lectures/05_fourier_transform.html#random-selection-1-coefficient",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 1 Coefficient",
+    "text": "Random Selection: 1 Coefficient\n\n\n\n\n\n\n\n\n\nOnly DC remains: every pixel equals the original image’s mean intensity.\nWhite pixels in the mask mark retained coefficients; black pixels mark discarded coefficients."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-9-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-9-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 9 Coefficients",
+    "text": "Random Selection: 9 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-25-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-25-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 25 Coefficients",
+    "text": "Random Selection: 25 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-65-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-65-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 65 Coefficients",
+    "text": "Random Selection: 65 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-129-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-129-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 129 Coefficients",
+    "text": "Random Selection: 129 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-257-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-257-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 257 Coefficients",
+    "text": "Random Selection: 257 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-513-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-513-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 513 Coefficients",
+    "text": "Random Selection: 513 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-1025-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-1025-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 1,025 Coefficients",
+    "text": "Random Selection: 1,025 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-2049-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-2049-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 2,049 Coefficients",
+    "text": "Random Selection: 2,049 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-4097-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-4097-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 4,097 Coefficients",
+    "text": "Random Selection: 4,097 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-6145-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-6145-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 6,145 Coefficients",
+    "text": "Random Selection: 6,145 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-8193-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-8193-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 8,193 Coefficients",
+    "text": "Random Selection: 8,193 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-12289-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-12289-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 12,289 Coefficients",
+    "text": "Random Selection: 12,289 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-16385-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-16385-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 16,385 Coefficients",
+    "text": "Random Selection: 16,385 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-20481-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-20481-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: 20,481 Coefficients",
+    "text": "Random Selection: 20,481 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#random-selection-all-24257-coefficients",
+    "href": "lectures/05_fourier_transform.html#random-selection-all-24257-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Random Selection: All 24,257 Coefficients",
+    "text": "Random Selection: All 24,257 Coefficients\n\n\n\n\n\n\n\n\n\nWith all coefficients retained, the inverse DFT recovers the original image.\nCan we obtain a useful reconstruction with far fewer coefficients?"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-1-coefficient",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-1-coefficient",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 1 Coefficient",
+    "text": "Selecting from the Center: 1 Coefficient\n\n\n\n\n\n\n\n\n\nStart with DC, then expand outward to include progressively higher frequencies.\nWe will use the same coefficient counts as before."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-9-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-9-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 9 Coefficients",
+    "text": "Selecting from the Center: 9 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-25-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-25-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 25 Coefficients",
+    "text": "Selecting from the Center: 25 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-65-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-65-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 65 Coefficients",
+    "text": "Selecting from the Center: 65 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-129-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-129-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 129 Coefficients",
+    "text": "Selecting from the Center: 129 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-257-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-257-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 257 Coefficients",
+    "text": "Selecting from the Center: 257 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-513-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-513-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 513 Coefficients",
+    "text": "Selecting from the Center: 513 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-1025-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-1025-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 1,025 Coefficients",
+    "text": "Selecting from the Center: 1,025 Coefficients\n\n\n\n\n\n\n\n\n\nThe scene is already recognizable using about 4.2% of the coefficients."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-2049-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-2049-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 2,049 Coefficients",
+    "text": "Selecting from the Center: 2,049 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-4097-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-4097-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 4,097 Coefficients",
+    "text": "Selecting from the Center: 4,097 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-6145-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-6145-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 6,145 Coefficients",
+    "text": "Selecting from the Center: 6,145 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-8193-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-8193-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 8,193 Coefficients",
+    "text": "Selecting from the Center: 8,193 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-12289-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-12289-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 12,289 Coefficients",
+    "text": "Selecting from the Center: 12,289 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-16385-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-16385-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 16,385 Coefficients",
+    "text": "Selecting from the Center: 16,385 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-20481-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-20481-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: 20,481 Coefficients",
+    "text": "Selecting from the Center: 20,481 Coefficients"
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#selecting-from-the-center-all-24257-coefficients",
+    "href": "lectures/05_fourier_transform.html#selecting-from-the-center-all-24257-coefficients",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Selecting from the Center: All 24,257 Coefficients",
+    "text": "Selecting from the Center: All 24,257 Coefficients\n\n\n\n\n\n\n\n\n\nBoth methods reach the same exact reconstruction when all coefficients are retained."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#same-number-of-coefficients-different-results",
+    "href": "lectures/05_fourier_transform.html#same-number-of-coefficients-different-results",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Same Number of Coefficients, Different Results",
+    "text": "Same Number of Coefficients, Different Results\n\n\n\n\n\n\n\n\n\n\nLow frequencies capture much of this image’s broad structure.\nAdding higher frequencies restores sharper edges and finer details.\nRandom selection spends many coefficients on frequencies that contribute little to this image.\n\nCompression idea: retain informative transform coefficients and encode them efficiently.\n\nThis demonstrates lossy approximation using the DFT.\nLow-frequency selection works well here because much of the image’s energy is concentrated near zero frequency. It is not the best selection for every image.\nKeeping 4.2% of DFT entries does not automatically mean a file that is 4.2% of the original size. Storage also depends on coefficient precision, conjugate symmetry, how positions are represented, and the encoding method.\nAbruptly truncating the spectrum can also produce ringing near edges."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#where-is-the-energy-in-natural-images",
+    "href": "lectures/05_fourier_transform.html#where-is-the-energy-in-natural-images",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Where Is the Energy in Natural Images?",
+    "text": "Where Is the Energy in Natural Images?\n\n\n\n\n\n\n\n\n\n\nIn many natural images, large amplitudes concentrate near the center, at low spatial frequencies.\nNeighboring pixels often have similar intensities; edges and fine textures contribute higher frequencies."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#what-if-neighboring-pixels-are-unrelated",
+    "href": "lectures/05_fourier_transform.html#what-if-neighboring-pixels-are-unrelated",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "What If Neighboring Pixels Are Unrelated?",
+    "text": "What If Neighboring Pixels Are Unrelated?\nEach pixel is drawn independently from a uniform distribution between \\(0\\) and \\(1\\).\n\n\n\n\n\n\n\n\n\n\nEnergy is spread broadly across frequencies, without a strong low-frequency concentration.\nThe bright center point is because the image has a nonzero mean.\n\nKeeping only low frequencies captures natural-image structure much better than random pixel detail."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#which-frequencies-do-we-see-best",
+    "href": "lectures/05_fourier_transform.html#which-frequencies-do-we-see-best",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Which Frequencies Do We See Best?",
+    "text": "Which Frequencies Do We See Best?\nNatural images often concentrate energy at low frequencies.\nAre our eyes equally sensitive to all spatial frequencies?\nWhere do you see the stripes?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe typically detect lower contrast at intermediate spatial frequencies than at very low or very high frequencies.\n\nNote: The curve illustrates the trend. Actual visibility depends on viewing distance, lighting, and the display."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#filtering-in-the-frequency-domain",
+    "href": "lectures/05_fourier_transform.html#filtering-in-the-frequency-domain",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Filtering in the Frequency Domain",
+    "text": "Filtering in the Frequency Domain\nA filter changes how strongly different spatial frequencies contribute to an image.\nThe convolution theorem\nLet \\(F=\\mathcal{F}\\{I\\}\\) and \\(H=\\mathcal{F}\\{h\\}\\).\n\\[\ny = I * h\n\\qquad \\Longleftrightarrow \\qquad\nY = FH\n\\]\nTherefore,\n\\[\n\\boxed{y=\\mathcal{F}^{-1}\\{FH\\}}\n\\]\n\nConvolution in the spatial domain becomes elementwise multiplication in the frequency domain.\nWe multiply the complex coefficients, retaining both amplitude and phase.\n\n\n\n\n\n\n\nNote\n\n\nFor the DFT, sufficient zero-padding may be needed. The DFT assumes the input is periodic. Zero-padding ensures that the filter does not wrap around and affect the opposite edge of the image."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#but-we-defined-image-filtering-as-correlation",
+    "href": "lectures/05_fourier_transform.html#but-we-defined-image-filtering-as-correlation",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "But We Defined Image Filtering as Correlation",
+    "text": "But We Defined Image Filtering as Correlation\nIn Lecture 3, we used\n\\[\ny[m,n]\n=\n\\sum_k\\sum_l h[k,l]\\,I[m+k,n+l].\n\\]\nThis is correlation, as implemented by cv2.filter2D().\nFor our real-valued kernels:\n\n\n\nSpatial operation\nFrequency-domain operation\n\n\n\n\nConvolution with \\(h\\)\n\\(Y=FH\\)\n\n\nCorrelation with \\(h\\)\n\\(Y=F\\overline{H}\\)\n\n\n\nHere, \\(\\overline{H}\\) is the complex conjugate of \\(H\\).\n\nFor centered, symmetric kernels such as box and Gaussian filters, correlation and convolution give the same result.\nFor Sobel x, switching between them reverses the response’s sign."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-same-filter-in-two-domains",
+    "href": "lectures/05_fourier_transform.html#the-same-filter-in-two-domains",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Same Filter in Two Domains",
+    "text": "The Same Filter in Two Domains\n\\[\ny=\\operatorname{corr}(I,h)\n\\qquad \\Longleftrightarrow \\qquad\nY=F\\overline{H}\n\\]\n\n\n\n\n\n\n\n\n\nThe Sobel x filter suppresses constant regions and responds to horizontal intensity changes, emphasizing vertical edges."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#small-kernel-full-sized-spectrum",
+    "href": "lectures/05_fourier_transform.html#small-kernel-full-sized-spectrum",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Small Kernel, Full-Sized Spectrum",
+    "text": "Small Kernel, Full-Sized Spectrum\nThe spectrum’s dimensions are determined by the DFT grid—not by the number of kernel entries.\nFor an \\(M\\times N\\) image and a \\(P\\times Q\\) kernel, a sufficient grid size is\n\\[\n(M+P-1)\\times(N+Q-1).\n\\]\n\n\n\nIn the last example\nArray size\n\n\n\n\nOriginal image\n\\(128\\times128\\)\n\n\nSobel kernel\n\\(3\\times3\\)\n\n\nPadded image and padded kernel\n\\(130\\times130\\)\n\n\nBoth DFTs\n\\(130\\times130\\)\n\n\n\n\nZero-pad both arrays so their spectra can be multiplied element by element.\nPlace the kernel’s center at the DFT origin to align the filtering response correctly.\nApply the inverse DFT, then crop to the original image size."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#revisiting-blurring-box-vs.-gaussian",
+    "href": "lectures/05_fourier_transform.html#revisiting-blurring-box-vs.-gaussian",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Revisiting Blurring: Box vs. Gaussian",
+    "text": "Revisiting Blurring: Box vs. Gaussian\nBoth filters average neighboring pixels. Why do their results look different?\n\n\n\n\n\n\n\n\n\n\nBox: all pixels inside the window receive equal weight.\nGaussian: weights decrease smoothly with distance from the center.\n\nTheir Fourier transforms reveal which frequencies each filter preserves or suppresses."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#gaussian-blur-in-the-frequency-domain",
+    "href": "lectures/05_fourier_transform.html#gaussian-blur-in-the-frequency-domain",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Gaussian Blur in the Frequency Domain",
+    "text": "Gaussian Blur in the Frequency Domain\n\n\n\n\n\n\n\n\n\n\nThe frequency response is Gaussian-shaped.\nLow frequencies pass through; higher frequencies are progressively attenuated."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#box-blur-in-the-frequency-domain",
+    "href": "lectures/05_fourier_transform.html#box-blur-in-the-frequency-domain",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Box Blur in the Frequency Domain",
+    "text": "Box Blur in the Frequency Domain\n\n\n\n\n\n\n\n\n\n\nThe square kernel produces a sinc-like response with zeros and side lobes.\nSome frequency bands are suppressed strongly, while neighboring bands pass through more.\nThis less uniform attenuation can leave more visible directional or block-like structure."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#quiz-match-each-filter-to-its-output",
+    "href": "lectures/05_fourier_transform.html#quiz-match-each-filter-to-its-output",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Quiz: Match Each Filter to Its Output",
+    "text": "Quiz: Match Each Filter to Its Output\nMatch frequency-domain filters A–D to output images 1–4.\nWhite passes frequencies; black removes them.\n\n\n\n\n\n\n\n\n\nWhich filters retain broad structures, intermediate details, or the finest texture?\n\nAnswer key: A → 2, B → 4, C → 1, D → 3."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#the-nyquistshannon-sampling-theorem",
+    "href": "lectures/05_fourier_transform.html#the-nyquistshannon-sampling-theorem",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "The Nyquist–Shannon Sampling Theorem",
+    "text": "The Nyquist–Shannon Sampling Theorem\nA band-limited signal with highest frequency \\(f_{\\max}\\) can be reconstructed from ideal samples when\n\\[\n\\boxed{f_s &gt; 2f_{\\max}}\n\\]\n\n\n\n\n\n\n\nTerm\nMeaning\n\n\n\n\nNyquist rate: \\(2f_{\\max}\\)\nSampling-rate threshold determined by the signal\n\n\nNyquist frequency: \\(f_s/2\\)\nFrequency limit determined by the sampling rate\n\n\n\n\n\n\nWhat happens when we downsample an image?\n\nThe sampling rate decreases, so the image must contain fewer high frequencies.\nFrequencies above the new Nyquist frequency (\\(f_s/2\\)) fold into lower frequencies, producing aliasing."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#low-pass-filtering-before-downsampling",
+    "href": "lectures/05_fourier_transform.html#low-pass-filtering-before-downsampling",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Low-Pass Filtering Before Downsampling",
+    "text": "Low-Pass Filtering Before Downsampling\nDownsampling by 4 lowers the frequency limit to \\(1/8\\) cycle per original pixel in each direction.\n\n\n\n\n\n\n\n\n\n\nThe dashed box marks the frequencies the smaller image can represent.\nWe remove frequencies outside that region before discarding pixels."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#what-happens-if-we-skip-the-filter",
+    "href": "lectures/05_fourier_transform.html#what-happens-if-we-skip-the-filter",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "What Happens If We Skip the Filter?",
+    "text": "What Happens If We Skip the Filter?\nBoth downsampled images keep every fourth row and column.\n\n\n\n\n\n\n\n\n\n\nWithout filtering: fine stripes can become false coarse patterns—aliasing.\nWith filtering: fine detail is deliberately removed before it can fold into lower frequencies.\n\nLosing detail is preferable to inventing a different pattern."
+  },
+  {
+    "objectID": "lectures/05_fourier_transform.html#key-takeaways",
+    "href": "lectures/05_fourier_transform.html#key-takeaways",
+    "title": "Lecture 05 — Fourier Transform",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nFourier representation: an image can be expressed as a weighted combination of spatial waves.\nAmplitude and phase: amplitude describes each component’s strength; phase determines its alignment. Reconstruction requires both.\nReconstruction and compression: selected coefficients can capture much of an image’s structure; discarded coefficients represent lost information.\nFiltering: convolution uses \\(Y=FH\\); correlation with our real-valued kernels uses \\(Y=F\\overline{H}\\). Padding and kernel alignment matter.\nSampling: retain frequencies below the new Nyquist limit. Low-pass filtering must happen before downsampling."
+  },
+  {
     "objectID": "schedule.html",
     "href": "schedule.html",
     "title": "Course Schedule — Fall 2026",

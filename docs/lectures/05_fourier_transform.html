@@ -34,6 +34,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e29227cb4367bc74b13779e945f9984f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -134,7 +200,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="assets/05_fourier_transform/slide063_img01.png" data-background-opacity="0.18" class="quarto-title-block center">
+<section id="title-slide" data-background-image="assets/05_fourier_transform/slide001_img01.png" data-background-opacity="0.18" class="quarto-title-block center">
   <h1 class="title">Lecture 05 — Fourier Transform</h1>
   <p class="subtitle">Lecture 5</p>
 
@@ -150,18 +216,2088 @@ Kaveh Fathian
 </div>
 
 </section>
-<section class="slide level2">
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you should be able to:</p>
+<ul>
+<li><p>Distinguish Fourier series, and the discrete Fourier transform (DFT)</p></li>
+<li><p>Interpret amplitude, phase, and frequency locations in an image spectrum.</p></li>
+<li><p>Predict how image structure, translation, rotation, and scale affect the Fourier transform.</p></li>
+<li><p>Reconstruct images from selected complex coefficients and explain the connection to compression.</p></li>
+<li><p>Apply the convolution theorem to image filtering, including our correlation convention.</p></li>
+<li><p>Explain aliasing using the Nyquist condition and choose low-pass filtering before downsampling.</p></li>
+</ul>
+</section>
+<section>
+<section id="fourier-transform" class="title-slide slide level1 center">
+<h1>Fourier Transform</h1>
+<div style="height: 25px;">
 
-<!-- red slide boundary -->
+</div>
+<div class="image-center">
+<p><img data-src="assets/05_fourier_transform/fourier_banner.png" style="width:50.0%"></p>
+</div>
+</section>
+<section id="fouriers-idea" class="slide level2">
+<h2>Fourier’s Idea</h2>
+<p><strong>Can we build a complicated signal from simple waves?</strong></p>
+<div style="height: 10px;">
+
+</div>
+<div class="columns">
+<div class="column image-center" style="width:30%;">
+<p><img data-src="assets/05_fourier_transform/slide063_img01.jpg" height="230"> Joseph Fourier (1768–1830)</p>
+</div><div class="column" style="width:70%;">
+<div class="fragment">
+<p><strong>The Fourier series claim (1807):</strong></p>
+<blockquote>
+<p><strong>Any</strong> univariate function can be rewritten as a weighted sum of sines and cosines of different frequencies.</p>
+</blockquote>
+</div>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column image-center" style="width:25%;">
+<p><img data-src="assets/05_fourier_transform/slide068_img05.jpg" height="140"> Malus</p>
+</div><div class="column image-center" style="width:25%;">
+<p><img data-src="assets/05_fourier_transform/slide068_img02.png" height="140"> Lagrange</p>
+</div><div class="column image-center" style="width:25%;">
+<p><img data-src="assets/05_fourier_transform/slide068_img03.png" height="140"> Legendre</p>
+</div><div class="column image-center" style="width:25%;">
+<p><img data-src="assets/05_fourier_transform/slide068_img04.jpg" height="140"> Laplace</p>
+</div></div>
+<div class="column" style="width:100%;">
+<ul>
+<li><p>The initial reviewers (Lagrange, Laplace, Monge, and Lacroix) were <strong>skeptical</strong>, partly because the proofs lacked rigor. Publication of his work was initially withheld.</p></li>
+<li><p>The later committee, which included Lagrange, Laplace, Malus, and Legendre, awarded Fourier a prize but criticized the generality and rigor of his analysis.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="is-fouriers-claim-true" class="slide level2">
+<h2>Is Fourier’s Claim True?</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="fragment">
+<p>Well, almost.</p>
+</div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>The theorem requires additional conditions:</p>
+<ul>
+<li>A sufficient condition is that the function is <strong>periodic and piecewise smooth</strong>.
+<ul>
+<li>At continuous points, the series converges to the function’s value.</li>
+<li>At a jump, it converges to the <strong>average of the values on either side</strong>.</li>
+</ul></li>
+</ul>
+</div>
+<div style="height: 30px;">
+
+</div>
+<div class="fragment">
+<p>Very surprising result at the time, because it implied that</p>
+<ul>
+<li>Even signals with <strong>sharp corners or jumps</strong> can have a representation built from <strong>smooth sine and cosine waves</strong>.</li>
+</ul>
+</div>
+</div><div class="column image-center" style="width:30%;">
+<p><img data-src="assets/05_fourier_transform/slide063_img01.jpg" height="230"> Joseph Fourier</p>
+</div></div>
+</section>
+<section id="basic-building-block" class="slide level2">
+<h2>Basic Building Block</h2>
+<p>A <strong>sinusoid</strong>:</p>
+<p><span class="math display">\[
+A\sin(\omega x + \phi)
+\]</span></p>
+<div style="height: 30px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><span class="math inline">\(A\)</span>: <strong>amplitude</strong> — controls the height of the oscillations.</p></li>
+<li><p><span class="math inline">\(\omega\)</span>: <strong>angular frequency</strong> — controls how rapidly the signal oscillates.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><span class="math inline">\(\phi\)</span>: <strong>phase</strong> — shifts the wave horizontally.</p></li>
+<li><p><span class="math inline">\(x\)</span>: <strong>variable</strong> — for example, time or spatial position.</p></li>
+</ul>
+</div></div>
+<div style="height: 30px;">
+
+</div>
+<div class="fragment">
+<p><strong>Fourier’s idea:</strong> Build a <strong>periodic</strong> signal by adding sinusoids with different frequencies, amplitudes, and phases:</p>
+<p><span class="math display">\[
+y(x) = c_0 + \sum_{k=1}^{\infty}
+A_k \sin(2\pi k f_0 x + \phi_k)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(c_0\)</span>: mean value.</li>
+<li><span class="math inline">\(f_0\)</span>: fundamental frequency.</li>
+</ul>
+</div>
+</section>
+<section id="example-adding-sinusoids" class="slide level2">
+<h2>Example: Adding Sinusoids</h2>
+<p>How would you generate this function?</p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:34%;">
+<div id="ac56b4dd" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-3-output-1.png" width="413" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="fragment">
+<div id="9313c570" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-4-output-1.png" width="413" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="fragment">
+<div id="a2029631" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-5-output-1.png" width="413" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+y(x) = \sin(2\pi x) + \frac{1}{3}\sin(6\pi x)
+\]</span></p>
+</div>
+</section>
+<section id="example-approximating-a-square-wave" class="slide level2">
+<h2>Example: Approximating a Square Wave</h2>
+<p><strong>How would you generate this function?</strong></p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="274a1a4a" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-6-output-1.png" width="567" height="374"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div id="d8d4c84d" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-7-output-1.png" width="567" height="374"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math display">\[
+\frac{4}{\pi}
+\left[
+\sin(2\pi x) + \frac{1}{3}\sin(6\pi x)
+\right]
+\]</span></p>
+</div>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>What happens if we add <strong>higher-frequency sinusoids</strong>?</p>
+</div>
+</section>
+<section id="adding-more-harmonics" class="slide level2">
+<h2>Adding More Harmonics</h2>
+<p>Add the next harmonic at each step:</p>
+<div id="7a8f08ad" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-8-output-1.png" class="quarto-figure quarto-figure-center" width="1527" height="715"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-square-wave-fourier-series" class="slide level2">
+<h2>The Square-Wave Fourier Series</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>How would you express this mathematically?</p>
+<div id="d6f66b57" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-9-output-1.png" width="567" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<div class="fragment">
+<p>General <strong>Fourier series</strong>:</p>
+<p><span class="math display">\[
+y(x) = c_0 + \sum_{k=1}^{\infty}
+A_k \sin(2\pi k f_0 x + \phi_k)
+\]</span></p>
+</div>
+<div class="fragment">
+<p>For this <strong>square wave</strong>, <span class="math inline">\(c_0=0\)</span> and <span class="math inline">\(f_0=1\)</span>:</p>
+<p><span class="math display">\[
+y(x) =
+\sum_{\substack{k=1\\k\text{ odd}}}^{\infty}
+\frac{4}{k\pi}\sin(2\pi kx)
+\]</span></p>
+<ul>
+<li>Frequencies: <span class="math inline">\(1, 3, 5, 7, \ldots\)</span></li>
+<li>Amplitudes: <span class="math inline">\(\displaystyle \frac{4}{\pi}, \frac{4}{3\pi}, \frac{4}{5\pi}, \ldots\)</span></li>
+<li>Phases: <span class="math inline">\(0, 0, 0, \ldots\)</span></li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="the-square-wave-in-the-frequency-domain" class="slide level2">
+<h2>The Square Wave in the Frequency Domain</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div id="8dba87c3" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-10-output-1.png" width="471" height="394"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:34%;">
+<div class="fragment">
+<div id="b908736f" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-11-output-1.png" width="471" height="402"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="fragment">
+<div id="ac4cb698" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-12-output-1.png" width="470" height="394"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment" style="font-size: 0.65em;">
+<p><span class="math display">\[
+y_6(x) =
+\frac{4}{\pi}\sin(2\pi x)
++ \frac{4}{3\pi}\sin(6\pi x)
++ \frac{4}{5\pi}\sin(10\pi x)
++ \frac{4}{7\pi}\sin(14\pi x)
++ \frac{4}{9\pi}\sin(18\pi x)
++ \frac{4}{11\pi}\sin(22\pi x)
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Each sinusoid produces <strong>two peaks</strong> at frequencies <span class="math inline">\(\pm f\)</span>. Matching colors connect each sinusoid to its peaks.</p></li>
+<li><p>The black curve in the middle shows the <strong>six-term sum</strong>; the ideal square wave requires <strong>infinitely</strong> many terms.</p></li>
+</ul>
+</div>
+</section>
+<section id="visualizing-the-frequency-spectrum" class="slide level2">
+<h2>Visualizing the Frequency Spectrum</h2>
+<p><span class="math display">\[
+f(x) = c_0 + \sin(2\pi x) + \frac{1}{3}\sin(6\pi x),
+\qquad c_0 = 1
+\]</span></p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:34%;">
+<div id="49db46fe" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-14-output-1.png" width="422" height="316"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div id="32541af7" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-15-output-1.png" width="423" height="316"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div id="875e0d68" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-16-output-1.png" width="423" height="316"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<p>The constant <span class="math inline">\(c_0\)</span> shifts the signal vertically without changing its oscillations.</p>
+<div class="fragment">
+<p><strong>How does each term appear in the frequency domain?</strong></p>
+</div>
+</section>
+<section id="visualizing-the-frequency-spectrum-1" class="slide level2">
+<h2>Visualizing the Frequency Spectrum</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="b5167ac7" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-17-output-1.png" width="552" height="508"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="9d488227" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-18-output-1.png" width="566" height="509"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p>A sinusoid of amplitude <span class="math inline">\(A\)</span> produces <strong>two peaks</strong>, each of height <span class="math inline">\(A/2\)</span>, at its positive and negative frequencies.</p>
+</section>
+<section id="what-is-at-zero-frequency" class="slide level2">
+<h2>What Is at Zero Frequency?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div id="1d9d5f22" class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-19-output-1.png" width="556" height="374"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<div id="df9f14eb" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-20-output-1.png" width="662" height="374"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>The <strong>DC component</strong> represents the signal’s <strong>mean value</strong>.</p>
+<p><span class="math display">\[
+c_0 = \frac{1}{N}\sum_{n=0}^{N-1} f(x_n) = 1
+\]</span></p>
+<ul>
+<li><p>The constant contributes <strong>one peak at zero frequency</strong>, with magnitude <span class="math inline">\(|c_0|\)</span>. It is not split into two peaks.</p></li>
+<li><p>For images, the DC component corresponds to the <strong>average pixel intensity</strong>.</p></li>
+</ul>
+</div>
+</section>
+<section id="a-1d-signal-as-an-image" class="slide level2">
+<h2>A 1D Signal as an Image</h2>
+<p>Repeat the same 1D intensity signal along every image row.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="7fe5b26c" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-22-output-1.png" class="quarto-figure quarto-figure-center" width="377" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div id="b2b6f117" class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-23-output-1.png" class="quarto-figure quarto-figure-center" width="376" height="489"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>What do the three bright spots represent?</strong></p>
+</div>
+</div></div>
+<div class="fragment">
+<ul>
+<li><strong>Center:</strong> the mean image intensity.</li>
+<li><strong>Side pair:</strong> the sinusoidal variation along <span class="math inline">\(x\)</span>. Every row is identical, so there is no variation along <span class="math inline">\(y\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="stripe-spacing-and-frequency" class="slide level2">
+<h2>Stripe Spacing and Frequency</h2>
+<p>What changes when the stripes become <strong>narrower</strong>?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="1bd718ed" class="cell" data-execution_count="24">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-24-output-1.png" class="quarto-figure quarto-figure-center" width="280" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div id="f109bcfd" class="cell" data-execution_count="25">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-25-output-1.png" class="quarto-figure quarto-figure-center" width="316" height="499"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<ul>
+<li>Narrower stripes mean <strong>higher spatial frequency</strong>.</li>
+<li>The side peaks move <strong>farther from the center</strong>.</li>
+<li>The center spot stays the same because the mean intensity is unchanged.</li>
+</ul>
+</div>
+</section>
+<section id="diagonal-stripes" class="slide level2">
+<h2>Diagonal Stripes</h2>
+<p>Does the Fourier intensity change along <span class="math inline">\(x\)</span>, along <span class="math inline">\(y\)</span>, or both?</p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="4c613724" class="cell" data-execution_count="26">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-26-output-1.png" class="quarto-figure quarto-figure-center" width="310" height="336"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div id="d641f74a" class="cell" data-execution_count="27">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-27-output-1.png" class="quarto-figure quarto-figure-center" width="317" height="336"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p><strong>Both.</strong> The sinusoid varies along a diagonal direction.</p>
+<ul>
+<li>Its frequency has both <strong>horizontal and vertical components</strong>.</li>
+<li>The two side peaks lie off the horizontal and vertical axes.</li>
+<li>The line joining the two side peaks is <strong>perpendicular to the stripes</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="combining-patterns" class="slide level2 small">
+<h2>Combining Patterns</h2>
+<p>What happens when we <strong>average</strong> these two images?</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div id="28fae487" class="cell" data-execution_count="28">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-28-output-1.png" class="quarto-figure quarto-figure-center" width="269" height="539"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:33%;">
+<div id="f154bfa5" class="cell" data-execution_count="29">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-29-output-1.png" class="quarto-figure quarto-figure-center" width="269" height="539"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:34%;">
+<div class="fragment">
+<div id="bdd820b9" class="cell" data-execution_count="30">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-30-output-1.png" class="quarto-figure quarto-figure-center" width="269" height="539"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<ul>
+<li><strong>Both peaks</strong> appear in the combined spectrum.</li>
+<li>Averaging halves each pattern’s contribution, so its side peaks become dimmer.</li>
+<li>The center spot stays the same because both images have the same mean intensity.</li>
+</ul>
+</div>
+</section>
+<section id="what-about-nonperiodic-signals" class="slide level2">
+<h2>What About Nonperiodic Signals?</h2>
+<p>Fourier series represent <strong>periodic signals</strong> as sums of sinusoids.</p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="b800e9bc" class="cell" data-execution_count="32">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-32-output-1.png" class="quarto-figure quarto-figure-center" width="566" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="e655d77c" class="cell" data-execution_count="33">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-33-output-1.png" class="quarto-figure quarto-figure-center" width="566" height="259"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p><strong>Fourier series</strong></p>
+<ul>
+<li>Signal pattern repeats with period <span class="math inline">\(T\)</span>.</li>
+<li>Uses a <strong>discrete set of frequencies</strong>.</li>
+</ul>
+<p><strong>How can we represent a signal that does not repeat?</strong></p>
+<div class="fragment">
+<ul>
+<li><strong>Fourier transform</strong>: Extends the idea to nonperiodic signals, allowing a <strong>continuous range of frequencies</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="fourier-transform-pairs" class="slide level2">
+<h2>Fourier Transform Pairs</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Spatial domain: <span class="math inline">\(f(x)\)</span></strong></p>
+<div id="bf9223a5" class="cell" data-execution_count="35">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-35-output-1.png" class="quarto-figure quarto-figure-center" width="520" height="499"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Frequency domain: <span class="math inline">\(\operatorname{Re}\{F(\nu)\}\)</span></strong></p>
+<div id="5a9752cd" class="cell" data-execution_count="36">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-36-output-1.png" class="quarto-figure quarto-figure-center" width="520" height="499"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<ul>
+<li>Box ↔︎ sinc: an example of Fourier-transform <strong>duality</strong>.</li>
+<li>A Gaussian transforms into another Gaussian; a broader Gaussian produces a narrower spectrum.</li>
+</ul>
+</section>
+<section id="complex-numbers-cartesian-form" class="slide level2">
+<h2>Complex Numbers: Cartesian Form</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>A complex number has two parts:</p>
+<p><span class="math display">\[
+z = a + jb,
+\qquad j^2=-1
+\]</span></p>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(a\)</span>: <strong>real part</strong>.</li>
+<li><span class="math inline">\(b\)</span>: <strong>imaginary part</strong>.</li>
+</ul>
+</div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>For example:</p>
+<p><span class="math display">\[
+z=3+j4
+\]</span></p>
+<p>The point has coordinates <span class="math inline">\((a,b)=(3,4)\)</span> in the <strong>complex plane</strong>.</p>
+</div>
+</div><div class="column" style="width:52%;">
+<div id="455dab9c" class="cell" data-execution_count="38">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-38-output-1.png" class="quarto-figure quarto-figure-center" width="413" height="451"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="complex-numbers-polar-form" class="slide level2">
+<h2>Complex Numbers: Polar Form</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p>Describe the same point using its <strong>distance and angle</strong>:</p>
+<p><span class="math display">\[
+z = r(\cos\theta + j\sin\theta)
+\]</span></p>
+<div style="height: 15px;">
+
+</div>
+<p><strong>How do we compute <span class="math inline">\(r\)</span> and <span class="math inline">\(\theta\)</span>?</strong></p>
+<div class="fragment">
+<p><span class="math display">\[
+r = |z| = \sqrt{a^2+b^2}
+\]</span></p>
+<p><span class="math display">\[
+\theta = \operatorname{atan2}(b,a)
+\]</span></p>
+<p><code>atan2</code> accounts for the correct quadrant.</p>
+</div>
+<div class="fragment">
+<p>For <span class="math inline">\(z=3+j4\)</span>:</p>
+<p><span class="math display">\[
+r=5,
+\qquad \theta\approx53.13^\circ
+\]</span></p>
+</div>
+</div><div class="column" style="width:52%;">
+<div id="ffe2c00b" class="cell" data-execution_count="39">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-39-output-1.png" class="quarto-figure quarto-figure-center" width="413" height="451"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p><strong>Same complex number, different coordinates:</strong> <span class="math inline">\((a,b)\)</span> or <span class="math inline">\((r,\theta)\)</span>.</p>
+</div>
+</section>
+<section id="complex-numbers-exponential-form" class="slide level2">
+<h2>Complex Numbers: Exponential Form</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Euler’s formula:</strong></p>
+<div class="fragment">
+<p><span class="math display">\[
+e^{j\theta} = \cos\theta + j\sin\theta
+\]</span></p>
+</div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>Therefore:</p>
+<p><span class="math display">\[
+z = r(\cos\theta+j\sin\theta)
+  = re^{j\theta}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(r\)</span>: <strong>magnitude</strong>.</li>
+<li><span class="math inline">\(\theta\)</span>: <strong>phase</strong>.</li>
+</ul>
+</div>
+<div style="height: 20px;">
+
+</div>
+<div class="fragment">
+<p>For our example, <span class="math inline">\(\theta\approx0.9273\)</span> radians:</p>
+<p><span class="math display">\[
+3+j4 \approx 5e^{j\,0.9273}
+\]</span></p>
+</div>
+</div><div class="column" style="width:52%;">
+<div id="3cbb037b" class="cell" data-execution_count="40">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-40-output-1.png" class="quarto-figure quarto-figure-center" width="440" height="451"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="fragment">
+<p>Euler’s formula lets us express the sine and cosine components of the <strong>Fourier transform</strong> using <strong>complex exponentials</strong>.</p>
+</div>
+</section>
+<section id="the-discrete-fourier-transform" class="slide level2">
+<h2>The Discrete Fourier Transform</h2>
+<p>For a sampled signal <span class="math inline">\(f[n]\)</span> containing <span class="math inline">\(N\)</span> samples:</p>
+<div style="height: 20px;">
+
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Discrete Fourier transform (DFT)</strong></p>
+<p><span class="math display">\[
+F[k] =
+\frac{1}{N}
+\sum_{n=0}^{N-1}
+f[n]e^{-j2\pi kn/N}
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Inverse DFT</strong></p>
+<p><span class="math display">\[
+f[n] =
+\sum_{k=0}^{N-1}
+F[k]e^{j2\pi kn/N}
+\]</span></p>
+</div></div>
+<div style="height: 30px;">
+
+</div>
+<ul>
+<li><span class="math inline">\(n=0,\ldots,N-1\)</span>: sample index.</li>
+<li><span class="math inline">\(k=0,\ldots,N-1\)</span>: frequency-bin index.</li>
+<li>Continuous spectrum becomes <strong>finite sums</strong>.</li>
+</ul>
+<p><strong>Where is the connection to our “ <span class="math inline">\(f[n]\)</span> is a sum of sine waves” idea?</strong></p>
+</section>
+<section id="the-inverse-transform-adds-waves" class="slide level2">
+<h2>The Inverse Transform Adds Waves</h2>
+<p>Recall Euler’s formula:</p>
+<p><span class="math display">\[
+e^{j\theta} = \cos\theta + j\sin\theta
+\]</span></p>
+<div style="height: 20px;">
+
+</div>
+<p>Substitute it into the inverse DFT:</p>
+<p><span class="math display">\[
+f[n] =
+\sum_{k=0}^{N-1}
+F[k]e^{j2\pi kn/N}
+=
+\sum_{k=0}^{N-1}
+F[k]
+\left[
+\cos\left(\frac{2\pi kn}{N}\right)
++
+j\sin\left(\frac{2\pi kn}{N}\right)
+\right]
+\]</span></p>
+<div style="height: 20px;">
+
+</div>
+<ul>
+<li>The <strong>sines and cosines</strong> are the wave components.</li>
+<li>Each complex coefficient <strong><span class="math inline">\(F[k]\)</span></strong> determines the component’s magnitude and phase.</li>
+<li>The sum over <span class="math inline">\(k\)</span> combines all frequency components.</li>
+<li>For a real-valued signal, matching positive and negative frequencies combine so that the imaginary parts cancel.</li>
+</ul>
+</section>
+<section id="the-2d-dft-and-its-inverse" class="slide level2">
+<h2>The 2D DFT and Its Inverse</h2>
+<p>For an image <span class="math inline">\(I[m,n]\)</span> with <span class="math inline">\(M\)</span> rows and <span class="math inline">\(N\)</span> columns:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Forward: image to frequency coefficients</strong></p>
+<div style="font-size: 0.78em;">
+<p><span class="math display">\[
+F[v,u] =
+\sum_{m=0}^{M-1}\sum_{n=0}^{N-1}
+I[m,n]\,
+e^{-j2\pi\left(\frac{vm}{M}+\frac{un}{N}\right)}
+\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Inverse: frequency coefficients to image</strong></p>
+<div style="font-size: 0.78em;">
+<p><span class="math display">\[
+I[m,n] =
+\frac{1}{MN}
+\sum_{v=0}^{M-1}\sum_{u=0}^{N-1}
+F[v,u]\,
+e^{j2\pi\left(\frac{vm}{M}+\frac{un}{N}\right)}
+\]</span></p>
+</div>
+</div></div>
+<div id="76a60a61" class="cell" data-execution_count="42">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-42-output-1.png" class="quarto-figure quarto-figure-center" width="933" height="278"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Nine pixel values become nine complex coefficients</strong>.</li>
+<li><strong>The inverse recovers exactly the same original pixel values.</strong></li>
+</ul>
+</section>
+<section id="the-dft-as-a-matrix-multiplication" class="slide level2 small">
+<h2>The DFT as a Matrix Multiplication</h2>
+<p>A 1D DFT computes a <strong>weighted sum</strong> for each frequency:</p>
+<p><span class="math display">\[
+F[k] =
+\sum_{n=0}^{N-1}
+f[n]\,
+\underbrace{e^{-j2\pi kn/N}}_{\text{weight for sample }n}
+\]</span></p>
+<p>Collect these weights into a matrix:</p>
+<p><span class="math display">\[
+W_N[k,n]=\omega^{kn},
+\qquad
+\omega=e^{-j2\pi/N}
+\]</span></p>
+<div style="font-size: 0.8em;">
+<p><span class="math display">\[
+\begin{bmatrix}
+F[0]\\
+F[1]\\
+\vdots\\
+F[N-1]
+\end{bmatrix}
+=
+\underbrace{
+\begin{bmatrix}
+1 &amp; 1 &amp; \cdots &amp; 1\\
+1 &amp; \omega &amp; \cdots &amp; \omega^{N-1}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+1 &amp; \omega^{N-1} &amp; \cdots &amp; \omega^{(N-1)^2}
+\end{bmatrix}
+}_{\mathbf{W}_N}
+\begin{bmatrix}
+f[0]\\
+f[1]\\
+\vdots\\
+f[N-1]
+\end{bmatrix}
+\]</span></p>
+</div>
+<p>Each row of <span class="math inline">\(\mathbf{W}_N\)</span> computes <strong>one frequency coefficient</strong>:</p>
+<p><span class="math display">\[
+\mathbf{F}=\mathbf{W}_N\mathbf{f}
+\]</span></p>
+<p>The <strong>FFT</strong> computes this same DFT efficiently, without explicitly building large DFT matrices.</p>
+</section>
+<section id="computing-the-image-dft-with-matrices" class="slide level2 small">
+<h2>Computing the Image DFT with Matrices</h2>
+<p>For our <span class="math inline">\(3\times3\)</span> image, set <span class="math inline">\(N=3\)</span> in the DFT matrix:</p>
+<div style="font-size: 0.85em;">
+<p><span class="math display">\[
+\mathbf{W}_3 =
+\begin{bmatrix}
+1 &amp; 1 &amp; 1\\
+1 &amp; \omega &amp; \omega^2\\
+1 &amp; \omega^2 &amp; \omega
+\end{bmatrix},
+\qquad
+\omega=e^{-j2\pi/3}
+\]</span></p>
+</div>
+<p>Here <span class="math inline">\(\omega^3=1\)</span>, so <span class="math inline">\(\omega^4=\omega\)</span>.</p>
+<div style="font-size: 0.85em;">
+<p><span class="math display">\[
+\underbrace{\mathbf{B}=\mathbf{I}\mathbf{W}_3^T}
+_{\text{Transform each row}}
+\qquad
+\underbrace{\mathbf{F}=\mathbf{W}_3\mathbf{B}}
+_{\text{Transform each column}}
+\]</span></p>
+</div>
+<div id="fc5e30db" class="cell" data-execution_count="43">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-43-output-1.png" class="quarto-figure quarto-figure-center" width="947" height="278"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These are the <strong>same Fourier coefficients</strong> as before, computed using row and column transforms.</p>
+</section>
+<section id="magnitude-and-phase-of-the-same-transform" class="slide level2">
+<h2>Magnitude and Phase of the Same Transform</h2>
+<p>At each frequency, the same coefficient has two representations:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Cartesian form:</strong></p>
+<p><span class="math display">\[
+F=a+jb
+\]</span></p>
+<ul>
+<li><strong>Real part:</strong> <span class="math inline">\(a=\operatorname{Re}\{F\}\)</span>.</li>
+<li><strong>Imaginary part:</strong> <span class="math inline">\(b=\operatorname{Im}\{F\}\)</span>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Polar form:</strong></p>
+<p><span class="math display">\[
+F=Ae^{j\theta}
+\]</span></p>
+<ul>
+<li><strong>Magnitude:</strong> <span class="math inline">\(A=|F|=\sqrt{a^2+b^2}\)</span>.</li>
+<li><strong>Phase:</strong> <span class="math inline">\(\theta=\operatorname{atan2}(b,a)\)</span>.</li>
+</ul>
+</div></div>
+<div id="620b5d51" class="cell" data-execution_count="44">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-44-output-1.png" class="quarto-figure quarto-figure-center" width="1527" height="293"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Magnitude and phase together</strong> retain the information needed for reconstruction.</p>
+</section>
+<section id="logo-dft-code" class="slide level2">
+<h2>Computing an Image DFT with OpenCV</h2>
 <style>
-.reveal .slides section {
-  outline: 2px dashed red;
+#logo-dft-code .code-block pre code {
+  max-height: 750px !important;
+  overflow-y: auto;
 }
 </style>
-<!-- Add Lecture 05 slides below this line. -->
-
-
+<div id="9c1cf760" class="cell code-block columns column-output-location" data-execution_count="45">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
+<span id="cb1-2"><a aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a aria-label="3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a aria-label="4"></a></span>
+<span id="cb1-5"><a aria-label="5"></a>I <span class="op">=</span> cv2.imread(<span class="st">"assets/05_fourier_transform/co_logo.png"</span>,</span>
+<span id="cb1-6"><a aria-label="6"></a>               cv2.IMREAD_GRAYSCALE)</span>
+<span id="cb1-7"><a aria-label="7"></a></span>
+<span id="cb1-8"><a aria-label="8"></a>I <span class="op">=</span> cv2.resize(I, (<span class="dv">64</span>, <span class="dv">64</span>), interpolation<span class="op">=</span>cv2.INTER_AREA)</span>
+<span id="cb1-9"><a aria-label="9"></a>I <span class="op">=</span> I.astype(np.float32) <span class="op">/</span> <span class="dv">255</span></span>
+<span id="cb1-10"><a aria-label="10"></a>H, W <span class="op">=</span> I.shape</span>
+<span id="cb1-11"><a aria-label="11"></a></span>
+<span id="cb1-12"><a aria-label="12"></a>F_raw <span class="op">=</span> cv2.dft(I, flags<span class="op">=</span>cv2.DFT_COMPLEX_OUTPUT)</span>
+<span id="cb1-13"><a aria-label="13"></a>F <span class="op">=</span> np.roll(F_raw, (H<span class="op">//</span><span class="dv">2</span>, W<span class="op">//</span><span class="dv">2</span>), axis<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb1-14"><a aria-label="14"></a></span>
+<span id="cb1-15"><a aria-label="15"></a>a, b <span class="op">=</span> F[:, :, <span class="dv">0</span>], F[:, :, <span class="dv">1</span>]</span>
+<span id="cb1-16"><a aria-label="16"></a>A, theta <span class="op">=</span> cv2.cartToPolar(a, b)</span>
+<span id="cb1-17"><a aria-label="17"></a>theta <span class="op">=</span> np.where(theta <span class="op">&gt;</span> np.pi, theta <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>np.pi, theta)</span>
+<span id="cb1-18"><a aria-label="18"></a>theta[A <span class="op">==</span> <span class="dv">0</span>] <span class="op">=</span> np.nan</span>
+<span id="cb1-19"><a aria-label="19"></a></span>
+<span id="cb1-20"><a aria-label="20"></a><span class="co"># Compress contrast for display only.</span></span>
+<span id="cb1-21"><a aria-label="21"></a>real_view <span class="op">=</span> np.sign(a) <span class="op">*</span> np.log1p(np.<span class="bu">abs</span>(a))</span>
+<span id="cb1-22"><a aria-label="22"></a>imag_view <span class="op">=</span> np.sign(b) <span class="op">*</span> np.log1p(np.<span class="bu">abs</span>(b))</span>
+<span id="cb1-23"><a aria-label="23"></a>L <span class="op">=</span> <span class="bu">max</span>(np.<span class="bu">abs</span>(real_view).<span class="bu">max</span>(), np.<span class="bu">abs</span>(imag_view).<span class="bu">max</span>())</span>
+<span id="cb1-24"><a aria-label="24"></a></span>
+<span id="cb1-25"><a aria-label="25"></a>views <span class="op">=</span> [I, real_view, imag_view, np.log1p(A), theta]</span>
+<span id="cb1-26"><a aria-label="26"></a>titles <span class="op">=</span> [<span class="st">"Image"</span>, <span class="st">"Real (signed log)"</span>, <span class="st">"Imaginary (signed log)"</span>,</span>
+<span id="cb1-27"><a aria-label="27"></a>          <span class="st">"Magnitude (log)"</span>, <span class="st">"Phase"</span>]</span>
+<span id="cb1-28"><a aria-label="28"></a>limits <span class="op">=</span> [(<span class="dv">0</span>, <span class="dv">1</span>), (<span class="op">-</span>L, L), (<span class="op">-</span>L, L), (<span class="dv">0</span>, <span class="va">None</span>), (<span class="op">-</span>np.pi, np.pi)]</span>
+<span id="cb1-29"><a aria-label="29"></a></span>
+<span id="cb1-30"><a aria-label="30"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="fl">8.2</span>, <span class="dv">6</span>))</span>
+<span id="cb1-31"><a aria-label="31"></a><span class="cf">for</span> axis, view, title, (lo, hi) <span class="kw">in</span> <span class="bu">zip</span>(ax.flat, views, titles, limits):</span>
+<span id="cb1-32"><a aria-label="32"></a>    axis.imshow(view, cmap<span class="op">=</span><span class="st">"gray"</span>, vmin<span class="op">=</span>lo, vmax<span class="op">=</span>hi,</span>
+<span id="cb1-33"><a aria-label="33"></a>                interpolation<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb1-34"><a aria-label="34"></a>    axis.set_title(title, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb1-35"><a aria-label="35"></a>    axis.axis(<span class="st">"off"</span>)</span>
+<span id="cb1-36"><a aria-label="36"></a>ax.flat[<span class="op">-</span><span class="dv">1</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb1-37"><a aria-label="37"></a></span>
+<span id="cb1-38"><a aria-label="38"></a>fig.tight_layout()</span>
+<span id="cb1-39"><a aria-label="39"></a>plt.show()</span>
+<span id="cb1-40"><a aria-label="40"></a>plt.close(fig)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-45-output-1.png" width="778" height="569"></p>
+</figure>
+</div>
+</div>
+</div></div>
 </section>
+<section id="why-center-the-fourier-spectrum" class="slide level2">
+<h2>Why Center the Fourier Spectrum?</h2>
+<p>OpenCV stores the <strong>zero-frequency coefficient at the upper-left corner</strong>.</p>
+<p>For visualization, <strong>the convention</strong> is to move it to the <strong>center</strong>.</p>
+<div id="5d18a35d" class="cell" data-execution_count="46">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-46-output-1.png" class="quarto-figure quarto-figure-center" width="800" height="376"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The center represents <strong>zero frequency</strong>, with positive and negative frequencies on opposite sides.</li>
+<li>Frequencies farther from the center represent <strong>more rapid intensity changes</strong>.</li>
+<li>Centering <strong>rearranges the coefficients</strong>; it does not change their values or the original image’s pixel coordinates.</li>
+</ul>
+</section>
+<section id="reading-a-fourier-spectrum" class="slide level2">
+<h2>Reading a Fourier Spectrum</h2>
+<p>How do these images appear in the spectrum?</p>
+<div id="a6d0cc7f" class="cell" data-execution_count="48">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-48-output-1.png" class="quarto-figure quarto-figure-center" width="1058" height="472"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Finer stripes:</strong> the two side peaks move farther from the center.</li>
+<li><strong>Orientation:</strong> the line joining the peaks is perpendicular to the stripes.</li>
+<li><strong>Center peak:</strong> these images have a nonzero mean intensity.</li>
+</ul>
+</section>
+<section id="two-extremes-a-point-and-a-constant-image" class="slide level2">
+<h2>Two Extremes: A Point and a Constant Image</h2>
+<p>What frequencies are needed to represent each image?</p>
+<div id="8e72acb7" class="cell" data-execution_count="49">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-49-output-1.png" class="quarto-figure quarto-figure-center" width="837" height="510"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>One bright pixel:</strong> all frequencies contribute equally; every DFT magnitude is <span class="math inline">\(1\)</span>.</li>
+<li><strong>Constant image:</strong> only the zero-frequency component remains; its value is the number of pixels in the image.</li>
+</ul>
+</section>
+<section id="from-a-point-to-a-line" class="slide level2">
+<h2>From a Point to a Line</h2>
+<p>A horizontal line is <strong>constant horizontally</strong>, but changes sharply vertically.</p>
+<div id="305c6df8" class="cell" data-execution_count="50">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-50-output-1.png" class="quarto-figure quarto-figure-center" width="837" height="261"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Along the line</strong></p>
+<p>There is no horizontal variation.</p>
+<p>Only the horizontal frequency <span class="math inline">\(u=0\)</span> is needed.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Across the line</strong></p>
+<p>A one-pixel change requires all vertical frequencies.</p>
+<p>The spectrum extends along the <span class="math inline">\(v\)</span> axis.</p>
+</div></div>
+<p><strong>A horizontal line produces a vertical line in the Fourier magnitude.</strong></p>
+</section>
+<section id="repeated-points-produce-repeated-peaks" class="slide level2">
+<h2>Repeated Points Produce Repeated Peaks</h2>
+<p>A regular grid of bright pixels is called an <strong>impulse train</strong> or <strong>impulse comb</strong>.</p>
+<div id="175443de" class="cell" data-execution_count="51">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-51-output-1.png" class="quarto-figure quarto-figure-center" width="842" height="510"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>A regular grid in the image produces a regular grid in the spectrum.</li>
+<li><strong>Farther-apart points → closer-together frequency peaks.</strong></li>
+</ul>
+</section>
+<section id="translation-changes-phase-not-magnitude" class="slide level2">
+<h2>Translation Changes Phase, Not Magnitude</h2>
+<p>Move the square without changing its shape or brightness.</p>
+<div id="bfcf1949" class="cell" data-execution_count="52">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-52-output-1.png" class="quarto-figure quarto-figure-center" width="837" height="510"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The <strong>magnitude stays the same</strong>: the same frequencies are present.</li>
+<li>The <strong>phase changes</strong>: the waves must align at a different location.</li>
+<li><strong>Magnitude alone cannot tell us where the square is located.</strong></li>
+</ul>
+</section>
+<section id="spatial-size-and-frequency-spread" class="slide level2">
+<h2>Spatial Size and Frequency Spread</h2>
+<p>Compare the same shape at two different sizes.</p>
+<div id="69ab8cf9" class="cell" data-execution_count="53">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-53-output-1.png" class="quarto-figure quarto-figure-center" width="837" height="510"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Smaller square → broader central lobe</strong> in the spectrum.</li>
+<li><strong>Larger square → narrower central lobe.</strong></li>
+<li><strong>Spatial extent and frequency spread have an inverse relationship.</strong></li>
+</ul>
+</section>
+<section id="rotating-an-image-rotates-its-spectrum" class="slide level2">
+<h2>Rotating an Image Rotates Its Spectrum</h2>
+<p>The spectrum follows the orientation of the image.</p>
+<div id="1aac06c4" class="cell" data-execution_count="54">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-54-output-1.png" class="quarto-figure quarto-figure-center" width="837" height="510"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Rotating the bar rotates this frequency pattern by the <strong>same angle</strong>.</li>
+</ul>
+</section>
+<section id="quiz-match-each-image-to-its-fourier-spectrum" class="slide level2">
+<h2>Quiz: Match Each Image to Its Fourier Spectrum</h2>
+<p>Match images <strong>A–H</strong> to the centered DFT amplitudes <strong>1–8</strong>.</p>
+<div id="aae43b1c" class="cell" data-execution_count="55">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-55-output-1.png" class="quarto-figure quarto-figure-center" width="1521" height="426"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Explain your matches using frequency spread, orientation, and repeated patterns.</strong></p>
+<aside class="notes">
+<p>Answer key:</p>
+<ul>
+<li><strong>A → 3:</strong> Gaussian kernel. Its Fourier amplitude is also Gaussian-shaped.</li>
+<li><strong>B → 5:</strong> Sobel x filter. It responds to horizontal intensity variation and has zero response at DC.</li>
+<li><strong>C → 2:</strong> Honeycomb. Repeated structures produce frequency peaks away from the center.</li>
+<li><strong>D → 7:</strong> Enlarged honeycomb. Larger cells move the characteristic frequencies closer to the center.</li>
+<li><strong>E → 6:</strong> Manitou steps. The predominantly horizontal edges produce strong vertical frequency content.</li>
+<li><strong>F → 8:</strong> Flower.</li>
+<li><strong>G → 1:</strong> Rotated aspen trees. The diagonal trunks produce strong frequency content in the perpendicular diagonal direction.</li>
+<li><strong>H → 4:</strong> Aspen trees. The predominantly vertical trunks produce strong horizontal frequency content.</li>
+</ul>
+<p>The rotated aspen image is also cropped and enlarged to remove empty corners. Its spectrum therefore reflects rotation, a change in scale, and different image boundaries—not rotation alone.</p>
+<p>The Sobel kernel is displayed as an enlarged 3 × 3 array, but its DFT is computed after zero-padding to 64 × 64.</p>
+<p>Display contrast is adjusted independently for each spectrum. Compare structure rather than absolute brightness across panels.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reconstructing-an-image-from-fourier-coefficients" class="slide level2">
+<h2>Reconstructing an Image from Fourier Coefficients</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div id="858e84b0" class="cell" data-execution_count="57">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-57-output-1.png" class="quarto-figure quarto-figure-center" width="420" height="587"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:58%;">
+<p>The inverse DFT reconstructs the image:</p>
+<p><span class="math display">\[
+I = \mathcal{F}^{-1}(F).
+\]</span></p>
+<p>What if we retain only <strong>some</strong> coefficients?</p>
+<ol type="1">
+<li>Keep the selected <strong>complex values</strong>.</li>
+<li>Set every other coefficient to zero.</li>
+<li>Apply the inverse DFT.</li>
+</ol>
+<p><span class="math display">\[
+\widehat{I}_K
+=
+\mathcal{F}^{-1}(M_K \odot F)
+\]</span></p>
+<p>Here, <span class="math inline">\(M_K\)</span> is a binary mask selecting <span class="math inline">\(K\)</span> coefficients.</p>
+</div></div>
+<p><strong>Which selection works better: random frequencies or frequencies near the center?</strong></p>
+</section>
+<section id="random-selection-1-coefficient" class="slide level2">
+<h2>Random Selection: 1 Coefficient</h2>
+<div id="17e135dc" class="cell" data-execution_count="58">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-58-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Only <strong>DC</strong> remains: every pixel equals the original image’s mean intensity.</p>
+<p>White pixels in the mask mark retained coefficients; black pixels mark discarded coefficients.</p>
+</section>
+<section id="random-selection-9-coefficients" class="slide level2">
+<h2>Random Selection: 9 Coefficients</h2>
+<div id="3f2cdcf1" class="cell" data-execution_count="59">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-59-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-25-coefficients" class="slide level2">
+<h2>Random Selection: 25 Coefficients</h2>
+<div id="ede6df92" class="cell" data-execution_count="60">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-60-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-65-coefficients" class="slide level2">
+<h2>Random Selection: 65 Coefficients</h2>
+<div id="0c5396d0" class="cell" data-execution_count="61">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-61-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-129-coefficients" class="slide level2">
+<h2>Random Selection: 129 Coefficients</h2>
+<div id="d8f51d9b" class="cell" data-execution_count="62">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-62-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-257-coefficients" class="slide level2">
+<h2>Random Selection: 257 Coefficients</h2>
+<div id="37269ced" class="cell" data-execution_count="63">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-63-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-513-coefficients" class="slide level2">
+<h2>Random Selection: 513 Coefficients</h2>
+<div id="801dfd04" class="cell" data-execution_count="64">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-64-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-1025-coefficients" class="slide level2">
+<h2>Random Selection: 1,025 Coefficients</h2>
+<div id="a00d5b2c" class="cell" data-execution_count="65">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-65-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-2049-coefficients" class="slide level2">
+<h2>Random Selection: 2,049 Coefficients</h2>
+<div id="02be017b" class="cell" data-execution_count="66">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-66-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-4097-coefficients" class="slide level2">
+<h2>Random Selection: 4,097 Coefficients</h2>
+<div id="32543f47" class="cell" data-execution_count="67">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-67-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-6145-coefficients" class="slide level2">
+<h2>Random Selection: 6,145 Coefficients</h2>
+<div id="7ce3e9de" class="cell" data-execution_count="68">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-68-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-8193-coefficients" class="slide level2">
+<h2>Random Selection: 8,193 Coefficients</h2>
+<div id="c178d694" class="cell" data-execution_count="69">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-69-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-12289-coefficients" class="slide level2">
+<h2>Random Selection: 12,289 Coefficients</h2>
+<div id="7ea6eb71" class="cell" data-execution_count="70">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-70-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-16385-coefficients" class="slide level2">
+<h2>Random Selection: 16,385 Coefficients</h2>
+<div id="d9636e78" class="cell" data-execution_count="71">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-71-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-20481-coefficients" class="slide level2">
+<h2>Random Selection: 20,481 Coefficients</h2>
+<div id="22d3a887" class="cell" data-execution_count="72">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-72-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="random-selection-all-24257-coefficients" class="slide level2">
+<h2>Random Selection: All 24,257 Coefficients</h2>
+<div id="59dd49a7" class="cell" data-execution_count="73">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-73-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>With all coefficients retained, the inverse DFT recovers the original image.</p>
+<p><strong>Can we obtain a useful reconstruction with far fewer coefficients?</strong></p>
+</section>
+<section id="selecting-from-the-center-1-coefficient" class="slide level2">
+<h2>Selecting from the Center: 1 Coefficient</h2>
+<div id="e9315840" class="cell" data-execution_count="74">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-74-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Start with <strong>DC</strong>, then expand outward to include progressively higher frequencies.</p>
+<p>We will use <strong>the same coefficient counts</strong> as before.</p>
+</section>
+<section id="selecting-from-the-center-9-coefficients" class="slide level2">
+<h2>Selecting from the Center: 9 Coefficients</h2>
+<div id="4a5f45b3" class="cell" data-execution_count="75">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-75-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-25-coefficients" class="slide level2">
+<h2>Selecting from the Center: 25 Coefficients</h2>
+<div id="d85f4ea2" class="cell" data-execution_count="76">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-76-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-65-coefficients" class="slide level2">
+<h2>Selecting from the Center: 65 Coefficients</h2>
+<div id="5cbe0058" class="cell" data-execution_count="77">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-77-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-129-coefficients" class="slide level2">
+<h2>Selecting from the Center: 129 Coefficients</h2>
+<div id="d393df56" class="cell" data-execution_count="78">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-78-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-257-coefficients" class="slide level2">
+<h2>Selecting from the Center: 257 Coefficients</h2>
+<div id="7fb9b1cf" class="cell" data-execution_count="79">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-79-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-513-coefficients" class="slide level2">
+<h2>Selecting from the Center: 513 Coefficients</h2>
+<div id="698c2eb5" class="cell" data-execution_count="80">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-80-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-1025-coefficients" class="slide level2">
+<h2>Selecting from the Center: 1,025 Coefficients</h2>
+<div id="8adaa218" class="cell" data-execution_count="81">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-81-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The scene is already recognizable using about <strong>4.2%</strong> of the coefficients.</p>
+</section>
+<section id="selecting-from-the-center-2049-coefficients" class="slide level2">
+<h2>Selecting from the Center: 2,049 Coefficients</h2>
+<div id="55b55afa" class="cell" data-execution_count="82">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-82-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-4097-coefficients" class="slide level2">
+<h2>Selecting from the Center: 4,097 Coefficients</h2>
+<div id="31cc71ff" class="cell" data-execution_count="83">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-83-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-6145-coefficients" class="slide level2">
+<h2>Selecting from the Center: 6,145 Coefficients</h2>
+<div id="44951793" class="cell" data-execution_count="84">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-84-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-8193-coefficients" class="slide level2">
+<h2>Selecting from the Center: 8,193 Coefficients</h2>
+<div id="ffc161e1" class="cell" data-execution_count="85">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-85-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-12289-coefficients" class="slide level2">
+<h2>Selecting from the Center: 12,289 Coefficients</h2>
+<div id="d5577416" class="cell" data-execution_count="86">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-86-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-16385-coefficients" class="slide level2">
+<h2>Selecting from the Center: 16,385 Coefficients</h2>
+<div id="4211e63f" class="cell" data-execution_count="87">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-87-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-20481-coefficients" class="slide level2">
+<h2>Selecting from the Center: 20,481 Coefficients</h2>
+<div id="b1e3440e" class="cell" data-execution_count="88">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-88-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-from-the-center-all-24257-coefficients" class="slide level2">
+<h2>Selecting from the Center: All 24,257 Coefficients</h2>
+<div id="651305de" class="cell" data-execution_count="89">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-89-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Both methods reach the same exact reconstruction when all coefficients are retained.</p>
+</section>
+<section id="same-number-of-coefficients-different-results" class="slide level2">
+<h2>Same Number of Coefficients, Different Results</h2>
+<div id="90be6364" class="cell" data-execution_count="90">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-90-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="329"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Low frequencies</strong> capture much of this image’s broad structure.</li>
+<li>Adding <strong>higher frequencies</strong> restores sharper edges and finer details.</li>
+<li>Random selection spends many coefficients on frequencies that contribute little to this image.</li>
+</ul>
+<p><strong>Compression idea:</strong> retain informative transform coefficients and encode them efficiently.</p>
+<aside class="notes">
+<p>This demonstrates lossy approximation using the DFT.</p>
+<p>Low-frequency selection works well here because much of the image’s energy is concentrated near zero frequency. It is not the best selection for every image.</p>
+<p>Keeping 4.2% of DFT entries does not automatically mean a file that is 4.2% of the original size. Storage also depends on coefficient precision, conjugate symmetry, how positions are represented, and the encoding method.</p>
+<p>Abruptly truncating the spectrum can also produce ringing near edges.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-is-the-energy-in-natural-images" class="slide level2">
+<h2>Where Is the Energy in Natural Images?</h2>
+<div id="486fee39" class="cell" data-execution_count="92">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-92-output-1.png" class="quarto-figure quarto-figure-center" width="677" height="539"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>In many natural images, large amplitudes concentrate <strong>near the center</strong>, at low spatial frequencies.</li>
+<li><strong>Neighboring pixels often have similar intensities</strong>; edges and fine textures contribute higher frequencies.</li>
+</ul>
+</section>
+<section id="what-if-neighboring-pixels-are-unrelated" class="slide level2">
+<h2>What If Neighboring Pixels Are Unrelated?</h2>
+<p>Each pixel is drawn <strong>independently</strong> from a uniform distribution between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>.</p>
+<div id="f63ca2b8" class="cell" data-execution_count="93">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-93-output-1.png" class="quarto-figure quarto-figure-center" width="716" height="357"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Energy is spread broadly across frequencies</strong>, without a strong low-frequency concentration.</li>
+<li>The bright center point is because the image has a nonzero mean.</li>
+</ul>
+<p><strong>Keeping only low frequencies captures natural-image structure much better than random pixel detail.</strong></p>
+</section>
+<section id="which-frequencies-do-we-see-best" class="slide level2">
+<h2>Which Frequencies Do We See Best?</h2>
+<p>Natural images often concentrate energy at <strong>low frequencies</strong>.</p>
+<p><strong>Are our eyes equally sensitive to all spatial frequencies?</strong></p>
+<p><strong>Where do you see the stripes?</strong></p>
+<div class="r-stack">
+<div class="contrast-base">
+<div id="66dd5079" class="cell" data-execution_count="95">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-95-output-1.png" class="quarto-figure quarto-figure-center" width="963" height="406"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="0">
+<div id="c95a940d" class="cell" data-execution_count="96">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-96-output-1.png" class="quarto-figure quarto-figure-center" width="963" height="406"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="0">
+<p>We typically detect <strong>lower contrast at intermediate spatial frequencies</strong> than at very low or very high frequencies.</p>
+<div class="tiny">
+<p>Note: The curve illustrates the trend. Actual visibility depends on viewing distance, lighting, and the display.</p>
+</div>
+</div>
+</section>
+<section id="filtering-in-the-frequency-domain" class="slide level2">
+<h2>Filtering in the Frequency Domain</h2>
+<p>A filter changes how strongly different spatial frequencies contribute to an image.</p>
+<p><strong>The convolution theorem</strong></p>
+<p>Let <span class="math inline">\(F=\mathcal{F}\{I\}\)</span> and <span class="math inline">\(H=\mathcal{F}\{h\}\)</span>.</p>
+<p><span class="math display">\[
+y = I * h
+\qquad \Longleftrightarrow \qquad
+Y = FH
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\boxed{y=\mathcal{F}^{-1}\{FH\}}
+\]</span></p>
+<ul>
+<li>Convolution in the spatial domain becomes <strong>elementwise multiplication</strong> in the frequency domain.</li>
+<li>We multiply the <strong>complex coefficients</strong>, retaining both amplitude and phase.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>For the DFT, sufficient zero-padding may be needed. The DFT assumes the input is periodic. Zero-padding ensures that the filter does not wrap around and affect the opposite edge of the image.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="but-we-defined-image-filtering-as-correlation" class="slide level2">
+<h2>But We Defined Image Filtering as Correlation</h2>
+<p>In Lecture 3, we used</p>
+<p><span class="math display">\[
+y[m,n]
+=
+\sum_k\sum_l h[k,l]\,I[m+k,n+l].
+\]</span></p>
+<p>This is <strong>correlation</strong>, as implemented by <code>cv2.filter2D()</code>.</p>
+<p>For our real-valued kernels:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Spatial operation</th>
+<th>Frequency-domain operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Convolution with <span class="math inline">\(h\)</span></td>
+<td><span class="math inline">\(Y=FH\)</span></td>
+</tr>
+<tr class="even">
+<td>Correlation with <span class="math inline">\(h\)</span></td>
+<td><span class="math inline">\(Y=F\overline{H}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Here, <span class="math inline">\(\overline{H}\)</span> is the <strong>complex conjugate</strong> of <span class="math inline">\(H\)</span>.</p>
+<ul>
+<li>For <strong>centered, symmetric</strong> kernels such as <strong>box and Gaussian filters</strong>, correlation and convolution give the same result.</li>
+<li>For <strong>Sobel x</strong>, switching between them reverses the response’s sign.</li>
+</ul>
+</section>
+<section id="the-same-filter-in-two-domains" class="slide level2">
+<h2>The Same Filter in Two Domains</h2>
+<p><span class="math display">\[
+y=\operatorname{corr}(I,h)
+\qquad \Longleftrightarrow \qquad
+Y=F\overline{H}
+\]</span></p>
+<div id="ab721614" class="cell" data-execution_count="98">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-98-output-1.png" class="quarto-figure quarto-figure-center" width="886" height="530"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The Sobel x filter suppresses constant regions and responds to <strong>horizontal intensity changes</strong>, emphasizing vertical edges.</p>
+</section>
+<section id="small-kernel-full-sized-spectrum" class="slide level2">
+<h2>Small Kernel, Full-Sized Spectrum</h2>
+<p><strong>The spectrum’s dimensions are determined by the DFT grid—not by the number of kernel entries.</strong></p>
+<p>For an <span class="math inline">\(M\times N\)</span> image and a <span class="math inline">\(P\times Q\)</span> kernel, a sufficient grid size is</p>
+<p><span class="math display">\[
+(M+P-1)\times(N+Q-1).
+\]</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>In the last example</th>
+<th>Array size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Original image</td>
+<td><span class="math inline">\(128\times128\)</span></td>
+</tr>
+<tr class="even">
+<td>Sobel kernel</td>
+<td><span class="math inline">\(3\times3\)</span></td>
+</tr>
+<tr class="odd">
+<td>Padded image and padded kernel</td>
+<td><span class="math inline">\(130\times130\)</span></td>
+</tr>
+<tr class="even">
+<td>Both DFTs</td>
+<td><span class="math inline">\(130\times130\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Zero-pad both arrays</strong> so their spectra can be multiplied element by element.</li>
+<li>Place the kernel’s <strong>center at the DFT origin</strong> to align the filtering response correctly.</li>
+<li>Apply the inverse DFT, then <strong>crop to the original image size</strong>.</li>
+</ul>
+</section>
+<section id="revisiting-blurring-box-vs.-gaussian" class="slide level2">
+<h2>Revisiting Blurring: Box vs.&nbsp;Gaussian</h2>
+<p>Both filters average neighboring pixels. <strong>Why do their results look different?</strong></p>
+<div id="b480b174" class="cell" data-execution_count="99">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-99-output-1.png" class="quarto-figure quarto-figure-center" width="971" height="353"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Box:</strong> all pixels inside the window receive equal weight.</li>
+<li><strong>Gaussian:</strong> weights decrease smoothly with distance from the center.</li>
+</ul>
+<p><strong>Their Fourier transforms reveal which frequencies each filter preserves or suppresses.</strong></p>
+</section>
+<section id="gaussian-blur-in-the-frequency-domain" class="slide level2">
+<h2>Gaussian Blur in the Frequency Domain</h2>
+<div id="ee03495f" class="cell" data-execution_count="100">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-100-output-1.png" class="quarto-figure quarto-figure-center" width="886" height="530"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The frequency response is <strong>Gaussian-shaped</strong>.</li>
+<li>Low frequencies pass through; higher frequencies are progressively attenuated.</li>
+</ul>
+</section>
+<section id="box-blur-in-the-frequency-domain" class="slide level2">
+<h2>Box Blur in the Frequency Domain</h2>
+<div id="ad92854b" class="cell" data-execution_count="101">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-101-output-1.png" class="quarto-figure quarto-figure-center" width="886" height="530"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The square kernel produces a <strong>sinc-like response</strong> with zeros and side lobes.</li>
+<li>Some frequency bands are suppressed strongly, while neighboring bands pass through more.</li>
+<li>This less uniform attenuation can leave more visible directional or block-like structure.</li>
+</ul>
+</section>
+<section id="quiz-match-each-filter-to-its-output" class="slide level2">
+<h2>Quiz: Match Each Filter to Its Output</h2>
+<p>Match frequency-domain filters <strong>A–D</strong> to output images <strong>1–4</strong>.</p>
+<p><strong>White passes frequencies; black removes them.</strong></p>
+<div id="3e832198" class="cell" data-execution_count="102">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-102-output-1.png" class="quarto-figure quarto-figure-center" width="1322" height="498"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Which filters retain broad structures, intermediate details, or the finest texture?</strong></p>
+<aside class="notes">
+<p>Answer key: A → 2, B → 4, C → 1, D → 3.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-nyquistshannon-sampling-theorem" class="slide level2">
+<h2>The Nyquist–Shannon Sampling Theorem</h2>
+<p>A band-limited signal with highest frequency <span class="math inline">\(f_{\max}\)</span> can be reconstructed from ideal samples when</p>
+<p><span class="math display">\[
+\boxed{f_s &gt; 2f_{\max}}
+\]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nyquist rate:</strong> <span class="math inline">\(2f_{\max}\)</span></td>
+<td>Sampling-rate threshold determined by the signal</td>
+</tr>
+<tr class="even">
+<td><strong>Nyquist frequency:</strong> <span class="math inline">\(f_s/2\)</span></td>
+<td>Frequency limit determined by the sampling rate</td>
+</tr>
+</tbody>
+</table>
+<div style="height: 30px;">
+
+</div>
+<p><strong>What happens when we downsample an image?</strong></p>
+<ul>
+<li>The sampling rate decreases, so the image must contain fewer high frequencies.</li>
+<li>Frequencies above the new <strong>Nyquist frequency</strong> (<span class="math inline">\(f_s/2\)</span>) fold into lower frequencies, producing aliasing.</li>
+</ul>
+</section>
+<section id="low-pass-filtering-before-downsampling" class="slide level2">
+<h2>Low-Pass Filtering Before Downsampling</h2>
+<p>Downsampling by <strong>4</strong> lowers the frequency limit to <strong><span class="math inline">\(1/8\)</span> cycle per original pixel</strong> in each direction.</p>
+<div id="ad8e7e1f" class="cell" data-execution_count="104">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-104-output-1.png" class="quarto-figure quarto-figure-center" width="845" height="568"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The dashed box marks the frequencies the smaller image can represent.</li>
+<li>We remove frequencies outside that region <strong>before discarding pixels</strong>.</li>
+</ul>
+</section>
+<section id="what-happens-if-we-skip-the-filter" class="slide level2">
+<h2>What Happens If We Skip the Filter?</h2>
+<p>Both downsampled images keep <strong>every fourth row and column</strong>.</p>
+<div id="7015d5a8" class="cell" data-execution_count="105">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="05_fourier_transform_files/figure-revealjs/cell-105-output-1.png" class="quarto-figure quarto-figure-center" width="1163" height="292"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Without filtering:</strong> fine stripes can become false coarse patterns—<strong>aliasing</strong>.</li>
+<li><strong>With filtering:</strong> fine detail is deliberately removed before it can fold into lower frequencies.</li>
+</ul>
+<p><strong>Losing detail is preferable to inventing a different pattern.</strong></p>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li><p><strong>Fourier representation:</strong> an image can be expressed as a weighted combination of spatial waves.</p></li>
+<li><p><strong>Amplitude and phase:</strong> amplitude describes each component’s strength; phase determines its alignment. Reconstruction requires both.</p></li>
+<li><p><strong>Reconstruction and compression:</strong> selected coefficients can capture much of an image’s structure; discarded coefficients represent lost information.</p></li>
+<li><p><strong>Filtering:</strong> convolution uses <span class="math inline">\(Y=FH\)</span>; correlation with our real-valued kernels uses <span class="math inline">\(Y=F\overline{H}\)</span>. Padding and kernel alignment matter.</p></li>
+<li><p><strong>Sampling:</strong> retain frequencies below the new Nyquist limit. Low-pass filtering must happen before downsampling.</p></li>
+</ul>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
