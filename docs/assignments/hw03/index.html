@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Build, reconstruct, and compress Laplacian image pyramids.">
 
-<title>Assignments – Computer Vision</title>
+<title>Homework 03: Laplacian Pyramids – Computer Vision</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,28 +27,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4f89106398f917ea1ddfe100a25665dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4f89106398f917ea1ddfe100a25665dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +109,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-due','listing-points','listing-starter','listing-resources','listing-path','listing-outputHref','listing-author','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-due","listing-points","listing-starter","listing-resources","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -137,14 +142,14 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computer Vision</span>
     </a>
   </div>
@@ -155,31 +160,31 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
+    <a class="nav-link" href="../../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
+    <a class="nav-link" href="../../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tas.html"> 
+    <a class="nav-link" href="../../tas.html"> 
 <span class="menu-text">TAs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials/"> 
+    <a class="nav-link" href="../../tutorials/"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignments/"> 
+    <a class="nav-link" href="../../assignments/"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/"> 
+    <a class="nav-link" href="../../lectures/"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
 </ul>
@@ -193,15 +198,38 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#starter-file" id="toc-starter-file" class="nav-link" data-scroll-target="#starter-file">Starter file</a></li>
+  <li><a href="#part-1-build-a-laplacian-pyramid" id="toc-part-1-build-a-laplacian-pyramid" class="nav-link" data-scroll-target="#part-1-build-a-laplacian-pyramid">Part 1 — Build a Laplacian pyramid</a></li>
+  <li><a href="#part-2-reconstruct-the-image" id="toc-part-2-reconstruct-the-image" class="nav-link" data-scroll-target="#part-2-reconstruct-the-image">Part 2 — Reconstruct the image</a></li>
+  <li><a href="#part-3-threshold-residuals-for-lossy-compression" id="toc-part-3-threshold-residuals-for-lossy-compression" class="nav-link" data-scroll-target="#part-3-threshold-residuals-for-lossy-compression">Part 3 — Threshold residuals for lossy compression</a></li>
+  <li><a href="#part-4-measure-residual-sparsity" id="toc-part-4-measure-residual-sparsity" class="nav-link" data-scroll-target="#part-4-measure-residual-sparsity">Part 4 — Measure residual sparsity</a></li>
+  <li><a href="#run-your-program" id="toc-run-your-program" class="nav-link" data-scroll-target="#run-your-program">Run your program</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit-important" id="toc-submission-limit-important" class="nav-link" data-scroll-target="#submission-limit-important">Submission limit — important</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Homework 03: Laplacian Pyramids</h1>
 </div>
 
+<div>
+  <div class="description">
+    Build, reconstruct, and compress Laplacian image pyramids.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -216,104 +244,176 @@ window.Quarto = {
 </header>
 
 
-<p>Homework assignments and supporting materials will be posted here throughout the semester.</p>
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>In this homework, you will implement a compact multiscale image representation based on the <strong>Laplacian pyramid</strong>. You will:</p>
+<ul>
+<li>construct a Laplacian pyramid from a grayscale image;</li>
+<li>reconstruct the original image from the stored residuals and coarsest Gaussian level;</li>
+<li>create a lossy representation by discarding small residual coefficients; and</li>
+<li>quantify how sparse the residual representation becomes after thresholding.</li>
+</ul>
+<p>Use the course <strong><code>cv</code> Conda environment</strong> and <strong>OpenCV (<code>cv2</code>)</strong> for the pyramid operations described below.</p>
+<p>Do not use generative AI to solve this homework. The goal is to make sure you understand how multiscale residual representations are constructed and reconstructed.</p>
+</section>
+<section id="starter-file" class="level2">
+<h2 class="anchored" data-anchor-id="starter-file">Starter file</h2>
+<p>Complete the provided <code>hw03.py</code> file. Do <strong>not</strong> rename the required functions or change their arguments because the Gradescope autograder calls them directly.</p>
+<p><a href="files/hw03.py" class="btn btn-primary">Download <code>hw03.py</code></a></p>
+<p>The required functions are:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>build_laplacian_pyramid(image, levels)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>reconstruct_laplacian_pyramid(pyramid)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>threshold_laplacian_pyramid(pyramid, threshold)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>residual_nonzero_fraction(pyramid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="part-1-build-a-laplacian-pyramid" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-build-a-laplacian-pyramid">Part 1 — Build a Laplacian pyramid</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_laplacian_pyramid(image, levels):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The input is a 2-D grayscale <code>numpy.float32</code> image with intensity values in <strong>[0, 1]</strong>. The argument <code>levels</code> is the number of <strong>residual levels</strong> to construct.</p>
+<p>Return a list with this structure:</p>
+<pre class="text"><code>[L0, L1, ..., L_(levels-1), G_levels]</code></pre>
+<p>At each level:</p>
+<ol type="1">
+<li>Smooth and downsample the current Gaussian image using <code>cv2.pyrDown(..., borderType=cv2.BORDER_REFLECT)</code>.</li>
+<li>Expand the coarse image back to the exact size of the current image using <code>cv2.pyrUp(..., dstsize=current.shape[::-1])</code>.</li>
+<li>Compute the signed residual:</li>
+</ol>
+<p><span class="math display">\[
+L_i = G_i - \operatorname{expand}(G_{i+1}).
+\]</span></p>
+<ol start="4" type="1">
+<li>Continue from the coarse image.</li>
+</ol>
+<p>Store the final coarse Gaussian image as the final element of the list.</p>
+<p>Requirements:</p>
+<ul>
+<li>all returned arrays must have dtype <code>numpy.float32</code>;</li>
+<li>preserve signed residual values; do not clip them to <code>[0, 1]</code>;</li>
+<li>the implementation must work with <strong>odd-sized and non-square images</strong>; and</li>
+<li><code>levels</code> will be at least 1 in graded tests.</li>
+</ul>
+</section>
+<section id="part-2-reconstruct-the-image" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-reconstruct-the-image">Part 2 — Reconstruct the image</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reconstruct_laplacian_pyramid(pyramid):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Start from the smallest Gaussian image stored at <code>pyramid[-1]</code>. For each finer level:</p>
+<ol type="1">
+<li>expand the current image to exactly the residual’s width and height using <code>cv2.pyrUp()</code> and <code>dstsize</code>; and</li>
+<li>add the residual at that level.</li>
+</ol>
+<p>In other words,</p>
+<p><span class="math display">\[
+G_i = \operatorname{expand}(G_{i+1}) + L_i.
+\]</span></p>
+<p>With an unmodified Laplacian pyramid, the reconstruction should match the original image apart from small floating-point roundoff.</p>
+<p>Return a <code>numpy.float32</code> array.</p>
+</section>
+<section id="part-3-threshold-residuals-for-lossy-compression" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-threshold-residuals-for-lossy-compression">Part 3 — Threshold residuals for lossy compression</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> threshold_laplacian_pyramid(pyramid, threshold):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The residual levels often contain many values close to zero. To create a simple lossy representation, set small residual coefficients to exactly zero.</p>
+<p>For every residual level <code>pyramid[:-1]</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(coefficient) <span class="op">&lt;</span> threshold  <span class="op">-&gt;</span>  <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Important details:</p>
+<ul>
+<li>the comparison is <strong>strictly less than</strong> the threshold;</li>
+<li>do <strong>not</strong> threshold the final coarse Gaussian image;</li>
+<li>return an <strong>independent copy</strong>: a new list containing a separate NumPy array for every pyramid level;</li>
+<li>do not modify the original pyramid or share its arrays with the returned pyramid; and</li>
+<li>return <code>numpy.float32</code> arrays.</li>
+</ul>
+<p>For this list-of-arrays structure, an appropriate independent copy is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_pyramid <span class="op">=</span> [level.copy() <span class="cf">for</span> level <span class="kw">in</span> pyramid]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You may then threshold the copied residual arrays. You do not need to use <code>copy.deepcopy()</code>.</p>
+<p>As the threshold increases, more detail coefficients will typically become zero and the reconstructed image will lose more fine detail.</p>
+</section>
+<section id="part-4-measure-residual-sparsity" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-measure-residual-sparsity">Part 4 — Measure residual sparsity</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> residual_nonzero_fraction(pyramid):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compute</p>
+<p><span class="math display">\[
+\text{nonzero fraction}
+=\frac{\text{number of nonzero residual coefficients}}
+       {\text{total number of residual coefficients}}.
+\]</span></p>
+<p>Count coefficients only in <code>pyramid[:-1]</code>. <strong>Do not include the final coarse Gaussian image.</strong></p>
+<p>Return a Python <code>float</code> in <code>[0, 1]</code>.</p>
+<p>A smaller nonzero fraction means that more residual coefficients are zero and the representation is more sparse. This statistic is only a simple proxy for compressibility; it is not the actual compressed file size.</p>
+</section>
+<section id="run-your-program" class="level2">
+<h2 class="anchored" data-anchor-id="run-your-program">Run your program</h2>
+<p>Activate the course environment and run the script with a JPG/JPEG or PNG image. We recommend reusing your <strong>HW01 headshot</strong> so you can visually compare how increasing the threshold changes the reconstruction:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw03.py my_image.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The provided script constructs a three-level Laplacian pyramid and compares:</p>
+<ul>
+<li>the original image;</li>
+<li>exact reconstruction from the unmodified pyramid; and</li>
+<li>lossy reconstructions after thresholding the residuals at <code>0.01</code>, <code>0.03</code>, and <code>0.08</code>.</li>
+</ul>
+<p>A successful run must:</p>
+<ul>
+<li>print the maximum exact-reconstruction error;</li>
+<li>print the residual nonzero fraction for each threshold; and</li>
+<li>save a viewable <code>hw03_output.png</code> comparison image.</li>
+</ul>
+<p>Look at how the residual nonzero fraction and reconstructed image quality change as the threshold increases.</p>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit exactly one file to Gradescope:</p>
+<pre class="text"><code>hw03.py</code></pre>
+<p>Do <strong>not</strong> submit your input image, <code>hw03_output.png</code>, screenshots, or a PDF report. Your headshot is only for local testing; the autograder runs your functions and script with instructor-provided images and arrays.</p>
+</section>
+<section id="submission-limit-important" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit-important">Submission limit — important</h2>
+<p>You may make at most <strong>5 Gradescope submissions</strong> for this homework. Test and debug thoroughly in your local <code>cv</code> environment before submitting.</p>
+<ul>
+<li>Submissions 1–5 are graded normally.</li>
+<li><strong>Submission 6 and every later submission receive a score of 0 for the homework.</strong></li>
+<li>A Gradescope infrastructure failure marked as an autograder error does not count against the five-submission limit.</li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>HW03 is worth <strong>5 points and is fully autograded</strong>.</p>
+<p>The autograder checks:</p>
+<ul>
+<li>required functions and interfaces;</li>
+<li>Laplacian-pyramid construction, including odd and non-square image sizes;</li>
+<li>exact reconstruction from the stored pyramid;</li>
+<li>residual thresholding and preservation of the coarse image;</li>
+<li>residual nonzero-fraction calculation; and</li>
+<li>whether <code>python hw03.py IMAGE</code> runs successfully and saves the expected output file.</li>
+</ul>
+<p>Some basic tests are public and provide detailed feedback when you submit. More substantive tests are private. <strong>Before the deadline, Gradescope will show only an overall pass/fail status for the private tests, without revealing which private test failed or any private-test details.</strong> The individual private tests, scores, and feedback become visible after the Gradescope late due date. Passing all public tests does not guarantee full credit.</p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li>Use the course <code>cv</code> Conda environment.</li>
+<li>Use <code>cv2.pyrDown()</code> and <code>cv2.pyrUp()</code> as specified above.</li>
+<li>Keep pyramid computations in floating point so signed residuals are preserved.</li>
+<li>Do not change the required function names or arguments.</li>
+<li>Do not hard-code outputs for a particular image, image size, number of levels, or threshold.</li>
+<li>Test locally before using one of your five Gradescope submissions.</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="list">
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="0" data-listing-file-modified-sort="1788236968000" data-listing-reading-time-sort="4" data-listing-word-count-sort="610">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw01/index.html">Homework 01: Working with Images</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Set up the course cv environment and practice basic image operations with OpenCV and NumPy.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 7, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw01/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw01/files/hw01.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="1" data-listing-file-modified-sort="1788547366000" data-listing-reading-time-sort="5" data-listing-word-count-sort="836">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw02/index.html">Homework 02: Filtering</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Implement correlation, convolution, common linear filters, and a median filter from scratch.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 14, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw02/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw02/files/hw02.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="2" data-listing-file-modified-sort="1789431911851" data-listing-reading-time-sort="5" data-listing-word-count-sort="948">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw03/index.html">Homework 03: Laplacian Pyramids</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Build, reconstruct, and compress Laplacian image pyramids.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 21, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw03/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw03/files/hw03.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
