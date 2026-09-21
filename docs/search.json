@@ -3168,7 +3168,7 @@
     "href": "lectures/06_edge_detection.html#step-3-compute-gradient-direction",
     "title": "Lecture 06 — Edge Detection",
     "section": "Step 3: Compute Gradient Direction",
-    "text": "Step 3: Compute Gradient Direction\nUse both signed derivatives to determine the direction:\n\\[\n\\theta=\\operatorname{atan2}(I_y,I_x).\n\\]\n\n\n\n\n\n\n\n\n\n\nThe gradient points toward the greatest increase in intensity, perpendicular to a local edge.\nWith image coordinates: 0° = right**, 90° = down, 180° = left, −90° = up.\nThe center has zero magnitude, so its direction is undefined, shown as —."
+    "text": "Step 3: Compute Gradient Direction\nUse both signed derivatives to determine the direction:\n\\[\n\\theta=\\operatorname{atan2}(I_y,I_x).\n\\]\n\n\n\n\n\n\n\n\n\n\nThe gradient points toward the greatest increase in intensity, perpendicular to a local edge.\nWith image coordinates: 0° = right, 90° = down, 180° = left, −90° = up.\nThe center has zero magnitude, so its direction is undefined, shown as —."
   },
   {
     "objectID": "lectures/06_edge_detection.html#image-gradient-example",
@@ -3182,7 +3182,7 @@
     "href": "lectures/06_edge_detection.html#grad-code",
     "title": "Lecture 06 — Edge Detection",
     "section": "Computing Image Gradients in Python",
-    "text": "Computing Image Gradients in Python\n\n\n# Convert the color image to grayscale.\nI = cv2.cvtColor(I_gradient_color, cv2.COLOR_BGR2GRAY)\nI = I.astype(np.float32) / 255.0  # Normalize to [0, 1].\n\n# Derivative filters for x and y directions\nh_grad_x = np.array([[-1, 0, 1],\n                    [-2, 0, 2],\n                    [-1, 0, 1]], dtype=np.float32) / 8\n\nh_grad_y = h_grad_x.T.copy()\n\n# Compute derivatives; floating-point outputs preserve negative values.\nIx = cv2.filter2D(I, -1, h_grad_x, borderType=cv2.BORDER_REPLICATE)\nIy = cv2.filter2D(I, -1, h_grad_y, borderType=cv2.BORDER_REPLICATE)\n\n# Gradient magnitude.\nM = np.sqrt(Ix**2 + Iy**2)\n\n# Gradient direction in degrees.\ntheta = np.degrees(np.arctan2(Iy, Ix))\n\n# Direction is undefined when the gradient is zero.\ntheta[M == 0] = np.nan"
+    "text": "Computing Image Gradients in Python\n\n\n# Convert the color image to floating-point grayscale.\nI = cv2.cvtColor(I_gradient_color, cv2.COLOR_BGR2GRAY)\nI = I.astype(np.float32) / 255.0\n\n# Normalized Sobel filters for x and y derivatives.\nh_grad_x = np.array([[-1, 0, 1],\n                     [-2, 0, 2],\n                     [-1, 0, 1]], dtype=np.float32) / 8\nh_grad_y = h_grad_x.T.copy()\n\n# Filter the image; -1 preserves the floating-point input type.\nIx = cv2.filter2D(I, -1, h_grad_x, borderType=cv2.BORDER_REPLICATE)\nIy = cv2.filter2D(I, -1, h_grad_y, borderType=cv2.BORDER_REPLICATE)\n\n# Gradient magnitude.\nM = np.sqrt(Ix**2 + Iy**2)\n\n# Gradient direction in degrees.\ntheta = np.degrees(np.arctan2(Iy, Ix))\n\n# For display, hide directions where the gradient is weak.\nthreshold = 0.05 * M.max()\ntheta[M &lt;= threshold] = np.nan"
   },
   {
     "objectID": "lectures/06_edge_detection.html#how-do-we-find-the-edge-of-this-signal",
