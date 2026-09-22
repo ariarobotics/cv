@@ -210,181 +210,6 @@
     "text": "Good habits\n\nRun git status often.\nPull before starting work on a shared repository.\nWrite short, meaningful commit messages.\nCommit logical pieces of work rather than one enormous end-of-project commit.\nPush regularly.\nDo not commit large datasets, generated files, model weights, or secrets unless explicitly required."
   },
   {
-    "objectID": "syllabus.html#course-overview",
-    "href": "syllabus.html#course-overview",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Overview",
-    "text": "Course Overview\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\n\n\nPrerequisites\n\nLinear algebra, calculus, probability, and statistics\nAlgorithms and Python (or C++). We require you to program in Python.\n\nCourse Website: https://ariarobotics.github.io/cv/\nCourse Repository: https://github.com/ariarobotics/cv"
-  },
-  {
-    "objectID": "syllabus.html#instructor",
-    "href": "syllabus.html#instructor",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Instructor",
-    "text": "Instructor\n\n\n\n\nKaveh Fathian\nAssistant Professor, Computer Science Department\n\nOffice: Brown 280-N\nOffice hours: Monday/Wednesday, 4:15–5:00 PM (after class)\nLab website: https://www.ariarobotics.com/"
-  },
-  {
-    "objectID": "syllabus.html#course-description",
-    "href": "syllabus.html#course-description",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Description",
-    "text": "Course Description\nComputer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.\n\nLearning Objectives\n\nCLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.\nCLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.\nCLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.\nCLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.\nCLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.\nCLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.\nCLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data."
-  },
-  {
-    "objectID": "syllabus.html#assessments-and-grading",
-    "href": "syllabus.html#assessments-and-grading",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Assessments and Grading",
-    "text": "Assessments and Grading\n\nHomework — 60 points\nThere will be up to 12 homework assignments. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework individually. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will not be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The lowest homework grade, including a missed assignment, will automatically be dropped and will not count toward the final grade. Two or more missed homework assignments will result in an Incomplete grade.\n\n\nExams — 40 points\nThere will be 4 exams scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered in person, in the classroom. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. Documentation must be provided to justify such an exception. Any missed exam will receive a grade of zero. Two or more missed exams will result in an Incomplete grade.\n\n\nBonus Points — up to 10 points\nAt the instructor’s discretion, optional assignments, projects, or other activities may be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.\n\n\nAttendance\nAttendance is mandatory but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will not be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence."
-  },
-  {
-    "objectID": "syllabus.html#final-grade",
-    "href": "syllabus.html#final-grade",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Final Grade",
-    "text": "Final Grade\nThe regular course grade consists of:\n\n\n\nComponent\nPoints\n\n\n\n\nHomework\n60\n\n\nExams\n40\n\n\nTotal\n100\n\n\n\nBonus points are then added to the final grade:\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\nA maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.\n\nGrading Rubric\n\n\n\nAmended Final Grade\nLetter Grade\n\n\n\n\n93–100\nA\n\n\n90–&lt;93\nA−\n\n\n87–&lt;90\nB+\n\n\n83–&lt;87\nB\n\n\n80–&lt;83\nB−\n\n\n77–&lt;80\nC+\n\n\n73–&lt;77\nC\n\n\n70–&lt;73\nC−\n\n\n67–&lt;70\nD+\n\n\n63–&lt;67\nD\n\n\n60–&lt;63\nD−\n\n\n&lt;60\nF"
-  },
-  {
-    "objectID": "syllabus.html#logistics",
-    "href": "syllabus.html#logistics",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Logistics",
-    "text": "Logistics\n\nThe primary communication channel between students and the instructor/TAs is the Ed Discussion server, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.\nStudents are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.\nInformation about the course TAs and their office hours is available through the course repository: https://github.com/ariarobotics/cv"
-  },
-  {
-    "objectID": "syllabus.html#resources",
-    "href": "syllabus.html#resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Resources",
-    "text": "Resources\nThere is no required textbook. Lecture slides and other course materials will be provided through the course website: https://ariarobotics.github.io/cv/\n\nRecommended Books\nMany of the following are available online.\n\nComputer Vision\n\nSzeliski, Computer Vision: Algorithms and Applications, Springer, 2010.\nKlette, Concise Computer Vision: An Introduction into Theory and Algorithms, 2014.\nHartley and Zisserman, Multiple View Geometry in Computer Vision, Cambridge University Press, 2004.\nForsyth and Ponce, Computer Vision: A Modern Approach, Prentice Hall, 2002.\nPalmer, Vision Science, MIT Press, 1999.\n\n\n\nLearning\n\nGoodfellow, Bengio, and Courville, Deep Learning, MIT Press, 2016.\nMitchell, Machine Learning, McGraw-Hill, 1997.\nDuda, Hart, and Stork, Pattern Classification, 2nd Edition, Wiley-Interscience, 2000.\nSutton and Barto, online book; a classic reference in reinforcement learning.\n\n\n\nGraphical Models\n\nKoller and Friedman, Probabilistic Graphical Models: Principles and Techniques, MIT Press, 2009."
-  },
-  {
-    "objectID": "syllabus.html#course-schedule",
-    "href": "syllabus.html#course-schedule",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Schedule",
-    "text": "Course Schedule\nThe detailed class schedule is available on the course website: https://ariarobotics.github.io/cv/. The schedule is subject to change. Exam and homework dates will not change except in extraordinary circumstances."
-  },
-  {
-    "objectID": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
-    "href": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Policy on Missed Classes, Exams, or Late Assignments",
-    "text": "Policy on Missed Classes, Exams, or Late Assignments\n\nThe lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade.\nThe lowest homework grade, including a missed submission, will automatically be dropped and will not count toward the final grade.\nIn-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.\nThe maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.\nExceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate documentation.\nAny missed exam will receive a grade of zero before application of the lowest-exam-drop policy.\nTwo or more missed exams will result in an Incomplete grade.\nTwo or more missed homework assignments will result in an Incomplete grade."
-  },
-  {
-    "objectID": "syllabus.html#other-important-course-policies",
-    "href": "syllabus.html#other-important-course-policies",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Other Important Course Policies",
-    "text": "Other Important Course Policies\n\nAny form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.\nNo resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.\nProfessional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor."
-  },
-  {
-    "objectID": "syllabus.html#absences",
-    "href": "syllabus.html#absences",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Absences",
-    "text": "Absences\nMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: https://www.mines.edu/student-life/student-absences/"
-  },
-  {
-    "objectID": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
-    "href": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Sexual Misconduct, Discrimination, and Retaliation",
-    "text": "Sexual Misconduct, Discrimination, and Retaliation\nMines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact OIE@Mines.edu or use the appropriate Discriminatory Harassment and Retaliation Reporting Form. Confidential resources are also available through Mines."
-  },
-  {
-    "objectID": "syllabus.html#preferred-first-name",
-    "href": "syllabus.html#preferred-first-name",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Preferred First Name",
-    "text": "Preferred First Name\nMines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the Office for Institutional Equity Preferred First Name resources. Students may also contact the Title IX Coordinator at OIE@Mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#pregnant-and-parenting-students",
-    "href": "syllabus.html#pregnant-and-parenting-students",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Pregnant and Parenting Students",
-    "text": "Pregnant and Parenting Students\nIf you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at oie@mines.edu for more information or to request support or modifications."
-  },
-  {
-    "objectID": "syllabus.html#academic-integrity",
-    "href": "syllabus.html#academic-integrity",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\nColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the full academic misconduct and academic integrity policy for definitions of academic misconduct. Resources provided by the Department of Community Standards are also available for guidance regarding academic misconduct and integrity procedures."
-  },
-  {
-    "objectID": "syllabus.html#generative-artificial-intelligence",
-    "href": "syllabus.html#generative-artificial-intelligence",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Generative Artificial Intelligence",
-    "text": "Generative Artificial Intelligence\nThe Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the current course policy, the use of generative AI is allowed outside of class but prohibited during class, including coding sessions and exams."
-  },
-  {
-    "objectID": "syllabus.html#copyrighted-materials",
-    "href": "syllabus.html#copyrighted-materials",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Copyrighted Materials",
-    "text": "Copyrighted Materials\nReadings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/"
-  },
-  {
-    "objectID": "syllabus.html#grading-policy",
-    "href": "syllabus.html#grading-policy",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Grading Policy",
-    "text": "Grading Policy\nExtra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed."
-  },
-  {
-    "objectID": "syllabus.html#course-issues-and-concerns",
-    "href": "syllabus.html#course-issues-and-concerns",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Course Issues and Concerns",
-    "text": "Course Issues and Concerns\nAs part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions."
-  },
-  {
-    "objectID": "syllabus.html#disability-support-services",
-    "href": "syllabus.html#disability-support-services",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Disability Support Services",
-    "text": "Disability Support Services\nDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: https://www.mines.edu/disability-support-services/"
-  },
-  {
-    "objectID": "syllabus.html#digital-accessibility",
-    "href": "syllabus.html#digital-accessibility",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Digital Accessibility",
-    "text": "Digital Accessibility\nColorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: https://www.mines.edu/accessibility/"
-  },
-  {
-    "objectID": "syllabus.html#student-outreach-support-sos-resources",
-    "href": "syllabus.html#student-outreach-support-sos-resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Student Outreach & Support (SOS) Resources",
-    "text": "Student Outreach & Support (SOS) Resources\nIf you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a referral for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: https://student-life.mines.edu/student-outreach-and-support/\nStudent Outreach and Support can help connect students with resources including:\n\nCounseling Center: https://counseling.mines.edu/\nLocated on the second floor of the Wellness Center, 1770 Elm St.\nStudent Health Center: https://studenthealth.mines.edu/\nLocated on the first floor of the Wellness Center.\nSHAPE Office: https://shape.mines.edu/\nProvides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.\n988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit https://www.988colorado.com/en.\n\nIn an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate."
-  },
-  {
-    "objectID": "syllabus.html#center-for-academic-services-and-advising-casa",
-    "href": "syllabus.html#center-for-academic-services-and-advising-casa",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Center for Academic Services and Advising (CASA)",
-    "text": "Center for Academic Services and Advising (CASA)\nCASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: https://www.mines.edu/casa/academic-support/ Questions may be directed to casa@mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#writing-center",
-    "href": "syllabus.html#writing-center",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Writing Center",
-    "text": "Writing Center\nThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: https://writing.mines.edu/ Questions may be directed to ryandeanlambert@mines.edu."
-  },
-  {
-    "objectID": "syllabus.html#tutoring-resources",
-    "href": "syllabus.html#tutoring-resources",
-    "title": "Computer Vision — Fall 2026",
-    "section": "Tutoring Resources",
-    "text": "Tutoring Resources\nThe Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: https://www.mines.edu/undergraduate-studies/tutoring/"
-  },
-  {
     "objectID": "lectures/index.html",
     "href": "lectures/index.html",
     "title": "Lectures",
@@ -1694,207 +1519,11 @@
     "text": "Key Things to Remember\n\nAttend class — important material may only be presented in person.\nComplete every homework assignment.\nTwo missed homework assignments → Incomplete\nTwo missed exams → Incomplete\nLate homework loses 25% of the maximum score per week.\nUse GenAI to learn, not to avoid learning how to code.\nUse Ed Discussion and ask questions early.\nCheck the course website regularly for the schedule, lectures, and updates.\nAcademic dishonesty is taken very seriously.\nBe professional, be kind.\n\nMost importantly: keep up with the course and ask for help before small problems become large ones."
   },
   {
-    "objectID": "code/index.html",
-    "href": "code/index.html",
-    "title": "Code & Demos",
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments",
     "section": "",
-    "text": "Code examples, notebooks, and demonstrations will be posted here throughout the semester."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Create a Programming Assignment worth 5 points.\nRecommended settings:\n\nstudent submission file: hw03.py;\nmaximum intended submissions: 5 (also enforced by the autograder);\nallow late submissions through your chosen Gradescope Late Due Date;\nset the Late Due Date to the time when the normal student submission window should close and the detailed private-test feedback should become visible.\n\nThe autograder enforces attempts 1–5 as valid and assigns 0/5 to attempt 6 and later valid submissions. Previous Gradescope submissions marked as autograder errors do not count.\n\n\n\nUpload:\nHW03_Gradescope_Autograder_cv.zip\nThen build/update the autograder in Gradescope.\n\n\n\nUse Gradescope’s Test Autograder workflow with:\ninstructor/solution/hw03_solution.py\nExpected score: 5.0/5.0.\nDuring Test Autograder, submission metadata may be unavailable. In that case the five-attempt limit is intentionally not enforced.\n\n\n\nPublic tests use:\nvisibility: visible\nEach scored private test uses:\nvisibility: after_due_date\nThe autograder also creates one unscored visible informational result named:\nPrivate tests: overall status\nBefore the deadline, this result tells the student only one of the following:\n\nall private tests passed; or\none or more private tests did not pass.\n\nIt does not reveal which private test failed, the private test names, private scores, inputs, or failure messages. The individual private-test results become visible after the Gradescope Late Due Date.\nThis behavior is implemented in the autograder output; it is not a separate Gradescope portal toggle.\n\n\n\nGradescope’s after_due_date visibility waits until the Late Due Date when late submissions are enabled. Canvas availability does not control autograder-test visibility.\nIf the normal late window is one week, set the Gradescope Late Due Date one week after the regular due date. After that time, students can see the detailed private-test results. Instructors can still upload a submission on a student’s behalf later if an exception is granted.\n\n\n\nCopy the quarto/assignments/hw03/ directory into the corresponding location in the course Quarto project. The supplied assignment due date is Sep. 21, 2026 at 11:59 PM."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Create a Programming Assignment worth 5 points.\nRecommended settings:\n\nstudent submission file: hw03.py;\nmaximum intended submissions: 5 (also enforced by the autograder);\nallow late submissions through your chosen Gradescope Late Due Date;\nset the Late Due Date to the time when the normal student submission window should close and the detailed private-test feedback should become visible.\n\nThe autograder enforces attempts 1–5 as valid and assigns 0/5 to attempt 6 and later valid submissions. Previous Gradescope submissions marked as autograder errors do not count."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#upload-the-autograder",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#upload-the-autograder",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Upload:\nHW03_Gradescope_Autograder_cv.zip\nThen build/update the autograder in Gradescope."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#test-the-autograder",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#test-the-autograder",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Use Gradescope’s Test Autograder workflow with:\ninstructor/solution/hw03_solution.py\nExpected score: 5.0/5.0.\nDuring Test Autograder, submission metadata may be unavailable. In that case the five-attempt limit is intentionally not enforced."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#student-visible-test-behavior",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#student-visible-test-behavior",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Public tests use:\nvisibility: visible\nEach scored private test uses:\nvisibility: after_due_date\nThe autograder also creates one unscored visible informational result named:\nPrivate tests: overall status\nBefore the deadline, this result tells the student only one of the following:\n\nall private tests passed; or\none or more private tests did not pass.\n\nIt does not reveal which private test failed, the private test names, private scores, inputs, or failure messages. The individual private-test results become visible after the Gradescope Late Due Date.\nThis behavior is implemented in the autograder output; it is not a separate Gradescope portal toggle."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#late-due-date-and-visibility",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#late-due-date-and-visibility",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Gradescope’s after_due_date visibility waits until the Late Due Date when late submissions are enabled. Canvas availability does not control autograder-test visibility.\nIf the normal late window is one week, set the Gradescope Late Due Date one week after the regular due date. After that time, students can see the detailed private-test results. Instructors can still upload a submission on a student’s behalf later if an exception is granted."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#quarto",
-    "href": "assignments_private/hw03/instructor/GRADESCOPE_SETUP.html#quarto",
-    "title": "HW03 — Gradescope Setup",
-    "section": "",
-    "text": "Copy the quarto/assignments/hw03/ directory into the corresponding location in the course Quarto project. The supplied assignment due date is Sep. 21, 2026 at 11:59 PM."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html",
-    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html",
-    "title": "HW02 — Gradescope Setup",
-    "section": "",
-    "text": "Create a Programming Assignment in Gradescope.\nRecommended settings:\n\nAssignment name: HW02: Filtering\nTotal/autograder points: 5.0\nManual grading: disabled\nGroup submission: off\nLate submissions: follow the course policy\nStudent submission method: Upload\n\nThe three-submission policy is enforced inside the autograder. Gradescope may still display a resubmit button after attempt 3, but attempt 4+ receives 0/5.\n\n\n\nUpload:\nHW02_Gradescope_Autograder_cv.zip\nDo not unzip it before uploading.\nUse the same Gradescope base image settings as HW01:\n\nUbuntu 22.04\nBase variant\n\nClick Update Autograder.\nThe setup script installs Miniforge and recreates the bundled snapshot of the course cv environment. A successful build should end with output similar to:\ncv environment ready\nPython: 3.12...\nNumPy: ...\nSciPy: ...\nMatplotlib: ...\nOpenCV: ...\n\n\n\nUse Test Autograder with:\ninstructor/sample_submissions/correct/hw02.py\nExpected score: 5.0 / 5.0.\nAlso test the intentionally incorrect samples if desired:\n\nincorrect_correlation\nincorrect_convolution\nprohibited_filter2d\n\nThe Test Autograder workflow generally does not provide normal student submission-history metadata, so the three-submission limit is intentionally not enforced there.\n\n\n\nProvide students the starter hw02.py from the Quarto assignment page. Students submit exactly:\nhw02.py\nThey do not submit their input image, hw02_output.png, or a PDF."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
-    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#create-the-assignment",
-    "title": "HW02 — Gradescope Setup",
-    "section": "",
-    "text": "Create a Programming Assignment in Gradescope.\nRecommended settings:\n\nAssignment name: HW02: Filtering\nTotal/autograder points: 5.0\nManual grading: disabled\nGroup submission: off\nLate submissions: follow the course policy\nStudent submission method: Upload\n\nThe three-submission policy is enforced inside the autograder. Gradescope may still display a resubmit button after attempt 3, but attempt 4+ receives 0/5."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#configure-the-autograder",
-    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#configure-the-autograder",
-    "title": "HW02 — Gradescope Setup",
-    "section": "",
-    "text": "Upload:\nHW02_Gradescope_Autograder_cv.zip\nDo not unzip it before uploading.\nUse the same Gradescope base image settings as HW01:\n\nUbuntu 22.04\nBase variant\n\nClick Update Autograder.\nThe setup script installs Miniforge and recreates the bundled snapshot of the course cv environment. A successful build should end with output similar to:\ncv environment ready\nPython: 3.12...\nNumPy: ...\nSciPy: ...\nMatplotlib: ...\nOpenCV: ..."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#test-before-release",
-    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#test-before-release",
-    "title": "HW02 — Gradescope Setup",
-    "section": "",
-    "text": "Use Test Autograder with:\ninstructor/sample_submissions/correct/hw02.py\nExpected score: 5.0 / 5.0.\nAlso test the intentionally incorrect samples if desired:\n\nincorrect_correlation\nincorrect_convolution\nprohibited_filter2d\n\nThe Test Autograder workflow generally does not provide normal student submission-history metadata, so the three-submission limit is intentionally not enforced there."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#student-release",
-    "href": "assignments_private/hw02/instructor/GRADESCOPE_SETUP.html#student-release",
-    "title": "HW02 — Gradescope Setup",
-    "section": "",
-    "text": "Provide students the starter hw02.py from the Quarto assignment page. Students submit exactly:\nhw02.py\nThey do not submit their input image, hw02_output.png, or a PDF."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual\n\n\nThe objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations.\n\n\n\nUse a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually.\n\n\n\nComplete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly.\n\n\n\nComplete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png.\n\n\n\n\n\nActivate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale.\n\n\n\nSubmit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot.\n\n\n\nYou may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.\n\n\n\n\nThe homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit.\n\n\n\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#objective",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#objective",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "The objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Use a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#starter-file",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#starter-file",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Complete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#required-tasks",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#required-tasks",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Complete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#run-your-program",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#run-your-program",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Activate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#what-to-submit",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#what-to-submit",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Submit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#submission-limit-important",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#submission-limit-important",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "You may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#grading",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#grading",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "The homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#notes",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/student_files/STUDENT_INSTRUCTIONS.html#notes",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Use the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "Your Gradescope assignment is already created with:\n\nProgramming Assignment\n4.0 autograder points\nManual grading enabled\n1.0-point Personal headshot outline item\n\nYou do not need to recreate the assignment.\n\n\nOpen HW01 in Gradescope and select Configure Autograder.\n\nChoose Zip file upload.\nClick Select Autograder (.zip).\nUpload HW01_Gradescope_Autograder_OpenCV_cv.zip.\nKeep:\n\nBase Image OS: Ubuntu\nBase Image Version: 22.04\nBase Image Variant: Base\n\nClick Update Autograder.\n\nThe setup uses Miniforge/conda-forge and recreates the bundled snapshot of the course cv environment. Near the end of a successful build, the log should show cv environment ready, Python 3.12.x, and an OpenCV version.\n\n\n\nAfter the build succeeds, click Test Autograder.\nFrom the complete instructor package, use the files in:\ninstructor/sample_submissions/correct/\nUpload both:\n\nhw01.py\nhw01_output.png\n\nExpected score: 4.0 / 4.0.\nOptional failure checks:\n\nincorrect_rowcol/ should fail the private row/column test.\nincorrect_grayscale/ should fail the private grayscale tests and the public executable test.\n\nThe Gradescope Test Autograder interface may not provide normal student submission metadata. The autograder therefore skips the three-submission enforcement when /autograder/submission_metadata.json is unavailable. Normal student submissions do include that metadata.\n\n\n\nThe assignment outline should contain:\n\nAutograder — 4.0 points\nPersonal headshot — 1.0 point\n\nFor Personal headshot, use the rubric in RUBRIC_AND_TESTS.md.\nImportant: if the student’s final submission is attempt 4+, the autograder gives 0/4. Set the manual headshot item to 0/1 as well so the homework total is 0/5, as stated in the student instructions.\n\n\n\nDistribute HW01_Student_Files_OpenCV.zip through the course website/repository.\nStudents should run:\nconda activate cv\npython hw01.py my_image.png\nThey submit exactly:\n\nhw01.py\nhw01_output.png\n\n\n\n\nConfirm:\n\nAssignment total is 5 points.\nAutograder points are 4.0.\nManual grading is enabled.\nPersonal headshot is 1.0 point.\nThe new OpenCV autograder builds successfully.\nThe correct sample gets 4.0/4.0.\nYour release/due-date/late-submission settings match the course policy."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#replace-the-autograder",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#replace-the-autograder",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "Open HW01 in Gradescope and select Configure Autograder.\n\nChoose Zip file upload.\nClick Select Autograder (.zip).\nUpload HW01_Gradescope_Autograder_OpenCV_cv.zip.\nKeep:\n\nBase Image OS: Ubuntu\nBase Image Version: 22.04\nBase Image Variant: Base\n\nClick Update Autograder.\n\nThe setup uses Miniforge/conda-forge and recreates the bundled snapshot of the course cv environment. Near the end of a successful build, the log should show cv environment ready, Python 3.12.x, and an OpenCV version."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#test-the-new-autograder",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#test-the-new-autograder",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "After the build succeeds, click Test Autograder.\nFrom the complete instructor package, use the files in:\ninstructor/sample_submissions/correct/\nUpload both:\n\nhw01.py\nhw01_output.png\n\nExpected score: 4.0 / 4.0.\nOptional failure checks:\n\nincorrect_rowcol/ should fail the private row/column test.\nincorrect_grayscale/ should fail the private grayscale tests and the public executable test.\n\nThe Gradescope Test Autograder interface may not provide normal student submission metadata. The autograder therefore skips the three-submission enforcement when /autograder/submission_metadata.json is unavailable. Normal student submissions do include that metadata."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#confirm-the-manual-rubric",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#confirm-the-manual-rubric",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "The assignment outline should contain:\n\nAutograder — 4.0 points\nPersonal headshot — 1.0 point\n\nFor Personal headshot, use the rubric in RUBRIC_AND_TESTS.md.\nImportant: if the student’s final submission is attempt 4+, the autograder gives 0/4. Set the manual headshot item to 0/1 as well so the homework total is 0/5, as stated in the student instructions."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#give-students-the-new-starter-files",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#give-students-the-new-starter-files",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "Distribute HW01_Student_Files_OpenCV.zip through the course website/repository.\nStudents should run:\nconda activate cv\npython hw01.py my_image.png\nThey submit exactly:\n\nhw01.py\nhw01_output.png"
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#before-release",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/GRADESCOPE_UPDATE_INSTRUCTIONS.html#before-release",
-    "title": "Updating the Existing HW01 Gradescope Assignment",
-    "section": "",
-    "text": "Confirm:\n\nAssignment total is 5 points.\nAutograder points are 4.0.\nManual grading is enabled.\nPersonal headshot is 1.0 point.\nThe new OpenCV autograder builds successfully.\nThe correct sample gets 4.0/4.0.\nYour release/due-date/late-submission settings match the course policy."
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments/hw03/index.html",
@@ -2051,6 +1680,258 @@
     "text": "Notes\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
   },
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule — Fall 2026",
+    "section": "",
+    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Pyramids\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04, Lec05\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec06\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec06, Lec07\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec07\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points & Matching\nLec07\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Matching\nLec07\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nHough Transform\nLec08\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nOptical Flow, Color\nLec09, Lec10\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nCamera Geometry\nLec11\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec11\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Calibration\nLec12\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec13\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec13\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nDepth Cameras\nLec14\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec15\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec16\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec17, Lec18\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec19\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec19\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec20\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec21\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec22\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec23\nLast week of class; Classes end"
+  },
+  {
+    "objectID": "index.html#computer-vision-colorado-school-of-mines",
+    "href": "index.html#computer-vision-colorado-school-of-mines",
+    "title": "Computer Vision",
+    "section": "Computer Vision | Colorado School of Mines",
+    "text": "Computer Vision | Colorado School of Mines\nWelcome to the course website for Computer Vision. This site is the main entry point for course information, lecture material, schedules, and resources."
+  },
+  {
+    "objectID": "index.html#course-material",
+    "href": "index.html#course-material",
+    "title": "Computer Vision",
+    "section": "Course Material",
+    "text": "Course Material\n\nCourse Information\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\n\n\nLearning Materials\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions.\nView Lectures\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
+  },
+  {
+    "objectID": "index.html#about-the-course",
+    "href": "index.html#about-the-course",
+    "title": "Computer Vision",
+    "section": "About the Course",
+    "text": "About the Course\nThe course covers both classical and modern computer vision, including:\n\nImage formation and image processing\nFiltering, convolution, and Fourier analysis\nFeature detection and matching\nCamera geometry and calibration\nStereo vision, motion, and 3D reconstruction\nImage classification and object detection\nDeep learning and convolutional neural networks\nPractical computer vision using Python, OpenCV, and PyTorch"
+  },
+  {
+    "objectID": "index.html#course-at-a-glance",
+    "href": "index.html#course-at-a-glance",
+    "title": "Computer Vision",
+    "section": "Course at a Glance",
+    "text": "Course at a Glance\n\n\n\nInstructor\nKaveh Fathian\n\n\nSemester\nFall 2026\n\n\nClass\nMonday & Wednesday, 3:00–4:15 PM\n\n\nLocation\nCoorsTek 130\n\n\nProgramming\nPython\n\n\nPrimary Communication\nEd Discussion"
+  },
+  {
+    "objectID": "index.html#course-website-vs.-github-repository",
+    "href": "index.html#course-website-vs.-github-repository",
+    "title": "Computer Vision",
+    "section": "Course Website vs. GitHub Repository",
+    "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
+  },
+  {
+    "objectID": "index.html#acknowledgments-and-use",
+    "href": "index.html#acknowledgments-and-use",
+    "title": "Computer Vision",
+    "section": "Acknowledgments and Use",
+    "text": "Acknowledgments and Use\nThese course materials build significantly on slides and teaching materials developed by other instructors, especially James Tompkin, Srinath Sridhar, Phillip Isola, William Freeman, Antonio Torralba, Kris Kitani, Takeo Kanade, Matthew O’Toole, and Chen Wang.\nYou are welcome to use and adapt these materials for academic, educational, or research purposes. If you reuse or redistribute them, please retain all acknowledgments and attributions to the original authors and sources. Some figures, examples, and other third-party materials may be subject to their own licenses or usage terms; please respect those requirements when reusing them."
+  },
+  {
+    "objectID": "syllabus.html#course-overview",
+    "href": "syllabus.html#course-overview",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Overview",
+    "text": "Course Overview\n\n\n\nCourse Code\nCSCI/EENG/ROBO 437/507/517\n\n\nSemester\nFall 2026, August 24 – December 9\n\n\nCredit Hours\n3\n\n\nClass Meeting Times\n3:00–4:15 PM, Monday and Wednesday\n\n\nClass Location\nCoorsTek 130\n\n\n\n\nPrerequisites\n\nLinear algebra, calculus, probability, and statistics\nAlgorithms and Python (or C++). We require you to program in Python.\n\nCourse Website: https://ariarobotics.github.io/cv/\nCourse Repository: https://github.com/ariarobotics/cv"
+  },
+  {
+    "objectID": "syllabus.html#instructor",
+    "href": "syllabus.html#instructor",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Instructor",
+    "text": "Instructor\n\n\n\n\nKaveh Fathian\nAssistant Professor, Computer Science Department\n\nOffice: Brown 280-N\nOffice hours: Monday/Wednesday, 4:15–5:00 PM (after class)\nLab website: https://www.ariarobotics.com/"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Description",
+    "text": "Course Description\nComputer vision is the process of using computers to acquire images, transform images, and extract symbolic descriptions from images. This course provides an introduction to this field, covering topics in classical computer vision such as image formation, feature extraction, location estimation, and object recognition, as well as modern computer vision techniques based on neural networks, mechanisms for training and running these networks, and their applications in computer vision. Hands-on homework will be assigned to practice popular computer vision software tools.\n\nLearning Objectives\n\nCLO1. Explain and apply fundamental concepts in image formation, image representation, color, and image processing.\nCLO2. Apply image processing techniques, including filtering, convolution, Fourier-domain analysis, edge detection, and Hough-based methods, to analyze and transform visual data.\nCLO3. Detect, describe, and match visual features using classical computer vision techniques, and apply these features to image analysis and recognition tasks.\nCLO4. Apply principles of camera geometry, camera calibration, two-view geometry, stereo vision, and motion estimation to recover geometric and 3D information from images.\nCLO5. Implement and evaluate classical computer vision methods for recognition and detection, including feature-based approaches such as SIFT and HOG.\nCLO6. Apply machine learning and deep learning methods, including neural networks and convolutional neural networks, to computer vision tasks such as image classification, object detection, and semantic segmentation.\nCLO7. Develop functional computer vision pipelines using tools such as Python and OpenCV, and evaluate their performance on real visual data."
+  },
+  {
+    "objectID": "syllabus.html#assessments-and-grading",
+    "href": "syllabus.html#assessments-and-grading",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Assessments and Grading",
+    "text": "Assessments and Grading\n\nHomework — 60 points\nThere will be up to 12 homework assignments. Students are allowed to discuss the problems, help each other, use online resources, etc.; however, they must understand the solutions and prepare and submit the homework individually. Identical submissions are considered plagiarism and will receive a grade of zero. Homework solutions will not be posted. Homework submission deadlines will not be extended except in extraordinary circumstances. The maximum score for late homework will decrease by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero. The lowest homework grade, including a missed assignment, will automatically be dropped and will not count toward the final grade. Two or more missed homework assignments will result in an Incomplete grade.\n\n\nExams — 40 points\nThere will be 4 exams scheduled during regular class hours. The exams are based on: lecture slides, class discussions, and homework. Exams will be administered in person, in the classroom. Students who require an alternative testing location or arrangement are responsible for submitting the appropriate requests. Students will not be allowed to use any resources during exams, including lecture notes, online searches, generative AI, calculators, and smartphones. The lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade. No make-up exam will be given for an excused absence except in extraordinary circumstances, as determined at the instructor’s discretion. Documentation must be provided to justify such an exception. Any missed exam will receive a grade of zero. Two or more missed exams will result in an Incomplete grade.\n\n\nBonus Points — up to 10 points\nAt the instructor’s discretion, optional assignments, projects, or other activities may be offered for bonus points. Bonus points are intended to provide students with opportunities to improve their final grade.\n\n\nAttendance\nAttendance is mandatory but will not be monitored. Several course topics will only be discussed in class and added to the slides during the lecture. This material will not be recorded or posted. The instructor is not responsible for correcting attendance-related issues resulting from negligence."
+  },
+  {
+    "objectID": "syllabus.html#final-grade",
+    "href": "syllabus.html#final-grade",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Final Grade",
+    "text": "Final Grade\nThe regular course grade consists of:\n\n\n\nComponent\nPoints\n\n\n\n\nHomework\n60\n\n\nExams\n40\n\n\nTotal\n100\n\n\n\nBonus points are then added to the final grade:\n\\[\n\\text{Amended Final Grade}\n=\n\\text{Final Grade}\n+\n\\text{Bonus Points}\n\\]\nA maximum of 10 bonus points may be added. Any amended grade above 100 points will be capped at 100.\n\nGrading Rubric\n\n\n\nAmended Final Grade\nLetter Grade\n\n\n\n\n93–100\nA\n\n\n90–&lt;93\nA−\n\n\n87–&lt;90\nB+\n\n\n83–&lt;87\nB\n\n\n80–&lt;83\nB−\n\n\n77–&lt;80\nC+\n\n\n73–&lt;77\nC\n\n\n70–&lt;73\nC−\n\n\n67–&lt;70\nD+\n\n\n63–&lt;67\nD\n\n\n60–&lt;63\nD−\n\n\n&lt;60\nF"
+  },
+  {
+    "objectID": "syllabus.html#logistics",
+    "href": "syllabus.html#logistics",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Logistics",
+    "text": "Logistics\n\nThe primary communication channel between students and the instructor/TAs is the Ed Discussion server, not email or Canvas messaging. The Ed Discussion server is linked through Canvas. All class announcements, questions, and discussions will be posted on Ed Discussion.\nStudents are expected to have access to a computer, such as a personal laptop, for in-class activities when needed. Smartphones may not be used as a substitute when a computer is required. Workstation computers are available in the classroom. Students may also loan laptops from Mines ITS or the Computer Science Department if needed.\nInformation about the course TAs and their office hours is available through the course repository: https://github.com/ariarobotics/cv"
+  },
+  {
+    "objectID": "syllabus.html#resources",
+    "href": "syllabus.html#resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Resources",
+    "text": "Resources\nThere is no required textbook. Lecture slides and other course materials will be provided through the course website: https://ariarobotics.github.io/cv/\n\nRecommended Books\nMany of the following are available online.\n\nComputer Vision\n\nSzeliski, Computer Vision: Algorithms and Applications, Springer, 2010.\nKlette, Concise Computer Vision: An Introduction into Theory and Algorithms, 2014.\nHartley and Zisserman, Multiple View Geometry in Computer Vision, Cambridge University Press, 2004.\nForsyth and Ponce, Computer Vision: A Modern Approach, Prentice Hall, 2002.\nPalmer, Vision Science, MIT Press, 1999.\n\n\n\nLearning\n\nGoodfellow, Bengio, and Courville, Deep Learning, MIT Press, 2016.\nMitchell, Machine Learning, McGraw-Hill, 1997.\nDuda, Hart, and Stork, Pattern Classification, 2nd Edition, Wiley-Interscience, 2000.\nSutton and Barto, online book; a classic reference in reinforcement learning.\n\n\n\nGraphical Models\n\nKoller and Friedman, Probabilistic Graphical Models: Principles and Techniques, MIT Press, 2009."
+  },
+  {
+    "objectID": "syllabus.html#course-schedule",
+    "href": "syllabus.html#course-schedule",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Schedule",
+    "text": "Course Schedule\nThe detailed class schedule is available on the course website: https://ariarobotics.github.io/cv/. The schedule is subject to change. Exam and homework dates will not change except in extraordinary circumstances."
+  },
+  {
+    "objectID": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "href": "syllabus.html#policy-on-missed-classes-exams-or-late-assignments",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Policy on Missed Classes, Exams, or Late Assignments",
+    "text": "Policy on Missed Classes, Exams, or Late Assignments\n\nThe lowest exam grade, including an absent exam, will automatically be dropped and will not count toward the final grade.\nThe lowest homework grade, including a missed submission, will automatically be dropped and will not count toward the final grade.\nIn-person class attendance is mandatory because some material will only be discussed in class and will not necessarily be recorded or posted.\nThe maximum score for late homework decreases by 25% for each week it is late: up to one week late, the maximum score is 75%; up to two weeks late, 50%; up to three weeks late, 25%; and at four weeks late or later, the score is zero.\nExceptions to the policies above may be granted only under extraordinary circumstances and at the instructor’s discretion. Students must provide appropriate documentation.\nAny missed exam will receive a grade of zero before application of the lowest-exam-drop policy.\nTwo or more missed exams will result in an Incomplete grade.\nTwo or more missed homework assignments will result in an Incomplete grade."
+  },
+  {
+    "objectID": "syllabus.html#other-important-course-policies",
+    "href": "syllabus.html#other-important-course-policies",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Other Important Course Policies",
+    "text": "Other Important Course Policies\n\nAny form of academic dishonesty, misconduct, or plagiarism will be taken very seriously and addressed through the Mines Academic Misconduct process.\nNo resources are allowed during exams. Use of generative AI tools, such as ChatGPT, is allowed outside of class but is prohibited during class activities where specified, including coding sessions and exams.\nProfessional language and etiquette are expected from all students. Please report inappropriate conduct or behavior to the instructor."
+  },
+  {
+    "objectID": "syllabus.html#absences",
+    "href": "syllabus.html#absences",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Absences",
+    "text": "Absences\nMines students are expected to fulfill their academic requirements through attendance and/or participation. Class attendance is required of all students unless the student has an excused absence granted by the school or the student’s professor. It is the student’s responsibility to request an excused absence from the professor or through the established protocol. Excused absences may be issued for unforeseen illness or anticipated and/or authorized medical or personal matters, including religious observance, military commitments, and other qualifying reasons upon review. Exclusions may apply. Opportunistic or habitual abuse of the excused absence policy violates the Mines Code of Conduct. To review the Excused Absence Policy or request an excused absence, visit: https://www.mines.edu/student-life/student-absences/"
+  },
+  {
+    "objectID": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "href": "syllabus.html#sexual-misconduct-discrimination-and-retaliation",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Sexual Misconduct, Discrimination, and Retaliation",
+    "text": "Sexual Misconduct, Discrimination, and Retaliation\nMines prohibits discrimination and harassment on the basis of age, ancestry, creed, marital status, race, color, ethnicity, religion, national origin, sex (including stalking, dating and domestic violence, non-consensual sexual contact or penetration, sexual exploitation, and sexual harassment), pregnant or parenting status, gender, gender identity, gender expression, disability, sexual orientation, genetic information, veteran status, or military service within any of its education programs or activities, including admissions and employment, or sponsored conferences and events. This prohibition applies to all students, employees, contractors, visitors, including conference attendees, and volunteers. Anyone in the campus community can report or file a complaint of discrimination or sexual misconduct. Please contact OIE@Mines.edu or use the appropriate Discriminatory Harassment and Retaliation Reporting Form. Confidential resources are also available through Mines."
+  },
+  {
+    "objectID": "syllabus.html#preferred-first-name",
+    "href": "syllabus.html#preferred-first-name",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Preferred First Name",
+    "text": "Preferred First Name\nMines recognizes that members of the campus community may prefer to use a first name other than their legal name to identify themselves. Many services on campus, including Canvas, utilize and display preferred first names. Additional information about using a preferred first name is available through the Office for Institutional Equity Preferred First Name resources. Students may also contact the Title IX Coordinator at OIE@Mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#pregnant-and-parenting-students",
+    "href": "syllabus.html#pregnant-and-parenting-students",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Pregnant and Parenting Students",
+    "text": "Pregnant and Parenting Students\nIf you are a pregnant or parenting student, you have the right to reasonable, non-disability-related modifications. Please contact the Title IX Coordinator in the Office for Institutional Equity at oie@mines.edu for more information or to request support or modifications."
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity",
+    "href": "syllabus.html#academic-integrity",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\nColorado School of Mines affirms the principle that all individuals associated with the Mines academic community have a responsibility for establishing, maintaining, and fostering an understanding and appreciation for academic integrity. Students should review the full academic misconduct and academic integrity policy for definitions of academic misconduct. Resources provided by the Department of Community Standards are also available for guidance regarding academic misconduct and integrity procedures."
+  },
+  {
+    "objectID": "syllabus.html#generative-artificial-intelligence",
+    "href": "syllabus.html#generative-artificial-intelligence",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Generative Artificial Intelligence",
+    "text": "Generative Artificial Intelligence\nThe Office of the Provost encourages the University community to explore the uses and impacts of generative AI technologies through critical discussion and creative applications. Based on the current course policy, the use of generative AI is allowed outside of class but prohibited during class, including coding sessions and exams."
+  },
+  {
+    "objectID": "syllabus.html#copyrighted-materials",
+    "href": "syllabus.html#copyrighted-materials",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Copyrighted Materials",
+    "text": "Copyrighted Materials\nReadings, lectures, media, data, and software used in this course may be protected by copyright law. You should not post, share, copy, distribute, upload, or publicly display these materials outside of class without permission from the copyright owner. Unauthorized use may result in disciplinary action and legal consequences. Mines copyright policy: https://www.mines.edu/policy-library/copyright-infringement-and-illegal-file-sharing/"
+  },
+  {
+    "objectID": "syllabus.html#grading-policy",
+    "href": "syllabus.html#grading-policy",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Grading Policy",
+    "text": "Grading Policy\nExtra credit may be offered for additional learning activities related to this class. Unless otherwise detailed in this syllabus, the awarding of extra credit is at the discretion of the instructor and is not guaranteed."
+  },
+  {
+    "objectID": "syllabus.html#course-issues-and-concerns",
+    "href": "syllabus.html#course-issues-and-concerns",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Course Issues and Concerns",
+    "text": "Course Issues and Concerns\nAs part of good professional practice, students are encouraged to speak directly with the faculty member to raise issues and concerns regarding the course professionally and in compliance with the student code of conduct. Students may also contact the course coordinator or the head of the department through which the course is offered. The department head can investigate and work with the faculty member to resolve course-related concerns. Students’ final point of contact is the college dean, who may make final decisions."
+  },
+  {
+    "objectID": "syllabus.html#disability-support-services",
+    "href": "syllabus.html#disability-support-services",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Disability Support Services",
+    "text": "Disability Support Services\nDisability Support Services (DSS) works collaboratively with students, faculty, and staff to minimize barriers and support an accessible campus community. When barriers to access occur, Disability Support Services works one-on-one with students to determine accommodations and facilitate access to programs and services. If you have been approved for accommodations through Disability Support Services, please contact your professor to confirm receipt of your accommodation letter and discuss implementation of accommodations in this course. For more information or to request accommodations, visit: https://www.mines.edu/disability-support-services/"
+  },
+  {
+    "objectID": "syllabus.html#digital-accessibility",
+    "href": "syllabus.html#digital-accessibility",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Digital Accessibility",
+    "text": "Digital Accessibility\nColorado School of Mines is committed to supporting an accessible digital environment for all members of the community, including students with disabilities. If you have an accessibility concern with Canvas or any digital materials or software used in this course, please contact your professor or request support from Information Technology. More information: https://www.mines.edu/accessibility/"
+  },
+  {
+    "objectID": "syllabus.html#student-outreach-support-sos-resources",
+    "href": "syllabus.html#student-outreach-support-sos-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Student Outreach & Support (SOS) Resources",
+    "text": "Student Outreach & Support (SOS) Resources\nIf you feel overwhelmed, anxious, depressed, or concerned about your overall wellbeing, you can connect with an SOS Case Manager who can help you navigate available resources. If you need assistance, please seek help from a trusted faculty or staff member, a fellow student, or submit a referral for yourself. If you are concerned about another student, you are encouraged to offer assistance and/or seek help on their behalf. More information: https://student-life.mines.edu/student-outreach-and-support/\nStudent Outreach and Support can help connect students with resources including:\n\nCounseling Center: https://counseling.mines.edu/\nLocated on the second floor of the Wellness Center, 1770 Elm St.\nStudent Health Center: https://studenthealth.mines.edu/\nLocated on the first floor of the Wellness Center.\nSHAPE Office: https://shape.mines.edu/\nProvides sexual and interpersonal violence support and is located on the second floor of the Wellness Center.\n988 Colorado Mental Health Line: Students seeking support for mental health and/or substance-use concerns may call or text 988 or visit https://www.988colorado.com/en.\n\nIn an emergency, call 911. Mines or Golden Police Department personnel will be dispatched as appropriate."
+  },
+  {
+    "objectID": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "href": "syllabus.html#center-for-academic-services-and-advising-casa",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Center for Academic Services and Advising (CASA)",
+    "text": "Center for Academic Services and Advising (CASA)\nCASA provides a variety of academic support services for students during their time at Mines. For a complete list of available academic support services, visit: https://www.mines.edu/casa/academic-support/ Questions may be directed to casa@mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#writing-center",
+    "href": "syllabus.html#writing-center",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Writing Center",
+    "text": "Writing Center\nThe Writing Center is a free academic support service for undergraduate and graduate students. Professional consultants and peer tutors provide support with many forms of communication, including technical and scientific reports, academic essays, and oral presentations. Students may schedule an online or in-person appointment at any stage of a project, from brainstorming through final revisions. More information: https://writing.mines.edu/ Questions may be directed to ryandeanlambert@mines.edu."
+  },
+  {
+    "objectID": "syllabus.html#tutoring-resources",
+    "href": "syllabus.html#tutoring-resources",
+    "title": "Computer Vision — Fall 2026",
+    "section": "Tutoring Resources",
+    "text": "Tutoring Resources\nThe Mines Tutoring page provides information about tutoring locations, hours, and offices appropriate for different academic needs. Visit: https://www.mines.edu/undergraduate-studies/tutoring/"
+  },
+  {
+    "objectID": "tas.html",
+    "href": "tas.html",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "",
+    "text": "Course-related questions should generally be posted on Ed Discussion so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.\nNote: TAs are instructed not to pre-grade homework. Please do not ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand."
+  },
+  {
+    "objectID": "tas.html#nathaniel-brazen",
+    "href": "tas.html#nathaniel-brazen",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Nathaniel Brazen",
+    "text": "Nathaniel Brazen\n\n\n\n\n\nEmail: nathaniel_brazen@mines.edu\nOffice hours: Tuesdays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
+  },
+  {
+    "objectID": "tas.html#praveen-krisna",
+    "href": "tas.html#praveen-krisna",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Praveen Krisna",
+    "text": "Praveen Krisna\n\n\n\n\n\nEmail: praveen_krisna@mines.edu\nOffice hours: Mondays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
+  },
+  {
+    "objectID": "tas.html#ryan-hartzell",
+    "href": "tas.html#ryan-hartzell",
+    "title": "Teaching Assistants — Fall 2026",
+    "section": "Ryan Hartzell",
+    "text": "Ryan Hartzell\n\n\n\n\n\nEmail: ryan_hartzell@mines.edu\nOffice hours: Fridays, 12:30-1:30 PM\nOffice location: Brown 280-K"
+  },
+  {
     "objectID": "assignments/hw02/index.html",
     "href": "assignments/hw02/index.html",
     "title": "Homework 02: Filtering",
@@ -2142,249 +2023,95 @@
     "text": "Notes\n\nUse the course cv Conda environment, and the openCV (cv2) library.\nDo not use OpenCV to replace the filtering algorithms you are required to implement.\nDo not change the required function names or arguments.\nDo not modify BOX_3X3, SOBEL_X, or SHARPEN_3X3.\nDo not hard-code outputs for a particular image or kernel.\nTest locally before using one of your Gradescope submissions."
   },
   {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments",
+    "objectID": "assignments/hw04/index.html",
+    "href": "assignments/hw04/index.html",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
   },
   {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html",
-    "title": "HW01 Grading Plan",
+    "objectID": "assignments/hw04/index.html#objective",
+    "href": "assignments/hw04/index.html#objective",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Objective",
+    "text": "Objective\nCreate a hybrid image that combines the smooth structure of one image with the fine details of another. You will use Marilyn and Einstein, then view the result at different sizes.\nUse the course cv Conda environment and OpenCV (cv2). Do not use generative AI to solve this homework. The goal is to understand how Fourier coefficients can be modified and used to reconstruct an image."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#starter-files",
+    "href": "assignments/hw04/index.html#starter-files",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Starter files",
+    "text": "Starter files\nDownload these files into the same folder:\n\nhw04.py\nmarilyn.png\neinstein.png\n\nComplete only these three functions in hw04.py:\nlog_magnitude_spectrum(image)\napply_frequency_filter(image, mask)\nmake_hybrid_image(image_low, image_high, sigma_low, sigma_high)\nThe Gaussian filter helper, image loading, and plotting code are already provided. Leave them unchanged. Do not change the required function names or arguments.\nThe provided loader reads the images as grayscale numpy.float32 arrays in [0, 1]. Keep the supplied images unchanged: do not crop, resize, or realign them."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#tools-and-conventions",
+    "href": "assignments/hw04/index.html#tools-and-conventions",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Tools and conventions",
+    "text": "Tools and conventions\n\nUse cv2.dft() and cv2.idft() for Fourier transforms. Do not use Fourier functions from NumPy, SciPy, or other libraries; use np.roll() for centering.\nPerform filtering by multiplying Fourier coefficients. Do not replace this step with spatial filters such as cv2.GaussianBlur() or cv2.filter2D().\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules.\nReturn same-size, two-dimensional float32 arrays. Support odd, even, and non-square image dimensions, and do not modify the input arrays.\nKeep signed values during computation. Do not clip, take absolute values of filtered images, or normalize intermediate results. The supplied display code handles visualization.\n\nThe grader supplies valid inputs. You do not need to write input-validation code."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
+    "href": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 1 — Display the Fourier spectrum",
+    "text": "Part 1 — Display the Fourier spectrum\nComplete:\ndef log_magnitude_spectrum(image):\n    ...\nCompute the image’s complex DFT, center its zero-frequency component, and return its log-magnitude spectrum:\n\\[\nS = \\log(1 + |F|).\n\\]\nThis function will be used for the input images, filtered components, and final hybrid. Some of those images contain negative values.\nHints:\n\nUse cv2.dft(image, flags=cv2.DFT_COMPLEX_OUTPUT). Its output has shape (M, N, 2): channel 0 is the real part and channel 1 is the imaginary part.\nFor an M × N image, center the spectrum using np.roll(F, (M // 2, N // 2), axis=(0, 1)). Shift only the two image axes.\nUse cv2.magnitude() on the real and imaginary channels, followed by np.log1p().\nDo not divide the forward DFT by the number of pixels or normalize the log-magnitude image to [0, 1]."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
+    "href": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 2 — Use the provided Gaussian filter",
+    "text": "Part 2 — Use the provided Gaussian filter\nThere is nothing to implement in this part. The starter includes:\ngaussian_frequency_mask(shape, sigma)\nIt returns an image-sized Gaussian low-pass mask, already centered for use with your centered Fourier coefficients. Call it with the image’s shape and the desired smoothing strength:\nlow_pass_mask = gaussian_frequency_mask(image.shape, sigma)\nhigh_pass_mask = 1 - low_pass_mask\nA larger sigma gives stronger smoothing. The low-pass mask retains smooth structure; its complement retains fine details. You do not need to construct a spatial kernel, derive a formula, or build a frequency-coordinate grid."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
+    "href": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 3 — Filter and reconstruct an image",
+    "text": "Part 3 — Filter and reconstruct an image\nComplete:\ndef apply_frequency_filter(image, mask):\n    ...\nUse the supplied mask to filter an image in the Fourier domain:\n\nCompute the image’s complex DFT with OpenCV.\nCenter it in the same way as in Part 1.\nMultiply the complex coefficients by mask.\nUndo the centering.\nApply OpenCV’s inverse DFT to obtain the filtered image.\n\nHints:\n\nPreserve both real and imaginary components. Part 1’s log-magnitude output is only for display; do not use it as the input to filtering or reconstruction.\nF * mask[..., None] applies the same mask to both complex channels.\nUndo the shift with np.roll(F_filtered, (-(M // 2), -(N // 2)), axis=(0, 1)). The parentheses matter for odd dimensions.\nUse cv2.idft(..., flags=cv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT) to obtain a correctly scaled, real-valued image.\nUse the original image size with no padding. This corresponds to periodic boundary behavior. The supplied masks are compatible with a real-valued inverse result.\nA high-pass result contains negative values. Keep them: taking an absolute value or clipping changes the result."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
+    "href": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 4 — Build the hybrid image",
+    "text": "Part 4 — Build the hybrid image\nComplete:\ndef make_hybrid_image(image_low, image_high, sigma_low, sigma_high):\n    ...\nConnect the provided mask helper to your filtering function:\n\nCall gaussian_frequency_mask(image_low.shape, sigma_low) to get the first image’s low-pass mask.\nPass image_low and that mask to your apply_frequency_filter(). Store the result as low.\nCall the provided mask helper again, using image_high.shape and sigma_high. Subtract this second mask from 1 to get a high-pass mask.\nPass image_high and the high-pass mask to your apply_frequency_filter(). Store the result as high.\nCompute the average and return all three images:\n\n\\[\nI_{\\mathrm{hybrid}}=\\frac{\\mathrm{low}+\\mathrm{high}}{2}.\n\\]\nReturn the arrays in this order: (low, high, hybrid). Do not clip or rescale them. An equivalent high-pass implementation is to subtract a Fourier low-pass result from image_high.\nThe provided driver calls this function with Marilyn first, Einstein second, sigma_low=9, and sigma_high=2. Use the function’s arguments so it also works for other image pairs and positive sigma values.\nYour Part 1 function is used by the provided driver to display the spectra. You do not need to call it inside make_hybrid_image()."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#run-and-inspect-your-program",
+    "href": "assignments/hw04/index.html#run-and-inspect-your-program",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Run and inspect your program",
+    "text": "Run and inspect your program\nconda activate cv\npython hw04.py\nOr specify the image paths explicitly, in low-frequency source, high-frequency source order:\npython hw04.py marilyn.png einstein.png\nThe driver saves:\n\nhw04_output.png — the sources, filtered components, hybrid, and spectra;\nhw04_distance.png — the hybrid at decreasing sizes; and\nhw04_hybrid.png — the raw hybrid saved as a grayscale PNG.\n\nCompare your results to these targets:\n\n\n\nExpected comparison image.\n\n\nFull-size comparison · Distance view · Raw hybrid\nFor display, the provided code offsets the signed high-pass image so zero appears gray and brightens the averaged hybrid. These display adjustments do not change your returned arrays. Compare each output with its corresponding reference.\nBefore submitting, check these simple properties locally:\n\nA constant image should have only one nonzero log-spectrum value, at the center.\nPassing an all-ones mask, np.ones_like(image), to your filter should recover the original image within small floating-point roundoff. An all-zeros mask should return zeros.\nHigh-pass filtering a constant image should produce approximately zero.\nInspect the supplied-image output at both large and small sizes. It should match the corresponding reference, apart from small numerical differences.\n\nThese checks guide debugging; you do not need to submit their results or write a report."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#what-to-submit",
+    "href": "assignments/hw04/index.html#what-to-submit",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "What to submit",
+    "text": "What to submit\nSubmit exactly one file, hw04.py, to Gradescope. Do not submit input images, output images, screenshots, or a notebook. The autograder supplies its own inputs."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#submission-limit-important",
+    "href": "assignments/hw04/index.html#submission-limit-important",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Submission limit — important",
+    "text": "Submission limit — important\nYou may make at most 5 Gradescope submissions. Test and debug locally before submitting.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count toward the limit. Errors in your submitted code do count."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#grading",
+    "href": "assignments/hw04/index.html#grading",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Grading",
+    "text": "Grading\nHW04 is worth 5 points and is fully autograded.\nThe autograder checks:\n\nrequired functions and interfaces;\ncentered Fourier log-magnitude spectra;\nfrequency-domain filtering and reconstruction, including signed values and odd/non-square image sizes;\ncorrect hybrid-image construction; and\nwhether the script reproduces the required result and saves the expected output files.\n\nUse the required OpenCV transforms; prohibited transform or spatial-filtering implementations fail the affected tests. Gaussian-mask construction is provided and is not a separately graded task. Small floating-point differences are allowed; the saved hybrid pixels may differ from the reference by at most one gray level.\nBasic public tests provide immediate detailed feedback. Before the Gradescope late due date, private tests provide only one overall pass/fail indicator. Individual private tests, scores, and feedback become visible after the late due date. Passing public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "code/index.html",
+    "href": "code/index.html",
+    "title": "Code & Demos",
     "section": "",
-    "text": "Autograder: 4.0 points\nManual personal-headshot check: 1.0 point\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nRequired functions and OpenCV\n0.25\nhw01.py parses, required functions exist, cv2 is imported, and skimage is not imported\n\n\nload_image OpenCV values\n0.50\nLoads an instructor PNG with the same BGR pixel values returned by cv2.imread\n\n\nTop-left block shape\n0.25\ntop_left_3x5 returns exactly (3, 5)\n\n\nExecutable script\n0.50\npython hw01.py my_image.png runs, prints a 3×5 matrix and pixel value using the required labels, and saves a readable grayscale PNG\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nGrayscale properties\n0.50\nResult is 2-D, numpy.float32, finite, and in [0, 1]\n\n\nGrayscale numerical values\n0.75\nExact OpenCV BGR→grayscale values followed by float32 scaling to [0,1]\n\n\nTop-left 3×5 numerical values\n0.75\nExact values of gray_image[:3, :5]\n\n\nRow/column pixel indexing\n0.50\nget_pixel_value(gray, 1, 2) returns gray[1, 2] using zero-based row/column indexing\n\n\n\nThe grayscale dtype/range test is intentionally private.\n\n\n\n\nQuestion title: Personal headshot\nRecommended rubric:\n\n1.0: hw01_output.png is clearly the student’s personal headshot/selfie, the face is visible, and the submitted output is a viewable grayscale image.\n0.5: A personal headshot appears to have been used, but the face/output is not clearly visible or the submitted image is not a proper grayscale result.\n0.0: Missing/unusable image, or clearly not the student’s personal headshot.\n\n\n\nStudents are allowed at most 3 Gradescope submissions.\nThe autograder counts previous submissions using /autograder/submission_metadata.json. Previous submissions with autograder_error: true do not count. On submission 4 or later, the autograder immediately returns 0/4 and does not run the tests.\nCourse policy for HW01 is that submission 4+ receives 0 for the homework, not merely 0/4 on the automatic portion. Therefore, if a student’s final submission is attempt 4 or later, assign 0/1 on the manual headshot item as well so the total is 0/5."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "title": "HW01 Grading Plan",
-    "section": "",
-    "text": "Autograder: 4.0 points\nManual personal-headshot check: 1.0 point"
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#autograder-tests-4.0-points",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#autograder-tests-4.0-points",
-    "title": "HW01 Grading Plan",
-    "section": "",
-    "text": "Test\nPoints\nWhat it checks\n\n\n\n\nRequired functions and OpenCV\n0.25\nhw01.py parses, required functions exist, cv2 is imported, and skimage is not imported\n\n\nload_image OpenCV values\n0.50\nLoads an instructor PNG with the same BGR pixel values returned by cv2.imread\n\n\nTop-left block shape\n0.25\ntop_left_3x5 returns exactly (3, 5)\n\n\nExecutable script\n0.50\npython hw01.py my_image.png runs, prints a 3×5 matrix and pixel value using the required labels, and saves a readable grayscale PNG\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTest\nPoints\nWhat it checks\n\n\n\n\nGrayscale properties\n0.50\nResult is 2-D, numpy.float32, finite, and in [0, 1]\n\n\nGrayscale numerical values\n0.75\nExact OpenCV BGR→grayscale values followed by float32 scaling to [0,1]\n\n\nTop-left 3×5 numerical values\n0.75\nExact values of gray_image[:3, :5]\n\n\nRow/column pixel indexing\n0.50\nget_pixel_value(gray, 1, 2) returns gray[1, 2] using zero-based row/column indexing\n\n\n\nThe grayscale dtype/range test is intentionally private."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#manual-item-1.0-point",
-    "href": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html#manual-item-1.0-point",
-    "title": "HW01 Grading Plan",
-    "section": "",
-    "text": "Question title: Personal headshot\nRecommended rubric:\n\n1.0: hw01_output.png is clearly the student’s personal headshot/selfie, the face is visible, and the submitted output is a viewable grayscale image.\n0.5: A personal headshot appears to have been used, but the face/output is not clearly visible or the submitted image is not a proper grayscale result.\n0.0: Missing/unusable image, or clearly not the student’s personal headshot.\n\n\n\nStudents are allowed at most 3 Gradescope submissions.\nThe autograder counts previous submissions using /autograder/submission_metadata.json. Previous submissions with autograder_error: true do not count. On submission 4 or later, the autograder immediately returns 0/4 and does not run the tests.\nCourse policy for HW01 is that submission 4+ receives 0 for the homework, not merely 0/4 on the automatic portion. Therefore, if a student’s final submission is attempt 4 or later, assign 0/1 on the manual headshot item as well so the total is 0/5."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual\n\n\nThe objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations.\n\n\n\nUse a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually.\n\n\n\nComplete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly.\n\n\n\nComplete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png.\n\n\n\n\n\nActivate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale.\n\n\n\nSubmit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot.\n\n\n\nYou may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit.\n\n\n\n\nThe homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit.\n\n\n\n\nUse the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#objective",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#objective",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "The objective of this homework is to verify that your course cv Conda environment is working and to practice basic image operations with OpenCV and NumPy.\nFor this course, use OpenCV (cv2) for image loading and image processing. Do not use skimage, PIL/Pillow, or another image-processing library to implement the required operations in this homework.\nDo not use generative AI to solve this homework. The purpose of this first assignment is to make sure you can work directly with the course Python environment and basic image-processing operations."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#personal-image-requirement",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Use a personal headshot or selfie in which your face is clearly visible. Your original color photo is not submitted to Gradescope. Instead, your program will save a grayscale result called hw01_output.png, and that grayscale result will be checked manually."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#starter-file",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#starter-file",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Complete the provided hw01.py file. Do not rename the required functions or change their arguments because the Gradescope autograder calls them directly."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#required-tasks",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#required-tasks",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Complete the following functions:\n\nload_image(filename)\n\nLoad the image from disk using OpenCV.\nReturn the loaded color image as a NumPy array.\n\nconvert_to_grayscale(image)\n\nConvert the OpenCV color image to grayscale using OpenCV.\nReturn a 2-D NumPy array.\nConvert the result to numpy.float32.\nScale the grayscale values to the range [0, 1].\n\ntop_left_3x5(gray_image)\n\nReturn the pixel values from the top-left corner as a matrix with exactly 3 rows and 5 columns.\n\nget_pixel_value(gray_image, row, col)\n\nReturn the requested grayscale pixel value on row 1, column 2, using standard NumPy indexing.\nRow/column indexing starts at 0.\n\nsave_grayscale_image(gray_image, output_path)\n\nSave a viewable grayscale image using OpenCV.\nThe program must produce hw01_output.png."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#run-your-program",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#run-your-program",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Activate the course environment and run the script with your own image:\nconda activate cv\npython hw01.py my_image.png\nYou may use JPG/JPEG or PNG. If your phone stores images as HEIC, first convert the image to JPG or PNG.\nA successful run must:\n\nload your personal headshot;\nconvert it to grayscale float32 in the [0, 1] range;\nprint the top-left 3-row × 5-column grayscale matrix;\nprint the grayscale pixel value at row 1, column 2 using zero-based indexing; and\nsave the grayscale image as hw01_output.png.\n\nBefore submitting, open hw01_output.png and make sure your face is clearly visible and the image is grayscale."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#what-to-submit",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#what-to-submit",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Submit exactly these two files to Gradescope:\n\nhw01.py\nhw01_output.png\n\nDo not submit a PDF, screenshots of your code, or your original color headshot."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#submission-limit-important",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#submission-limit-important",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "You may make at most 3 Gradescope submissions for this homework. Use your local cv environment to test and debug your code before submitting.\n\nSubmissions 1–3 are graded normally.\nSubmission 4 and every later submission receive a score of 0 for the homework.\nA Gradescope infrastructure failure marked as an autograder error does not count against the three-submission limit."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#grading",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#grading",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "The homework is worth 5 points:\n\n4.0 points: automatic programming tests.\n1.0 point: manual verification that hw01_output.png is the grayscale result of your personal headshot/selfie and that your face is clearly visible.\n\nThe autograder uses instructor-provided images and arrays in addition to your submitted output. Do not hard-code values from your personal image.\nSome basic tests are public and provide feedback when you submit. More substantive correctness tests are private. Passing all public tests does not guarantee full credit."
-  },
-  {
-    "objectID": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#notes",
-    "href": "assignments_private/hw01/HW01_Student_Files_OpenCV/HW01/STUDENT_INSTRUCTIONS.html#notes",
-    "title": "Homework 01: Working with Images",
-    "section": "",
-    "text": "Use the course cv Conda environment.\nUse OpenCV (cv2) for the required image operations.\nDo not change the required function names or arguments.\nDo not hard-code the 3×5 matrix or the row-1, column-2 pixel value.\nTest locally before using one of your three Gradescope submissions."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "HW02 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions + from-scratch implementation rules\nPublic\n0.50\n\n\nSimple 3x3 correlation\nPublic\n0.50\n\n\nExecutable script runs and saves hw02_output.png\nPublic\n0.50\n\n\nCorrelation numerical correctness\nPrivate\n0.75\n\n\nCorrelation boundary handling + non-square kernel\nPrivate\n0.50\n\n\nConvolution numerical correctness\nPrivate\n0.75\n\n\nRequired box, Sobel X, and sharpening kernels\nPrivate\n0.50\n\n\n3x3 median-filter numerical correctness\nPrivate\n0.50\n\n\nMedian-filter boundary handling\nPrivate\n0.50\n\n\nTotal\n\n5.00\n\n\n\n\n\n\nThe public source-inspection test parses hw02.py with Python’s AST. It checks that:\n\ncorrelate2d, convolve2d, and median_filter3x3 exist;\ncorrelate2d contains nested for loops;\nmedian_filter3x3 contains nested for loops;\nconvolve2d calls/reuses correlate2d;\nskimage and PIL/Pillow are not imported; and\ncommon OpenCV, SciPy, and NumPy filtering shortcuts are not called.\n\nIn addition, all direct function tests run student code in a separate unprivileged subprocess where common prohibited filtering functions are monkey-patched to raise an exception. This provides a second layer of enforcement in addition to source inspection.\nAll numerical and executable tests also invoke the source-compliance gate. A submission detected using a prohibited library filtering implementation therefore receives 0/5 rather than merely losing the 0.5-point source-check item.\nThis is intentionally strong but not intended as a formal proof against deliberately obfuscated code. For normal course submissions it should reliably detect the shortcuts students are most likely to use.\n\n\n\nBoth correlate2d and convolve2d use:\n\nzero padding;\nsame-size output;\nodd-height/odd-width kernels.\n\nmedian_filter3x3 also uses zero padding and same-size output.\n\n\n\nBOX_3X3 = np.ones((3, 3), dtype=np.float32) / 9.0\n\nSOBEL_X = np.array([\n    [-1, 0, 1],\n    [-2, 0, 2],\n    [-1, 0, 1],\n], dtype=np.float32)\n\nSHARPEN_3X3 = np.array([\n    [0, -1, 0],\n    [-1, 5, -1],\n    [0, -1, 0],\n], dtype=np.float32)\n\n\n\nThe autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–3 are graded normally.\nAttempt 4 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable (for example during Gradescope’s Test Autograder workflow), the tests run normally and no attempt is consumed/enforced.\n\n\n\n\nThe complete instructor package contains:\n\nsample_submissions/correct/ — expected 5.0/5.0;\nsample_submissions/incorrect_correlation/ — expected 2.0/5.0;\nsample_submissions/incorrect_convolution/ — expected 4.25/5.0; and\nsample_submissions/prohibited_filter2d/ — expected 0.0/5.0 because the compliance gate applies to all tests."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "HW02 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions + from-scratch implementation rules\nPublic\n0.50\n\n\nSimple 3x3 correlation\nPublic\n0.50\n\n\nExecutable script runs and saves hw02_output.png\nPublic\n0.50\n\n\nCorrelation numerical correctness\nPrivate\n0.75\n\n\nCorrelation boundary handling + non-square kernel\nPrivate\n0.50\n\n\nConvolution numerical correctness\nPrivate\n0.75\n\n\nRequired box, Sobel X, and sharpening kernels\nPrivate\n0.50\n\n\n3x3 median-filter numerical correctness\nPrivate\n0.50\n\n\nMedian-filter boundary handling\nPrivate\n0.50\n\n\nTotal\n\n5.00"
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#from-scratch-enforcement",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#from-scratch-enforcement",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "The public source-inspection test parses hw02.py with Python’s AST. It checks that:\n\ncorrelate2d, convolve2d, and median_filter3x3 exist;\ncorrelate2d contains nested for loops;\nmedian_filter3x3 contains nested for loops;\nconvolve2d calls/reuses correlate2d;\nskimage and PIL/Pillow are not imported; and\ncommon OpenCV, SciPy, and NumPy filtering shortcuts are not called.\n\nIn addition, all direct function tests run student code in a separate unprivileged subprocess where common prohibited filtering functions are monkey-patched to raise an exception. This provides a second layer of enforcement in addition to source inspection.\nAll numerical and executable tests also invoke the source-compliance gate. A submission detected using a prohibited library filtering implementation therefore receives 0/5 rather than merely losing the 0.5-point source-check item.\nThis is intentionally strong but not intended as a formal proof against deliberately obfuscated code. For normal course submissions it should reliably detect the shortcuts students are most likely to use."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#boundary-convention",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#boundary-convention",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "Both correlate2d and convolve2d use:\n\nzero padding;\nsame-size output;\nodd-height/odd-width kernels.\n\nmedian_filter3x3 also uses zero padding and same-size output."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#required-kernels",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#required-kernels",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "BOX_3X3 = np.ones((3, 3), dtype=np.float32) / 9.0\n\nSOBEL_X = np.array([\n    [-1, 0, 1],\n    [-2, 0, 2],\n    [-1, 0, 1],\n], dtype=np.float32)\n\nSHARPEN_3X3 = np.array([\n    [0, -1, 0],\n    [-1, 5, -1],\n    [0, -1, 0],\n], dtype=np.float32)"
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "The autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–3 are graded normally.\nAttempt 4 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable (for example during Gradescope’s Test Autograder workflow), the tests run normally and no attempt is consumed/enforced."
-  },
-  {
-    "objectID": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#suggested-sample-submission-checks",
-    "href": "assignments_private/hw02/instructor/RUBRIC_AND_TESTS.html#suggested-sample-submission-checks",
-    "title": "HW02 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "The complete instructor package contains:\n\nsample_submissions/correct/ — expected 5.0/5.0;\nsample_submissions/incorrect_correlation/ — expected 2.0/5.0;\nsample_submissions/incorrect_convolution/ — expected 4.25/5.0; and\nsample_submissions/prohibited_filter2d/ — expected 0.0/5.0 because the compliance gate applies to all tests."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "HW03 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions and interfaces\nPublic; immediate\n0.25\n\n\nSimple one-level Laplacian pyramid\nPublic; immediate\n0.50\n\n\nSimple exact reconstruction\nPublic; immediate\n0.50\n\n\nExecutable script runs and saves hw03_output.png\nPublic; immediate\n0.25\n\n\nMulti-level pyramid numerical correctness\nPrivate; details after late due date\n1.00\n\n\nReconstruction correctness for odd/non-square sizes\nPrivate; details after late due date\n0.75\n\n\nResidual thresholding + coarse-image preservation + independent-copy behavior\nPrivate; details after late due date\n0.75\n\n\nResidual nonzero-fraction calculation\nPrivate; details after late due date\n0.50\n\n\nEnd-to-end lossy compression pipeline\nPrivate; details after late due date\n0.50\n\n\nPrivate tests: overall status\nVisible immediately; informational only\n0.00\n\n\nTotal\n\n5.00\n\n\n\n\n\n\nbuild_laplacian_pyramid(image, levels)\nreconstruct_laplacian_pyramid(pyramid)\nthreshold_laplacian_pyramid(pyramid, threshold)\nresidual_nonzero_fraction(pyramid)\n\n\n\n\n\nbuild_laplacian_pyramid receives a 2-D np.float32 grayscale image whose values are in [0, 1]. Public and private construction/reconstruction tests respect this documented input range.\n\n\n\nFor each level, the reference implementation uses:\ncoarse = cv2.pyrDown(current, borderType=cv2.BORDER_REFLECT)\nexpanded = cv2.pyrUp(coarse, dstsize=current.shape[::-1])\nresidual = current - expanded\nThe pyramid representation is:\n[L0, L1, ..., L_(levels-1), G_levels]\nAll arrays are np.float32. Tests include odd and non-square image dimensions so dstsize must be handled correctly.\n\n\n\nThe reference implementation starts from the final coarse image and repeatedly computes:\ncurrent = cv2.pyrUp(current, dstsize=residual.shape[::-1])\ncurrent = current + residual\n\n\n\nOnly residual levels are thresholded. Coefficients satisfying\nabs(value) &lt; threshold\nare set to zero. Values exactly equal to the threshold are retained. The final coarse image is copied unchanged.\nThe returned pyramid must be independent of the input pyramid: it must be a new list whose arrays do not share memory with the input arrays. For a list of NumPy arrays, a clear way to create that independent copy is:\nnew_pyramid = [level.copy() for level in pyramid]\nThe private thresholding test checks both that the original input remains unchanged and that the returned arrays do not share memory with it.\n\n\n\nOnly residual levels pyramid[:-1] are counted:\nnonzero residual coefficients / total residual coefficients\nThe coarse image is excluded.\n\n\n\n\nThe autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–5 are graded normally.\nAttempt 6 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable, such as during Gradescope’s Test Autograder workflow, tests run normally and no attempt is enforced.\n\n\n\n\nEvery scored private test uses:\n\"visibility\": \"after_due_date\"\nBefore that date, students receive only an aggregate unscored pass/fail indicator for the private suite. This is generated by the autograder after running the same private tests; it does not disclose individual private results.\nWhen a Gradescope Late Due Date is configured, after_due_date means after that late deadline.\n\n\n\nThe public tests verify basic structure, one-level construction/reconstruction, and executable-script behavior. The private tests check generality: multiple pyramid levels, odd/non-square sizes, exact threshold semantics, independent-copy behavior, sparsity calculation, and end-to-end interoperability. The immediate private-suite pass/fail signal gives students useful correctness feedback without exposing the hidden cases they could otherwise target directly."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#total-5.0-points",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "HW03 is fully autograded; no manual grading item is required.\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\n\n\n\n\nRequired functions and interfaces\nPublic; immediate\n0.25\n\n\nSimple one-level Laplacian pyramid\nPublic; immediate\n0.50\n\n\nSimple exact reconstruction\nPublic; immediate\n0.50\n\n\nExecutable script runs and saves hw03_output.png\nPublic; immediate\n0.25\n\n\nMulti-level pyramid numerical correctness\nPrivate; details after late due date\n1.00\n\n\nReconstruction correctness for odd/non-square sizes\nPrivate; details after late due date\n0.75\n\n\nResidual thresholding + coarse-image preservation + independent-copy behavior\nPrivate; details after late due date\n0.75\n\n\nResidual nonzero-fraction calculation\nPrivate; details after late due date\n0.50\n\n\nEnd-to-end lossy compression pipeline\nPrivate; details after late due date\n0.50\n\n\nPrivate tests: overall status\nVisible immediately; informational only\n0.00\n\n\nTotal\n\n5.00"
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#required-functions",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#required-functions",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "build_laplacian_pyramid(image, levels)\nreconstruct_laplacian_pyramid(pyramid)\nthreshold_laplacian_pyramid(pyramid, threshold)\nresidual_nonzero_fraction(pyramid)"
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#numerical-conventions",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#numerical-conventions",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "build_laplacian_pyramid receives a 2-D np.float32 grayscale image whose values are in [0, 1]. Public and private construction/reconstruction tests respect this documented input range.\n\n\n\nFor each level, the reference implementation uses:\ncoarse = cv2.pyrDown(current, borderType=cv2.BORDER_REFLECT)\nexpanded = cv2.pyrUp(coarse, dstsize=current.shape[::-1])\nresidual = current - expanded\nThe pyramid representation is:\n[L0, L1, ..., L_(levels-1), G_levels]\nAll arrays are np.float32. Tests include odd and non-square image dimensions so dstsize must be handled correctly.\n\n\n\nThe reference implementation starts from the final coarse image and repeatedly computes:\ncurrent = cv2.pyrUp(current, dstsize=residual.shape[::-1])\ncurrent = current + residual\n\n\n\nOnly residual levels are thresholded. Coefficients satisfying\nabs(value) &lt; threshold\nare set to zero. Values exactly equal to the threshold are retained. The final coarse image is copied unchanged.\nThe returned pyramid must be independent of the input pyramid: it must be a new list whose arrays do not share memory with the input arrays. For a list of NumPy arrays, a clear way to create that independent copy is:\nnew_pyramid = [level.copy() for level in pyramid]\nThe private thresholding test checks both that the original input remains unchanged and that the returned arrays do not share memory with it.\n\n\n\nOnly residual levels pyramid[:-1] are counted:\nnonzero residual coefficients / total residual coefficients\nThe coarse image is excluded."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#submission-limit-policy",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "The autograder reads /autograder/submission_metadata.json.\n\nAttempts 1–5 are graded normally.\nAttempt 6 and all later valid attempts receive 0/5.\nPrevious submissions marked autograder_error: true are not counted.\nIf metadata is unavailable, such as during Gradescope’s Test Autograder workflow, tests run normally and no attempt is enforced."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#private-test-visibility",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#private-test-visibility",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "Every scored private test uses:\n\"visibility\": \"after_due_date\"\nBefore that date, students receive only an aggregate unscored pass/fail indicator for the private suite. This is generated by the autograder after running the same private tests; it does not disclose individual private results.\nWhen a Gradescope Late Due Date is configured, after_due_date means after that late deadline."
-  },
-  {
-    "objectID": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#publicprivate-design-rationale",
-    "href": "assignments_private/hw03/instructor/RUBRIC_AND_TESTS.html#publicprivate-design-rationale",
-    "title": "HW03 — Gradescope Rubric and Test Plan",
-    "section": "",
-    "text": "The public tests verify basic structure, one-level construction/reconstruction, and executable-script behavior. The private tests check generality: multiple pyramid levels, odd/non-square sizes, exact threshold semantics, independent-copy behavior, sparsity calculation, and end-to-end interoperability. The immediate private-suite pass/fail signal gives students useful correctness feedback without exposing the hidden cases they could otherwise target directly."
-  },
-  {
-    "objectID": "index.html#computer-vision-colorado-school-of-mines",
-    "href": "index.html#computer-vision-colorado-school-of-mines",
-    "title": "Computer Vision",
-    "section": "Computer Vision | Colorado School of Mines",
-    "text": "Computer Vision | Colorado School of Mines\nWelcome to the course website for Computer Vision. This site is the main entry point for course information, lecture material, schedules, and resources."
-  },
-  {
-    "objectID": "index.html#course-material",
-    "href": "index.html#course-material",
-    "title": "Computer Vision",
-    "section": "Course Material",
-    "text": "Course Material\n\nCourse Information\n\n\nSyllabus\nCourse policies, grading, learning objectives, and resources.\nView Syllabus\n\n\nSchedule\nLecture topics, homework deadlines, exams, and important dates.\nView Schedule\n\n\nTeaching Assistants\nTA contact information, office hours, and locations.\nView TAs\n\n\n\n\nLearning Materials\n\n\nLectures\nInteractive lecture slides and downloadable PDF versions.\nView Lectures\n\n\nAssignments\nHomework assignments and supporting files.\nView Assignments\n\n\nTutorials\nTutorials for tools and software used in the course.\nView Tutorials"
-  },
-  {
-    "objectID": "index.html#about-the-course",
-    "href": "index.html#about-the-course",
-    "title": "Computer Vision",
-    "section": "About the Course",
-    "text": "About the Course\nThe course covers both classical and modern computer vision, including:\n\nImage formation and image processing\nFiltering, convolution, and Fourier analysis\nFeature detection and matching\nCamera geometry and calibration\nStereo vision, motion, and 3D reconstruction\nImage classification and object detection\nDeep learning and convolutional neural networks\nPractical computer vision using Python, OpenCV, and PyTorch"
-  },
-  {
-    "objectID": "index.html#course-at-a-glance",
-    "href": "index.html#course-at-a-glance",
-    "title": "Computer Vision",
-    "section": "Course at a Glance",
-    "text": "Course at a Glance\n\n\n\nInstructor\nKaveh Fathian\n\n\nSemester\nFall 2026\n\n\nClass\nMonday & Wednesday, 3:00–4:15 PM\n\n\nLocation\nCoorsTek 130\n\n\nProgramming\nPython\n\n\nPrimary Communication\nEd Discussion"
-  },
-  {
-    "objectID": "index.html#course-website-vs.-github-repository",
-    "href": "index.html#course-website-vs.-github-repository",
-    "title": "Computer Vision",
-    "section": "Course Website vs. GitHub Repository",
-    "text": "Course Website vs. GitHub Repository\nThis website is the primary place to browse the course: syllabus, schedule, TA information, lectures, and other course resources.\nThe GitHub repository contains the downloadable files, code, notebooks, and other source material used in the course.\nView the Course Repository"
-  },
-  {
-    "objectID": "index.html#acknowledgments-and-use",
-    "href": "index.html#acknowledgments-and-use",
-    "title": "Computer Vision",
-    "section": "Acknowledgments and Use",
-    "text": "Acknowledgments and Use\nThese course materials build significantly on slides and teaching materials developed by other instructors, especially James Tompkin, Srinath Sridhar, Phillip Isola, William Freeman, Antonio Torralba, Kris Kitani, Takeo Kanade, Matthew O’Toole, and Chen Wang.\nYou are welcome to use and adapt these materials for academic, educational, or research purposes. If you reuse or redistribute them, please retain all acknowledgments and attributions to the original authors and sources. Some figures, examples, and other third-party materials may be subject to their own licenses or usage terms; please respect those requirements when reusing them."
+    "text": "Code examples, notebooks, and demonstrations will be posted here throughout the semester."
   },
   {
     "objectID": "lectures/02_image.html#what-is-an-image-and-how-is-it-formed",
@@ -3346,41 +3073,6 @@
     "text": "Key Takeaways\n\nEdges are local intensity changes. They can arise from changes in depth, surface orientation, reflectance, or illumination. They do not always correspond to object boundaries.\nImage derivatives can be computed by filtering. Gradient magnitude measures change strength, while gradient direction points across the local edge.\nSmoothing reduces sensitivity to noise. Larger \\(\\sigma\\) suppresses more detail and can merge nearby boundaries.\nFirst-derivative extrema and second-derivative zero crossings provide ways to locate intensity transitions.\nCanny produces a binary edge map: Gaussian derivatives, gradient magnitude and direction, non-maximum suppression, then hysteresis thresholding.\nNon-maximum suppression thins responses across edges. Hysteresis keeps weak responses connected to strong ones.\n\n\n\n\n\n\n\nParameter Choices Matter\n\n\nChoose the smoothing scale and thresholds for the boundaries you want to detect. No single setting captures every meaningful boundary while rejecting all texture and noise."
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Course Schedule — Fall 2026",
-    "section": "",
-    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Pyramids\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04, Lec05\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec06\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec06, Lec07\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec07\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points & Matching\nLec07\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Matching\nLec07\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nHough Transform\nLec08\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nOptical Flow, Color\nLec09, Lec10\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nCamera Geometry\nLec11\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec11\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Calibration\nLec12\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec13\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec13\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nDepth Cameras\nLec14\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec15\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec16\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec17, Lec18\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec19\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec19\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec20\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec21\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec22\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec23\nLast week of class; Classes end"
-  },
-  {
-    "objectID": "tas.html",
-    "href": "tas.html",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "",
-    "text": "Course-related questions should generally be posted on Ed Discussion so that answers can also help other students. Office hours are a good place to get individual help with course concepts, homework, and programming questions.\nNote: TAs are instructed not to pre-grade homework. Please do not ask them if your solution is correct or expect them to provide the answer. Instead, use office hours to ask questions about concepts or course material that you do not understand."
-  },
-  {
-    "objectID": "tas.html#nathaniel-brazen",
-    "href": "tas.html#nathaniel-brazen",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Nathaniel Brazen",
-    "text": "Nathaniel Brazen\n\n\n\n\n\nEmail: nathaniel_brazen@mines.edu\nOffice hours: Tuesdays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
-  },
-  {
-    "objectID": "tas.html#praveen-krisna",
-    "href": "tas.html#praveen-krisna",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Praveen Krisna",
-    "text": "Praveen Krisna\n\n\n\n\n\nEmail: praveen_krisna@mines.edu\nOffice hours: Mondays, 1:00 - 2:00 PM\nOffice location: Brown 280-K"
-  },
-  {
-    "objectID": "tas.html#ryan-hartzell",
-    "href": "tas.html#ryan-hartzell",
-    "title": "Teaching Assistants — Fall 2026",
-    "section": "Ryan Hartzell",
-    "text": "Ryan Hartzell\n\n\n\n\n\nEmail: ryan_hartzell@mines.edu\nOffice hours: Fridays, 12:30-1:30 PM\nOffice location: Brown 280-K"
-  },
-  {
     "objectID": "tutorials/01_wsl.html",
     "href": "tutorials/01_wsl.html",
     "title": "01 — WSL and Ubuntu on Windows",
@@ -3694,222 +3386,5 @@
     "title": "05 — NumPy for Computer Vision",
     "section": "Additional reference",
     "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
-  },
-  {
-    "objectID": "assignments/hw04/index.html",
-    "href": "assignments/hw04/index.html",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "",
-    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
-  },
-  {
-    "objectID": "assignments/hw04/index.html#objective",
-    "href": "assignments/hw04/index.html#objective",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Objective",
-    "text": "Objective\nCreate a hybrid image that combines the smooth structure of one image with the fine details of another. You will use Marilyn and Einstein, then view the result at different sizes.\nUse the course cv Conda environment and OpenCV (cv2). Do not use generative AI to solve this homework. The goal is to understand how Fourier coefficients can be modified and used to reconstruct an image."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#download-the-files",
-    "href": "assignments/hw04/index.html#download-the-files",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Download the files",
-    "text": "Download the files\nSave these files together in one folder:\n\nStarter code: hw04.py\nEinstein: einstein.png\nMarilyn: marilyn.png\nLocal checks: check_hw04.py\nReference hybrid pixels: reference_hybrid.png\n\nThe input images are 380 rows × 364 columns. Do not crop, resize, realign, replace, or otherwise edit them. The provided loader converts them to grayscale float32 arrays in [0, 1] using OpenCV. You may use other image pairs for additional experimentation, but the required output uses these exact images and parameters."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#expected-result",
-    "href": "assignments/hw04/index.html#expected-result",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Expected result",
-    "text": "Expected result\n\n\n\nReference comparison: sources, low-pass and high-pass components, hybrid image, and their centered Fourier spectra.\n\n\nOpen the full-size reference comparison\n\n\n\nThe same hybrid at progressively smaller sizes.\n\n\nLook at the large and small versions. The visibility of the two sources changes with viewing size and distance. The graded target is the specified numerical pipeline; your particular perception of the illusion is not graded."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#permitted-tools",
-    "href": "assignments/hw04/index.html#permitted-tools",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Permitted tools",
-    "text": "Permitted tools\n\nRequired: cv2.dft() and cv2.idft() for all forward and inverse Fourier transforms.\nAllowed: OpenCV image I/O, cv2.magnitude(), and NumPy array operations such as np.roll(), np.meshgrid(), np.exp(), and np.log1p().\nProhibited: Fourier functions from other libraries, including numpy.fft (including its shift helpers), scipy.fft, and scipy.fftpack. Use np.roll() for shifts.\nProhibited for this assignment: spatial filtering routines such as cv2.GaussianBlur(), cv2.filter2D(), cv2.sepFilter2D(), cv2.blur(), and cv2.boxFilter(). Use multiplication in the frequency domain. Other transforms such as the DCT do not satisfy the task.\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules argparse, pathlib, math, typing, sys, and __future__. Avoid wildcard imports and dynamic imports/code execution. You do not need additional packages.\nThe supplied driver uses Matplotlib for plotting and cv2.resize() only to display smaller versions of the completed hybrid. Leave that code unchanged.\n\nThe grader checks numerical behavior, permitted-library usage, and whether the transform functions actually call OpenCV. A source-rule violation causes the affected transform/filtering/hybrid tests to fail; the mask-only tests and interface test are graded independently. Do not hard-code outputs, load the reference image as your result, or bypass the required functions."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#function-contracts",
-    "href": "assignments/hw04/index.html#function-contracts",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Function contracts",
-    "text": "Function contracts\nComplete the four marked functions in hw04.py. Do not rename them or change their arguments.\nAll image inputs are nonempty, two-dimensional numpy.float32 arrays. Mask inputs are same-shape float32 arrays. Graded dimensions are at least two in each direction; odd, even, and non-square dimensions are included. All sigma values are positive and finite. You are not required to validate invalid inputs.\nAll returned images and masks must be same-shape float32 arrays containing finite values. Do not modify any input array. Intermediate and output images can be signed or outside [0, 1]: retain those values in the computation. Only the supplied display/save code clips or rescales them.\n\nPart 1 — Visualize the Fourier spectrum\nlog_magnitude_spectrum(image)\nCompute the unnormalized forward DFT using cv2.dft() with complex output. OpenCV represents the real and imaginary components in two channels. Center the frequency coordinates by shifting the row and column axes only, and return\n\\[\nS[v,u]=\\log\\left(1+\\sqrt{\\operatorname{Re}(F[v,u])^2+\n\\operatorname{Im}(F[v,u])^2}\\right).\n\\]\nUse the natural logarithm. Do not normalize the spectrum to [0, 1], divide it by the number of pixels, or take the logarithm of the real part alone. This function must also work on signed high-pass images and hybrid images.\nHint: cv2.magnitude() combines the real and imaginary channels; np.log1p() computes the requested logarithm.\n\n\nPart 2 — Build a Gaussian frequency mask\ngaussian_frequency_mask(shape, sigma)\nThe frequency-coordinate construction is already provided. For an image with M rows and N columns, the centered coordinates are\n\\[\nu=\\frac{c-\\lfloor N/2\\rfloor}{N},\\qquad\nv=\\frac{r-\\lfloor M/2\\rfloor}{M}.\n\\]\nHere c is the column index, r is the row index, and both frequencies are in cycles per pixel. The supplied arrays U and V contain these coordinates at every location.\nImplement the formula\n\\[\nH(v,u)=\\exp\\left[-2\\pi^2\\sigma^2(u^2+v^2)\\right].\n\\]\nSigma describes a spatial Gaussian standard deviation in pixels. A larger sigma suppresses more high-frequency content. You do not need to derive the formula or construct a small spatial kernel.\n\nReturn a full image-sized mask as float32.\nIts DC value at (M // 2, N // 2) must equal 1.\nDo not normalize its sum to one.\nThe complementary high-pass mask is 1 - H.\n\n\n\nPart 3 — Filter using complex Fourier coefficients\napply_frequency_filter(image, mask)\nImplement this sequence:\n\nCompute the image’s complex DFT using cv2.dft().\nCenter the row and column frequency coordinates.\nMultiply both real and imaginary channels by the supplied real-valued mask.\nUndo the centering.\nReconstruct using cv2.idft() with the correct inverse scale and real-valued output.\n\nUse periodic boundaries with no padding. Do not use a spatial filtering function. The grader supplies masks that preserve the symmetry needed for a real inverse result.\nHints:\n\nUse cv2.DFT_COMPLEX_OUTPUT for the forward transform.\ncv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT requests a scaled, real inverse result.\nnp.roll(..., axis=(0, 1)) shifts only the image axes.\nUndo shifts by negating each original shift. With an odd dimension, shifting forward twice does not undo the first shift. Write -(M // 2), not -M // 2.\nA mask with shape (M, N) can be broadcast over two channels using mask[..., None].\n\nDo not replace the complex spectrum with its magnitude; that discards phase. Do not take an absolute value or clip the reconstructed image, because high-pass responses contain negative values.\n\n\nPart 4 — Construct the hybrid image\nmake_hybrid_image(image_low, image_high, sigma_low, sigma_high)\nUse your gaussian_frequency_mask() and apply_frequency_filter() functions to compute\n\\[\nL=\\operatorname{lowpass}(I_{\\mathrm{low}},\\sigma_{\\mathrm{low}}),\n\\]\n\\[\nD=\\operatorname{highpass}(I_{\\mathrm{high}},\\sigma_{\\mathrm{high}}),\n\\qquad I_{\\mathrm{hybrid}}=\\frac{L+D}{2}.\n\\]\nFor high-pass filtering, use 1 - H. Equivalently, subtract the Fourier low-pass result from the original high-frequency source.\nReturn the three arrays in this order:\n(low_component, high_component, hybrid)\nThe required demonstration uses Einstein as image_low, Marilyn as image_high, sigma_low=3.0, and sigma_high=2.0. The function must still use its arguments and work for other inputs and positive sigma values. Do not hard-code the demonstration parameters inside the function."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#run-and-inspect-the-output",
-    "href": "assignments/hw04/index.html#run-and-inspect-the-output",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Run and inspect the output",
-    "text": "Run and inspect the output\nconda activate cv\npython hw04.py\nOr pass the two image paths explicitly, in this order:\npython hw04.py einstein.png marilyn.png\nThe supplied driver writes three files in the current working directory:\n\n\n\n\n\n\n\nFile\nContents\n\n\n\n\nhw04_hybrid.png\nThe numerical hybrid clipped to [0, 1], multiplied by 255, rounded with np.rint(), and converted to uint8.\n\n\nhw04_output.png\nSources, components, hybrid, and their log-magnitude spectra.\n\n\nhw04_distance.png\nThe hybrid at decreasing display sizes.\n\n\n\nDisplay versus computation: the comparison displays the signed high-pass image as clip(high + 0.5, 0, 1), so zero is mid-gray. It displays the averaged hybrid as clip(2 * hybrid, 0, 1) to improve visibility. These adjustments do not change the arrays returned by your functions or the raw hw04_hybrid.png output. All spectra in the comparison use a shared display scale and are computed from the unadjusted arrays.\nRun the provided local checks:\npython check_hw04.py\nThey cover basic properties and reference-pixel reproduction. Passing these checks does not guarantee full credit. Test your functions independently on additional arrays before using a Gradescope attempt."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#numerical-tolerances",
-    "href": "assignments/hw04/index.html#numerical-tolerances",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Numerical tolerances",
-    "text": "Numerical tolerances\nImages generally use absolute tolerance 2e-5 and relative tolerance 1e-5. Gaussian masks use absolute tolerance 2e-6. Log spectra use larger absolute tolerances where cancellation near zero makes the floating-point DFT more sensitive (up to 3e-3 for the supplied images). Saved hybrid and distance-view pixels may differ by at most one gray level from the reference. NaNs and infinities are not accepted."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#what-to-submit",
-    "href": "assignments/hw04/index.html#what-to-submit",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "What to submit",
-    "text": "What to submit\nSubmit exactly one file, hw04.py, to Gradescope. Do not submit input images, output images, screenshots, or a notebook. The autograder supplies its own inputs."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#submission-limit",
-    "href": "assignments/hw04/index.html#submission-limit",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Submission limit",
-    "text": "Submission limit\nYou may make at most 5 Gradescope submissions. Test locally first.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count toward the five-attempt limit.\nSyntax errors, missing functions, student-code exceptions, and student-code timeouts are graded submissions and do count."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#grading",
-    "href": "assignments/hw04/index.html#grading",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Grading",
-    "text": "Grading\nHW04 is worth 5 points and is fully autograded.\nThe autograder checks:\n\nrequired functions and interfaces;\ncentered Fourier log-magnitude spectra;\nfrequency-domain filtering and reconstruction, including signed values and odd/non-square image sizes;\ncorrect hybrid-image construction; and\nwhether the script reproduces the required result and saves the expected output files.\n\nUse the required OpenCV transforms; prohibited transform or spatial-filtering implementations fail the affected tests. Gaussian-mask construction is provided and is not a separately graded task. Small floating-point differences are allowed; the saved hybrid pixels may differ from the reference by at most one gray level.\nBasic public tests provide immediate detailed feedback. Before the Gradescope late due date, private tests provide only one overall pass/fail indicator. Individual private tests, scores, and feedback become visible after the late due date. Passing public tests does not guarantee full credit."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/VALIDATION.html",
-    "href": "assignments_private/hw04/instructor/VALIDATION.html",
-    "title": "Validation — revised HW04",
-    "section": "",
-    "text": "The instructor solution earns 5.00/5.00 across the nine graded rows. The unchanged starter earns 0.25/5.00 for interfaces only. Gaussian-mask generation is provided; it has no separate graded test.\nThe automated instructor regression suite checks:\n\ncorrect reference scoring, starter scoring, and student syntax-error handling;\nfour private rows using after_due_date, hidden stdout, and no visible aggregate numeric score;\nattempt-six rejection, exclusion of platform infrastructure errors, and regrade timestamp handling;\ninfrastructure failures without a fabricated student score;\nrejection of eleven common wrong implementations: incorrect odd-size unshifting, missing inverse scale, masking only one complex channel, phase loss, clipping, input mutation, missing averaging, swapped sources, hard-coded parameters, prohibited NumPy Fourier imports, and prohibited aliased spatial-filter imports;\nindependent hybrid credit even when the student’s filter body fails;\nacceptance of additional standard-library imports and no undisclosed wildcard-import restriction;\nacceptance of equivalent high-pass subtraction;\nagreement with an independent numerical calculation using explicit DFT matrices.\n\nThe full results are in validation_results.json. The suite runs only trusted instructor-generated code in local mode.\nAdditional checks:\n\nAll Python sources compile, and the shell scripts pass bash -n.\nThe QMD starts with YAML at byte zero; metadata parses; public links resolve; code fences balance.\nThe student starter has exactly three incomplete functions and a fully implemented Gaussian helper.\nThe prescribed source order is Marilyn then Einstein, with sigma 9 then 2, throughout the CLI, solution, reference outputs, and tests.\nReference comparison and distance-view images were inspected visually.\nThe supplied helper and driver match between starter and solution, and the private reference functions match the solution.\nThere is one student-facing source tree and no separate local checker or Quarto deployment ZIP.\nThe Gradescope ZIP has the expected root files, executable launchers, and no Python caches.\n\nLocal environment: Python 3.12.14, NumPy 2.3.5, OpenCV 5.0.0 (wheel 5.0.0.93), Matplotlib 3.10.8.\n\n\n\nA complete Miniforge/Conda container build and Gradescope web UI were not run here. This host previously could not create the unprivileged worker account, so the true container isolation boundary remains untested locally. The package’s setup fails explicitly if account creation fails.\nQuarto CLI is unavailable here. QMD syntax and references were checked, but the page was not rendered within the course website.\nBefore publishing, set the due dates, render the course site, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, and check the student feedback view. Confirm that infrastructure failures are marked as autograder errors. The QMD due date intentionally remains TBD."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#completed-locally",
-    "href": "assignments_private/hw04/instructor/VALIDATION.html#completed-locally",
-    "title": "Validation — revised HW04",
-    "section": "",
-    "text": "The instructor solution earns 5.00/5.00 across the nine graded rows. The unchanged starter earns 0.25/5.00 for interfaces only. Gaussian-mask generation is provided; it has no separate graded test.\nThe automated instructor regression suite checks:\n\ncorrect reference scoring, starter scoring, and student syntax-error handling;\nfour private rows using after_due_date, hidden stdout, and no visible aggregate numeric score;\nattempt-six rejection, exclusion of platform infrastructure errors, and regrade timestamp handling;\ninfrastructure failures without a fabricated student score;\nrejection of eleven common wrong implementations: incorrect odd-size unshifting, missing inverse scale, masking only one complex channel, phase loss, clipping, input mutation, missing averaging, swapped sources, hard-coded parameters, prohibited NumPy Fourier imports, and prohibited aliased spatial-filter imports;\nindependent hybrid credit even when the student’s filter body fails;\nacceptance of additional standard-library imports and no undisclosed wildcard-import restriction;\nacceptance of equivalent high-pass subtraction;\nagreement with an independent numerical calculation using explicit DFT matrices.\n\nThe full results are in validation_results.json. The suite runs only trusted instructor-generated code in local mode.\nAdditional checks:\n\nAll Python sources compile, and the shell scripts pass bash -n.\nThe QMD starts with YAML at byte zero; metadata parses; public links resolve; code fences balance.\nThe student starter has exactly three incomplete functions and a fully implemented Gaussian helper.\nThe prescribed source order is Marilyn then Einstein, with sigma 9 then 2, throughout the CLI, solution, reference outputs, and tests.\nReference comparison and distance-view images were inspected visually.\nThe supplied helper and driver match between starter and solution, and the private reference functions match the solution.\nThere is one student-facing source tree and no separate local checker or Quarto deployment ZIP.\nThe Gradescope ZIP has the expected root files, executable launchers, and no Python caches.\n\nLocal environment: Python 3.12.14, NumPy 2.3.5, OpenCV 5.0.0 (wheel 5.0.0.93), Matplotlib 3.10.8."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#not-validated-in-this-environment",
-    "href": "assignments_private/hw04/instructor/VALIDATION.html#not-validated-in-this-environment",
-    "title": "HW04 validation",
-    "section": "",
-    "text": "A complete Miniforge/Conda container build and Gradescope web UI were not run. An attempted unprivileged deployment smoke test could not create the studentuser account because this host’s account-management/audit interface is unavailable. This is a host test limitation; the package’s setup now fails explicitly if worker-account creation fails rather than silently continuing.\nQuarto CLI is not installed here, so QMD syntax and links were checked but the assignment page was not rendered inside the course website. Run the normal course render after copying quarto/ into the repository.\nBefore releasing to students, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, then the starter. Check the student view before and after the configured late due date, and confirm platform-error submissions carry the expected autograder_error metadata. Set the assignment’s regular and late due dates; the QMD due date is intentionally TBD."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html",
-    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
-    "section": "",
-    "text": "Instructor-only. The student page intentionally contains only a brief grading description, as in HW03. Gaussian-mask generation is provided and has no separate grading allocation.\nAll graded rows are all-or-nothing. Total: 5.00 points (public 2.00; private 3.00).\n\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\nWhat it checks\n\n\n\n\nInterfaces and safe import\nPublic\n0.25\nThe module imports, the three required student functions accept their arguments, and import does not run the demonstration.\n\n\nConstant-image spectrum\nPublic\n0.50\nCorrect centered DC magnitude and logarithm; correct shape and float32 dtype; an OpenCV DFT is used.\n\n\nAll-pass reconstruction\nPublic\n0.50\nA nonconstant image is reconstructed from an all-ones mask with correct inverse scaling, shape, dtype, and OpenCV DFT/IDFT usage.\n\n\nSimple hybrid composition\nPublic\n0.25\nConstant inputs give the expected low-pass component, approximately zero high-pass component, and correct average.\n\n\nSupplied images and saved outputs\nPublic\n0.50\nMarilyn-low sigma 9 and Einstein-high sigma 2; all component arrays and spectra; command-line run; raw hybrid and distance-view pixel values; readable comparison figure. Fonts/margins are not compared.\n\n\nGeneral Fourier spectrum\nPrivate\n0.50\nSigned random images, odd/even/non-square shapes, and an off-origin impulse; complex magnitude, centering, logarithm, finite float32 values, and input preservation.\n\n\nFrequency-domain filtering\nPrivate\n1.25\nReference all-pass/zero-pass/Gaussian/complement masks; odd/even shapes; an analytic sinusoid with known gain; correct phase, signs, both-channel multiplication, inverse shifts/scaling, and unchanged image/mask.\n\n\nIndependent hybrid composition\nPrivate\n0.75\nCorrect source and sigma for each component, high-pass complement or equivalent subtraction, averaging, return order, dtype, and no clipping or input mutation. Helper responses are replaced with correct numeric values.\n\n\nEnd-to-end generalization\nPrivate\n0.50\nComplete student implementation on other image pairs and positive parameters; all components and final spectrum match; input arrays remain unchanged.\n\n\nOverall private-suite status\nPublic informational\n0\nOne pass/fail statement without individual names, counts, scores, inputs, or failure details.\n\n\nSubmission-count notice\nPublic informational\n0\nThe valid attempt count; no private information.\n\n\nTotal\n\n5.00\n\n\n\n\n\n\nGeneral images: rtol=1e-5, atol=2e-5; small spectra: atol=2e-5; integration spectra: atol=1e-4; supplied-image spectra: atol=3e-3 to accommodate float32 cancellation around near-zero coefficients. Return arrays must have expected shape, float32 dtype, and finite values. Saved raw hybrid and distance-view PNGs allow at most one gray level of error per pixel.\n\n\n\nFiltering tests provide correct masks, independent of the student’s hybrid function. The hybrid-composition test substitutes correct mask/filter responses and accepts either complementary high-pass filtering or subtraction of a Fourier low-pass result. A broken filter body therefore does not automatically lose the isolated hybrid-composition points.\nOpenCV DFT/IDFT calls are required. The file’s imports may use any standard-library module, plus cv2, numpy, and matplotlib. No narrow standard-library allowlist is imposed. Ordinary use/import of other Fourier routines and spatial filtering is checked; violations fail the affected computation/output tests, while the interface row is independent. The provided Gaussian helper is not separately graded. Source checks are not a complete defense against obfuscation.\n\n\n\nValid attempt 6 or later produces one visible zero-out-of-five submission-limit row. Prior Gradescope infrastructure-error attempts are excluded from counting. The autograder does not select the final active submission or retroactively change earlier scores.\nThe four private rows use after_due_date. Before the late due date, only an ungraded overall private-suite pass/fail status is shown. Individual scores and detailed feedback are released after that date. Stdout remains hidden, and visible output contains no private numeric total."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#numerical-comparison",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#numerical-comparison",
-    "title": "HW04 complete rubric",
-    "section": "",
-    "text": "General images: rtol=1e-5, atol=2e-5; masks: rtol=1e-5, atol=2e-6; small random/impulse spectra: atol=2e-5; integration spectra: atol=1e-4; large supplied-image spectra: atol=3e-3 to accommodate near-zero cancellation in float32 transforms. All must have the expected shape and dtype and contain finite values. Saved raw hybrid and distance-view images allow at most one uint8 gray level of difference at any pixel."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#rule-enforcement",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#rule-enforcement",
-    "title": "HW04 complete rubric",
-    "section": "",
-    "text": "Transform/filter/hybrid/script tests check the submission’s imports and source for disallowed Fourier or spatial-filter operations. Allowed top-level library families are cv2, numpy, matplotlib, and the small standard-library list in the assignment. Aliased imports are resolved for these checks. The execution worker also counts actual cv2.dft and cv2.idft calls for the directly tested transform functions. Student code must be readable and cannot use dynamic imports/code execution to evade these rules.\nA file-wide forbidden import or filter reference causes the transform/filter/hybrid tests to fail, including the public supplied-image test; mask-only and interface tests remain independent. This policy is disclosed on the assignment page. Source checks cannot prove compliance against arbitrary obfuscation; suspicious submissions still require instructor review."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#independence",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#independence",
-    "title": "HW04 complete rubric",
-    "section": "",
-    "text": "The filter test supplies masks computed by the protected reference, so a mask-construction error does not automatically lose filter points. The independent hybrid test replaces the two helpers with numeric canned responses, so a bug inside either helper does not cost the hybrid-composition points. It accepts either complementary high-pass filtering or subtracting a Fourier low-pass result. Public example reproduction and the final private integration test intentionally require working composition."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-release-policies",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-release-policies",
-    "title": "HW04 complete rubric",
-    "section": "",
-    "text": "Valid submission 6 and later: a single visible submission-limit row with 0/5. Prior platform autograder errors are excluded using Gradescope metadata. This counts attempts, not local runs. A staff decision is needed for exceptions and for any rule about retroactively overriding a previously selected submission.\nThe five private rows use after_due_date and are released after the late due date when one exists. No aggregate numeric score is inserted into visible output. The visible overall status has no score fields, following Gradescope’s informational-test schema."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#starter-files",
-    "href": "assignments/hw04/index.html#starter-files",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Starter files",
-    "text": "Starter files\nDownload these files into the same folder:\n\nhw04.py\nmarilyn.png\neinstein.png\n\nComplete only these three functions in hw04.py:\nlog_magnitude_spectrum(image)\napply_frequency_filter(image, mask)\nmake_hybrid_image(image_low, image_high, sigma_low, sigma_high)\nThe Gaussian filter helper, image loading, and plotting code are already provided. Leave them unchanged. Do not change the required function names or arguments.\nThe provided loader reads the images as grayscale numpy.float32 arrays in [0, 1]. Keep the supplied images unchanged: do not crop, resize, or realign them."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#tools-and-conventions",
-    "href": "assignments/hw04/index.html#tools-and-conventions",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Tools and conventions",
-    "text": "Tools and conventions\n\nUse cv2.dft() and cv2.idft() for Fourier transforms. Do not use Fourier functions from NumPy, SciPy, or other libraries; use np.roll() for centering.\nPerform filtering by multiplying Fourier coefficients. Do not replace this step with spatial filters such as cv2.GaussianBlur() or cv2.filter2D().\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules.\nReturn same-size, two-dimensional float32 arrays. Support odd, even, and non-square image dimensions, and do not modify the input arrays.\nKeep signed values during computation. Do not clip, take absolute values of filtered images, or normalize intermediate results. The supplied display code handles visualization.\n\nThe grader supplies valid inputs. You do not need to write input-validation code."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
-    "href": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Part 1 — Display the Fourier spectrum",
-    "text": "Part 1 — Display the Fourier spectrum\nComplete:\ndef log_magnitude_spectrum(image):\n    ...\nCompute the image’s complex DFT, center its zero-frequency component, and return its log-magnitude spectrum:\n\\[\nS = \\log(1 + |F|).\n\\]\nThis function will be used for the input images, filtered components, and final hybrid. Some of those images contain negative values.\nHints:\n\nUse cv2.dft(image, flags=cv2.DFT_COMPLEX_OUTPUT). Its output has shape (M, N, 2): channel 0 is the real part and channel 1 is the imaginary part.\nFor an M × N image, center the spectrum using np.roll(F, (M // 2, N // 2), axis=(0, 1)). Shift only the two image axes.\nUse cv2.magnitude() on the real and imaginary channels, followed by np.log1p().\nDo not divide the forward DFT by the number of pixels or normalize the log-magnitude image to [0, 1]."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
-    "href": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Part 2 — Use the provided Gaussian filter",
-    "text": "Part 2 — Use the provided Gaussian filter\nThere is nothing to implement in this part. The starter includes:\ngaussian_frequency_mask(shape, sigma)\nIt returns an image-sized Gaussian low-pass mask, already centered for use with your centered Fourier coefficients. Call it with the image’s shape and the desired smoothing strength:\nlow_pass_mask = gaussian_frequency_mask(image.shape, sigma)\nhigh_pass_mask = 1 - low_pass_mask\nA larger sigma gives stronger smoothing. The low-pass mask retains smooth structure; its complement retains fine details. You do not need to construct a spatial kernel, derive a formula, or build a frequency-coordinate grid."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
-    "href": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Part 3 — Filter and reconstruct an image",
-    "text": "Part 3 — Filter and reconstruct an image\nComplete:\ndef apply_frequency_filter(image, mask):\n    ...\nUse the supplied mask to filter an image in the Fourier domain:\n\nCompute the image’s complex DFT with OpenCV.\nCenter it in the same way as in Part 1.\nMultiply the complex coefficients by mask.\nUndo the centering.\nApply OpenCV’s inverse DFT to obtain the filtered image.\n\nHints:\n\nPreserve both real and imaginary components. Part 1’s log-magnitude output is only for display; do not use it as the input to filtering or reconstruction.\nF * mask[..., None] applies the same mask to both complex channels.\nUndo the shift with np.roll(F_filtered, (-(M // 2), -(N // 2)), axis=(0, 1)). The parentheses matter for odd dimensions.\nUse cv2.idft(..., flags=cv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT) to obtain a correctly scaled, real-valued image.\nUse the original image size with no padding. This corresponds to periodic boundary behavior. The supplied masks are compatible with a real-valued inverse result.\nA high-pass result contains negative values. Keep them: taking an absolute value or clipping changes the result."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
-    "href": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Part 4 — Build the hybrid image",
-    "text": "Part 4 — Build the hybrid image\nComplete:\ndef make_hybrid_image(image_low, image_high, sigma_low, sigma_high):\n    ...\nConnect the provided mask helper to your filtering function:\n\nCall gaussian_frequency_mask(image_low.shape, sigma_low) to get the first image’s low-pass mask.\nPass image_low and that mask to your apply_frequency_filter(). Store the result as low.\nCall the provided mask helper again, using image_high.shape and sigma_high. Subtract this second mask from 1 to get a high-pass mask.\nPass image_high and the high-pass mask to your apply_frequency_filter(). Store the result as high.\nCompute the average and return all three images:\n\n\\[\nI_{\\mathrm{hybrid}}=\\frac{\\mathrm{low}+\\mathrm{high}}{2}.\n\\]\nReturn the arrays in this order: (low, high, hybrid). Do not clip or rescale them. An equivalent high-pass implementation is to subtract a Fourier low-pass result from image_high.\nThe provided driver calls this function with Marilyn first, Einstein second, sigma_low=9, and sigma_high=2. Use the function’s arguments so it also works for other image pairs and positive sigma values.\nYour Part 1 function is used by the provided driver to display the spectra. You do not need to call it inside make_hybrid_image()."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#run-and-inspect-your-program",
-    "href": "assignments/hw04/index.html#run-and-inspect-your-program",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Run and inspect your program",
-    "text": "Run and inspect your program\nconda activate cv\npython hw04.py\nOr specify the image paths explicitly, in low-frequency source, high-frequency source order:\npython hw04.py marilyn.png einstein.png\nThe driver saves:\n\nhw04_output.png — the sources, filtered components, hybrid, and spectra;\nhw04_distance.png — the hybrid at decreasing sizes; and\nhw04_hybrid.png — the raw hybrid saved as a grayscale PNG.\n\nCompare your results to these targets:\n\n\n\nExpected comparison image.\n\n\nFull-size comparison · Distance view · Raw hybrid\nFor display, the provided code offsets the signed high-pass image so zero appears gray and brightens the averaged hybrid. These display adjustments do not change your returned arrays. Compare each output with its corresponding reference.\nBefore submitting, check these simple properties locally:\n\nA constant image should have only one nonzero log-spectrum value, at the center.\nPassing an all-ones mask, np.ones_like(image), to your filter should recover the original image within small floating-point roundoff. An all-zeros mask should return zeros.\nHigh-pass filtering a constant image should produce approximately zero.\nInspect the supplied-image output at both large and small sizes. It should match the corresponding reference, apart from small numerical differences.\n\nThese checks guide debugging; you do not need to submit their results or write a report."
-  },
-  {
-    "objectID": "assignments/hw04/index.html#submission-limit-important",
-    "href": "assignments/hw04/index.html#submission-limit-important",
-    "title": "Homework 04: Hybrid Images with Fourier Transform",
-    "section": "Submission limit — important",
-    "text": "Submission limit — important\nYou may make at most 5 Gradescope submissions. Test and debug locally before submitting.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count toward the limit. Errors in your submitted code do count."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#deployment-checks-still-needed",
-    "href": "assignments_private/hw04/instructor/VALIDATION.html#deployment-checks-still-needed",
-    "title": "Validation — revised HW04",
-    "section": "",
-    "text": "A complete Miniforge/Conda container build and Gradescope web UI were not run here. This host previously could not create the unprivileged worker account, so the true container isolation boundary remains untested locally. The package’s setup fails explicitly if account creation fails.\nQuarto CLI is unavailable here. QMD syntax and references were checked, but the page was not rendered within the course website.\nBefore publishing, set the due dates, render the course site, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, and check the student feedback view. Confirm that infrastructure failures are marked as autograder errors. The QMD due date intentionally remains TBD."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#comparison-tolerances",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#comparison-tolerances",
-    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
-    "section": "",
-    "text": "General images: rtol=1e-5, atol=2e-5; small spectra: atol=2e-5; integration spectra: atol=1e-4; supplied-image spectra: atol=3e-3 to accommodate float32 cancellation around near-zero coefficients. Return arrays must have expected shape, float32 dtype, and finite values. Saved raw hybrid and distance-view PNGs allow at most one gray level of error per pixel."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#independence-and-permitted-implementations",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#independence-and-permitted-implementations",
-    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
-    "section": "",
-    "text": "Filtering tests provide correct masks, independent of the student’s hybrid function. The hybrid-composition test substitutes correct mask/filter responses and accepts either complementary high-pass filtering or subtraction of a Fourier low-pass result. A broken filter body therefore does not automatically lose the isolated hybrid-composition points.\nOpenCV DFT/IDFT calls are required. The file’s imports may use any standard-library module, plus cv2, numpy, and matplotlib. No narrow standard-library allowlist is imposed. Ordinary use/import of other Fourier routines and spatial filtering is checked; violations fail the affected computation/output tests, while the interface row is independent. The provided Gaussian helper is not separately graded. Source checks are not a complete defense against obfuscation."
-  },
-  {
-    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-feedback-policies",
-    "href": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-feedback-policies",
-    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
-    "section": "",
-    "text": "Valid attempt 6 or later produces one visible zero-out-of-five submission-limit row. Prior Gradescope infrastructure-error attempts are excluded from counting. The autograder does not select the final active submission or retroactively change earlier scores.\nThe four private rows use after_due_date. Before the late due date, only an ungraded overall private-suite pass/fail status is shown. Individual scores and detailed feedback are released after that date. Stdout remains hidden, and visible output contains no private numeric total."
   }
 ]

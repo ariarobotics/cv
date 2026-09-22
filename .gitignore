@@ -41,6 +41,9 @@ docs/lectures/pdf/*.pdf
 /_freeze/assignments_private/
 /_freeze/code_private/
 
+# Private files, folders, and generated copies at any depth
+*_private*
+
 
 # ============================================================
 # Source styling files
