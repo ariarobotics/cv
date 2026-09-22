@@ -2146,7 +2146,7 @@
     "href": "assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments_private/hw01/HW01_Gradescope_OpenCV_cv_COMPLETE/HW01_Gradescope_OpenCV_cv/instructor/RUBRIC_AND_TESTS.html",
@@ -3694,5 +3694,222 @@
     "title": "05 — NumPy for Computer Vision",
     "section": "Additional reference",
     "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
+  },
+  {
+    "objectID": "assignments/hw04/index.html",
+    "href": "assignments/hw04/index.html",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
+  },
+  {
+    "objectID": "assignments/hw04/index.html#objective",
+    "href": "assignments/hw04/index.html#objective",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Objective",
+    "text": "Objective\nCreate a hybrid image that combines the smooth structure of one image with the fine details of another. You will use Marilyn and Einstein, then view the result at different sizes.\nUse the course cv Conda environment and OpenCV (cv2). Do not use generative AI to solve this homework. The goal is to understand how Fourier coefficients can be modified and used to reconstruct an image."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#download-the-files",
+    "href": "assignments/hw04/index.html#download-the-files",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Download the files",
+    "text": "Download the files\nSave these files together in one folder:\n\nStarter code: hw04.py\nEinstein: einstein.png\nMarilyn: marilyn.png\nLocal checks: check_hw04.py\nReference hybrid pixels: reference_hybrid.png\n\nThe input images are 380 rows × 364 columns. Do not crop, resize, realign, replace, or otherwise edit them. The provided loader converts them to grayscale float32 arrays in [0, 1] using OpenCV. You may use other image pairs for additional experimentation, but the required output uses these exact images and parameters."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#expected-result",
+    "href": "assignments/hw04/index.html#expected-result",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Expected result",
+    "text": "Expected result\n\n\n\nReference comparison: sources, low-pass and high-pass components, hybrid image, and their centered Fourier spectra.\n\n\nOpen the full-size reference comparison\n\n\n\nThe same hybrid at progressively smaller sizes.\n\n\nLook at the large and small versions. The visibility of the two sources changes with viewing size and distance. The graded target is the specified numerical pipeline; your particular perception of the illusion is not graded."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#permitted-tools",
+    "href": "assignments/hw04/index.html#permitted-tools",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Permitted tools",
+    "text": "Permitted tools\n\nRequired: cv2.dft() and cv2.idft() for all forward and inverse Fourier transforms.\nAllowed: OpenCV image I/O, cv2.magnitude(), and NumPy array operations such as np.roll(), np.meshgrid(), np.exp(), and np.log1p().\nProhibited: Fourier functions from other libraries, including numpy.fft (including its shift helpers), scipy.fft, and scipy.fftpack. Use np.roll() for shifts.\nProhibited for this assignment: spatial filtering routines such as cv2.GaussianBlur(), cv2.filter2D(), cv2.sepFilter2D(), cv2.blur(), and cv2.boxFilter(). Use multiplication in the frequency domain. Other transforms such as the DCT do not satisfy the task.\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules argparse, pathlib, math, typing, sys, and __future__. Avoid wildcard imports and dynamic imports/code execution. You do not need additional packages.\nThe supplied driver uses Matplotlib for plotting and cv2.resize() only to display smaller versions of the completed hybrid. Leave that code unchanged.\n\nThe grader checks numerical behavior, permitted-library usage, and whether the transform functions actually call OpenCV. A source-rule violation causes the affected transform/filtering/hybrid tests to fail; the mask-only tests and interface test are graded independently. Do not hard-code outputs, load the reference image as your result, or bypass the required functions."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#function-contracts",
+    "href": "assignments/hw04/index.html#function-contracts",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Function contracts",
+    "text": "Function contracts\nComplete the four marked functions in hw04.py. Do not rename them or change their arguments.\nAll image inputs are nonempty, two-dimensional numpy.float32 arrays. Mask inputs are same-shape float32 arrays. Graded dimensions are at least two in each direction; odd, even, and non-square dimensions are included. All sigma values are positive and finite. You are not required to validate invalid inputs.\nAll returned images and masks must be same-shape float32 arrays containing finite values. Do not modify any input array. Intermediate and output images can be signed or outside [0, 1]: retain those values in the computation. Only the supplied display/save code clips or rescales them.\n\nPart 1 — Visualize the Fourier spectrum\nlog_magnitude_spectrum(image)\nCompute the unnormalized forward DFT using cv2.dft() with complex output. OpenCV represents the real and imaginary components in two channels. Center the frequency coordinates by shifting the row and column axes only, and return\n\\[\nS[v,u]=\\log\\left(1+\\sqrt{\\operatorname{Re}(F[v,u])^2+\n\\operatorname{Im}(F[v,u])^2}\\right).\n\\]\nUse the natural logarithm. Do not normalize the spectrum to [0, 1], divide it by the number of pixels, or take the logarithm of the real part alone. This function must also work on signed high-pass images and hybrid images.\nHint: cv2.magnitude() combines the real and imaginary channels; np.log1p() computes the requested logarithm.\n\n\nPart 2 — Build a Gaussian frequency mask\ngaussian_frequency_mask(shape, sigma)\nThe frequency-coordinate construction is already provided. For an image with M rows and N columns, the centered coordinates are\n\\[\nu=\\frac{c-\\lfloor N/2\\rfloor}{N},\\qquad\nv=\\frac{r-\\lfloor M/2\\rfloor}{M}.\n\\]\nHere c is the column index, r is the row index, and both frequencies are in cycles per pixel. The supplied arrays U and V contain these coordinates at every location.\nImplement the formula\n\\[\nH(v,u)=\\exp\\left[-2\\pi^2\\sigma^2(u^2+v^2)\\right].\n\\]\nSigma describes a spatial Gaussian standard deviation in pixels. A larger sigma suppresses more high-frequency content. You do not need to derive the formula or construct a small spatial kernel.\n\nReturn a full image-sized mask as float32.\nIts DC value at (M // 2, N // 2) must equal 1.\nDo not normalize its sum to one.\nThe complementary high-pass mask is 1 - H.\n\n\n\nPart 3 — Filter using complex Fourier coefficients\napply_frequency_filter(image, mask)\nImplement this sequence:\n\nCompute the image’s complex DFT using cv2.dft().\nCenter the row and column frequency coordinates.\nMultiply both real and imaginary channels by the supplied real-valued mask.\nUndo the centering.\nReconstruct using cv2.idft() with the correct inverse scale and real-valued output.\n\nUse periodic boundaries with no padding. Do not use a spatial filtering function. The grader supplies masks that preserve the symmetry needed for a real inverse result.\nHints:\n\nUse cv2.DFT_COMPLEX_OUTPUT for the forward transform.\ncv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT requests a scaled, real inverse result.\nnp.roll(..., axis=(0, 1)) shifts only the image axes.\nUndo shifts by negating each original shift. With an odd dimension, shifting forward twice does not undo the first shift. Write -(M // 2), not -M // 2.\nA mask with shape (M, N) can be broadcast over two channels using mask[..., None].\n\nDo not replace the complex spectrum with its magnitude; that discards phase. Do not take an absolute value or clip the reconstructed image, because high-pass responses contain negative values.\n\n\nPart 4 — Construct the hybrid image\nmake_hybrid_image(image_low, image_high, sigma_low, sigma_high)\nUse your gaussian_frequency_mask() and apply_frequency_filter() functions to compute\n\\[\nL=\\operatorname{lowpass}(I_{\\mathrm{low}},\\sigma_{\\mathrm{low}}),\n\\]\n\\[\nD=\\operatorname{highpass}(I_{\\mathrm{high}},\\sigma_{\\mathrm{high}}),\n\\qquad I_{\\mathrm{hybrid}}=\\frac{L+D}{2}.\n\\]\nFor high-pass filtering, use 1 - H. Equivalently, subtract the Fourier low-pass result from the original high-frequency source.\nReturn the three arrays in this order:\n(low_component, high_component, hybrid)\nThe required demonstration uses Einstein as image_low, Marilyn as image_high, sigma_low=3.0, and sigma_high=2.0. The function must still use its arguments and work for other inputs and positive sigma values. Do not hard-code the demonstration parameters inside the function."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#run-and-inspect-the-output",
+    "href": "assignments/hw04/index.html#run-and-inspect-the-output",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Run and inspect the output",
+    "text": "Run and inspect the output\nconda activate cv\npython hw04.py\nOr pass the two image paths explicitly, in this order:\npython hw04.py einstein.png marilyn.png\nThe supplied driver writes three files in the current working directory:\n\n\n\n\n\n\n\nFile\nContents\n\n\n\n\nhw04_hybrid.png\nThe numerical hybrid clipped to [0, 1], multiplied by 255, rounded with np.rint(), and converted to uint8.\n\n\nhw04_output.png\nSources, components, hybrid, and their log-magnitude spectra.\n\n\nhw04_distance.png\nThe hybrid at decreasing display sizes.\n\n\n\nDisplay versus computation: the comparison displays the signed high-pass image as clip(high + 0.5, 0, 1), so zero is mid-gray. It displays the averaged hybrid as clip(2 * hybrid, 0, 1) to improve visibility. These adjustments do not change the arrays returned by your functions or the raw hw04_hybrid.png output. All spectra in the comparison use a shared display scale and are computed from the unadjusted arrays.\nRun the provided local checks:\npython check_hw04.py\nThey cover basic properties and reference-pixel reproduction. Passing these checks does not guarantee full credit. Test your functions independently on additional arrays before using a Gradescope attempt."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#numerical-tolerances",
+    "href": "assignments/hw04/index.html#numerical-tolerances",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Numerical tolerances",
+    "text": "Numerical tolerances\nImages generally use absolute tolerance 2e-5 and relative tolerance 1e-5. Gaussian masks use absolute tolerance 2e-6. Log spectra use larger absolute tolerances where cancellation near zero makes the floating-point DFT more sensitive (up to 3e-3 for the supplied images). Saved hybrid and distance-view pixels may differ by at most one gray level from the reference. NaNs and infinities are not accepted."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#what-to-submit",
+    "href": "assignments/hw04/index.html#what-to-submit",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "What to submit",
+    "text": "What to submit\nSubmit exactly one file, hw04.py, to Gradescope. Do not submit input images, output images, screenshots, or a notebook. The autograder supplies its own inputs."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#submission-limit",
+    "href": "assignments/hw04/index.html#submission-limit",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Submission limit",
+    "text": "Submission limit\nYou may make at most 5 Gradescope submissions. Test locally first.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count toward the five-attempt limit.\nSyntax errors, missing functions, student-code exceptions, and student-code timeouts are graded submissions and do count."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#grading",
+    "href": "assignments/hw04/index.html#grading",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Grading",
+    "text": "Grading\nHW04 is worth 5 points and is fully autograded.\nThe autograder checks:\n\nrequired functions and interfaces;\ncentered Fourier log-magnitude spectra;\nfrequency-domain filtering and reconstruction, including signed values and odd/non-square image sizes;\ncorrect hybrid-image construction; and\nwhether the script reproduces the required result and saves the expected output files.\n\nUse the required OpenCV transforms; prohibited transform or spatial-filtering implementations fail the affected tests. Gaussian-mask construction is provided and is not a separately graded task. Small floating-point differences are allowed; the saved hybrid pixels may differ from the reference by at most one gray level.\nBasic public tests provide immediate detailed feedback. Before the Gradescope late due date, private tests provide only one overall pass/fail indicator. Individual private tests, scores, and feedback become visible after the late due date. Passing public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/VALIDATION.html",
+    "href": "assignments_private/hw04/instructor/VALIDATION.html",
+    "title": "Validation — revised HW04",
+    "section": "",
+    "text": "The instructor solution earns 5.00/5.00 across the nine graded rows. The unchanged starter earns 0.25/5.00 for interfaces only. Gaussian-mask generation is provided; it has no separate graded test.\nThe automated instructor regression suite checks:\n\ncorrect reference scoring, starter scoring, and student syntax-error handling;\nfour private rows using after_due_date, hidden stdout, and no visible aggregate numeric score;\nattempt-six rejection, exclusion of platform infrastructure errors, and regrade timestamp handling;\ninfrastructure failures without a fabricated student score;\nrejection of eleven common wrong implementations: incorrect odd-size unshifting, missing inverse scale, masking only one complex channel, phase loss, clipping, input mutation, missing averaging, swapped sources, hard-coded parameters, prohibited NumPy Fourier imports, and prohibited aliased spatial-filter imports;\nindependent hybrid credit even when the student’s filter body fails;\nacceptance of additional standard-library imports and no undisclosed wildcard-import restriction;\nacceptance of equivalent high-pass subtraction;\nagreement with an independent numerical calculation using explicit DFT matrices.\n\nThe full results are in validation_results.json. The suite runs only trusted instructor-generated code in local mode.\nAdditional checks:\n\nAll Python sources compile, and the shell scripts pass bash -n.\nThe QMD starts with YAML at byte zero; metadata parses; public links resolve; code fences balance.\nThe student starter has exactly three incomplete functions and a fully implemented Gaussian helper.\nThe prescribed source order is Marilyn then Einstein, with sigma 9 then 2, throughout the CLI, solution, reference outputs, and tests.\nReference comparison and distance-view images were inspected visually.\nThe supplied helper and driver match between starter and solution, and the private reference functions match the solution.\nThere is one student-facing source tree and no separate local checker or Quarto deployment ZIP.\nThe Gradescope ZIP has the expected root files, executable launchers, and no Python caches.\n\nLocal environment: Python 3.12.14, NumPy 2.3.5, OpenCV 5.0.0 (wheel 5.0.0.93), Matplotlib 3.10.8.\n\n\n\nA complete Miniforge/Conda container build and Gradescope web UI were not run here. This host previously could not create the unprivileged worker account, so the true container isolation boundary remains untested locally. The package’s setup fails explicitly if account creation fails.\nQuarto CLI is unavailable here. QMD syntax and references were checked, but the page was not rendered within the course website.\nBefore publishing, set the due dates, render the course site, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, and check the student feedback view. Confirm that infrastructure failures are marked as autograder errors. The QMD due date intentionally remains TBD."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#completed-locally",
+    "href": "assignments_private/hw04/instructor/VALIDATION.html#completed-locally",
+    "title": "Validation — revised HW04",
+    "section": "",
+    "text": "The instructor solution earns 5.00/5.00 across the nine graded rows. The unchanged starter earns 0.25/5.00 for interfaces only. Gaussian-mask generation is provided; it has no separate graded test.\nThe automated instructor regression suite checks:\n\ncorrect reference scoring, starter scoring, and student syntax-error handling;\nfour private rows using after_due_date, hidden stdout, and no visible aggregate numeric score;\nattempt-six rejection, exclusion of platform infrastructure errors, and regrade timestamp handling;\ninfrastructure failures without a fabricated student score;\nrejection of eleven common wrong implementations: incorrect odd-size unshifting, missing inverse scale, masking only one complex channel, phase loss, clipping, input mutation, missing averaging, swapped sources, hard-coded parameters, prohibited NumPy Fourier imports, and prohibited aliased spatial-filter imports;\nindependent hybrid credit even when the student’s filter body fails;\nacceptance of additional standard-library imports and no undisclosed wildcard-import restriction;\nacceptance of equivalent high-pass subtraction;\nagreement with an independent numerical calculation using explicit DFT matrices.\n\nThe full results are in validation_results.json. The suite runs only trusted instructor-generated code in local mode.\nAdditional checks:\n\nAll Python sources compile, and the shell scripts pass bash -n.\nThe QMD starts with YAML at byte zero; metadata parses; public links resolve; code fences balance.\nThe student starter has exactly three incomplete functions and a fully implemented Gaussian helper.\nThe prescribed source order is Marilyn then Einstein, with sigma 9 then 2, throughout the CLI, solution, reference outputs, and tests.\nReference comparison and distance-view images were inspected visually.\nThe supplied helper and driver match between starter and solution, and the private reference functions match the solution.\nThere is one student-facing source tree and no separate local checker or Quarto deployment ZIP.\nThe Gradescope ZIP has the expected root files, executable launchers, and no Python caches.\n\nLocal environment: Python 3.12.14, NumPy 2.3.5, OpenCV 5.0.0 (wheel 5.0.0.93), Matplotlib 3.10.8."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#not-validated-in-this-environment",
+    "href": "assignments_private/hw04/instructor/VALIDATION.html#not-validated-in-this-environment",
+    "title": "HW04 validation",
+    "section": "",
+    "text": "A complete Miniforge/Conda container build and Gradescope web UI were not run. An attempted unprivileged deployment smoke test could not create the studentuser account because this host’s account-management/audit interface is unavailable. This is a host test limitation; the package’s setup now fails explicitly if worker-account creation fails rather than silently continuing.\nQuarto CLI is not installed here, so QMD syntax and links were checked but the assignment page was not rendered inside the course website. Run the normal course render after copying quarto/ into the repository.\nBefore releasing to students, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, then the starter. Check the student view before and after the configured late due date, and confirm platform-error submissions carry the expected autograder_error metadata. Set the assignment’s regular and late due dates; the QMD due date is intentionally TBD."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html",
+    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
+    "section": "",
+    "text": "Instructor-only. The student page intentionally contains only a brief grading description, as in HW03. Gaussian-mask generation is provided and has no separate grading allocation.\nAll graded rows are all-or-nothing. Total: 5.00 points (public 2.00; private 3.00).\n\n\n\n\n\n\n\n\n\nTest\nVisibility\nPoints\nWhat it checks\n\n\n\n\nInterfaces and safe import\nPublic\n0.25\nThe module imports, the three required student functions accept their arguments, and import does not run the demonstration.\n\n\nConstant-image spectrum\nPublic\n0.50\nCorrect centered DC magnitude and logarithm; correct shape and float32 dtype; an OpenCV DFT is used.\n\n\nAll-pass reconstruction\nPublic\n0.50\nA nonconstant image is reconstructed from an all-ones mask with correct inverse scaling, shape, dtype, and OpenCV DFT/IDFT usage.\n\n\nSimple hybrid composition\nPublic\n0.25\nConstant inputs give the expected low-pass component, approximately zero high-pass component, and correct average.\n\n\nSupplied images and saved outputs\nPublic\n0.50\nMarilyn-low sigma 9 and Einstein-high sigma 2; all component arrays and spectra; command-line run; raw hybrid and distance-view pixel values; readable comparison figure. Fonts/margins are not compared.\n\n\nGeneral Fourier spectrum\nPrivate\n0.50\nSigned random images, odd/even/non-square shapes, and an off-origin impulse; complex magnitude, centering, logarithm, finite float32 values, and input preservation.\n\n\nFrequency-domain filtering\nPrivate\n1.25\nReference all-pass/zero-pass/Gaussian/complement masks; odd/even shapes; an analytic sinusoid with known gain; correct phase, signs, both-channel multiplication, inverse shifts/scaling, and unchanged image/mask.\n\n\nIndependent hybrid composition\nPrivate\n0.75\nCorrect source and sigma for each component, high-pass complement or equivalent subtraction, averaging, return order, dtype, and no clipping or input mutation. Helper responses are replaced with correct numeric values.\n\n\nEnd-to-end generalization\nPrivate\n0.50\nComplete student implementation on other image pairs and positive parameters; all components and final spectrum match; input arrays remain unchanged.\n\n\nOverall private-suite status\nPublic informational\n0\nOne pass/fail statement without individual names, counts, scores, inputs, or failure details.\n\n\nSubmission-count notice\nPublic informational\n0\nThe valid attempt count; no private information.\n\n\nTotal\n\n5.00\n\n\n\n\n\n\nGeneral images: rtol=1e-5, atol=2e-5; small spectra: atol=2e-5; integration spectra: atol=1e-4; supplied-image spectra: atol=3e-3 to accommodate float32 cancellation around near-zero coefficients. Return arrays must have expected shape, float32 dtype, and finite values. Saved raw hybrid and distance-view PNGs allow at most one gray level of error per pixel.\n\n\n\nFiltering tests provide correct masks, independent of the student’s hybrid function. The hybrid-composition test substitutes correct mask/filter responses and accepts either complementary high-pass filtering or subtraction of a Fourier low-pass result. A broken filter body therefore does not automatically lose the isolated hybrid-composition points.\nOpenCV DFT/IDFT calls are required. The file’s imports may use any standard-library module, plus cv2, numpy, and matplotlib. No narrow standard-library allowlist is imposed. Ordinary use/import of other Fourier routines and spatial filtering is checked; violations fail the affected computation/output tests, while the interface row is independent. The provided Gaussian helper is not separately graded. Source checks are not a complete defense against obfuscation.\n\n\n\nValid attempt 6 or later produces one visible zero-out-of-five submission-limit row. Prior Gradescope infrastructure-error attempts are excluded from counting. The autograder does not select the final active submission or retroactively change earlier scores.\nThe four private rows use after_due_date. Before the late due date, only an ungraded overall private-suite pass/fail status is shown. Individual scores and detailed feedback are released after that date. Stdout remains hidden, and visible output contains no private numeric total."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#numerical-comparison",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#numerical-comparison",
+    "title": "HW04 complete rubric",
+    "section": "",
+    "text": "General images: rtol=1e-5, atol=2e-5; masks: rtol=1e-5, atol=2e-6; small random/impulse spectra: atol=2e-5; integration spectra: atol=1e-4; large supplied-image spectra: atol=3e-3 to accommodate near-zero cancellation in float32 transforms. All must have the expected shape and dtype and contain finite values. Saved raw hybrid and distance-view images allow at most one uint8 gray level of difference at any pixel."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#rule-enforcement",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#rule-enforcement",
+    "title": "HW04 complete rubric",
+    "section": "",
+    "text": "Transform/filter/hybrid/script tests check the submission’s imports and source for disallowed Fourier or spatial-filter operations. Allowed top-level library families are cv2, numpy, matplotlib, and the small standard-library list in the assignment. Aliased imports are resolved for these checks. The execution worker also counts actual cv2.dft and cv2.idft calls for the directly tested transform functions. Student code must be readable and cannot use dynamic imports/code execution to evade these rules.\nA file-wide forbidden import or filter reference causes the transform/filter/hybrid tests to fail, including the public supplied-image test; mask-only and interface tests remain independent. This policy is disclosed on the assignment page. Source checks cannot prove compliance against arbitrary obfuscation; suspicious submissions still require instructor review."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#independence",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#independence",
+    "title": "HW04 complete rubric",
+    "section": "",
+    "text": "The filter test supplies masks computed by the protected reference, so a mask-construction error does not automatically lose filter points. The independent hybrid test replaces the two helpers with numeric canned responses, so a bug inside either helper does not cost the hybrid-composition points. It accepts either complementary high-pass filtering or subtracting a Fourier low-pass result. Public example reproduction and the final private integration test intentionally require working composition."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-release-policies",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-release-policies",
+    "title": "HW04 complete rubric",
+    "section": "",
+    "text": "Valid submission 6 and later: a single visible submission-limit row with 0/5. Prior platform autograder errors are excluded using Gradescope metadata. This counts attempts, not local runs. A staff decision is needed for exceptions and for any rule about retroactively overriding a previously selected submission.\nThe five private rows use after_due_date and are released after the late due date when one exists. No aggregate numeric score is inserted into visible output. The visible overall status has no score fields, following Gradescope’s informational-test schema."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#starter-files",
+    "href": "assignments/hw04/index.html#starter-files",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Starter files",
+    "text": "Starter files\nDownload these files into the same folder:\n\nhw04.py\nmarilyn.png\neinstein.png\n\nComplete only these three functions in hw04.py:\nlog_magnitude_spectrum(image)\napply_frequency_filter(image, mask)\nmake_hybrid_image(image_low, image_high, sigma_low, sigma_high)\nThe Gaussian filter helper, image loading, and plotting code are already provided. Leave them unchanged. Do not change the required function names or arguments.\nThe provided loader reads the images as grayscale numpy.float32 arrays in [0, 1]. Keep the supplied images unchanged: do not crop, resize, or realign them."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#tools-and-conventions",
+    "href": "assignments/hw04/index.html#tools-and-conventions",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Tools and conventions",
+    "text": "Tools and conventions\n\nUse cv2.dft() and cv2.idft() for Fourier transforms. Do not use Fourier functions from NumPy, SciPy, or other libraries; use np.roll() for centering.\nPerform filtering by multiplying Fourier coefficients. Do not replace this step with spatial filters such as cv2.GaussianBlur() or cv2.filter2D().\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules.\nReturn same-size, two-dimensional float32 arrays. Support odd, even, and non-square image dimensions, and do not modify the input arrays.\nKeep signed values during computation. Do not clip, take absolute values of filtered images, or normalize intermediate results. The supplied display code handles visualization.\n\nThe grader supplies valid inputs. You do not need to write input-validation code."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
+    "href": "assignments/hw04/index.html#part-1-display-the-fourier-spectrum",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 1 — Display the Fourier spectrum",
+    "text": "Part 1 — Display the Fourier spectrum\nComplete:\ndef log_magnitude_spectrum(image):\n    ...\nCompute the image’s complex DFT, center its zero-frequency component, and return its log-magnitude spectrum:\n\\[\nS = \\log(1 + |F|).\n\\]\nThis function will be used for the input images, filtered components, and final hybrid. Some of those images contain negative values.\nHints:\n\nUse cv2.dft(image, flags=cv2.DFT_COMPLEX_OUTPUT). Its output has shape (M, N, 2): channel 0 is the real part and channel 1 is the imaginary part.\nFor an M × N image, center the spectrum using np.roll(F, (M // 2, N // 2), axis=(0, 1)). Shift only the two image axes.\nUse cv2.magnitude() on the real and imaginary channels, followed by np.log1p().\nDo not divide the forward DFT by the number of pixels or normalize the log-magnitude image to [0, 1]."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
+    "href": "assignments/hw04/index.html#part-2-use-the-provided-gaussian-filter",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 2 — Use the provided Gaussian filter",
+    "text": "Part 2 — Use the provided Gaussian filter\nThere is nothing to implement in this part. The starter includes:\ngaussian_frequency_mask(shape, sigma)\nIt returns an image-sized Gaussian low-pass mask, already centered for use with your centered Fourier coefficients. Call it with the image’s shape and the desired smoothing strength:\nlow_pass_mask = gaussian_frequency_mask(image.shape, sigma)\nhigh_pass_mask = 1 - low_pass_mask\nA larger sigma gives stronger smoothing. The low-pass mask retains smooth structure; its complement retains fine details. You do not need to construct a spatial kernel, derive a formula, or build a frequency-coordinate grid."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
+    "href": "assignments/hw04/index.html#part-3-filter-and-reconstruct-an-image",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 3 — Filter and reconstruct an image",
+    "text": "Part 3 — Filter and reconstruct an image\nComplete:\ndef apply_frequency_filter(image, mask):\n    ...\nUse the supplied mask to filter an image in the Fourier domain:\n\nCompute the image’s complex DFT with OpenCV.\nCenter it in the same way as in Part 1.\nMultiply the complex coefficients by mask.\nUndo the centering.\nApply OpenCV’s inverse DFT to obtain the filtered image.\n\nHints:\n\nPreserve both real and imaginary components. Part 1’s log-magnitude output is only for display; do not use it as the input to filtering or reconstruction.\nF * mask[..., None] applies the same mask to both complex channels.\nUndo the shift with np.roll(F_filtered, (-(M // 2), -(N // 2)), axis=(0, 1)). The parentheses matter for odd dimensions.\nUse cv2.idft(..., flags=cv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT) to obtain a correctly scaled, real-valued image.\nUse the original image size with no padding. This corresponds to periodic boundary behavior. The supplied masks are compatible with a real-valued inverse result.\nA high-pass result contains negative values. Keep them: taking an absolute value or clipping changes the result."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
+    "href": "assignments/hw04/index.html#part-4-build-the-hybrid-image",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Part 4 — Build the hybrid image",
+    "text": "Part 4 — Build the hybrid image\nComplete:\ndef make_hybrid_image(image_low, image_high, sigma_low, sigma_high):\n    ...\nConnect the provided mask helper to your filtering function:\n\nCall gaussian_frequency_mask(image_low.shape, sigma_low) to get the first image’s low-pass mask.\nPass image_low and that mask to your apply_frequency_filter(). Store the result as low.\nCall the provided mask helper again, using image_high.shape and sigma_high. Subtract this second mask from 1 to get a high-pass mask.\nPass image_high and the high-pass mask to your apply_frequency_filter(). Store the result as high.\nCompute the average and return all three images:\n\n\\[\nI_{\\mathrm{hybrid}}=\\frac{\\mathrm{low}+\\mathrm{high}}{2}.\n\\]\nReturn the arrays in this order: (low, high, hybrid). Do not clip or rescale them. An equivalent high-pass implementation is to subtract a Fourier low-pass result from image_high.\nThe provided driver calls this function with Marilyn first, Einstein second, sigma_low=9, and sigma_high=2. Use the function’s arguments so it also works for other image pairs and positive sigma values.\nYour Part 1 function is used by the provided driver to display the spectra. You do not need to call it inside make_hybrid_image()."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#run-and-inspect-your-program",
+    "href": "assignments/hw04/index.html#run-and-inspect-your-program",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Run and inspect your program",
+    "text": "Run and inspect your program\nconda activate cv\npython hw04.py\nOr specify the image paths explicitly, in low-frequency source, high-frequency source order:\npython hw04.py marilyn.png einstein.png\nThe driver saves:\n\nhw04_output.png — the sources, filtered components, hybrid, and spectra;\nhw04_distance.png — the hybrid at decreasing sizes; and\nhw04_hybrid.png — the raw hybrid saved as a grayscale PNG.\n\nCompare your results to these targets:\n\n\n\nExpected comparison image.\n\n\nFull-size comparison · Distance view · Raw hybrid\nFor display, the provided code offsets the signed high-pass image so zero appears gray and brightens the averaged hybrid. These display adjustments do not change your returned arrays. Compare each output with its corresponding reference.\nBefore submitting, check these simple properties locally:\n\nA constant image should have only one nonzero log-spectrum value, at the center.\nPassing an all-ones mask, np.ones_like(image), to your filter should recover the original image within small floating-point roundoff. An all-zeros mask should return zeros.\nHigh-pass filtering a constant image should produce approximately zero.\nInspect the supplied-image output at both large and small sizes. It should match the corresponding reference, apart from small numerical differences.\n\nThese checks guide debugging; you do not need to submit their results or write a report."
+  },
+  {
+    "objectID": "assignments/hw04/index.html#submission-limit-important",
+    "href": "assignments/hw04/index.html#submission-limit-important",
+    "title": "Homework 04: Hybrid Images with Fourier Transform",
+    "section": "Submission limit — important",
+    "text": "Submission limit — important\nYou may make at most 5 Gradescope submissions. Test and debug locally before submitting.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count toward the limit. Errors in your submitted code do count."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/VALIDATION.html#deployment-checks-still-needed",
+    "href": "assignments_private/hw04/instructor/VALIDATION.html#deployment-checks-still-needed",
+    "title": "Validation — revised HW04",
+    "section": "",
+    "text": "A complete Miniforge/Conda container build and Gradescope web UI were not run here. This host previously could not create the unprivileged worker account, so the true container isolation boundary remains untested locally. The package’s setup fails explicitly if account creation fails.\nQuarto CLI is unavailable here. QMD syntax and references were checked, but the page was not rendered within the course website.\nBefore publishing, set the due dates, render the course site, use Gradescope’s Test Autograder with the reference solution renamed to hw04.py, and check the student feedback view. Confirm that infrastructure failures are marked as autograder errors. The QMD due date intentionally remains TBD."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#comparison-tolerances",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#comparison-tolerances",
+    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
+    "section": "",
+    "text": "General images: rtol=1e-5, atol=2e-5; small spectra: atol=2e-5; integration spectra: atol=1e-4; supplied-image spectra: atol=3e-3 to accommodate float32 cancellation around near-zero coefficients. Return arrays must have expected shape, float32 dtype, and finite values. Saved raw hybrid and distance-view PNGs allow at most one gray level of error per pixel."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#independence-and-permitted-implementations",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#independence-and-permitted-implementations",
+    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
+    "section": "",
+    "text": "Filtering tests provide correct masks, independent of the student’s hybrid function. The hybrid-composition test substitutes correct mask/filter responses and accepts either complementary high-pass filtering or subtraction of a Fourier low-pass result. A broken filter body therefore does not automatically lose the isolated hybrid-composition points.\nOpenCV DFT/IDFT calls are required. The file’s imports may use any standard-library module, plus cv2, numpy, and matplotlib. No narrow standard-library allowlist is imposed. Ordinary use/import of other Fourier routines and spatial filtering is checked; violations fail the affected computation/output tests, while the interface row is independent. The provided Gaussian helper is not separately graded. Source checks are not a complete defense against obfuscation."
+  },
+  {
+    "objectID": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-feedback-policies",
+    "href": "assignments_private/hw04/instructor/RUBRIC.html#submission-and-feedback-policies",
+    "title": "Instructor rubric — Homework 04: Hybrid Images with Fourier Transform",
+    "section": "",
+    "text": "Valid attempt 6 or later produces one visible zero-out-of-five submission-limit row. Prior Gradescope infrastructure-error attempts are excluded from counting. The autograder does not select the final active submission or retroactively change earlier scores.\nThe four private rows use after_due_date. Before the late due date, only an ungraded overall private-suite pass/fail status is shown. Individual scores and detailed feedback are released after that date. Stdout remains hidden, and visible output contains no private numeric total."
   }
 ]

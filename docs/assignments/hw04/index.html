@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Use OpenCV Fourier transforms to create a hybrid image.">
+
+<title>Homework 04: Hybrid Images with Fourier Transform – Computer Vision</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Computer Vision</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tas.html"> 
+<span class="menu-text">TAs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials/"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assignments/"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lectures/"> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#starter-files" id="toc-starter-files" class="nav-link" data-scroll-target="#starter-files">Starter files</a></li>
+  <li><a href="#tools-and-conventions" id="toc-tools-and-conventions" class="nav-link" data-scroll-target="#tools-and-conventions">Tools and conventions</a></li>
+  <li><a href="#part-1-display-the-fourier-spectrum" id="toc-part-1-display-the-fourier-spectrum" class="nav-link" data-scroll-target="#part-1-display-the-fourier-spectrum">Part 1 — Display the Fourier spectrum</a></li>
+  <li><a href="#part-2-use-the-provided-gaussian-filter" id="toc-part-2-use-the-provided-gaussian-filter" class="nav-link" data-scroll-target="#part-2-use-the-provided-gaussian-filter">Part 2 — Use the provided Gaussian filter</a></li>
+  <li><a href="#part-3-filter-and-reconstruct-an-image" id="toc-part-3-filter-and-reconstruct-an-image" class="nav-link" data-scroll-target="#part-3-filter-and-reconstruct-an-image">Part 3 — Filter and reconstruct an image</a></li>
+  <li><a href="#part-4-build-the-hybrid-image" id="toc-part-4-build-the-hybrid-image" class="nav-link" data-scroll-target="#part-4-build-the-hybrid-image">Part 4 — Build the hybrid image</a></li>
+  <li><a href="#run-and-inspect-your-program" id="toc-run-and-inspect-your-program" class="nav-link" data-scroll-target="#run-and-inspect-your-program">Run and inspect your program</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit-important" id="toc-submission-limit-important" class="nav-link" data-scroll-target="#submission-limit-important">Submission limit — important</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 04: Hybrid Images with Fourier Transform</h1>
+</div>
+
+<div>
+  <div class="description">
+    Use OpenCV Fourier transforms to create a hybrid image.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>Create a <strong>hybrid image</strong> that combines the smooth structure of one image with the fine details of another. You will use Marilyn and Einstein, then view the result at different sizes.</p>
+<p>Use the course <strong><code>cv</code> Conda environment</strong> and <strong>OpenCV (<code>cv2</code>)</strong>. Do not use generative AI to solve this homework. The goal is to understand how Fourier coefficients can be modified and used to reconstruct an image.</p>
+</section>
+<section id="starter-files" class="level2">
+<h2 class="anchored" data-anchor-id="starter-files">Starter files</h2>
+<p>Download these files into the same folder:</p>
+<ul>
+<li><a href="files/hw04.py">hw04.py</a></li>
+<li><a href="files/marilyn.png">marilyn.png</a></li>
+<li><a href="files/einstein.png">einstein.png</a></li>
+</ul>
+<p>Complete only these <strong>three functions</strong> in <code>hw04.py</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>log_magnitude_spectrum(image)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>apply_frequency_filter(image, mask)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>make_hybrid_image(image_low, image_high, sigma_low, sigma_high)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The Gaussian filter helper, image loading, and plotting code are already provided. Leave them unchanged. Do not change the required function names or arguments.</p>
+<p>The provided loader reads the images as grayscale <code>numpy.float32</code> arrays in <code>[0, 1]</code>. Keep the supplied images unchanged: do not crop, resize, or realign them.</p>
+</section>
+<section id="tools-and-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="tools-and-conventions">Tools and conventions</h2>
+<ul>
+<li>Use <strong><code>cv2.dft()</code> and <code>cv2.idft()</code></strong> for Fourier transforms. Do not use Fourier functions from NumPy, SciPy, or other libraries; use <code>np.roll()</code> for centering.</li>
+<li>Perform filtering by multiplying Fourier coefficients. Do not replace this step with spatial filters such as <code>cv2.GaussianBlur()</code> or <code>cv2.filter2D()</code>.</li>
+<li>Keep imports to <code>cv2</code>, <code>numpy</code>, <code>matplotlib</code>, and the standard-library modules.</li>
+<li>Return same-size, two-dimensional <code>float32</code> arrays. Support odd, even, and non-square image dimensions, and do not modify the input arrays.</li>
+<li>Keep signed values during computation. Do not clip, take absolute values of filtered images, or normalize intermediate results. The supplied display code handles visualization.</li>
+</ul>
+<p>The grader supplies valid inputs. You do not need to write input-validation code.</p>
+</section>
+<section id="part-1-display-the-fourier-spectrum" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-display-the-fourier-spectrum">Part 1 — Display the Fourier spectrum</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> log_magnitude_spectrum(image):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compute the image’s complex DFT, center its zero-frequency component, and return its <strong>log-magnitude spectrum</strong>:</p>
+<p><span class="math display">\[
+S = \log(1 + |F|).
+\]</span></p>
+<p>This function will be used for the input images, filtered components, and final hybrid. Some of those images contain negative values.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Use <code>cv2.dft(image, flags=cv2.DFT_COMPLEX_OUTPUT)</code>. Its output has shape <code>(M, N, 2)</code>: channel 0 is the real part and channel 1 is the imaginary part.</li>
+<li>For an <code>M × N</code> image, center the spectrum using <code>np.roll(F, (M // 2, N // 2), axis=(0, 1))</code>. Shift only the two image axes.</li>
+<li>Use <code>cv2.magnitude()</code> on the real and imaginary channels, followed by <code>np.log1p()</code>.</li>
+<li>Do not divide the forward DFT by the number of pixels or normalize the log-magnitude image to <code>[0, 1]</code>.</li>
+</ul>
+</section>
+<section id="part-2-use-the-provided-gaussian-filter" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-use-the-provided-gaussian-filter">Part 2 — Use the provided Gaussian filter</h2>
+<p><strong>There is nothing to implement in this part.</strong> The starter includes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gaussian_frequency_mask(shape, sigma)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It returns an image-sized Gaussian <strong>low-pass mask</strong>, already centered for use with your centered Fourier coefficients. Call it with the image’s shape and the desired smoothing strength:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>low_pass_mask <span class="op">=</span> gaussian_frequency_mask(image.shape, sigma)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>high_pass_mask <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> low_pass_mask</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A larger <code>sigma</code> gives stronger smoothing. The low-pass mask retains smooth structure; its complement retains fine details. You do not need to construct a spatial kernel, derive a formula, or build a frequency-coordinate grid.</p>
+</section>
+<section id="part-3-filter-and-reconstruct-an-image" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-filter-and-reconstruct-an-image">Part 3 — Filter and reconstruct an image</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> apply_frequency_filter(image, mask):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use the supplied mask to filter an image in the Fourier domain:</p>
+<ol type="1">
+<li>Compute the image’s <strong>complex DFT</strong> with OpenCV.</li>
+<li>Center it in the same way as in Part 1.</li>
+<li>Multiply the complex coefficients by <code>mask</code>.</li>
+<li>Undo the centering.</li>
+<li>Apply OpenCV’s inverse DFT to obtain the filtered image.</li>
+</ol>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Preserve <strong>both real and imaginary components</strong>. Part 1’s log-magnitude output is only for display; do not use it as the input to filtering or reconstruction.</li>
+<li><code>F * mask[..., None]</code> applies the same mask to both complex channels.</li>
+<li>Undo the shift with <code>np.roll(F_filtered, (-(M // 2), -(N // 2)), axis=(0, 1))</code>. The parentheses matter for odd dimensions.</li>
+<li>Use <code>cv2.idft(..., flags=cv2.DFT_SCALE | cv2.DFT_REAL_OUTPUT)</code> to obtain a correctly scaled, real-valued image.</li>
+<li>Use the original image size with <strong>no padding</strong>. This corresponds to periodic boundary behavior. The supplied masks are compatible with a real-valued inverse result.</li>
+<li>A high-pass result contains negative values. Keep them: taking an absolute value or clipping changes the result.</li>
+</ul>
+</section>
+<section id="part-4-build-the-hybrid-image" class="level2">
+<h2 class="anchored" data-anchor-id="part-4-build-the-hybrid-image">Part 4 — Build the hybrid image</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_hybrid_image(image_low, image_high, sigma_low, sigma_high):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Connect the <strong>provided mask helper</strong> to <strong>your filtering function</strong>:</p>
+<ol type="1">
+<li>Call <code>gaussian_frequency_mask(image_low.shape, sigma_low)</code> to get the first image’s low-pass mask.</li>
+<li>Pass <code>image_low</code> and that mask to your <code>apply_frequency_filter()</code>. Store the result as <code>low</code>.</li>
+<li>Call the provided mask helper again, using <code>image_high.shape</code> and <code>sigma_high</code>. Subtract this second mask from 1 to get a high-pass mask.</li>
+<li>Pass <code>image_high</code> and the high-pass mask to your <code>apply_frequency_filter()</code>. Store the result as <code>high</code>.</li>
+<li>Compute the average and return all three images:</li>
+</ol>
+<p><span class="math display">\[
+I_{\mathrm{hybrid}}=\frac{\mathrm{low}+\mathrm{high}}{2}.
+\]</span></p>
+<p>Return the arrays in this order: <strong><code>(low, high, hybrid)</code></strong>. Do not clip or rescale them. An equivalent high-pass implementation is to subtract a Fourier low-pass result from <code>image_high</code>.</p>
+<p>The provided driver calls this function with <strong>Marilyn first, Einstein second, <code>sigma_low=9</code>, and <code>sigma_high=2</code></strong>. Use the function’s arguments so it also works for other image pairs and positive sigma values.</p>
+<p>Your Part 1 function is used by the provided driver to display the spectra. You do not need to call it inside <code>make_hybrid_image()</code>.</p>
+</section>
+<section id="run-and-inspect-your-program" class="level2">
+<h2 class="anchored" data-anchor-id="run-and-inspect-your-program">Run and inspect your program</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw04.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or specify the image paths explicitly, in <strong>low-frequency source, high-frequency source</strong> order:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw04.py marilyn.png einstein.png</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The driver saves:</p>
+<ul>
+<li><strong><code>hw04_output.png</code></strong> — the sources, filtered components, hybrid, and spectra;</li>
+<li><strong><code>hw04_distance.png</code></strong> — the hybrid at decreasing sizes; and</li>
+<li><strong><code>hw04_hybrid.png</code></strong> — the raw hybrid saved as a grayscale PNG.</li>
+</ul>
+<p>Compare your results to these targets:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/reference_output.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Expected comparison image.</figcaption>
+</figure>
+</div>
+<p><a href="files/reference_output.png">Full-size comparison</a> · <a href="files/reference_distance.png">Distance view</a> · <a href="files/reference_hybrid.png">Raw hybrid</a></p>
+<p>For display, the provided code offsets the signed high-pass image so zero appears gray and brightens the averaged hybrid. These display adjustments do not change your returned arrays. Compare each output with its corresponding reference.</p>
+<p><strong>Before submitting, check these simple properties locally:</strong></p>
+<ul>
+<li>A constant image should have only one nonzero log-spectrum value, at the center.</li>
+<li>Passing an all-ones mask, <code>np.ones_like(image)</code>, to your filter should recover the original image within small floating-point roundoff. An all-zeros mask should return zeros.</li>
+<li>High-pass filtering a constant image should produce approximately zero.</li>
+<li>Inspect the supplied-image output at both large and small sizes. It should match the corresponding reference, apart from small numerical differences.</li>
+</ul>
+<p>These checks guide debugging; you do not need to submit their results or write a report.</p>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit exactly <strong>one file</strong>, <code>hw04.py</code>, to Gradescope. Do not submit input images, output images, screenshots, or a notebook. The autograder supplies its own inputs.</p>
+</section>
+<section id="submission-limit-important" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit-important">Submission limit — important</h2>
+<p>You may make at most <strong>5 Gradescope submissions</strong>. Test and debug locally before submitting.</p>
+<ul>
+<li>Submissions 1–5 are graded normally.</li>
+<li>Submission 6 and every later valid submission receive zero points for that submission.</li>
+<li>A Gradescope infrastructure failure marked as an autograder error does not count toward the limit. Errors in your submitted code do count.</li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>HW04 is worth <strong>5 points and is fully autograded</strong>.</p>
+<p>The autograder checks:</p>
+<ul>
+<li>required functions and interfaces;</li>
+<li>centered Fourier log-magnitude spectra;</li>
+<li>frequency-domain filtering and reconstruction, including signed values and odd/non-square image sizes;</li>
+<li>correct hybrid-image construction; and</li>
+<li>whether the script reproduces the required result and saves the expected output files.</li>
+</ul>
+<p>Use the required OpenCV transforms; prohibited transform or spatial-filtering implementations fail the affected tests. Gaussian-mask construction is provided and is not a separately graded task. Small floating-point differences are allowed; the saved hybrid pixels may differ from the reference by at most one gray level.</p>
+<p>Basic public tests provide immediate detailed feedback. Before the <strong>Gradescope late due date</strong>, private tests provide only one overall pass/fail indicator. Individual private tests, scores, and feedback become visible after the late due date. Passing public tests does not guarantee full credit.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
