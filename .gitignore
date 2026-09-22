@@ -30,6 +30,9 @@ docs/lectures/pdf/*.pdf
 # Private lecture sources and assets
 /lectures/
 
+# Exams
+/exams_private/
+
 # ============================================================
 # Source styling files
 # Rendered CSS needed by the public website is copied into docs/
