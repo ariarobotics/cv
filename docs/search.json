@@ -3427,7 +3427,7 @@
     "href": "lectures/07_features.html#what-is-an-image-feature",
     "title": "Lecture 07 — Feature Points",
     "section": "What Is an Image Feature?",
-    "text": "What Is an Image Feature?\n\n\n\n\n\n\n\n\nImage feature\n\n\nA measurable visual property or pattern that helps us analyze or compare images.\n\n\n\nFeatures can include edges, corners, blobs, and texture patterns.\nIn this lecture, we focus on local features: small image regions that we can detect and match across images.\n\nA keypoint specifies the location of an interesting point.\nA descriptor summarizes the surrounding appearance as numbers for comparison.\n\nCorners are one useful type of local feature.\n\n\n\n\n\n\n\n\n\n\nThe marked point provides a location. Its neighborhood provides an appearance we can compare."
+    "text": "What Is an Image Feature?\n\n\n\n\n\n\n\n\nImage feature\n\n\nA measurable visual property or pattern that helps us analyze or compare images.\n\n\n\n\nFeatures can include edges, corners, blobs, and texture patterns.\nIn this lecture, we focus on corners as local features: small image regions that we can detect and match across images.\nA keypoint specifies the location of an interesting point.\nA descriptor summarizes the surrounding appearance as numbers for comparison.\n\n\n\n\n\n\n\n\n\n\n\n\nThe marked point provides a location. Its neighborhood provides an appearance we can compare."
   },
   {
     "objectID": "lectures/07_features.html#connecting-filtering-edges-and-corners",
@@ -3455,13 +3455,279 @@
     "href": "lectures/07_features.html#applications-of-image-features",
     "title": "Lecture 07 — Feature Points",
     "section": "Applications of Image Features",
-    "text": "Applications of Image Features\n\n\n\n\n\n\n\n\n\n\nImage alignment: match overlapping views to create panoramas.\nObject and place recognition: match a query image against stored images.\nMotion tracking: follow corresponding points across video frames.\n3D reconstruction and localization: use correspondences across views to estimate scene structure and camera motion.\n\nThe common ingredient is finding the same scene points across images."
+    "text": "Applications of Image Features\n\n\n\n\n\n\n\n\n\n\n\n\n\nLocalization and mapping\n\n\n\n\n\nImage alignment: match overlapping views to create panoramas.\nObject recognition: match a query image or object against stored images.\nMotion tracking: follow feature points across video frames.\n3D reconstruction and localization: track or match features across views to estimate scene structure and camera motion.\n\nThe common ingredient is finding the same scene points/features across images."
   },
   {
     "objectID": "lectures/07_features.html#what-makes-a-good-feature",
     "href": "lectures/07_features.html#what-makes-a-good-feature",
     "title": "Lecture 07 — Feature Points",
     "section": "What Makes a Good Feature?",
-    "text": "What Makes a Good Feature?\n\n\n\n\n\n\nTip\n\n\nA useful feature should be easy to find again, easy to distinguish from other features, and efficient to represent and compare.\n\n\n\n\n\n\n\n\n\n\n\nProperty\nWhat we want\nWhy it matters\n\n\n\n\nRepeatability\nDetect the same scene point across changes in viewpoint, scale, and lighting.\nA point cannot be matched if we fail to detect it again.\n\n\nDistinctiveness\nA local appearance that differs from other candidate points.\nSimilar-looking regions can produce ambiguous matches.\n\n\nEfficiency and compactness\nA manageable number of keypoints with compact descriptors.\nDetection, storage, and matching should remain practical.\n\n\n\nWe also want accurate localization: small errors in keypoint positions can affect image alignment and motion estimates.\nWould a strong corner in a row of identical windows necessarily be easy to match?"
+    "text": "What Makes a Good Feature?\nA useful feature should be easy to find again, easy to distinguish from other features, and efficient to represent and compare.\n\n\n\n\n\n\n\n\nProperty\nWhat we want\nWhy it matters\n\n\n\n\nRepeatability\nDetect the same scene point across changes in viewpoint, scale, and lighting.\nA point cannot be matched if we fail to detect it again.\n\n\nDistinctiveness\nA local appearance that differs from other candidate points.\nSimilar-looking regions can produce ambiguous matches.\n\n\nEfficiency and compactness\nA manageable number of keypoints with compact descriptors.\nDetection, storage, and matching should remain practical."
+  },
+  {
+    "objectID": "lectures/07_features.html#how-can-we-overlay-these-images-to-create-a-panorama",
+    "href": "lectures/07_features.html#how-can-we-overlay-these-images-to-create-a-panorama",
+    "title": "Lecture 07 — Feature Points",
+    "section": "How Can We Overlay These Images to Create a Panorama?",
+    "text": "How Can We Overlay These Images to Create a Panorama?\n\n\n\n\n\n\n\n\n\nWhich points would you use to align these images?\n\nFind recognizable details that appear in both views.\nConsider building corners, roof shapes, and other distinctive patterns."
+  },
+  {
+    "objectID": "lectures/07_features.html#connection-of-filtering-edges-and-corners",
+    "href": "lectures/07_features.html#connection-of-filtering-edges-and-corners",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Connection of Filtering, Edges, and Corners",
+    "text": "Connection of Filtering, Edges, and Corners\n\n\n\n\n\n\n\n\n\n\nFiltering gives us a tool to process images: smoothing to reduce noise, taking derivative to measure local intensity changes.\nEdges: Large gradient magnitudes indicate strong intensity changes in the image, primarily across an edge.\nCorners: Where edges meet or turn sharply, intensity changes in multiple directions within the neighborhood."
+  },
+  {
+    "objectID": "lectures/07_features.html#main-components-of-local-feature-matching",
+    "href": "lectures/07_features.html#main-components-of-local-feature-matching",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Main Components of Local Feature Matching",
+    "text": "Main Components of Local Feature Matching\n\n\n\n\n\n\n\n\n\n\n\n1. Detection\nFind a set of distinctive features (aka, keypoints).\n\n2. Description\nExtract a feature descriptor around each interest point as a vector.\n\n3. Matching\nCompute distances between feature vectors to find correspondences."
+  },
+  {
+    "objectID": "lectures/07_features.html#corner-detection",
+    "href": "lectures/07_features.html#corner-detection",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Corner Detection",
+    "text": "Corner Detection\n1. Detection   2. Description   3. Matching"
+  },
+  {
+    "objectID": "lectures/07_features.html#how-can-we-detect-image-corners",
+    "href": "lectures/07_features.html#how-can-we-detect-image-corners",
+    "title": "Lecture 07 — Feature Points",
+    "section": "How Can We Detect Image Corners?",
+    "text": "How Can We Detect Image Corners?\n\n\n\n\n\n\n\n\n\nImagine shifting each yellow window slightly and comparing its pixel values with the original patch.\n\nAlong a straight edge, several nearby positions look similar.\nAround a corner, shifts in any direction change the patch, helping us locate it in both \\(x\\) and \\(y\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#measuring-change-with-a-shifted-window",
+    "href": "lectures/07_features.html#measuring-change-with-a-shifted-window",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Measuring Change with a Shifted Window",
+    "text": "Measuring Change with a Shifted Window\n\n\nKeep a reference window \\(W\\) fixed and compare it with a shifted window in the same image.\n\\[\nE(u,v)=\\sum_{(x,y)\\in W}\\left[I(x+u,y+v)-I(x,y)\\right]^2\n\\]\n\n\\(u\\) is the horizontal shift, and \\(v\\) is the vertical shift, in pixels.\nPositive \\(u\\) moves right; positive \\(v\\) moves down.\nCompare corresponding pixels, square their differences, and add them.\n\nThis defines the auto-correlation error \\(E(u,v)\\): one number for each shift.\n\n\n\n\n\n\n\n\n\n\n\nBlue: the reference 3×3 window. Orange: the window shifted one pixel right, \\((u,v)=(1,0)\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#one-shift-one-auto-correlation-value",
+    "href": "lectures/07_features.html#one-shift-one-auto-correlation-value",
+    "title": "Lecture 07 — Feature Points",
+    "section": "One Shift, One Auto-correlation Value",
+    "text": "One Shift, One Auto-correlation Value\n\n\n\n\n\n\n\n\n\n\\[\nE(1,0)=\\sum (B-A)^2=1+1=2\n\\]\n\nOnly two pixels change in this example; each contributes \\(1\\) to the sum.\nWith no shift, every pixel matches itself: \\(E(0,0)=0\\).\nSquaring prevents positive and negative differences from canceling."
+  },
+  {
+    "objectID": "lectures/07_features.html#from-individual-shifts-to-the-response-map",
+    "href": "lectures/07_features.html#from-individual-shifts-to-the-response-map",
+    "title": "Lecture 07 — Feature Points",
+    "section": "From Individual Shifts to the Response Map",
+    "text": "From Individual Shifts to the Response Map\n\n\n\n\n\n\n\n\n\n\nRepeat the calculation for each shift: \\(u,v\\in\\{-2,-1,0,1,2\\}\\).\nThe orange cell is the previous result, \\(E(1,0)=2\\). The center is \\(E(0,0)=0\\).\nThis map is indexed by shifts, not by image locations. The reference window stays fixed."
+  },
+  {
+    "objectID": "lectures/07_features.html#flat-edge-and-corner-response-surfaces",
+    "href": "lectures/07_features.html#flat-edge-and-corner-response-surfaces",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Flat, Edge, and Corner Response Surfaces",
+    "text": "Flat, Edge, and Corner Response Surfaces\n\n\n\n\n\n\n\n\n\n\nAll three use the same 3×3 window, shifts, and vertical scale. The red point marks \\((u,v)=(0,0)\\).\n\n\nFlat region: \\(E\\) stays zero. Edge: \\(E\\) stays low along the edge, forming a valley.\nCorner: \\(E\\) increases for small shifts in every direction, giving an isolated minimum."
+  },
+  {
+    "objectID": "lectures/07_features.html#reading-the-auto-correlation-response",
+    "href": "lectures/07_features.html#reading-the-auto-correlation-response",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Reading the Auto-correlation Response",
+    "text": "Reading the Auto-correlation Response\nWe compare a window with shifted versions of itself using the auto-correlation error\n\\[\nE(u,v)=\\sum_{(x,y)\\in W}\\left[I(x+u,y+v)-I(x,y)\\right]^2.\n\\]\n\nAt zero shift, the window matches itself, so \\(E(0,0)=0\\).\nSmall values mean that the shifted window looks similar to the reference window.\nLarge values mean that the shifted window looks different.\nAt a corner, \\(E(u,v)\\) rises strongly as we move away from zero in every direction.\n\nSo, to find corners, we are interested in the shape of the response around \\((u,v)=(0,0)\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#the-window-function",
+    "href": "lectures/07_features.html#the-window-function",
+    "title": "Lecture 07 — Feature Points",
+    "section": "The Window Function",
+    "text": "The Window Function\n\n\n\n\n\n\n\n\n\n\\[\nE(u,v)=\\sum_{x,y} w(x,y)\\left[I(x+u,y+v)-I(x,y)\\right]^2\n\\]\n\nUniform weights count all pixels in the window equally. This is what we used so far.\nGaussian weights emphasize the center and reduce the influence of pixels near the boundary.\nWeights are zero outside the window. The weights multiply the squared differences."
+  },
+  {
+    "objectID": "lectures/07_features.html#a-naive-corner-detection-algorithm",
+    "href": "lectures/07_features.html#a-naive-corner-detection-algorithm",
+    "title": "Lecture 07 — Feature Points",
+    "section": "A Naive Corner-Detection Algorithm",
+    "text": "A Naive Corner-Detection Algorithm\n\n\n\n\n\n\n\n\n\n\nPlace a window around each pixel in the image.\nCompute its auto-correlation \\(E(u,v)\\) over a window.\nPick corners where \\(E(u,v)\\) increases strongly in every shift direction.\n\nIs this algorithm practical?"
+  },
+  {
+    "objectID": "lectures/07_features.html#naive-corner-detection-computational-complexity",
+    "href": "lectures/07_features.html#naive-corner-detection-computational-complexity",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Naive Corner-Detection Computational Complexity",
+    "text": "Naive Corner-Detection Computational Complexity\n\n\nFor a 1920 × 1080 pixels image, compute an auto-correlation response at every pixel:\n\n\n\nCalculation\nCount\n\n\n\n\nImage pixels\n2,073,600\n\n\nPixels in each window\n\\(11\\times11=121\\)\n\n\nNonzero shifts per window\n\\(11\\times11-1=120\\)\n\n\nPixel comparisons per image pixel\n\\(121\\times120=14,520\\)\n\n\nTotal pixel comparisons\n30.1 billion\n\n\n\nAssuming \\(10^8\\) pixel comparisons per second, this takes about 5 minutes for one image.\n\n\nFor an \\(H\\times W\\) image, a \\(k\\times k\\) window, and an \\(m\\times m\\) shift grid:\n\\[\nN_{\\text{comparisons}}\\approx\n\\underbrace{HW}_{\\text{image pixels}}\n\\times\\underbrace{k^2}_{\\text{window pixels}}\n\\times\\underbrace{(m^2-1)}_{\\text{nonzero shifts}}.\n\\]\nComputing auto-correlation at every pixel is impractical. Can we approximate \\(E(u,v)\\) without testing every shift?"
+  },
+  {
+    "objectID": "lectures/07_features.html#approximating-the-auto-correlation-response",
+    "href": "lectures/07_features.html#approximating-the-auto-correlation-response",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Approximating the Auto-correlation Response",
+    "text": "Approximating the Auto-correlation Response\n\n\n\n\n\n\n\n\n\n\nNear zero shift, the auto-correlation response can be approximated by a quadratic surface.\nTo detect corners, we need to know if the response stays low in any direction or rises in every direction.\nWe will derive this surface from image gradients instead of computing auto-correlation.\nTaylor expansion connects auto-correlation shape to a small matrix of image gradients."
+  },
+  {
+    "objectID": "lectures/07_features.html#recall-taylor-series-expansion",
+    "href": "lectures/07_features.html#recall-taylor-series-expansion",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Recall: Taylor Series Expansion",
+    "text": "Recall: Taylor Series Expansion\n\nTaylor series around a reference point \\(a\\) for small \\(h\\):\n\n\\[\nf(a+h)=f(a)+f'(a)h+\\frac{f''(a)}{2!}h^2+\\frac{f'''(a)}{3!}h^3+\\cdots\n\\]\n\nKeeping terms through \\(h^2\\) gives a quadratic approximation.\nFor \\(E(u,v)\\) near \\((0,0)\\), the corresponding approximation is\n\n\\[\nE(u,v)\\approx  E(0,0)+E_u u+E_v v\n+\\frac12\\left(E_{uu}u^2+2E_{uv}uv+E_{vv}v^2\\right).\n\\]\n\nDerivative notations:\n\n\\[E_u=\\frac{\\partial E}{\\partial u},\\qquad E_v=\\frac{\\partial E}{\\partial v}. \\]\n\n\\(E_{uu}\\) and \\(E_{vv}\\) are second derivatives; \\(E_{uv}\\) is the mixed derivative.\nAll derivatives of \\(E\\) in this expansion are evaluated at \\((u,v)=(0,0)\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#deriving-the-quadratic-approximation",
+    "href": "lectures/07_features.html#deriving-the-quadratic-approximation",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Deriving the Quadratic Approximation",
+    "text": "Deriving the Quadratic Approximation\n\n\nDefine the intensity difference for a shifted window:\n\\[\nE(u,v)=\\sum_{x,y}w(x,y)(\\Delta I)^2, \\quad\n\\Delta I=I(x+u,y+v)-I(x,y).\n\\]\n\nDifferentiate with respect to the shift:\n\n\\[\n\\begin{aligned}\nE_u&=2\\sum w\\,\\Delta I\\,\\Delta I_u,\\\\\nE_v&=2\\sum w\\,\\Delta I\\,\\Delta I_v,\n\\end{aligned}\n\\]\nwhere \\(\\Delta I_u=\\partial(\\Delta I)/\\partial u\\) and similarly for the other derivatives. The window weights stay fixed as we vary the shift.\nDifferentiate once more:\n\\[\n\\begin{aligned}\nE_{uu}&=2\\sum w\\left[(\\Delta I_u)^2+\\Delta I\\,\\Delta I_{uu}\\right],\\\\\nE_{uv}&=2\\sum w\\left[\\Delta I_u\\Delta I_v+\\Delta I\\,\\Delta I_{uv}\\right],\\\\\nE_{vv}&=2\\sum w\\left[(\\Delta I_v)^2+\\Delta I\\,\\Delta I_{vv}\\right].\n\\end{aligned}\n\\]\n\n\nEvaluate at zero shift.\n\n\\[\n\\Delta I=0,\\qquad \\Delta I_u=I_x,\\qquad \\Delta I_v=I_y.\n\\]\nThe constant and linear terms vanish:\n\\[E(0,0)=0,\\qquad E_u(0,0)=E_v(0,0)=0.\\]\nThe second derivatives simplify to\n\\[\n\\begin{aligned}\nE_{uu}(0,0)&=2\\sum wI_x^2,\\\\\nE_{uv}(0,0)&=2\\sum wI_xI_y,\\\\\nE_{vv}(0,0)&=2\\sum wI_y^2.\n\\end{aligned}\n\\]\nHere, \\(I_x\\) and \\(I_y\\) are evaluated at the original pixel \\((x,y)\\).\n\nSubstitute into the Taylor expansion.\n\n\\[\n\\begin{aligned}\nE(u,v)&\\approx\\frac12\\left[2\\Bigl(\\sum wI_x^2\\Bigr)u^2\n+4\\Bigl(\\sum wI_xI_y\\Bigr)uv+2\\Bigl(\\sum wI_y^2\\Bigr)v^2\\right]\\\\\n&=\\sum w\\left(I_x^2u^2+2I_xI_yuv+I_y^2v^2\\right).\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "lectures/07_features.html#the-second-moment-matrix",
+    "href": "lectures/07_features.html#the-second-moment-matrix",
+    "title": "Lecture 07 — Feature Points",
+    "section": "The Second Moment Matrix",
+    "text": "The Second Moment Matrix\nThe derivation gives a quadratic approximation:\n\\[\nE(u,v)\\approx\n\\sum_{x,y} w\\left(I_x^2u^2+2I_xI_yuv+I_y^2v^2\\right)\n=\n\\begin{bmatrix}u&v\\end{bmatrix}\nM\n\\begin{bmatrix}u\\\\v\\end{bmatrix}\n\\]\nThe second moment matrix, also called the structure tensor, is\n\\[\nM=\\sum_{x,y}w(x,y)\n\\begin{bmatrix}\nI_x^2&I_xI_y\\\\\nI_xI_y&I_y^2\n\\end{bmatrix}\n=\\begin{bmatrix}A&B\\\\B&C\\end{bmatrix}.\n\\]\nIts three distinct entries are\n\\[A=\\sum_{x,y} wI_x^2,\\qquad B=\\sum_{x,y} wI_xI_y,\\qquad C=\\sum_{x,y} wI_y^2.\\]\n\nTo compute \\(M\\), first compute image derivatives \\(I_x\\) and \\(I_y\\), then form these three weighted sums in each window.\nThe matrix \\(M\\) describes how the window changes for small shifts in any direction.\nNext, we will connect the entries of \\(M\\) to the response shape and identify which shapes indicate corners."
+  },
+  {
+    "objectID": "lectures/07_features.html#example-compute-m-for-a-small-image",
+    "href": "lectures/07_features.html#example-compute-m-for-a-small-image",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Example: Compute \\(M\\) for a Small Image",
+    "text": "Example: Compute \\(M\\) for a Small Image\n\n\n\n\n\n\n\n\n\n\nFind derivaties by filtering the image with \\(h_x=[-1,0,1]\\) and \\(h_y=h_x^T\\) kernels.\nThe blue boxes show a 3×3 auto-correlation window.\nNext, form the gradient products and sum their values inside this window."
+  },
+  {
+    "objectID": "lectures/07_features.html#example-compute-m-for-a-small-image-1",
+    "href": "lectures/07_features.html#example-compute-m-for-a-small-image-1",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Example: Compute \\(M\\) for a Small Image",
+    "text": "Example: Compute \\(M\\) for a Small Image\n\n\n\n\n\n\n\n\n\n\\[\nA=\\sum_{x,y} wI_x^2,\\quad B=\\sum_{x,y} wI_xI_y,\\quad C=\\sum_{x,y} wI_y^2 \\quad \\implies \\quad\nM = \\begin{bmatrix}A&B\\\\B&C\\end{bmatrix}\n=\\begin{bmatrix}4&1\\\\1&4\\end{bmatrix}.\n\\]\n\nAssume \\(w=1\\) inside the 3×3 window. Sum only the values inside the window.\n\\(A\\) measures horizontal gradient energy, \\(C\\) vertical gradient energy, and \\(B\\) how the horizontal and vertical gradient components relate."
+  },
+  {
+    "objectID": "lectures/07_features.html#the-shape-of-the-quadratic-response",
+    "href": "lectures/07_features.html#the-shape-of-the-quadratic-response",
+    "title": "Lecture 07 — Feature Points",
+    "section": "The Shape of the Quadratic Response",
+    "text": "The Shape of the Quadratic Response\n\n\n\n\n\n\n\n\n\n\\[M=\\begin{bmatrix}4&1\\\\1&4\\end{bmatrix}\n\\qquad\\Rightarrow\\qquad E(u,v)\\approx4u^2+2uv+4v^2.\\]\n\nEach colored contour (or level set) joins \\(u\\)-\\(v\\) shifts with the same auto-correlation response.\nA nearby contour means a small shift already changes the patch substantially.\nThis matrix gives closed contours: the response increases in every direction. Next, compare with a flat region or an edge."
+  },
+  {
+    "objectID": "lectures/07_features.html#m-determines-the-contour-shape",
+    "href": "lectures/07_features.html#m-determines-the-contour-shape",
+    "title": "Lecture 07 — Feature Points",
+    "section": "\\(M\\) Determines the Contour Shape",
+    "text": "\\(M\\) Determines the Contour Shape\n\n\n\n\n\n\n\n\n\n\nFlat: \\(M=0\\), so the predicted response stays zero in every direction.\nEdge: the contours are parallel lines. Moving along them gives little change.\nCorner: the contours are closed ellipses. Moving away from zero in any direction changes the patch.\nCan we guess the feature type directly from the elements of \\(M\\)?"
+  },
+  {
+    "objectID": "lectures/07_features.html#rotation-changes-the-entries-of-m",
+    "href": "lectures/07_features.html#rotation-changes-the-entries-of-m",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Rotation Changes the Entries of M",
+    "text": "Rotation Changes the Entries of M\n\n\n\n\n\n\n\n\n\n\nRotating an edge changes the entries of \\(M\\) without changing its feature type.\nFor the diagonal edge, all diagonals are \\(3\\), but \\(E\\) stays zero along the arrow. Reading the entries alone can be misleading!\nWe need the directions and magnitudes of least and greatest change.\nEigenvectors identify these directions. Eigenvalues measure the change along them."
+  },
+  {
+    "objectID": "lectures/07_features.html#eigenvalues-measure-change-along-principal-directions",
+    "href": "lectures/07_features.html#eigenvalues-measure-change-along-principal-directions",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Eigenvalues Measure Change Along Principal Directions",
+    "text": "Eigenvalues Measure Change Along Principal Directions\n\n\n\n\n\n\n\n\n\n\\[M\\mathbf q_i=\\lambda_i \\mathbf q_i\n\\qquad(\\|\\mathbf q_i\\|=1).\\]\n\n\\(\\lambda_i\\) is an eigenvalues, and \\(\\mathbf q_i\\) is an eigenvector.\nOrange: the perpendicular direction of greatest change, with strength \\(\\lambda_{\\max}\\).\nBlue: the direction of least change, with strength \\(\\lambda_{\\min}\\).\nThe edge has a zero eigenvalue. The corner has two large eigenvalues."
+  },
+  {
+    "objectID": "lectures/07_features.html#rotation-preserves-the-eigenvalues",
+    "href": "lectures/07_features.html#rotation-preserves-the-eigenvalues",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Rotation Preserves the Eigenvalues",
+    "text": "Rotation Preserves the Eigenvalues\n\n\n\n\n\n\n\n\n\n\nThe plots show the response for an image and its rotated version.\nTheir \\(M\\) matrices differ, but both have the same eigenvalues: \\(\\lambda_{\\min}=3\\) and \\(\\lambda_{\\max}=5\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#reading-feature-type-from-eigenvalues",
+    "href": "lectures/07_features.html#reading-feature-type-from-eigenvalues",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Reading Feature Type from Eigenvalues",
+    "text": "Reading Feature Type from Eigenvalues\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues\nResponse shape\nFeature type\n\n\n\n\nBoth small\nNearly flat in every direction\nFlat region\n\n\nOne large, one small\nValley with a direction of little change\nEdge\n\n\nBoth large\nBowl that rises strongly in every direction\nCorner\n\n\n\nRotating a imaage patch changes its principal directions (eigenvectors), but preserves its eigenvalues and feature type."
+  },
+  {
+    "objectID": "lectures/07_features.html#corner-angle-and-eigenvalues",
+    "href": "lectures/07_features.html#corner-angle-and-eigenvalues",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Corner Angle and Eigenvalues",
+    "text": "Corner Angle and Eigenvalues\n\n\n\n\n\n\n\n\n\n\nThe 90° corner has the largest \\(\\lambda_{\\min}\\): even its weakest direction changes strongly.\nVery acute or obtuse corners have elongated contours and a smaller \\(\\lambda_{\\min}\\), making them more edge-like."
+  },
+  {
+    "objectID": "lectures/07_features.html#classifying-image-points-using-eigenvalues-of-m",
+    "href": "lectures/07_features.html#classifying-image-points-using-eigenvalues-of-m",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Classifying Image Points Using Eigenvalues of \\(M\\)",
+    "text": "Classifying Image Points Using Eigenvalues of \\(M\\)\n\n\n\nGiven \\(\\lambda_1\\) and \\(\\lambda_2\\) as eigenvalues of \\(M\\).\nEach point in the diagram has coordiantes \\((\\lambda_1, \\lambda_2)\\).\nFlat region: both eigenvalues are small, so intensity changes little in any direction.\nEdge: one eigenvalue dominates, so change is strong across the edge and weak along it.\nCorner: both eigenvalues are large, so even the weakest direction has substantial change."
+  },
+  {
+    "objectID": "lectures/07_features.html#the-harris-corner-score",
+    "href": "lectures/07_features.html#the-harris-corner-score",
+    "title": "Lecture 07 — Feature Points",
+    "section": "The Harris Corner Score",
+    "text": "The Harris Corner Score\n\n\nThe Harris corner score, also called the cornerness score, combines both eigenvalues:\n\\[R=\\lambda_1\\lambda_2-\\alpha(\\lambda_1+\\lambda_2)^2.\\]\n\nLarge positive \\(R\\): corner candidate.\nNegative \\(R\\): edge-like.\nSmall \\(|R|\\): weak response, often a flat region.\n\\(\\alpha=0.04\\) is a commonly used empirical value.\n\nEqual eigenvalues: \\(R=(1-4\\alpha)\\lambda^2=0.84\\lambda^2&gt;0\\).\nIdeal edge (\\(\\lambda_{\\min} = 0\\)): \\(R=-0.04\\lambda_{\\max}^2&lt;0\\).\n\nIncreasing \\(\\alpha\\) rejects more unequal eigenvalue pairs (and mark them as non-corners). It is a tuning parameter, not a universal optimum."
+  },
+  {
+    "objectID": "lectures/07_features.html#cornerness-without-computing-eigenvalues",
+    "href": "lectures/07_features.html#cornerness-without-computing-eigenvalues",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Cornerness Without Computing Eigenvalues",
+    "text": "Cornerness Without Computing Eigenvalues\nFor any suqare matrix:\n\nThe determinant is the product of all its eigenvalues.\nThe trace is the sum of its diagonal entries, and also the sum of its eigenvalues.\n\nFor \\(M=\\begin{bmatrix}A&B\\\\ B&C\\end{bmatrix}\\):\n\\[\\det(M)=AC-B^2=\\lambda_1\\lambda_2,\n\\qquad \\operatorname{tr}(M)=A+C=\\lambda_1+\\lambda_2.\\]\nThe Harris cornerness score \\(R\\) can therefore be computed directly:\n\\[R=\\lambda_1\\lambda_2-\\alpha(\\lambda_1+\\lambda_2)^2\n=\\det(M)-\\alpha\\operatorname{tr}(M)^2\n=(AC-B^2)-\\alpha(A+C)^2.\\]\nDeterminant and trace avoid explicit eigenvalue computation. For a 2×2 matrix, only a few multiplications and additions are needed, reducing computation at every image pixel."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-corner-detector",
+    "href": "lectures/07_features.html#harris-corner-detector",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Corner Detector",
+    "text": "Harris Corner Detector\n\nRecall \\[M(x,y)=\\begin{bmatrix}A&B\\\\ B&C\\end{bmatrix}, \\quad\nA=\\sum_{x,y} wI_x^2,\\quad B=\\sum_{x,y} wI_xI_y,\\quad C=\\sum_{x,y} wI_y^2\n\\] \\[R=\\lambda_1\\lambda_2-\\alpha(\\lambda_1+\\lambda_2)^2\n=\\det(M)-\\alpha\\operatorname{tr}(M)^2\n=(AC-B^2)-\\alpha(A+C)^2.\\]\n\n\n\n\n\n\n\nHarris corner detector Algorithm\n\n\n\n\n\n\n\n\n\n\nStep\nOperation\nOutput\n\n\n\n\n1\nSmooth the image, then compute image derivatives.\n\\(I_x,\\ I_y\\)\n\n\n2\nForm the gradient products at each pixel.\n\\(I_x^2,\\ I_xI_y,\\ I_y^2\\)\n\n\n3\nGaussian-average the products over a local window.\n\\(A=g*I_x^2,\\ B=g*(I_xI_y),\\ C=g*I_y^2\\)\n\n\n4\nCompute the Harris score.\n\\(R=AC-B^2-\\alpha(A+C)^2\\)\n\n\n5\nThresholding: Keep pixels with a sufficiently large positive score.\n\\(R&gt;\\tau\\)\n\n\n6\nNon-maximum suppression: Keep local maxima of the score.\nIsolated corner locations\n\n\n\n\n\n\n\nC. Harris and M. Stephens, “A Combined Corner and Edge Detector,” Alvey Vision Conference, 1988, pp. 147–151. (~23,000 citations.)"
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-example",
+    "href": "lectures/07_features.html#harris-example",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Example",
+    "text": "Harris Example\n\n\n\nimport cv2\nimport numpy as np\n\nimage_path = (\n    \"assets/07_features/den_airport.jpg\")\nI_u8 = cv2.imread(\n    image_path, cv2.IMREAD_GRAYSCALE)\nI = I_u8.astype(np.float32) / 255\n\n\n\n\n\nWhich roof tips, window corners, and structural intersections should produce strong corner responses?\nWill a long, smooth roof edge give a strong corner response?"
+  },
+  {
+    "objectID": "lectures/07_features.html#step-1-compute-image-gradients",
+    "href": "lectures/07_features.html#step-1-compute-image-gradients",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 1: Compute Image Gradients",
+    "text": "Step 1: Compute Image Gradients\n\n\n\nsigma_d = 1.0\nJ = cv2.GaussianBlur(I, (0, 0), sigma_d)\n\nh_x = np.array([\n    [-1, 0, 1],\n    [-2, 0, 2],\n    [-1, 0, 1]\n], dtype=np.float32) / 8\n\nIx = cv2.filter2D(J, -1, h_x)\nIy = cv2.filter2D(J, -1, h_x.T)\n\n\n\n\n\nSmoothing reduces the effect of noise before differentiation.\n\\(I_x\\) measures horizontal intensity change; \\(I_y\\) measures vertical intensity change.\n\n\n\n\n\n\n\n\n\n\n\n\nWhite and black indicate opposite derivative signs. Mid-gray indicates little change."
+  },
+  {
+    "objectID": "lectures/07_features.html#step-2-form-the-gradient-products",
+    "href": "lectures/07_features.html#step-2-form-the-gradient-products",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 2: Form the Gradient Products",
+    "text": "Step 2: Form the Gradient Products\n\n\n\nPxx = Ix * Ix\nPxy = Ix * Iy\nPyy = Iy * Iy\n\n\n\n\n\nSquaring gives nonnegative horizontal and vertical gradient energies.\n\\(I_xI_y\\) records how the two gradient components vary together. It can be positive or negative."
+  },
+  {
+    "objectID": "lectures/07_features.html#step-3-build-the-second-moment-matrix",
+    "href": "lectures/07_features.html#step-3-build-the-second-moment-matrix",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 3: Build the Second Moment Matrix",
+    "text": "Step 3: Build the Second Moment Matrix\n\n\n\nsigma_w = 2.0\nA = cv2.GaussianBlur(Pxx, (0, 0), sigma_w)\nB = cv2.GaussianBlur(Pxy, (0, 0), sigma_w)\nC = cv2.GaussianBlur(Pyy, (0, 0), sigma_w)\n\n\\[M(x,y)=\\begin{bmatrix}A&B\\\\B&C\\end{bmatrix}.\\]\n\nGaussian filter combines gradient from neighboring pixels over the kernel window, e.g., to get \\(A=\\sum_{x,y} wI_x^2\\).\n\\(\\sigma_w\\) sets the neighborhood size. It serves a different purpose from the initial smoothing scale \\(\\sigma_d\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#step-4-compute-the-harriscornerness-score",
+    "href": "lectures/07_features.html#step-4-compute-the-harriscornerness-score",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 4: Compute the Harris/Cornerness Score",
+    "text": "Step 4: Compute the Harris/Cornerness Score\n\n\n\nalpha = 0.04\n\ndetM = A * C - B**2\ntraceM = A + C\nR = detM - alpha * traceM**2\n\n\\[R(x,y)=\\det(M)-\\alpha\\operatorname{tr}(M)^2.\\]\n\nLarge positive responses indicate corner candidates.\nNegative responses indicate a dominant edge direction.\nThe sky has little gradient energy, so its response stays near zero."
+  },
+  {
+    "objectID": "lectures/07_features.html#step-5-threshold-the-corner-response",
+    "href": "lectures/07_features.html#step-5-threshold-the-corner-response",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 5: Threshold the Corner Response",
+    "text": "Step 5: Threshold the Corner Response\n\n\n\nquality = 0.01\nthreshold = quality * R.max()\ncandidates = (R &gt; 0) & (R &gt; threshold)\n\n\n\n\n\nKeep only sufficiently strong positive responses.\nIncreasing the threshold removes weaker candidates.\nOne corner often produces a cluster of selected pixels. Thresholding alone does not choose a single location."
+  },
+  {
+    "objectID": "lectures/07_features.html#step-6-non-maximum-suppression",
+    "href": "lectures/07_features.html#step-6-non-maximum-suppression",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Step 6: Non-Maximum Suppression",
+    "text": "Step 6: Non-Maximum Suppression\n\n\n\nwindow = np.ones((13, 13), dtype=np.uint8)\nlocal_max = cv2.dilate(R, window)\ncorners = candidates & (R == local_max)\ny, x = np.nonzero(corners)\n\n\n\n\n\nDilation gives the largest score in each 13×13 neighborhood.\nKeep a candidate only if its score equals the neighborhood maximum.\nA larger neighborhood suppresses nearby peaks more strongly.\nThe selected points concentrate near roof tips, window corners, and structural intersections."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-corner-detection-in-opencv",
+    "href": "lectures/07_features.html#harris-corner-detection-in-opencv",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Corner Detection in OpenCV",
+    "text": "Harris Corner Detection in OpenCV\n\n\n\nR_cv = cv2.cornerHarris(\n    I, blockSize=5, ksize=3, k=0.04)\n\nthreshold = 0.01 * R_cv.max()\nwindow = np.ones((13, 13), dtype=np.uint8)\nlocal_max = cv2.dilate(R_cv, window)\ncorners_cv = ((R_cv &gt; threshold)\n              & (R_cv == local_max))\ny_cv, x_cv = np.nonzero(corners_cv)\n\n\n\n\n\nblockSize=5: combine gradient products over a 5×5 neighborhood to form \\(M\\).\nksize=3: use 3×3 Sobel filters to compute image derivatives.\nk=0.04: the Harris parameter \\(\\alpha\\) in \\(R=\\det(M)-\\alpha\\operatorname{tr}(M)^2\\).\n\n\n\n\n\n\n\n\n\n\n\n\ncornerHarris returns a score at each pixel. We then apply thresholding and non-maximum suppression.\n\n\n\nOpenCV uses a box window to combine gradient products, so its response can differ from our Gaussian-weighted example. borderType optionally controls how image borders are handled and defaults to cv2.BORDER_DEFAULT.\nOpenCV cornerHarris documentation"
   }
 ]
