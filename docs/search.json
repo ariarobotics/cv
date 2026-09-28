@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/05_fourier_transform.html#learning-objectives",
@@ -3386,5 +3386,82 @@
     "title": "05 — NumPy for Computer Vision",
     "section": "Additional reference",
     "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
+  },
+  {
+    "objectID": "lectures/07_features.html",
+    "href": "lectures/07_features.html",
+    "title": "Computer Vision",
+    "section": "",
+    "text": "git p— title: “Lecture 07 — Feature Points” description: “Feature detection, description, and matching; Harris corners and SIFT.” author: “Kaveh Fathian” institute: “Computer Science Department, Colorado School of Mines” subtitle: “Lecture 7” jupyter: cv\nformat: revealjs: theme: - default - ../styles/slides.scss width: 1600 height: 900 slide-number: true controls: true progress: true chalkboard: true transition: none footer: “Computer Vision; Colorado School of Mines | Kaveh Fathian” pdf-separate-fragments: false pdf-max-pages-per-slide: 1\nexecute: echo: false warning: false error: false cache: true —"
+  },
+  {
+    "objectID": "lectures/07_features.html#how-can-we-align-these-images",
+    "href": "lectures/07_features.html#how-can-we-align-these-images",
+    "title": "Lecture 07 — Feature Points",
+    "section": "How Can We Align These Images?",
+    "text": "How Can We Align These Images?\n\n\n\n\n\n\n\n\n\n\nWhich points would you use to align these images?\n\nFind recognizable details that appear in both views.\nConsider building corners, roof shapes, and other distinctive patterns."
+  },
+  {
+    "objectID": "lectures/07_features.html#corresponding-points-reveal-the-alignment",
+    "href": "lectures/07_features.html#corresponding-points-reveal-the-alignment",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Corresponding Points Reveal the Alignment",
+    "text": "Corresponding Points Reveal the Alignment\n\n\n\n\n\n\n\n\n\n\nCorresponding points identify the same scene locations in both images.\nTheir positions tell us how to align and combine the views.\n\nWhat makes a point easy to recognize and find again?"
+  },
+  {
+    "objectID": "lectures/07_features.html#find-corresponding-points",
+    "href": "lectures/07_features.html#find-corresponding-points",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Find Corresponding Points",
+    "text": "Find Corresponding Points\n\n\n\n\n\n\n\n\n\n\nEach numbered pair identifies the same scene location in both images.\nThese correspondences tell us how to align the two views."
+  },
+  {
+    "objectID": "lectures/07_features.html#align-the-images-to-create-a-panorama",
+    "href": "lectures/07_features.html#align-the-images-to-create-a-panorama",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Align the Images to Create a Panorama",
+    "text": "Align the Images to Create a Panorama\n\n\n\n\n\n\n\n\n\n\nAligning and combining the overlapping views recovers the original panorama.\n\nWhat makes a point easy to recognize and find again?"
+  },
+  {
+    "objectID": "lectures/07_features.html#what-is-an-image-feature",
+    "href": "lectures/07_features.html#what-is-an-image-feature",
+    "title": "Lecture 07 — Feature Points",
+    "section": "What Is an Image Feature?",
+    "text": "What Is an Image Feature?\n\n\n\n\n\n\n\n\nImage feature\n\n\nA measurable visual property or pattern that helps us analyze or compare images.\n\n\n\nFeatures can include edges, corners, blobs, and texture patterns.\nIn this lecture, we focus on local features: small image regions that we can detect and match across images.\n\nA keypoint specifies the location of an interesting point.\nA descriptor summarizes the surrounding appearance as numbers for comparison.\n\nCorners are one useful type of local feature.\n\n\n\n\n\n\n\n\n\n\nThe marked point provides a location. Its neighborhood provides an appearance we can compare."
+  },
+  {
+    "objectID": "lectures/07_features.html#connecting-filtering-edges-and-corners",
+    "href": "lectures/07_features.html#connecting-filtering-edges-and-corners",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Connecting Filtering, Edges, and Corners",
+    "text": "Connecting Filtering, Edges, and Corners\n\n\n\n\n\n\n\n\n\n\nFiltering prepares the image: Gaussian smoothing reduces noise, and derivative filters measure intensity changes.\nAlong an edge, intensity changes mainly across the edge.\nNear a corner, the neighborhood contains intensity changes in multiple directions.\n\nBoth edge and corner detection build on image gradients."
+  },
+  {
+    "objectID": "lectures/07_features.html#why-are-corners-easier-to-locate",
+    "href": "lectures/07_features.html#why-are-corners-easier-to-locate",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Why Are Corners Easier to Locate?",
+    "text": "Why Are Corners Easier to Locate?\n\n\n\n\n\n\n\n\n\nImagine shifting each yellow window slightly and comparing its pixel values with the original patch.\n\nAlong a straight edge, several nearby positions look similar.\nAround a corner, shifts in any direction change the patch, helping us locate it in both \\(x\\) and \\(y\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#detection-description-and-matching",
+    "href": "lectures/07_features.html#detection-description-and-matching",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Detection, Description, and Matching",
+    "text": "Detection, Description, and Matching\n\n\n\n\n\n\n\n\n\n\n\n1. Detection\nWhere are the interesting points?\nFind keypoint locations in each image independently.\n\n2. Description\nWhat does each neighborhood look like?\nEncode its appearance as a numerical vector called a descriptor.\n\n3. Matching\nWhich points might correspond?\nCompare descriptors across images to identify candidate matches."
+  },
+  {
+    "objectID": "lectures/07_features.html#applications-of-image-features",
+    "href": "lectures/07_features.html#applications-of-image-features",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Applications of Image Features",
+    "text": "Applications of Image Features\n\n\n\n\n\n\n\n\n\n\nImage alignment: match overlapping views to create panoramas.\nObject and place recognition: match a query image against stored images.\nMotion tracking: follow corresponding points across video frames.\n3D reconstruction and localization: use correspondences across views to estimate scene structure and camera motion.\n\nThe common ingredient is finding the same scene points across images."
+  },
+  {
+    "objectID": "lectures/07_features.html#what-makes-a-good-feature",
+    "href": "lectures/07_features.html#what-makes-a-good-feature",
+    "title": "Lecture 07 — Feature Points",
+    "section": "What Makes a Good Feature?",
+    "text": "What Makes a Good Feature?\n\n\n\n\n\n\nTip\n\n\nA useful feature should be easy to find again, easy to distinguish from other features, and efficient to represent and compare.\n\n\n\n\n\n\n\n\n\n\n\nProperty\nWhat we want\nWhy it matters\n\n\n\n\nRepeatability\nDetect the same scene point across changes in viewpoint, scale, and lighting.\nA point cannot be matched if we fail to detect it again.\n\n\nDistinctiveness\nA local appearance that differs from other candidate points.\nSimilar-looking regions can produce ambiguous matches.\n\n\nEfficiency and compactness\nA manageable number of keypoints with compact descriptors.\nDetection, storage, and matching should remain practical.\n\n\n\nWe also want accurate localization: small errors in keypoint positions can affect image alignment and motion estimates.\nWould a strong corner in a row of identical windows necessarily be easy to match?"
   }
 ]
