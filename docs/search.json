@@ -1523,7 +1523,7 @@
     "href": "assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 05: Edge Detection with Canny\n    \n\n    \n    Use OpenCV to compute gradients, thin responses, and connect edges.\n    \n\n    \n    \n      Due: Oct. 05, 2026\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments/hw03/index.html",
@@ -3729,5 +3729,89 @@
     "title": "Lecture 07 — Feature Points",
     "section": "Harris Corner Detection in OpenCV",
     "text": "Harris Corner Detection in OpenCV\n\n\n\nR_cv = cv2.cornerHarris(\n    I, blockSize=5, ksize=3, k=0.04)\n\nthreshold = 0.01 * R_cv.max()\nwindow = np.ones((13, 13), dtype=np.uint8)\nlocal_max = cv2.dilate(R_cv, window)\ncorners_cv = ((R_cv &gt; threshold)\n              & (R_cv == local_max))\ny_cv, x_cv = np.nonzero(corners_cv)\n\n\n\n\n\nblockSize=5: combine gradient products over a 5×5 neighborhood to form \\(M\\).\nksize=3: use 3×3 Sobel filters to compute image derivatives.\nk=0.04: the Harris parameter \\(\\alpha\\) in \\(R=\\det(M)-\\alpha\\operatorname{tr}(M)^2\\).\n\n\n\n\n\n\n\n\n\n\n\n\ncornerHarris returns a score at each pixel. We then apply thresholding and non-maximum suppression.\n\n\n\nOpenCV uses a box window to combine gradient products, so its response can differ from our Gaussian-weighted example. borderType optionally controls how image borders are handled and defaults to cv2.BORDER_DEFAULT.\nOpenCV cornerHarris documentation"
+  },
+  {
+    "objectID": "assignments/hw05/index.html",
+    "href": "assignments/hw05/index.html",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
+  },
+  {
+    "objectID": "assignments/hw05/index.html#objective",
+    "href": "assignments/hw05/index.html#objective",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Objective",
+    "text": "Objective\nBuild the edge-detection pipeline from Lecture 6: compute image gradients, thin the responses, and connect weak responses to strong ones. Apply the pipeline to a dashcam image to reveal the edges of road-lane markings. Inspect how smoothing and threshold choices change the final edge map.\nUse the course cv Conda environment and OpenCV (cv2). Do not use generative AI to solve this homework. You may refer to the lecture examples and adapt them to the functions below."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#starter-files",
+    "href": "assignments/hw05/index.html#starter-files",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Starter files",
+    "text": "Starter files\nDownload both files into the same folder:\n\nhw05.py\ndashcam.jpg\n\nComplete only these four functions in hw05.py:\ncompute_gradients(image, sigma)\nnonmaximum_suppression(magnitude, angle)\nhysteresis_threshold(response, low, high)\ndetect_edges(image, sigma, low, high)\nThe Gaussian derivative kernels, interpolation helper, image loading, and plotting are provided. Leave that code unchanged. Keep the function names and arguments as supplied."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#tools-and-conventions",
+    "href": "assignments/hw05/index.html#tools-and-conventions",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Tools and conventions",
+    "text": "Tools and conventions\n\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules.\nUse cv2.filter2D() for the derivative filtering in Part 1. Use the supplied kernels directly, with no extra blur, kernel flipping, normalization, or resizing.\nDo not use cv2.Canny() or another complete edge detector in your solution. You are implementing its main stages. OpenCV filtering, interpolation, and connected-component functions are allowed.\nThe loader provides a two-dimensional float32 grayscale image in [0, 1]. Parts 1 and 2 return same-size float32 arrays. Parts 3 and 4 return same-size Boolean arrays, with True for an edge and False otherwise.\nDo not modify input arrays. Do not normalize or clip intermediate results. The provided plotting code handles display scaling.\nSupport odd, even, and non-square images. Graded images have at least 3 rows and 3 columns; standalone hysteresis tests may also use a single row or column.\nThe grader supplies valid inputs: positive finite sigma, finite nonnegative magnitudes/responses, matching array shapes, and finite thresholds satisfying 0 &lt;= low &lt;= high. You do not need to write input-validation code."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#part-1-compute-image-gradients",
+    "href": "assignments/hw05/index.html#part-1-compute-image-gradients",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Part 1 — Compute image gradients",
+    "text": "Part 1 — Compute image gradients\nComplete:\ndef compute_gradients(image, sigma):\n    ...\n\nCall gaussian_derivative_kernels(sigma) to get the supplied x and y derivative filters, hx and hy.\nFilter the original image with each kernel to obtain Ix and Iy.\nCompute gradient magnitude and direction:\n\n\\[\nM = \\sqrt{I_x^2 + I_y^2}, \\qquad\n\\theta = \\operatorname{atan2}(I_y, I_x).\n\\]\nReturn (Ix, Iy, magnitude, angle) in this order.\nHints:\n\nThere is no kernel construction to implement. The provided helper combines smoothing and differentiation in each filter.\nUse cv2.filter2D(image, -1, hx, borderType=cv2.BORDER_REFLECT_101) and the analogous call for hy. Because the input is float32, -1 preserves floating-point output and negative derivatives.\nCompute magnitude with np.sqrt(Ix**2 + Iy**2) and angle with np.arctan2(Iy, Ix). Keep angles in radians for Part 2.\nx increases toward the right; y increases downward. An image that gets brighter toward the right should have positive Ix in its interior. A decreasing-intensity ramp should have negative Ix.\nKeep the original numerical scale. Do not use cv2.convertScaleAbs() on derivatives.\nGradient direction is undefined where magnitude is zero. Those angle values are not graded."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#part-2-thin-the-responses",
+    "href": "assignments/hw05/index.html#part-2-thin-the-responses",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Part 2 — Thin the responses",
+    "text": "Part 2 — Thin the responses\nComplete:\ndef nonmaximum_suppression(magnitude, angle):\n    ...\nThe gradient points across the edge. Compare the magnitude at each pixel with the two values one pixel away along that direction.\nThe supplied helper does the coordinate construction and interpolation for you:\nforward, backward = sample_along_gradient(magnitude, angle)\nIt uses OpenCV to sample at (x + cos(angle), y + sin(angle)) and (x - cos(angle), y - sin(angle)). You do not need to implement interpolation or round directions to angle bins.\nKeep a pixel’s original magnitude only when both conditions hold:\nmagnitude &gt; forward\nmagnitude &gt;= backward\nSet all other pixels to zero. Then set the first/last row and first/last column to zero. Return a new float32 array.\nHints:\n\nCombine the two conditions using NumPy &, with parentheses around each comparison.\nnp.where(condition, magnitude, 0) selects retained magnitudes and zeros.\nThe strict comparison on the forward side resolves equal-valued ties. Use this exact rule so your output matches the reference.\nresult[[0, -1], :] = 0 clears the first and last rows. Use the analogous indexing for columns.\nDo not convert the result to a binary map yet; Part 3 still needs the retained magnitudes.\n\nFor a horizontal gradient and the profile [0, 1, 3, 6, 9, 5, 2, 1, 0], only the value 9 should survive in an interior row. For [0, 1, 3, 3, 1, 0] with angle zero, the second 3 survives under the specified tie rule."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#part-3-connect-edges-using-hysteresis",
+    "href": "assignments/hw05/index.html#part-3-connect-edges-using-hysteresis",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Part 3 — Connect edges using hysteresis",
+    "text": "Part 3 — Connect edges using hysteresis\nComplete:\ndef hysteresis_threshold(response, low, high):\n    ...\nHere, response is the thinned magnitude from Part 2. Identify:\n\nCandidate pixels: response &gt;= low and response &gt; 0.\nStrong pixels: candidate pixels with response &gt;= high.\nWeak pixels: the remaining candidate pixels.\n\nKeep all strong pixels and every weak pixel connected to a strong pixel through a chain of candidates. Use 8-neighbor connectivity: horizontal, vertical, and diagonal neighbors all count. Remove weak-only groups, and do not bridge gaps of rejected pixels.\nReturn a Boolean edge map. Unlike Part 2, this function does not independently erase the border; border candidates follow the same connectivity rule as other pixels.\nHints:\n\nCreate Boolean arrays for candidate and strong pixels using comparisons and &.\nYou may use:\nnumber_of_labels, labels = cv2.connectedComponents(\n    candidates.astype(np.uint8), connectivity=8\n)\nlabels contains an integer label for each pixel. Pixels in the same candidate component share a label. Label 0 is the background; the returned count includes it.\nlabels[strong] gives the labels occurring at strong pixels. np.unique() removes duplicates.\nMake a Boolean lookup array of length number_of_labels, initially all False. Mark labels containing strong pixels as True. Always leave label 0 as False.\nIndexing the lookup array with labels gives the final Boolean image.\n\nThis retains an entire chain even if some weak pixels are many steps from a strong pixel. A single expansion of the strong pixels is insufficient. A queue-based traversal is also acceptable; you do not need to implement it if you use connected components.\nThreshold equality counts: a value exactly equal to low is a candidate, and a candidate exactly equal to high is strong. The additional response &gt; 0 condition prevents zero-valued background from becoming an edge when low is zero. If there are no strong pixels, return all False."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#part-4-assemble-the-detector",
+    "href": "assignments/hw05/index.html#part-4-assemble-the-detector",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Part 4 — Assemble the detector",
+    "text": "Part 4 — Assemble the detector\nComplete:\ndef detect_edges(image, sigma, low, high):\n    ...\nUse your functions in this order:\n\nCall compute_gradients(image, sigma) and unpack its four outputs.\nPass its magnitude and angle to nonmaximum_suppression().\nPass the resulting thinned magnitude and the original low and high arguments to hysteresis_threshold().\nReturn the Boolean map produced by Part 3.\n\nUse the arguments given to this function. Do not hard-code the demonstration’s image, sigma, or thresholds."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#run-and-inspect-your-program",
+    "href": "assignments/hw05/index.html#run-and-inspect-your-program",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Run and inspect your program",
+    "text": "Run and inspect your program\nconda activate cv\npython hw05.py\nOr specify the image and output folder:\npython hw05.py dashcam.jpg --output-dir results\nKeep the supplied image unchanged. The driver uses sigma=2.0, low=0.008, and high=0.020 for its main demonstration and saves:\n\nhw05_edges.png — the final map, stored as a grayscale PNG with values 0 and 255;\nhw05_output.png — the input, magnitude, thinned magnitude, and final edges;\nhw05_parameters.png — results for four prescribed parameter settings.\n\n\n\n\nExpected stages of edge detection.\n\n\nFull-size stages · Raw edge map · Parameter comparison\nThese thresholds apply to our floating-point Gaussian-derivative responses. Do not substitute thresholds from examples using cv2.Canny() on 8-bit images. The reference target is this assignment’s pipeline; it is not an exact reproduction of OpenCV’s built-in Canny implementation.\nWhen inspecting the parameter comparison, consider: Can you trace the edges of the painted lane markings? What happens to distant or faint markings as sigma or the thresholds increase? Which additional edges come from cars, signs, barriers, and reflections?\nThis pipeline finds intensity edges throughout the image. It does not identify which edges belong to lanes or fit lane curves. Notice that a painted stripe can produce an edge on each side. No lane classification, curve fitting, or written report is required.\nBefore submitting, try these small checks locally:\n\nA constant image has approximately zero derivatives and gradient magnitude. Do not inspect its gradient direction as a meaningful quantity.\nHorizontal and vertical intensity ramps should produce the expected derivative signs and directions away from the border.\nUse the profiles in Part 2 to check thinning and ties.\nFor hysteresis, try a strong value followed by a long chain of weak values, then a separate weak-only group. Only the connected chain should remain.\nAn all-zero response must give an all-False edge map, including when both thresholds are zero.\nCompare your output with the supplied references. Floating-point outputs may differ by small roundoff; the final Boolean decisions follow the stated rules."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#what-to-submit",
+    "href": "assignments/hw05/index.html#what-to-submit",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "What to submit",
+    "text": "What to submit\nSubmit exactly one file, hw05.py, to Gradescope. Do not submit images, output files, screenshots, or a notebook. The autograder supplies its own images and arrays."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#submission-limit",
+    "href": "assignments/hw05/index.html#submission-limit",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Submission limit",
+    "text": "Submission limit\nYou may make at most 5 valid Gradescope submissions. Test locally before submitting.\n\nSubmissions 1–5 are graded normally.\nSubmission 6 and every later valid submission receive zero points for that submission.\nA Gradescope infrastructure failure marked as an autograder error does not count. Errors in your submitted code do count."
+  },
+  {
+    "objectID": "assignments/hw05/index.html#grading",
+    "href": "assignments/hw05/index.html#grading",
+    "title": "Homework 05: Edge Detection with Canny",
+    "section": "Grading",
+    "text": "Grading\nHW05 is worth 5 points and is fully autograded: 1 point from public tests and 4 points from private tests.\nThe autograder checks image gradients, non-maximum suppression, hysteresis, and assembly of the complete detector, including the expected saved outputs. It checks the stated shapes, data types, parameter behavior, and preservation of input arrays. Tests supply valid inputs and follow the conventions above.\nIndividual stages are tested independently. The pipeline-composition test substitutes correct intermediate results, so an unfinished earlier stage does not prevent you from earning composition credit. A small final test checks your full implementation together. Small floating-point differences are allowed; Boolean outputs must follow the specified decisions. Plot fonts and PNG file bytes are not grading targets.\nPublic tests provide immediate detailed feedback. A public summary also reports how many of the seven private test groups passed, without revealing their individual results or scores. Private details are released after the Gradescope late due date. Passing public tests does not guarantee full credit."
   }
 ]
