@@ -3813,5 +3813,47 @@
     "title": "Homework 05: Edge Detection with Canny",
     "section": "Grading",
     "text": "Grading\nHW05 is worth 5 points and is fully autograded: 1 point from public tests and 4 points from private tests.\nThe autograder checks image gradients, non-maximum suppression, hysteresis, and assembly of the complete detector, including the expected saved outputs. It checks the stated shapes, data types, parameter behavior, and preservation of input arrays. Tests supply valid inputs and follow the conventions above.\nIndividual stages are tested independently. The pipeline-composition test substitutes correct intermediate results, so an unfinished earlier stage does not prevent you from earning composition credit. A small final test checks your full implementation together. Small floating-point differences are allowed; Boolean outputs must follow the specified decisions. Plot fonts and PNG file bytes are not grading targets.\nPublic tests provide immediate detailed feedback. A public summary also reports how many of the seven private test groups passed, without revealing their individual results or scores. Private details are released after the Gradescope late due date. Passing public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "lectures/07_features.html#invariance-and-covariance",
+    "href": "lectures/07_features.html#invariance-and-covariance",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Invariance and Covariance",
+    "text": "Invariance and Covariance\n\nInvariance: changing image intensities should leave the detected locations unchanged.\nCovariance (equivariance): moving the image should move the detected points with it."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-under-affine-intensity-changes",
+    "href": "lectures/07_features.html#harris-under-affine-intensity-changes",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Under Affine Intensity Changes",
+    "text": "Harris Under Affine Intensity Changes\n\n\nFor \\(I'=aI+b\\), with constant \\(a&gt;0\\) and \\(b\\):\n\\[\\nabla I'=a\\nabla I,\\qquad M'=a^2M,\\] \\[\\boxed{R'=a^4R}.\\]\n\n\n\n\nBrightness offset \\(b\\): derivatives and scores stay unchanged.\nContrast gain \\(a\\): peak locations stay unchanged, but score magnitudes change.\nA fixed threshold can select different corners.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA relative threshold \\(R&gt;q\\max(R)\\) scales with the response and preserves the selection in this ideal model.\nBut clipping, quantization, noise, and spatially varying illumination can break this ideal behavior."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-under-image-translation",
+    "href": "lectures/07_features.html#harris-under-image-translation",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Under Image Translation",
+    "text": "Harris Under Image Translation\nFor a translation \\(\\mathbf{t}=(\\Delta x,\\Delta y)^T\\), corresponding corners move from \\(\\mathbf{x}\\) to \\(\\mathbf{x}+\\mathbf{t}\\).\n\n\n\n\n\n\n\n\n\n\nThe derivative filters and local averaging window apply the same operation at every location.\nThe response map shifts with the image: \\(R'(\\mathbf{x}+\\mathbf{t})=R(\\mathbf{x})\\)."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-under-image-rotation",
+    "href": "lectures/07_features.html#harris-under-image-rotation",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Under Image Rotation",
+    "text": "Harris Under Image Rotation\nFor a rotation matrix \\(Q\\), the second moment matrix changes orientation while its eigenvalues and Harris score stay unchanged.\n\\[M'=QMQ^T\\quad\\Longrightarrow\\quad \\lambda_1'=\\lambda_1,\\ \\lambda_2'=\\lambda_2,\\ R'=R.\\]\n\n\n\n\n\n\n\n\n\n\nCorner locations are covariant: the points rotate with the image."
+  },
+  {
+    "objectID": "lectures/07_features.html#harris-under-scaling",
+    "href": "lectures/07_features.html#harris-under-scaling",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Harris Under Scaling",
+    "text": "Harris Under Scaling\nA window that contains several gradient directions at one scale may see only a short, nearly straight edge after enlargement.\n\n\n\n\n\n\n\n\n\n\nHarris with a fixed window size is not scale covariant. Resizing the image can change which corners are detected.\nTo handle scale changes, we need to adjust the smoothing scale and neighborhood size."
+  },
+  {
+    "objectID": "lectures/07_features.html#scaling-the-airport-image",
+    "href": "lectures/07_features.html#scaling-the-airport-image",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Scaling the Airport Image",
+    "text": "Scaling the Airport Image\nWe halve the image width and height, then rerun Harris with unchanged settings:\n\n\n\n\n\n\n\n\n\n\nCyan boxes: the same 13×13 max-suppression window. It covers more of the scene in the smaller image.\nDifferent corners survive: shrinking changes image detail, and the fixed window suppresses more nearby peaks.\nHarris is not scale covariant. We need to detect features across multiple scales."
   }
 ]
