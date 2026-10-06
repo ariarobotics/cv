@@ -44,6 +44,13 @@ docs/lectures/pdf/*.pdf
 # Private files, folders, and generated copies at any depth
 *_private*
 
+# Local authoring files; published copies live in docs/
+/assignments/
+/tutorials/
+
+# Original artwork retained locally
+/images/cv-banner-orig.png
+
 
 # ============================================================
 # Source styling files
