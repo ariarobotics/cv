@@ -1523,7 +1523,7 @@
     "href": "assignments/index.html",
     "title": "Assignments",
     "section": "",
-    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 05: Edge Detection with Canny\n    \n\n    \n    Use OpenCV to compute gradients, thin responses, and connect edges.\n    \n\n    \n    \n      Due: Oct. 05, 2026\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
+    "text": "Homework assignments and supporting materials will be posted here throughout the semester.\n\n\n\n\n\n\n\n  \n    \n      Homework 01: Working with Images\n    \n\n    \n    Set up the course cv environment and practice basic image operations with OpenCV and NumPy.\n    \n\n    \n    \n      Due: Sep. 7, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 02: Filtering\n    \n\n    \n    Implement correlation, convolution, common linear filters, and a median filter from scratch.\n    \n\n    \n    \n      Due: Sep. 14, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 03: Laplacian Pyramids\n    \n\n    \n    Build, reconstruct, and compress Laplacian image pyramids.\n    \n\n    \n    \n      Due: Sep. 21, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 04: Hybrid Images with Fourier Transform\n    \n\n    \n    Use OpenCV Fourier transforms to create a hybrid image.\n    \n\n    \n    \n      Due: Sep. 28, 2026, 11:59 PM\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 05: Edge Detection with Canny\n    \n\n    \n    Use OpenCV to compute gradients, thin responses, and connect edges.\n    \n\n    \n    \n      Due: Oct. 05, 2026\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n  \n    \n      Homework 06: Feature Point Detection\n    \n\n    \n    Compute Harris corner responses and extract SIFT features.\n    \n\n    \n    \n      Due: Oct. 14, 2026\n        |  \n      Points: 5\n    \n    \n\n    \n      \n        View Assignment\n      \n      \n      \n        Download Starter\n      \n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "assignments/hw03/index.html",
@@ -4226,5 +4226,75 @@
     "title": "Lecture 07 — Feature Points",
     "section": "From the Teaching Example to Full SIFT in OpenCV",
     "text": "From the Teaching Example to Full SIFT in OpenCV\nFull SIFT refines extrema and orientation peaks, shares votes across neighboring cells and bins, and can retain multiple orientations. Our teaching example used hard bins and one orientation.\n\nsf_sift = cv2.SIFT_create(nfeatures=80)\nsf_keypoints, sf_descriptors = sf_sift.detectAndCompute(sf_image, None)\n\n# Each keypoint provides: .pt, .size, and .angle (in degrees).\n\n\n\n\n\n\n\n\n\n\n\nCircles indicate keypoint scale; arrows show the assigned orientation. Symbols are enlarged \\(4\\times\\) for visibility. OpenCV SIFT documentation"
+  },
+  {
+    "objectID": "assignments/hw06/index.html",
+    "href": "assignments/hw06/index.html",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "",
+    "text": "Total: 5 points\nSubmission: Gradescope Programming Assignment\nWork: Individual"
+  },
+  {
+    "objectID": "assignments/hw06/index.html#objective",
+    "href": "assignments/hw06/index.html#objective",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Objective",
+    "text": "Objective\nFind distinctive points in an image. You will compute Harris corner scores and use OpenCV to extract SIFT keypoints and descriptors. Inspect detections on original, rotated, and scaled versions of the supplied image.\nUse the course cv Conda environment. You may refer to the lecture examples and adapt them to the functions below. Do not use generative AI to solve this homework."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#starter-files",
+    "href": "assignments/hw06/index.html#starter-files",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Starter files",
+    "text": "Starter files\nDownload these two files into the same folder:\n\nhw06.py\nskyline.png\n\nThe supplied grayscale image is a crop of the Denver skyline from Lecture 7. Keep it unchanged. Complete only these two functions:\nharris_response(image, sigma_d, sigma_w, alpha)\nextract_sift(image, nfeatures=800)\nThe derivative filters, Harris corner selection, image loading, transformation example, and plotting are provided. Keep function names and arguments unchanged. Leave all provided code unchanged."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#tools-and-conventions",
+    "href": "assignments/hw06/index.html#tools-and-conventions",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Tools and conventions",
+    "text": "Tools and conventions\n\nKeep imports to cv2, numpy, matplotlib, and the standard-library modules.\nUse OpenCV for image filtering, SIFT extraction. NumPy array operations are allowed.\nFor Part 1, implement the gradient products and Harris formula yourself. Do not replace this calculation with cv2.cornerHarris, cv2.cornerEigenValsAndVecs, cv2.cornerMinEigenVal, or another complete corner-response function.\nUse cv2.SIFT_create and detectAndCompute in Part 2.\nDo not modify input arrays. Do not normalize or clip the Harris response or the SIFT descriptors. Display scaling is handled by the driver.\nThe grader supplies valid inputs. You do not need to implement input validation. Images have at least 16 rows and 16 columns; odd, even, and non-square images are possible.\nImage types differ by task: Part 1 receives float32 grayscale in [0, 1]; Part 2 receives uint8 grayscale in [0, 255]. The driver performs the conversion for you.\nImporting hw06.py must not run the demonstration. Keep the supplied if __name__ == \"__main__\": guard."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#part-1-compute-the-harris-response",
+    "href": "assignments/hw06/index.html#part-1-compute-the-harris-response",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Part 1 — Compute the Harris response",
+    "text": "Part 1 — Compute the Harris response\nComplete harris_response(image, sigma_d, sigma_w, alpha).\nA corner has intensity changes in more than one direction within its neighborhood. The second-moment matrix summarizes this local gradient structure:\n\\[\nM(x,y)=\\begin{bmatrix}A&B\\\\B&C\\end{bmatrix}.\n\\]\nFollow the lecture’s sequence:\n\nSmooth the input image using a Gaussian with standard deviation sigma_d.\nGet hx, hy from derivative_filters(). Apply them to the smoothed image to obtain Ix and Iy.\nForm the elementwise products Ix*Ix, Ix*Iy, and Iy*Iy.\nSmooth each product with a Gaussian of standard deviation sigma_w. These are A, B, and C, respectively.\nCompute and return the Harris score:\n\n\\[\nR=AC-B^2-\\alpha(A+C)^2.\n\\]\nReturn a same-size float32 array. Keep negative scores: they contain useful information about edge-like neighborhoods. Do not apply corner thresholding inside this function.\nHints:\n\nUse cv2.GaussianBlur(values, (0, 0), sigmaX=sigma, borderType=cv2.BORDER_REFLECT_101) for every Gaussian smoothing step. (0, 0) lets OpenCV choose the kernel size.\nUse cv2.filter2D(smoothed, -1, hx, borderType=cv2.BORDER_REFLECT_101), and similarly for hy.\nUse the provided filters as written. Do not flip or rescale them.\nsigma_d smooths the image before differentiation. sigma_w combines gradient products over a neighborhood. They serve different purposes.\n* means elementwise multiplication here; you do not need matrix multiplication or an eigenvalue calculation.\nGraded parameters satisfy sigma_d &gt; 0, sigma_w &gt; 0, and 0 &lt; alpha &lt; 0.25.\n\nThe driver uses sigma_d=1.0, sigma_w=2.0, and alpha=0.04. Its provided corner-selection helper keeps sufficiently strong positive local maxima.\nTry locally: A constant image should give approximately zero response. A straight intensity edge should have negative response nearby; a square should produce positive responses near its corners. Compare the actual response values, not only the display contrast."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#part-2-extract-sift-features",
+    "href": "assignments/hw06/index.html#part-2-extract-sift-features",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Part 2 — Extract SIFT features",
+    "text": "Part 2 — Extract SIFT features\nComplete extract_sift(image, nfeatures=800).\n\nCreate a detector using cv2.SIFT_create(nfeatures=nfeatures). Leave its other parameters at their defaults.\nCall detectAndCompute(image, None).\nReturn (keypoints, descriptors) in OpenCV’s original order.\n\nReturn keypoints as a Python list of cv2.KeyPoint objects and descriptors as a float32 array of shape (N, 128), where N is the number of keypoints. Descriptor row i describes keypoint i. Do not sort one without the other, or normalize the descriptors yourself.\nHints:\n\nThis function is short: OpenCV implements SIFT for you.\nkeypoint.pt contains (x, y) in image coordinates, not (row, column). Keypoints also contain size and orientation information.\nnfeatures controls how many of the strongest features OpenCV aims to retain. Do not force the returned count to equal that value.\nA blank image can contain no features. OpenCV may return None for its descriptors. In this case, return ([], np.empty((0, 128), dtype=np.float32)).\nnfeatures is always a positive integer. Use the supplied value rather than hard-coding 800.\n\nHarris and SIFT are separate detection examples in this homework. SIFT uses its own detector; you do not need to convert Harris corners into SIFT keypoints. Each descriptor summarizes the appearance around its keypoint. We will use these descriptors for feature matching in the next homework."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#run-and-inspect-the-results",
+    "href": "assignments/hw06/index.html#run-and-inspect-the-results",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Run and inspect the results",
+    "text": "Run and inspect the results\nconda activate cv\npython hw06.py --output-dir results\nOr specify the image:\npython hw06.py skyline.png --output-dir results\nThe provided driver generates:\n\nhw06_features.png: selected Harris corners, the signed Harris response, and SIFT keypoints.\nhw06_transformations.png: Harris and SIFT detections on the original image, a 20-degree rotated version, and a version scaled to 65% of its original dimensions.\n\n\n\n\nReference feature detections.\n\n\nFull-size detections · Rotation and scale comparison\nThe driver keeps the Harris parameters fixed across the three views. All SIFT keypoints are computed; the figures display only the strongest 120 to stay readable. Circles show keypoint size and spokes show orientation. The image panels fit each view into the available space, so use the scale labels rather than on-screen dimensions to interpret resizing.\nAs you inspect the figures, consider:\n\nWhere does the Harris score become positive, negative, or approximately zero?\nWhich scene structures produce selected corners?\nHow do the SIFT circles and orientation spokes change when the image is rotated or resized?\nWhy might the number and location of detections change after transformation?\n\nRotation introduces cropping and black borders; resizing introduces interpolation. These can affect detections. Harris and SIFT use different detectors and need not select identical locations. You do not need to find correspondences or quantify repeatability. No written report is required.\nOpenCV versions may produce slightly different SIFT keypoints or counts. Exact figure pixels, fonts, and fixed reference keypoint counts are not grading targets."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#what-to-submit",
+    "href": "assignments/hw06/index.html#what-to-submit",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "What to submit",
+    "text": "What to submit\nSubmit exactly one file, hw06.py, to Gradescope. Do not submit images, figures, or a notebook."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#submission-limit",
+    "href": "assignments/hw06/index.html#submission-limit",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Submission limit",
+    "text": "Submission limit\nYou may make at most 5 valid Gradescope submissions. Test locally before submitting. Submissions 1–5 are graded normally; submission 6 and every later valid submission receive zero points for that submission. A Gradescope infrastructure failure marked as an autograder error does not count. Errors in your submitted code do count."
+  },
+  {
+    "objectID": "assignments/hw06/index.html#grading",
+    "href": "assignments/hw06/index.html#grading",
+    "title": "Homework 06: Feature Point Detection",
+    "section": "Grading",
+    "text": "Grading\nHW06 is worth 5 points and is fully autograded: 4 points for Harris response and 1 point for SIFT extraction. Across these parts, 1 point comes from public tests and 4 points from private tests.\nTests check the stated formulas, filtering conventions, shapes, data types, parameters, and preservation of inputs. Harris and SIFT are tested independently. Private groups include separately scored checks for partial credit. Small floating-point differences are allowed. SIFT is compared with OpenCV running in the same grading environment rather than a fixed count from the reference figures. The provided plotting code is not a separate scored task.\nPublic tests provide immediate detailed feedback. A public summary reports how many of the five private test groups passed completely. Individual private results, partial scores, and feedback appear after the Gradescope late due date. Passing public tests does not guarantee full credit."
   }
 ]

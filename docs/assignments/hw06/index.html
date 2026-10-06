@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Compute Harris corner responses and extract SIFT features.">
 
-<title>Assignments – Computer Vision</title>
+<title>Homework 06: Feature Point Detection – Computer Vision</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,28 +27,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +109,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-title','listing-description','listing-due','listing-points','listing-starter','listing-resources','listing-path','listing-outputHref','listing-author','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-title","listing-description","listing-due","listing-points","listing-starter","listing-resources","listing-path","listing-outputHref","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -137,14 +142,14 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computer Vision</span>
     </a>
   </div>
@@ -155,31 +160,31 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
+    <a class="nav-link" href="../../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
+    <a class="nav-link" href="../../schedule.html"> 
 <span class="menu-text">Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tas.html"> 
+    <a class="nav-link" href="../../tas.html"> 
 <span class="menu-text">TAs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../tutorials/"> 
+    <a class="nav-link" href="../../tutorials/"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignments/"> 
+    <a class="nav-link" href="../../assignments/"> 
 <span class="menu-text">Assignments</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lectures/"> 
+    <a class="nav-link" href="../../lectures/"> 
 <span class="menu-text">Lectures</span></a>
   </li>  
 </ul>
@@ -193,15 +198,36 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#starter-files" id="toc-starter-files" class="nav-link" data-scroll-target="#starter-files">Starter files</a></li>
+  <li><a href="#tools-and-conventions" id="toc-tools-and-conventions" class="nav-link" data-scroll-target="#tools-and-conventions">Tools and conventions</a></li>
+  <li><a href="#part-1-compute-the-harris-response" id="toc-part-1-compute-the-harris-response" class="nav-link" data-scroll-target="#part-1-compute-the-harris-response">Part 1 — Compute the Harris response</a></li>
+  <li><a href="#part-2-extract-sift-features" id="toc-part-2-extract-sift-features" class="nav-link" data-scroll-target="#part-2-extract-sift-features">Part 2 — Extract SIFT features</a></li>
+  <li><a href="#run-and-inspect-the-results" id="toc-run-and-inspect-the-results" class="nav-link" data-scroll-target="#run-and-inspect-the-results">Run and inspect the results</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit" id="toc-submission-limit" class="nav-link" data-scroll-target="#submission-limit">Submission limit</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Assignments</h1>
+<h1 class="title">Homework 06: Feature Point Detection</h1>
 </div>
 
+<div>
+  <div class="description">
+    Compute Harris corner responses and extract SIFT features.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -216,191 +242,136 @@ window.Quarto = {
 </header>
 
 
-<p>Homework assignments and supporting materials will be posted here throughout the semester.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="list">
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="0" data-listing-file-modified-sort="1788236968151" data-listing-reading-time-sort="4" data-listing-word-count-sort="610">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw01/index.html">Homework 01: Working with Images</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Set up the course cv environment and practice basic image operations with OpenCV and NumPy.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 7, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw01/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw01/files/hw01.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="1" data-listing-file-modified-sort="1788547366455" data-listing-reading-time-sort="5" data-listing-word-count-sort="836">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw02/index.html">Homework 02: Filtering</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Implement correlation, convolution, common linear filters, and a median filter from scratch.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 14, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw02/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw02/files/hw02.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="2" data-listing-file-modified-sort="1789431911000" data-listing-reading-time-sort="5" data-listing-word-count-sort="948">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw03/index.html">Homework 03: Laplacian Pyramids</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Build, reconstruct, and compress Laplacian image pyramids.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 21, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw03/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw03/files/hw03.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="3" data-listing-file-modified-sort="1790037849787" data-listing-reading-time-sort="7" data-listing-word-count-sort="1201">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw04/index.html">Homework 04: Hybrid Images with Fourier Transform</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Use OpenCV Fourier transforms to create a hybrid image.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Sep. 28, 2026, 11:59 PM
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw04/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw04/files/hw04.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="4" data-listing-file-modified-sort="1790646534180" data-listing-reading-time-sort="9" data-listing-word-count-sort="1638">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw05/index.html">Homework 05: Edge Detection with Canny</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Use OpenCV to compute gradients, thin responses, and connect edges.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Oct. 05, 2026
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw05/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw05/files/hw05.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
-  <div class="assignment-item mb-4 pb-3 border-bottom" data-index="5" data-listing-file-modified-sort="1791246188109" data-listing-reading-time-sort="6" data-listing-word-count-sort="1175">
-    <h3 class="listing-title mb-1 anchored">
-      <a href="../assignments/hw06/index.html">Homework 06: Feature Point Detection</a>
-    </h3>
-
-    
-    <p class="listing-description mb-2">Compute Harris corner responses and extract SIFT features.</p>
-    
-
-    
-    <p class="mb-2">
-      <strong>Due:</strong> Oct. 14, 2026
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <strong>Points:</strong> 5
-    </p>
-    
-
-    <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-primary btn-sm" href="../assignments/hw06/index.html">
-        View Assignment
-      </a>
-      
-      <a class="btn btn-outline-secondary btn-sm" href="hw06/files/hw06.py" download="">
-        Download Starter
-      </a>
-      
-    </div>
-  </div>
-
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>Find distinctive points in an image. You will compute Harris corner scores and use OpenCV to extract SIFT keypoints and descriptors. Inspect detections on original, rotated, and scaled versions of the supplied image.</p>
+<p>Use the course <code>cv</code> Conda environment. You may refer to the lecture examples and adapt them to the functions below. Do not use generative AI to solve this homework.</p>
+</section>
+<section id="starter-files" class="level2">
+<h2 class="anchored" data-anchor-id="starter-files">Starter files</h2>
+<p>Download these two files into the same folder:</p>
+<ul>
+<li><a href="files/hw06.py">hw06.py</a></li>
+<li><a href="files/skyline.png">skyline.png</a></li>
+</ul>
+<p>The supplied grayscale image is a crop of the Denver skyline from Lecture 7. Keep it unchanged. Complete only these two functions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>harris_response(image, sigma_d, sigma_w, alpha)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>extract_sift(image, nfeatures<span class="op">=</span><span class="dv">800</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The derivative filters, Harris corner selection, image loading, transformation example, and plotting are provided. Keep function names and arguments unchanged. Leave all provided code unchanged.</p>
+</section>
+<section id="tools-and-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="tools-and-conventions">Tools and conventions</h2>
+<ul>
+<li>Keep imports to <code>cv2</code>, <code>numpy</code>, <code>matplotlib</code>, and the standard-library modules.</li>
+<li>Use OpenCV for image filtering, SIFT extraction. NumPy array operations are allowed.</li>
+<li>For Part 1, implement the gradient products and Harris formula yourself. Do not replace this calculation with <code>cv2.cornerHarris</code>, <code>cv2.cornerEigenValsAndVecs</code>, <code>cv2.cornerMinEigenVal</code>, or another complete corner-response function.</li>
+<li>Use <code>cv2.SIFT_create</code> and <code>detectAndCompute</code> in Part 2.</li>
+<li>Do not modify input arrays. Do not normalize or clip the Harris response or the SIFT descriptors. Display scaling is handled by the driver.</li>
+<li>The grader supplies valid inputs. You do not need to implement input validation. Images have at least 16 rows and 16 columns; odd, even, and non-square images are possible.</li>
+<li><strong>Image types differ by task:</strong> Part 1 receives <code>float32</code> grayscale in <code>[0, 1]</code>; Part 2 receives <code>uint8</code> grayscale in <code>[0, 255]</code>. The driver performs the conversion for you.</li>
+<li>Importing <code>hw06.py</code> must not run the demonstration. Keep the supplied <code>if __name__ == "__main__":</code> guard.</li>
+</ul>
+</section>
+<section id="part-1-compute-the-harris-response" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-compute-the-harris-response">Part 1 — Compute the Harris response</h2>
+<p>Complete <code>harris_response(image, sigma_d, sigma_w, alpha)</code>.</p>
+<p>A corner has intensity changes in more than one direction within its neighborhood. The second-moment matrix summarizes this local gradient structure:</p>
+<p><span class="math display">\[
+M(x,y)=\begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}.
+\]</span></p>
+<p>Follow the lecture’s sequence:</p>
+<ol type="1">
+<li>Smooth the input image using a Gaussian with standard deviation <code>sigma_d</code>.</li>
+<li>Get <code>hx, hy</code> from <code>derivative_filters()</code>. Apply them to the smoothed image to obtain <code>Ix</code> and <code>Iy</code>.</li>
+<li>Form the elementwise products <code>Ix*Ix</code>, <code>Ix*Iy</code>, and <code>Iy*Iy</code>.</li>
+<li>Smooth each product with a Gaussian of standard deviation <code>sigma_w</code>. These are <code>A</code>, <code>B</code>, and <code>C</code>, respectively.</li>
+<li>Compute and return the Harris score:</li>
+</ol>
+<p><span class="math display">\[
+R=AC-B^2-\alpha(A+C)^2.
+\]</span></p>
+<p>Return a same-size <code>float32</code> array. Keep negative scores: they contain useful information about edge-like neighborhoods. Do not apply corner thresholding inside this function.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>Use <code>cv2.GaussianBlur(values, (0, 0), sigmaX=sigma, borderType=cv2.BORDER_REFLECT_101)</code> for every Gaussian smoothing step. <code>(0, 0)</code> lets OpenCV choose the kernel size.</li>
+<li>Use <code>cv2.filter2D(smoothed, -1, hx, borderType=cv2.BORDER_REFLECT_101)</code>, and similarly for <code>hy</code>.</li>
+<li>Use the provided filters as written. Do not flip or rescale them.</li>
+<li><code>sigma_d</code> smooths the image before differentiation. <code>sigma_w</code> combines gradient products over a neighborhood. They serve different purposes.</li>
+<li><code>*</code> means elementwise multiplication here; you do not need matrix multiplication or an eigenvalue calculation.</li>
+<li>Graded parameters satisfy <code>sigma_d &gt; 0</code>, <code>sigma_w &gt; 0</code>, and <code>0 &lt; alpha &lt; 0.25</code>.</li>
+</ul>
+<p>The driver uses <code>sigma_d=1.0</code>, <code>sigma_w=2.0</code>, and <code>alpha=0.04</code>. Its provided corner-selection helper keeps sufficiently strong positive local maxima.</p>
+<p><strong>Try locally:</strong> A constant image should give approximately zero response. A straight intensity edge should have negative response nearby; a square should produce positive responses near its corners. Compare the actual response values, not only the display contrast.</p>
+</section>
+<section id="part-2-extract-sift-features" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-extract-sift-features">Part 2 — Extract SIFT features</h2>
+<p>Complete <code>extract_sift(image, nfeatures=800)</code>.</p>
+<ol type="1">
+<li>Create a detector using <code>cv2.SIFT_create(nfeatures=nfeatures)</code>. Leave its other parameters at their defaults.</li>
+<li>Call <code>detectAndCompute(image, None)</code>.</li>
+<li>Return <code>(keypoints, descriptors)</code> in OpenCV’s original order.</li>
+</ol>
+<p>Return keypoints as a Python list of <code>cv2.KeyPoint</code> objects and descriptors as a <code>float32</code> array of shape <code>(N, 128)</code>, where <code>N</code> is the number of keypoints. Descriptor row <code>i</code> describes keypoint <code>i</code>. Do not sort one without the other, or normalize the descriptors yourself.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>This function is short: OpenCV implements SIFT for you.</li>
+<li><code>keypoint.pt</code> contains <code>(x, y)</code> in image coordinates, not <code>(row, column)</code>. Keypoints also contain size and orientation information.</li>
+<li><code>nfeatures</code> controls how many of the strongest features OpenCV aims to retain. Do not force the returned count to equal that value.</li>
+<li>A blank image can contain no features. OpenCV may return <code>None</code> for its descriptors. In this case, return <code>([], np.empty((0, 128), dtype=np.float32))</code>.</li>
+<li><code>nfeatures</code> is always a positive integer. Use the supplied value rather than hard-coding 800.</li>
+</ul>
+<p>Harris and SIFT are separate detection examples in this homework. SIFT uses its own detector; you do not need to convert Harris corners into SIFT keypoints. Each descriptor summarizes the appearance around its keypoint. We will use these descriptors for feature matching in the next homework.</p>
+</section>
+<section id="run-and-inspect-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="run-and-inspect-the-results">Run and inspect the results</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw06.py <span class="at">--output-dir</span> results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or specify the image:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw06.py skyline.png <span class="at">--output-dir</span> results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The provided driver generates:</p>
+<ul>
+<li><code>hw06_features.png</code>: selected Harris corners, the signed Harris response, and SIFT keypoints.</li>
+<li><code>hw06_transformations.png</code>: Harris and SIFT detections on the original image, a 20-degree rotated version, and a version scaled to 65% of its original dimensions.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/reference_features.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Reference feature detections.</figcaption>
+</figure>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<p><a href="files/reference_features.png">Full-size detections</a> · <a href="files/reference_transformations.png">Rotation and scale comparison</a></p>
+<p>The driver keeps the Harris parameters fixed across the three views. All SIFT keypoints are computed; the figures display only the strongest 120 to stay readable. Circles show keypoint size and spokes show orientation. The image panels fit each view into the available space, so use the scale labels rather than on-screen dimensions to interpret resizing.</p>
+<p>As you inspect the figures, consider:</p>
+<ul>
+<li>Where does the Harris score become positive, negative, or approximately zero?</li>
+<li>Which scene structures produce selected corners?</li>
+<li>How do the SIFT circles and orientation spokes change when the image is rotated or resized?</li>
+<li>Why might the number and location of detections change after transformation?</li>
+</ul>
+<p>Rotation introduces cropping and black borders; resizing introduces interpolation. These can affect detections. Harris and SIFT use different detectors and need not select identical locations. You do not need to find correspondences or quantify repeatability. No written report is required.</p>
+<p>OpenCV versions may produce slightly different SIFT keypoints or counts. Exact figure pixels, fonts, and fixed reference keypoint counts are not grading targets.</p>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit exactly one file, <strong><code>hw06.py</code></strong>, to Gradescope. Do not submit images, figures, or a notebook.</p>
+</section>
+<section id="submission-limit" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit">Submission limit</h2>
+<p>You may make at most <strong>5 valid Gradescope submissions</strong>. Test locally before submitting. Submissions 1–5 are graded normally; submission 6 and every later valid submission receive zero points for that submission. A Gradescope infrastructure failure marked as an autograder error does not count. Errors in your submitted code do count.</p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>HW06 is worth <strong>5 points and is fully autograded</strong>: 4 points for Harris response and 1 point for SIFT extraction. Across these parts, 1 point comes from public tests and 4 points from private tests.</p>
+<p>Tests check the stated formulas, filtering conventions, shapes, data types, parameters, and preservation of inputs. Harris and SIFT are tested independently. Private groups include separately scored checks for partial credit. Small floating-point differences are allowed. SIFT is compared with OpenCV running in the same grading environment rather than a fixed count from the reference figures. The provided plotting code is not a separate scored task.</p>
+<p>Public tests provide immediate detailed feedback. A public summary reports <strong>how many of the five private test groups passed completely</strong>. Individual private results, partial scores, and feedback appear after the Gradescope late due date. Passing public tests does not guarantee full credit.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
