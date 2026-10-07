@@ -216,9 +216,21 @@ Kaveh Fathian
 </div>
 
 </section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you should be able to:</p>
+<ul>
+<li>Explain the roles of <strong>detection, description, and matching</strong> in finding image correspondences.</li>
+<li>Interpret the second moment matrix and its eigenvalues, and use the <strong>Harris score</strong> to detect corners.</li>
+<li>Distinguish invariance from covariance and explain why feature detection needs <strong>scale selection</strong>.</li>
+<li>Describe how <strong>SIFT</strong> detects keypoints and constructs descriptors using local gradients, scale, and orientation.</li>
+<li>Compare descriptor distances and apply <strong>nearest-neighbor matching, Lowe’s ratio test, and bidirectional matching</strong>.</li>
+<li>Explain the key ideas behind <strong>SURF, ORB, and shape context</strong>, and use OpenCV to extract and match features.</li>
+</ul>
+</section>
 <section id="how-can-we-overlay-these-images-to-create-a-panorama" class="slide level2">
 <h2>How Can We Overlay These Images to Create a Panorama?</h2>
-<div id="68d9cbe1" class="cell" data-execution_count="1">
+<div id="d4fd3d0b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -235,7 +247,7 @@ Kaveh Fathian
 </section>
 <section id="find-corresponding-points" class="slide level2">
 <h2>Find Corresponding Points</h2>
-<div id="91df3226" class="cell" data-execution_count="2">
+<div id="6e2a74ba" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -251,7 +263,7 @@ Kaveh Fathian
 </section>
 <section id="align-the-images-to-create-a-panorama" class="slide level2">
 <h2>Align the Images to Create a Panorama</h2>
-<div id="594b055d" class="cell" data-execution_count="3">
+<div id="e5d30669" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -289,7 +301,7 @@ Kaveh Fathian
 <li>A <strong>descriptor</strong> summarizes the surrounding appearance as numbers for comparison.</li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div id="bc293e45" class="cell" data-execution_count="4">
+<div id="be908d4a" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -305,7 +317,7 @@ Kaveh Fathian
 </section>
 <section id="connection-of-filtering-edges-and-corners" class="slide level2">
 <h2>Connection of Filtering, Edges, and Corners</h2>
-<div id="094c2d5d" class="cell" data-execution_count="5">
+<div id="f3ebf7c8" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -324,7 +336,7 @@ Kaveh Fathian
 <h2>Applications of Image Features</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="2bc8cc61" class="cell" data-execution_count="6">
+<div id="0a3b7396" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -350,7 +362,7 @@ Kaveh Fathian
 </section>
 <section id="main-components-of-local-feature-matching" class="slide level2">
 <h2>Main Components of Local Feature Matching</h2>
-<div id="b34d8cbc" class="cell" data-execution_count="7">
+<div id="751ca7da" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -405,7 +417,7 @@ Kaveh Fathian
 </tr>
 </tbody>
 </table>
-<div id="b226c548" class="cell" data-execution_count="8">
+<div id="3102c266" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -422,7 +434,7 @@ Kaveh Fathian
 </section>
 <section id="how-can-we-detect-image-corners" class="slide level2">
 <h2>How Can We Detect Image Corners?</h2>
-<div id="ad1c45dd" class="cell" data-execution_count="9">
+<div id="05c1ea8e" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -452,7 +464,7 @@ E(u,v)=\sum_{(x,y)\in W}\left[I(x+u,y+v)-I(x,y)\right]^2
 </ul>
 <p>This defines the <strong>auto-correlation</strong> error <span class="math inline">\(E(u,v)\)</span>: one number for each shift.</p>
 </div><div class="column" style="width:45%;">
-<div id="7618b153" class="cell" data-execution_count="10">
+<div id="056974b9" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -468,7 +480,7 @@ E(u,v)=\sum_{(x,y)\in W}\left[I(x+u,y+v)-I(x,y)\right]^2
 </section>
 <section id="one-shift-one-auto-correlation-value" class="slide level2">
 <h2>One Shift, One Auto-correlation Value</h2>
-<div id="ad6202d6" class="cell" data-execution_count="11">
+<div id="904db4ac" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -488,7 +500,7 @@ E(1,0)=\sum (B-A)^2=1+1=2
 </section>
 <section id="from-individual-shifts-to-the-response-map" class="slide level2">
 <h2>From Individual Shifts to the Response Map</h2>
-<div id="46d2895a" class="cell" data-execution_count="12">
+<div id="5aa778e1" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -505,7 +517,7 @@ E(1,0)=\sum (B-A)^2=1+1=2
 </section>
 <section id="flat-edge-and-corner-response-surfaces" class="slide level2">
 <h2>Flat, Edge, and Corner Response Surfaces</h2>
-<div id="64c5ef81" class="cell" data-execution_count="13">
+<div id="049d238a" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -535,7 +547,7 @@ E(u,v)=\sum_{(x,y)\in W}\left[I(x+u,y+v)-I(x,y)\right]^2.
 <li>At a <strong>corner</strong>, <span class="math inline">\(E(u,v)\)</span> <strong>rises strongly as we move away from zero in every direction</strong>.</li>
 </ul>
 <p>So, to find corners, we are interested in the shape of the response around <span class="math inline">\((u,v)=(0,0)\)</span>.</p>
-<div id="22f6cbd2" class="cell" data-execution_count="14">
+<div id="39e2f5ae" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -547,7 +559,7 @@ E(u,v)=\sum_{(x,y)\in W}\left[I(x+u,y+v)-I(x,y)\right]^2.
 </section>
 <section id="the-window-function" class="slide level2">
 <h2>The Window Function</h2>
-<div id="aa5c20dc" class="cell" data-execution_count="15">
+<div id="5947e40d" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -567,7 +579,7 @@ E(u,v)=\sum_{x,y} w(x,y)\left[I(x+u,y+v)-I(x,y)\right]^2
 </section>
 <section id="a-naive-corner-detection-algorithm" class="slide level2">
 <h2>A Naive Corner-Detection Algorithm</h2>
-<div id="ba81c2a2" class="cell" data-execution_count="16">
+<div id="3b97b468" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -585,7 +597,7 @@ E(u,v)=\sum_{x,y} w(x,y)\left[I(x+u,y+v)-I(x,y)\right]^2
 </section>
 <section id="naive-corner-detection-computational-complexity" class="slide level2">
 <h2>Naive Corner-Detection Computational Complexity</h2>
-<div id="ede3603c" class="cell" data-results="asis" data-execution_count="17">
+<div id="b757b688" class="cell" data-results="asis" data-execution_count="17">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>For a 1920 × 1080 pixels image, compute an auto-correlation response at every pixel:</p>
 <table class="caption-top">
@@ -633,7 +645,7 @@ N_{\text{comparisons}}\approx
 </section>
 <section id="approximating-the-auto-correlation-response" class="slide level2">
 <h2>Approximating the Auto-correlation Response</h2>
-<div id="321c4e82" class="cell" data-execution_count="18">
+<div id="74c44586" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -761,7 +773,7 @@ I_xI_y&amp;I_y^2
 </section>
 <section id="example-compute-m-for-a-small-image" class="slide level2">
 <h2>Example: Compute <span class="math inline">\(M\)</span> for a Small Image</h2>
-<div id="c21f9acb" class="cell" data-execution_count="19">
+<div id="39952707" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -771,14 +783,14 @@ I_xI_y&amp;I_y^2
 </div>
 </div>
 <ul>
-<li>Find derivaties by filtering the image with <span class="math inline">\(h_x=[-1,0,1]\)</span> and <span class="math inline">\(h_y=h_x^T\)</span> kernels.</li>
+<li>Find derivatives by filtering the image with <span class="math inline">\(h_x=[-1,0,1]\)</span> and <span class="math inline">\(h_y=h_x^T\)</span> kernels.</li>
 <li>The blue boxes show a 3×3 auto-correlation window.</li>
 <li>Next, form the gradient products and sum their values inside this window.</li>
 </ul>
 </section>
 <section id="example-compute-m-for-a-small-image-1" class="slide level2 small">
 <h2>Example: Compute <span class="math inline">\(M\)</span> for a Small Image</h2>
-<div id="9e85794d" class="cell" data-execution_count="20">
+<div id="fed1c3cf" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -799,7 +811,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="the-shape-of-the-quadratic-response" class="slide level2 small">
 <h2>The Shape of the Quadratic Response</h2>
-<div id="1b93c3e5" class="cell" data-execution_count="21">
+<div id="96d3b6c3" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -818,7 +830,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="m-determines-the-contour-shape" class="slide level2">
 <h2><span class="math inline">\(M\)</span> Determines the Contour Shape</h2>
-<div id="79255403" class="cell" data-execution_count="22">
+<div id="b3a07ec5" class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -836,7 +848,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="rotation-changes-the-entries-of-m" class="slide level2">
 <h2>Rotation Changes the Entries of M</h2>
-<div id="c6e38443" class="cell" data-execution_count="23">
+<div id="d52b1a2e" class="cell" data-execution_count="23">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -854,7 +866,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="eigenvalues-measure-change-along-principal-directions" class="slide level2 small">
 <h2>Eigenvalues Measure Change Along Principal Directions</h2>
-<div id="a2e58212" class="cell" data-execution_count="24">
+<div id="0b8a3915" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -866,7 +878,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 <p><span class="math display">\[M\mathbf q_i=\lambda_i \mathbf q_i
 \qquad(\|\mathbf q_i\|=1).\]</span></p>
 <ul>
-<li><span class="math inline">\(\lambda_i\)</span> is an eigenvalues, and <span class="math inline">\(\mathbf q_i\)</span> is an eigenvector.</li>
+<li><span class="math inline">\(\lambda_i\)</span> is an eigenvalue, and <span class="math inline">\(\mathbf q_i\)</span> is an eigenvector.</li>
 <li>Orange: the perpendicular direction of greatest change, with strength <span class="math inline">\(\lambda_{\max}\)</span>.</li>
 <li>Blue: the direction of least change, with strength <span class="math inline">\(\lambda_{\min}\)</span>.</li>
 <li>The <strong>edge has a zero eigenvalue</strong>. The <strong>corner has two large eigenvalues</strong>.</li>
@@ -874,7 +886,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="rotation-preserves-the-eigenvalues" class="slide level2">
 <h2>Rotation Preserves the Eigenvalues</h2>
-<div id="5642fdfa" class="cell" data-execution_count="25">
+<div id="7d181d39" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -890,7 +902,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="reading-feature-type-from-eigenvalues" class="slide level2 small">
 <h2>Reading Feature Type from Eigenvalues</h2>
-<div id="e0eac041" class="cell" data-execution_count="26">
+<div id="09dc2982" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -930,11 +942,11 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </tr>
 </tbody>
 </table>
-<p>Rotating a imaage patch changes its principal directions (eigenvectors), but preserves its eigenvalues and feature type.</p>
+<p>Rotating a image patch changes its principal directions (eigenvectors), but preserves its eigenvalues and feature type.</p>
 </section>
 <section id="corner-angle-and-eigenvalues" class="slide level2">
 <h2>Corner Angle and Eigenvalues</h2>
-<div id="bc6444b6" class="cell" data-execution_count="27">
+<div id="3c404002" class="cell" data-execution_count="27">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -954,13 +966,13 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 <div class="column" style="width:50%;">
 <ul>
 <li><p>Given <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span> as eigenvalues of <span class="math inline">\(M\)</span>.</p></li>
-<li><p>Each point in the diagram has coordiantes <span class="math inline">\((\lambda_1, \lambda_2)\)</span>.</p></li>
+<li><p>Each point in the diagram has coordinates <span class="math inline">\((\lambda_1, \lambda_2)\)</span>.</p></li>
 <li><p><strong>Flat region:</strong> both eigenvalues are small, so intensity changes little in any direction.</p></li>
 <li><p><strong>Edge:</strong> one eigenvalue dominates, so change is strong across the edge and weak along it.</p></li>
 <li><p><strong>Corner:</strong> both eigenvalues are large, so even the weakest direction has substantial change.</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div id="6c90aeb2" class="cell" data-execution_count="28">
+<div id="5cf604ea" class="cell" data-execution_count="28">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -989,7 +1001,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 <li><p>Increasing <span class="math inline">\(\alpha\)</span> rejects more unequal eigenvalue pairs (and mark them as non-corners). It is a tuning parameter, not a universal optimum.</p></li>
 </ul>
 </div><div class="column" style="width:45%;">
-<div id="14ac1e36" class="cell" data-execution_count="29">
+<div id="123d4224" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1003,7 +1015,7 @@ M = \begin{bmatrix}A&amp;B\\B&amp;C\end{bmatrix}
 </section>
 <section id="cornerness-without-computing-eigenvalues" class="slide level2">
 <h2>Cornerness Without Computing Eigenvalues</h2>
-<p>For any suqare matrix:</p>
+<p>For any square matrix:</p>
 <ul>
 <li>The <strong>determinant</strong> is the <strong>product of all its eigenvalues</strong>.</li>
 <li>The <strong>trace</strong> is the <strong>sum of its diagonal entries</strong>, and also the <strong>sum of its eigenvalues</strong>.</li>
@@ -1092,7 +1104,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Harris Example</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="80669130" class="cell" data-execution_count="30">
+<div id="e9a51201" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
 <span id="cb1-2"><a aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a aria-label="3"></a></span>
@@ -1110,7 +1122,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>Will a long, smooth roof edge give a strong corner response?</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="88d3d2c5" class="cell" data-execution_count="31">
+<div id="fc3b7d08" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1125,7 +1137,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 1: Compute Image Gradients</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="3d35d684" class="cell" data-execution_count="32">
+<div id="12218a9f" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>sigma_d <span class="op">=</span> <span class="fl">1.0</span></span>
 <span id="cb2-2"><a aria-label="2"></a>J <span class="op">=</span> cv2.GaussianBlur(I, (<span class="dv">0</span>, <span class="dv">0</span>), sigma_d)</span>
 <span id="cb2-3"><a aria-label="3"></a></span>
@@ -1146,7 +1158,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li><span class="math inline">\(I_x\)</span> measures horizontal intensity change; <span class="math inline">\(I_y\)</span> measures vertical intensity change.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="3e4267d2" class="cell" data-execution_count="33">
+<div id="2b1efe8e" class="cell" data-execution_count="33">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1164,7 +1176,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 2: Form the Gradient Products</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="32ec402a" class="cell" data-execution_count="34">
+<div id="5a789793" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>Pxx <span class="op">=</span> Ix <span class="op">*</span> Ix</span>
 <span id="cb3-2"><a aria-label="2"></a>Pxy <span class="op">=</span> Ix <span class="op">*</span> Iy</span>
 <span id="cb3-3"><a aria-label="3"></a>Pyy <span class="op">=</span> Iy <span class="op">*</span> Iy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1177,7 +1189,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li><span class="math inline">\(I_xI_y\)</span> records how the two gradient components vary together. It can be positive or negative.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="61615113" class="cell" data-execution_count="35">
+<div id="a8d70f1b" class="cell" data-execution_count="35">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1192,7 +1204,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 3: Build the Second Moment Matrix</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="4599b421" class="cell" data-execution_count="36">
+<div id="1c9ee131" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>sigma_w <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb4-2"><a aria-label="2"></a>A <span class="op">=</span> cv2.GaussianBlur(Pxx, (<span class="dv">0</span>, <span class="dv">0</span>), sigma_w)</span>
 <span id="cb4-3"><a aria-label="3"></a>B <span class="op">=</span> cv2.GaussianBlur(Pxy, (<span class="dv">0</span>, <span class="dv">0</span>), sigma_w)</span>
@@ -1204,7 +1216,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li><span class="math inline">\(\sigma_w\)</span> sets the neighborhood size. It serves a <em>different purpose</em> from the initial smoothing scale <span class="math inline">\(\sigma_d\)</span>.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="1c2e3dd9" class="cell" data-execution_count="37">
+<div id="7d85bad0" class="cell" data-execution_count="37">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1219,7 +1231,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 4: Compute the Harris/Cornerness Score</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="641c1d73" class="cell" data-execution_count="38">
+<div id="2990ce04" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>alpha <span class="op">=</span> <span class="fl">0.04</span></span>
 <span id="cb5-2"><a aria-label="2"></a></span>
 <span id="cb5-3"><a aria-label="3"></a>detM <span class="op">=</span> A <span class="op">*</span> C <span class="op">-</span> B<span class="op">**</span><span class="dv">2</span></span>
@@ -1233,7 +1245,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>The sky has little gradient energy, so its response stays near zero.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="17517b11" class="cell" data-execution_count="39">
+<div id="fbe21099" class="cell" data-execution_count="39">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1248,7 +1260,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 5: Threshold the Corner Response</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="9466c32f" class="cell" data-execution_count="40">
+<div id="bf1e69c5" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>quality <span class="op">=</span> <span class="fl">0.01</span></span>
 <span id="cb6-2"><a aria-label="2"></a>threshold <span class="op">=</span> quality <span class="op">*</span> R.<span class="bu">max</span>()</span>
 <span id="cb6-3"><a aria-label="3"></a>candidates <span class="op">=</span> (R <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">&amp;</span> (R <span class="op">&gt;</span> threshold)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1262,7 +1274,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>One corner often produces a cluster of selected pixels. Thresholding alone does not choose a single location.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="2e42b8b9" class="cell" data-execution_count="41">
+<div id="eb037e87" class="cell" data-execution_count="41">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1277,7 +1289,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Step 6: Non-Maximum Suppression</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="ec7de696" class="cell" data-execution_count="42">
+<div id="f24665e9" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a>window <span class="op">=</span> np.ones((<span class="dv">13</span>, <span class="dv">13</span>), dtype<span class="op">=</span>np.uint8)</span>
 <span id="cb7-2"><a aria-label="2"></a>local_max <span class="op">=</span> cv2.dilate(R, window)</span>
 <span id="cb7-3"><a aria-label="3"></a>corners <span class="op">=</span> candidates <span class="op">&amp;</span> (R <span class="op">==</span> local_max)</span>
@@ -1293,7 +1305,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>The selected points concentrate near roof tips, window corners, and structural intersections.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="acac6da7" class="cell" data-execution_count="43">
+<div id="7f74fbdd" class="cell" data-execution_count="43">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1308,7 +1320,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Harris Corner Detection in OpenCV</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<div id="6b3f38a6" class="cell" data-execution_count="44">
+<div id="4eab9549" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>R_cv <span class="op">=</span> cv2.cornerHarris(</span>
 <span id="cb8-2"><a aria-label="2"></a>    I, blockSize<span class="op">=</span><span class="dv">5</span>, ksize<span class="op">=</span><span class="dv">3</span>, k<span class="op">=</span><span class="fl">0.04</span>)</span>
 <span id="cb8-3"><a aria-label="3"></a></span>
@@ -1328,7 +1340,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li><code>k=0.04</code>: the Harris parameter <span class="math inline">\(\alpha\)</span> in <span class="math inline">\(R=\det(M)-\alpha\operatorname{tr}(M)^2\)</span>.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="e26cbf88" class="cell" data-execution_count="45">
+<div id="f6766530" class="cell" data-execution_count="45">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1362,7 +1374,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li><strong>Invariance:</strong> changing image intensities should leave the detected <strong>locations unchanged</strong>.</li>
 <li><strong>Covariance (equivariance):</strong> moving the image should move the detected points <strong>with it</strong>.</li>
 </ul>
-<div id="b6ebc9b4" class="cell" data-execution_count="46">
+<div id="2aa5618f" class="cell" data-execution_count="46">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1387,7 +1399,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>A <strong>fixed threshold</strong> can select different corners.</li>
 </ul>
 </div><div class="column" style="width:52%;">
-<div id="d47ff23b" class="cell" data-execution_count="47">
+<div id="5d75c25a" class="cell" data-execution_count="47">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1406,7 +1418,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="harris-under-image-translation" class="slide level2">
 <h2>Harris Under Image Translation</h2>
 <p>For a translation <span class="math inline">\(\mathbf{t}=(\Delta x,\Delta y)^T\)</span>, corresponding corners move from <span class="math inline">\(\mathbf{x}\)</span> to <span class="math inline">\(\mathbf{x}+\mathbf{t}\)</span>.</p>
-<div id="c67a6a6d" class="cell" data-execution_count="48">
+<div id="ebe8e351" class="cell" data-execution_count="48">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1424,7 +1436,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <h2>Harris Under Image Rotation</h2>
 <p>For a rotation matrix <span class="math inline">\(Q\)</span>, the second moment matrix changes orientation while <strong>its eigenvalues and Harris score stay unchanged</strong>.</p>
 <p><span class="math display">\[M'=QMQ^T\quad\Longrightarrow\quad \lambda_1'=\lambda_1,\ \lambda_2'=\lambda_2,\ R'=R.\]</span></p>
-<div id="7fe5eb0c" class="cell" data-execution_count="49">
+<div id="78128b55" class="cell" data-execution_count="49">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1440,7 +1452,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="harris-under-scaling" class="slide level2">
 <h2>Harris Under Scaling</h2>
 <p>A window that contains <strong>several gradient directions</strong> at one scale may see <strong>only a short, nearly straight edge</strong> after enlargement.</p>
-<div id="3edfb313" class="cell" data-execution_count="50">
+<div id="21ea4cbf" class="cell" data-execution_count="50">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1457,7 +1469,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="scaling-the-airport-image" class="slide level2">
 <h2>Scaling the Airport Image</h2>
 <p>We halve the image width and height, then rerun Harris with unchanged settings:</p>
-<div id="eddff4d1" class="cell" data-execution_count="51">
+<div id="ef8b9332" class="cell" data-execution_count="51">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1477,7 +1489,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="automatic-scale-selection" class="slide level2">
 <h2>Automatic Scale Selection</h2>
-<div id="9645ce45" class="cell" data-execution_count="52">
+<div id="072a84ac" class="cell" data-execution_count="52">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1494,7 +1506,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="recall-laplacian-of-gaussian-filter" class="slide level2">
 <h2>Recall: Laplacian-of-Gaussian Filter</h2>
-<div id="499b0b5b" class="cell" data-execution_count="53">
+<div id="5dbef563" class="cell" data-execution_count="53">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1508,10 +1520,10 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>The scale <span class="math inline">\(\sigma\)</span> controls the filter size.</li>
 </ul>
 </section>
-<section id="filter-respose-vs.-signal-size" class="slide level2">
-<h2>Filter Respose vs.&nbsp;Signal Size</h2>
+<section id="filter-response-vs.-signal-size" class="slide level2">
+<h2>Filter Response vs.&nbsp;Signal Size</h2>
 <p>The response at the <strong>pulse center</strong> is strongest when the filter’s central lobe fits the pulse.</p>
-<div id="644dca0c" class="cell" data-execution_count="54">
+<div id="7567158c" class="cell" data-execution_count="54">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1522,12 +1534,12 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </div>
 <ul>
 <li>The pulse width is 24 pixels. At <span class="math inline">\(\sigma=12\)</span>, the filter’s zero crossings at <span class="math inline">\(\pm\sigma\)</span> match its edges.</li>
-<li>The highest response (in magnitude) is acheived when the pulse width matches the filter zero corossings.</li>
+<li>The highest response (in magnitude) is achieved when the pulse width matches the filter zero crossings.</li>
 </ul>
 </section>
 <section id="filter-response-vs.-feature-size" class="slide level2">
 <h2>Filter response vs.&nbsp;Feature Size</h2>
-<div id="42c7498f" class="cell" data-execution_count="55">
+<div id="bf7430b9" class="cell" data-execution_count="55">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1546,7 +1558,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="filter-response-at-different-scales" class="slide level2">
 <h2>Filter Response at Different Scales</h2>
 <p>Filter the image with <span class="math inline">\(K_\sigma\)</span>, then measure the strongest response inside each fixed yellow window: <span class="math display">\[R_\sigma=K_\sigma*I,\qquad m_W(\sigma)=\max_{(x,y)\in W}|R_\sigma(x,y)|.\]</span></p>
-<div id="7fcea488" class="cell" data-execution_count="56">
+<div id="4d5960a2" class="cell" data-execution_count="56">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1559,7 +1571,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="c7381871" class="cell" data-execution_count="57">
+<div id="a10d95c3" class="cell" data-execution_count="57">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1572,7 +1584,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-1" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="70ef8d73" class="cell" data-execution_count="58">
+<div id="8b39368c" class="cell" data-execution_count="58">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1585,7 +1597,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-2" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="5b7ee48a" class="cell" data-execution_count="59">
+<div id="bd458927" class="cell" data-execution_count="59">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1598,7 +1610,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-3" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="4b66799f" class="cell" data-execution_count="60">
+<div id="8cd35631" class="cell" data-execution_count="60">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1611,7 +1623,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-4" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="6e3a3f12" class="cell" data-execution_count="61">
+<div id="8484ce1c" class="cell" data-execution_count="61">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1624,7 +1636,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-5" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="f2a5fb98" class="cell" data-execution_count="62">
+<div id="6eff7871" class="cell" data-execution_count="62">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1637,7 +1649,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="filter-response-as-the-log-kernel-grows-6" class="slide level2">
 <h2>Filter Response as the LOG Kernel Grows</h2>
-<div id="2f3d3620" class="cell" data-execution_count="63">
+<div id="3314c611" class="cell" data-execution_count="63">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1650,7 +1662,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="small-and-large-balls-select-different-scales" class="slide level2">
 <h2>Small and Large Balls Select Different Scales</h2>
-<div id="05167d02" class="cell" data-execution_count="64">
+<div id="9032600f" class="cell" data-execution_count="64">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1664,7 +1676,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="automatic-scale-selection-1" class="slide level2">
 <h2>Automatic Scale Selection</h2>
 <p>Select each window’s strongest scale: <span class="math inline">\(\sigma_W^*=\operatorname{arg\,max}_\sigma m_W(\sigma)\)</span>.</p>
-<div id="8867905d" class="cell" data-execution_count="65">
+<div id="2b7eb269" class="cell" data-execution_count="65">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1681,7 +1693,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <li>Keep <span class="math inline">\(\sigma_0=4\)</span> pixels and downsample the image by a factor <span class="math inline">\(d\)</span>.</li>
 <li>The filter then covers an effective scale <span class="math inline">\(\sigma_{\mathrm{eff}}=d\sigma_0\)</span> in the original image.</li>
 </ul>
-<div id="e54d392f" class="cell" data-execution_count="66">
+<div id="5e4a77ab" class="cell" data-execution_count="66">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1694,7 +1706,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="original-image-fixed-filter" class="slide level2">
 <h2>Original Image, Fixed Filter</h2>
-<div id="0b62d5bc" class="cell" data-execution_count="67">
+<div id="b785ce36" class="cell" data-execution_count="67">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1707,7 +1719,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="smaller-image-fixed-filter" class="slide level2">
 <h2>Smaller Image, Fixed Filter</h2>
-<div id="b0c7a59d" class="cell" data-execution_count="68">
+<div id="c1b78397" class="cell" data-execution_count="68">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1720,7 +1732,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="smaller-image-fixed-filter-1" class="slide level2">
 <h2>Smaller Image, Fixed Filter</h2>
-<div id="26c73319" class="cell" data-execution_count="69">
+<div id="fa81beaf" class="cell" data-execution_count="69">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1733,7 +1745,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="smaller-image-fixed-filter-2" class="slide level2">
 <h2>Smaller Image, Fixed Filter</h2>
-<div id="0a5ec128" class="cell" data-execution_count="70">
+<div id="1bc00a8e" class="cell" data-execution_count="70">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1746,7 +1758,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="smaller-image-fixed-filter-3" class="slide level2">
 <h2>Smaller Image, Fixed Filter</h2>
-<div id="1f426722" class="cell" data-execution_count="71">
+<div id="38ed76e8" class="cell" data-execution_count="71">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1759,7 +1771,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="smaller-image-fixed-filter-4" class="slide level2">
 <h2>Smaller Image, Fixed Filter</h2>
-<div id="0e3e9f92" class="cell" data-execution_count="72">
+<div id="ebeecff5" class="cell" data-execution_count="72">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1773,7 +1785,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="different-balls-peak-at-different-image-sizes" class="slide level2">
 <h2>Different Balls Peak at Different Image Sizes</h2>
 <p>The filter stays fixed. Compare both balls across the downsampling factors <span class="math inline">\(d\)</span>.</p>
-<div id="5e2d9811" class="cell" data-execution_count="73">
+<div id="d5692613" class="cell" data-execution_count="73">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1787,7 +1799,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="characteristic-scale" class="slide level2">
 <h2>Characteristic Scale</h2>
 <p>The <strong>characteristic scale</strong> is the scale that produces the peak filter response.</p>
-<div id="440848c7" class="cell" data-execution_count="74">
+<div id="0557f058" class="cell" data-execution_count="74">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1837,13 +1849,13 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 </section>
 <section id="example-corners-at-different-scales" class="slide level2">
 <h2>Example: Corners at Different Scales</h2>
-<div id="2061e23f" class="cell" data-execution_count="75">
+<div id="f9c15593" class="cell" data-execution_count="75">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>IMAGE_PATH <span class="op">=</span> <span class="st">"assets/07_features/mines_tower.jpg"</span></span>
 <span id="cb9-2"><a aria-label="2"></a>image <span class="op">=</span> cv2.imread(IMAGE_PATH, cv2.IMREAD_GRAYSCALE)</span>
 <span id="cb9-3"><a aria-label="3"></a>image <span class="op">=</span> image.astype(np.float32) <span class="op">/</span> <span class="fl">255.0</span></span>
 <span id="cb9-4"><a aria-label="4"></a>scales <span class="op">=</span> np.geomspace(<span class="fl">1.0</span>, <span class="fl">20.0</span>, <span class="dv">19</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4acc4c81" class="cell" data-execution_count="76">
+<div id="071e93fe" class="cell" data-execution_count="76">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1857,7 +1869,7 @@ A=\sum_{x,y} wI_x^2,\quad B=\sum_{x,y} wI_xI_y,\quad C=\sum_{x,y} wI_y^2
 <section id="harris-responses-that-can-be-compared-across-scales" class="slide level2">
 <h2>Harris Responses That Can Be Compared Across Scales</h2>
 <p>Use <span class="math inline">\(I_x=\sigma\,\partial_x(G_\sigma*I)\)</span> and <span class="math inline">\(I_y=\sigma\,\partial_y(G_\sigma*I)\)</span>; average their products over <span class="math inline">\(G_{1.5\sigma}\)</span>.</p>
-<div id="b910c437" class="cell" data-execution_count="77">
+<div id="12b50994" class="cell" data-execution_count="77">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a><span class="kw">def</span> harris_response(image, sigma):</span>
 <span id="cb10-2"><a aria-label="2"></a>    smooth <span class="op">=</span> cv2.GaussianBlur(image, (<span class="dv">0</span>, <span class="dv">0</span>), <span class="bu">float</span>(sigma))</span>
 <span id="cb10-3"><a aria-label="3"></a>    Ix <span class="op">=</span> cv2.Sobel(smooth, cv2.CV_32F, <span class="dv">1</span>, <span class="dv">0</span>, ksize<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span>sigma<span class="op">/</span><span class="dv">8</span>)</span>
@@ -1873,14 +1885,14 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 </section>
 <section id="build-the-stack-and-find-spatial-peaks" class="slide level2">
 <h2>Build the Stack and Find Spatial Peaks</h2>
-<div id="a3eca9be" class="cell" data-execution_count="78">
+<div id="9eef05f3" class="cell" data-execution_count="78">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a>responses <span class="op">=</span> np.stack([harris_response(image, s) <span class="cf">for</span> s <span class="kw">in</span> scales])</span>
 <span id="cb11-2"><a aria-label="2"></a>neighbors <span class="op">=</span> np.ones((<span class="dv">3</span>, <span class="dv">3</span>), np.uint8)</span>
 <span id="cb11-3"><a aria-label="3"></a>neighbors[<span class="dv">1</span>, <span class="dv">1</span>] <span class="op">=</span> <span class="dv">0</span>                  <span class="co"># compare with the eight neighbors</span></span>
 <span id="cb11-4"><a aria-label="4"></a>neighbor_max <span class="op">=</span> np.stack([cv2.dilate(r, neighbors) <span class="cf">for</span> r <span class="kw">in</span> responses])</span>
 <span id="cb11-5"><a aria-label="5"></a>spatial_peaks <span class="op">=</span> responses <span class="op">&gt;</span> neighbor_max</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9563fabf" class="cell" data-execution_count="79">
+<div id="40a5f8ca" class="cell" data-execution_count="79">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1893,7 +1905,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 </section>
 <section id="keep-the-strongest-scale-at-each-location" class="slide level2">
 <h2>Keep the Strongest Scale at Each Location</h2>
-<div id="d7148bc4" class="cell" data-execution_count="80">
+<div id="d4f4796c" class="cell" data-execution_count="80">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>best_scale <span class="op">=</span> responses.argmax(axis<span class="op">=</span><span class="dv">0</span>)     <span class="co"># one scale index per pixel</span></span>
 <span id="cb12-2"><a aria-label="2"></a>levels <span class="op">=</span> np.arange(<span class="bu">len</span>(scales))[:, <span class="va">None</span>, <span class="va">None</span>]</span>
 <span id="cb12-3"><a aria-label="3"></a>keep <span class="op">=</span> spatial_peaks <span class="op">&amp;</span> (levels <span class="op">==</span> best_scale)</span>
@@ -1913,7 +1925,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 </section>
 <section id="two-corners-two-winning-scales" class="slide level2">
 <h2>Two Corners, Two Winning Scales</h2>
-<div id="d6fce111" class="cell" data-execution_count="81">
+<div id="1af94922" class="cell" data-execution_count="81">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1927,7 +1939,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 <section id="check-the-location-as-well-as-the-scale" class="slide level2">
 <h2>Check the Location as Well as the Scale</h2>
 <p>The selected pixel must beat its <strong>eight neighbors at the winning scale</strong>.</p>
-<div id="4ff96e45" class="cell" data-execution_count="82">
+<div id="b64bfc7c" class="cell" data-execution_count="82">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1942,10 +1954,10 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 </section>
 <section id="output-corner-locations-and-their-analysis-scales" class="slide level2">
 <h2>Output: Corner Locations and Their Analysis Scales</h2>
-<div id="dd434135" class="cell" data-execution_count="83">
+<div id="25239f7d" class="cell" data-execution_count="83">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>corners <span class="op">=</span> np.column_stack([x, y, selected_scales])  <span class="co"># each row: (x, y, sigma)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="bd196f10" class="cell" data-execution_count="84">
+<div id="bf62a4e5" class="cell" data-execution_count="84">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1962,7 +1974,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 <section id="local-feature-matching-main-components" class="slide level2">
 <h2>Local Feature Matching: Main Components</h2>
 <p>We have locations and scales. Next, describe and match the features.</p>
-<div id="febdccb0" class="cell" data-execution_count="85">
+<div id="98734508" class="cell" data-execution_count="85">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1986,7 +1998,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 <section id="why-do-we-need-feature-descriptors" class="slide level2">
 <h2>Why Do We Need Feature Descriptors?</h2>
 <p>Detection tells us <strong>where</strong> a feature is. How do we recognize the same feature in another image?</p>
-<div id="4691c76a" class="cell" data-execution_count="86">
+<div id="7bf02719" class="cell" data-execution_count="86">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2013,7 +2025,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 <li>Gradient orientations (as used in SIFT).</li>
 </ul>
 </div></div>
-<div id="71de272e" class="cell" data-execution_count="87">
+<div id="a82d9c45" class="cell" data-execution_count="87">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2027,7 +2039,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 <section id="feature-descriptor-histograms" class="slide level2">
 <h2>Feature Descriptor: Histograms</h2>
 <p>A histogram divides values into <strong>bins</strong> and counts how many fall into each bin.</p>
-<div id="6abc7960" class="cell" data-execution_count="88">
+<div id="abf9fb28" class="cell" data-execution_count="88">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2045,7 +2057,7 @@ R_\sigma=\det(M_\sigma)-0.04\,\operatorname{tr}(M_\sigma)^2.\]</span></p>
 </section>
 <section id="sift-scale-invariant-feature-transform" class="slide level2">
 <h2>SIFT: Scale-Invariant Feature Transform</h2>
-<div id="acf23f4b" class="cell" data-execution_count="89">
+<div id="24633762" class="cell" data-execution_count="89">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2108,13 +2120,13 @@ L_\sigma = G_\sigma * I,
 D_\sigma = L_{k\sigma}-L_\sigma
          = (G_{k\sigma}-G_\sigma)*I.
 \]</span></p>
-<div id="01db3496" class="cell" data-execution_count="91">
+<div id="17958c66" class="cell" data-execution_count="91">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a>dog_sigma, dog_k <span class="op">=</span> <span class="fl">4.0</span>, np.sqrt(<span class="dv">2</span>)</span>
 <span id="cb14-2"><a aria-label="2"></a>dog_L1 <span class="op">=</span> cv2.GaussianBlur(dog_image, (<span class="dv">0</span>, <span class="dv">0</span>), dog_sigma)</span>
 <span id="cb14-3"><a aria-label="3"></a>dog_L2 <span class="op">=</span> cv2.GaussianBlur(dog_image, (<span class="dv">0</span>, <span class="dv">0</span>), dog_k<span class="op">*</span>dog_sigma)</span>
 <span id="cb14-4"><a aria-label="4"></a>dog_difference <span class="op">=</span> dog_L2 <span class="op">-</span> dog_L1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d3ab6c02" class="cell" data-execution_count="92">
+<div id="1206445b" class="cell" data-execution_count="92">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2128,14 +2140,14 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="search-across-filter-sizes" class="slide level2">
 <h2>Search Across Filter Sizes</h2>
 <p>Repeat the subtraction at increasing scales. Here, all images stay at the same resolution.</p>
-<div id="34ab807c" class="cell" data-execution_count="93">
+<div id="73116dbf" class="cell" data-execution_count="93">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a>dog_scales <span class="op">=</span> <span class="fl">2.0</span> <span class="op">*</span> dog_k<span class="op">**</span>np.arange(<span class="dv">9</span>)</span>
 <span id="cb15-2"><a aria-label="2"></a>dog_L <span class="op">=</span> [cv2.GaussianBlur(dog_image, (<span class="dv">0</span>, <span class="dv">0</span>), <span class="bu">float</span>(s))</span>
 <span id="cb15-3"><a aria-label="3"></a>    <span class="cf">for</span> s <span class="kw">in</span> dog_scales]</span>
 <span id="cb15-4"><a aria-label="4"></a>dog_D <span class="op">=</span> np.diff(np.stack(dog_L), axis<span class="op">=</span><span class="dv">0</span>)  <span class="co"># D[j] = L[j+1] - L[j]</span></span>
 <span id="cb15-5"><a aria-label="5"></a>dog_response_scales <span class="op">=</span> dog_scales[:<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="35b4d596" class="cell" data-execution_count="94">
+<div id="4a39b017" class="cell" data-execution_count="94">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2149,7 +2161,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="is-it-an-extremum-in-both-position-and-scale" class="slide level2">
 <h2>Is It an Extremum in Both Position and Scale?</h2>
 <p>Compare a candidate with <strong>8 neighbors at the same scale + 9 at the finer scale + 9 at the coarser scale</strong>.</p>
-<div id="9cede760" class="cell" data-execution_count="95">
+<div id="793d9fe1" class="cell" data-execution_count="95">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2159,7 +2171,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 </div>
 </div>
 <p>Numbers show <span class="math inline">\(1000D_\sigma\)</span>. The boxed value is smaller than <strong>all 26 neighbors</strong>, so it survives as a DoG minimum. We also retain maxima.</p>
-<div id="014c7040" class="cell" data-execution_count="96">
+<div id="e60f18b2" class="cell" data-execution_count="96">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-label="1"></a><span class="kw">def</span> dog_is_extremum(stack, j, y, x):</span>
 <span id="cb16-2"><a aria-label="2"></a>    cube <span class="op">=</span> stack[j<span class="op">-</span><span class="dv">1</span>:j<span class="op">+</span><span class="dv">2</span>, y<span class="op">-</span><span class="dv">1</span>:y<span class="op">+</span><span class="dv">2</span>, x<span class="op">-</span><span class="dv">1</span>:x<span class="op">+</span><span class="dv">2</span>]</span>
 <span id="cb16-3"><a aria-label="3"></a>    neighbors <span class="op">=</span> np.delete(cube.ravel(), <span class="dv">13</span>)  <span class="co"># remove the central sample</span></span>
@@ -2170,7 +2182,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="detect-keypoints-by-scanning-the-whole-stack" class="slide level2">
 <h2>Detect Keypoints by Scanning the Whole Stack</h2>
 <p>Search all locations and scales with a full neighborhood. Skip weak responses using a contrast threshold.</p>
-<div id="f5077e95" class="cell" data-execution_count="97">
+<div id="ce0c1712" class="cell" data-execution_count="97">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-label="1"></a>dog_threshold <span class="op">=</span> <span class="fl">0.08</span>                       <span class="co"># chosen for this example</span></span>
 <span id="cb17-2"><a aria-label="2"></a>interior <span class="op">=</span> dog_D[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb17-3"><a aria-label="3"></a>candidates <span class="op">=</span> np.argwhere(np.<span class="bu">abs</span>(interior) <span class="op">&gt;</span> dog_threshold) <span class="op">+</span> <span class="dv">1</span></span>
@@ -2180,7 +2192,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb17-7"><a aria-label="7"></a>    <span class="cf">if</span> dog_is_extremum(dog_D, j, y, x):</span>
 <span id="cb17-8"><a aria-label="8"></a>        dog_detections.append((x, y, dog_response_scales[j]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9db2cbba" class="cell" data-execution_count="98">
+<div id="032f3aaa" class="cell" data-execution_count="98">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2194,7 +2206,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="the-descriptor-starts-with-local-gradients" class="slide level2">
 <h2>The Descriptor Starts with Local Gradients</h2>
 <p>At the detected scale, gradients describe the direction and strength of local brightness changes.</p>
-<div id="559b3f9b" class="cell" data-execution_count="100">
+<div id="9ee1da33" class="cell" data-execution_count="100">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-label="1"></a><span class="kw">def</span> sf_gradients(patch):</span>
 <span id="cb18-2"><a aria-label="2"></a>    gx <span class="op">=</span> cv2.Sobel(patch, cv2.CV_32F, <span class="dv">1</span>, <span class="dv">0</span>, ksize<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="dv">8</span>)</span>
 <span id="cb18-3"><a aria-label="3"></a>    gy <span class="op">=</span> cv2.Sobel(patch, cv2.CV_32F, <span class="dv">0</span>, <span class="dv">1</span>, ksize<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="dv">8</span>)</span>
@@ -2202,7 +2214,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb18-5"><a aria-label="5"></a></span>
 <span id="cb18-6"><a aria-label="6"></a>sf_mag, sf_angle <span class="op">=</span> sf_gradients(sf_patch)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3a67b17d" class="cell" data-execution_count="101">
+<div id="789591f1" class="cell" data-execution_count="101">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2219,7 +2231,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <li>Add gradient magnitudes to a <strong>36-bin orientation histogram</strong>.</li>
 <li>Use Gaussian weights for orientations so that the dominant orientation is mainly based on the keypoint’s neighboring pixels.</li>
 </ul>
-<div id="3c3605c6" class="cell" data-execution_count="102">
+<div id="c0ebf52a" class="cell" data-execution_count="102">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a><span class="kw">def</span> sf_orientation(patch, sigma):</span>
 <span id="cb19-2"><a aria-label="2"></a>    mag, angle <span class="op">=</span> sf_gradients(patch)</span>
 <span id="cb19-3"><a aria-label="3"></a>    g <span class="op">=</span> cv2.getGaussianKernel(<span class="bu">len</span>(patch), <span class="fl">1.5</span><span class="op">*</span>sigma)</span>
@@ -2230,7 +2242,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb19-8"><a aria-label="8"></a></span>
 <span id="cb19-9"><a aria-label="9"></a>sf_theta, sf_orientation_hist <span class="op">=</span> sf_orientation(sf_patch, sigma<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="18a6057b" class="cell" data-execution_count="103">
+<div id="1df48f16" class="cell" data-execution_count="103">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2247,7 +2259,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="use-a-common-scale-and-orientation" class="slide level2">
 <h2>Use a Common Scale and Orientation</h2>
 <p>Sample a window proportional to keypoint scale, with its axes aligned to the selected orientation.</p>
-<div id="28396dd4" class="cell" data-execution_count="104">
+<div id="3b2d08fe" class="cell" data-execution_count="104">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-label="1"></a><span class="kw">def</span> sf_canonical(patch, theta):</span>
 <span id="cb20-2"><a aria-label="2"></a>    n <span class="op">=</span> <span class="bu">len</span>(patch)</span>
 <span id="cb20-3"><a aria-label="3"></a>    M <span class="op">=</span> cv2.getRotationMatrix2D(((n<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>, (n<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="dv">2</span>), theta, <span class="dv">1</span>)</span>
@@ -2257,7 +2269,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb20-7"><a aria-label="7"></a>    crop <span class="op">=</span> aligned[start:start<span class="op">+</span>width, start:start<span class="op">+</span>width]</span>
 <span id="cb20-8"><a aria-label="8"></a>    <span class="cf">return</span> cv2.resize(crop, (<span class="dv">16</span>, <span class="dv">16</span>), interpolation<span class="op">=</span>cv2.INTER_AREA)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8a2b6e52" class="cell" data-execution_count="105">
+<div id="e0d84884" class="cell" data-execution_count="105">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2274,14 +2286,14 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <li>Compute patch gradient, and use Gaussian weights to reduce the influence of pixels far from the keypoint.</li>
 <li>Gradient <strong>angles stay the same; only magnitudes change</strong> with Gaussian weighting.</li>
 </ul>
-<div id="a5c88145" class="cell" data-execution_count="106">
+<div id="e717bd87" class="cell" data-execution_count="106">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-label="1"></a>sf_m, sf_a <span class="op">=</span> sf_gradients(sf_canon)</span>
 <span id="cb21-2"><a aria-label="2"></a>sf_g <span class="op">=</span> cv2.getGaussianKernel(<span class="dv">16</span>, <span class="dv">8</span>)</span>
 <span id="cb21-3"><a aria-label="3"></a>sf_weight <span class="op">=</span> sf_g <span class="op">@</span> sf_g.T</span>
 <span id="cb21-4"><a aria-label="4"></a>sf_weight <span class="op">/=</span> sf_weight.<span class="bu">max</span>()</span>
 <span id="cb21-5"><a aria-label="5"></a>sf_votes <span class="op">=</span> sf_m <span class="op">*</span> sf_weight</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9a68b1e9" class="cell" data-execution_count="107">
+<div id="7e2e8574" class="cell" data-execution_count="107">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2302,7 +2314,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <li>Each pixel’s gradient <strong>angle selects the nearest bin</strong>, and its weighted gradient <strong>magnitude adds to that bin’s total</strong>.</li>
 <li><strong>Add magnitudes, not angles!</strong></li>
 </ul>
-<div id="d92955a6" class="cell" data-execution_count="108">
+<div id="17bcecd3" class="cell" data-execution_count="108">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-label="1"></a><span class="kw">def</span> sf_hist8(angles, votes):</span>
 <span id="cb22-2"><a aria-label="2"></a>    bins <span class="op">=</span> ((angles <span class="op">+</span> <span class="fl">22.5</span>) <span class="op">//</span> <span class="dv">45</span>).astype(<span class="bu">int</span>) <span class="op">%</span> <span class="dv">8</span></span>
 <span id="cb22-3"><a aria-label="3"></a>    <span class="cf">return</span> np.bincount(bins.ravel(), weights<span class="op">=</span>votes.ravel(), minlength<span class="op">=</span><span class="dv">8</span>)</span>
@@ -2311,7 +2323,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb22-6"><a aria-label="6"></a>sf_cell_votes <span class="op">=</span> sf_votes[<span class="dv">4</span>:<span class="dv">8</span>, <span class="dv">8</span>:<span class="dv">12</span>]</span>
 <span id="cb22-7"><a aria-label="7"></a>sf_cell_hist <span class="op">=</span> sf_hist8(sf_cell_angles, sf_cell_votes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5cb28837" class="cell" data-execution_count="109">
+<div id="88b6db1a" class="cell" data-execution_count="109">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2326,7 +2338,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <ul>
 <li>Repeat the same as before in every cell.</li>
 </ul>
-<div id="a4b571f3" class="cell" data-execution_count="110">
+<div id="0819c01d" class="cell" data-execution_count="110">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-label="1"></a>sf_H <span class="op">=</span> np.zeros((<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>))</span>
 <span id="cb23-2"><a aria-label="2"></a><span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
 <span id="cb23-3"><a aria-label="3"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
@@ -2334,7 +2346,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <span id="cb23-5"><a aria-label="5"></a>        sf_H[row, col] <span class="op">=</span> sf_hist8(sf_a[region], sf_votes[region])</span>
 <span id="cb23-6"><a aria-label="6"></a>sf_raw <span class="op">=</span> sf_H.ravel()                     <span class="co"># 16 cells × 8 bins = 128 values</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ddb92a60" class="cell" data-execution_count="111">
+<div id="c73d7b6a" class="cell" data-execution_count="111">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2350,7 +2362,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="the-descriptor-values-cells-18" class="slide level2">
 <h2>The Descriptor Values: Cells 1–8</h2>
 <p>Each bar becomes one number. Read the bins in the order <span class="math inline">\(0^\circ,45^\circ,\ldots,315^\circ\)</span>.</p>
-<div id="4396f9cf" class="cell" data-execution_count="112">
+<div id="c4f24e80" class="cell" data-execution_count="112">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2364,7 +2376,7 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="the-descriptor-values-cells-916" class="slide level2">
 <h2>The Descriptor Values: Cells 9–16</h2>
 <p>Continue in the same order, appending eight numbers from each remaining cell.</p>
-<div id="acf98472" class="cell" data-execution_count="113">
+<div id="d5b0c56e" class="cell" data-execution_count="113">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2390,14 +2402,14 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <li>For an intensity change <span class="math inline">\(I'=aI+b\)</span> with <span class="math inline">\(a&gt;0\)</span>, the gradient magnitudes and histogram sums scale by <span class="math inline">\(a\)</span>.</li>
 <li>The derivative removes <span class="math inline">\(b\)</span>. Dividing by the vector’s length removes the common positive factor <span class="math inline">\(a\)</span>.</li>
 </ul>
-<div id="58ac0826" class="cell" data-execution_count="114">
+<div id="5f28026e" class="cell" data-execution_count="114">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-label="1"></a><span class="kw">def</span> sf_unit(vector):</span>
 <span id="cb24-2"><a aria-label="2"></a>    <span class="cf">return</span> vector <span class="op">/</span> <span class="bu">max</span>(np.linalg.norm(vector), <span class="fl">1e-12</span>)</span>
 <span id="cb24-3"><a aria-label="3"></a></span>
 <span id="cb24-4"><a aria-label="4"></a>sf_normalized <span class="op">=</span> sf_unit(sf_raw)</span>
 <span id="cb24-5"><a aria-label="5"></a>sf_gain_normalized <span class="op">=</span> sf_unit(<span class="dv">2</span><span class="op">*</span>sf_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="925335fc" class="cell" data-execution_count="115">
+<div id="dd51dc92" class="cell" data-execution_count="115">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2410,11 +2422,11 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="limit-the-influence-of-strong-gradients" class="slide level2">
 <h2>Limit the Influence of Strong Gradients</h2>
 <p>Clip unusually large components, then normalize again (so that a few very strong bins do not dominate the descriptor).</p>
-<div id="35061a69" class="cell" data-execution_count="116">
+<div id="78db685a" class="cell" data-execution_count="116">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-label="1"></a>sf_clipped <span class="op">=</span> np.minimum(sf_normalized, <span class="fl">0.2</span>)</span>
 <span id="cb25-2"><a aria-label="2"></a>sf_descriptor <span class="op">=</span> sf_unit(sf_clipped)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a0242306" class="cell" data-execution_count="117">
+<div id="dedb34d0" class="cell" data-execution_count="117">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2431,13 +2443,13 @@ D_\sigma = L_{k\sigma}-L_\sigma
 <section id="from-the-teaching-example-to-full-sift-in-opencv" class="slide level2">
 <h2>From the Teaching Example to Full SIFT in OpenCV</h2>
 <p>Full SIFT refines extrema and orientation peaks, shares votes across neighboring cells and bins, and can retain multiple orientations. Our teaching example used hard bins and one orientation.</p>
-<div id="6eadd870" class="cell" data-execution_count="119">
+<div id="99a51895" class="cell" data-execution_count="119">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-label="1"></a>sf_sift <span class="op">=</span> cv2.SIFT_create(nfeatures<span class="op">=</span><span class="dv">80</span>)</span>
 <span id="cb26-2"><a aria-label="2"></a>sf_keypoints, sf_descriptors <span class="op">=</span> sf_sift.detectAndCompute(sf_image, <span class="va">None</span>)</span>
 <span id="cb26-3"><a aria-label="3"></a></span>
 <span id="cb26-4"><a aria-label="4"></a><span class="co"># Each keypoint provides: .pt, .size, and .angle (in degrees).</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8ff1ad77" class="cell" data-execution_count="120">
+<div id="956b5bf6" class="cell" data-execution_count="120">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -2448,6 +2460,631 @@ D_\sigma = L_{k\sigma}-L_\sigma
 </div>
 <div class="tiny">
 <p>Circles indicate keypoint scale; arrows show the assigned orientation. Symbols are enlarged <span class="math inline">\(4\times\)</span> for visibility. <a href="https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html">OpenCV SIFT documentation</a></p>
+</div>
+</section>
+<section id="local-feature-matching-main-components-1" class="slide level2">
+<h2>Local Feature Matching: Main Components</h2>
+<p>We have locations, scales, orientations, and descriptors. Now, find corresponding features.</p>
+<div id="2203c130" class="cell" data-execution_count="121">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-122-output-1.png" class="quarto-figure quarto-figure-center" width="1383" height="378"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p><strong>1. Detection</strong></p>
+<p>Find distinctive locations and their scales.</p>
+</div><div class="column" style="width:34%;">
+<p><strong>2. Description</strong></p>
+<p>Encode each neighborhood as a vector.</p>
+</div><div class="column" style="width:33%;">
+<h3 id="matching-1">3. Matching</h3>
+<p><strong>Compare descriptors to find correspondences.</strong></p>
+</div></div>
+</section>
+<section id="which-features-would-you-match" class="slide level2">
+<h2>Which Features Would You Match?</h2>
+<div id="82575043" class="cell" data-execution_count="122">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-123-output-1.png" class="quarto-figure quarto-figure-center" width="1376" height="584"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Which candidate would you choose for <strong>A1</strong> and <strong>A2</strong>?</li>
+<li>Would you trust both choices equally?</li>
+</ul>
+</section>
+<section id="distance-between-descriptors" class="slide level2">
+<h2>Distance Between Descriptors</h2>
+<div class="columns">
+<div class="column" style="width:46%;">
+<p><strong>Euclidean distance: separation</strong></p>
+<p><span class="math display">\[
+d_2(\mathbf a,\mathbf b)=\sqrt{\sum_i(a_i-b_i)^2}.
+\]</span></p>
+<p>The arrow connecting the vector tips has length <span class="math inline">\(d_2\)</span>. <strong>Smaller is closer.</strong></p>
+<p><strong>Cosine similarity: direction</strong></p>
+<p><span class="math display">\[
+s_{\cos}=\frac{\mathbf a^\top\mathbf b}{\|\mathbf a\|_2\|\mathbf b\|_2}=\cos\theta.
+\]</span></p>
+<p><strong>Larger is more similar.</strong> Cosine distance is <span class="math inline">\(1-s_{\cos}\)</span>.</p>
+</div><div class="column" style="width:54%;">
+<div id="721a7848" class="cell" data-execution_count="123">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-124-output-1.png" class="quarto-figure quarto-figure-center" width="368" height="597"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="small">
+<p>For unit-length vectors, <span class="math inline">\(d_2^2=2(1-s_{\cos})\)</span>: L2 and cosine give the <strong>same nearest-neighbor ordering</strong>.</p>
+</div>
+</section>
+<section id="distances-and-similarity-for-descriptors" class="slide level2 small">
+<h2>Distances and Similarity for Descriptors</h2>
+<p>Let <span class="math inline">\(\mathbf p=[0.2,0.8]\)</span> and <span class="math inline">\(\mathbf q=[0.4,0.6]\)</span> be histograms that sum to one.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Measure</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: right;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Euclidean / L2</td>
+<td style="text-align: left;"><span class="math inline">\(\sqrt{\sum_i(p_i-q_i)^2}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.2828\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cosine similarity</td>
+<td style="text-align: left;"><span class="math inline">\(s_{\cos}=\frac{\mathbf p^\top\mathbf q}{\|\mathbf p\|_2\|\mathbf q\|_2}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.9417\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cosine distance</td>
+<td style="text-align: left;"><span class="math inline">\(1-s_{\cos}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0583\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Manhattan / L1</td>
+<td style="text-align: left;"><span class="math inline">\(\sum_i\lvert p_i-q_i\rvert\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.4000\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Chi-square</td>
+<td style="text-align: left;"><span class="math inline">\(\frac12\sum_i\frac{(p_i-q_i)^2}{p_i+q_i}\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.0476\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hellinger</td>
+<td style="text-align: left;"><span class="math inline">\(\frac{1}{\sqrt2}\|\sqrt{\mathbf p}-\sqrt{\mathbf q}\|_2\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.1560\)</span></td>
+</tr>
+</tbody>
+</table>
+<div id="aad6679d" class="cell" data-execution_count="124">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-label="1"></a>p, q <span class="op">=</span> np.array([<span class="fl">0.2</span>, <span class="fl">0.8</span>]), np.array([<span class="fl">0.4</span>, <span class="fl">0.6</span>])</span>
+<span id="cb27-2"><a aria-label="2"></a>euclidean <span class="op">=</span> np.linalg.norm(p<span class="op">-</span>q)</span>
+<span id="cb27-3"><a aria-label="3"></a>cosine_similarity <span class="op">=</span> p <span class="op">@</span> q <span class="op">/</span> (np.linalg.norm(p)<span class="op">*</span>np.linalg.norm(q))</span>
+<span id="cb27-4"><a aria-label="4"></a>cosine_distance <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>cosine_similarity</span>
+<span id="cb27-5"><a aria-label="5"></a>manhattan <span class="op">=</span> np.<span class="bu">abs</span>(p<span class="op">-</span>q).<span class="bu">sum</span>()</span>
+<span id="cb27-6"><a aria-label="6"></a>chi_square <span class="op">=</span> <span class="fl">0.5</span><span class="op">*</span>np.<span class="bu">sum</span>((p<span class="op">-</span>q)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> np.maximum(p<span class="op">+</span>q, <span class="fl">1e-12</span>))</span>
+<span id="cb27-7"><a aria-label="7"></a>hellinger <span class="op">=</span> np.linalg.norm(np.sqrt(p)<span class="op">-</span>np.sqrt(q)) <span class="op">/</span> np.sqrt(<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Hellinger assumes nonnegative histograms that sum to one; a zero/zero chi-square term contributes zero. <strong>Standard SIFT matching uses L2.</strong></p>
+</section>
+<section id="binary-descriptors-hamming-distance" class="slide level2">
+<h2>Binary Descriptors: Hamming Distance</h2>
+<p>Some descriptors are binary (such as ORB). Hamming distance counts the positions where the bits disagree:</p>
+<p><span class="math display">\[
+d_H(\mathbf a,\mathbf b)=\sum_i \mathbf 1[a_i\ne b_i]
+\]</span></p>
+<div id="9563c6ef" class="cell" data-execution_count="125">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-label="1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>], dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb28-2"><a aria-label="2"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>], dtype<span class="op">=</span>np.uint8)</span>
+<span id="cb28-3"><a aria-label="3"></a>different <span class="op">=</span> a <span class="op">^</span> b                         <span class="co"># bitwise XOR</span></span>
+<span id="cb28-4"><a aria-label="4"></a>hamming <span class="op">=</span> np.count_nonzero(different)     <span class="co"># 3 differing bits</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="96cd2463" class="cell" data-execution_count="126">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-127-output-1.png" class="quarto-figure quarto-figure-center" width="1157" height="245"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="small">
+<p>OpenCV uses <strong>NORM_HAMMING</strong> for default ORB. We count differing bits, not differing packed bytes.</p>
+</div>
+</section>
+<section id="efficient-comparison-a-matrix-of-distances" class="slide level2">
+<h2>Efficient Comparison: A Matrix of Distances</h2>
+<p>With <span class="math inline">\(N\)</span> descriptors in A and <span class="math inline">\(M\)</span> in B, exhaustive matching compares <span class="math inline">\(NM\)</span> pairs.</p>
+<p><span class="math display">\[
+d_2(\mathbf a_i,\mathbf b_j)
+=\sqrt{\|\mathbf a_i\|_2^2+\|\mathbf b_j\|_2^2-2\mathbf a_i^\top\mathbf b_j}.
+\]</span></p>
+<div id="b8a82468" class="cell" data-execution_count="127">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-label="1"></a>norms_a <span class="op">=</span> np.<span class="bu">sum</span>(descriptors_a<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># one descriptor per row</span></span>
+<span id="cb29-2"><a aria-label="2"></a>norms_b <span class="op">=</span> np.<span class="bu">sum</span>(descriptors_b<span class="op">**</span><span class="dv">2</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb29-3"><a aria-label="3"></a>squared_distances <span class="op">=</span> norms_a[:, <span class="va">None</span>] <span class="op">+</span> norms_b[<span class="va">None</span>, :] <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>descriptors_a <span class="op">@</span> descriptors_b.T</span>
+<span id="cb29-4"><a aria-label="4"></a>distances <span class="op">=</span> np.sqrt(np.maximum(squared_distances, <span class="dv">0</span>))  <span class="co"># guard against rounding</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>For <strong>L2-unit</strong> descriptors, both squared norms are one.</li>
+<li>Matrix operations avoid Python loops, but still require <span class="math inline">\(O(NMK)\)</span> work for <span class="math inline">\(K\)</span> components.</li>
+<li>Use batches or approximate search for large collections.</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="1167e40d" class="cell" data-execution_count="128">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-129-output-1.png" class="quarto-figure quarto-figure-center" width="350" height="331"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="nearest-neighbor-the-closest-descriptor" class="slide level2">
+<h2>Nearest Neighbor: The Closest Descriptor</h2>
+<p>The <strong>nearest neighbor</strong> minimizes descriptor distance: <span class="math inline">\(j^*=\arg\min_j d_2(\mathbf a_i,\mathbf b_j)\)</span>.</p>
+<div id="c6bde7c2" class="cell" data-execution_count="129">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-label="1"></a>neighbor_order <span class="op">=</span> np.argsort(distances, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># sort each row: A → B</span></span>
+<span id="cb30-2"><a aria-label="2"></a>nearest_b <span class="op">=</span> neighbor_order[:, <span class="dv">0</span>]</span>
+<span id="cb30-3"><a aria-label="3"></a>sorted_distances <span class="op">=</span> np.take_along_axis(distances, neighbor_order, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb30-4"><a aria-label="4"></a>nearest_distances, second_distances <span class="op">=</span> sorted_distances[:, <span class="dv">0</span>], sorted_distances[:, <span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="03a7b9b5" class="cell" data-execution_count="130">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-131-output-1.png" class="quarto-figure quarto-figure-center" width="1373" height="328"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Second and third nearest neighbors</strong> have the second- and third-smallest distances.</li>
+<li>“Nearest” refers to <strong>descriptor space</strong>, not pixel coordinates.</li>
+</ul>
+</section>
+<section id="challenge-1-a-feature-may-have-no-counterpart" class="slide level2">
+<h2>Challenge 1: A Feature May Have No Counterpart</h2>
+<p>A <strong>nearest-neighbor search always returns a candidate</strong> if the target set is nonempty, even when the scene point is absent.</p>
+<div id="6c7a8b40" class="cell" data-execution_count="131">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-132-output-1.png" class="quarto-figure quarto-figure-center" width="1383" height="378"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Features can disappear through lack of overlap, occlusion, or failed detection.</li>
+<li>We need a way to <strong>reject</strong> a proposed match.</li>
+</ul>
+</section>
+<section id="challenge-2-several-candidates-can-look-similar" class="slide level2">
+<h2>Challenge 2: Several Candidates Can Look Similar</h2>
+<p>An absolute distance threshold accepts the nearest candidate only when <span class="math inline">\(d_1&lt;T\)</span>. A small distance alone does not establish uniqueness.</p>
+<div id="547701ab" class="cell" data-execution_count="132">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-133-output-1.png" class="quarto-figure quarto-figure-center" width="1241" height="380"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The cutoff depends on the descriptor and its normalization.</li>
+<li>With <span class="math inline">\(T=0.20\)</span>, both candidates are close: <strong>why trust B2 when B3 looks almost as good?</strong></li>
+</ul>
+</section>
+<section id="lowes-ratio-test-is-the-best-match-distinctive" class="slide level2">
+<h2>Lowe’s Ratio Test: Is the Best Match Distinctive?</h2>
+<p>Compare distances to the nearest and second-nearest candidates:</p>
+<p><span class="math display">\[
+r=\frac{d_1}{d_2},
+\qquad
+\text{accept the nearest match if }d_1&lt;\tau d_2.
+\]</span></p>
+<div id="2b008008" class="cell" data-execution_count="133">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-label="1"></a>ratio_threshold <span class="op">=</span> <span class="fl">0.8</span></span>
+<span id="cb31-2"><a aria-label="2"></a>distance_ratios <span class="op">=</span> nearest_distances <span class="op">/</span> np.maximum(second_distances, <span class="fl">1e-12</span>)</span>
+<span id="cb31-3"><a aria-label="3"></a>ratio_pass <span class="op">=</span> nearest_distances <span class="op">&lt;</span> ratio_threshold<span class="op">*</span>second_distances</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="27180421" class="cell" data-execution_count="134">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-135-output-1.png" class="quarto-figure quarto-figure-center" width="1343" height="260"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>A <strong>small ratio</strong> means the winner stands out.</li>
+<li>A <strong>ratio near one</strong> means <strong>ambiguity</strong>. If both distances are zero, the strict test rejects the tie.</li>
+</ul>
+</section>
+<section id="how-did-lowe-choose-the-threshold" class="slide level2">
+<h2>How Did Lowe Choose the Threshold?</h2>
+<p>Lowe measured how well the ratio separates correct and incorrect matches.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Experiment</strong></p>
+<ul>
+<li>Match transformed images against a database of <strong>40,000 keypoints</strong>.</li>
+<li>Use correspondence information to label nearest matches correct or incorrect.</li>
+<li>Compare their ratio distributions and choose a cutoff balancing errors.</li>
+</ul>
+<p><strong>Reported at a cutoff of 0.8</strong></p>
+<ul>
+<li>Reject about <strong>90% of false matches</strong>.</li>
+<li>Lose <strong>less than 5% of correct matches</strong>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="44e2eeb5" class="cell" data-execution_count="135">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-136-output-1.png" class="quarto-figure quarto-figure-center" width="680" height="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tiny">
+<p>Lowe (2004), Figure 11 and §7.1: random scale/rotation changes, <span class="math inline">\(30^\circ\)</span> depth rotation, and 2% image noise. <a href="https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf">Original paper</a></p>
+</div>
+</section>
+<section id="sift-matching-in-opencv" class="slide level2">
+<h2>SIFT Matching in OpenCV</h2>
+<p>Find the two closest SIFT descriptors in Image B for each descriptor in Image A, then apply the ratio test.</p>
+<div id="5485daa5" class="cell" data-execution_count="136">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-label="1"></a>sift <span class="op">=</span> cv2.SIFT_create(nfeatures<span class="op">=</span><span class="dv">700</span>)</span>
+<span id="cb32-2"><a aria-label="2"></a>keypoints_a, sift_descriptors_a <span class="op">=</span> sift.detectAndCompute(image_a, <span class="va">None</span>)</span>
+<span id="cb32-3"><a aria-label="3"></a>keypoints_b, sift_descriptors_b <span class="op">=</span> sift.detectAndCompute(image_b, <span class="va">None</span>)</span>
+<span id="cb32-4"><a aria-label="4"></a>neighbors_ab <span class="op">=</span> cv2.BFMatcher(cv2.NORM_L2).knnMatch(sift_descriptors_a, sift_descriptors_b, k<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb32-5"><a aria-label="5"></a>neighbors_ab <span class="op">=</span> [pair <span class="cf">for</span> pair <span class="kw">in</span> neighbors_ab <span class="cf">if</span> <span class="bu">len</span>(pair) <span class="op">==</span> <span class="dv">2</span>]</span>
+<span id="cb32-6"><a aria-label="6"></a>ratio_matches_ab <span class="op">=</span> [m <span class="cf">for</span> m, n <span class="kw">in</span> neighbors_ab <span class="cf">if</span> m.distance <span class="op">&lt;</span> <span class="fl">0.8</span><span class="op">*</span>n.distance]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ab9fb360" class="cell" data-execution_count="137">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-138-output-1.png" class="quarto-figure quarto-figure-center" width="1072" height="316"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The ratio test produces <strong>tentative correspondences</strong>.</li>
+<li>Further verification is still needed to reject wrong matches.</li>
+</ul>
+</section>
+<section id="choosing-a-threshold" class="slide level2 small">
+<h2>Choosing a Threshold</h2>
+<div id="30181d55" class="cell" data-execution_count="138">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-139-output-1.png" class="quarto-figure quarto-figure-center" width="1439" height="357"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Here, a match is correct if the known translation aligns keypoints within 3 pixels.</li>
+<li>Lowe’s original 2004 SIFT paper used 0.8, but <strong>there is no guarantee for correct matches.</strong></li>
+<li>In practice, people use values from about 0.6 to 0.8:
+<ul>
+<li>0.7–0.75 is the most common default, including many OpenCV examples.</li>
+<li>0.6–0.65 is stricter and gives fewer matches with higher precision.</li>
+<li>0.8 keeps more matches.</li>
+</ul></li>
+<li>Downstream robust estimators such as RANSAC or graph-based outlier rejection can be used subsequently to reject outlier matches.</li>
+</ul>
+</section>
+<section id="bidirectional-matching-do-the-choices-agree" class="slide level2">
+<h2>Bidirectional Matching: Do the Choices Agree?</h2>
+<div id="2218a96c" class="cell" data-execution_count="139">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a aria-label="1"></a>nearest_b <span class="op">=</span> np.argmin(distances, axis<span class="op">=</span><span class="dv">1</span>)  <span class="co"># [B1, B2] for A1, A2</span></span>
+<span id="cb33-2"><a aria-label="2"></a>nearest_a <span class="op">=</span> np.argmin(distances, axis<span class="op">=</span><span class="dv">0</span>)  <span class="co"># [A1, A2, A2] for B1, B2, B3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="72c29824" class="cell" data-execution_count="140">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-141-output-1.png" class="quarto-figure quarto-figure-center" width="1306" height="266"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-141-output-2.png" class="quarto-figure quarto-figure-center" width="1327" height="266"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Keep a pair only if both features choose each other:</strong> A1 ↔︎ B1 and A2 ↔︎ B2. B3 chooses A2, but A2 chooses B2.</p>
+</section>
+<section id="combine-mutual-matching-with-lowes-ratio-test" class="slide level2">
+<h2>Combine Mutual Matching with Lowe’s Ratio Test</h2>
+<p>Keep <strong>mutual nearest neighbors</strong> that pass the ratio test in <strong>both directions</strong>.</p>
+<div id="e2c8eb4b" class="cell" data-execution_count="141">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-label="1"></a><span class="kw">def</span> ratio_filter(neighbors, threshold<span class="op">=</span><span class="fl">0.8</span>):</span>
+<span id="cb34-2"><a aria-label="2"></a>    accepted <span class="op">=</span> {}</span>
+<span id="cb34-3"><a aria-label="3"></a>    <span class="cf">for</span> pair <span class="kw">in</span> neighbors:</span>
+<span id="cb34-4"><a aria-label="4"></a>        <span class="cf">if</span> <span class="bu">len</span>(pair) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb34-5"><a aria-label="5"></a>            first, second <span class="op">=</span> pair</span>
+<span id="cb34-6"><a aria-label="6"></a>            <span class="cf">if</span> first.distance <span class="op">&lt;</span> threshold<span class="op">*</span>second.distance:</span>
+<span id="cb34-7"><a aria-label="7"></a>                accepted[first.queryIdx] <span class="op">=</span> first.trainIdx</span>
+<span id="cb34-8"><a aria-label="8"></a>    <span class="cf">return</span> accepted</span>
+<span id="cb34-9"><a aria-label="9"></a>matcher <span class="op">=</span> cv2.BFMatcher(cv2.NORM_L2)</span>
+<span id="cb34-10"><a aria-label="10"></a>forward <span class="op">=</span> ratio_filter(matcher.knnMatch(sift_descriptors_a, sift_descriptors_b, k<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb34-11"><a aria-label="11"></a>reverse <span class="op">=</span> ratio_filter(matcher.knnMatch(sift_descriptors_b, sift_descriptors_a, k<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb34-12"><a aria-label="12"></a>mutual_pairs <span class="op">=</span> [(i, j) <span class="cf">for</span> i, j <span class="kw">in</span> forward.items() <span class="cf">if</span> reverse.get(j) <span class="op">==</span> i]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ul>
+<li>A1 ↔︎ B1: mutual and distinctive → <strong>keep</strong>.</li>
+<li>A2 ↔︎ B2: mutual, but forward ratio <span class="math inline">\(0.905\)</span> → <strong>reject</strong>.</li>
+</ul>
+<p>These are still <strong>tentative correspondences</strong>.</p>
+</div><div class="column" style="width:55%;">
+<div id="9f8cd54d" class="cell" data-execution_count="142">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-143-output-1.png" class="quarto-figure quarto-figure-center" width="537" height="258"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="surf-speeded-up-robust-features" class="slide level2">
+<h2>SURF: Speeded-Up Robust Features</h2>
+<p>SURF uses rectangular filters to reduce the work of detection and description.</p>
+<div class="columns">
+<div class="column" style="width:47%;">
+<ul>
+<li><strong>Detection:</strong> find blob-like features across scales using rectangular approximations to second-derivative filters.</li>
+<li><strong>Description:</strong> align a patch to its scale and orientation, then summarize horizontal and vertical changes in a <span class="math inline">\(4\times4\)</span> grid.</li>
+<li><strong>Why useful:</strong> compact and efficient features for image matching and object recognition.</li>
+</ul>
+<p><em>Integral images</em> (to be defined later) make rectangular sums inexpensive, even for large filters.</p>
+</div><div class="column" style="width:53%;">
+<div id="bd7e18a3" class="cell" data-execution_count="143">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-144-output-1.png" class="quarto-figure quarto-figure-center" width="640" height="479"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tiny">
+<p>Bay, Tuytelaars, and Van Gool (2006), <a href="https://people.ee.ethz.ch/~surf/eccv06.pdf">SURF</a>.</p>
+</div>
+</section>
+<section id="surf-four-numbers-per-cell" class="slide level2">
+<h2>SURF: Four Numbers per Cell</h2>
+<div id="16b8315c" class="cell" data-execution_count="144">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-145-output-1.png" class="quarto-figure quarto-figure-center" width="1346" height="255"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Each cell stores <span class="math inline">\([\sum d_x,\;\sum d_y,\;\sum|d_x|,\;\sum|d_y|]\)</span>. Signed sums capture direction; absolute sums retain changes that would cancel.</li>
+<li>Full SURF also uses scale/orientation alignment and Gaussian weighting.</li>
+<li>Its standard descriptor has <strong>64 components</strong>, compared with SIFT’s 128, and uses <strong>L2 matching</strong>.</li>
+</ul>
+<div id="3ce31baf" class="cell" data-execution_count="145">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a aria-label="1"></a>surf <span class="op">=</span> cv2.xfeatures2d.SURF_create(hessianThreshold<span class="op">=</span><span class="dv">400</span>, extended<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb35-2"><a aria-label="2"></a>surf_keypoints, surf_descriptors <span class="op">=</span> surf.detectAndCompute(skyline_gray, <span class="va">None</span>)</span>
+<span id="cb35-3"><a aria-label="3"></a>surf_matcher <span class="op">=</span> cv2.BFMatcher(cv2.NORM_L2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="tiny">
+<p>The SURF call requires OpenCV contrib built with <code>OPENCV_ENABLE_NONFREE=ON</code>.</p>
+</div>
+</section>
+<section id="orb-oriented-fast-and-rotated-brief" class="slide level2">
+<h2>ORB: Oriented FAST and Rotated BRIEF</h2>
+<div class="columns">
+<div class="column" style="width:44%;">
+<ul>
+<li>Detect <strong>FAST corners</strong> in an image pyramid and rank them using Harris scores.</li>
+<li>Estimate orientation from the patch’s intensity centroid.</li>
+<li>Rotate a pattern of pixel-pair tests to this orientation. Each brightness comparison gives <strong>one bit</strong>.</li>
+</ul>
+<p><span class="math display">\[
+b_k=\begin{cases}
+1,&amp;I(\mathbf p_k)&lt;I(\mathbf q_k),\\
+0,&amp;\text{otherwise.}
+\end{cases}
+\]</span></p>
+<ul>
+<li>Standard ORB uses <strong>256 bits</strong> and <strong>Hamming distance</strong>. Compact descriptors suit fast matching and visual SLAM.</li>
+</ul>
+<aside class="notes">
+<p>ORB estimates orientation using the intensity centroid of a circular patch around each keypoint: the patch’s “center of mass,” treating pixel brightness as mass. With coordinates measured relative to the keypoint, compute [ m_{10}=<em>{(x,y)P}x,I(x,y), m</em>{01}=_{(x,y)P}y,I(x,y). ] The estimated orientation is [ ] This is the direction from the keypoint toward the intensity centroid.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div><div class="column" style="width:56%;">
+<div id="78b7c892" class="cell" data-execution_count="146">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-147-output-1.png" class="quarto-figure quarto-figure-center" width="770" height="441"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny">
+<p>Rotating the sampling pattern preserves these bits in the example.</p>
+</div>
+</div></div>
+<div class="tiny">
+<p>Rublee et al.&nbsp;(2011). <a href="https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html">OpenCV ORB explanation</a>.</p>
+</div>
+</section>
+<section id="orb-in-opencv-binary-descriptors-and-matches" class="slide level2">
+<h2>ORB in OpenCV: Binary Descriptors and Matches</h2>
+<div id="703ef774" class="cell" data-execution_count="148">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-label="1"></a>orb <span class="op">=</span> cv2.ORB_create(nfeatures<span class="op">=</span><span class="dv">700</span>)</span>
+<span id="cb36-2"><a aria-label="2"></a>orb_keypoints_a, orb_descriptors_a <span class="op">=</span> orb.detectAndCompute(orb_image_a, <span class="va">None</span>)</span>
+<span id="cb36-3"><a aria-label="3"></a>orb_keypoints_b, orb_descriptors_b <span class="op">=</span> orb.detectAndCompute(orb_image_b, <span class="va">None</span>)</span>
+<span id="cb36-4"><a aria-label="4"></a>orb_neighbors <span class="op">=</span> cv2.BFMatcher(cv2.NORM_HAMMING).knnMatch(orb_descriptors_a, orb_descriptors_b, k<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb36-5"><a aria-label="5"></a>orb_neighbors <span class="op">=</span> [pair <span class="cf">for</span> pair <span class="kw">in</span> orb_neighbors <span class="cf">if</span> <span class="bu">len</span>(pair) <span class="op">==</span> <span class="dv">2</span>]</span>
+<span id="cb36-6"><a aria-label="6"></a>orb_matches <span class="op">=</span> [first <span class="cf">for</span> first, second <span class="kw">in</span> orb_neighbors <span class="cf">if</span> first.distance <span class="op">&lt;</span> <span class="fl">.75</span><span class="op">*</span>second.distance]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="81f55e5b" class="cell" data-execution_count="149">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-150-output-1.png" class="quarto-figure quarto-figure-center" width="1087" height="326"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Each descriptor occupies <strong>32 bytes = 256 bits</strong>.</li>
+<li>We still use the ratio test, but with <strong>Hamming distances</strong>.</li>
+</ul>
+</section>
+<section id="shape-context-the-arrangement-of-contour-points" class="slide level2">
+<h2>Shape Context: The Arrangement of Contour Points</h2>
+<div class="columns">
+<div class="column" style="width:43%;">
+<ul>
+<li>Count points in bins of <strong>direction and distance</strong>.</li>
+<li>Use logarithmic radial bins for finer detail nearby and coarser detail farther away.</li>
+<li>Repeat at every sampled point to describe the whole shape.</li>
+</ul>
+<p>Useful for silhouettes, characters, and shapes whose texture is uninformative.</p>
+</div><div class="column" style="width:57%;">
+<div id="b8ebc169" class="cell" data-execution_count="150">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-151-output-1.png" class="quarto-figure quarto-figure-center" width="796" height="472"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>Relative coordinates remove translation. Dividing distances by a shape’s mean point separation removes uniform scale; rotation needs an additional alignment or orientation convention.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="tiny">
+<p>Belongie, Malik, and Puzicha (2002), <a href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/shape/pami.html">Shape Matching and Object Recognition Using Shape Contexts</a>.</p>
+</div>
+</section>
+<section id="shape-context-matching-shapes-in-opencv" class="slide level2">
+<h2>Shape Context: Matching Shapes in OpenCV</h2>
+<p>Compare point histograms, find correspondences, then refine a deformable alignment.</p>
+<div id="011ae6f9" class="cell" data-execution_count="152">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a aria-label="1"></a>shape_matcher <span class="op">=</span> cv2.createShapeContextDistanceExtractor()</span>
+<span id="cb37-2"><a aria-label="2"></a>same_shape_cost <span class="op">=</span> shape_matcher.computeDistance(contour_a, contour_b)</span>
+<span id="cb37-3"><a aria-label="3"></a>different_shape_cost <span class="op">=</span> shape_matcher.computeDistance(contour_a, contour_c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><strong>Chi-square costs</strong> compare the histograms at candidate contour points.</li>
+<li>A smaller overall cost means better descriptor agreement and alignment.</li>
+<li>Useful for moderate deformation, but missing boundaries and clutter can disrupt matching.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="d99ed540" class="cell" data-execution_count="153">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="07_features_files/figure-revealjs/cell-154-output-1.png" class="quarto-figure quarto-figure-center" width="821" height="330"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tiny">
+<p>Requires OpenCV’s <strong>contrib shape module</strong>. <a href="https://docs.opencv.org/4.x/d8/de3/classcv_1_1ShapeContextDistanceExtractor.html">OpenCV documentation</a></p>
+</div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Good features are repeatable across images and distinctive enough to recognize again. Detection finds their locations; descriptors represent their appearance.</li>
+<li>Harris detects corners where intensity changes strongly in two independent directions. The eigenvalues of the second moment matrix distinguish flat regions, edges, and corners.</li>
+<li>A fixed analysis scale does not handle all feature sizes. Searching across position and scale lets features select a characteristic scale.</li>
+<li>SIFT aligns neighborhoods by scale and orientation, then summarizes local gradient directions in a normalized 128-component descriptor.</li>
+<li>SURF summarizes filter responses, ORB uses binary intensity comparisons, and shape context describes the arrangement of contour points.</li>
+<li>Nearest-neighbor matching finds the closest descriptor. Lowe’s ratio test checks distinctiveness, while bidirectional matching checks whether both features choose each other.</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Similar Descriptors Do Not Guarantee a Correct Match</strong></p>
+</div>
+<div class="callout-content">
+<p>Repeated patterns and missing counterparts can produce incorrect matches. Choose thresholds for the application and verify tentative correspondences.</p>
+</div>
+</div>
 </div>
 
 

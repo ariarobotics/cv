@@ -3588,7 +3588,7 @@
     "href": "lectures/07_features.html#example-compute-m-for-a-small-image",
     "title": "Lecture 07 — Feature Points",
     "section": "Example: Compute \\(M\\) for a Small Image",
-    "text": "Example: Compute \\(M\\) for a Small Image\n\n\n\n\n\n\n\n\n\n\nFind derivaties by filtering the image with \\(h_x=[-1,0,1]\\) and \\(h_y=h_x^T\\) kernels.\nThe blue boxes show a 3×3 auto-correlation window.\nNext, form the gradient products and sum their values inside this window."
+    "text": "Example: Compute \\(M\\) for a Small Image\n\n\n\n\n\n\n\n\n\n\nFind derivatives by filtering the image with \\(h_x=[-1,0,1]\\) and \\(h_y=h_x^T\\) kernels.\nThe blue boxes show a 3×3 auto-correlation window.\nNext, form the gradient products and sum their values inside this window."
   },
   {
     "objectID": "lectures/07_features.html#example-compute-m-for-a-small-image-1",
@@ -3623,7 +3623,7 @@
     "href": "lectures/07_features.html#eigenvalues-measure-change-along-principal-directions",
     "title": "Lecture 07 — Feature Points",
     "section": "Eigenvalues Measure Change Along Principal Directions",
-    "text": "Eigenvalues Measure Change Along Principal Directions\n\n\n\n\n\n\n\n\n\n\\[M\\mathbf q_i=\\lambda_i \\mathbf q_i\n\\qquad(\\|\\mathbf q_i\\|=1).\\]\n\n\\(\\lambda_i\\) is an eigenvalues, and \\(\\mathbf q_i\\) is an eigenvector.\nOrange: the perpendicular direction of greatest change, with strength \\(\\lambda_{\\max}\\).\nBlue: the direction of least change, with strength \\(\\lambda_{\\min}\\).\nThe edge has a zero eigenvalue. The corner has two large eigenvalues."
+    "text": "Eigenvalues Measure Change Along Principal Directions\n\n\n\n\n\n\n\n\n\n\\[M\\mathbf q_i=\\lambda_i \\mathbf q_i\n\\qquad(\\|\\mathbf q_i\\|=1).\\]\n\n\\(\\lambda_i\\) is an eigenvalue, and \\(\\mathbf q_i\\) is an eigenvector.\nOrange: the perpendicular direction of greatest change, with strength \\(\\lambda_{\\max}\\).\nBlue: the direction of least change, with strength \\(\\lambda_{\\min}\\).\nThe edge has a zero eigenvalue. The corner has two large eigenvalues."
   },
   {
     "objectID": "lectures/07_features.html#rotation-preserves-the-eigenvalues",
@@ -3637,7 +3637,7 @@
     "href": "lectures/07_features.html#reading-feature-type-from-eigenvalues",
     "title": "Lecture 07 — Feature Points",
     "section": "Reading Feature Type from Eigenvalues",
-    "text": "Reading Feature Type from Eigenvalues\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues\nResponse shape\nFeature type\n\n\n\n\nBoth small\nNearly flat in every direction\nFlat region\n\n\nOne large, one small\nValley with a direction of little change\nEdge\n\n\nBoth large\nBowl that rises strongly in every direction\nCorner\n\n\n\nRotating a imaage patch changes its principal directions (eigenvectors), but preserves its eigenvalues and feature type."
+    "text": "Reading Feature Type from Eigenvalues\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvalues\nResponse shape\nFeature type\n\n\n\n\nBoth small\nNearly flat in every direction\nFlat region\n\n\nOne large, one small\nValley with a direction of little change\nEdge\n\n\nBoth large\nBowl that rises strongly in every direction\nCorner\n\n\n\nRotating a image patch changes its principal directions (eigenvectors), but preserves its eigenvalues and feature type."
   },
   {
     "objectID": "lectures/07_features.html#corner-angle-and-eigenvalues",
@@ -3651,7 +3651,7 @@
     "href": "lectures/07_features.html#classifying-image-points-using-eigenvalues-of-m",
     "title": "Lecture 07 — Feature Points",
     "section": "Classifying Image Points Using Eigenvalues of \\(M\\)",
-    "text": "Classifying Image Points Using Eigenvalues of \\(M\\)\n\n\n\nGiven \\(\\lambda_1\\) and \\(\\lambda_2\\) as eigenvalues of \\(M\\).\nEach point in the diagram has coordiantes \\((\\lambda_1, \\lambda_2)\\).\nFlat region: both eigenvalues are small, so intensity changes little in any direction.\nEdge: one eigenvalue dominates, so change is strong across the edge and weak along it.\nCorner: both eigenvalues are large, so even the weakest direction has substantial change."
+    "text": "Classifying Image Points Using Eigenvalues of \\(M\\)\n\n\n\nGiven \\(\\lambda_1\\) and \\(\\lambda_2\\) as eigenvalues of \\(M\\).\nEach point in the diagram has coordinates \\((\\lambda_1, \\lambda_2)\\).\nFlat region: both eigenvalues are small, so intensity changes little in any direction.\nEdge: one eigenvalue dominates, so change is strong across the edge and weak along it.\nCorner: both eigenvalues are large, so even the weakest direction has substantial change."
   },
   {
     "objectID": "lectures/07_features.html#the-harris-corner-score",
@@ -3665,7 +3665,7 @@
     "href": "lectures/07_features.html#cornerness-without-computing-eigenvalues",
     "title": "Lecture 07 — Feature Points",
     "section": "Cornerness Without Computing Eigenvalues",
-    "text": "Cornerness Without Computing Eigenvalues\nFor any suqare matrix:\n\nThe determinant is the product of all its eigenvalues.\nThe trace is the sum of its diagonal entries, and also the sum of its eigenvalues.\n\nFor \\(M=\\begin{bmatrix}A&B\\\\ B&C\\end{bmatrix}\\):\n\\[\\det(M)=AC-B^2=\\lambda_1\\lambda_2,\n\\qquad \\operatorname{tr}(M)=A+C=\\lambda_1+\\lambda_2.\\]\nThe Harris cornerness score \\(R\\) can therefore be computed directly:\n\\[R=\\lambda_1\\lambda_2-\\alpha(\\lambda_1+\\lambda_2)^2\n=\\det(M)-\\alpha\\operatorname{tr}(M)^2\n=(AC-B^2)-\\alpha(A+C)^2.\\]\nDeterminant and trace avoid explicit eigenvalue computation. For a 2×2 matrix, only a few multiplications and additions are needed, reducing computation at every image pixel."
+    "text": "Cornerness Without Computing Eigenvalues\nFor any square matrix:\n\nThe determinant is the product of all its eigenvalues.\nThe trace is the sum of its diagonal entries, and also the sum of its eigenvalues.\n\nFor \\(M=\\begin{bmatrix}A&B\\\\ B&C\\end{bmatrix}\\):\n\\[\\det(M)=AC-B^2=\\lambda_1\\lambda_2,\n\\qquad \\operatorname{tr}(M)=A+C=\\lambda_1+\\lambda_2.\\]\nThe Harris cornerness score \\(R\\) can therefore be computed directly:\n\\[R=\\lambda_1\\lambda_2-\\alpha(\\lambda_1+\\lambda_2)^2\n=\\det(M)-\\alpha\\operatorname{tr}(M)^2\n=(AC-B^2)-\\alpha(A+C)^2.\\]\nDeterminant and trace avoid explicit eigenvalue computation. For a 2×2 matrix, only a few multiplications and additions are needed, reducing computation at every image pixel."
   },
   {
     "objectID": "lectures/07_features.html#harris-corner-detector",
@@ -4296,5 +4296,173 @@
     "title": "Homework 06: Feature Point Detection",
     "section": "Grading",
     "text": "Grading\nHW06 is worth 5 points and is fully autograded: 4 points for Harris response and 1 point for SIFT extraction. Across these parts, 1 point comes from public tests and 4 points from private tests.\nTests check the stated formulas, filtering conventions, shapes, data types, parameters, and preservation of inputs. Harris and SIFT are tested independently. Private groups include separately scored checks for partial credit. Small floating-point differences are allowed. SIFT is compared with OpenCV running in the same grading environment rather than a fixed count from the reference figures. The provided plotting code is not a separate scored task.\nPublic tests provide immediate detailed feedback. A public summary reports how many of the five private test groups passed completely. Individual private results, partial scores, and feedback appear after the Gradescope late due date. Passing public tests does not guarantee full credit."
+  },
+  {
+    "objectID": "lectures/07_features.html#learning-objectives",
+    "href": "lectures/07_features.html#learning-objectives",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain the roles of detection, description, and matching in finding image correspondences.\nInterpret the second moment matrix and its eigenvalues, and use the Harris score to detect corners.\nDistinguish invariance from covariance and explain why feature detection needs scale selection.\nDescribe how SIFT detects keypoints and constructs descriptors using local gradients, scale, and orientation.\nCompare descriptor distances and apply nearest-neighbor matching, Lowe’s ratio test, and bidirectional matching.\nExplain the key ideas behind SURF, ORB, and shape context, and use OpenCV to extract and match features."
+  },
+  {
+    "objectID": "lectures/07_features.html#filter-response-vs.-signal-size",
+    "href": "lectures/07_features.html#filter-response-vs.-signal-size",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Filter Response vs. Signal Size",
+    "text": "Filter Response vs. Signal Size\nThe response at the pulse center is strongest when the filter’s central lobe fits the pulse.\n\n\n\n\n\n\n\n\n\n\nThe pulse width is 24 pixels. At \\(\\sigma=12\\), the filter’s zero crossings at \\(\\pm\\sigma\\) match its edges.\nThe highest response (in magnitude) is achieved when the pulse width matches the filter zero crossings."
+  },
+  {
+    "objectID": "lectures/07_features.html#local-feature-matching-main-components-1",
+    "href": "lectures/07_features.html#local-feature-matching-main-components-1",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Local Feature Matching: Main Components",
+    "text": "Local Feature Matching: Main Components\nWe have locations, scales, orientations, and descriptors. Now, find corresponding features.\n\n\n\n\n\n\n\n\n\n\n\n1. Detection\nFind distinctive locations and their scales.\n\n2. Description\nEncode each neighborhood as a vector.\n\n3. Matching\nCompare descriptors to find correspondences."
+  },
+  {
+    "objectID": "lectures/07_features.html#which-features-would-you-match",
+    "href": "lectures/07_features.html#which-features-would-you-match",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Which Features Would You Match?",
+    "text": "Which Features Would You Match?\n\n\n\n\n\n\n\n\n\n\nWhich candidate would you choose for A1 and A2?\nWould you trust both choices equally?"
+  },
+  {
+    "objectID": "lectures/07_features.html#distance-between-descriptors",
+    "href": "lectures/07_features.html#distance-between-descriptors",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Distance Between Descriptors",
+    "text": "Distance Between Descriptors\n\n\nEuclidean distance: separation\n\\[\nd_2(\\mathbf a,\\mathbf b)=\\sqrt{\\sum_i(a_i-b_i)^2}.\n\\]\nThe arrow connecting the vector tips has length \\(d_2\\). Smaller is closer.\nCosine similarity: direction\n\\[\ns_{\\cos}=\\frac{\\mathbf a^\\top\\mathbf b}{\\|\\mathbf a\\|_2\\|\\mathbf b\\|_2}=\\cos\\theta.\n\\]\nLarger is more similar. Cosine distance is \\(1-s_{\\cos}\\).\n\n\n\n\n\n\n\n\n\n\n\n\nFor unit-length vectors, \\(d_2^2=2(1-s_{\\cos})\\): L2 and cosine give the same nearest-neighbor ordering."
+  },
+  {
+    "objectID": "lectures/07_features.html#distances-and-similarity-for-descriptors",
+    "href": "lectures/07_features.html#distances-and-similarity-for-descriptors",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Distances and Similarity for Descriptors",
+    "text": "Distances and Similarity for Descriptors\nLet \\(\\mathbf p=[0.2,0.8]\\) and \\(\\mathbf q=[0.4,0.6]\\) be histograms that sum to one.\n\n\n\n\n\n\n\n\nMeasure\nDefinition\nExample\n\n\n\n\nEuclidean / L2\n\\(\\sqrt{\\sum_i(p_i-q_i)^2}\\)\n\\(0.2828\\)\n\n\nCosine similarity\n\\(s_{\\cos}=\\frac{\\mathbf p^\\top\\mathbf q}{\\|\\mathbf p\\|_2\\|\\mathbf q\\|_2}\\)\n\\(0.9417\\)\n\n\nCosine distance\n\\(1-s_{\\cos}\\)\n\\(0.0583\\)\n\n\nManhattan / L1\n\\(\\sum_i\\lvert p_i-q_i\\rvert\\)\n\\(0.4000\\)\n\n\nChi-square\n\\(\\frac12\\sum_i\\frac{(p_i-q_i)^2}{p_i+q_i}\\)\n\\(0.0476\\)\n\n\nHellinger\n\\(\\frac{1}{\\sqrt2}\\|\\sqrt{\\mathbf p}-\\sqrt{\\mathbf q}\\|_2\\)\n\\(0.1560\\)\n\n\n\n\np, q = np.array([0.2, 0.8]), np.array([0.4, 0.6])\neuclidean = np.linalg.norm(p-q)\ncosine_similarity = p @ q / (np.linalg.norm(p)*np.linalg.norm(q))\ncosine_distance = 1-cosine_similarity\nmanhattan = np.abs(p-q).sum()\nchi_square = 0.5*np.sum((p-q)**2 / np.maximum(p+q, 1e-12))\nhellinger = np.linalg.norm(np.sqrt(p)-np.sqrt(q)) / np.sqrt(2)\n\nHellinger assumes nonnegative histograms that sum to one; a zero/zero chi-square term contributes zero. Standard SIFT matching uses L2."
+  },
+  {
+    "objectID": "lectures/07_features.html#binary-descriptors-hamming-distance",
+    "href": "lectures/07_features.html#binary-descriptors-hamming-distance",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Binary Descriptors: Hamming Distance",
+    "text": "Binary Descriptors: Hamming Distance\nSome descriptors are binary (such as ORB). Hamming distance counts the positions where the bits disagree:\n\\[\nd_H(\\mathbf a,\\mathbf b)=\\sum_i \\mathbf 1[a_i\\ne b_i]\n\\]\n\na = np.array([1,0,1,1,0,0,1,0], dtype=np.uint8)\nb = np.array([1,1,1,0,0,0,1,1], dtype=np.uint8)\ndifferent = a ^ b                         # bitwise XOR\nhamming = np.count_nonzero(different)     # 3 differing bits\n\n\n\n\n\n\n\n\n\n\n\nOpenCV uses NORM_HAMMING for default ORB. We count differing bits, not differing packed bytes."
+  },
+  {
+    "objectID": "lectures/07_features.html#efficient-comparison-a-matrix-of-distances",
+    "href": "lectures/07_features.html#efficient-comparison-a-matrix-of-distances",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Efficient Comparison: A Matrix of Distances",
+    "text": "Efficient Comparison: A Matrix of Distances\nWith \\(N\\) descriptors in A and \\(M\\) in B, exhaustive matching compares \\(NM\\) pairs.\n\\[\nd_2(\\mathbf a_i,\\mathbf b_j)\n=\\sqrt{\\|\\mathbf a_i\\|_2^2+\\|\\mathbf b_j\\|_2^2-2\\mathbf a_i^\\top\\mathbf b_j}.\n\\]\n\nnorms_a = np.sum(descriptors_a**2, axis=1)  # one descriptor per row\nnorms_b = np.sum(descriptors_b**2, axis=1)\nsquared_distances = norms_a[:, None] + norms_b[None, :] - 2*descriptors_a @ descriptors_b.T\ndistances = np.sqrt(np.maximum(squared_distances, 0))  # guard against rounding\n\n\n\n\nFor L2-unit descriptors, both squared norms are one.\nMatrix operations avoid Python loops, but still require \\(O(NMK)\\) work for \\(K\\) components.\nUse batches or approximate search for large collections."
+  },
+  {
+    "objectID": "lectures/07_features.html#nearest-neighbor-the-closest-descriptor",
+    "href": "lectures/07_features.html#nearest-neighbor-the-closest-descriptor",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Nearest Neighbor: The Closest Descriptor",
+    "text": "Nearest Neighbor: The Closest Descriptor\nThe nearest neighbor minimizes descriptor distance: \\(j^*=\\arg\\min_j d_2(\\mathbf a_i,\\mathbf b_j)\\).\n\nneighbor_order = np.argsort(distances, axis=1)  # sort each row: A → B\nnearest_b = neighbor_order[:, 0]\nsorted_distances = np.take_along_axis(distances, neighbor_order, axis=1)\nnearest_distances, second_distances = sorted_distances[:, 0], sorted_distances[:, 1]\n\n\n\n\n\n\n\n\n\n\n\nSecond and third nearest neighbors have the second- and third-smallest distances.\n“Nearest” refers to descriptor space, not pixel coordinates."
+  },
+  {
+    "objectID": "lectures/07_features.html#challenge-1-a-feature-may-have-no-counterpart",
+    "href": "lectures/07_features.html#challenge-1-a-feature-may-have-no-counterpart",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Challenge 1: A Feature May Have No Counterpart",
+    "text": "Challenge 1: A Feature May Have No Counterpart\nA nearest-neighbor search always returns a candidate if the target set is nonempty, even when the scene point is absent.\n\n\n\n\n\n\n\n\n\n\nFeatures can disappear through lack of overlap, occlusion, or failed detection.\nWe need a way to reject a proposed match."
+  },
+  {
+    "objectID": "lectures/07_features.html#challenge-2-several-candidates-can-look-similar",
+    "href": "lectures/07_features.html#challenge-2-several-candidates-can-look-similar",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Challenge 2: Several Candidates Can Look Similar",
+    "text": "Challenge 2: Several Candidates Can Look Similar\nAn absolute distance threshold accepts the nearest candidate only when \\(d_1&lt;T\\). A small distance alone does not establish uniqueness.\n\n\n\n\n\n\n\n\n\n\nThe cutoff depends on the descriptor and its normalization.\nWith \\(T=0.20\\), both candidates are close: why trust B2 when B3 looks almost as good?"
+  },
+  {
+    "objectID": "lectures/07_features.html#lowes-ratio-test-is-the-best-match-distinctive",
+    "href": "lectures/07_features.html#lowes-ratio-test-is-the-best-match-distinctive",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Lowe’s Ratio Test: Is the Best Match Distinctive?",
+    "text": "Lowe’s Ratio Test: Is the Best Match Distinctive?\nCompare distances to the nearest and second-nearest candidates:\n\\[\nr=\\frac{d_1}{d_2},\n\\qquad\n\\text{accept the nearest match if }d_1&lt;\\tau d_2.\n\\]\n\nratio_threshold = 0.8\ndistance_ratios = nearest_distances / np.maximum(second_distances, 1e-12)\nratio_pass = nearest_distances &lt; ratio_threshold*second_distances\n\n\n\n\n\n\n\n\n\n\n\nA small ratio means the winner stands out.\nA ratio near one means ambiguity. If both distances are zero, the strict test rejects the tie."
+  },
+  {
+    "objectID": "lectures/07_features.html#how-did-lowe-choose-the-threshold",
+    "href": "lectures/07_features.html#how-did-lowe-choose-the-threshold",
+    "title": "Lecture 07 — Feature Points",
+    "section": "How Did Lowe Choose the Threshold?",
+    "text": "How Did Lowe Choose the Threshold?\nLowe measured how well the ratio separates correct and incorrect matches.\n\n\nExperiment\n\nMatch transformed images against a database of 40,000 keypoints.\nUse correspondence information to label nearest matches correct or incorrect.\nCompare their ratio distributions and choose a cutoff balancing errors.\n\nReported at a cutoff of 0.8\n\nReject about 90% of false matches.\nLose less than 5% of correct matches.\n\n\n\n\n\n\n\n\n\n\n\n\n\nLowe (2004), Figure 11 and §7.1: random scale/rotation changes, \\(30^\\circ\\) depth rotation, and 2% image noise. Original paper"
+  },
+  {
+    "objectID": "lectures/07_features.html#sift-matching-in-opencv",
+    "href": "lectures/07_features.html#sift-matching-in-opencv",
+    "title": "Lecture 07 — Feature Points",
+    "section": "SIFT Matching in OpenCV",
+    "text": "SIFT Matching in OpenCV\nFind the two closest SIFT descriptors in Image B for each descriptor in Image A, then apply the ratio test.\n\nsift = cv2.SIFT_create(nfeatures=700)\nkeypoints_a, sift_descriptors_a = sift.detectAndCompute(image_a, None)\nkeypoints_b, sift_descriptors_b = sift.detectAndCompute(image_b, None)\nneighbors_ab = cv2.BFMatcher(cv2.NORM_L2).knnMatch(sift_descriptors_a, sift_descriptors_b, k=2)\nneighbors_ab = [pair for pair in neighbors_ab if len(pair) == 2]\nratio_matches_ab = [m for m, n in neighbors_ab if m.distance &lt; 0.8*n.distance]\n\n\n\n\n\n\n\n\n\n\n\nThe ratio test produces tentative correspondences.\nFurther verification is still needed to reject wrong matches."
+  },
+  {
+    "objectID": "lectures/07_features.html#choosing-a-threshold",
+    "href": "lectures/07_features.html#choosing-a-threshold",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Choosing a Threshold",
+    "text": "Choosing a Threshold\n\n\n\n\n\n\n\n\n\n\nHere, a match is correct if the known translation aligns keypoints within 3 pixels.\nLowe’s original 2004 SIFT paper used 0.8, but there is no guarantee for correct matches.\nIn practice, people use values from about 0.6 to 0.8:\n\n0.7–0.75 is the most common default, including many OpenCV examples.\n0.6–0.65 is stricter and gives fewer matches with higher precision.\n0.8 keeps more matches.\n\nDownstream robust estimators such as RANSAC or graph-based outlier rejection can be used subsequently to reject outlier matches."
+  },
+  {
+    "objectID": "lectures/07_features.html#bidirectional-matching-do-the-choices-agree",
+    "href": "lectures/07_features.html#bidirectional-matching-do-the-choices-agree",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Bidirectional Matching: Do the Choices Agree?",
+    "text": "Bidirectional Matching: Do the Choices Agree?\n\nnearest_b = np.argmin(distances, axis=1)  # [B1, B2] for A1, A2\nnearest_a = np.argmin(distances, axis=0)  # [A1, A2, A2] for B1, B2, B3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKeep a pair only if both features choose each other: A1 ↔︎ B1 and A2 ↔︎ B2. B3 chooses A2, but A2 chooses B2."
+  },
+  {
+    "objectID": "lectures/07_features.html#combine-mutual-matching-with-lowes-ratio-test",
+    "href": "lectures/07_features.html#combine-mutual-matching-with-lowes-ratio-test",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Combine Mutual Matching with Lowe’s Ratio Test",
+    "text": "Combine Mutual Matching with Lowe’s Ratio Test\nKeep mutual nearest neighbors that pass the ratio test in both directions.\n\ndef ratio_filter(neighbors, threshold=0.8):\n    accepted = {}\n    for pair in neighbors:\n        if len(pair) == 2:\n            first, second = pair\n            if first.distance &lt; threshold*second.distance:\n                accepted[first.queryIdx] = first.trainIdx\n    return accepted\nmatcher = cv2.BFMatcher(cv2.NORM_L2)\nforward = ratio_filter(matcher.knnMatch(sift_descriptors_a, sift_descriptors_b, k=2))\nreverse = ratio_filter(matcher.knnMatch(sift_descriptors_b, sift_descriptors_a, k=2))\nmutual_pairs = [(i, j) for i, j in forward.items() if reverse.get(j) == i]\n\n\n\n\nA1 ↔︎ B1: mutual and distinctive → keep.\nA2 ↔︎ B2: mutual, but forward ratio \\(0.905\\) → reject.\n\nThese are still tentative correspondences."
+  },
+  {
+    "objectID": "lectures/07_features.html#surf-speeded-up-robust-features",
+    "href": "lectures/07_features.html#surf-speeded-up-robust-features",
+    "title": "Lecture 07 — Feature Points",
+    "section": "SURF: Speeded-Up Robust Features",
+    "text": "SURF: Speeded-Up Robust Features\nSURF uses rectangular filters to reduce the work of detection and description.\n\n\n\nDetection: find blob-like features across scales using rectangular approximations to second-derivative filters.\nDescription: align a patch to its scale and orientation, then summarize horizontal and vertical changes in a \\(4\\times4\\) grid.\nWhy useful: compact and efficient features for image matching and object recognition.\n\nIntegral images (to be defined later) make rectangular sums inexpensive, even for large filters.\n\n\n\n\n\n\n\n\n\n\n\n\nBay, Tuytelaars, and Van Gool (2006), SURF."
+  },
+  {
+    "objectID": "lectures/07_features.html#surf-four-numbers-per-cell",
+    "href": "lectures/07_features.html#surf-four-numbers-per-cell",
+    "title": "Lecture 07 — Feature Points",
+    "section": "SURF: Four Numbers per Cell",
+    "text": "SURF: Four Numbers per Cell\n\n\n\n\n\n\n\n\n\n\nEach cell stores \\([\\sum d_x,\\;\\sum d_y,\\;\\sum|d_x|,\\;\\sum|d_y|]\\). Signed sums capture direction; absolute sums retain changes that would cancel.\nFull SURF also uses scale/orientation alignment and Gaussian weighting.\nIts standard descriptor has 64 components, compared with SIFT’s 128, and uses L2 matching.\n\n\nsurf = cv2.xfeatures2d.SURF_create(hessianThreshold=400, extended=False)\nsurf_keypoints, surf_descriptors = surf.detectAndCompute(skyline_gray, None)\nsurf_matcher = cv2.BFMatcher(cv2.NORM_L2)\n\n\nThe SURF call requires OpenCV contrib built with OPENCV_ENABLE_NONFREE=ON."
+  },
+  {
+    "objectID": "lectures/07_features.html#orb-oriented-fast-and-rotated-brief",
+    "href": "lectures/07_features.html#orb-oriented-fast-and-rotated-brief",
+    "title": "Lecture 07 — Feature Points",
+    "section": "ORB: Oriented FAST and Rotated BRIEF",
+    "text": "ORB: Oriented FAST and Rotated BRIEF\n\n\n\nDetect FAST corners in an image pyramid and rank them using Harris scores.\nEstimate orientation from the patch’s intensity centroid.\nRotate a pattern of pixel-pair tests to this orientation. Each brightness comparison gives one bit.\n\n\\[\nb_k=\\begin{cases}\n1,&I(\\mathbf p_k)&lt;I(\\mathbf q_k),\\\\\n0,&\\text{otherwise.}\n\\end{cases}\n\\]\n\nStandard ORB uses 256 bits and Hamming distance. Compact descriptors suit fast matching and visual SLAM.\n\n\nORB estimates orientation using the intensity centroid of a circular patch around each keypoint: the patch’s “center of mass,” treating pixel brightness as mass. With coordinates measured relative to the keypoint, compute [ m_{10}={(x,y)P}x,I(x,y), m{01}=_{(x,y)P}y,I(x,y). ] The estimated orientation is [ ] This is the direction from the keypoint toward the intensity centroid.\n\n\n\n\n\n\n\n\n\n\n\n\nRotating the sampling pattern preserves these bits in the example.\n\n\n\nRublee et al. (2011). OpenCV ORB explanation."
+  },
+  {
+    "objectID": "lectures/07_features.html#orb-in-opencv-binary-descriptors-and-matches",
+    "href": "lectures/07_features.html#orb-in-opencv-binary-descriptors-and-matches",
+    "title": "Lecture 07 — Feature Points",
+    "section": "ORB in OpenCV: Binary Descriptors and Matches",
+    "text": "ORB in OpenCV: Binary Descriptors and Matches\n\norb = cv2.ORB_create(nfeatures=700)\norb_keypoints_a, orb_descriptors_a = orb.detectAndCompute(orb_image_a, None)\norb_keypoints_b, orb_descriptors_b = orb.detectAndCompute(orb_image_b, None)\norb_neighbors = cv2.BFMatcher(cv2.NORM_HAMMING).knnMatch(orb_descriptors_a, orb_descriptors_b, k=2)\norb_neighbors = [pair for pair in orb_neighbors if len(pair) == 2]\norb_matches = [first for first, second in orb_neighbors if first.distance &lt; .75*second.distance]\n\n\n\n\n\n\n\n\n\n\n\nEach descriptor occupies 32 bytes = 256 bits.\nWe still use the ratio test, but with Hamming distances."
+  },
+  {
+    "objectID": "lectures/07_features.html#shape-context-the-arrangement-of-contour-points",
+    "href": "lectures/07_features.html#shape-context-the-arrangement-of-contour-points",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Shape Context: The Arrangement of Contour Points",
+    "text": "Shape Context: The Arrangement of Contour Points\n\n\n\nCount points in bins of direction and distance.\nUse logarithmic radial bins for finer detail nearby and coarser detail farther away.\nRepeat at every sampled point to describe the whole shape.\n\nUseful for silhouettes, characters, and shapes whose texture is uninformative.\n\n\n\n\n\n\n\n\n\n\n\n\nRelative coordinates remove translation. Dividing distances by a shape’s mean point separation removes uniform scale; rotation needs an additional alignment or orientation convention.\n\n\nBelongie, Malik, and Puzicha (2002), Shape Matching and Object Recognition Using Shape Contexts."
+  },
+  {
+    "objectID": "lectures/07_features.html#shape-context-matching-shapes-in-opencv",
+    "href": "lectures/07_features.html#shape-context-matching-shapes-in-opencv",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Shape Context: Matching Shapes in OpenCV",
+    "text": "Shape Context: Matching Shapes in OpenCV\nCompare point histograms, find correspondences, then refine a deformable alignment.\n\nshape_matcher = cv2.createShapeContextDistanceExtractor()\nsame_shape_cost = shape_matcher.computeDistance(contour_a, contour_b)\ndifferent_shape_cost = shape_matcher.computeDistance(contour_a, contour_c)\n\n\n\n\nChi-square costs compare the histograms at candidate contour points.\nA smaller overall cost means better descriptor agreement and alignment.\nUseful for moderate deformation, but missing boundaries and clutter can disrupt matching.\n\n\n\n\n\n\n\n\n\n\n\n\n\nRequires OpenCV’s contrib shape module. OpenCV documentation"
+  },
+  {
+    "objectID": "lectures/07_features.html#key-takeaways",
+    "href": "lectures/07_features.html#key-takeaways",
+    "title": "Lecture 07 — Feature Points",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nGood features are repeatable across images and distinctive enough to recognize again. Detection finds their locations; descriptors represent their appearance.\nHarris detects corners where intensity changes strongly in two independent directions. The eigenvalues of the second moment matrix distinguish flat regions, edges, and corners.\nA fixed analysis scale does not handle all feature sizes. Searching across position and scale lets features select a characteristic scale.\nSIFT aligns neighborhoods by scale and orientation, then summarizes local gradient directions in a normalized 128-component descriptor.\nSURF summarizes filter responses, ORB uses binary intensity comparisons, and shape context describes the arrangement of contour points.\nNearest-neighbor matching finds the closest descriptor. Lowe’s ratio test checks distinctiveness, while bidirectional matching checks whether both features choose each other.\n\n\n\n\n\n\n\nSimilar Descriptors Do Not Guarantee a Correct Match\n\n\nRepeated patterns and missing counterparts can produce incorrect matches. Choose thresholds for the application and verify tentative correspondences."
   }
 ]
