@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Match SIFT descriptors, reject ambiguity, and retain mutual correspondences.">
+
+<title>Homework 07: Feature Matching – Computer Vision</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-46d652da29d6e50e269a32105caffe7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Computer Vision</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus.html"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tas.html"> 
+<span class="menu-text">TAs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials/"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../assignments/"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lectures/"> 
+<span class="menu-text">Lectures</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#starter-files" id="toc-starter-files" class="nav-link" data-scroll-target="#starter-files">Starter files</a></li>
+  <li><a href="#tools-and-conventions" id="toc-tools-and-conventions" class="nav-link" data-scroll-target="#tools-and-conventions">Tools and conventions</a></li>
+  <li><a href="#part-1-ratio-test-matching" id="toc-part-1-ratio-test-matching" class="nav-link" data-scroll-target="#part-1-ratio-test-matching">Part 1 — Ratio-test matching</a></li>
+  <li><a href="#part-2-mutual-matching" id="toc-part-2-mutual-matching" class="nav-link" data-scroll-target="#part-2-mutual-matching">Part 2 — Mutual matching</a></li>
+  <li><a href="#part-3-connect-the-pipeline" id="toc-part-3-connect-the-pipeline" class="nav-link" data-scroll-target="#part-3-connect-the-pipeline">Part 3 — Connect the pipeline</a></li>
+  <li><a href="#run-and-inspect-the-results" id="toc-run-and-inspect-the-results" class="nav-link" data-scroll-target="#run-and-inspect-the-results">Run and inspect the results</a></li>
+  <li><a href="#guided-experiment-how-reliable-are-the-matches" id="toc-guided-experiment-how-reliable-are-the-matches" class="nav-link" data-scroll-target="#guided-experiment-how-reliable-are-the-matches">Guided experiment — How reliable are the matches?</a></li>
+  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to submit</a></li>
+  <li><a href="#submission-limit" id="toc-submission-limit" class="nav-link" data-scroll-target="#submission-limit">Submission limit</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 07: Feature Matching</h1>
+</div>
+
+<div>
+  <div class="description">
+    Match SIFT descriptors, reject ambiguity, and retain mutual correspondences.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Total:</strong> 5 points<br>
+<strong>Submission:</strong> Gradescope Programming Assignment<br>
+<strong>Work:</strong> Individual</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>Find corresponding feature points across images. You will use OpenCV to find nearest descriptors, reject ambiguous matches with the ratio test, and keep matches that agree in both directions. A provided experiment shows how the number and reliability of accepted matches change with the ratio threshold.</p>
+<p>Use the course <code>cv</code> Conda environment. You may adapt the lecture examples to the functions below. Do not use generative AI to solve this homework.</p>
+</section>
+<section id="starter-files" class="level2">
+<h2 class="anchored" data-anchor-id="starter-files">Starter files</h2>
+<p>Download these three files into the same folder:</p>
+<ul>
+<li><a href="files/hw07.py">hw07.py</a></li>
+<li><a href="files/skyline_left.png">skyline_left.png</a></li>
+<li><a href="files/skyline_right.png">skyline_right.png</a></li>
+</ul>
+<p>The images are overlapping grayscale views of the Denver skyline from Lecture 7. Keep the supplied images unchanged.</p>
+<p>Complete only these three functions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ratio_match(descriptors1, descriptors2, ratio)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>mutual_matches(matches12, matches21)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>match_images(image1, image2, ratio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>SIFT extraction, image loading, transformations, match evaluation, and plotting are fully provided. You do not need to reuse your HW06 submission. Leave all provided code unchanged and keep the supplied function names and arguments.</p>
+</section>
+<section id="tools-and-conventions" class="level2">
+<h2 class="anchored" data-anchor-id="tools-and-conventions">Tools and conventions</h2>
+<ul>
+<li>Keep imports to <code>cv2</code>, <code>numpy</code>, <code>matplotlib</code>, and the standard-library modules.</li>
+<li>Use <code>cv2.BFMatcher</code> with <code>cv2.NORM_L2</code> and <code>crossCheck=False</code> for the two-neighbor search in Part 1.</li>
+<li>Do not modify input arrays, lists, or match objects. Do not normalize, clip, or otherwise change the provided SIFT descriptors.</li>
+<li>Graded descriptor inputs are finite <code>float32</code> arrays of shapes <code>(N, D)</code> and <code>(M, D)</code>, with the same <code>D &gt;= 1</code>. SIFT uses 128 values, but small test vectors may use fewer columns.</li>
+<li>Graded images are two-dimensional <code>uint8</code> grayscale in <code>[0, 255]</code>, with at least 16 rows and 16 columns. Images can have different dimensions. The loader handles their types.</li>
+<li>The ratio threshold satisfies <code>0 &lt; ratio &lt; 1</code>. Inputs are valid; you do not need to write input-validation code.</li>
+<li>Keep the supplied main guard so importing <code>hw07.py</code> does not run its demonstration.</li>
+</ul>
+</section>
+<section id="part-1-ratio-test-matching" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-ratio-test-matching">Part 1 — Ratio-test matching</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ratio_match(descriptors1, descriptors2, ratio):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each descriptor summarizes the appearance around a feature point. For every descriptor in image 1, find its two nearest neighbors among descriptors in image 2. Let their ordinary Euclidean distances be <code>d_best</code> and <code>d_second</code>. Accept the best match only when</p>
+<p><span class="math display">\[
+d_{\mathrm{best}} &lt; \text{ratio}\,d_{\mathrm{second}}.
+\]</span></p>
+<p>A distinctive match is substantially closer than its nearest alternative. Two similarly close alternatives indicate ambiguity.</p>
+<p><strong>Steps and hints:</strong></p>
+<ol type="1">
+<li>If image 1 has no descriptors, or image 2 has fewer than two descriptors, return <code>[]</code>.</li>
+<li>Create <code>cv2.BFMatcher(cv2.NORM_L2, crossCheck=False)</code>.</li>
+<li>Call <code>knnMatch(descriptors1, descriptors2, k=2)</code> on the matcher. Each group contains up to two <code>cv2.DMatch</code> objects, in increasing distance order. Skip a group with fewer than two entries.</li>
+<li>Use their <code>.distance</code> values in the strict inequality above.</li>
+<li>Return a list containing the best <code>cv2.DMatch</code> from each accepted group, in increasing <code>.queryIdx</code> order.</li>
+</ol>
+<p>For a forward match:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>queryIdx</code></td>
+<td>Index of the descriptor/keypoint in image 1</td>
+</tr>
+<tr class="even">
+<td><code>trainIdx</code></td>
+<td>Index of the descriptor/keypoint in image 2</td>
+</tr>
+<tr class="odd">
+<td><code>distance</code></td>
+<td>Ordinary Euclidean distance between the descriptors</td>
+</tr>
+</tbody>
+</table>
+<p>Return the original best-match object with its distance unchanged. Multiple queries may select the same target; do not enforce one-to-one matching in this part.</p>
+<p><strong>Worked example:</strong> A query <code>[0, 0]</code> and targets <code>[1, 0]</code>, <code>[4, 0]</code> give distances 1 and 4. The ratio is 0.25, so the first match passes a threshold of 0.75. If the distances were 3 and 4, it would fail: equality does not satisfy the strict inequality.</p>
+<p><strong>Important cases to try locally:</strong></p>
+<ul>
+<li>Empty query descriptors: return <code>[]</code>.</li>
+<li>Zero or one target descriptor: return <code>[]</code>; two neighbors are needed to assess ambiguity.</li>
+<li>Two nearest neighbors both at distance zero: reject the match as ambiguous.</li>
+<li>Best distance zero and second distance positive: the match can pass.</li>
+<li>Two equally close neighbors: reject the match.</li>
+</ul>
+<p>Use multiplication in the stated test to avoid division by zero. Do not add a small denominator or automatically accept all zero-distance matches. Use <strong>ordinary L2 distance</strong>, not squared distance: the same numeric threshold has a different meaning for squared distances.</p>
+</section>
+<section id="part-2-mutual-matching" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-mutual-matching">Part 2 — Mutual matching</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mutual_matches(matches12, matches21):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Both inputs have already passed the ratio test. Keep a forward pair <code>i -&gt; j</code> only if the reverse list contains <code>j -&gt; i</code>.</p>
+<p>For example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Forward pair</th>
+<th>Reverse pair available?</th>
+<th>Keep?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>0 -&gt; 2</code></td>
+<td><code>2 -&gt; 0</code></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><code>1 -&gt; 0</code></td>
+<td>Only <code>0 -&gt; 2</code></td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td><code>2 -&gt; 1</code></td>
+<td><code>1 -&gt; 2</code></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Return a new list of the retained <strong>forward</strong> <code>cv2.DMatch</code> objects in their original forward order. Preserve their distances, and do not change either input list or its objects.</p>
+<p><strong>Hints:</strong></p>
+<ul>
+<li>In the reverse list, <code>queryIdx</code> refers to image 2 and <code>trainIdx</code> refers to image 1.</li>
+<li>Build a set of reverse <code>(queryIdx, trainIdx)</code> pairs. For each forward object, look for its indices in reversed order.</li>
+<li>You do not need to recompute descriptor distances.</li>
+<li>Either list can be empty. In that case, return <code>[]</code>.</li>
+<li>Input lists need not be sorted. Each list contains at most one match per query, but several queries can share a target.</li>
+<li>Compare index pairs, not match-object identity or equality of forward/reverse distances. Return the forward object even when the reverse object’s recorded distance differs.</li>
+</ul>
+<p>The requirement is agreement between <strong>two ratio-filtered lists</strong>. Basic OpenCV nearest-neighbor cross-check alone does not enforce acceptance by both ratio tests.</p>
+</section>
+<section id="part-3-connect-the-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-connect-the-pipeline">Part 3 — Connect the pipeline</h2>
+<p>Complete:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> match_images(image1, image2, ratio):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The provided <code>extract_sift(image)</code> helper returns <code>(keypoints, descriptors)</code>. It uses OpenCV SIFT with a default feature limit of 800 and returns an empty <code>(0, 128)</code> descriptor array when no features are found.</p>
+<p>Connect the stages in this order:</p>
+<ol type="1">
+<li>Call <code>extract_sift(image1)</code> and <code>extract_sift(image2)</code> using their default settings.</li>
+<li>Call <code>ratio_match(descriptors1, descriptors2, ratio)</code> to obtain the forward list.</li>
+<li>Call <code>ratio_match(descriptors2, descriptors1, ratio)</code> to obtain the reverse list.</li>
+<li>Pass those lists, in forward/reverse order, to <code>mutual_matches()</code>.</li>
+<li>Return <code>(keypoints1, keypoints2, forward_matches, mutual_matches)</code> in that order.</li>
+</ol>
+<p>Use the supplied images and ratio; do not hard-code the example inputs or threshold. Preserve the original keypoint lists and their order. Descriptor row <code>i</code> belongs to keypoint <code>i</code>, so the match indices refer directly to these lists. The function should also handle images with no features, using the empty-input behavior described above.</p>
+</section>
+<section id="run-and-inspect-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="run-and-inspect-the-results">Run and inspect the results</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate cv</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw07.py <span class="at">--output-dir</span> results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or specify the two images:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> hw07.py skyline_left.png skyline_right.png <span class="at">--output-dir</span> results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The provided driver produces:</p>
+<ul>
+<li><code>hw07_matches.png</code>: nearest-neighbor, ratio-filtered, and mutual matches for the overlapping views.</li>
+<li><code>hw07_transformations.png</code>: mutual matches between the left image and a version rotated by 20 degrees and scaled by 0.80, at ratio thresholds 0.60, 0.75, and 0.90.</li>
+<li><code>hw07_metrics.csv</code>: match counts and positional-consistency measurements for the transformed pair. The table is also printed in the terminal.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="files/reference_matches.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Expected matching stages.</figcaption>
+</figure>
+</div>
+<p><a href="files/reference_matches.png">Full-size matching stages</a> · <a href="files/reference_transformations.png">Rotation and scale comparison</a> · <a href="files/reference_metrics.csv">Reference measurements</a></p>
+<p>The figures display up to 40 matches, sampled across descriptor distances; titles report the total. The displayed subset can change as filtering removes matches. OpenCV versions may produce slightly different keypoints, counts, and measurements. Fonts, plot pixels, and fixed reference counts are not grading targets.</p>
+</section>
+<section id="guided-experiment-how-reliable-are-the-matches" class="level2">
+<h2 class="anchored" data-anchor-id="guided-experiment-how-reliable-are-the-matches">Guided experiment — How reliable are the matches?</h2>
+<p>All evaluation code is provided. Because we created the transformed image ourselves, we know where each original point should move. The evaluator compares that predicted location with the target keypoint:</p>
+<ul>
+<li><strong>Accepted:</strong> all matches returned by the selected method.</li>
+<li><strong>Evaluated:</strong> accepted matches whose source point projects inside the target image, within the shared visible region.</li>
+<li><strong>Consistent:</strong> evaluated matches whose positional error is at most 3 pixels in the target image.</li>
+<li><strong>Percent:</strong> <code>100 * consistent / evaluated</code>; reported as <code>n/a</code> when no matches can be evaluated.</li>
+</ul>
+<p>The percentage applies to evaluated matches, not automatically every accepted match. These are positional-consistency measurements, not recall and not a proof of physical identity. The known transformation is used only by the supplied evaluator, never to select matches in your functions.</p>
+<p>Inspect the raw nearest-neighbor result and the ratio/mutual results at each threshold. Consider:</p>
+<ul>
+<li>Does increasing the ratio threshold always improve matching quality?</li>
+<li>Can a method retain fewer matches but a higher percentage of consistent ones?</li>
+<li>Which correspondences disappear when both directions must agree?</li>
+<li>Why can repeated windows or similar roof patterns still cause mistakes?</li>
+</ul>
+<p>No written answers, additional functions, or panorama stitching are required.</p>
+</section>
+<section id="what-to-submit" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-submit">What to submit</h2>
+<p>Submit exactly one file, <strong><code>hw07.py</code></strong>, to Gradescope. Do not submit images, figures, CSV files, or a notebook.</p>
+</section>
+<section id="submission-limit" class="level2">
+<h2 class="anchored" data-anchor-id="submission-limit">Submission limit</h2>
+<p>You may make at most <strong>5 valid Gradescope submissions</strong>. Submissions 1–5 are graded normally; submission 6 and every later valid submission receive zero points for that submission. A platform infrastructure failure marked as an autograder error does not count. Errors in your submitted code do count.</p>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<p>HW07 is worth <strong>5 points and is fully autograded</strong>: 2.5 points for ratio-test matching, 2 points for mutual matching, and 0.5 points for connecting the pipeline. Across these tasks, 1 point comes from public tests and 4 points from private tests.</p>
+<p>Matching functions are tested independently on supplied descriptors and match lists. The public pipeline-composition test substitutes correct helper outputs, so unfinished earlier functions do not prevent composition credit. A small private portion checks the full pipeline on another image pair. Private groups award partial credit for individual checks.</p>
+<p>A public summary reports <strong>how many of the seven private test groups passed completely</strong>. Individual private results, partial scores, and feedback appear after the Gradescope late due date. Passing public tests does not guarantee full credit. The provided evaluation and plotting code are not separate scored tasks.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
