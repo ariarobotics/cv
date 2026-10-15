@@ -4407,14 +4407,14 @@
     "href": "lectures/08_hough_transform.html#hough-circle-detection-in-opencv",
     "title": "Lecture 08 — Hough Transform",
     "section": "Hough Circle Detection in OpenCV",
-    "text": "Hough Circle Detection in OpenCV\n\n\n\ncoins_smooth = cv2.GaussianBlur(coins_gray, (7, 7), 1.5)\n\ncoins_edges = cv2.Canny(coins_smooth, 60, 120)\n\n\nSmoothing reduces noise & fine textures while preserving the coin outlines.\nCanny also detects lettering and background edges.\nWe pass the smoothed grayscale image to HoughCircles to computes edges and gradients (internally)."
+    "text": "Hough Circle Detection in OpenCV\n\n\n\ncoins_smooth = cv2.GaussianBlur(coins_gray, (7, 7), 1.5)\n\n# For visualization only:\ncoins_edges = cv2.Canny(coins_smooth, 60, 120)\n\n\nSmoothing reduces noise & fine textures while preserving the coin outlines.\nCanny also detects lettering and background edges.\nWe pass the smoothed grayscale image to HoughCircles to computes edges and gradients (internally).\nCanny is for visualization only; HoughCircles computes edges internally."
   },
   {
     "objectID": "lectures/08_hough_transform.html#hough-circle-detection-in-opencv-1",
     "href": "lectures/08_hough_transform.html#hough-circle-detection-in-opencv-1",
     "title": "Lecture 08 — Hough Transform",
     "section": "Hough Circle Detection in OpenCV",
-    "text": "Hough Circle Detection in OpenCV\n\n\n\ncoin_circles = cv2.HoughCircles(\n    coins_smooth,\n    cv2.HOUGH_GRADIENT,\n    dp=1.2,\n    minDist=170,\n    param1=120,\n    param2=45,\n    minRadius=85,\n    maxRadius=115\n)\n\n\n\ndp=1.2: center-accumulator cells span approximately 1.2 image pixels.\nminDist=170: minimum separation between detected centers; reduces duplicate detections.\nparam1=120: upper internal Canny threshold; the lower threshold is 60.\nparam2=45: accumulator threshold for accepting circle candidates. Lower values admit weaker candidates and more false detections.\nminRadius, maxRadius: search radii from 85 to 115 pixels in the image.\n\nEach result contains \\((a,b,r)\\): center coordinates and radius."
+    "text": "Hough Circle Detection in OpenCV\n\n\n\ncoin_circles = cv2.HoughCircles(\n    coins_smooth,\n    cv2.HOUGH_GRADIENT,\n    dp=1.2,\n    minDist=170,\n    param1=120,\n    param2=45,\n    minRadius=85,\n    maxRadius=115\n)\n\n\n\ndp=1.2: center-accumulator cells span approximately 1.2 image pixels.\nminDist=170: minimum separation between detected centers; reduces duplicate detections.\nparam1=120: upper internal Canny threshold; the lower threshold is set to half of this value as 60.\nparam2=45: voting threshold for accepting circle candidates. Lower values admit weaker candidates and more false detections.\nminRadius, maxRadius: search radii from 85 to 115 pixels in the image.\n\nEach result contains \\((a,b,r)\\): center coordinates and radius."
   },
   {
     "objectID": "lectures/08_hough_transform.html#key-takeaways",
