@@ -4862,7 +4862,7 @@
     "href": "lectures/10_optical_flow.html#the-aperture-problem",
     "title": "Lecture 10 — Optical Flow",
     "section": "The Aperture Problem",
-    "text": "The Aperture Problem\nIf Lucas–Kanade window sees only a straight edge, many different motions look the same:\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nInside the aperture, only motion perpendicular to the edge is observable.\nThis is the edge case of \\(A^TA\\): \\(\\lambda_1 \\gg \\lambda_2\\), so \\((u,v)\\) is not uniquely determined.\nCorners or texture are needed to recover the full motion."
+    "text": "The Aperture Problem\nIf Lucas–Kanade window sees only a straight edge, many different motions look the same:\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nInside the aperture, only motion perpendicular to the edge is observable."
   },
   {
     "objectID": "lectures/10_optical_flow.html#when-does-lucaskanade-fail",
