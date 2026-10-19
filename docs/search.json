@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -4737,5 +4737,222 @@
     "title": "05 — NumPy for Computer Vision",
     "section": "Additional reference",
     "text": "Additional reference\nNumPy documentation:\nhttps://numpy.org/doc/stable/\nWhen working with unfamiliar NumPy functions, reading the function documentation and checking the expected array shapes is often the fastest way to debug a problem."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#learning-objectives",
+    "href": "lectures/10_optical_flow.html#learning-objectives",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain optical flow, distinguish sparse and dense estimates, and describe their applications.\nDerive the optical flow constraint from brightness constancy and explain the aperture problem.\nExplain how Lucas–Kanade estimates motion within a window, why corners are suitable for tracking, and how image pyramids help handle larger motion.\nUse OpenCV to track selected points and estimate dense optical flow."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#fundamental-equations-of-computer-vision",
+    "href": "lectures/10_optical_flow.html#fundamental-equations-of-computer-vision",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Fundamental Equations of Computer Vision",
+    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\mathbf{x}=\\mathbf{K}\\begin{bmatrix}\\mathbf{R}&\\mathbf{t}\\end{bmatrix}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#what-is-optical-flow",
+    "href": "lectures/10_optical_flow.html#what-is-optical-flow",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "What Is Optical Flow?",
+    "text": "What Is Optical Flow?\n\nOptical flow describes the apparent motion of image points between video frames.\nA point at \\((x,y)\\) moves to \\((x+u,y+v)\\), giving a displacement vector \\((u,v)\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote: Image coordinates increase to the right and downward.\n\n\nMotion can result from movement of the object, the camera, or both.\n\\((u,v)\\) describes displacement in image pixels, not directly the object’s 3D motion."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#sparse-and-dense-optical-flow",
+    "href": "lectures/10_optical_flow.html#sparse-and-dense-optical-flow",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Sparse and Dense Optical Flow",
+    "text": "Sparse and Dense Optical Flow\n\nSparse optical flow: estimated displacement at selected image points, often corners.\nDense optical flow: estimated displacement at every pixel.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOnly a subset of the dense field’s arrows is displayed for readability.\n\n\nSparse estimates are often used for tracking selected features.\nDense estimates describe motion across the image, including regions with different motions."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#visualizing-optical-flow",
+    "href": "lectures/10_optical_flow.html#visualizing-optical-flow",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Visualizing Optical Flow",
+    "text": "Visualizing Optical Flow\nOptical flow is often displayed using arrows or colors.\n\n\n\n\n\n\n\n\n\n\nArrows: direction indicates where a point moves; length represents displacement magnitude.\nColors: encode a dense field. E.g., hue represents direction; stronger color away from white represents larger displacement."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#optical-flow-applications",
+    "href": "lectures/10_optical_flow.html#optical-flow-applications",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Optical Flow Applications",
+    "text": "Optical Flow Applications\n\n\n\n\n  \n    Optical Computer Mouse\n    \n      \n    \n    \n      jason@heqingele.com; pexels\n    \n  \n\n  \n    Pedestrian Detection& Motion Estimation\n    \n      \n      \n      \n    \n    \n      Watch on YouTube\n    \n  \n\n  \n    Visual Odometry & SLAM\n    \n      \n    \n    \n      Rainer Hessmer"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#optical-flow-applications-1",
+    "href": "lectures/10_optical_flow.html#optical-flow-applications-1",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Optical Flow Applications",
+    "text": "Optical Flow Applications\n\n\n  \n    Super Resolution\n    \n      \n    \n    \n      Liu & Sun, CVPR 2011; TPAMI 2014\n    \n  \n\n  \n    Super Slow Motion\n    \n      \n      \n      \n    \n    \n      Jiang et al., CVPR 2018\n      Watch on YouTube\n    \n  \n\n  \n    Image Unblur\n    \n      \n    \n    \n      Google Pixel 6: Face Unblur"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#can-we-use-feature-matching",
+    "href": "lectures/10_optical_flow.html#can-we-use-feature-matching",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Can We Use Feature Matching?",
+    "text": "Can We Use Feature Matching?\nCan we estimate optical flow by detecting SIFT features and matching them between frames?\n\nYes—matched features provide sparse displacement estimates.\nBut an object may have no distinctive appearance separating it from its background.\n\n\n\n\n  \n    Can you locate the hidden object? Click the texture or advance once.\n  \n\n  \n    \n    \n    \n  \n\n  \n    Sometimes motion reveals structure that is difficult to see in a single frame.\n  \n\n  Moving region outlined in red for print.\n\n  \n\n\n\n\n\n\n\nCan we estimate motion directly from changes in image intensity, without detecting and matching keypoints?"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#brightness-constancy",
+    "href": "lectures/10_optical_flow.html#brightness-constancy",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Brightness Constancy",
+    "text": "Brightness Constancy\nWhat stays the same as a point moves between frames?\n\nBrightness constancy: a scene point keeps its intensity as it moves: \\[\nI(x,y,t) = I(x+u,\\ y+v,\\ t+1)\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe marked point has the same intensity in both frames; only its position changes.\nBrightness constancy holds when lighting is constant, the surface looks the same from slightly different viewpoints, and the frames are close in time."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#optical-flow-equation",
+    "href": "lectures/10_optical_flow.html#optical-flow-equation",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Optical Flow Equation",
+    "text": "Optical Flow Equation\nRearrange brightness constancy and apply a first-order Taylor expansion:\n\\[\n\\begin{aligned}\n0 &= I(x+u,y+v,t+1) - I(x,y,t)\\\\[2pt]\n&\\approx I(x,y,t) + I_x u + I_y v + I_t - I(x,y,t)\\\\[2pt]\n&= I_x u + I_y v + I_t\\\\[2pt]\n&= \\nabla I \\cdot [u,\\ v]^T + I_t\n\\end{aligned}\n\\]\n\n\\(I_x, I_y\\): spatial image gradients.\n\\(I_t \\approx I(x,y,t+1) - I(x,y,t)\\): change of intensity at a fixed pixel.\n\n\n\n\n\n\n\nOptical Flow Equation\n\n\n\\[\nI_x u + I_y v + I_t = 0\n\\]\n\n\n\nWhen is this approximation bad? When \\(u\\) or \\(v\\) is large compared with how smoothly the image varies."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#why-do-spatial-gradients-reveal-motion",
+    "href": "lectures/10_optical_flow.html#why-do-spatial-gradients-reveal-motion",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Why Do Spatial Gradients Reveal Motion?",
+    "text": "Why Do Spatial Gradients Reveal Motion?\nWhat do static image gradients have to do with motion?\n\nConsider a 1D intensity profile that shifts right by \\(u\\) pixels. Brightness constancy simplifies to \\(I_x u + I_t = 0\\).\n\n\n\n\n\n\n\n\n\n\n\nOn a slope, shifting the profile changes the intensity at a fixed pixel by about \\(-I_x u\\), so \\(u \\approx -I_t/I_x\\).\nIn a flat region, the intensity barely changes: the motion is nearly invisible."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#brightness-constancy-example",
+    "href": "lectures/10_optical_flow.html#brightness-constancy-example",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Brightness Constancy Example",
+    "text": "Brightness Constancy Example\n\n\n\n\n\n\n\n\n\n\n\n\nPixel values: black = 0, white = 1. Derivatives use forward differences.\n\n\n\\[I_x = 1,\\qquad I_y = 0,\\qquad I_t = 1\\]\n\\[I_x u + I_y v + I_t = 0\\] \\[\\Rightarrow\\; 1\\,u + 0\\,v + 1 = 0\\]\n\nWhat’s \\(u\\)?\n\n\\(u = -I_t/I_x = -1\\): the edge moved one pixel left.\n\nWhat’s \\(v\\)?\n\nAny value satisfies the equation. Vertical motion of a vertical edge leaves no trace."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#one-equation-two-unknowns",
+    "href": "lectures/10_optical_flow.html#one-equation-two-unknowns",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "One Equation, Two Unknowns",
+    "text": "One Equation, Two Unknowns\n\n\nGiven \\(I_x, I_y, I_t\\), can we uniquely recover \\((u,v)\\) from the optical flow equation \\(I_x u + I_y v + I_t = 0\\)?\n\nNo: one equation per pixel, two unknowns.\nIf \\((u,v)\\) satisfies \\(\\nabla I\\cdot(u,v) + I_t = 0\\), so does \\((u+u',\\ v+v')\\) for any \\((u',v')\\) with \\(\\nabla I\\cdot(u',v') = 0\\).\nOnly the flow component along the gradient can be recovered: \\[\nu_n = -\\frac{I_t}{\\lVert\\nabla I\\rVert}\n\\]\nThe component parallel to the edge is lost."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#lucaskanade-more-equations-from-a-window",
+    "href": "lectures/10_optical_flow.html#lucaskanade-more-equations-from-a-window",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Lucas–Kanade: More Equations from a Window",
+    "text": "Lucas–Kanade: More Equations from a Window\n\n\n\nEach pixel gives 1 equation and 2 unknowns. How do we get more equations?\nAssume spatial coherence: pixels in a small window move together and share the same \\((u,v)\\).\nA \\(5\\times5\\) window gives 25 equations:\n\n\\[\n\\underbrace{\\begin{bmatrix}\nI_x(p_1) & I_y(p_1)\\\\\n\\vdots & \\vdots\\\\\nI_x(p_{25}) & I_y(p_{25})\n\\end{bmatrix}}_{A\\ (25\\times2)}\n\\underbrace{\\begin{bmatrix} u\\\\ v \\end{bmatrix}}_{\\mathbf d\\ (2\\times1)}\n=\n\\underbrace{-\\begin{bmatrix}\nI_t(p_1)\\\\\n\\vdots\\\\\nI_t(p_{25})\n\\end{bmatrix}}_{\\mathbf b\\ (25\\times1)}\n\\]\n\nB. Lucas and T. Kanade, “An iterative image registration technique with an application to stereo vision,” IJCAI, 1981.\n\n\n\n\n\n\n\n\n\n\n\n\nFrame 2 is a synthetic shift of image by \\((u,v)=(0.6,-0.4)\\) px."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#solving-for-uv",
+    "href": "lectures/10_optical_flow.html#solving-for-uv",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Solving for \\((u,v)\\)",
+    "text": "Solving for \\((u,v)\\)\n\n\nLeast squares:\n\\[\nA^TA\\,\\mathbf d = A^T\\mathbf b\n\\quad\\Rightarrow\\quad\n\\mathbf d = (A^TA)^{-1}A^T\\mathbf b\n\\]\nSumming over the pixels in the window:\n\\[\n\\underbrace{\\begin{bmatrix}\n\\sum I_xI_x & \\sum I_xI_y\\\\\n\\sum I_xI_y & \\sum I_yI_y\n\\end{bmatrix}}_{A^TA}\n\\begin{bmatrix} u\\\\ v \\end{bmatrix}\n=\n\\underbrace{-\\begin{bmatrix}\n\\sum I_xI_t\\\\\n\\sum I_yI_t\n\\end{bmatrix}}_{A^T\\mathbf b}\n\\]\n\nSimilar to the Hough transform, each pixel contributes a line in parameter space.\nLeast squares finds the \\((u,v)\\) that best satisfies all lines.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe \\(v\\) axis points down, as in image coordinates."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#lucaskanade-implementation",
+    "href": "lectures/10_optical_flow.html#lucaskanade-implementation",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Lucas–Kanade Implementation",
+    "text": "Lucas–Kanade Implementation\n\n\n\n\n\n\nLucas–Kanade (one window)\n\n\n\nCompute \\(I_x, I_y\\) from a smoothed frame and \\(I_t\\) from the frame difference.\nSum products over the window to form \\(A^TA\\) and \\(A^T\\mathbf b\\).\nSkip the window if the smaller eigenvalue of \\(A^TA\\) is too small.\nSolve the \\(2\\times2\\) system for \\((u,v)\\).\n\n\n\n\n\n\n\n\nSimplified implementation:\n\n\ndef lucas_kanade_window(frame1, frame2, x, y, half_size=2, min_eigenvalue=100):\n    gradient_x, gradient_y = image_gradients(frame1)\n    temporal_change = frame2 - frame1\n    window = np.s_[y-half_size:y+half_size+1, x-half_size:x+half_size+1]\n    Ix, Iy, It = gradient_x[window], gradient_y[window], temporal_change[window]\n\n    ATA = np.array([[np.sum(Ix*Ix), np.sum(Ix*Iy)],\n                    [np.sum(Ix*Iy), np.sum(Iy*Iy)]])\n    ATb = -np.array([np.sum(Ix*It), np.sum(Iy*It)])\n\n    if np.linalg.eigvalsh(ATA)[0] &lt; min_eigenvalue:\n        return None\n    return np.linalg.solve(ATA, ATb)"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#when-can-we-solve-for-uv",
+    "href": "lectures/10_optical_flow.html#when-can-we-solve-for-uv",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "When Can We Solve for \\((u,v)\\)?",
+    "text": "When Can We Solve for \\((u,v)\\)?\n\n\\(A^TA\\) must be invertible: in a uniform region it is singular.\n\\(A^TA\\) must not be too small: otherwise noise dominates.\n\\(A^TA\\) must be well-conditioned: a large \\(\\lambda_1/\\lambda_2\\) indicates an edge.\n\\(A^TA\\) is the second moment matrix \\(M\\) from Harris corners: good corners give reliable flow.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOrange dots: estimates from 40 frame pairs with independent noise. Green star: known shift. At the edge, \\(u\\) is accurate but \\(v\\) is not."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#the-aperture-problem",
+    "href": "lectures/10_optical_flow.html#the-aperture-problem",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "The Aperture Problem",
+    "text": "The Aperture Problem\nIf Lucas–Kanade window sees only a straight edge, many different motions look the same:\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nInside the aperture, only motion perpendicular to the edge is observable.\nThis is the edge case of \\(A^TA\\): \\(\\lambda_1 \\gg \\lambda_2\\), so \\((u,v)\\) is not uniquely determined.\nCorners or texture are needed to recover the full motion."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#when-does-lucaskanade-fail",
+    "href": "lectures/10_optical_flow.html#when-does-lucaskanade-fail",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "When Does Lucas–Kanade Fail?",
+    "text": "When Does Lucas–Kanade Fail?\n\n\n\nLarge motion: the Taylor approximation breaks down.\nOcclusions: points appear or disappear.\nLighting changes, noise: brightness constancy is violated.\nTextureless regions: \\(A^TA\\) is nearly singular.\nEdges (aperture problem): \\(A^TA\\) is ill-conditioned.\n\n\n\n\n\n\n\n\n\n\n\n\nSynthetic horizontal shifts of the street image; median estimate over the most textured \\(5\\times5\\) windows."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#coarse-to-fine-estimation",
+    "href": "lectures/10_optical_flow.html#coarse-to-fine-estimation",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Coarse-to-Fine Estimation",
+    "text": "Coarse-to-Fine Estimation\n\nEach Gaussian pyramid level halves the image size, so it also halves the displacement.\nAt a coarse enough level, the motion is small enough for the linearization to hold."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#coarse-to-fine-algorithm",
+    "href": "lectures/10_optical_flow.html#coarse-to-fine-algorithm",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Coarse-to-Fine Algorithm",
+    "text": "Coarse-to-Fine Algorithm\n\n\n\n\n\n\n\n\nCoarse-to-Fine Lucas–Kanade\n\n\n\nBuild Gaussian pyramids of both frames.\nEstimate flow at the coarsest level.\nUpsample the flow to the next level and double its values.\nWarp frame 2 toward frame 1 using the current flow.\nEstimate the remaining flow with Lucas–Kanade and add it.\nRepeat until the finest level.\n\n\n\n\n\nWarping uses the current flow estimate \\((u_0,v_0)\\) to resample frame 2, pulling each pixel back by the motion already found: \\[\nI_2^{\\text{warped}}(x,y) = I_2(x+u_0,\\ y+v_0)\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\nSame synthetic shifts as before. At the coarsest of 3 levels, an 8 px shift becomes 2 px."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#lucaskanade-in-opencv-selecting-points",
+    "href": "lectures/10_optical_flow.html#lucaskanade-in-opencv-selecting-points",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Lucas–Kanade in OpenCV: Selecting Points",
+    "text": "Lucas–Kanade in OpenCV: Selecting Points\n\ncorners = cv2.goodFeaturesToTrack(\n    gray1, maxCorners=300, qualityLevel=0.01,\n    minDistance=10, blockSize=7)\n\n\n\n\nKeeps points where the smaller eigenvalue of \\(A^TA\\) is large: the windows where Lucas–Kanade is solvable.\nqualityLevel: keep points whose smaller eigenvalue is at least 1% of the strongest one.\nminDistance: minimum spacing between points (pixels).\nblockSize: window size used to form \\(A^TA\\).\n\n\nJ. Shi and C. Tomasi, “Good Features to Track,” CVPR, 1994.\nOpenCV: Shi–Tomasi Corner Detector."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#lucaskanade-in-opencv-tracking",
+    "href": "lectures/10_optical_flow.html#lucaskanade-in-opencv-tracking",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Lucas–Kanade in OpenCV: Tracking",
+    "text": "Lucas–Kanade in OpenCV: Tracking\n\nnext_points, status, _ = cv2.calcOpticalFlowPyrLK(\n    gray1, gray2, corners, None, winSize=(15, 15), maxLevel=3)\n\ntracked = status.ravel() == 1\ndisplacement = (next_points - corners)[tracked, 0]\n\n\n\n\nwinSize: the Lucas–Kanade window at each pyramid level.\nmaxLevel: number of pyramid levels above the original (0 = no pyramid).\nstatus: 1 if the point was tracked; keep only those.\ndisplacement: \\((u,v)\\) for each retained point.\nOpenCV point arrays have shape \\((N,1,2)\\); [:, 0] gives an \\((N,2)\\) array of coordinates.\n\n\n\n\n\n\n\n\n\n\n\n\nFrames 100 → 101, zoomed to the walkers. Arrows are drawn 5× longer than the displacement; yellow points moved ≤ 1 px."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#lk-opencv-code",
+    "href": "lectures/10_optical_flow.html#lk-opencv-code",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Lucas–Kanade: Complete Video Example",
+    "text": "Lucas–Kanade: Complete Video Example\n\n\nimport cv2\nimport numpy as np\n\nGREEN, RED = (0, 255, 0), (0, 0, 255)  # OpenCV colors are BGR\n\ndef track_points(gray1, gray2, points):\n    # Lucas-Kanade from gray1 to gray2, then back to gray1.\n    next_points, status, error = cv2.calcOpticalFlowPyrLK(\n        gray1, gray2, points, None, winSize=(15, 15), maxLevel=3)\n    back_points, back_status, _ = cv2.calcOpticalFlowPyrLK(\n        gray2, gray1, next_points, None, winSize=(15, 15), maxLevel=3)\n    # Keep points found in both directions that came back within 1 px.\n    returned = np.linalg.norm(points - back_points, axis=1) &lt; 1\n    tracked = (status.ravel() == 1) & (back_status.ravel() == 1) & returned\n    return next_points, tracked\n\nvideo = cv2.VideoCapture(\"vtest.avi\")\ntracks = []  # one track per point: its list of (x, y) positions\ngray1 = None\nframe_count = 0\n\nwhile True:\n    ok, frame = video.read()\n    if not ok:  # end of the video\n        break\n    gray2 = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n\n    # Move each track's latest point to gray2; keep its last 10 positions.\n    if gray1 is not None and tracks:\n        points = np.float32([track[-1] for track in tracks])\n        next_points, tracked = track_points(gray1, gray2, points)\n        tracks = [(track + [point])[-10:] for track, point, keep\n                  in zip(tracks, next_points, tracked) if keep]\n\n    # Every 10 frames, add new points at least 10 px from those already tracked.\n    if frame_count % 10 == 0:\n        mask = np.full(gray2.shape, 255, np.uint8)\n        for track in tracks:\n            cv2.circle(mask, np.int32(track[-1]), 10, 0, -1)\n        corners = cv2.goodFeaturesToTrack(gray2, maxCorners=300, qualityLevel=0.01,\n                                          minDistance=10, blockSize=7, mask=mask)\n        tracks += [[point] for point in corners[:, 0]]\n\n    # Draw tails (green) and current positions (red).\n    for track in tracks:\n        cv2.polylines(frame, [np.int32(track)], False, GREEN, 2, cv2.LINE_AA)\n        cv2.circle(frame, np.int32(track[-1]), 2, RED, -1, cv2.LINE_AA)\n    cv2.imshow(\"Lucas-Kanade tracking\", frame)\n    if cv2.waitKey(100) == 27:  # 100 ms per frame (10 fps); Esc quits\n        break\n\n    gray1 = gray2\n    frame_count += 1\n\nvideo.release()\ncv2.destroyAllWindows()"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#tracking-points-through-the-video",
+    "href": "lectures/10_optical_flow.html#tracking-points-through-the-video",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Tracking Points Through the Video",
+    "text": "Tracking Points Through the Video\n\nTrack forward and backward; retain points that return within 1 px of their starting positions.\nGreen tails show each point’s last 10 positions; red dots show current positions.\nEvery 10 frames, detect new points away from those already tracked."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#dense-optical-flow-farnebäck",
+    "href": "lectures/10_optical_flow.html#dense-optical-flow-farnebäck",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Dense Optical Flow: Farnebäck",
+    "text": "Dense Optical Flow: Farnebäck\n\nflow = cv2.calcOpticalFlowFarneback(\n    gray1, gray2, None, pyr_scale=0.5, levels=3, winsize=15,\n    iterations=3, poly_n=5, poly_sigma=1.2, flags=0)\n\n\n\n\nflow has shape (height, width, 2): flow[y, x] \\(=(u,v)\\) at every pixel.\nFits a quadratic polynomial to each neighborhood and estimates how it shifts between frames.\npyr_scale: scale factor between pyramid levels.\nlevels: total number of levels, including the original image.\nwinsize: averaging window; larger is smoother and more robust to noise, but blurs motion boundaries.\niterations: refinements per pyramid level.\npoly_n, poly_sigma: neighborhood size and smoothing for the polynomial fit.\n\n\n\n\n\n\n\n\n\n\n\n\nHue: direction; saturation: magnitude, saturating at 5 px. White means no motion."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#dense-optical-flow-dis",
+    "href": "lectures/10_optical_flow.html#dense-optical-flow-dis",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Dense Optical Flow: DIS",
+    "text": "Dense Optical Flow: DIS\n\ndis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)\nflow = dis.calc(gray1, gray2, None)\n\n\n\n\nDIS: Dense Inverse Search.\nRuns a fast Lucas–Kanade-style search on a grid of patches, then combines and refines their motion estimates into a dense field.\nPresets (ULTRAFAST, FAST, MEDIUM) trade accuracy for speed.\nReturns the same (height, width, 2) flow array format as Farnebäck.\nUse the same color scale to compare the two methods.\n\n\n\n\n\n\n\n\n\n\n\n\nHue: direction; saturation: magnitude, saturating at 5 px. White means no motion."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#dense-opencv-code",
+    "href": "lectures/10_optical_flow.html#dense-opencv-code",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Dense Optical Flow: Complete Video Example",
+    "text": "Dense Optical Flow: Complete Video Example\n\nimport cv2\nimport numpy as np\n\ndef flow_to_bgr(flow, max_flow=5):\n    # Hue: direction. Saturation: magnitude. White: no motion.\n    magnitude, angle = cv2.cartToPolar(\n        flow[..., 0], flow[..., 1], angleInDegrees=True)\n    hsv = np.zeros(flow.shape[:2] + (3,), np.uint8)\n    hsv[..., 0] = angle / 2\n    hsv[..., 1] = np.clip(255 * magnitude / max_flow, 0, 255)\n    hsv[..., 2] = 255\n    return cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)\n\nvideo = cv2.VideoCapture(\"vtest.avi\")\ndis = cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM)\n\n_, previous = video.read()\ngray1 = cv2.cvtColor(previous, cv2.COLOR_BGR2GRAY)\n\nwhile True:\n    ok, current = video.read()\n    if not ok:\n        break\n    gray2 = cv2.cvtColor(current, cv2.COLOR_BGR2GRAY)\n\n    farneback = cv2.calcOpticalFlowFarneback(\n        gray1, gray2, None, pyr_scale=0.5, levels=3, winsize=15,\n        iterations=3, poly_n=5, poly_sigma=1.2, flags=0)\n    dis_flow = dis.calc(gray1, gray2, None)\n\n    # Forward flow is defined at pixels in the previous frame.\n    cv2.imshow(\"Video\", previous)\n    cv2.imshow(\"Farneback\", flow_to_bgr(farneback))\n    cv2.imshow(\"DIS\", flow_to_bgr(dis_flow))\n\n    previous, gray1 = current, gray2\n    if cv2.waitKey(100) == 27:  # Esc quits.\n        break\n\nvideo.release()\ncv2.destroyAllWindows()"
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#comparing-dense-optical-flow",
+    "href": "lectures/10_optical_flow.html#comparing-dense-optical-flow",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Comparing Dense Optical Flow",
+    "text": "Comparing Dense Optical Flow\n\nBoth methods estimate motion at every pixel between consecutive frames.\nCompare the walkers, motion boundaries, and nearly stationary background.\nBoth displays use the same color scale: white means no motion; saturation reaches its maximum at 5 px."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#optical-flow-in-opencv",
+    "href": "lectures/10_optical_flow.html#optical-flow-in-opencv",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Optical Flow in OpenCV",
+    "text": "Optical Flow in OpenCV\n\n\n\n\n\n\n\n\n\nMethod\nFunction\nOutput\nModule\n\n\n\n\nPyramidal Lucas–Kanade\ncv2.calcOpticalFlowPyrLK\nSparse\nmain\n\n\nFarnebäck\ncv2.calcOpticalFlowFarneback\nDense\nmain\n\n\nDIS\ncv2.DISOpticalFlow_create\nDense\nmain\n\n\nDual TV-L1\ncv2.optflow.DualTVL1OpticalFlow_create\nDense\ncontrib\n\n\nDeepFlow\ncv2.optflow.createOptFlow_DeepFlow\nDense\ncontrib\n\n\nSparse-to-dense\ncv2.optflow.calcOpticalFlowSparseToDense\nDense\ncontrib\n\n\nRobust local flow (RLOF)\ncv2.optflow.calcOpticalFlowSparseRLOF, cv2.optflow.calcOpticalFlowDenseRLOF\nBoth\ncontrib\n\n\n\n\nSparse: track selected points (e.g., for visual odometry).\nDense: a vector at every pixel (e.g., motion segmentation).\ncontrib methods require OpenCV built with the contrib modules."
+  },
+  {
+    "objectID": "lectures/10_optical_flow.html#key-takeaways",
+    "href": "lectures/10_optical_flow.html#key-takeaways",
+    "title": "Lecture 10 — Optical Flow",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nOptical flow describes apparent motion between images. Sparse methods estimate motion at selected points; dense methods estimate a vector at every pixel.\nBrightness constancy and a small-motion approximation give \\(I_xu + I_yv + I_t = 0\\): one equation for two unknowns.\nLucas–Kanade assumes shared motion within a small window and combines its pixel equations using least squares. Reliable estimates require intensity variation in two directions—the same condition used to identify corners.\nCoarse-to-fine estimation reduces apparent displacement, then refines the estimate through warping and residual motion updates.\n\n\n\n\n\n\n\nWhen Is Motion Reliable?\n\n\nFlat regions provide little motion information; a straight edge reveals only motion normal to the edge. Corners and texture help resolve both components, but lighting changes, occlusion, and large motion can still cause errors."
   }
 ]
