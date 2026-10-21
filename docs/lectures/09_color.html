@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="Kaveh Fathian">
+  <title>Computer Vision – Lecture 09 — Color</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e29227cb4367bc74b13779e945f9984f.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture 09 — Color</h1>
+  <p class="subtitle">Lecture 09</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Kaveh Fathian
+</div>
+        <p class="quarto-title-affiliation">
+            Computer Science Department, Colorado School of Mines
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you should be able to:</p>
+<ul>
+<li>Explain how humans perceive color and how cameras capture it.</li>
+<li>Represent color images as arrays and access their channels in OpenCV.</li>
+<li>Compare common color spaces and describe their uses.</li>
+<li>Use HSV thresholds to segment and track a colored object.</li>
+</ul>
+</section>
+<section id="grayscale-images-are-matrices" class="slide level2">
+<h2>Grayscale Images Are Matrices</h2>
+<ul>
+<li>A grayscale image is an <span class="math inline">\(H \times W\)</span> matrix: one intensity value per pixel.</li>
+<li>For an 8-bit image, values range from <strong>0 (black)</strong> to <strong>255 (white)</strong>.</li>
+</ul>
+<div id="71e7acc8" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center" width="1195" height="471"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Python indexes the image as <code>gray[y, x]</code>: <strong>row first, column second</strong>.</li>
+<li>The top-left pixel is <code>gray[0, 0]</code>.</li>
+</ul>
+</section>
+<section id="rgb-images-have-three-channels" class="slide level2">
+<h2>RGB Images Have Three Channels</h2>
+<ul>
+<li>An RGB image contains three <span class="math inline">\(H \times W\)</span> matrices: <strong>red</strong>, <strong>green</strong>, and <strong>blue</strong>.</li>
+<li>Together, they form an array with shape <span class="math inline">\((H,W,3)\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+I(y,x)=\begin{bmatrix}R(y,x)&amp;G(y,x)&amp;B(y,x)\end{bmatrix}
+\]</span></p>
+<div id="5f71a49d" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-4-output-1.png" class="quarto-figure quarto-figure-center" width="1542" height="292"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Each pixel has three values. For example, <span class="math inline">\((255,0,0)\)</span> is red and <span class="math inline">\((255,255,255)\)</span> is white.</li>
+</ul>
+</section>
+<section id="light-and-wavelength" class="slide level2">
+<h2>Light and Wavelength</h2>
+<ul>
+<li>Visible light is a small part of the electromagnetic spectrum, approximately <strong>400–700 nm</strong>.</li>
+<li>A single wavelength has a spectral color. Most light reaching a camera contains a mixture of wavelengths.</li>
+</ul>
+<div id="48cfe265" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-5-output-1.png" class="quarto-figure quarto-figure-center" width="1527" height="512"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="human-color-perception" class="slide level2">
+<h2>Human Color Perception</h2>
+<ul>
+<li>In daylight, color vision relies on three types of cone cells: <strong>S</strong>, <strong>M</strong>, and <strong>L</strong>.</li>
+<li>Their sensitivities overlap. Color depends on the combination of their responses.</li>
+</ul>
+<div id="e593d1b0" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-6-output-1.png" class="quarto-figure quarto-figure-center" width="1335" height="471"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>S, M, and L refer to wavelength sensitivity; they are not the RGB channels of an image.</li>
+</ul>
+</section>
+<section id="how-cameras-capture-color" class="slide level2">
+<h2>How Cameras Capture Color</h2>
+<ul>
+<li><strong>Three sensors:</strong> a prism separates light into three paths, one for each color channel.</li>
+<li><strong>One sensor:</strong> a color filter array lets each sensor location measure one color component.</li>
+</ul>
+<div id="fbd3864c" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="1509" height="374"></p>
+</figure>
+</div>
+</div>
+</div>
+<div style="margin-top: -20px;">
+
+</div>
+<ul>
+<li>Each <span class="math inline">\(2\times2\)</span> Bayer block contains <strong>two green</strong>, <strong>one red</strong>, and <strong>one blue</strong> sample.</li>
+<li>Human vision is most sensitive to green, where the M and L cones overlap, so green carries most of perception.</li>
+<li>The missing color components must be estimated to obtain an RGB image.</li>
+</ul>
+</section>
+<section id="reconstructing-rgb-demosaicing" class="slide level2">
+<h2>Reconstructing RGB: Demosaicing</h2>
+<p><strong>Demosaicing</strong> estimates the two missing color components at each sensor location using nearby samples.</p>
+<div class="columns">
+<div class="column" style="width:46%;">
+<div id="ab89e392" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-8-output-1.png" class="quarto-figure quarto-figure-center" width="387" height="365"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:54%;">
+<p>At the center, green is measured directly:</p>
+<p><span class="math display">\[
+\widehat G_C = G_C
+\]</span></p>
+<p>Estimate red and blue by averaging nearby samples:</p>
+<p><span class="math display">\[
+\widehat R_C = \frac{R_L+R_R}{2},
+\qquad
+\widehat B_C = \frac{B_U+B_D}{2}
+\]</span></p>
+<p>The reconstructed pixel is</p>
+<p><span class="math display">\[
+\widehat I_C =
+\begin{bmatrix}\widehat R_C &amp; G_C &amp; \widehat B_C\end{bmatrix}.
+\]</span></p>
+</div></div>
+<ul>
+<li>This is a simple <strong>bilinear interpolation</strong> example. The neighbors used depend on the location’s filter color and position in the Bayer pattern.</li>
+</ul>
+</section>
+<section id="color-spaces-rgb" class="slide level2">
+<h2>Color Spaces: RGB</h2>
+<ul>
+<li>A color space represents colors numerically. RGB uses <strong>red, green, and blue</strong> components and is widely used for images and displays.</li>
+<li>RGB is an <strong>additive</strong> model: adding colored light produces brighter colors.</li>
+</ul>
+<div id="dfd2fc0c" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>bgr <span class="op">=</span> cv2.imread(<span class="st">"assets/09_color/rgb.jpg"</span>)</span>
+<span id="cb1-2"><a aria-label="2"></a>rgb <span class="op">=</span> cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)</span>
+<span id="cb1-3"><a aria-label="3"></a>red, green, blue <span class="op">=</span> cv2.split(rgb)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="2668f371" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-10-output-1.png" class="quarto-figure quarto-figure-center" width="1509" height="310"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny center">
+<p>OpenCV loads <strong>BGR</strong>, so we convert to RGB before splitting. In the channel images, brighter pixels mean larger values (0–255).</p>
+</div>
+</section>
+<section id="cmyk-color-for-printing" class="slide level2">
+<h2>CMYK: Color for Printing</h2>
+<ul>
+<li>CMYK uses cyan, magenta, yellow, and black inks in a <strong>subtractive</strong> model: inks absorb light.</li>
+<li>Used for printing. The code below illustrates a simplified conversion; actual printing uses color profiles.</li>
+</ul>
+<div id="ba7837a8" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>rgb_float <span class="op">=</span> rgb.astype(np.float32) <span class="op">/</span> <span class="dv">255</span></span>
+<span id="cb2-2"><a aria-label="2"></a>black <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> rgb_float.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-3"><a aria-label="3"></a>cmy <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> rgb_float <span class="op">-</span> black[..., <span class="va">None</span>]) <span class="op">/</span> np.maximum(<span class="dv">1</span> <span class="op">-</span> black[..., <span class="va">None</span>], <span class="fl">1e-6</span>)</span>
+<span id="cb2-4"><a aria-label="4"></a>cyan, magenta, yellow <span class="op">=</span> cv2.split(cmy)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="fe4d0a2e" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-12-output-1.png" class="quarto-figure quarto-figure-center" width="1526" height="317"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny center">
+<p>Channel values range from 0 to 1; brighter pixels indicate more ink. OpenCV has no direct CMYK conversion, so this example uses NumPy.</p>
+</div>
+</section>
+<section id="hsv-hue-saturation-and-value" class="slide level2">
+<h2>HSV: Hue, Saturation, and Value</h2>
+<ul>
+<li><strong>Hue</strong> describes the color, <strong>saturation</strong> its departure from gray, and <strong>value</strong> the largest RGB component.</li>
+<li>HSV is useful for selecting and tracking objects by color.</li>
+</ul>
+<div id="cbd8343c" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-13-output-1.png" class="quarto-figure quarto-figure-center" width="1396" height="487"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="hsv-in-python" class="slide level2">
+<h2>HSV in Python</h2>
+<ul>
+<li>Hue separates colors; saturation and value help exclude nearly gray or very dark pixels.</li>
+<li>Hue is unreliable when saturation or value is very small.</li>
+</ul>
+<div id="e55e2d37" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>hsv <span class="op">=</span> cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)</span>
+<span id="cb3-2"><a aria-label="2"></a>hue, saturation, value <span class="op">=</span> cv2.split(hsv)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="25af1a1f" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-15-output-1.png" class="quarto-figure quarto-figure-center" width="1537" height="330"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny center">
+<p>For 8-bit OpenCV images: <span class="math inline">\(H\in[0,179]\)</span> (approximately half the angle in degrees), and <span class="math inline">\(S,V\in[0,255]\)</span>.</p>
+</div>
+</section>
+<section id="ycbcr-luma-and-chroma" class="slide level2">
+<h2>YCbCr: Luma and Chroma</h2>
+<ul>
+<li><strong>Y</strong> represents luma; <strong>Cb</strong> and <strong>Cr</strong> represent blue- and red-difference chroma.</li>
+<li>Used in image/video compression: chroma can be stored at lower resolution than luma.</li>
+</ul>
+<div id="127bd1ff" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a>ycrcb <span class="op">=</span> cv2.cvtColor(bgr, cv2.COLOR_BGR2YCrCb)</span>
+<span id="cb4-2"><a aria-label="2"></a>luma, cr, cb <span class="op">=</span> cv2.split(ycrcb)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="d055a85c" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-17-output-1.png" class="quarto-figure quarto-figure-center" width="1537" height="330"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny center">
+<p>OpenCV returns channels in <strong>Y, Cr, Cb</strong> order. For 8-bit images, neutral chroma is approximately 128.</p>
+</div>
+</section>
+<section id="cielab-lightness-and-color-differences" class="slide level2">
+<h2>CIELAB: Lightness and Color Differences</h2>
+<ul>
+<li><strong><span class="math inline">\(L^*\)</span></strong> describes lightness; <strong><span class="math inline">\(a^*\)</span></strong> runs from green to red, and <strong><span class="math inline">\(b^*\)</span></strong> from blue to yellow.</li>
+<li>Approximately perceptually uniform: distances are useful for comparing colors and grouping similar colors.</li>
+</ul>
+<div id="c0c0f1d0" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>lab <span class="op">=</span> cv2.cvtColor(bgr, cv2.COLOR_BGR2Lab)</span>
+<span id="cb5-2"><a aria-label="2"></a>lightness, a_channel, b_channel <span class="op">=</span> cv2.split(lab)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="a5865e00" class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-19-output-1.png" class="quarto-figure quarto-figure-center" width="1537" height="330"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="tiny center">
+<p>OpenCV’s 8-bit encoding: <span class="math inline">\(L_8=255L^*/100\)</span>, <span class="math inline">\(a_8=a^*+128\)</span>, <span class="math inline">\(b_8=b^*+128\)</span>. Neutral <span class="math inline">\(a^*=b^*=0\)</span> is stored as 128.</p>
+</div>
+</section>
+<section id="color-based-segmentation" class="slide level2">
+<h2>Color-Based Segmentation</h2>
+<ul>
+<li>Select red pixels in HSV. Red wraps around the hue scale, so we combine <strong>two hue ranges</strong>.</li>
+<li>Minimum saturation and value thresholds reject weak colors and dark pixels.</li>
+</ul>
+<div id="dde4aa86" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>hsv <span class="op">=</span> cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</span>
+<span id="cb6-2"><a aria-label="2"></a>mask <span class="op">=</span> cv2.inRange(hsv, (<span class="dv">0</span>, <span class="dv">130</span>, <span class="dv">80</span>), (<span class="dv">5</span>, <span class="dv">255</span>, <span class="dv">255</span>)) <span class="co"># returns 255 for matching pixels, 0 otherwise</span></span>
+<span id="cb6-3"><a aria-label="3"></a>mask <span class="op">|=</span> cv2.inRange(hsv, (<span class="dv">170</span>, <span class="dv">130</span>, <span class="dv">80</span>), (<span class="dv">179</span>, <span class="dv">255</span>, <span class="dv">255</span>)) <span class="co"># |= combines the masks</span></span>
+<span id="cb6-4"><a aria-label="4"></a>mask <span class="op">=</span> cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((<span class="dv">3</span>, <span class="dv">3</span>), np.uint8)) <span class="co"># fills small gaps</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="abff8cbe" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="09_color_files/figure-revealjs/cell-22-output-1.png" class="quarto-figure quarto-figure-center" width="1542" height="327"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="red-car-code" class="slide level2">
+<h2>Tracking the Red Car: Complete Code</h2>
+<p>Select the largest red region in each frame, draw its bounding box, and retain its recent center positions.</p>
+<style>
+#red-car-code .code-block pre code,
+#dense-opencv-code .code-block pre code {
+  max-height: 720px !important;
+  overflow-y: auto;
+}
+</style>
+<div id="red-car-tracking-script" class="cell code-block" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="im">import</span> cv2</span>
+<span id="cb7-2"><a aria-label="2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a aria-label="3"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
+<span id="cb7-4"><a aria-label="4"></a></span>
+<span id="cb7-5"><a aria-label="5"></a><span class="kw">def</span> annotate_car(frame, trail):</span>
+<span id="cb7-6"><a aria-label="6"></a>    hsv <span class="op">=</span> cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)</span>
+<span id="cb7-7"><a aria-label="7"></a>    mask <span class="op">=</span> cv2.inRange(hsv, (<span class="dv">0</span>, <span class="dv">130</span>, <span class="dv">80</span>), (<span class="dv">5</span>, <span class="dv">255</span>, <span class="dv">255</span>))</span>
+<span id="cb7-8"><a aria-label="8"></a>    mask <span class="op">|=</span> cv2.inRange(hsv, (<span class="dv">170</span>, <span class="dv">130</span>, <span class="dv">80</span>), (<span class="dv">179</span>, <span class="dv">255</span>, <span class="dv">255</span>))</span>
+<span id="cb7-9"><a aria-label="9"></a>    mask <span class="op">=</span> cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((<span class="dv">3</span>, <span class="dv">3</span>), np.uint8))</span>
+<span id="cb7-10"><a aria-label="10"></a>    contours, _ <span class="op">=</span> cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span>
+<span id="cb7-11"><a aria-label="11"></a></span>
+<span id="cb7-12"><a aria-label="12"></a>    result <span class="op">=</span> frame.copy()</span>
+<span id="cb7-13"><a aria-label="13"></a>    <span class="cf">if</span> contours:</span>
+<span id="cb7-14"><a aria-label="14"></a>        car <span class="op">=</span> <span class="bu">max</span>(contours, key<span class="op">=</span>cv2.contourArea)</span>
+<span id="cb7-15"><a aria-label="15"></a>        <span class="cf">if</span> cv2.contourArea(car) <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb7-16"><a aria-label="16"></a>            x, y, w, h <span class="op">=</span> cv2.boundingRect(car)</span>
+<span id="cb7-17"><a aria-label="17"></a>            trail.append((x <span class="op">+</span> w<span class="op">//</span><span class="dv">2</span>, y <span class="op">+</span> h<span class="op">//</span><span class="dv">2</span>))</span>
+<span id="cb7-18"><a aria-label="18"></a>            cv2.rectangle(result, (x, y), (x<span class="op">+</span>w, y<span class="op">+</span>h), (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>), <span class="dv">3</span>)</span>
+<span id="cb7-19"><a aria-label="19"></a>            cv2.circle(result, trail[<span class="op">-</span><span class="dv">1</span>], <span class="dv">4</span>, (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">255</span>), <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb7-20"><a aria-label="20"></a></span>
+<span id="cb7-21"><a aria-label="21"></a>    <span class="cf">if</span> <span class="bu">len</span>(trail) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb7-22"><a aria-label="22"></a>        cv2.polylines(result, [np.array(trail, np.int32)], <span class="va">False</span>, (<span class="dv">255</span>, <span class="dv">255</span>, <span class="dv">0</span>), <span class="dv">3</span>)</span>
+<span id="cb7-23"><a aria-label="23"></a>    <span class="cf">return</span> result</span>
+<span id="cb7-24"><a aria-label="24"></a></span>
+<span id="cb7-25"><a aria-label="25"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb7-26"><a aria-label="26"></a>    cap <span class="op">=</span> cv2.VideoCapture(<span class="st">"assets/09_color/red_car_clip.mp4"</span>)</span>
+<span id="cb7-27"><a aria-label="27"></a>    trail <span class="op">=</span> deque(maxlen<span class="op">=</span><span class="dv">40</span>)</span>
+<span id="cb7-28"><a aria-label="28"></a>    delay <span class="op">=</span> <span class="bu">round</span>(<span class="dv">1000</span> <span class="op">/</span> cap.get(cv2.CAP_PROP_FPS))</span>
+<span id="cb7-29"><a aria-label="29"></a></span>
+<span id="cb7-30"><a aria-label="30"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-31"><a aria-label="31"></a>        ok, frame <span class="op">=</span> cap.read()</span>
+<span id="cb7-32"><a aria-label="32"></a>        <span class="cf">if</span> <span class="kw">not</span> ok:</span>
+<span id="cb7-33"><a aria-label="33"></a>            <span class="cf">break</span></span>
+<span id="cb7-34"><a aria-label="34"></a>        result <span class="op">=</span> annotate_car(frame, trail)</span>
+<span id="cb7-35"><a aria-label="35"></a>        comparison <span class="op">=</span> cv2.resize(np.hstack([frame, result]), (<span class="dv">1280</span>, <span class="dv">360</span>))</span>
+<span id="cb7-36"><a aria-label="36"></a>        cv2.imshow(<span class="st">"Input | Color-based tracking"</span>, comparison)</span>
+<span id="cb7-37"><a aria-label="37"></a>        <span class="cf">if</span> cv2.waitKey(delay) <span class="op">==</span> <span class="dv">27</span>:</span>
+<span id="cb7-38"><a aria-label="38"></a>            <span class="cf">break</span></span>
+<span id="cb7-39"><a aria-label="39"></a></span>
+<span id="cb7-40"><a aria-label="40"></a>    cap.release()</span>
+<span id="cb7-41"><a aria-label="41"></a>    cv2.destroyAllWindows()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="color-based-tracking-result" class="slide level2">
+<h2>Color-Based Tracking: Result</h2>
+<ul>
+<li>Yellow box: detected red region.</li>
+<li>Cyan line: the last 40 detected centers.</li>
+<li>The trail is in image coordinates, so it also reflects camera motion.</li>
+</ul>
+<style>
+.reveal .color-video video,
+.reveal .color-video img {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.reveal .color-video .color-video-poster {
+  display: none;
+}
+html.print-pdf .reveal .color-video video {
+  display: none !important;
+}
+html.print-pdf .reveal .color-video .color-video-poster {
+  display: block !important;
+}
+@media print {
+  .reveal .color-video video {
+    display: none !important;
+  }
+  .reveal .color-video .color-video-poster {
+    display: block !important;
+  }
+}
+</style>
+
+<div class="color-video" style="margin-top: 1em;">
+  <video controls="" muted="" loop="" playsinline="" preload="metadata" poster="assets/09_color/red_car_tracking_poster.jpg">
+    <source src="assets/09_color/red_car_tracking.mp4" type="video/mp4">
+  </video>
+  <img class="color-video-poster" src="assets/09_color/red_car_tracking_poster.jpg" alt="Input video and HSV-based red car tracking">
+</div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li>An RGB image contains three channels. OpenCV loads color images in BGR order.</li>
+<li>Human color vision relies on three cone types. Bayer cameras measure one color component per sensor location and estimate the missing components through demosaicing.</li>
+<li>Color spaces emphasize different properties: RGB for display, HSV for color selection, YCbCr for compression, and Lab for perceptual color comparison.</li>
+<li>Color segmentation combines hue, saturation, and value thresholds. Hue alone may not distinguish an object from its background.</li>
+</ul>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Computer Vision; Colorado School of Mines | Kaveh Fathian</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'pdfMaxPagesPerSlide': 1,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

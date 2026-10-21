@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -5010,5 +5010,124 @@
     "title": "Homework 08: Document Boundary Detection",
     "section": "Submission",
     "text": "Submission\nSubmit only your completed hw08.py to Gradescope. No report, generated images, notebook, helper module, or reference JSON is required.\nYou have five submissions. Submissions 6 and later receive zero for that submission; earlier submissions remain unchanged. Platform autograder failures are excluded from the count, while student-code errors and timeouts count.\nThe due date is Wednesday, October 28, 2026; use the time displayed in Gradescope. The course late policy permits submission for one additional week with a 20% penalty. After that week, the homework receives zero. The autograder displays the raw score before any late penalty."
+  },
+  {
+    "objectID": "lectures/09_color.html#learning-objectives",
+    "href": "lectures/09_color.html#learning-objectives",
+    "title": "Lecture 09 — Color",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain how humans perceive color and how cameras capture it.\nRepresent color images as arrays and access their channels in OpenCV.\nCompare common color spaces and describe their uses.\nUse HSV thresholds to segment and track a colored object."
+  },
+  {
+    "objectID": "lectures/09_color.html#grayscale-images-are-matrices",
+    "href": "lectures/09_color.html#grayscale-images-are-matrices",
+    "title": "Lecture 09 — Color",
+    "section": "Grayscale Images Are Matrices",
+    "text": "Grayscale Images Are Matrices\n\nA grayscale image is an \\(H \\times W\\) matrix: one intensity value per pixel.\nFor an 8-bit image, values range from 0 (black) to 255 (white).\n\n\n\n\n\n\n\n\n\n\n\nPython indexes the image as gray[y, x]: row first, column second.\nThe top-left pixel is gray[0, 0]."
+  },
+  {
+    "objectID": "lectures/09_color.html#rgb-images-have-three-channels",
+    "href": "lectures/09_color.html#rgb-images-have-three-channels",
+    "title": "Lecture 09 — Color",
+    "section": "RGB Images Have Three Channels",
+    "text": "RGB Images Have Three Channels\n\nAn RGB image contains three \\(H \\times W\\) matrices: red, green, and blue.\nTogether, they form an array with shape \\((H,W,3)\\).\n\n\\[\nI(y,x)=\\begin{bmatrix}R(y,x)&G(y,x)&B(y,x)\\end{bmatrix}\n\\]\n\n\n\n\n\n\n\n\n\n\nEach pixel has three values. For example, \\((255,0,0)\\) is red and \\((255,255,255)\\) is white."
+  },
+  {
+    "objectID": "lectures/09_color.html#light-and-wavelength",
+    "href": "lectures/09_color.html#light-and-wavelength",
+    "title": "Lecture 09 — Color",
+    "section": "Light and Wavelength",
+    "text": "Light and Wavelength\n\nVisible light is a small part of the electromagnetic spectrum, approximately 400–700 nm.\nA single wavelength has a spectral color. Most light reaching a camera contains a mixture of wavelengths."
+  },
+  {
+    "objectID": "lectures/09_color.html#human-color-perception",
+    "href": "lectures/09_color.html#human-color-perception",
+    "title": "Lecture 09 — Color",
+    "section": "Human Color Perception",
+    "text": "Human Color Perception\n\nIn daylight, color vision relies on three types of cone cells: S, M, and L.\nTheir sensitivities overlap. Color depends on the combination of their responses.\n\n\n\n\n\n\n\n\n\n\n\nS, M, and L refer to wavelength sensitivity; they are not the RGB channels of an image."
+  },
+  {
+    "objectID": "lectures/09_color.html#how-cameras-capture-color",
+    "href": "lectures/09_color.html#how-cameras-capture-color",
+    "title": "Lecture 09 — Color",
+    "section": "How Cameras Capture Color",
+    "text": "How Cameras Capture Color\n\nThree sensors: a prism separates light into three paths, one for each color channel.\nOne sensor: a color filter array lets each sensor location measure one color component.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEach \\(2\\times2\\) Bayer block contains two green, one red, and one blue sample.\nHuman vision is most sensitive to green, where the M and L cones overlap, so green carries most of perception.\nThe missing color components must be estimated to obtain an RGB image."
+  },
+  {
+    "objectID": "lectures/09_color.html#reconstructing-rgb-demosaicing",
+    "href": "lectures/09_color.html#reconstructing-rgb-demosaicing",
+    "title": "Lecture 09 — Color",
+    "section": "Reconstructing RGB: Demosaicing",
+    "text": "Reconstructing RGB: Demosaicing\nDemosaicing estimates the two missing color components at each sensor location using nearby samples.\n\n\n\n\n\n\n\n\n\n\n\n\nAt the center, green is measured directly:\n\\[\n\\widehat G_C = G_C\n\\]\nEstimate red and blue by averaging nearby samples:\n\\[\n\\widehat R_C = \\frac{R_L+R_R}{2},\n\\qquad\n\\widehat B_C = \\frac{B_U+B_D}{2}\n\\]\nThe reconstructed pixel is\n\\[\n\\widehat I_C =\n\\begin{bmatrix}\\widehat R_C & G_C & \\widehat B_C\\end{bmatrix}.\n\\]\n\n\nThis is a simple bilinear interpolation example. The neighbors used depend on the location’s filter color and position in the Bayer pattern."
+  },
+  {
+    "objectID": "lectures/09_color.html#color-spaces-rgb",
+    "href": "lectures/09_color.html#color-spaces-rgb",
+    "title": "Lecture 09 — Color",
+    "section": "Color Spaces: RGB",
+    "text": "Color Spaces: RGB\n\nA color space represents colors numerically. RGB uses red, green, and blue components and is widely used for images and displays.\nRGB is an additive model: adding colored light produces brighter colors.\n\n\nbgr = cv2.imread(\"assets/09_color/rgb.jpg\")\nrgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)\nred, green, blue = cv2.split(rgb)\n\n\n\n\n\n\n\n\n\n\n\nOpenCV loads BGR, so we convert to RGB before splitting. In the channel images, brighter pixels mean larger values (0–255)."
+  },
+  {
+    "objectID": "lectures/09_color.html#cmyk-color-for-printing",
+    "href": "lectures/09_color.html#cmyk-color-for-printing",
+    "title": "Lecture 09 — Color",
+    "section": "CMYK: Color for Printing",
+    "text": "CMYK: Color for Printing\n\nCMYK uses cyan, magenta, yellow, and black inks in a subtractive model: inks absorb light.\nUsed for printing. The code below illustrates a simplified conversion; actual printing uses color profiles.\n\n\nrgb_float = rgb.astype(np.float32) / 255\nblack = 1 - rgb_float.max(axis=2)\ncmy = (1 - rgb_float - black[..., None]) / np.maximum(1 - black[..., None], 1e-6)\ncyan, magenta, yellow = cv2.split(cmy)\n\n\n\n\n\n\n\n\n\n\n\nChannel values range from 0 to 1; brighter pixels indicate more ink. OpenCV has no direct CMYK conversion, so this example uses NumPy."
+  },
+  {
+    "objectID": "lectures/09_color.html#hsv-hue-saturation-and-value",
+    "href": "lectures/09_color.html#hsv-hue-saturation-and-value",
+    "title": "Lecture 09 — Color",
+    "section": "HSV: Hue, Saturation, and Value",
+    "text": "HSV: Hue, Saturation, and Value\n\nHue describes the color, saturation its departure from gray, and value the largest RGB component.\nHSV is useful for selecting and tracking objects by color."
+  },
+  {
+    "objectID": "lectures/09_color.html#hsv-in-python",
+    "href": "lectures/09_color.html#hsv-in-python",
+    "title": "Lecture 09 — Color",
+    "section": "HSV in Python",
+    "text": "HSV in Python\n\nHue separates colors; saturation and value help exclude nearly gray or very dark pixels.\nHue is unreliable when saturation or value is very small.\n\n\nhsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)\nhue, saturation, value = cv2.split(hsv)\n\n\n\n\n\n\n\n\n\n\n\nFor 8-bit OpenCV images: \\(H\\in[0,179]\\) (approximately half the angle in degrees), and \\(S,V\\in[0,255]\\)."
+  },
+  {
+    "objectID": "lectures/09_color.html#ycbcr-luma-and-chroma",
+    "href": "lectures/09_color.html#ycbcr-luma-and-chroma",
+    "title": "Lecture 09 — Color",
+    "section": "YCbCr: Luma and Chroma",
+    "text": "YCbCr: Luma and Chroma\n\nY represents luma; Cb and Cr represent blue- and red-difference chroma.\nUsed in image/video compression: chroma can be stored at lower resolution than luma.\n\n\nycrcb = cv2.cvtColor(bgr, cv2.COLOR_BGR2YCrCb)\nluma, cr, cb = cv2.split(ycrcb)\n\n\n\n\n\n\n\n\n\n\n\nOpenCV returns channels in Y, Cr, Cb order. For 8-bit images, neutral chroma is approximately 128."
+  },
+  {
+    "objectID": "lectures/09_color.html#cielab-lightness-and-color-differences",
+    "href": "lectures/09_color.html#cielab-lightness-and-color-differences",
+    "title": "Lecture 09 — Color",
+    "section": "CIELAB: Lightness and Color Differences",
+    "text": "CIELAB: Lightness and Color Differences\n\n\\(L^*\\) describes lightness; \\(a^*\\) runs from green to red, and \\(b^*\\) from blue to yellow.\nApproximately perceptually uniform: distances are useful for comparing colors and grouping similar colors.\n\n\nlab = cv2.cvtColor(bgr, cv2.COLOR_BGR2Lab)\nlightness, a_channel, b_channel = cv2.split(lab)\n\n\n\n\n\n\n\n\n\n\n\nOpenCV’s 8-bit encoding: \\(L_8=255L^*/100\\), \\(a_8=a^*+128\\), \\(b_8=b^*+128\\). Neutral \\(a^*=b^*=0\\) is stored as 128."
+  },
+  {
+    "objectID": "lectures/09_color.html#color-based-segmentation",
+    "href": "lectures/09_color.html#color-based-segmentation",
+    "title": "Lecture 09 — Color",
+    "section": "Color-Based Segmentation",
+    "text": "Color-Based Segmentation\n\nSelect red pixels in HSV. Red wraps around the hue scale, so we combine two hue ranges.\nMinimum saturation and value thresholds reject weak colors and dark pixels.\n\n\nhsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)\nmask = cv2.inRange(hsv, (0, 130, 80), (5, 255, 255)) # returns 255 for matching pixels, 0 otherwise\nmask |= cv2.inRange(hsv, (170, 130, 80), (179, 255, 255)) # |= combines the masks\nmask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8)) # fills small gaps"
+  },
+  {
+    "objectID": "lectures/09_color.html#red-car-code",
+    "href": "lectures/09_color.html#red-car-code",
+    "title": "Lecture 09 — Color",
+    "section": "Tracking the Red Car: Complete Code",
+    "text": "Tracking the Red Car: Complete Code\nSelect the largest red region in each frame, draw its bounding box, and retain its recent center positions.\n\n\nimport cv2\nimport numpy as np\nfrom collections import deque\n\ndef annotate_car(frame, trail):\n    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)\n    mask = cv2.inRange(hsv, (0, 130, 80), (5, 255, 255))\n    mask |= cv2.inRange(hsv, (170, 130, 80), (179, 255, 255))\n    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))\n    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n\n    result = frame.copy()\n    if contours:\n        car = max(contours, key=cv2.contourArea)\n        if cv2.contourArea(car) &gt; 10:\n            x, y, w, h = cv2.boundingRect(car)\n            trail.append((x + w//2, y + h//2))\n            cv2.rectangle(result, (x, y), (x+w, y+h), (0, 255, 255), 3)\n            cv2.circle(result, trail[-1], 4, (0, 255, 255), -1)\n\n    if len(trail) &gt; 1:\n        cv2.polylines(result, [np.array(trail, np.int32)], False, (255, 255, 0), 3)\n    return result\n\nif __name__ == \"__main__\":\n    cap = cv2.VideoCapture(\"assets/09_color/red_car_clip.mp4\")\n    trail = deque(maxlen=40)\n    delay = round(1000 / cap.get(cv2.CAP_PROP_FPS))\n\n    while True:\n        ok, frame = cap.read()\n        if not ok:\n            break\n        result = annotate_car(frame, trail)\n        comparison = cv2.resize(np.hstack([frame, result]), (1280, 360))\n        cv2.imshow(\"Input | Color-based tracking\", comparison)\n        if cv2.waitKey(delay) == 27:\n            break\n\n    cap.release()\n    cv2.destroyAllWindows()"
+  },
+  {
+    "objectID": "lectures/09_color.html#color-based-tracking-result",
+    "href": "lectures/09_color.html#color-based-tracking-result",
+    "title": "Lecture 09 — Color",
+    "section": "Color-Based Tracking: Result",
+    "text": "Color-Based Tracking: Result\n\nYellow box: detected red region.\nCyan line: the last 40 detected centers.\nThe trail is in image coordinates, so it also reflects camera motion."
+  },
+  {
+    "objectID": "lectures/09_color.html#key-takeaways",
+    "href": "lectures/09_color.html#key-takeaways",
+    "title": "Lecture 09 — Color",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nAn RGB image contains three channels. OpenCV loads color images in BGR order.\nHuman color vision relies on three cone types. Bayer cameras measure one color component per sensor location and estimate the missing components through demosaicing.\nColor spaces emphasize different properties: RGB for display, HSV for color selection, YCbCr for compression, and Lab for perceptual color comparison.\nColor segmentation combines hue, saturation, and value thresholds. Hue alone may not distinguish an object from its background."
   }
 ]
