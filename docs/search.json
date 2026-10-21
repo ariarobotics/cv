@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Camera models, perspective projection, and camera calibration.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -5129,5 +5129,96 @@
     "title": "Lecture 09 — Color",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nAn RGB image contains three channels. OpenCV loads color images in BGR order.\nHuman color vision relies on three cone types. Bayer cameras measure one color component per sensor location and estimate the missing components through demosaicing.\nColor spaces emphasize different properties: RGB for display, HSV for color selection, YCbCr for compression, and Lab for perceptual color comparison.\nColor segmentation combines hue, saturation, and value thresholds. Hue alone may not distinguish an object from its background."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#a-brief-history-the-camera-obscura",
+    "href": "lectures/11_camera_geometry.html#a-brief-history-the-camera-obscura",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "A Brief History: The Camera Obscura",
+    "text": "A Brief History: The Camera Obscura\n\nLight through a small hole in a dark room forms an inverted image of the scene on the opposite wall.\nThis pinhole effect was described by Mozi (c. 470–391 BC); Aristotle (384–322 BC) used it to watch solar eclipses.\n\n\n\n\n\n\n\n\n\n\n\nFrisius’s woodcut is the oldest known published drawing of a camera obscura."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#a-brief-history-recording-the-image",
+    "href": "lectures/11_camera_geometry.html#a-brief-history-recording-the-image",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "A Brief History: Recording the Image",
+    "text": "A Brief History: Recording the Image\n\n\n\n\n\n\n\n\n\n\nNiépce: exposure of about 8 hours (some estimates: several days); held at the Harry Ransom Center, UT Austin.\nDaguerre: moving traffic left no trace; a man having his boots polished stood still long enough to appear.\nSasson: \\(100\\times100\\) pixels (0.01 megapixels), black and white, stored on cassette tape; 23 seconds per image, about 8 pounds."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#bare-sensor-vs.-pinhole",
+    "href": "lectures/11_camera_geometry.html#bare-sensor-vs.-pinhole",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Bare Sensor vs. Pinhole",
+    "text": "Bare Sensor vs. Pinhole\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nBare sensor: every scene point reaches every pixel, so every pixel records nearly the same average color.\nPinhole: the barrier blocks all but one ray from each point, so each pixel sees one scene point: an inverted image."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#pinhole-camera-terms",
+    "href": "lectures/11_camera_geometry.html#pinhole-camera-terms",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Pinhole Camera Terms",
+    "text": "Pinhole Camera Terms\n\n\n\n\n\n\n\n\n\n\nThe pinhole is the camera center (center of projection): every ray that forms the image passes through it.\nThe sensor lies in the image plane, a distance \\(f\\) (the focal length) behind the pinhole."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#focal-length",
+    "href": "lectures/11_camera_geometry.html#focal-length",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Focal Length",
+    "text": "Focal Length\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nImage size is \\(f\\,H/Z\\): doubling \\(f\\) doubles the image and narrows the field of view.\nWith the same pinhole, the light reaching each pixel is proportional to \\(1/f^2\\): doubling \\(f\\) gives ¼ of the light."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#pinhole-size-sharpness-vs.-light",
+    "href": "lectures/11_camera_geometry.html#pinhole-size-sharpness-vs.-light",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Pinhole Size: Sharpness vs. Light",
+    "text": "Pinhole Size: Sharpness vs. Light\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nLight collected grows with the pinhole’s area (\\(\\propto d^2\\)), but each scene point spreads over a spot of size \\(\\propto d\\).\nA very small pinhole is sharp but dark; below a certain size, diffraction blurs the image again, so the pinhole cannot be made arbitrarily small."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-lens-camera",
+    "href": "lectures/11_camera_geometry.html#the-lens-camera",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Lens Camera",
+    "text": "The Lens Camera\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA lens collects a bundle of rays from each scene point and focuses them back to one image point: far more light than a pinhole, without the blur.\nThe central ray (thick) passes through the lens center undeflected, just as through a pinhole. When the lens is in focus, the pinhole model gives where each point lands."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#focal-length-of-a-lens",
+    "href": "lectures/11_camera_geometry.html#focal-length-of-a-lens",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Focal Length of a Lens",
+    "text": "Focal Length of a Lens\n\n\n\nIn a lens camera, the focal length \\(f\\) is the distance at which parallel rays intersect (the focal point F).\nThe image of an object at distance \\(D\\) forms at the focus distance \\(D'\\): \\(\\;\\frac{1}{D} + \\frac{1}{D'} = \\frac{1}{f}\\).\nThe pinhole model describes a lens camera if:\n\nwe use only central rays,\nthe lens is in focus,\nthe pinhole’s focal length equals the lens’s focus distance \\(D'\\).\n\nIn this course, focal length \\(f\\) means the aperture–sensor distance, as in the pinhole camera."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-virtual-image-plane",
+    "href": "lectures/11_camera_geometry.html#the-virtual-image-plane",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Virtual Image Plane",
+    "text": "The Virtual Image Plane\n\n\n\nPlacing a virtual image plane a distance \\(f\\) in front of the camera center gives the same image, the same size, but upright.\nThe virtual plane is mathematically equivalent and easier to work with, so from now on we will use it instead."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-camera-coordinate-frame",
+    "href": "lectures/11_camera_geometry.html#the-camera-coordinate-frame",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Camera Coordinate Frame",
+    "text": "The Camera Coordinate Frame\n\n\n\nOrigin is at the camera center.\nConvention: \\(x\\) right, \\(y\\) down, \\(z\\) forward.\nThe \\(z\\)-axis is the principal (optical) axis.\nThe image plane is \\(z = f\\).\nThe principal axis meets the image plane at the principal point.\nA 3D point \\({}^{c}\\mathbf{X} = (X, Y, Z)\\) in camera coordinates projects to the point \\(\\mathbf{x} = (x, y)\\) where the ray to the camera center crosses the image plane."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#perspective-projection",
+    "href": "lectures/11_camera_geometry.html#perspective-projection",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Perspective Projection",
+    "text": "Perspective Projection\n\n\n\nSide view (\\(y\\)–\\(z\\) plane): the two shaded triangles are similar, so \\[\\frac{y}{f} = \\frac{Y}{Z}, \\qquad \\text{and likewise} \\qquad \\frac{x}{f} = \\frac{X}{Z}.\\]\nPerspective projection: \\[(X,\\ Y,\\ Z) \\;\\mapsto\\; \\left(f\\,\\frac{X}{Z},\\; f\\,\\frac{Y}{Z}\\right)\\]\nThe division by \\(Z\\) makes the projection nonlinear in \\((X, Y, Z)\\).\nHomogeneous coordinates (defined later) will make it a matrix product."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#consequences-of-perspective-projection",
+    "href": "lectures/11_camera_geometry.html#consequences-of-perspective-projection",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Consequences of Perspective Projection",
+    "text": "Consequences of Perspective Projection\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nSize \\(\\propto 1/Z\\): doubling the distance halves the image of the cube.\nVanishing points: parallel 3D lines (the rails) meet at one image point, on the horizon.\nDepth is lost: every point on a ray through the camera center projects to the same image point."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#consequences-of-perspective-projection-1",
+    "href": "lectures/11_camera_geometry.html#consequences-of-perspective-projection-1",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Consequences of Perspective Projection",
+    "text": "Consequences of Perspective Projection"
   }
 ]
