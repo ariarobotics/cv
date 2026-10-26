@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Camera models, perspective projection, and camera calibration.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -5142,7 +5142,7 @@
     "href": "lectures/11_camera_geometry.html#a-brief-history-recording-the-image",
     "title": "Lecture 11 — Camera Geometry",
     "section": "A Brief History: Recording the Image",
-    "text": "A Brief History: Recording the Image\n\n\n\n\n\n\n\n\n\n\nNiépce: exposure of about 8 hours (some estimates: several days); held at the Harry Ransom Center, UT Austin.\nDaguerre: moving traffic left no trace; a man having his boots polished stood still long enough to appear.\nSasson: \\(100\\times100\\) pixels (0.01 megapixels), black and white, stored on cassette tape; 23 seconds per image, about 8 pounds."
+    "text": "A Brief History: Recording the Image\n\n\n\n\n\n\n\n\n\n\nNiépce: exposure of about 8 hours; held at the Harry Ransom Center, UT Austin.\nDaguerre: moving traffic left no trace; a man having his boots polished stood still long enough to appear.\nSasson: \\(100\\times100\\) pixels (0.01 megapixels), black and white, stored on cassette tape; 23 seconds per image, about 8 pounds."
   },
   {
     "objectID": "lectures/11_camera_geometry.html#bare-sensor-vs.-pinhole",
@@ -5184,7 +5184,7 @@
     "href": "lectures/11_camera_geometry.html#focal-length-of-a-lens",
     "title": "Lecture 11 — Camera Geometry",
     "section": "Focal Length of a Lens",
-    "text": "Focal Length of a Lens\n\n\n\nIn a lens camera, the focal length \\(f\\) is the distance at which parallel rays intersect (the focal point F).\nThe image of an object at distance \\(D\\) forms at the focus distance \\(D'\\): \\(\\;\\frac{1}{D} + \\frac{1}{D'} = \\frac{1}{f}\\).\nThe pinhole model describes a lens camera if:\n\nwe use only central rays,\nthe lens is in focus,\nthe pinhole’s focal length equals the lens’s focus distance \\(D'\\).\n\nIn this course, focal length \\(f\\) means the aperture–sensor distance, as in the pinhole camera."
+    "text": "Focal Length of a Lens\n\n\n\nIn a lens camera, the focal length \\(f\\) is the distance at which parallel rays intersect (the focal point F).\nThe image of an object at distance \\(D\\) forms at the focus distance \\(D'\\): \\(\\;\\frac{1}{D} + \\frac{1}{D'} = \\frac{1}{f}\\).\nThe pinhole model describes a lens camera if:\n\nWe use only central rays\nThe lens is in focus\nThe pinhole’s focal length equals the lens’s focus distance \\(D'\\); for a distant object, \\(D' = f\\).\n\nIn this course, focal length \\(f\\) means the aperture–sensor distance, as in the pinhole camera."
   },
   {
     "objectID": "lectures/11_camera_geometry.html#the-virtual-image-plane",
@@ -5212,13 +5212,202 @@
     "href": "lectures/11_camera_geometry.html#consequences-of-perspective-projection",
     "title": "Lecture 11 — Camera Geometry",
     "section": "Consequences of Perspective Projection",
-    "text": "Consequences of Perspective Projection\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nSize \\(\\propto 1/Z\\): doubling the distance halves the image of the cube.\nVanishing points: parallel 3D lines (the rails) meet at one image point, on the horizon.\nDepth is lost: every point on a ray through the camera center projects to the same image point."
+    "text": "Consequences of Perspective Projection\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nSize \\(\\propto 1/Z\\): doubling the distance halves the image of the cube.\nDepth is lost: every point on a ray through the camera center projects to the same image point.\nVanishing points: parallel 3D lines (the rails) meet at one image point, on the horizon."
   },
   {
     "objectID": "lectures/11_camera_geometry.html#consequences-of-perspective-projection-1",
     "href": "lectures/11_camera_geometry.html#consequences-of-perspective-projection-1",
     "title": "Lecture 11 — Camera Geometry",
     "section": "Consequences of Perspective Projection",
-    "text": "Consequences of Perspective Projection"
+    "text": "Consequences of Perspective Projection\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStruckDuck, Impossible Gravity Slide Illusion"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#learning-objectives",
+    "href": "lectures/11_camera_geometry.html#learning-objectives",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain the pinhole camera model, its connection to a lens camera, and the effects of focal length and object distance.\nUse homogeneous coordinates to represent and compose transformations, and distinguish rigid, similarity, affine, and projective transformations.\nExplain how extrinsic and intrinsic parameters map a world point to an image pixel.\nProject 3D points using the camera matrix and OpenCV."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#fundamental-equations-of-computer-vision",
+    "href": "lectures/11_camera_geometry.html#fundamental-equations-of-computer-vision",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Fundamental Equations of Computer Vision",
+    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\lambda\\,\\mathbf{x}=\\mathbf{K}\\begin{bmatrix}{}^{c}\\mathbf{R}_{w}&{}^{c}\\mathbf{t}_{w}\\end{bmatrix}\\,{}^{w}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#homogeneous-coordinates",
+    "href": "lectures/11_camera_geometry.html#homogeneous-coordinates",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Homogeneous Coordinates",
+    "text": "Homogeneous Coordinates\n\n\n\nIntroduced by August Ferdinand Möbius (1827), as an alternative to Cartesian coordinates for projective geometry.\nAdd one extra coordinate: a 2D point gets 3 numbers, a 3D point gets 4.\nWhy we use them in computer vision:\n\nTranslation becomes a matrix product\nPerspective projection becomes a matrix product\nA chain of transformations becomes a single matrix"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#converting-to-and-from-homogeneous-coordinates",
+    "href": "lectures/11_camera_geometry.html#converting-to-and-from-homogeneous-coordinates",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Converting To and From Homogeneous Coordinates",
+    "text": "Converting To and From Homogeneous Coordinates\n\n\n\n\n\n\n\n\n\n\nTo homogeneous: append a 1\nFrom homogeneous: divide by the last coordinate\n\n\n\n\n2D (image)\n\\((x, y) \\;\\Rightarrow\\; \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} x \\\\ y \\\\ w \\end{bmatrix} \\;\\Rightarrow\\; \\left(\\dfrac{x}{w},\\ \\dfrac{y}{w}\\right)\\)\n\n\n3D (scene)\n\\((x, y, z) \\;\\Rightarrow\\; \\begin{bmatrix} x \\\\ y \\\\ z \\\\ 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} x \\\\ y \\\\ z \\\\ w \\end{bmatrix} \\;\\Rightarrow\\; \\left(\\dfrac{x}{w},\\ \\dfrac{y}{w},\\ \\dfrac{z}{w}\\right)\\)\n\n\n\n\n\n\n\n\nExample: \\((2, 3) \\Rightarrow (2, 3, 1) \\sim (4, 6, 2) \\Rightarrow (2, 3)\\): scaling a homogeneous vector does not change the point it represents.\n\\(w = 0\\) has no Cartesian equivalent: it is a point at infinity (a direction), such as the vanishing point where parallel lines meet."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#a-point-is-a-ray",
+    "href": "lectures/11_camera_geometry.html#a-point-is-a-ray",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "A Point Is a Ray",
+    "text": "A Point Is a Ray\n\n\n\nAll multiples of a homogeneous vector are the same point: \\[k\\begin{bmatrix} x \\\\ y \\\\ w \\end{bmatrix} \\sim \\begin{bmatrix} x \\\\ y \\\\ w \\end{bmatrix}, \\quad k \\neq 0\\]\nSo a 2D point is a ray through the origin; its Cartesian coordinates are where the ray crosses the plane \\(w = 1\\).\nThis is the pinhole camera: every 3D point on a ray through the camera center lands on the same image point (scale ambiguity).\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#parametric-global-transformations",
+    "href": "lectures/11_camera_geometry.html#parametric-global-transformations",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Parametric (Global) Transformations",
+    "text": "Parametric (Global) Transformations\n\n\n\nA transformation \\(T\\) maps every point \\(\\mathbf{p} = (x, y)\\) to a new point \\(\\mathbf{p}' = T(\\mathbf{p})\\).\nParametric: \\(T\\) is described by a few numbers (its parameters).\nGlobal: the same \\(T\\) applies to every point of the image.\nIf \\(T\\) is linear, it is a matrix: \\(\\mathbf{p}' = \\mathbf{M}\\,\\mathbf{p}\\),\n\n\\[\n\\begin{bmatrix} p'_x \\\\ p'_y \\end{bmatrix} =\n\\underbrace{\\begin{bmatrix} m_{11} & m_{12} \\\\ m_{21} & m_{22} \\end{bmatrix}}_{\\mathbf{M}}\n\\begin{bmatrix} p_x \\\\ p_y \\end{bmatrix} .\n\\]"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#translation-as-a-matrix-product",
+    "href": "lectures/11_camera_geometry.html#translation-as-a-matrix-product",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Translation as a Matrix Product",
+    "text": "Translation as a Matrix Product\n\n\n\nIn Cartesian coordinates, translation is not a matrix product: \\[\\begin{bmatrix} x' \\\\ y' \\end{bmatrix} = \\begin{bmatrix} x \\\\ y \\end{bmatrix} + \\begin{bmatrix} t_x \\\\ t_y \\end{bmatrix}\\]\nIn homogeneous coordinates, it is: \\[\\begin{bmatrix} x' \\\\ y' \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} 1 & 0 & t_x \\\\ 0 & 1 & t_y \\\\ 0 & 0 & 1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\\]\nRotation, scaling, translation, and projection all become matrices, so a sequence of them is one matrix product."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#d-transformation-matrices",
+    "href": "lectures/11_camera_geometry.html#d-transformation-matrices",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "2D Transformation Matrices",
+    "text": "2D Transformation Matrices\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTranslation\nUniform scale\nNon-uniform scale\nShear\nRotation\n\n\n\n\nCartesian\nnone: \\(\\mathbf{p}' = \\mathbf{p} + \\mathbf{t}\\)\n\\(\\begin{bmatrix} s & 0 \\\\ 0 & s \\end{bmatrix}\\)\n\\(\\begin{bmatrix} s_x & 0 \\\\ 0 & s_y \\end{bmatrix}\\)\n\\(\\begin{bmatrix} 1 & a_x \\\\ a_y & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} \\cos\\theta & -\\sin\\theta \\\\ \\sin\\theta & \\cos\\theta \\end{bmatrix}\\)\n\n\nHomogeneous\n\\(\\begin{bmatrix} 1 & 0 & t_x \\\\ 0 & 1 & t_y \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} s & 0 & 0 \\\\ 0 & s & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} s_x & 0 & 0 \\\\ 0 & s_y & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} 1 & a_x & 0 \\\\ a_y & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} \\cos\\theta & -\\sin\\theta & 0 \\\\ \\sin\\theta & \\cos\\theta & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\n\n\n\n\n\nScale, shear, and rotation are linear: they keep the origin fixed. Translation is not, so it has no \\(2\\times2\\) matrix.\nIn homogeneous coordinates, every one of them is a \\(3\\times3\\) matrix."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#composing-transformations",
+    "href": "lectures/11_camera_geometry.html#composing-transformations",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Composing Transformations",
+    "text": "Composing Transformations\n\n\\[\\mathbf{R} = \\begin{bmatrix} \\cos 45^\\circ & -\\sin 45^\\circ & 0 \\\\ \\sin 45^\\circ & \\cos 45^\\circ & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\qquad\\qquad \\mathbf{T} = \\begin{bmatrix} 1 & 0 & 2.2 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\\mathbf{T}\\,\\mathbf{R} = \\begin{bmatrix} 0.71 & -0.71 & 2.2 \\\\ 0.71 & 0.71 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\\mathbf{R}\\,\\mathbf{T} = \\begin{bmatrix} 0.71 & -0.71 & 1.56 \\\\ 0.71 & 0.71 & 1.56 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\n\nA chain of transformations is one matrix, and the rightmost is applied first. Order matters: \\(\\mathbf{T}\\,\\mathbf{R} \\neq \\mathbf{R}\\,\\mathbf{T}\\)."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-2d-transformation-hierarchy",
+    "href": "lectures/11_camera_geometry.html#the-2d-transformation-hierarchy",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The 2D Transformation Hierarchy",
+    "text": "The 2D Transformation Hierarchy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTransformation\nMatrix\nDOF\nPreserves (and everything below)\n\n\n\n\nTranslation\n\\(\\begin{bmatrix} \\mathbf{I} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n2\norientation\n\n\nRigid (Euclidean)\n\\(\\begin{bmatrix} \\mathbf{R} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n3\nlengths\n\n\nSimilarity\n\\(\\begin{bmatrix} s\\mathbf{R} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n4\nangles\n\n\nAffine\n\\(\\begin{bmatrix} \\mathbf{A} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n6\nparallelism\n\n\nProjective\n\\(\\mathbf{H}\\) (any invertible \\(3\\times3\\))\n8\nstraight lines"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#affine-transformations",
+    "href": "lectures/11_camera_geometry.html#affine-transformations",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Affine Transformations",
+    "text": "Affine Transformations\n\n\n\nAny combination of linear transformations and translation: \\[\\begin{bmatrix} x' \\\\ y' \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} a & b & c \\\\ d & e & f \\\\ 0 & 0 & 1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\\]\n6 DOF; the last row is always \\([\\,0\\ \\ 0\\ \\ 1\\,]\\).\nProperties:\n\nLines map to lines\nParallel lines stay parallel\nRatios along a line are kept (a midpoint stays a midpoint)\nClosed under composition\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#projective-transformations-homographies",
+    "href": "lectures/11_camera_geometry.html#projective-transformations-homographies",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Projective Transformations (Homographies)",
+    "text": "Projective Transformations (Homographies)\n\n\n\nA general \\(3\\times3\\) matrix in homogeneous coordinates: \\[\\begin{bmatrix} x' \\\\ y' \\\\ w' \\end{bmatrix} = \\begin{bmatrix} h_{11} & h_{12} & h_{13} \\\\ h_{21} & h_{22} & h_{23} \\\\ h_{31} & h_{32} & h_{33} \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\\]\nDivide by \\(w'\\) to get the point: a projective warp.\n8 DOF: \\(\\mathbf{H}\\) is defined only up to scale.\nProperties:\n\nLines map to lines\nParallel lines do not stay parallel\nRatios are not kept\nClosed under composition\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#cameras-are-projective-transformation-machines",
+    "href": "lectures/11_camera_geometry.html#cameras-are-projective-transformation-machines",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Cameras Are Projective Transformation Machines",
+    "text": "Cameras Are Projective Transformation Machines\n\n\n\n\n\n\n\n\n\n\nA camera maps a plane in the world to the image by a homography, so two views of the same plane are related by a homography \\(\\mathbf{H}\\).\nThis works only because the scene is flat: for a 3D scene, points at different depths shift by different amounts between views, so no single \\(\\mathbf{H}\\) relates them."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#d-rotation-and-translation",
+    "href": "lectures/11_camera_geometry.html#d-rotation-and-translation",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "3D Rotation and Translation",
+    "text": "3D Rotation and Translation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTranslation\nRotation\nRotation + translation (rigid)\n\n\n\n\nCartesian\nnone: \\(\\mathbf{X}' = \\mathbf{X} + \\mathbf{t}\\)\n\\(\\mathbf{X}' = \\mathbf{R}\\,\\mathbf{X}\\)\n\\(\\mathbf{X}' = \\mathbf{R}\\,\\mathbf{X} + \\mathbf{t}\\)\n\n\nHomogeneous (\\(4\\times4\\))\n\\(\\begin{bmatrix} \\mathbf{I} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} \\mathbf{R} & \\mathbf{0} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n\\(\\begin{bmatrix} \\mathbf{R} & \\mathbf{t} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\)\n\n\n\n\n\n\n\n\\(\\mathbf{R}\\) is a \\(3\\times3\\) rotation; e.g., about \\(z\\) it is the 2D rotation with a 1 added: \\(\\;\\mathbf{R}_z(\\theta) = \\begin{bmatrix} \\cos\\theta & -\\sin\\theta & 0 \\\\ \\sin\\theta & \\cos\\theta & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}\\)\nEvery 3D rotation has \\(\\mathbf{R}^{T}\\mathbf{R} = \\mathbf{I}\\), \\(\\det\\mathbf{R} = 1\\), and 3 DOF (e.g., \\(\\mathbf{R} = \\mathbf{R}_z\\mathbf{R}_y\\mathbf{R}_x\\)). A rigid transformation has 6 DOF (\\(3 + 3\\))."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#changing-coordinate-frames",
+    "href": "lectures/11_camera_geometry.html#changing-coordinate-frames",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Changing Coordinate Frames",
+    "text": "Changing Coordinate Frames\n\n\n\nThe same \\([\\,\\mathbf{R} \\mid \\mathbf{t}\\,]\\) can move a point within one frame, or change frames (i.e., give the coordinates of one fixed point in another frame): \\[\n{}^{b}\\mathbf{X} = {}^{b}\\mathbf{R}_{a}\\;{}^{a}\\mathbf{X} + {}^{b}\\mathbf{t}_{a}\n\\qquad\n{}^{b}\\mathbf{T}_{a} = \\begin{bmatrix} {}^{b}\\mathbf{R}_{a} & {}^{b}\\mathbf{t}_{a} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\n\\]\n\nColumns of \\({}^{b}\\mathbf{R}_{a}\\): the axes of \\(a\\) in frame \\(b\\).\n\\({}^{b}\\mathbf{t}_{a}\\): the origin of \\(a\\) in frame \\(b\\).\n\nInverse: \\[{}^{a}\\mathbf{T}_{b} = \\left({}^{b}\\mathbf{T}_{a}\\right)^{-1} = \\begin{bmatrix} {}^{b}\\mathbf{R}_{a}^{T} & -{}^{b}\\mathbf{R}_{a}^{T}\\,{}^{b}\\mathbf{t}_{a} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\]\nComposition: \\({}^{c}\\mathbf{T}_{a} = {}^{c}\\mathbf{T}_{b}\\;{}^{b}\\mathbf{T}_{a}\\) (matching inner frames cancel)."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#camera-model-from-a-world-point-to-a-pixel",
+    "href": "lectures/11_camera_geometry.html#camera-model-from-a-world-point-to-a-pixel",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Camera Model: From a World Point to a Pixel",
+    "text": "Camera Model: From a World Point to a Pixel\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1. Extrinsics\n2. Perspective projection\n3. Intrinsics\n\n\n\n\nworld frame \\(\\to\\) camera frame\ncamera frame \\(\\to\\) image plane\nimage plane \\(\\to\\) pixels\n\n\n\n\n\n\nEach step is a matrix in homogeneous coordinates, so the whole camera model is one matrix."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#step-1-world-to-camera-extrinsics",
+    "href": "lectures/11_camera_geometry.html#step-1-world-to-camera-extrinsics",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Step 1 — World to Camera (Extrinsics)",
+    "text": "Step 1 — World to Camera (Extrinsics)\n\n\n\nPoints are given in a world frame \\(w\\); projection needs them in the camera frame \\(c\\): \\[{}^{c}\\mathbf{X} = {}^{c}\\mathbf{R}_{w}\\;{}^{w}\\mathbf{X} + {}^{c}\\mathbf{t}_{w}\n\\qquad\n{}^{c}\\mathbf{T}_{w} = \\begin{bmatrix} {}^{c}\\mathbf{R}_{w} & {}^{c}\\mathbf{t}_{w} \\\\ \\mathbf{0}^{T} & 1 \\end{bmatrix}\\]\nThe extrinsic matrix is the top three rows of \\({}^{c}\\mathbf{T}_{w}\\): \\(\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]\\) (\\(3\\times4\\)).\nThe camera center \\({}^{w}\\mathbf{C}\\) maps to \\({}^{c}\\mathbf{X} = \\mathbf{0}\\), so \\({}^{c}\\mathbf{t}_{w} = -\\,{}^{c}\\mathbf{R}_{w}\\,{}^{w}\\mathbf{C}\\).\n6 DOF: camera position is 3 and its orientation is 3.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample: \\({}^{w}\\mathbf{C} = ({3.6},\\ {-2.4},\\ {2.2})\\), and the red corner \\({}^{w}\\mathbf{X} = ({1.4},\\ {1.4},\\ {1.0})\\) becomes \\({}^{c}\\mathbf{X} = ({0.70},\\ {-0.49},\\ {4.47})\\)."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#step-2-camera-to-image-plane-projection",
+    "href": "lectures/11_camera_geometry.html#step-2-camera-to-image-plane-projection",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Step 2 — Camera to Image Plane (Projection)",
+    "text": "Step 2 — Camera to Image Plane (Projection)\n\n\n\nWith \\({}^{c}\\mathbf{X} = (X_c, Y_c, Z_c)\\), perspective projection \\(x = f X_c / Z_c\\), \\(\\ y = f Y_c / Z_c\\) is a matrix product in homogeneous coordinates: \\[Z_c \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\n= \\begin{bmatrix} f X_c \\\\ f Y_c \\\\ Z_c \\end{bmatrix}\n= \\begin{bmatrix} f & 0 & 0 & 0 \\\\ 0 & f & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\end{bmatrix}\n\\begin{bmatrix} X_c \\\\ Y_c \\\\ Z_c \\\\ 1 \\end{bmatrix}\\]\nThe homogeneous scale is the depth \\(\\lambda = Z_c\\): we divide by it only at the end.\nAll points on a ray through the camera center give the same \\((x, y)\\): depth is lost.\n\n\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\n\n\n\n\nExample (\\(f = 2.5\\) mm): \\({}^{c}\\mathbf{X} = ({0.70},\\ {-0.49},\\ {4.47})\\) m \\(\\Rightarrow\\) \\((x, y) = ({0.393},\\ {-0.274})\\) mm, with \\(\\lambda = 4.47\\)."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#step-3-image-plane-to-pixels-intrinsics",
+    "href": "lectures/11_camera_geometry.html#step-3-image-plane-to-pixels-intrinsics",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Step 3 — Image Plane to Pixels (Intrinsics)",
+    "text": "Step 3 — Image Plane to Pixels (Intrinsics)\n\n\n\n\\((x, y)\\) are in mm, with the origin at the principal point.\nPixel coordinates \\((u, v)\\) start at the top-left pixel.\nWith pixel size \\(\\rho_x \\times \\rho_y\\) (mm) and the principal point at pixel \\((c_x, c_y)\\): \\[u = \\frac{x}{\\rho_x} + c_x, \\qquad v = \\frac{y}{\\rho_y} + c_y\\]\nAs a matrix in homogeneous coordinates: \\[\\begin{bmatrix} u \\\\ v \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} \\tfrac{1}{\\rho_x} & 0 & c_x \\\\ 0 & \\tfrac{1}{\\rho_y} & c_y \\\\ 0 & 0 & 1 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\\\ 1 \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-intrinsic-matrix-mathbfk",
+    "href": "lectures/11_camera_geometry.html#the-intrinsic-matrix-mathbfk",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Intrinsic Matrix \\(\\mathbf{K}\\)",
+    "text": "The Intrinsic Matrix \\(\\mathbf{K}\\)\n\n\nSteps 2 and 3 combine into one matrix: projection with \\(f\\), then conversion to pixels:\n\n\\[\\underbrace{\\begin{bmatrix} \\tfrac{1}{\\rho_x} & 0 & c_x \\\\ 0 & \\tfrac{1}{\\rho_y} & c_y \\\\ 0 & 0 & 1 \\end{bmatrix}}_{\\text{to pixels}}\n\\underbrace{\\begin{bmatrix} f & 0 & 0 \\\\ 0 & f & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}}_{\\text{focal length}}\n= \\begin{bmatrix} f_x & 0 & c_x \\\\ 0 & f_y & c_y \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\\(f_x = f / \\rho_x\\), \\(f_y = f / \\rho_y\\): the focal length in pixels (e.g., \\(2.5\\,\\)mm / \\(5\\,\\mu\\)m \\(= 500\\,\\)px).\nAdding a skew \\(s\\) gives the general intrinsic matrix:\n\n\\[\\mathbf{K} = \\begin{bmatrix} f_x & s & c_x \\\\ 0 & f_y & c_y \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\n\n\\(f_x, f_y\\): focal length in pixels, i.e., zoom; \\(f_x \\neq f_y\\) if pixels are not square.\n\\(c_x, c_y\\): principal point in pixels, usually near the image center.\n\\(s\\): skew; \\(s = 0\\) for almost all modern cameras."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-camera-matrix-mathbfp",
+    "href": "lectures/11_camera_geometry.html#the-camera-matrix-mathbfp",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Camera Matrix \\(\\mathbf{P}\\)",
+    "text": "The Camera Matrix \\(\\mathbf{P}\\)\n\n\nChaining the three steps, with \\(\\mathbf{x} = (u, v, 1)\\) in pixels and \\(\\lambda = Z_c\\): \\[\n\\begin{aligned}\n\\lambda\\,\\mathbf{x}\n&= \\underbrace{\\mathbf{K}}_{3\\times3}\\;\n   \\underbrace{\\begin{bmatrix} \\mathbf{I} & \\mathbf{0} \\end{bmatrix}}_{3\\times4}\\;\n   \\underbrace{{}^{c}\\mathbf{T}_{w}}_{4\\times4}\\;\n   \\underbrace{{}^{w}\\mathbf{X}}_{4\\times1} \\\\[4pt]\n&= \\underbrace{\\mathbf{K}}_{\\substack{\\text{intrinsic}\\\\ \\text{matrix}}}\\;\n   \\underbrace{\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]}_{\\substack{\\text{extrinsic}\\\\ \\text{matrix}}}\\;{}^{w}\\mathbf{X}\n= \\mathbf{P}\\;{}^{w}\\mathbf{X}\n\\end{aligned}\n\\]\n\n\n\n\n\n\n\n\n\nPart\nParameters\nDOF\n\n\n\n\nIntrinsic matrix \\(\\mathbf{K}\\)\n\\(f_x,\\ f_y,\\ c_x,\\ c_y,\\ s\\)\n5\n\n\nExtrinsic matrix \\(\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]\\)\nrotation (3) + translation (3)\n6\n\n\nCamera matrix \\(\\mathbf{P}\\)\n\n11\n\n\n\n\n\\(\\mathbf{P}\\) has 12 entries, but scaling it does not change \\((u, v)\\): 11 DOF."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#the-camera-matrix-cube-example",
+    "href": "lectures/11_camera_geometry.html#the-camera-matrix-cube-example",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "The Camera Matrix: Cube Example",
+    "text": "The Camera Matrix: Cube Example\nFor the camera and the red corner in the cube example:\n\\[\\underbrace{\\begin{bmatrix} 500 & 0 & 320 \\\\ 0 & 500 & 240 \\\\ 0 & 0 & 1 \\end{bmatrix}}_{\\mathbf{K}:\\ \\text{intrinsic matrix}}\\qquad\\qquad\\underbrace{\\begin{bmatrix} 0.77 & 0.63 & 0 & -1.27 \\\\ 0.23 & -0.29 & -0.93 & 0.51 \\\\ -0.59 & 0.72 & -0.37 & 4.66 \\end{bmatrix}}_{\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]:\\ \\text{extrinsic matrix}}\\]\n\\[\\mathbf{P} = \\mathbf{K}\\,\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big] = \\begin{bmatrix} 198.75 & 546.67 & -118.51 & 857.24 \\\\ -23.91 & 29.22 & -553.33 & 1373.53 \\\\ -0.59 & 0.72 & -0.37 & 4.66 \\end{bmatrix}\\]\n\\[\\lambda\\,\\mathbf{x} = \\mathbf{P}\\;{}^{w}\\mathbf{X} = \\mathbf{P}\\,({1.4},\\ {1.4},\\ {1.0},\\ {1.0})^{T} = ({1782.3},\\ {827.6},\\ {4.5})\\;\\Rightarrow\\; (u, v) = ({398.7},\\ {185.1})\\]"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#intrinsics-in-action",
+    "href": "lectures/11_camera_geometry.html#intrinsics-in-action",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Intrinsics in Action",
+    "text": "Intrinsics in Action\n\n\n\n\\(f_x, f_y\\): focal length in pixels, i.e., zoom; \\(f_x \\neq f_y\\) if pixels are not square.\n\\(c_x, c_y\\): principal point in pixels, usually near the image center.\n\\(s\\): skew; \\(s = 0\\) for almost all modern cameras.\n5 DOF. The animation changes one parameter at a time, with the camera fixed.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#extrinsics-in-action",
+    "href": "lectures/11_camera_geometry.html#extrinsics-in-action",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Extrinsics in Action",
+    "text": "Extrinsics in Action\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\n\n\n\n\\(\\mathbf{K}\\) is fixed: every change in the image comes from the extrinsic matrix \\(\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]\\), shown on the right."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#projecting-points-by-hand",
+    "href": "lectures/11_camera_geometry.html#projecting-points-by-hand",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Projecting Points by Hand",
+    "text": "Projecting Points by Hand\n\nK = np.array([[500.0, 0.0, 320.0], [0.0, 500.0, 240.0], [0.0, 0.0, 1.0]]) # intrinsics\nrvec = np.array([0.3, -0.4, 0.1])\nR_c_w, _ = cv2.Rodrigues(rvec) # extrinsics rotation\nt_c_w = np.array([[-0.4], [-0.3], [3.0]]) # extrinsics translation\nP = K @ np.hstack([R_c_w, t_c_w]) # camera matrix\n\nX_w = np.array([[x, y, z] for x in (0, 1) for y in (0, 1) for z in (0, 1)], dtype=float) # cube corners\nX_w_h = np.hstack([X_w, np.ones((len(X_w), 1))]) # homogeneous coordinates\nx = (P @ X_w_h.T).T # projection (lambda * u, lambda * v, lambda)\nuv = x[:, :2] / x[:, 2:] # pixel coordinates (u, v)\n\n\n\n\n\n\n\nrvec: the rotation as a 3-vector (axis \\(\\times\\) angle); cv2.Rodrigues turns it into \\({}^{c}\\mathbf{R}_{w}\\).\nP \\(= \\mathbf{K}\\,[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,]\\).\nX_w_h holds the corners as homogeneous rows.\nEach row of x is \\(\\lambda\\,(u, v, 1)\\) with \\(\\lambda = Z_c\\); dividing by it gives uv."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#projecting-points-with-opencv",
+    "href": "lectures/11_camera_geometry.html#projecting-points-with-opencv",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Projecting Points with OpenCV",
+    "text": "Projecting Points with OpenCV\n\n# Same rvec, t_c_w, K, and X_w as on the previous slide; None means no lens distortion.\nuv_cv, _ = cv2.projectPoints(X_w, rvec, t_c_w, K, None)\nuv_cv = uv_cv.reshape(-1, 2)\n\n\n\n\n\n\nprojectPoints takes the rotation as rvec and applies \\(\\mathbf{K}\\,[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,]\\) internally.\nIt returns an \\((N, 1, 2)\\) array; reshape(-1, 2) gives \\(N \\times 2\\) pixel coordinates.\nThe last argument is the lens distortion model: None here.\n\nWe will cover it in the camera calibration lecture."
+  },
+  {
+    "objectID": "lectures/11_camera_geometry.html#key-takeaways",
+    "href": "lectures/11_camera_geometry.html#key-takeaways",
+    "title": "Lecture 11 — Camera Geometry",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nA pinhole forms an image by letting one ray from each scene point reach the sensor. A lens gathers more light; when in focus, its central rays follow the same geometry as the pinhole model.\nPerspective projection divides by depth: \\(x = fX/Z\\), \\(y = fY/Z\\). Distant objects appear smaller, and a single image point does not determine depth.\nHomogeneous coordinates represent points up to a nonzero scale and let us compose transformations through matrix multiplication. The rightmost transformation acts first; order matters.\nAffine transformations preserve parallelism and ratios along a line. Projective transformations preserve straight lines, but generally change parallelism and ratios.\nExtrinsics transform world coordinates into camera coordinates. Intrinsics determine how viewing directions map to pixels:\n\n\\[\n\\underbrace{\\lambda}_{\\text{depth } Z_c}\\,\n\\underbrace{\\mathbf{x}}_{\\substack{\\text{pixel}\\\\ (u,\\,v,\\,1)}}\n=\n\\overbrace{\n\\underbrace{\\mathbf{K}}_{\\substack{\\text{intrinsics}\\\\ 3\\times3}}\\;\n\\underbrace{\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]}_{\\substack{\\text{extrinsics}\\\\ 3\\times4}}\n}^{\\mathbf{P}:\\ \\text{camera matrix},\\ 3\\times4}\\;\n\\underbrace{{}^{w}\\mathbf{X}}_{\\substack{\\text{world point}\\\\ (X,\\,Y,\\,Z,\\,1)}}\n\\]\nDivide by the last coordinate to recover the pixel coordinates \\((u,v)\\)."
   }
 ]
