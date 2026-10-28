@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -5472,5 +5472,166 @@
     "title": "Bonus Homework 01: Circular Speed Signs",
     "section": "Submission",
     "text": "Submission\nSubmit only your completed hwb01.py to Gradescope. No report, generated images, notebook, helper module, or reference JSON is required. Keep additional helpers in that file. Do not run experiments, create windows, or read files at import time. The time limit is 120 seconds per image. The grader enforces five attempts using submission history. Submissions 6 and later receive zero for that submission; earlier submissions remain unchanged. Platform autograder failures do not count, but student-code errors and timeouts do. The usual late-submission policy does not apply: no submissions after the stated deadline."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#learning-objectives",
+    "href": "lectures/12_camera_calibration.html#learning-objectives",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain what geometric calibration estimates: the intrinsic matrix, the lens distortion, and the target poses.\nCalibrate a camera linearly from a known 3D target, and recover \\(\\mathbf{K}\\), \\({}^{c}\\mathbf{R}_{w}\\), and \\({}^{c}\\mathbf{t}_{w}\\) from the camera matrix.\nDescribe the reprojection error and the radial–tangential, fisheye, and omnidirectional lens models.\nCalibrate a camera with a checkerboard in OpenCV, and undistort its images.\nCollect useful calibration images, and check the result with per-view reprojection errors."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#what-does-it-mean-to-calibrate-a-camera",
+    "href": "lectures/12_camera_calibration.html#what-does-it-mean-to-calibrate-a-camera",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "What Does It Mean to Calibrate a Camera?",
+    "text": "What Does It Mean to Calibrate a Camera?\n\n\n\nTo calibrate is to estimate the parameters of a camera model from measurements. There are many kinds:\n\nRadiometric: pixel value vs. scene brightness.\nColor: sensor response vs. true color.\nNoise: sensor noise level and pattern.\nLens aberration: blur, vignetting, chromatic effects.\nGeometric: where each pixel looks in 3D.\n\nThis lecture covers geometric calibration. It estimates:\n\nThe intrinsic matrix \\(\\mathbf{K}\\)\nThe lens distortion coefficients\nThe pose of the target in each image\n\n\n\n\n\n\n\n\n\n\n\n\n\\[\n\\underbrace{\\lambda}_{\\text{depth } Z_c}\\,\n\\underbrace{\\mathbf{x}}_{\\substack{\\text{pixel}\\\\ (u,\\,v,\\,1)}}\n=\n\\overbrace{\n\\underbrace{\\color{#c53030}{\\mathbf{K}}}_{\\substack{\\text{intrinsic}\\\\ \\text{matrix}}}\\;\n\\underbrace{\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]}_{\\substack{\\text{extrinsic}\\\\ \\text{matrix}}}\n}^{\\mathbf{P}:\\ \\text{camera matrix}}\\;\n\\underbrace{{}^{w}\\mathbf{X}}_{\\substack{\\text{world point}\\\\ (X,\\,Y,\\,Z,\\,1)}}\n\\]"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#linear-calibration-with-a-known-3d-target",
+    "href": "lectures/12_camera_calibration.html#linear-calibration-with-a-known-3d-target",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Linear Calibration with a Known 3D Target",
+    "text": "Linear Calibration with a Known 3D Target\n\n\n\nAssume given an image of a target whose 3D points \\({}^{w}\\mathbf{X}_i\\) are known, with their pixel positions \\((u_i, v_i)\\).\nUnknown: the camera matrix \\(\\mathbf{P}\\), with rows \\(\\mathbf{p}_1^{T}, \\mathbf{p}_2^{T}, \\mathbf{p}_3^{T}\\).\nFrom camera model \\(\\lambda\\,\\begin{bmatrix} u_i \\\\ v_i \\\\ 1 \\end{bmatrix} = \\begin{bmatrix} \\mathbf{p}_1^{T} \\\\ \\mathbf{p}_2^{T} \\\\ \\mathbf{p}_3^{T} \\end{bmatrix}\\,{}^{w}\\mathbf{X}_i,\\) we have: \\[\\lambda u_i = \\mathbf{p}_1^{T}\\,{}^{w}\\mathbf{X}_i,\n\\qquad\n\\lambda v_i = \\mathbf{p}_2^{T}\\,{}^{w}\\mathbf{X}_i,\n\\qquad\n\\lambda = \\mathbf{p}_3^{T}\\,{}^{w}\\mathbf{X}_i\n\\]\nSubstituting \\(\\lambda=\\mathbf{p}_3^{T}\\,{}^{w}\\mathbf{X}_i\\) in the first two equations gives two equations per point, both linear in the 12 entries of \\(\\mathbf{P}\\): \\[\\mathbf{p}_1^{T}\\,{}^{w}\\mathbf{X}_i - u_i\\,\\mathbf{p}_3^{T}\\,{}^{w}\\mathbf{X}_i = 0\\] \\[\\mathbf{p}_2^{T}\\,{}^{w}\\mathbf{X}_i - v_i\\,\\mathbf{p}_3^{T}\\,{}^{w}\\mathbf{X}_i = 0\\]"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#direct-linear-transform-dlt",
+    "href": "lectures/12_camera_calibration.html#direct-linear-transform-dlt",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Direct Linear Transform (DLT)",
+    "text": "Direct Linear Transform (DLT)\n\n\n\nStack the two rows of every point into \\(\\mathbf{A}\\) and solve \\(\\mathbf{A}\\mathbf{p} = \\mathbf{0}\\) with the SVD: \\[\\underbrace{\\begin{bmatrix}\n{}^{w}\\mathbf{X}_1^{T} & \\mathbf{0}^{T} & -u_1\\,{}^{w}\\mathbf{X}_1^{T} \\\\\n\\mathbf{0}^{T} & {}^{w}\\mathbf{X}_1^{T} & -v_1\\,{}^{w}\\mathbf{X}_1^{T} \\\\\n\\vdots & \\vdots & \\vdots\n\\end{bmatrix}}_{\\mathbf{A}:\\ 2N \\times 12}\n\\underbrace{\\begin{bmatrix} \\mathbf{p}_1 \\\\ \\mathbf{p}_2 \\\\ \\mathbf{p}_3 \\end{bmatrix}}_{12 \\times 1}\n= \\mathbf{0}\\]\n\\(\\mathbf{P}\\) has 11 DOF and each point gives 2 equations: at least 6 points, not all on one plane.\nThe more points we use, the more robust the solution is to noise as it is averaged out.\n\\(\\mathbf{P}\\) and \\(-\\mathbf{P}\\) are both solutions; keep the sign that puts the points in front of the camera.\n\n\n\ndef calibrate_dlt(X_w, uv):\n    A = []\n    for X, (u, v) in zip(X_w, uv):\n        X_h = np.append(X, 1)\n        z = np.zeros(4)\n        A += [np.r_[X_h, z, -u * X_h],\n              np.r_[z, X_h, -v * X_h]]\n    _, _, Vt = np.linalg.svd(np.array(A))\n    P = Vt[-1].reshape(3, 4)\n    if np.linalg.det(P[:, :3]) &lt; 0:\n        P = -P\n    return P\n\n\nExample output for the target points of the previous slide:\n\\[\\mathbf{P}_{\\text{DLT}} = \\begin{bmatrix} -0.487 & 0.221 & -0.202 & 0.483 \\\\ 0.108 & 0.0902 & -0.514 & 0.395 \\\\ -0.000563 & -0.000466 & -0.000631 & 0.00157 \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#extracting-mathbfk-cmathbfr_w-and-cmathbft_w-from-mathbfp",
+    "href": "lectures/12_camera_calibration.html#extracting-mathbfk-cmathbfr_w-and-cmathbft_w-from-mathbfp",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Extracting \\(\\mathbf{K}\\), \\({}^{c}\\mathbf{R}_{w}\\), and \\({}^{c}\\mathbf{t}_{w}\\) From \\(\\mathbf{P}\\)",
+    "text": "Extracting \\(\\mathbf{K}\\), \\({}^{c}\\mathbf{R}_{w}\\), and \\({}^{c}\\mathbf{t}_{w}\\) From \\(\\mathbf{P}\\)\n\nThe left \\(3 \\times 3\\) block of \\(\\mathbf{P}\\) is \\(\\mathbf{M} = \\mathbf{K}\\,{}^{c}\\mathbf{R}_{w}\\): upper triangular times a rotation.\nRQ decomposition splits \\(\\mathbf{M}\\) into these two factors (“R” = upper triangular \\(\\mathbf{K}\\), “Q” = rotation \\({}^{c}\\mathbf{R}_{w}\\)). Signs are fixed so \\(\\mathbf{K}\\) has a positive diagonal.\nWith \\(\\mathbf{p}_4\\) the last column of \\(\\mathbf{P}\\): \\[{}^{c}\\mathbf{t}_{w} = \\mathbf{K}^{-1}\\,\\mathbf{p}_4,\n\\qquad\n{}^{w}\\mathbf{C} = -\\mathbf{M}^{-1}\\,\\mathbf{p}_4\\]\nOpenCV does all of this:\n\n\nK_est, R_est, C_h, *_ = cv2.decomposeProjectionMatrix(P_dlt)\nK_est = K_est / K_est[2, 2]           # K, normalized so that K[2, 2] = 1\nC_est = C_h[:3, 0] / C_h[3, 0]        # camera center wC from homogeneous coordinates\nt_est = -R_est @ C_est                # ct_w = -cR_w wC"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#limits-of-linear-calibration",
+    "href": "lectures/12_camera_calibration.html#limits-of-linear-calibration",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Limits of Linear Calibration",
+    "text": "Limits of Linear Calibration\n\n\n\nNo lens distortion. A wide-angle lens bends straight lines, which no \\(\\mathbf{P}\\) can model.\nWrong error. It minimizes the algebraic error \\(\\|\\mathbf{A}\\mathbf{p}\\|\\), not the distance in pixels.\nNo constraints. Known facts, such as \\(s = 0\\), are hard to enforce.\nNeeds a precise 3D target. If all points lie on one plane (\\(Z = 0\\)), the columns of \\(\\mathbf{A}\\) that multiply \\(Z\\) are zero, and \\(\\mathbf{p}\\) is not unique (right).\nIn practice: Linear calibration is not used. A linear solution is only the initial guess, which is used in nonlinear optimization to refine all parameters, including lens distortion."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#nonlinear-calibration",
+    "href": "lectures/12_camera_calibration.html#nonlinear-calibration",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Nonlinear Calibration",
+    "text": "Nonlinear Calibration\n\n\n\n\nNonlinear calibration compares observed image points \\(\\mathbf{x}_i = (u_i, v_i)\\) with the points predicted by the camera model.\nThe reprojection error is their distance in pixels, summed over all points: \\[E = \\sum_{i}\\Big\\|\\,\\mathbf{x}_{i} - \\pi\\big(\\mathbf{K}, \\mathbf{d},\\, {}^{c}\\mathbf{R}_{w},\\, {}^{c}\\mathbf{t}_{w},\\, {}^{w}\\mathbf{X}_i\\big)\\Big\\|^2\\]\n\n\\(\\mathbf{d}\\): lens distortion coefficients (next slides).\n\\({}^{c}\\mathbf{R}_{w}, {}^{c}\\mathbf{t}_{w}\\): pose of the target (world frame \\(w\\)) in the camera frame.\n\\(\\pi(\\cdot)\\): the camera model.\n\n\\(E\\) is nonlinear in the parameters. It is minimized by iterative nonlinear least squares (Levenberg–Marquardt), starting from a linear initial guess.\nIn practice, the target is imaged in many views \\(j\\), and \\(E\\) sums over all of them: one \\(\\mathbf{K}\\) and \\(\\mathbf{d}\\), plus one pose \\({}^{c_j}\\mathbf{R}_{w}, {}^{c_j}\\mathbf{t}_{w}\\) per view."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#the-lens-distortion-model",
+    "href": "lectures/12_camera_calibration.html#the-lens-distortion-model",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "The Lens Distortion Model",
+    "text": "The Lens Distortion Model\n\n\n\n\nLet \\((x,y)\\) be Cartesian coordinates of a point in the image plane, and define \\(r^2 = x^2 + y^2\\).\n\nRecall \\((x, y) = ({}^cX/{}^cZ, {}^cY/{}^cZ)\\), and \\({}^{c}\\mathbf{X} = {}^{c}\\mathbf{R}_{w}\\,{}^{w}\\mathbf{X} + {}^{c}\\mathbf{t}_{w} = ({}^cX, {}^cY, {}^cZ)\\).\n\nLens distortion moves \\((x, y)\\) to \\((x_d, y_d)\\): \\[\\begin{aligned}\nx_d &= x\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + 2 p_1 x y + p_2 (r^2 + 2 x^2) \\\\\ny_d &= y\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + p_1 (r^2 + 2 y^2) + 2 p_2 x y\n\\end{aligned}\\]\nRadial terms \\(k_1, k_2, k_3\\): move points toward or away from the center, more as \\(r\\) grows.\nTangential terms \\(p_1, p_2\\): lens not exactly parallel to the sensor.\nPixel coordinates are computed as: \\((u, v, 1)^{T} = \\mathbf{K}\\,(x_d, y_d, 1)^{T}\\), instead of \\((u, v, 1)^{T} = \\mathbf{K}\\,(x, y, 1)^{T}\\). This is the camera model \\(\\pi(\\cdot)\\) of the previous slide."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#radial-and-tangential-distortion",
+    "href": "lectures/12_camera_calibration.html#radial-and-tangential-distortion",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Radial and Tangential Distortion",
+    "text": "Radial and Tangential Distortion\n\n\n\n\n\n\n\n\n\n\n\nLens distortion model: \\[\\begin{aligned}\nx_d &= x\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + 2 p_1 x y + p_2 (r^2 + 2 x^2) \\\\\ny_d &= y\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + p_1 (r^2 + 2 y^2) + 2 p_2 x y\n\\end{aligned}\\]\nBarrel (\\(k_1 &lt; 0\\)): points move toward the center; common in wide-angle lenses (GoPro, phone ultra-wide).\nPincushion (\\(k_1 &gt; 0\\)): points move away from the center; common in telephoto lenses.\nTangential (\\(p_1, p_2\\)): the lens is tilted relative to the sensor; usually small.\nDistortion is \\(\\approx 0\\) near the principal point and grows toward the image boundaries."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#radial-distortion-in-action",
+    "href": "lectures/12_camera_calibration.html#radial-distortion-in-action",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Radial Distortion in Action",
+    "text": "Radial Distortion in Action\n\n\n\nThe lens distortion model in radial representation: \\[r_d = r\\,(1 + k_1 r^2)\\]\nStraight lines that do not pass through the center become curved.\nWith \\(k_1 &lt; 0\\), the image shrinks toward the center, so more of the scene fits in the frame.\nWith \\(k_1 &gt; 0\\), the image expands away from the center, so less of the scene fits in the frame.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#wide-lenses-fisheye-and-omnidirectional",
+    "href": "lectures/12_camera_calibration.html#wide-lenses-fisheye-and-omnidirectional",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Wide Lenses: Fisheye and Omnidirectional",
+    "text": "Wide Lenses: Fisheye and Omnidirectional\n\n\n\nA pinhole maps a ray at angle \\(\\theta\\) from the optical axis to radius \\(r = f \\tan\\theta\\), which grows to infinity at \\(90^\\circ\\).\nFisheye lenses use a different mapping, close to \\(r = f\\,\\theta\\), so they can see \\(180^\\circ\\) or more.\n\nOpenCV cv2.fisheye: \\(\\theta_d = \\theta\\,(1 + k_1\\theta^2 + k_2\\theta^4 + k_3\\theta^6 + k_4\\theta^8)\\)\n\nOmnidirectional cameras: field of view \\(\\geq 180^\\circ\\), or a curved mirror in front of the lens.\n\nOpenCV cv2.omnidir unified sphere model, or Scaramuzza’s polynomial model (OCamCalib).\n\nRule of thumb: radial–tangential up to a field of view (FOV) of about \\(100^\\circ\\)–\\(120^\\circ\\), i.e., \\(\\theta\\) up to \\(50^\\circ\\)–\\(60^\\circ\\) at the image edge; beyond that, fisheye or omnidirectional."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#common-calibration-targets",
+    "href": "lectures/12_camera_calibration.html#common-calibration-targets",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Common Calibration Targets",
+    "text": "Common Calibration Targets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTarget\nOpenCV detector\nStrengths\nWeaknesses\n\n\n\n\nCheckerboard\nfindChessboardCorners\nSimple; accurate corners (sub-pixel)\nThe whole board must be visible\n\n\nCircle grids\nfindCirclesGrid\nRobust to blur and noise\nCircle centers shift slightly under perspective\n\n\nChArUco\ncv2.aruco.CharucoDetector\nEach corner is identified by its markers: partial and occluded views still work\nMust be printed exactly to spec\n\n\n\n\nChArUco makes it easy to cover image corners, where distortion is largest, because the board may be partly outside the image.\nYou must know/measure the exact size of the squares/markers in the target to get the correct scale for translation."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#calibration-example-in-opencv",
+    "href": "lectures/12_camera_calibration.html#calibration-example-in-opencv",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Calibration Example in OpenCV",
+    "text": "Calibration Example in OpenCV\n\n\n\n\n\n\n\n\n\n\n\\(35\\) images from a GoPro camera with a wide-angle lens, \\(1280 × 960\\) pixels.\nCheckerboard with \\(9×7\\) squares, so \\(8×6=48\\) inner corners.\nSquare size: \\(80\\,\\text{mm}\\)."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#step-1-detect-the-corners",
+    "href": "lectures/12_camera_calibration.html#step-1-detect-the-corners",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Step 1: Detect the Corners",
+    "text": "Step 1: Detect the Corners\n\n\n\n\nimg = cv2.imread(str(calib_dir / \"GOPR0046.jpg\"))\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\npattern = (8, 6)  # inner corners per row, per column\nfound, corners = cv2.findChessboardCorners(gray, pattern)\n\ncriteria = (cv2.TERM_CRITERIA_EPS\n            + cv2.TERM_CRITERIA_MAX_ITER, 30, 1e-3)\ncorners_sub = cv2.cornerSubPix(gray, corners.copy(),\n                               (11, 11), (-1, -1), criteria)\n\n\n\ncorners: the 48 corner pixels, ordered row by row, starting at one end of the board.\ncornerSubPix refines each corner to sub-pixel accuracy using the image gradients in an \\(11 \\times 11\\) window. It works in place, hence the .copy() here.\nIf found is False, skip the image: the board was not fully visible."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#step-2-match-corners-to-board-points",
+    "href": "lectures/12_camera_calibration.html#step-2-match-corners-to-board-points",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Step 2: Match Corners to Board Points",
+    "text": "Step 2: Match Corners to Board Points\n\n\n\n\nsquare = 80.0  # mm \nobjp = np.zeros((pattern[0] * pattern[1], 3), np.float32)\nobjp[:, :2] = np.mgrid[0:8, 0:6].T.reshape(-1, 2) * square\n\nobj_points, img_points = [], []\nfor path in calib_files:\n    gray = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)\n    found, corners = cv2.findChessboardCorners(gray,\n                                               pattern)\n    if not found:\n        continue\n    corners = cv2.cornerSubPix(gray, corners, (11, 11),\n                               (-1, -1), criteria)\n    obj_points.append(objp)\n    img_points.append(corners)\n\n\n\nobjp holds the corners \\({}^{b}\\mathbf{X}_i = (X, Y, 0)\\) in the board frame \\(b\\), in the same order as the detected corners.\nThe board frame moves with the board, so objp is the same for every view."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#step-3-calibrate",
+    "href": "lectures/12_camera_calibration.html#step-3-calibrate",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Step 3: Calibrate",
+    "text": "Step 3: Calibrate\n\nrms, K, dist, rvecs, tvecs = cv2.calibrateCamera(\n    obj_points, img_points, image_size, None, None)\n\n\n\nInside: a linear initial guess (Zhang’s method), then Levenberg–Marquardt on the reprojection error.\nrms \\(=\\) 0.824 px: the RMS reprojection error over all 35 views.\nK:\n\n\\[\\mathbf{K} = \\begin{bmatrix} 560 & 0 & 651.1 \\\\ 0 & 561.1 & 498.9 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\ndist \\(= (k_1, k_2, p_1, p_2, k_3)\\):\n\n\\[(-0.2326,\\ 0.0615,\\ -0.00003,\\ 0.00006,\\ -0.0075)\\]\n\n\\(k_1 = -0.23 &lt; 0\\): strong barrel distortion, as expected for a GoPro.\nHorizontal field of view: \\(2\\arctan\\big(\\tfrac{W}{2 f_x}\\big) = 98^\\circ\\).\nrvecs, tvecs: 35 board poses, one per view (next slide)."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#what-calibration-returns",
+    "href": "lectures/12_camera_calibration.html#what-calibration-returns",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "What Calibration Returns",
+    "text": "What Calibration Returns\n\n\n\n\n\n\n\n\n\n\nOutput\nMeaning\n\n\n\n\nK\nIntrinsic matrix \\(\\mathbf{K}\\): \\(f_x, f_y, c_x, c_y\\) (skew fixed to 0)\n\n\ndist\nDistortion \\(\\mathbf{d} = (k_1, k_2, p_1, p_2, k_3)\\)\n\n\nrvecs[j]\nRotation \\({}^{c}\\mathbf{R}_{b_j}\\) of view \\(j\\) (axis–angle)\n\n\ntvecs[j]\nTranslation \\({}^{c}\\mathbf{t}_{b_j}\\) of view \\(j\\) (mm)\n\n\nrms\nRMS reprojection error (px)\n\n\n\n\n\n\\(\\mathbf{K}\\) and \\(\\mathbf{d}\\) are camera intrinsic parameters.\nThe poses are extrinsic parameters for the targets: they place each board in front of the camera (right).\ncv2.calibrateCameraExtended returns parameter uncertainties and per-view errors in additional output arrays."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#undistorting-images",
+    "href": "lectures/12_camera_calibration.html#undistorting-images",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Undistorting Images",
+    "text": "Undistorting Images\n\n\n\nAfter \\(\\mathbf{K}\\) and \\(\\mathbf{d}\\) are found, they can be used to map every pixel back to where a pinhole camera would have seen it:\n\n\n\nundistorted = cv2.undistort(img, K, dist)\n\n\n\nStraight lines in the scene become straight in the image.\nThis can crop the image: the stretched corners fall outside the frame."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#full-calibration-code",
+    "href": "lectures/12_camera_calibration.html#full-calibration-code",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Full Calibration Code",
+    "text": "Full Calibration Code\n\n\n\nfrom pathlib import Path\n\nimport cv2\nimport numpy as np\n\n# Calibration images and the checkerboard geometry.\ncalib_files = sorted(Path(\"assets/12_camera_calibration/calibration\").glob(\"*.jpg\"))\npattern = (8, 6)   # inner corners per row, per column\nsquare = 80.0      # square size in mm\n\n# 3D corners in the board frame b: (X, Y, 0), in the same order as the detected corners.\nobjp = np.zeros((pattern[0] * pattern[1], 3), np.float32)\nobjp[:, :2] = np.mgrid[0:pattern[0], 0:pattern[1]].T.reshape(-1, 2) * square\n\ncriteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 1e-3)\n\n# Steps 1-2: detect the corners in every image and match them to the board points.\nobj_points, img_points = [], []\nfor path in calib_files:\n    gray = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)\n    found, corners = cv2.findChessboardCorners(gray, pattern)\n    if not found:\n        print(f\"Board not found in {path.name}, skipping\")\n        continue\n    corners = cv2.cornerSubPix(gray, corners, (11, 11), (-1, -1), criteria)\n    obj_points.append(objp)\n    img_points.append(corners)\n\nimage_size = gray.shape[::-1]   # (width, height)\n\n# Step 3: calibrate.\nrms, K, dist, rvecs, tvecs = cv2.calibrateCamera(\n    obj_points, img_points, image_size, None, None)\n\nprint(f\"Views used: {len(obj_points)} of {len(calib_files)}\")\nprint(f\"RMS reprojection error: {rms:.3f} px\")\nprint(\"K =\\n\", K)\nprint(\"dist (k1, k2, p1, p2, k3) =\", dist.ravel())\n\n# Undistort an image with the calibrated K and dist.\nimg = cv2.imread(str(calib_files[0]))\nundistorted = cv2.undistort(img, K, dist)\ncv2.imwrite(\"undistorted.jpg\", undistorted)"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#collecting-useful-calibration-images",
+    "href": "lectures/12_camera_calibration.html#collecting-useful-calibration-images",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Collecting Useful Calibration Images",
+    "text": "Collecting Useful Calibration Images\n\n\n\nFix the camera settings first: focus, zoom, and resolution. Changing them changes \\(\\mathbf{K}\\).\nUse a flat, rigid board, and measure its square size.\nTake 20–30 sharp images: no motion blur, even lighting, no glare.\nVary the orientation: tilt the board up to about \\(45^\\circ\\) in different directions.\nCover the whole image, especially the corners, where distortion is largest.\nVary the distance, but keep the board large enough for accurate corners.\nCheck that each image is detected, and look at the result before collecting more."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#checking-the-results-error-per-view",
+    "href": "lectures/12_camera_calibration.html#checking-the-results-error-per-view",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Checking the Results: Error per View",
+    "text": "Checking the Results: Error per View\n\n\n\n\n\n\n\n\n\n\nIt’s good to check the per-view reprojection errors, not just the overall calibration RMS.\nIn our example, most views have an error below \\(1\\) px, but one has \\(3.5\\) px: about \\(6\\)x the median.\nThat is due to a board that is far away, so its corners are poorly localized.\nOne bad view can impact the calibration accuracy, so it is worth removing it and recalibrating."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#remove-outliers-and-recalibrate",
+    "href": "lectures/12_camera_calibration.html#remove-outliers-and-recalibrate",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Remove Outliers and Recalibrate",
+    "text": "Remove Outliers and Recalibrate\n\nkeep = [j for j in range(len(img_points)) if per_view[j] &lt; 2.0]\n(rms2, K2, dist2, rvecs2, tvecs2,\n std_intrinsics, std_extrinsics, per_view_errors) = cv2.calibrateCameraExtended(\n    [obj_points[j] for j in keep], [img_points[j] for j in keep], image_size, None, None)\n\n\n\n\nDropping one bad view lowers the RMS error from 0.82 to 0.57 px.\nThe \\(\\pm\\) values are one standard deviation, from std_intrinsics: all well below one pixel.\nRemove views only for a reason (blur, tiny board, wrong detection), not just to lower the number.\n\n\n\n\n\n\n\nAll views\nOutlier removed\n\n\n\n\nViews\n35\n34\n\n\nRMS reprojection error (px)\n0.82\n0.57\n\n\n\\(f_x\\) (px)\n560.0 \\(\\pm\\) 1.0\n560.4 \\(\\pm\\) 0.7\n\n\n\\(f_y\\) (px)\n561.1 \\(\\pm\\) 0.9\n561.4 \\(\\pm\\) 0.6\n\n\n\\(c_x\\) (px)\n651.1 \\(\\pm\\) 0.3\n651.1 \\(\\pm\\) 0.2\n\n\n\\(c_y\\) (px)\n498.9 \\(\\pm\\) 0.5\n499.0 \\(\\pm\\) 0.3\n\n\n\\(k_1\\)\n-0.2326 \\(\\pm\\) 0.0009\n-0.2328 \\(\\pm\\) 0.0006\n\n\n\\(k_2\\)\n0.0615 \\(\\pm\\) 0.0006\n0.0616 \\(\\pm\\) 0.0004"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#key-takeaways",
+    "href": "lectures/12_camera_calibration.html#key-takeaways",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nGeometric calibration estimates the intrinsic matrix \\(\\mathbf{K}\\), the lens distortion \\(\\mathbf{d}\\), and the pose of the target in each view.\nWith a known 3D target, the camera matrix \\(\\mathbf{P}\\) follows linearly (DLT), and \\(\\mathbf{K}\\), \\({}^{c}\\mathbf{R}_{w}\\), \\({}^{c}\\mathbf{t}_{w}\\) follow from it. In practice this is only an initial guess.\nCalibration minimizes the reprojection error (in pixels) over all parameters, including distortion, with nonlinear least squares.\nIn OpenCV: findChessboardCorners → cornerSubPix → calibrateCamera → undistort.\nUse 20–30 sharp views, tilted in different directions, that cover the whole image, especially its corners.\nCheck the per-view errors, not just the overall RMS; remove bad views for a reason and recalibrate.\nVery wide lenses may need the fisheye (or omnidirectional) model."
   }
 ]
