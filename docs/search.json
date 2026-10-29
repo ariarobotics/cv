@@ -5527,7 +5527,7 @@
     "href": "lectures/12_camera_calibration.html#the-lens-distortion-model",
     "title": "Lecture 12 — Camera Calibration",
     "section": "The Lens Distortion Model",
-    "text": "The Lens Distortion Model\n\n\n\n\nLet \\((x,y)\\) be Cartesian coordinates of a point in the image plane, and define \\(r^2 = x^2 + y^2\\).\n\nRecall \\((x, y) = ({}^cX/{}^cZ, {}^cY/{}^cZ)\\), and \\({}^{c}\\mathbf{X} = {}^{c}\\mathbf{R}_{w}\\,{}^{w}\\mathbf{X} + {}^{c}\\mathbf{t}_{w} = ({}^cX, {}^cY, {}^cZ)\\).\n\nLens distortion moves \\((x, y)\\) to \\((x_d, y_d)\\): \\[\\begin{aligned}\nx_d &= x\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + 2 p_1 x y + p_2 (r^2 + 2 x^2) \\\\\ny_d &= y\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6) + p_1 (r^2 + 2 y^2) + 2 p_2 x y\n\\end{aligned}\\]\nRadial terms \\(k_1, k_2, k_3\\): move points toward or away from the center, more as \\(r\\) grows.\nTangential terms \\(p_1, p_2\\): lens not exactly parallel to the sensor.\nPixel coordinates are computed as: \\((u, v, 1)^{T} = \\mathbf{K}\\,(x_d, y_d, 1)^{T}\\), instead of \\((u, v, 1)^{T} = \\mathbf{K}\\,(x, y, 1)^{T}\\). This is the camera model \\(\\pi(\\cdot)\\) of the previous slide."
+    "text": "The Lens Distortion Model\n\n\n\n\nDistortion acts on the image coordinates, before \\(\\mathbf{K}\\): \\[{}^{c}\\mathbf{X} \\;\\to\\; (x, y) = \\Big(\\tfrac{{}^cX}{{}^cZ}, \\tfrac{{}^cY}{{}^cZ}\\Big) \\;\\xrightarrow{\\text{distortion}}\\; (x_d, y_d) \\;\\xrightarrow{\\;\\mathbf{K}\\;}\\; (u, v)\\]\n\n\\((x, y)\\): where an ideal pinhole camera sees the point.\n\\((x_d, y_d)\\): where the lens actually puts it.\n\nWith \\(r^2 = x^2 + y^2\\) (squared distance from the principal point): \\[\\begin{aligned}\nx_d &= \\underbrace{\\color{#2b6cb0}{x\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)}}_{\\color{#2b6cb0}{\\text{radial}}} + \\underbrace{\\color{#c05621}{2 p_1 x y + p_2 (r^2 + 2 x^2)}}_{\\color{#c05621}{\\text{tangential}}} \\\\\ny_d &= \\underbrace{\\color{#2b6cb0}{y\\,(1 + k_1 r^2 + k_2 r^4 + k_3 r^6)}}_{\\color{#2b6cb0}{\\text{radial}}} + \\underbrace{\\color{#c05621}{p_1 (r^2 + 2 y^2) + 2 p_2 x y}}_{\\color{#c05621}{\\text{tangential}}}\n\\end{aligned}\\]\nPixels: \\((u, v, 1)^{T} = \\mathbf{K}\\,(x_d, y_d, 1)^{T}\\), instead of \\(\\mathbf{K}\\,(x, y, 1)^{T}\\). This is the camera model \\(\\pi(\\cdot)\\) of the previous slide.\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
   },
   {
     "objectID": "lectures/12_camera_calibration.html#radial-and-tangential-distortion",
@@ -5689,5 +5689,26 @@
     "title": "Homework 09: Tracking with Optical Flow",
     "section": "Submission",
     "text": "Submission\nSubmit only your completed hw09.py. No report, notebook, helper module, images, or generated results are required.\nYou have five Gradescope submissions. Attempts 6 onward receive zero for that submission; earlier submissions remain unchanged. Platform autograder failures do not count, while student exceptions and timeouts do.\nThe regular course late policy allows submission for one additional week, with a 20% penalty. Work submitted after that period receives zero. The autograder reports the raw score before any late penalty."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#least-squares-review-supplementary",
+    "href": "lectures/12_camera_calibration.html#least-squares-review-supplementary",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Least-Squares Review (Supplementary)",
+    "text": "Least-Squares Review (Supplementary)\n\nWhen we have more equations than unknowns (plus noise), there is no exact solution. Least-squares find the best approximate solution that minimizes the sum of squared errors. There are two cases:\nNonhomogeneous \\(\\mathbf{A}\\mathbf{p} = \\mathbf{b}\\): \\[\\min_{\\mathbf{p}} \\|\\mathbf{A}\\mathbf{p} - \\mathbf{b}\\|^2\n\\;\\Rightarrow\\;\n\\mathbf{p} = (\\mathbf{A}^{T}\\mathbf{A})^{-1}\\mathbf{A}^{T}\\mathbf{b}\\]\nHomogeneous \\(\\mathbf{A}\\mathbf{p} = \\mathbf{0}\\):\n\n\\(\\mathbf{p} = \\mathbf{0}\\) is trivial, and any scaled solution is a solution, so fix the scale \\(\\|\\mathbf{p}\\| = 1\\): \\[\\min_{\\|\\mathbf{p}\\| = 1} \\|\\mathbf{A}\\mathbf{p}\\|^2\\;\\Rightarrow\\; \\mathbf{p} = \\text{last right singular vector of } \\mathbf{A}\\]\n\nCalibration is the homogeneous case: \\(\\mathbf{P}\\) is only defined up to scale.\nIn NumPy:\n\n\\(\\mathbf{A}\\mathbf{p} = \\mathbf{b} \\implies\\) p = np.linalg.lstsq(A, b)[0]\n\\(\\mathbf{A}\\mathbf{p} = \\mathbf{0} \\implies\\) p = np.linalg.svd(A)[2][-1]"
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#radial-distortion",
+    "href": "lectures/12_camera_calibration.html#radial-distortion",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Radial Distortion",
+    "text": "Radial Distortion\n\n\n\n\n\n\n\n\n\n\n\nThe radial terms scale \\((x, y)\\) along its ray from the principal point: \\(\\begin{bmatrix} x_d \\\\ y_d \\end{bmatrix} = s(r) \\begin{bmatrix} x \\\\ y \\end{bmatrix}, \\quad s(r) = 1 + k_1 r^2 + k_2 r^4 + k_3 r^6\\)\nOnly the distance from the center changes, from \\(r\\) to \\(r_d = \\sqrt{x_d^2 + y_d^2} = r\\,s(r)\\)$\nBarrel (\\(k_1 &lt; 0\\), \\(s &lt; 1\\)): points move toward the center; wide-angle lenses (GoPro, phone ultra-wide).\nPincushion (\\(k_1 &gt; 0\\), \\(s &gt; 1\\)): points move away from the center; telephoto lenses.\nStraight lines not through the center become curved. The effect is \\(\\approx 0\\) near the center and grows with \\(r\\)."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#tangential-distortion",
+    "href": "lectures/12_camera_calibration.html#tangential-distortion",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Tangential Distortion",
+    "text": "Tangential Distortion\n\n\n\n\n\n\n\n\n\n\n\nThe tangential terms shift points sideways, not along their ray from the center: \\[x_d = x\\,s(r) + \\underbrace{\\color{#c05621}{2 p_1 x y + p_2 (r^2 + 2 x^2)}}_{\\color{#c05621}{\\Delta x}},\n\\qquad\ny_d = y\\,s(r) + \\underbrace{\\color{#c05621}{p_1 (r^2 + 2 y^2) + 2 p_2 x y}}_{\\color{#c05621}{\\Delta y}}\\]\nCause: lens elements slightly tilted or off-center relative to the sensor.\nUsually small."
   }
 ]
