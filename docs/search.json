@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -2895,7 +2895,7 @@
     "href": "schedule.html",
     "title": "Course Schedule — Fall 2026",
     "section": "",
-    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Pyramids\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04, Lec05\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec06\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec06, Lec07\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec07\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points\nLec07\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Description\nLec07\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nFeature Matching\nLec08\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nHough Transform\nLec09, Lec10\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nOptical Flow, Color\nLec11\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nCamera Geometry\nLec11\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Geometry & Calibration\nLec12\n\n\n\n\n10W\nWed, Oct 28\nL18\nTwo-View Geometry\nLec13\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec13\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nStereo Vision\nLec14\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec15\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec16\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec17, Lec18\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec19\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec19\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec20\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec21\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec22\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec23\nLast week of class; Classes end"
+    "text": "The schedule below is subject to change as the semester progresses. Lecture topics may shift slightly depending on class pace.\nHomework and exam dates are to remain fixed except in extraordinary circumstances.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nLecture\nTopic\nSlides\nAssignments / Notes\nReferences\n\n\n\n\n1M\nMon, Aug 24\nL1\nIntro to CV & class\nLec01\nClasses start\n\n\n\n1W\nWed, Aug 26\nL2\nWhat is an image? Intro to Python\nLec02\n\nSzeliski 1; Klette 1.1, 2.1\n\n\n2M\nMon, Aug 31\nL3\nImage Filtering\nLec03\nHW01 posted\nSzeliski 3.2; Klette 2.2.2; Szeliski 3.4\n\n\n2W\nWed, Sep 2\nL4\nImage Filtering\nLec03\nLast day to add/drop classes\n\n\n\n3M\nMon, Sep 7\n—\nNo class — Labor Day\n—\nHW01 due; HW02 posted; Campus closed\n\n\n\n3W\nWed, Sep 9\nL5\nImage Pyramids\nLec03, Lec04\nCensus Day\nSzeliski 3.5.2, 8.1.1; Klette 1.2\n\n\n4M\nMon, Sep 14\nL6\nFourier Transform\nLec04, Lec05\nHW02 due; HW03 posted\n\n\n\n4W\nWed, Sep 16\nL7\nFourier Transform\nLec05\nCareer Day\nSzeliski 4.2; Klette 2.3, 2.4\n\n\n5M\nMon, Sep 21\nL8\nEdge Detection\nLec06\nHW03 due; HW04 posted\n\n\n\n5W\nWed, Sep 23\nL9\nEdge Detection\nLec06, Lec07\nExam 1\nSzeliski 4.1.2, 4.1.3, 4.3.2; Klette 2.3, 2.4, 9.2\n\n\n6M\nMon, Sep 28\nL10\nFeature Points\nLec07\nHW04 due; HW05 posted\n\n\n\n6W\nWed, Sep 30\nL11\nFeature Points\nLec07\n\nSzeliski 2.1 (esp. 2.1.5), 2.2, 2.3; Klette 6.1, 1.3\n\n\n7M\nMon, Oct 5\nL12\nFeature Description\nLec07\nHW05 due; HW06 posted\n\n\n\n7W\nWed, Oct 7\nL13\nFeature Matching\nLec08\n\n\n\n\n8M\nMon, Oct 12\n—\nNo class — Fall Break\n—\nFall Break: Oct 12–13\n\n\n\n8W\nWed, Oct 14\nL14\nHough Transform\nLec09, Lec10\nHW06 due; HW07 posted\nSzeliski 2.1, 6.1, 6.2.1\n\n\n9M\nMon, Oct 19\nL15\nColor\nLec11\nExam 2\nSzeliski 7, 8.1, 8.4, 11\n\n\n9W\nWed, Oct 21\nL16\nOptical Flow\nLec11\nHW07 due; HW08 posted\nSzeliski 6.2.1\n\n\n10M\nMon, Oct 26\nL17\nCamera Geometry\nLec12\n\n\n\n\n10W\nWed, Oct 28\nL18\nCalibration\nLec13\nHW08 due; HW09 posted\nSzeliski 5.3\n\n\n11M\nMon, Nov 2\nL19\nTwo-View Geometry\nLec13\n\nSzeliski 14\n\n\n11W\nWed, Nov 4\nL20\nStereo Vision\nLec14\nHW09 due; HW10 posted\nSzeliski 14.1, 14.2\n\n\n12M\nMon, Nov 9\nL21\nMachine Learning\nLec15\nExam 3\nSzeliski 14.5\n\n\n12W\nWed, Nov 11\nL22\nRecognition\nLec16\nHW10 due\nGoodfellow 6, 9\n\n\n13M\nMon, Nov 16\nL23\nFace Detection, Pedestrian Detection\nLec17, Lec18\nHW11 posted\n\n\n\n13W\nWed, Nov 18\nL24\nNeural Networks\nLec19\n\nGoodfellow 6, 7.1–7.5, 7.12\n\n\n14M\nMon, Nov 23\nL25\nNeural Networks\nLec19\nHW11 due\n\n\n\n14W\nWed, Nov 25\n—\nNo class — Thanksgiving Break\n—\nThanksgiving break\n\n\n\n15M\nMon, Nov 30\nL26\nTraining Neural Networks\nLec20\nHW12 posted\n\n\n\n15W\nWed, Dec 2\nL27\nWhat do CNNs learn?\nLec21\nExam 4\n\n\n\n16M\nMon, Dec 7\nL28\nWhat do CNNs learn?\nLec22\nHW12 due; Last week of class\n\n\n\n16W\nWed, Dec 9\nL29\nCNN Architectures\nLec23\nLast week of class; Classes end"
   },
   {
     "objectID": "assignments/hw01/index.html",
@@ -5710,5 +5710,299 @@
     "title": "Lecture 12 — Camera Calibration",
     "section": "Tangential Distortion",
     "text": "Tangential Distortion\n\n\n\n\n\n\n\n\n\n\n\nThe tangential terms shift points sideways, not along their ray from the center: \\[x_d = x\\,s(r) + \\underbrace{\\color{#c05621}{2 p_1 x y + p_2 (r^2 + 2 x^2)}}_{\\color{#c05621}{\\Delta x}},\n\\qquad\ny_d = y\\,s(r) + \\underbrace{\\color{#c05621}{p_1 (r^2 + 2 y^2) + 2 p_2 x y}}_{\\color{#c05621}{\\Delta y}}\\]\nCause: lens elements slightly tilted or off-center relative to the sensor.\nUsually small."
+  },
+  {
+    "objectID": "lectures/12_camera_calibration.html#problems-based-on-camera-model",
+    "href": "lectures/12_camera_calibration.html#problems-based-on-camera-model",
+    "title": "Lecture 12 — Camera Calibration",
+    "section": "Problems Based on Camera Model",
+    "text": "Problems Based on Camera Model\n\\[\\lambda\\,\\mathbf{x} = \\mathbf{K}\\,\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]\\;{}^{w}\\mathbf{X}\\]\nWhich quantities are known and which are unknown defines the problem:\n\n\n\n\n\n\n\n\n\n\nProblem\nPixels \\(\\mathbf{x}\\)\nIntrinsics \\(\\mathbf{K}\\)\nExtrinsics \\({}^{c}\\mathbf{R}_{w},\\ {}^{c}\\mathbf{t}_{w}\\)\n3D points \\({}^{w}\\mathbf{X}\\)\n\n\n\n\nProjection (simulate a camera)\nunknown\nknown\nknown\nknown\n\n\nCamera calibration\nknown\nunknown\nunknown\nknown\n\n\nTwo-view geometry\nknown\nknown\nunknown\nunknown\n\n\nTriangulation\nknown\nknown\nknown\nunknown\n\n\n\n\nCalibration is usually done once per camera and lens setting. The estimated/known \\(\\mathbf{K}\\) and distortion are then used in other problems.\nCalibration is also called resectioning."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#learning-objectives",
+    "href": "lectures/13_two_view_geometry.html#learning-objectives",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nDescribe epipolar geometry, and use the fundamental and essential matrices to map a pixel in one image to its epipolar line in the other.\nEstimate \\(\\mathbf{F}\\) and \\(\\mathbf{E}\\) from feature matches with OpenCV, using RANSAC to reject wrong matches.\nTell when a homography relates two views instead (planar scene, pure rotation, distant scene), and estimate one.\nRecover the relative camera pose, triangulate matched points into a 3D point cloud, and explain the limits of two-view reconstruction."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#one-view-loses-depth-two-views-recover-it",
+    "href": "lectures/13_two_view_geometry.html#one-view-loses-depth-two-views-recover-it",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "One View Loses Depth, Two Views Recover It",
+    "text": "One View Loses Depth, Two Views Recover It\n\n\n\n\n\n\n\n\n\n\nEvery point on the ray from camera 1 lands on the same pixel \\(\\mathbf{x}_1\\): Even when the camera matrix is known, one image cannot tell the depth \\(\\lambda_1\\).\nA second camera sees the same candidates at different pixels. Finding the match for \\(\\mathbf{x}_1\\) determines its 3D point position."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-two-view-problem",
+    "href": "lectures/13_two_view_geometry.html#the-two-view-problem",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Two-View Problem",
+    "text": "The Two-View Problem\n\n\n\n\\[\\lambda\\,\\mathbf{x} = \\mathbf{K}\\,\\big[\\,{}^{c}\\mathbf{R}_{w} \\mid {}^{c}\\mathbf{t}_{w}\\,\\big]\\;{}^{w}\\mathbf{X}\\]\n\n\n\n\n\n\n\n\n\n\n\nProblem\nPixels \\(\\mathbf{x}\\)\nIntrinsics \\(\\mathbf{K}\\)\nExtrinsics \\({}^{c}\\mathbf{R}_{w},\\ {}^{c}\\mathbf{t}_{w}\\)\n3D points \\({}^{w}\\mathbf{X}\\)\n\n\n\n\nProjection (simulate a camera)\nunknown\nknown\nknown\nknown\n\n\nCamera calibration\nknown\nunknown\nunknown\nknown\n\n\nTwo-view geometry\nknown\nknown\nunknown\nunknown\n\n\nTriangulation\nknown\nknown\nknown\nunknown\n\n\n\n\n\nCalibration knows the 3D points and solves for intrinsics and extrinsics. In two-view geometry, 3D points and extrinsics are unknown.\nTwo-view geometry recovers the relative pose between two cameras. We assume one camera has the world frame, so its extrinsics are trivial. The second camera’s extrinsics are unknown, as is the 3D point: \\[\n\\underbrace{\\lambda_1\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#c53030}{\\text{unknown}}}\\;\n\\underbrace{\\mathbf{x}_1\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#2f855a}{\\text{known}}}\n=\n\\underbrace{\\mathbf{K}\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#2f855a}{\\text{known}}}\\;\n\\underbrace{\\big[\\,\\mathbf{I} \\mid \\mathbf{0}\\,\\big]}_{\\color{#2f855a}{\\text{known}}}\\;\n\\underbrace{{}^{1}\\mathbf{X}\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#c53030}{\\text{unknown}}}\n\\qquad\\qquad\n\\underbrace{\\lambda_2\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#c53030}{\\text{unknown}}}\\;\n\\underbrace{\\mathbf{x}_2\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#2f855a}{\\text{known}}}\n=\n\\underbrace{\\mathbf{K}\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#2f855a}{\\text{known}}}\\;\n\\underbrace{\\big[\\,{}^{2}\\mathbf{R}_{1} \\mid {}^{2}\\mathbf{t}_{1}\\,\\big]}_{\\color{#c53030}{\\text{unknown}}}\\;\n\\underbrace{{}^{1}\\mathbf{X}\\vphantom{\\big[{}^{2}\\mathbf{R}_{1}\\big]}}_{\\color{#c53030}{\\text{unknown}}}\n\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#epipolar-geometry",
+    "href": "lectures/13_two_view_geometry.html#epipolar-geometry",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Epipolar Geometry",
+    "text": "Epipolar Geometry\n\n\n\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nBaseline\nLine through the camera centers \\({}^{w}\\mathbf{C}_1\\), \\({}^{w}\\mathbf{C}_2\\)\n\n\nEpipolar plane\nPlane through the baseline and \\({}^{w}\\mathbf{X}\\)\n\n\nEpipolar lines \\({}^{1}\\ell\\), \\({}^{2}\\ell\\)\nWhere the epipolar plane cuts each image plane\n\n\nEpipoles \\({}^{1}\\mathbf{e}\\), \\({}^{2}\\mathbf{e}\\)\nWhere the baseline cuts each image plane\n\n\n\n\n\nThe pixels \\({}^{1}\\mathbf{x}\\) and \\({}^{2}\\mathbf{x}\\) lie on \\({}^{1}\\ell\\) and \\({}^{2}\\ell\\).\nEach epipole is the image of the other camera’s center.\n\n\n\n\n\n  \n  \n  \n    Play\n    view: top\n    \n    behind cameras"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-epipolar-constraint",
+    "href": "lectures/13_two_view_geometry.html#the-epipolar-constraint",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Epipolar Constraint",
+    "text": "The Epipolar Constraint\n\n\n\n  \n  \n  \n    Restart\n    Play\n    \n    \n  \n  \n    \n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\nEpipolar constraint: the match \\({}^{2}\\mathbf{x}\\) of \\({}^{1}\\mathbf{x}\\) must lie on the epipolar line \\({}^{2}\\ell\\), whatever the depth of \\({}^{w}\\mathbf{X}\\).\nMatching becomes a 1D search along a line instead of a 2D search over the whole image."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#all-epipolar-lines-meet-at-the-epipole",
+    "href": "lectures/13_two_view_geometry.html#all-epipolar-lines-meet-at-the-epipole",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "All Epipolar Lines Meet at the Epipole",
+    "text": "All Epipolar Lines Meet at the Epipole\n\n\n\n  \n  \n  \n    Restart\n    Play\n    \n    \n  \n  \n    \n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\nEvery epipolar plane contains the baseline, so every epipolar line in an image passes through that image’s epipole.\nThe lines come in corresponding pairs: one plane gives one line in each image. Here both epipoles lie outside the images."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#where-is-the-epipole",
+    "href": "lectures/13_two_view_geometry.html#where-is-the-epipole",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Where Is the Epipole?",
+    "text": "Where Is the Epipole?"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#lines-in-homogeneous-coordinates",
+    "href": "lectures/13_two_view_geometry.html#lines-in-homogeneous-coordinates",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Lines in Homogeneous Coordinates",
+    "text": "Lines in Homogeneous Coordinates\n\n\n\n\n\n\n\n\n\n\nA line in the image can be modelled as the set of pixels \\((u, v)\\) that satisfy \\(a\\,u + b\\,v + c = 0\\).\nUsing homogeneous coordinates \\(\\mathbf{x} = (u, v, 1)^{\\top}\\), and representing the lines coefficients as \\(\\ell = (a, b, c)^{\\top}\\): \\[\n\\mathbf{x} \\text{ is on line } \\ell\n\\quad\\Longleftrightarrow\\quad\n\\ell^{\\top}\\mathbf{x} = a\\,u + b\\,v + c = 0\n\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-fundamental-matrix",
+    "href": "lectures/13_two_view_geometry.html#the-fundamental-matrix",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Fundamental Matrix",
+    "text": "The Fundamental Matrix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe fundamental matrix \\(\\mathbf{F}\\) is a \\(3\\times3\\) matrix that maps a pixel in image 1 to its epipolar line in image 2:\n\n\\[\n\\mathbf{F}\\,{}^{1}\\mathbf{x} = \\underbrace{{}^{2}\\ell}_{(a,\\,b,\\,c)^{\\top}}\n\\qquad\\Longrightarrow\\qquad\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\underbrace{{}^{2}\\mathbf{x}^{\\top}\\,\\mathbf{F}\\,{}^{1}\\mathbf{x} = 0}_{a\\,u_2\\,+\\,b\\,v_2\\,+\\,c\\,=\\,0}}\n\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{fundamental matrix}\\\\ \\textbf{constraint}\\end{array}}}\n\\]\n\nThe same \\(\\mathbf{F}\\) works for every image point.\nIn the other direction, \\({}^{1}\\ell = \\mathbf{F}^{\\top}\\,{}^{2}\\mathbf{x}\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-fundamental-matrix-a-numerical-example",
+    "href": "lectures/13_two_view_geometry.html#the-fundamental-matrix-a-numerical-example",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Fundamental Matrix: A Numerical Example",
+    "text": "The Fundamental Matrix: A Numerical Example\n\n\n\\[{}^{1}\\mathbf{x} = (341.1,\\ 157.0,\\ 1)^{\\top},\\qquad{}^{2}\\mathbf{x} = (411.9,\\ 165.0,\\ 1)^{\\top}\\]\n\n\n\n\\[\\mathbf{F} = \\begin{bmatrix} 0 & 1.26{\\times}10^{-4} & -5.64{\\times}10^{-3} \\\\ 1.57{\\times}10^{-4} & -1.31{\\times}10^{-5} & -0.19 \\\\ -4.91{\\times}10^{-3} & 0.11 & 1.00 \\end{bmatrix}\\]\n\n\n\n\\[\\begin{aligned} {}^{2}\\ell &= \\mathbf{F}\\,{}^{1}\\mathbf{x} = (0.105,\\ -0.994,\\ 120.7)^{\\top} \\\\ \\text{line }{}^{2}\\ell &:\\ \\ 0.105\\,u -0.994\\,v +120.7 = 0 \\end{aligned}\\]\n\n\n\n\\[\\begin{aligned} {}^{2}\\mathbf{x}^{\\top}\\mathbf{F}\\,{}^{1}\\mathbf{x} = {}^{2}\\mathbf{x}^{\\top}\\,{}^{2}\\ell &= 0.105\\cdot411.9 -0.994\\cdot165.0 +120.7 \\\\ &= 0.00 \\end{aligned}\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-deriving-the-fundamental-matrix",
+    "href": "lectures/13_two_view_geometry.html#supplementary-deriving-the-fundamental-matrix",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) Deriving the Fundamental Matrix",
+    "text": "(Supplementary) Deriving the Fundamental Matrix\n\n\n\nPixel \\({}^{i}\\mathbf{x}\\)’s viewing ray has direction \\(\\mathbf{K}^{-1}\\,{}^{i}\\mathbf{x}\\) in camera \\(i\\)’s frame.\nIn camera 2’s frame, three vectors lie in the epipolar plane:\n\n\\(\\mathbf{K}^{-1}\\,{}^{2}\\mathbf{x}\\): camera 2’s ray\n\\({}^{2}\\mathbf{t}_{1}\\): the baseline (to camera 1)\n\\({}^{2}\\mathbf{R}_{1}\\,\\mathbf{K}^{-1}\\,{}^{1}\\mathbf{x}\\): camera 1’s ray, in frame 2\n\nSo the first is perpendicular to the normal \\(\\mathbf{n}\\) of the other two:\n\n\\[\n\\big({\\color{#2f855a}{\\mathbf{K}^{-1}\\,{}^{2}\\mathbf{x}}}\\big)^{\\top}\n\\underbrace{\\big({\\color{#805ad5}{{}^{2}\\mathbf{t}_{1}}} \\times {\\color{#2b6cb0}{{}^{2}\\mathbf{R}_{1}\\,\\mathbf{K}^{-1}\\,{}^{1}\\mathbf{x}}}\\big)}_{\\mathbf{n}} = 0\n\\] \\[\n\\Longrightarrow\\quad\n{}^{2}\\mathbf{x}^{\\top}\\,\n\\underbrace{\\mathbf{K}^{-\\top}\\,[{}^{2}\\mathbf{t}_{1}]_{\\times}\\,{}^{2}\\mathbf{R}_{1}\\,\\mathbf{K}^{-1}}_{\\mathbf{F}}\\;\n{}^{1}\\mathbf{x} = 0\n\\]\n\n\n\n\n  \n  \n  \n    Play\n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\n\n\n\n\\([\\mathbf{t}]_{\\times}\\) writes the cross product with \\(\\mathbf{t} = (t_x, t_y, t_z)^{\\top}\\) as a matrix:\n\n\n\n\\[\n\\mathbf{t}\\times\\mathbf{v} = [\\mathbf{t}]_{\\times}\\,\\mathbf{v},\n\\qquad\n[\\mathbf{t}]_{\\times} =\n\\begin{bmatrix} 0 & -t_z & t_y \\\\ t_z & 0 & -t_x \\\\ -t_y & t_x & 0 \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-essential-matrix",
+    "href": "lectures/13_two_view_geometry.html#the-essential-matrix",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Essential Matrix",
+    "text": "The Essential Matrix\n\n\n\nThe fundamental matrix \\(\\mathbf{F}\\) is the epipolar constraint for uncalibrated cameras, in pixel coordinates: \\[\n{}^{2}\\mathbf{x}^{\\top}\\,\n\\underbrace{\\mathbf{K}^{-\\top}\\,[{}^{2}\\mathbf{t}_{1}]_{\\times}\\,{}^{2}\\mathbf{R}_{1}\\,\\mathbf{K}^{-1}}_{\\mathbf{F}}\\;\n{}^{1}\\mathbf{x} = 0\n\\]\nThe middle part of \\(\\mathbf{F}\\) is the essential matrix: \\[\\mathbf{E} = [{}^{2}\\mathbf{t}_{1}]_{\\times}\\,{}^{2}\\mathbf{R}_{1}\\]\nIt is the epipolar constraint for calibrated cameras, in normalized coordinates \\(\\hat{\\mathbf{x}} = \\mathbf{K}^{-1}\\mathbf{x}\\) (ray directions): \\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{{}^{2}\\hat{\\mathbf{x}}^{\\top}\\,\\mathbf{E}\\,{}^{1}\\hat{\\mathbf{x}} = 0}\n\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{essential matrix}\\\\ \\textbf{constraint}\\end{array}}}\n\\]\nIt contains only the relative pose of the two cameras, nothing about the scene or the intrinsics.\n\n\n\nFor the same point as before:\n\\[\\mathbf{K} = \\begin{bmatrix} 500 & 0 & 320 \\\\ 0 & 500 & 240 \\\\ 0 & 0 & 1 \\end{bmatrix}\\]\n\n\n\n\\[\\begin{aligned} {}^{1}\\mathbf{x} &= (341.1,\\ 157.0,\\ 1)^{\\top} \\\\ {}^{2}\\mathbf{x} &= (411.9,\\ 165.0,\\ 1)^{\\top} \\\\[4pt] {}^{1}\\hat{\\mathbf{x}} &= \\mathbf{K}^{-1}\\,{}^{1}\\mathbf{x} = (0.042,\\ -0.166,\\ 1)^{\\top} \\\\ {}^{2}\\hat{\\mathbf{x}} &= \\mathbf{K}^{-1}\\,{}^{2}\\mathbf{x} = (0.184,\\ -0.150,\\ 1)^{\\top} \\end{aligned}\\]\n\n\n\n\\[\\mathbf{E} = \\begin{bmatrix} 0 & -1.29 & -0.5 \\\\ -1.61 & 0.13 & 2.83 \\\\ -0.67 & -2.97 & 0 \\end{bmatrix}\\]\n\n\n\n\\[{}^{2}\\hat{\\mathbf{x}}^{\\top}\\mathbf{E}\\,{}^{1}\\hat{\\mathbf{x}} = 0.00\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#estimating-f-with-opencv",
+    "href": "lectures/13_two_view_geometry.html#estimating-f-with-opencv",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Estimating F With OpenCV",
+    "text": "Estimating F With OpenCV\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDetect and match feature points in both images.\nCollect the matched pixels: pts1, pts2, \\(N\\times2\\) arrays in the same order.\nEstimate \\(\\mathbf{F}\\) (or \\(\\mathbf{E}\\)) from these correspondences.\n\n\n# Uncalibrated: \nF, _ = cv2.findFundamentalMat(pts1, pts2,\n                              cv2.FM_8POINT)\n# Calibrated: \nE, _ = cv2.findEssentialMat(pts1, pts2, K)\n\n\n\n\nResults on these images (K from the dataset):\n\\[\\mathbf{F} = \\begin{bmatrix} 4.01{\\times}10^{-8} & 5.08{\\times}10^{-6} & -1.69{\\times}10^{-3} \\\\ 1.13{\\times}10^{-7} & 5.48{\\times}10^{-6} & -0.03 \\\\ 1.46{\\times}10^{-4} & 0.02 & 1.00 \\end{bmatrix}\\]\n\\[\\mathbf{E} = \\begin{bmatrix} -8.05{\\times}10^{-4} & -0.02 & 3.15{\\times}10^{-3} \\\\ 0.12 & -4.67{\\times}10^{-4} & -0.70 \\\\ 0.01 & 0.71 & 1.70{\\times}10^{-3} \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#full-f-code",
+    "href": "lectures/13_two_view_geometry.html#full-f-code",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Estimating F and E With OpenCV: Full Code",
+    "text": "Estimating F and E With OpenCV: Full Code\n\n\n\nimport cv2\nimport numpy as np\n\n# Two views of the same scene.\nimg1 = cv2.imread(\"assets/13_two_view_geometry/frame1.JPG\", cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread(\"assets/13_two_view_geometry/frame2.JPG\", cv2.IMREAD_GRAYSCALE)\n\n# Intrinsics of the camera\nK = np.array([[3409.58,    0.0, 3115.16],\n              [   0.0, 3409.44, 2064.73],\n              [   0.0,    0.0,     1.0]])\nK[:2] *= 0.2\n\n# 1. Detect and match features: SIFT with Lowe's ratio test.\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nknn = cv2.BFMatcher(cv2.NORM_L2).knnMatch(des1, des2, k=2)\ngood = [m for m, n in knn if m.distance &lt; 0.75 * n.distance]\n\n# 2. Matched pixels, N x 2, in the same order.\npts1 = np.float32([kp1[m.queryIdx].pt for m in good])\npts2 = np.float32([kp2[m.trainIdx].pt for m in good])\n\n# 3. Estimate F (uncalibrated) and E (calibrated).\nF, _ = cv2.findFundamentalMat(pts1, pts2, cv2.FM_8POINT)\nE, _ = cv2.findEssentialMat(pts1, pts2, K)\n\nprint(f\"{len(good)} matches\")\nprint(\"F =\\n\", F / F[2, 2])\nprint(\"E =\\n\", E)"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-the-eight-point-algorithm",
+    "href": "lectures/13_two_view_geometry.html#supplementary-the-eight-point-algorithm",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) The Eight-Point Algorithm",
+    "text": "(Supplementary) The Eight-Point Algorithm\n\nOpenCV’s cv2.findFundamentalMat(..., cv2.FM_8POINT) implements the eight-point algorithm to estimate the fundamental matrix (Hartley & Zisserman, 2004, §11.1.1). The steps are:\nOne row per match. With \\({}^{1}\\mathbf{x} = (u_1, v_1, 1)^{\\top}\\), \\({}^{2}\\mathbf{x} = (u_2, v_2, 1)^{\\top}\\) and \\(\\mathbf{f} = (F_{11}, F_{12}, \\dots, F_{33})^{\\top}\\), the constraint \\({}^{2}\\mathbf{x}^{\\top}\\mathbf{F}\\,{}^{1}\\mathbf{x} = 0\\) is linear in \\(\\mathbf{f}\\): \\[\n\\big[\\,u_2u_1,\\ u_2v_1,\\ u_2,\\ v_2u_1,\\ v_2v_1,\\ v_2,\\ u_1,\\ v_1,\\ 1\\,\\big]\\;\\mathbf{f} = 0\n\\]\nSolve. Stack \\(N \\ge 8\\) rows into \\(\\mathbf{A}\\) (\\(N\\times 9\\)). \\(\\mathbf{f}\\) is the right singular vector of \\(\\mathbf{A}\\) with the smallest singular value, as in the DLT of Lecture 12.\nForce rank 2. A true \\(\\mathbf{F}\\) has \\(\\det\\mathbf{F} = 0\\): that is what makes all epipolar lines meet at the epipole. With noise, the solution has rank 3. With \\(\\mathbf{F} = \\mathbf{U}\\,\\mathrm{diag}(\\sigma_1, \\sigma_2, \\sigma_3)\\,\\mathbf{V}^{\\top}\\), set \\(\\sigma_3 = 0\\): the closest rank-2 matrix.\nNormalize first. Pixel values make the entries of \\(\\mathbf{A}\\) range from 1 to \\(\\sim\\!10^{5}\\), which makes the solution sensitive to noise. Shift each image’s points to zero mean and scale them to mean distance \\(\\sqrt{2}\\) (transforms \\(\\mathbf{T}_1\\), \\(\\mathbf{T}_2\\)), solve, then undo: \\(\\mathbf{F} = \\mathbf{T}_2^{\\top}\\,\\tilde{\\mathbf{F}}\\,\\mathbf{T}_1\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#how-many-matches",
+    "href": "lectures/13_two_view_geometry.html#how-many-matches",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "How Many Matches Do We Need?",
+    "text": "How Many Matches Do We Need?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlgorithm\nEstimates\nNeeds \\(\\mathbf{K}\\)?\nMatches\nSolutions\nOpenCV\n\n\n\n\nEight-point\n\\(\\mathbf{F}\\)\nNo\n8 or more\n1\nfindFundamentalMat(..., cv2.FM_8POINT)\n\n\nSeven-point\n\\(\\mathbf{F}\\)\nNo\nexactly 7\n1 or 3\nfindFundamentalMat(..., cv2.FM_7POINT)\n\n\nFive-point\n\\(\\mathbf{E}\\)\nYes\n5 or more\nup to 10\nfindEssentialMat(..., K)\n\n\n\n\n\n\nEach algorithm needs a minimum number of matches or correspondences \\({}^{1}\\mathbf{x}_j \\leftrightarrow {}^{2}\\mathbf{x}_j\\) to estimate \\(\\mathbf{F}\\) or \\(\\mathbf{E}\\).\nThe seven- and five-point algorithms can return several solutions; the other correspondences are used to pick the one most of them agree with.\nWhy use as few matches as possible?"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#not-all-matches-are-correct",
+    "href": "lectures/13_two_view_geometry.html#not-all-matches-are-correct",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Not All Matches Are Correct",
+    "text": "Not All Matches Are Correct\n\n\n\n\n\n\n\n\n\n\n\n\n\nOf the 1035 SIFT matches, 148 are wrong: they do not fit the scene’s true epipolar geometry.\nWhy use as few matches as possible? In practice, some matches are wrong\nEvery match used in an algorithm must be correct to estimate \\(\\mathbf{F}\\) or \\(\\mathbf{E}\\) correctly.\nThe more matches we use, the more likely it is that at least one of them is wrong.\nHow can we robustly estimate \\(\\mathbf{F}\\) or \\(\\mathbf{E}\\) from a set of matches that contains some wrong ones?"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#ransac-fitting-a-line-with-outliers",
+    "href": "lectures/13_two_view_geometry.html#ransac-fitting-a-line-with-outliers",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "RANSAC: Fitting a Line With Outliers",
+    "text": "RANSAC: Fitting a Line With Outliers\n\n\n\nRANdom SAmple Consensus (RANSAC): the model that most points agree with wins.\n\n\n\n\n\n\n\nRANSAC Algorithm\n\n\n\nSample the minimum number of points needed to fit the model (2 for a line), at random.\nFit the model to the sample.\nScore: count the inliers, the points within a threshold \\(\\tau\\) of the model.\nRepeat 1–3 and keep the model with the most inliers.\n\n\n\n\n\nLeast squares uses every point, so outliers pull it away.\n\n\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nFitting a line with RANSAC."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#example-estimating-a-translation",
+    "href": "lectures/13_two_view_geometry.html#example-estimating-a-translation",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Example: Estimating a Translation",
+    "text": "Example: Estimating a Translation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImage 2 is a sideways shift of image 1: the model is a translation, \\({}^{2}\\mathbf{x} = {}^{1}\\mathbf{x} + \\mathbf{t}\\). Each match gives its own estimate \\(\\mathbf{t}_j = {}^{2}\\mathbf{x}_j - {}^{1}\\mathbf{x}_j\\).\nCorrect matches all agree: their arrows are parallel and equally long. Wrong matches point anywhere.\nLeast squares averages all \\(\\mathbf{t}_j\\), so the wrong matches pull it away: \\(\\mathbf{t}_{\\text{LS}} = (-148,\\ 15)\\) px instead of \\(\\mathbf{t} = (-400,\\ 0)\\) px."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#ransac-for-the-translation",
+    "href": "lectures/13_two_view_geometry.html#ransac-for-the-translation",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "RANSAC for the Translation",
+    "text": "RANSAC for the Translation\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\n\nA translation needs one match: pick one at random (cyan), set \\(\\mathbf{t} = {}^{2}\\mathbf{x}_j - {}^{1}\\mathbf{x}_j\\), and count the matches with \\(\\lVert {}^{2}\\mathbf{x}_k - {}^{1}\\mathbf{x}_k - \\mathbf{t} \\rVert &lt; \\tau\\) (green).\nThe answer is the largest group of matches that agree, here the parallel arrows. Wrong matches rarely agree with each other."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#ransac-for-f-and-e",
+    "href": "lectures/13_two_view_geometry.html#ransac-for-f-and-e",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "RANSAC for F and E",
+    "text": "RANSAC for F and E\n\n\n\n\n\n\n\n\nRANSAC for F (or E)\n\n\n\nSample 8 matches at random (7 for \\(\\mathbf{F}\\) with the seven-point algorithm, 5 for \\(\\mathbf{E}\\)).\nEstimate \\(\\mathbf{F}\\) (or \\(\\mathbf{E}\\)) from the sample.\nScore: for every match, compute the distance \\(d_j\\) from \\({}^{2}\\mathbf{x}_j\\) to its epipolar line \\({}^{2}\\ell_j = \\mathbf{F}\\,{}^{1}\\mathbf{x}_j\\). The match is an inlier if \\(d_j &lt; \\tau\\).\nRepeat 1–3 and keep the \\(\\mathbf{F}\\) with the most inliers.\nRe-estimate \\(\\mathbf{F}\\) from all of its inliers.\n\n\n\n\n\n\nWith \\({}^{2}\\ell_j = (a_j, b_j, c_j)^{\\top}\\), the distance in pixels is \\[\nd_j = \\frac{\\big|\\,{}^{2}\\mathbf{x}_j^{\\top}\\,\\mathbf{F}\\,{}^{1}\\mathbf{x}_j\\big|}{\\sqrt{a_j^2 + b_j^2}}\n\\]\nFor \\(\\mathbf{E}\\), measure in pixels with \\(\\mathbf{F} = \\mathbf{K}^{-\\top}\\mathbf{E}\\,\\mathbf{K}^{-1}\\). A typical \\(\\tau\\) is 1 px."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-how-many-ransac-trials",
+    "href": "lectures/13_two_view_geometry.html#supplementary-how-many-ransac-trials",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) How Many RANSAC Trials?",
+    "text": "(Supplementary) How Many RANSAC Trials?\n\n\n\n\nOne trial succeeds if all \\(s\\) sampled matches are inliers. With outlier ratio \\(\\varepsilon\\), this has probability \\((1-\\varepsilon)^{s}\\).\nAll \\(N\\) trials fail with probability \\(\\big(1-(1-\\varepsilon)^{s}\\big)^{N}\\). To succeed with probability \\(p\\), set this to \\(1 - p\\): \\[\nN = \\frac{\\log(1-p)}{\\log\\!\\big(1-(1-\\varepsilon)^{s}\\big)}\n\\]\n\\(\\varepsilon\\) is unknown in advance. RANSAC starts with a pessimistic guess and lowers \\(N\\) each time it finds a model with more inliers.\n\n\nTrials \\(N\\) needed for \\(p = 0.99\\):\n\n\n\nModel\n\\(s\\)\n10%\n20%\n30%\n40%\n50%\n\n\n\n\nTranslation\n1\n2\n3\n4\n6\n7\n\n\nLine\n2\n3\n5\n7\n11\n17\n\n\n\\(\\mathbf{E}\\), 5-point\n5\n6\n12\n26\n57\n146\n\n\n\\(\\mathbf{F}\\), 7-point\n7\n8\n20\n54\n163\n588\n\n\n\\(\\mathbf{F}\\), 8-point\n8\n9\n26\n78\n272\n1,177\n\n\n\nColumns: outlier ratio \\(\\varepsilon\\).\n\nFewer matches per sample, far fewer trials: this is why we use the minimum number of matches.\nFor the frame1/frame2 matches, \\(\\varepsilon \\approx 14\\%\\), so the eight-point algorithm needs only 14 trials."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#ransac-with-opencv",
+    "href": "lectures/13_two_view_geometry.html#ransac-with-opencv",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "RANSAC With OpenCV",
+    "text": "RANSAC With OpenCV\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF, mask = cv2.findFundamentalMat(pts1, pts2,\n                    cv2.FM_RANSAC, 1.0, 0.999)\nE, mask = cv2.findEssentialMat(pts1, pts2, K,\n                    cv2.RANSAC, 0.999, 1.0)\ninliers1 = pts1[mask.ravel() == 1]\n\n\n1.0: threshold \\(\\tau\\) in pixels. 0.999: probability \\(p\\) of sampling at least one all-inlier set.\nmask is 1 for the inliers. findEssentialMat uses RANSAC by default.\n\n\n\n\nCompared with the ground truth:\n\n\n\nMethod\nMatches used\nMedian error\n\n\n\n\nEight-point, all matches\n1035\n7.56 px\n\n\nRANSAC, \\(\\mathbf{F}\\)\n866 (851 correct)\n0.24 px\n\n\nRANSAC, \\(\\mathbf{E}\\)\n870 (869 correct)\n0.08 px\n\n\n\nMedian error: distance of the correct matches to their estimated epipolar lines."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-homography-matrix",
+    "href": "lectures/13_two_view_geometry.html#the-homography-matrix",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Homography Matrix",
+    "text": "The Homography Matrix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor points on one plane (cube’s front face), a \\(3\\times3\\) homography \\(\\mathbf{H}\\) maps \\({}^{1}\\mathbf{x}\\) in image 1 to its match in \\({}^{2}\\mathbf{x}\\) image 2: \\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\,{}^{2}\\mathbf{x} = \\mathbf{H}\\,{}^{1}\\mathbf{x}}\n\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{homography constraint}\\end{array}}}\n\\]\n\n\n\n\n\nIn homogeneous coordinates; divide \\(\\mathbf{H}\\,{}^{1}\\mathbf{x}\\) by its third entry.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFundamental matrix \\(\\mathbf{F}\\)\nHomography \\(\\mathbf{H}\\)\n\n\n\n\nMaps \\({}^{1}\\mathbf{x}\\) to\na line \\({}^{2}\\ell\\)\na point \\({}^{2}\\mathbf{x}\\)\n\n\nHolds for\nany scene\none plane, or a rotating camera"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#the-homography-a-numerical-example",
+    "href": "lectures/13_two_view_geometry.html#the-homography-a-numerical-example",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "The Homography: A Numerical Example",
+    "text": "The Homography: A Numerical Example\n\n\n\\[{}^{1}\\mathbf{x} = (578.3,\\ 172.0,\\ 1)^{\\top}\\]\n\n\n\n\\[\\mathbf{H} = \\begin{bmatrix} 0.781 & 7.975{\\times}10^{-3} & 42.418 \\\\ -0.057 & 0.898 & 31.333 \\\\ -1.865{\\times}10^{-4} & 2.647{\\times}10^{-6} & 1.000 \\end{bmatrix}\\]\n\n\n\n\n\\(\\mathbf{H}\\): the homography of the wall.\n\n\n\n\n\\[\\begin{aligned} \\mathbf{H}\\,{}^{1}\\mathbf{x} &= (495.2,\\ 152.9,\\ 0.893)^{\\top} \\\\ {}^{2}\\mathbf{x} &= \\Big(\\tfrac{495.2}{0.893},\\ \\tfrac{152.9}{0.893}\\Big) = (554.8,\\ 171.3) \\end{aligned}\\]"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#when-does-one-homography-relate-two-views",
+    "href": "lectures/13_two_view_geometry.html#when-does-one-homography-relate-two-views",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "When Does One Homography Relate Two Views?",
+    "text": "When Does One Homography Relate Two Views?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlanar scene: all points lie on one plane (e.g., a wall or floor).\nPure rotation: the camera turns about its center (e.g., when shooting a panorama).\nDistant scene: objects are far away, so depth differences are tiny compared with the mean distance, making the scene nearly planar.\nOtherwise:\n\nIn a 3D scene: points at different depths shift by different amounts. One \\(\\mathbf{H}\\) cannot map them all; use \\(\\mathbf{F}\\) or \\(\\mathbf{E}\\).\nWhen the 3D scene has multiple planar objects, each plane requires its own homography."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-where-does-the-homography-come-from",
+    "href": "lectures/13_two_view_geometry.html#supplementary-where-does-the-homography-come-from",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) Where Does the Homography Come From?",
+    "text": "(Supplementary) Where Does the Homography Come From?\n\n\n\nA plane, in camera 1’s frame: \\(\\mathbf{n}^{\\top}\\,{}^{1}\\mathbf{X} = d\\), with unit normal \\(\\mathbf{n}\\) and distance \\(d\\) from camera 1. So \\(\\mathbf{n}^{\\top}\\,{}^{1}\\mathbf{X}/d = 1\\) for its points.\nMove a plane point to camera 2’s frame, and multiply \\({}^{2}\\mathbf{t}_{1}\\) by that 1: \\[\n{}^{2}\\mathbf{X} = {}^{2}\\mathbf{R}_{1}\\,{}^{1}\\mathbf{X} + {}^{2}\\mathbf{t}_{1}\\,\\frac{\\mathbf{n}^{\\top}\\,{}^{1}\\mathbf{X}}{d}\n= \\Big({}^{2}\\mathbf{R}_{1} + \\frac{1}{d}\\,{}^{2}\\mathbf{t}_{1}\\,\\mathbf{n}^{\\top}\\Big)\\,{}^{1}\\mathbf{X}\n\\]\nWith \\({}^{1}\\mathbf{X} = \\lambda_1\\mathbf{K}^{-1}\\,{}^{1}\\mathbf{x}\\) and \\(\\lambda_2\\,{}^{2}\\mathbf{x} = \\mathbf{K}\\,{}^{2}\\mathbf{X}\\): \\[\n\\frac{\\lambda_2}{\\lambda_1}\\,{}^{2}\\mathbf{x} = \\underbrace{\\mathbf{K}\\Big({}^{2}\\mathbf{R}_{1} + \\frac{1}{d}\\,{}^{2}\\mathbf{t}_{1}\\,\\mathbf{n}^{\\top}\\Big)\\mathbf{K}^{-1}}_{\\mathbf{H}}\\;{}^{1}\\mathbf{x}\n\\]\n\n\n\n\n\n  \n  \n  \n    Play\n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\n\n\n\n\nOne \\(\\mathbf{H}\\) for the whole image when:\n\nPlanar scene: every point satisfies \\(\\mathbf{n}^{\\top}\\,{}^{1}\\mathbf{X} = d\\).\nPure rotation: \\({}^{2}\\mathbf{t}_{1} = \\mathbf{0}\\), so \\(\\mathbf{H} = \\mathbf{K}\\,{}^{2}\\mathbf{R}_{1}\\mathbf{K}^{-1}\\) for points at any depth.\nDistant scene: \\(d \\gg \\lVert{}^{2}\\mathbf{t}_{1}\\rVert\\), so \\(\\mathbf{H} \\approx \\mathbf{K}\\,{}^{2}\\mathbf{R}_{1}\\mathbf{K}^{-1}\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-estimating-h-direct-linear-transform",
+    "href": "lectures/13_two_view_geometry.html#supplementary-estimating-h-direct-linear-transform",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) Estimating H: Direct Linear Transform",
+    "text": "(Supplementary) Estimating H: Direct Linear Transform\n\nThe basic solver for \\(\\mathbf{H}\\) is the direct linear transform (DLT), the same as linear camera calibration. OpenCV’s cv2.findHomography uses DLT. The steps are:\nTwo rows per match. With \\({}^{1}\\mathbf{x} = (u_1, v_1, 1)^{\\top}\\), \\({}^{2}\\mathbf{x} = (u_2, v_2, 1)^{\\top}\\) and \\(\\mathbf{h}_i^{\\top}\\) the rows of \\(\\mathbf{H}\\), the constraint gives \\(u_2 = \\frac{\\mathbf{h}_1^{\\top}\\,{}^{1}\\mathbf{x}}{\\mathbf{h}_3^{\\top}\\,{}^{1}\\mathbf{x}}\\) and \\(v_2 = \\frac{\\mathbf{h}_2^{\\top}\\,{}^{1}\\mathbf{x}}{\\mathbf{h}_3^{\\top}\\,{}^{1}\\mathbf{x}}\\). Multiplying out, both are linear in \\(\\mathbf{h} = (\\mathbf{h}_1; \\mathbf{h}_2; \\mathbf{h}_3)\\): \\[\n\\begin{bmatrix}\n{}^{1}\\mathbf{x}^{\\top} & \\mathbf{0}^{\\top} & -u_2\\,{}^{1}\\mathbf{x}^{\\top} \\\\\n\\mathbf{0}^{\\top} & {}^{1}\\mathbf{x}^{\\top} & -v_2\\,{}^{1}\\mathbf{x}^{\\top}\n\\end{bmatrix}\n\\mathbf{h} = \\mathbf{0}\n\\]\nSolve. Stack \\(N \\ge 4\\) matches into \\(\\mathbf{A}\\) (\\(2N\\times 9\\)). \\(\\mathbf{h}\\) is the right singular vector of \\(\\mathbf{A}\\) with the smallest singular value. Four matches (no three collinear) give exactly one \\(\\mathbf{H}\\).\nNormalize first, as in the eight-point algorithm: transform each image’s points to zero mean and mean distance \\(\\sqrt{2}\\) (\\(\\mathbf{T}_1\\), \\(\\mathbf{T}_2\\)), solve, then undo: \\(\\mathbf{H} = \\mathbf{T}_2^{-1}\\,\\tilde{\\mathbf{H}}\\,\\mathbf{T}_1\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#estimating-h-with-opencv",
+    "href": "lectures/13_two_view_geometry.html#estimating-h-with-opencv",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Estimating H With OpenCV",
+    "text": "Estimating H With OpenCV\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nH, mask = cv2.findHomography(pts1, pts2,\n                             cv2.RANSAC, 2.0)\ninliers1 = pts1[mask.ravel() == 1]\n\n\nSame SIFT matches as for \\(\\mathbf{F}\\). RANSAC samples 4 matches per trial, and finds the plane that most matches agree with: the wall.\n2.0: threshold \\(\\tau\\) in pixels. mask is 1 for the inliers.\n\n\n\n\n\nRANSAC error: the distance from \\({}^{2}\\mathbf{x}_j\\) to the mapped pixel: \\[\nd_j = \\big\\lVert\\, {}^{2}\\mathbf{x}_j - \\pi\\big(\\mathbf{H}\\,{}^{1}\\mathbf{x}_j\\big) \\big\\rVert &lt; \\tau,\n\\qquad \\pi(x, y, w) = \\big(\\tfrac{x}{w},\\ \\tfrac{y}{w}\\big)\n\\]\nMedian \\(d_j\\): 0.24 px for the wall matches, but 33 px for the 141 correct matches off the wall (red): they fit \\(\\mathbf{F}\\), not this \\(\\mathbf{H}\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#full-h-code",
+    "href": "lectures/13_two_view_geometry.html#full-h-code",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Estimating H With OpenCV: Full Code",
+    "text": "Estimating H With OpenCV: Full Code\n\n\n\nimport cv2\nimport numpy as np\n\n# Two views of the same scene.\nimg1 = cv2.imread(\"assets/13_two_view_geometry/frame1.JPG\", cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread(\"assets/13_two_view_geometry/frame2.JPG\", cv2.IMREAD_GRAYSCALE)\n\n# 1. Detect and match features: SIFT with Lowe's ratio test.\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nknn = cv2.BFMatcher(cv2.NORM_L2).knnMatch(des1, des2, k=2)\ngood = [m for m, n in knn if m.distance &lt; 0.75 * n.distance]\n\n# 2. Matched pixels, N x 2, in the same order.\npts1 = np.float32([kp1[m.queryIdx].pt for m in good])\npts2 = np.float32([kp2[m.trainIdx].pt for m in good])\n\n# 3. Estimate H with RANSAC: inlier threshold 2 px.\nH, mask = cv2.findHomography(pts1, pts2, cv2.RANSAC, 2.0)\ninliers = mask.ravel() == 1\n\n# 4. Map image-1 pixels to image 2: divide H 1x by its third entry.\nmapped = cv2.perspectiveTransform(pts1[inliers].reshape(-1, 1, 2), H).reshape(-1, 2)\nerror = np.linalg.norm(mapped - pts2[inliers], axis=1)\n\nprint(f\"{inliers.sum()} of {len(good)} matches are inliers\")\nprint(\"H =\\n\", H / H[2, 2])\nprint(f\"median error of the inliers: {np.median(error):.2f} px\")"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#recovering-the-camera-pose-from-e-f-or-h",
+    "href": "lectures/13_two_view_geometry.html#recovering-the-camera-pose-from-e-f-or-h",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Recovering the Camera Pose From E, F, or H",
+    "text": "Recovering the Camera Pose From E, F, or H\n\n\n\n\\(\\mathbf{E} = [\\mathbf{t}]_{\\times}\\mathbf{R}\\) can be factored back into \\(\\mathbf{R}\\) and \\(\\mathbf{t}\\)\nHowever, this leads to 4 candidate solutions: two rotations, with \\(\\pm\\mathbf{t}\\) for each.\nOnly the correct \\((\\mathbf{R}, \\mathbf{t})\\) candidate puts the points in front of cameras.\nEstimated \\(\\mathbf{t}\\) always has unit length: the images cannot tell the scale (a scene twice as large, seen by cameras twice as far apart, gives the same images).\nFor \\(\\mathbf{F}\\): compute \\(\\mathbf{E} = \\mathbf{K}^{\\top}\\mathbf{F}\\,\\mathbf{K}\\), then the same.\nFor \\(\\mathbf{H}\\) (planar scene): up to 4 candidates \\((\\mathbf{R},\\ \\mathbf{t}/d,\\ \\mathbf{n})\\), with the plane normal \\(\\mathbf{n}\\). Requiring the points to be in front of cameras leaves 1 or 2.\n\\(\\mathbf{H}\\) works for planar scenes, where \\(\\mathbf{F}\\) and \\(\\mathbf{E}\\) are hard to estimate reliably."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#relative-pose-with-opencv",
+    "href": "lectures/13_two_view_geometry.html#relative-pose-with-opencv",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Relative Pose With OpenCV",
+    "text": "Relative Pose With OpenCV\n\n# From E: R, unit-length t, and inlier mask.\nn, R, t, mask = cv2.recoverPose(E, pts1, pts2, K)\n\n# From F: convert to E first.\nE = K.T @ F @ K\n\n# From H: up to 4 candidates (R, t/d, n).\nn, Rs, ts, ns = cv2.decomposeHomographyMat(H, K)\nok = cv2.filterHomographyDecompByVisibleRefpoints(Rs, ns, norm_pts1, norm_pts2)\n\n\nrecoverPose tests the 4 candidates and keeps the one with the most points in front of both cameras\ndecomposeHomographyMat decomposes the homography into up to 4 candidates.\nfilterHomographyDecompByVisibleRefpoints keeps only the candidates that are consistent with the visible points in both images.\n\\(\\mathbf{E}\\) uses \\(\\mathbf{K}\\) during estimation, so it is more accurate than going through \\(\\mathbf{F}\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#triangulation-image-rays-meet-at-the-3d-point",
+    "href": "lectures/13_two_view_geometry.html#triangulation-image-rays-meet-at-the-3d-point",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Triangulation: Image Rays Meet at the 3D Point",
+    "text": "Triangulation: Image Rays Meet at the 3D Point\n\n\n\n  \n  \n  \n    Restart\n    Play\n    \n    \n  \n  \n    \n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\n\nA pixel \\({}^{i}\\mathbf{x}\\) and its camera define a viewing ray from the camera center \\({}^{w}\\mathbf{C}_i\\) through the pixel on the image plane.\nTriangulation: with camera poses estimated and \\(\\mathbf{K}\\) known, the two rays meet/intersect at the scene point \\({}^{w}\\mathbf{X}\\), which reconstructs its 3D position in the space."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#noisy-rays-do-not-meet",
+    "href": "lectures/13_two_view_geometry.html#noisy-rays-do-not-meet",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Noisy Rays Do Not Meet",
+    "text": "Noisy Rays Do Not Meet\n\n\n\n  \n  \n  \n    Play\n    view: top\n    \n    behind cameras\n  \n  \n\n\n\n\n\n\nWith pixel noise, the two rays miss each other. Triangulation picks a point \\(\\hat{\\mathbf{X}}\\) between them that fits both pixels as well as possible.\nThe reprojection error measures the fit: the distance between each measured pixel and the projection of \\(\\hat{\\mathbf{X}}\\)."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#depth-precision-depends-on-parallax",
+    "href": "lectures/13_two_view_geometry.html#depth-precision-depends-on-parallax",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Depth Precision Depends on Parallax",
+    "text": "Depth Precision Depends on Parallax\n\n\n\n\n\n\n\n\n\n\n\n\n\nEach pixel is uncertain by about a pixel, so each ray is a narrow wedge. The point lies where the two wedges overlap (red).\nA narrow baseline (little parallax) gives nearly parallel rays: the overlap stretches along the viewing direction, and the depth is uncertain. Far points have the same problem.\nIn the limit of pure rotation (zero baseline), the rays coincide and the depth cannot be found at all."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#supplementary-linear-triangulation",
+    "href": "lectures/13_two_view_geometry.html#supplementary-linear-triangulation",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "(Supplementary) Linear Triangulation",
+    "text": "(Supplementary) Linear Triangulation\n\nOpenCV’s cv2.triangulatePoints uses the linear (DLT) method. The steps are:\nTwo rows per camera. Camera \\(i\\) has projection matrix \\(\\mathbf{P}_i = \\mathbf{K}\\,[\\mathbf{R}_i \\mid \\mathbf{t}_i]\\) with rows \\(\\mathbf{p}_{i1}^{\\top}, \\mathbf{p}_{i2}^{\\top}, \\mathbf{p}_{i3}^{\\top}\\). From \\(\\lambda_i\\,{}^{i}\\mathbf{x} = \\mathbf{P}_i\\mathbf{X}\\) with \\({}^{i}\\mathbf{x} = (u_i, v_i, 1)^{\\top}\\), eliminating \\(\\lambda_i\\) gives two equations, linear in the homogeneous point \\(\\mathbf{X}\\): \\[\n\\big(u_i\\,\\mathbf{p}_{i3}^{\\top} - \\mathbf{p}_{i1}^{\\top}\\big)\\,\\mathbf{X} = 0,\n\\qquad\n\\big(v_i\\,\\mathbf{p}_{i3}^{\\top} - \\mathbf{p}_{i2}^{\\top}\\big)\\,\\mathbf{X} = 0\n\\]\nSolve. Stack the rows of both cameras into \\(\\mathbf{A}\\) (\\(4\\times4\\)), so \\(\\mathbf{A}\\mathbf{X} = \\mathbf{0}\\). \\(\\mathbf{X}\\) is the right singular vector of \\(\\mathbf{A}\\) with the smallest singular value; divide it by its fourth entry.\nRefine (optional). This minimizes an algebraic error. A nonlinear refinement can then minimize the reprojection error in both images."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#triangulation-with-opencv",
+    "href": "lectures/13_two_view_geometry.html#triangulation-with-opencv",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Triangulation With OpenCV",
+    "text": "Triangulation With OpenCV\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Camera matrices K [I | 0] and K [R | t].\nP1 = K @ np.hstack([np.eye(3), np.zeros((3, 1))])\nP2 = K @ np.hstack([R, t])\n\nX4 = cv2.triangulatePoints(P1, P2, pts1.T, pts2.T)\nX = (X4[:3] / X4[3]).T     # N x 3, camera 1's frame\n\n\n\n\nCamera 1 is the reference frame; camera 2 uses the pose from recoverPose.\nX4 is homogeneous (4×N): divide by its last row.\nThe top view shows the wall as a line behind the table and chairs."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#a-denser-reconstruction",
+    "href": "lectures/13_two_view_geometry.html#a-denser-reconstruction",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "A Denser Reconstruction",
+    "text": "A Denser Reconstruction\n\n\n\nMore points: dense optical flow gives a match for almost every pixel.\nKeep a match only if its optical flow is consistent forward–backward and lies within 1 px of its epipolar line.\nTriangulate matches using the recovered pose.\nThe first view is camera 1. The cameras are drawn in blue and green.\nHoles: surfaces without texture, and parts seen by only one camera.\n\n\n\n\n\n  \n  \n    Play\n    camera 1\n    \n    top"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#reconstruction-full-code",
+    "href": "lectures/13_two_view_geometry.html#reconstruction-full-code",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Two-View Reconstruction: Full Code",
+    "text": "Two-View Reconstruction: Full Code\n\n\n\nimport cv2\nimport numpy as np\n\n# Two views of the same scene, and the camera intrinsics.\nimg1 = cv2.imread(\"assets/13_two_view_geometry/frame1.JPG\", cv2.IMREAD_GRAYSCALE)\nimg2 = cv2.imread(\"assets/13_two_view_geometry/frame2.JPG\", cv2.IMREAD_GRAYSCALE)\nK = np.array([[3409.58,    0.0, 3115.16],\n              [   0.0, 3409.44, 2064.73],\n              [   0.0,    0.0,     1.0]])\nK[:2] *= 0.2\n\n# 1. Detect and match features: SIFT with Lowe's ratio test.\nsift = cv2.SIFT_create()\nkp1, des1 = sift.detectAndCompute(img1, None)\nkp2, des2 = sift.detectAndCompute(img2, None)\nknn = cv2.BFMatcher(cv2.NORM_L2).knnMatch(des1, des2, k=2)\ngood = [m for m, n in knn if m.distance &lt; 0.75 * n.distance]\npts1 = np.float32([kp1[m.queryIdx].pt for m in good])\npts2 = np.float32([kp2[m.trainIdx].pt for m in good])\n\n# 2. Essential matrix with RANSAC.\nE, mask = cv2.findEssentialMat(pts1, pts2, K, cv2.RANSAC, 0.999, 1.0)\n\n# 3. Relative pose: R and unit t; mask keeps the points in front of both cameras.\nn, R, t, mask = cv2.recoverPose(E, pts1, pts2, K, mask=mask)\ninliers = mask.ravel() &gt; 0\n\n# 4. Triangulate, with camera 1 as the reference frame.\nP1 = K @ np.hstack([np.eye(3), np.zeros((3, 1))])\nP2 = K @ np.hstack([R, t])\nX4 = cv2.triangulatePoints(P1, P2, pts1[inliers].T, pts2[inliers].T)\nX = (X4[:3] / X4[3]).T                    # N x 3, in baseline units\n\n# 5. Depths in each camera (both positive).\ndepth1 = X[:, 2]\ndepth2 = (X @ R.T + t.ravel())[:, 2]\n\nprint(f\"{inliers.sum()} triangulated points\")\nprint(\"R =\\n\", R, \"\\nt =\", t.ravel())\nprint(f\"depth range: {depth1.min():.2f} to {depth1.max():.2f} baselines\")"
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#limits-of-two-view-reconstruction",
+    "href": "lectures/13_two_view_geometry.html#limits-of-two-view-reconstruction",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Limits of Two-View Reconstruction",
+    "text": "Limits of Two-View Reconstruction\n\n\n\nScale ambiguity: scaling the scene and the baseline by the same factor gives the same images. A known length (the baseline, an object’s size, GPS, an IMU) is needed for meters.\nSmall parallax: nearly parallel rays give uncertain depths, for far points or a short baseline.\nPure rotation gives no depth at all.\nMatching errors: repeated textures, occlusions, moving objects, and surfaces without texture lead to wrong or missing points.\nOnly what both cameras see is reconstructed. More views add more coverage \\(\\rightarrow\\) structure from motion."
+  },
+  {
+    "objectID": "lectures/13_two_view_geometry.html#key-takeaways",
+    "href": "lectures/13_two_view_geometry.html#key-takeaways",
+    "title": "Lecture 13 — Two-View Geometry",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nEpipolar constraint: the match of \\({}^{1}\\mathbf{x}\\) lies on its epipolar line \\({}^{2}\\ell = \\mathbf{F}\\,{}^{1}\\mathbf{x}\\), so \\({}^{2}\\mathbf{x}^{\\top}\\mathbf{F}\\,{}^{1}\\mathbf{x} = 0\\). With \\(\\mathbf{K}\\) known, \\(\\mathbf{E} = \\mathbf{K}^{\\top}\\mathbf{F}\\,\\mathbf{K} = [\\mathbf{t}]_{\\times}\\mathbf{R}\\).\n\\(\\mathbf{F}\\) needs 7 or 8 matches; \\(\\mathbf{E}\\) needs 5 (and \\(\\mathbf{K}\\)). Some matches are always wrong, so estimate with RANSAC: fit minimal samples, keep the model with the most inliers, refit.\nHomography: \\({}^{2}\\mathbf{x} = \\mathbf{H}\\,{}^{1}\\mathbf{x}\\) maps a point to a point, but only for a planar scene, a rotating camera, or a distant scene.\nRelative pose: \\(\\mathbf{E}\\) (or \\(\\mathbf{H}\\)) gives up to 4 \\((\\mathbf{R}, \\mathbf{t})\\) candidates; keep the one with the points in front of cameras. \\(\\mathbf{t}\\) is known only up to scale.\nTriangulation intersects the two viewing rays. With noise they miss, so pick the point with the smallest reprojection error. Accurate depth needs enough parallax (baseline).\nIn OpenCV: findEssentialMat → recoverPose → triangulatePoints; findFundamentalMat and findHomography for the uncalibrated and planar cases."
   }
 ]

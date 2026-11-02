@@ -23,7 +23,8 @@
       "/lectures/09_color.html",
       "/lectures/10_optical_flow.html",
       "/lectures/11_camera_geometry.html",
-      "/lectures/12_camera_calibration.html"
+      "/lectures/12_camera_calibration.html",
+      "/lectures/13_two_view_geometry.html"
     ]
   },
   {
