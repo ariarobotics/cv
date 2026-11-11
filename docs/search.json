@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 16 — Classical Machine Learning\n    \n\n    \n    Classical machine learning methods for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -6368,5 +6368,187 @@
     "title": "Lecture 15 — Machine Learning for Computer Vision",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nRecognition tasks differ in their output: one label per image (classification), a box per object (detection), a label per pixel (semantic segmentation), a mask per object (instance segmentation).\nThe same class can look very different (viewpoint, lighting, scale, deformation, occlusion, clutter), so we learn from labeled examples instead of writing rules. Benchmarks such as FashionMNIST let us compare methods on the same data.\nSupervised learning uses images and labels; unsupervised uses images only; self-supervised creates its labels from the data itself. Richer labels cost more effort.\nTraining error is not the goal: a model that is too simple underfits (bias), one that is too flexible overfits (variance). We want generalization: low error on unseen data.\nFit parameters on the training set, choose hyperparameters on the validation set, and report the test error once. More data reduces overfitting.\nPick the metric for the task (MSE, accuracy, IoU, precision and recall). With imbalanced classes, accuracy alone misleads."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#learning-objectives",
+    "href": "lectures/16_classical_machine_learning.html#learning-objectives",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nBy the end of this lecture, you should be able to:\n\nRepresent an image as a feature vector, compare images with the L2 distance, and classify them with k-NN.\nChoose a hyperparameter on validation data, and evaluate a classifier with accuracy and the confusion matrix.\nExplain the limitations of k-NN on raw pixels.\nCluster data with k-means, and use it to segment an image by color.\nCompute PCA, interpret its components and reconstructions, and use PCA coordinates as compact features.\nExplain linear classifiers, the SVM margin, soft margins, kernels, and multi-class SVMs, and train an SVM with OpenCV."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#an-image-is-a-vector",
+    "href": "lectures/16_classical_machine_learning.html#an-image-is-a-vector",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "An Image Is a Vector",
+    "text": "An Image Is a Vector\n\n\n\n\nA 28 × 28 gray image is 784 numbers. Stack its rows into one long vector \\(\\mathbf{x} = (x_1, x_2, \\dots, x_{784})\\).\nCompare two images pixel by pixel:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{d(\\mathbf{x}, \\mathbf{x}') = \\sqrt{\\sum_{j=1}^{784} \\left(x_j - x'_j\\right)^2}}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{L2}\\\\ \\textbf{distance}\\end{array}}}\n\\]\n\n\\(x_j\\), \\(x'_j\\): value of pixel \\(j\\) (0 to 255) in images \\(\\mathbf{x}\\) and \\(\\mathbf{x}'\\).\nSmall \\(d\\): similar images. Large \\(d\\): different images.\n\n\n\n\nThe sneaker is closest to the other sneaker (\\(d\\) = 1,714) and farthest from the trouser (\\(d\\) = 3,033)."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#nearest-neighbors-on-fashionmnist",
+    "href": "lectures/16_classical_machine_learning.html#nearest-neighbors-on-fashionmnist",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Nearest Neighbors on FashionMNIST",
+    "text": "Nearest Neighbors on FashionMNIST\n\n\n\n\nQuery (left column): a test image.\nNeighbors: the 5 training images with the smallest L2 distance to the query, closest first.\nGreen frame: same class as the query. Red frame: a different class.\n\n\n\n\n46 of 50 neighbors have the query’s class.\nMistakes come from look-alike classes: the shirt query has neighbors labeled Pullover, T-shirt/top.\nSimple idea: label a new image like its nearest training images."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#k-nearest-neighbors-k-nn",
+    "href": "lectures/16_classical_machine_learning.html#k-nearest-neighbors-k-nn",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "k-Nearest Neighbors (k-NN)",
+    "text": "k-Nearest Neighbors (k-NN)\n\n\n\n\n\n\n\n\nk-Nearest Neighbors (k-NN)\n\n\nTraining: store all training images and their labels.\nPrediction for a new image \\(\\mathbf{x}\\):\n\nCompute the distance from \\(\\mathbf{x}\\) to every training image.\nFind the \\(k\\) closest training images.\nPredict the most common label among them (majority vote).\n\n\n\n\n\n\n2D points stand in for images: each point is a vector with 2 numbers instead of 784.\n\\(k\\) = 7: votes are 5 purple, 2 blue \\(\\rightarrow\\) predict purple.\n\\(k\\) = 1: the single nearest point is blue \\(\\rightarrow\\) predict blue. The answer depends on \\(k\\)."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#decision-boundaries-change-with-k",
+    "href": "lectures/16_classical_machine_learning.html#decision-boundaries-change-with-k",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Decision Boundaries Change with k",
+    "text": "Decision Boundaries Change with k\n\n\n\n\n\n\n\n\n\n\n\nDecision boundary: where the predicted class changes. Each location is colored by its k-NN prediction.\nSmall \\(k\\): jagged boundary with islands around single points. It fits the noise (overfitting).\nLarge \\(k\\): smooth boundary, but the arms of the spiral get washed out (underfitting).\n\\(k\\) is a hyperparameter: choose it on validation data, like the polynomial degree."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#choosing-k-on-fashionmnist",
+    "href": "lectures/16_classical_machine_learning.html#choosing-k-on-fashionmnist",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Choosing k on FashionMNIST",
+    "text": "Choosing k on FashionMNIST\n\n\n\n\nSplit the 60,000 training images: 50,000 training + 10,000 validation. Keep the 10,000 test images aside.\nSame recipe as choosing the polynomial degree: for each \\(k\\) = 1, …, 20, predict the validation images with k-NN and measure the accuracy.\nBest: \\(k\\) = 6 (validation accuracy 85.5%).\nTest accuracy with \\(k\\) = 6, measured once: 85.0%.\nThe curve is flat: every \\(k\\) from 1 to 20 is within 1.7 points of the best."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#k-nn-in-code",
+    "href": "lectures/16_classical_machine_learning.html#k-nn-in-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "k-NN in Code",
+    "text": "k-NN in Code\n\n\n\n\nKNearest_create(): an empty k-NN model.\ntrain(X, cv2.ml.ROW_SAMPLE, y): stores the data. X: one image per row (float32); y: the labels.\nfindNearest(X, k): k-NN prediction for each row of X. Returns the predicted labels, the labels of the k neighbors, and their distances.\n\n\n\n\nOn our data (\\(k\\) = 6): test accuracy 85.0%, about 1 ms per test image.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport cv2\nimport numpy as np\n\n# X_tr: (50000, 784) float32, y_tr: labels 0-9\n# X_te: (10000, 784) float32, y_te: labels 0-9\nknn = cv2.ml.KNearest_create()\nknn.train(X_tr, cv2.ml.ROW_SAMPLE,\n          y_tr.astype(np.float32))\n\n# best_k: chosen on the validation set\n_, pred, neighbors, dist = knn.findNearest(\n    X_te, k=best_k)\npred = pred.ravel().astype(int)\nprint(\"test accuracy:\", np.mean(pred == y_te))"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#knn-full-code",
+    "href": "lectures/16_classical_machine_learning.html#knn-full-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "k-NN: Full Code",
+    "text": "k-NN: Full Code\n\n\n\nimport gzip\nfrom pathlib import Path\n\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# 1. Data: FashionMNIST as 784-vectors. Split 50,000 training / 10,000 validation; 10,000 test.\ndata_dir = Path(\"assets/datasets/fashion_mnist\")    # folder with the four .gz files\n\ndef read_idx(name, offset):\n    with gzip.open(data_dir / name) as f:\n        return np.frombuffer(f.read(), np.uint8, offset=offset)\n\nX = read_idx(\"train-images-idx3-ubyte.gz\", 16).reshape(-1, 784).astype(np.float32)\ny = read_idx(\"train-labels-idx1-ubyte.gz\", 8).astype(int)\nX_te = read_idx(\"t10k-images-idx3-ubyte.gz\", 16).reshape(-1, 784).astype(np.float32)\ny_te = read_idx(\"t10k-labels-idx1-ubyte.gz\", 8).astype(int)\nX_tr, y_tr, X_val, y_val = X[:50000], y[:50000], X[50000:], y[50000:]\n\n# 2. \"Training\": store the training images.\nknn = cv2.ml.KNearest_create()\nknn.train(X_tr, cv2.ml.ROW_SAMPLE, y_tr.astype(np.float32))\n\n# 3. Choose k on the validation set. One search for the 20 nearest neighbors\n#    (closest first), then a majority vote among the first k of them.\nks = range(1, 21)\n_, _, neighbors, _ = knn.findNearest(X_val, k=max(ks))\nneighbors = neighbors.astype(int)\nval_acc = []\nfor k in ks:\n    pred = np.array([np.bincount(row[:k], minlength=10).argmax() for row in neighbors])\n    val_acc.append(np.mean(pred == y_val))\nbest_k = ks[int(np.argmax(val_acc))]\nprint(f\"best k = {best_k}, validation accuracy = {max(val_acc):.3f}\")\n\n# 4. Test accuracy with the chosen k, once.\n_, pred, _, _ = knn.findNearest(X_te, k=best_k)\npred = pred.ravel().astype(int)\nprint(f\"test accuracy = {np.mean(pred == y_te):.3f}\")\n\n# 5. Confusion matrix: row = true class, column = predicted class.\nconfusion = np.zeros((10, 10), int)\nnp.add.at(confusion, (y_te, pred), 1)\nprint(confusion)\n\n# 6. Plot the validation curve.\nplt.plot(ks, val_acc, \"s-\")\nplt.xlabel(\"k\")\nplt.ylabel(\"validation accuracy\")\nplt.show()"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#accuracy-and-the-confusion-matrix",
+    "href": "lectures/16_classical_machine_learning.html#accuracy-and-the-confusion-matrix",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Accuracy and the Confusion Matrix",
+    "text": "Accuracy and the Confusion Matrix\n\n\n\n\nConfusion matrix: entry (row \\(i\\), column \\(j\\)) = number of test images of class \\(i\\) predicted as class \\(j\\).\nDiagonal: correct predictions. Off the diagonal: mistakes, and which classes get mixed up.\n\\(\\text{accuracy} = \\dfrac{\\text{sum of the diagonal}}{\\text{sum of all entries}}\\)\n\n\n\n\nk-NN (\\(k\\) = 6): 8,502 / 10,000 correct = 85.0%.\nEasiest: Sneaker (97% correct). Hardest: Shirt (54%), most often called T-shirt/top (207 times)."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#limitations-of-k-nn",
+    "href": "lectures/16_classical_machine_learning.html#limitations-of-k-nn",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Limitations of k-NN",
+    "text": "Limitations of k-NN\n\n\n\n\nSlow prediction: compares each new image with all 50,000 training images (about 1 ms per image on a CPU).\nStores all the data: 50,000 × 784 values = 157 MB. More data: more memory and slower predictions.\nPixel distance is not semantic: a 2-pixel shift is invisible to us, but changes many pixels.\n\nThe shifted shirt is 2,472 away from the original, but a coat is only 660 away.\nShifting all test images by 2 pixels drops the accuracy from 85.0% to 67.0%.\n\nNext: better features and better classifiers."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#k-means-clustering",
+    "href": "lectures/16_classical_machine_learning.html#k-means-clustering",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "k-Means Clustering",
+    "text": "k-Means Clustering\n\n\n\n\nUnsupervised: points without labels. Goal: group them into \\(k\\) clusters of nearby points.\nEach cluster has a center. Each point belongs to the nearest center.\n\n\n\n\n\n\n\n\nk-Means\n\n\n\nPick \\(k\\) starting centers (e.g., \\(k\\) random points).\nAssign: each point joins its nearest center.\nUpdate: move each center to the mean of its points.\nRepeat 2–3 until the assignments stop changing.\n\n\n\n\n\n\nRight: 300 points, \\(k\\) = 4, a poor start (three starting centers come from the top-left blob). Done after 8 assign/update rounds.\n\\(k\\) is a hyperparameter. The result depends on the start: run several times, keep the best.\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#color-segmentation-with-k-means",
+    "href": "lectures/16_classical_machine_learning.html#color-segmentation-with-k-means",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Color Segmentation with k-Means",
+    "text": "Color Segmentation with k-Means\n\n\n\n\nEach pixel is a point \\((R, G, B)\\) in 3D color space: 854 × 1280 = 1,093,120 points.\nk-means with \\(k\\) = 4 finds 4 typical colors (the centers).\nReplace each pixel by its center color: the image splits into regions of similar color.\nNo labels needed: the colors group by themselves.\nColor only: pixels of the same color land in one cluster, even on different objects."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#k-means-in-code",
+    "href": "lectures/16_classical_machine_learning.html#k-means-in-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "k-Means in Code",
+    "text": "k-Means in Code\n\n\n\n\ncv2.kmeans(data, K, bestLabels, criteria, attempts, flags):\n\ndata: one point per row (float32); here \\(N\\) × 3 colors.\nK: the number of clusters \\(k\\).\nbestLabels: starting labels (None: not given).\ncriteria: stop after 20 rounds, or when the centers move less than 1.0.\nattempts: 5 runs from different starts; keep the most compact.\nflags: the starting centers. KMEANS_PP_CENTERS: spread out (k-means++).\n\nReturns compactness (sum of squared distances to the centers), labels (cluster of each point), centers (\\(k\\) × 3).\ncenters[labels]: each pixel → its center color.\n\n\n\n\n\nimport cv2\nimport numpy as np\n\nimage = cv2.imread(\"fruits.jpg\")        # H x W x 3 (BGR)\npixels = image.reshape(-1, 3).astype(np.float32)\n\nstop = cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER\ncriteria = (stop, 20, 1.0)   # 20 rounds or moves &lt; 1.0\ncompactness, labels, centers = cv2.kmeans(\n    pixels, 4, None, criteria, 5, cv2.KMEANS_PP_CENTERS)\n\nsegmented = centers[labels.ravel()].reshape(image.shape)\ncv2.imwrite(\"fruits_k4.png\", segmented.astype(np.uint8))"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#pca-the-directions-of-largest-variance",
+    "href": "lectures/16_classical_machine_learning.html#pca-the-directions-of-largest-variance",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "PCA: The Directions of Largest Variance",
+    "text": "PCA: The Directions of Largest Variance\n\n\n\n\nPCA (principal component analysis): find the directions in which the data varies the most.\n\n\n\n\n\n\n\n\nPCA\n\n\n\nSubtract the mean from every point.\nFirst component \\(\\mathbf{u}_1\\): the direction of largest variance.\nNext components \\(\\mathbf{u}_2, \\mathbf{u}_3, \\dots\\): largest remaining variance, perpendicular to the previous ones.\nKeep the first \\(k\\). Describe each point by its \\(k\\) coordinates along them.\n\n\n\n\n\n\nThe components are the eigenvectors of the data’s covariance matrix.\nRight: \\(\\mathbf{u}_1\\) holds 93% of the variance. Keep only the coordinate along \\(\\mathbf{u}_1\\): 1 number instead of 2, and the points barely move."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#pca-on-fashionmnist",
+    "href": "lectures/16_classical_machine_learning.html#pca-on-fashionmnist",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "PCA on FashionMNIST",
+    "text": "PCA on FashionMNIST\n\n\n\n\nPCA of the 50,000 training images, each a vector of 784 numbers.\nMean image \\(\\boldsymbol{\\mu}\\) and components \\(\\mathbf{u}_j\\) are 784-vectors too: show them as images.\nRed: add ink to the mean. Blue: remove ink. Early components: coarse shapes. Later: finer details.\nVariance kept: 72% with 10 components, 86% with 50. 187 of the 784 components keep 95%."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#reconstruction-with-k-components",
+    "href": "lectures/16_classical_machine_learning.html#reconstruction-with-k-components",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Reconstruction with k Components",
+    "text": "Reconstruction with k Components\n\n\n\n\nAny image is the mean plus a weighted sum of components:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\hat{\\mathbf{x}} = \\boldsymbol{\\mu} + a_1 \\mathbf{u}_1 + \\dots + a_k \\mathbf{u}_k}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{PCA}\\\\ \\textbf{reconstruction}\\end{array}}}\n\\]\n\n\\(\\boldsymbol{\\mu}\\): mean image; \\(\\mathbf{u}_j\\): component \\(j\\).\n\\(a_j = \\mathbf{u}_j \\cdot (\\mathbf{x} - \\boldsymbol{\\mu})\\): coordinate of image \\(\\mathbf{x}\\) along \\(\\mathbf{u}_j\\).\n\n\n\n\nWith \\(k\\) = 50 numbers instead of 784, the garment is still easy to recognize.\nSo the coordinates \\((a_1, \\dots, a_k)\\) are compact features: an input for a classifier."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#pca-features-for-recognition",
+    "href": "lectures/16_classical_machine_learning.html#pca-features-for-recognition",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "PCA Features for Recognition",
+    "text": "PCA Features for Recognition\n\n\n\n\n\n\n\n\n\n\n\nLeft: PCA uses no labels, yet with 2 numbers per image many classes form their own regions; look-alike classes overlap.\nRight: 20 features: within 1 point of the 784 pixels (84.4% vs. 85.0%). From 50 on, slightly better (the small components are mostly pixel noise).\nStill pixel-based: a 2-pixel shift drops k-NN on 50 PCA features to 66.0%."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#pca-in-code",
+    "href": "lectures/16_classical_machine_learning.html#pca-in-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "PCA in Code",
+    "text": "PCA in Code\n\n\n\n\nPCACompute(data, mean, maxComponents): data has one image per row. mean=None: compute the mean. Returns the mean \\(\\boldsymbol{\\mu}\\) (1 × 784) and the components \\(\\mathbf{u}_j\\) (one per row: 50 × 784).\nPCAProject(X, mean, vecs): the coordinates \\(a_1, \\dots, a_k\\) of each row of X.\nPCABackProject(A, mean, vecs): the reconstructions \\(\\boldsymbol{\\mu} + a_1 \\mathbf{u}_1 + \\dots + a_k \\mathbf{u}_k\\).\n\n\n\n\nk-NN on PCA features (\\(k\\) = 6 neighbors, test set):\n\n\n\n\nInput\nNumbers\nAccuracy\nTime / image\n\n\n\n\npixels\n784\n85.0%\n1.2 ms\n\n\nPCA\n50\n85.6%\n0.1 ms\n\n\n\n\nAbout the same accuracy, 15× faster, 16× less memory.\nNext: a better classifier on the same features.\n\n\n\n\n\nimport cv2\nimport numpy as np\n\n# X_tr: (50000, 784), X_te: (10000, 784) float32\nmu, U = cv2.PCACompute(X_tr, mean=None, maxComponents=50)\nF_tr = cv2.PCAProject(X_tr, mu, U)     # (50000, 50)\nF_te = cv2.PCAProject(X_te, mu, U)     # (10000, 50)\n\nX_hat = cv2.PCABackProject(F_te, mu, U)    # (10000, 784)\nprint(\"MSE:\", np.mean((X_hat - X_te) ** 2))\n\n# Any classifier can use the features, e.g., k-NN:\nknn = cv2.ml.KNearest_create()\nknn.train(F_tr, cv2.ml.ROW_SAMPLE, y_tr.astype(np.float32))\n_, pred, _, _ = knn.findNearest(F_te, k=best_k)"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#linear-classifiers",
+    "href": "lectures/16_classical_machine_learning.html#linear-classifiers",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Linear Classifiers",
+    "text": "Linear Classifiers\n\n\n\n\nA linear classifier scores an input with a weighted sum:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{f(\\mathbf{x}) = \\mathbf{w} \\cdot \\mathbf{x} + b}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{linear}\\\\ \\textbf{classifier}\\end{array}}}\n\\]\n\n\\(\\mathbf{x}\\): input (2 numbers here; 50 PCA features for an image). \\(\\mathbf{w}\\): weights; \\(b\\): bias. Both learned.\nPredict orange if \\(f(\\mathbf{x}) &gt; 0\\), blue otherwise. The decision boundary \\(f(\\mathbf{x}) = 0\\) is a line (a “hyperplane” in more dimensions).\n\n\n\n\nLines A, B, C all separate the 60 training points. Which one is best?\nOn 1,000 new points, line C makes the fewest mistakes. It stays far from both classes."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#the-svm-margin",
+    "href": "lectures/16_classical_machine_learning.html#the-svm-margin",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "The SVM Margin",
+    "text": "The SVM Margin\n\n\n\n\nMargin: the distance from the boundary to the closest training points.\nSVM (support vector machine): the linear classifier with the largest margin (line C before). A wide gap is safer for new points.\nSupport vectors: the points on or inside the margin. They alone fix the boundary; moving any other point changes nothing.\nOverlapping classes: some points must be inside the margin or on the wrong side (soft margin).\nHyperparameter \\(C\\): the penalty for those points.\n\nSmall \\(C\\): wide margin, many points inside.\nLarge \\(C\\): narrow margin, fewer points inside."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#kernel-svm-nonlinear-boundaries",
+    "href": "lectures/16_classical_machine_learning.html#kernel-svm-nonlinear-boundaries",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Kernel SVM: Nonlinear Boundaries",
+    "text": "Kernel SVM: Nonlinear Boundaries\n\n\n\n\n\n\n\n\n\n\n\nMiddle: a new feature \\(z = x_1^2 + x_2^2\\) makes the classes separable by a plane. Back in 2D, the plane becomes a circle.\nA kernel does this without computing the new features: it only needs a similarity between two points. RBF kernel \\(K(\\mathbf{x}, \\mathbf{x}') = e^{-\\gamma \\|\\mathbf{x} - \\mathbf{x}'\\|^2}\\): near 1 for close points, near 0 for far ones.\n\\(\\gamma\\): how far each training point’s influence reaches. Like \\(C\\), choose it on validation data."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#multi-class-svm-one-vs.-rest",
+    "href": "lectures/16_classical_machine_learning.html#multi-class-svm-one-vs.-rest",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Multi-Class SVM: One vs. Rest",
+    "text": "Multi-Class SVM: One vs. Rest\n\n\n\n\n\n\n\n\nOne vs. Rest\n\n\n\nFor each class \\(c\\): train a binary SVM, class \\(c\\) (+1) vs. all other classes (−1).\nNew image: compute all class scores \\(f_c(\\mathbf{x})\\).\nPredict the class with the highest score.\n\n\n\n\n\n\n10 FashionMNIST classes: 10 binary SVMs.\nOpenCV’s SVM handles multiple classes by itself, with one vs. one: one SVM per pair of classes, 45 SVMs for 10 classes, then a majority vote."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#svm-in-code",
+    "href": "lectures/16_classical_machine_learning.html#svm-in-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "SVM in Code",
+    "text": "SVM in Code\n\n\n\n\nsetType(SVM_C_SVC): classification with a soft margin.\nsetKernel(SVM_RBF), setC(...), setGamma(...): kernel and hyperparameters.\ntrain(F, ROW_SAMPLE, y): F one feature vector per row (float32); y labels (int32).\npredict(F): predicted labels.\n\n\n\n\nChoose \\(C\\) and \\(\\gamma\\) on the validation set (training on 10,000 images to save time). Validation accuracy:\n\n\n\n\n\n\\(\\gamma\\) = 0.01\n\\(\\gamma\\) = 0.03\n\\(\\gamma\\) = 0.1\n\n\n\n\n\\(C\\) = 1\n84.3%\n85.8%\n86.1%\n\n\n\\(C\\) = 10\n86.4%\n86.9%\n86.3%\n\n\n\\(C\\) = 100\n86.7%\n85.9%\n86.2%\n\n\n\n\nFinal model on all 50,000 training images: test accuracy 88.9%, trained in 11 s.\n\n\n\n\n\nimport cv2\nimport numpy as np\n\n# F_tr, F_te: PCA features (50 per image), scaled\nsvm = cv2.ml.SVM_create()\nsvm.setType(cv2.ml.SVM_C_SVC)\nsvm.setKernel(cv2.ml.SVM_RBF)\nsvm.setC(best_C)          # chosen on validation data\nsvm.setGamma(best_gamma)\nsvm.train(F_tr, cv2.ml.ROW_SAMPLE, y_tr.astype(np.int32))\n\n_, pred = svm.predict(F_te)\nprint(\"test accuracy:\", np.mean(pred.ravel() == y_te))"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#svm-full-code",
+    "href": "lectures/16_classical_machine_learning.html#svm-full-code",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "PCA + SVM: Full Code",
+    "text": "PCA + SVM: Full Code\n\n\n\nimport gzip\nimport time\nfrom pathlib import Path\n\nimport cv2\nimport numpy as np\n\n# 1. Data: FashionMNIST as 784-vectors. Split 50,000 training / 10,000 validation; 10,000 test.\ndata_dir = Path(\"assets/datasets/fashion_mnist\")    # folder with the four .gz files\n\ndef read_idx(name, offset):\n    with gzip.open(data_dir / name) as f:\n        return np.frombuffer(f.read(), np.uint8, offset=offset)\n\nX = read_idx(\"train-images-idx3-ubyte.gz\", 16).reshape(-1, 784).astype(np.float32)\ny = read_idx(\"train-labels-idx1-ubyte.gz\", 8).astype(np.int32)\nX_te = read_idx(\"t10k-images-idx3-ubyte.gz\", 16).reshape(-1, 784).astype(np.float32)\ny_te = read_idx(\"t10k-labels-idx1-ubyte.gz\", 8).astype(np.int32)\nX_tr, y_tr, X_val, y_val = X[:50000], y[:50000], X[50000:], y[50000:]\n\n# 2. PCA features (learned on the training set only), scaled to unit spread.\nmu, U = cv2.PCACompute(X_tr, mean=None, maxComponents=50)\nF_tr = cv2.PCAProject(X_tr, mu, U)\nscale = F_tr.std()\nF_tr = F_tr / scale\nF_val = cv2.PCAProject(X_val, mu, U) / scale\nF_te = cv2.PCAProject(X_te, mu, U) / scale\n\ndef train_svm(F, y, C, gamma):\n    svm = cv2.ml.SVM_create()\n    svm.setType(cv2.ml.SVM_C_SVC)\n    svm.setKernel(cv2.ml.SVM_RBF)\n    svm.setC(C)\n    svm.setGamma(gamma)\n    svm.setTermCriteria((cv2.TERM_CRITERIA_MAX_ITER + cv2.TERM_CRITERIA_EPS, 10000, 1e-3))\n    svm.train(F, cv2.ml.ROW_SAMPLE, y)\n    return svm\n\ndef accuracy(svm, F, y):\n    return np.mean(svm.predict(F)[1].ravel() == y)\n\n# 3. Choose C and gamma on the validation set (train on 10,000 images to save time).\nbest_acc, best_C, best_gamma = 0, None, None\nfor C in [1, 10, 100]:\n    for gamma in [0.01, 0.03, 0.1]:\n        acc = accuracy(train_svm(F_tr[:10000], y_tr[:10000], C, gamma), F_val, y_val)\n        print(f\"C = {C}, gamma = {gamma}: validation accuracy = {acc:.3f}\")\n        if acc &gt; best_acc:\n            best_acc, best_C, best_gamma = acc, C, gamma\n\n# 4. Final model on all training images; test accuracy, once.\nt0 = time.perf_counter()\nsvm = train_svm(F_tr, y_tr, best_C, best_gamma)\nprint(f\"trained in {time.perf_counter() - t0:.0f} s\")\nprint(f\"C = {best_C}, gamma = {best_gamma}: test accuracy = {accuracy(svm, F_te, y_te):.3f}\")"
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#our-fashionmnist-benchmark",
+    "href": "lectures/16_classical_machine_learning.html#our-fashionmnist-benchmark",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Our FashionMNIST Benchmark",
+    "text": "Our FashionMNIST Benchmark\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nInput\nTest accuracy\nTraining time\nTime per image\nModel size\n\n\n\n\nk-NN (\\(k\\) = 6)\n784 pixels\n85.0%\nnone\n1.2 ms\n157 MB\n\n\nk-NN (\\(k\\) = 6)\n50 PCA features\n85.6%\nPCA only\n0.1 ms\n10 MB\n\n\nSVM (RBF)\n50 PCA features\n88.9%\n11 s\n0.04 ms\n3.1 MB\n\n\n\n\nSVM (\\(C\\) = 10, \\(\\gamma\\) = 0.03): best so far, +3.9 points over k-NN on pixels, 32× faster per image. It keeps only 15,738 support vectors.\nAll three methods use pixel-based features. Neural networks learn their own features; we will compare them later."
+  },
+  {
+    "objectID": "lectures/16_classical_machine_learning.html#key-takeaways",
+    "href": "lectures/16_classical_machine_learning.html#key-takeaways",
+    "title": "Lecture 16 — Classical Machine Learning",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nAn image is a vector of pixel values; the L2 distance compares two images pixel by pixel.\nk-NN predicts the majority label of the \\(k\\) nearest training images. Small \\(k\\) overfits, large \\(k\\) underfits: choose \\(k\\) on validation data. The confusion matrix shows which classes get mixed up.\nk-NN on pixels is slow and stores all the data, and pixel distance is not semantic: a 2-pixel shift can move an image farther than an image of another class.\nk-means groups unlabeled points into \\(k\\) clusters by alternating assign and update. On pixel colors, it segments an image by color.\nPCA finds the directions of largest variance. A few coordinates keep most of an image, so they make compact features: as accurate as pixels for k-NN, and much faster.\nA linear classifier scores \\(\\mathbf{w} \\cdot \\mathbf{x} + b\\). The SVM picks the boundary with the largest margin, set by the support vectors. \\(C\\) trades margin width for training mistakes; kernels (RBF, \\(\\gamma\\)) give nonlinear boundaries.\nOn FashionMNIST, an SVM on PCA features beats k-NN, but all these methods still use pixel-based features."
   }
 ]
