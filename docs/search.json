@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -6235,5 +6235,138 @@
     "title": "Homework 10: Camera Simulation and Calibration",
     "section": "Submission",
     "text": "Submission\nSubmit hw10.py and your 10–20 JPEG/PNG photos. On Gradescope, choose Upload and drag in hw10.py together with all your photos, or upload one ZIP file that contains hw10.py and your photos/ folder. Do not submit the evaluator, support file, checkerboard, or results. The total upload must be smaller than 100 MB.\nYou have five Gradescope submissions. Submissions 6 and later receive zero for that submission; earlier submissions remain unchanged. Gradescope autograder failures do not count, while errors in your code do.\nThe regular course late policy allows submission for one additional week, with a 20% penalty. Work submitted after that period receives zero. The autograder reports the raw score before any late penalty."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#fundamental-equations-of-computer-vision",
+    "href": "lectures/15_machine_learning.html#fundamental-equations-of-computer-vision",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Fundamental Equations of Computer Vision",
+    "text": "Fundamental Equations of Computer Vision\n\n\n\n\n\n\n\n\n1. Image Filtering\n\\(\\displaystyle y[m,n]=\\sum_{k,l} h[k,l]\\,I[m+k,n+l]\\)\n\n\n2. Optical Flow\n\\(\\displaystyle I(x,y,t)=I(x+\\Delta x,\\ y+\\Delta y,\\ t+\\Delta t)\\)\n\n\n3. Camera Geometry\n\\(\\displaystyle \\lambda\\,\\mathbf{x}=\\mathbf{K}\\begin{bmatrix}{}^{c}\\mathbf{R}_{w}&{}^{c}\\mathbf{t}_{w}\\end{bmatrix}\\,{}^{w}\\mathbf{X} \\qquad \\mathbf{x}^{T}\\mathbf{F}\\mathbf{x}'=0\\)\n\n\n4. Machine Learning\n\\(\\displaystyle \\underset{\\mathcal{S}}{\\operatorname{arg\\,min}}\\sum_{i=1}^{k}\\sum_{\\mathbf{x}\\in S_i}\\left\\lVert\\mathbf{x}-\\boldsymbol{\\mu}_i\\right\\rVert^{2} \\qquad y=\\varphi\\!\\left(\\mathbf{w}^{T}\\mathbf{x}+b\\right)\\)"
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#recognition-tasks-in-computer-vision",
+    "href": "lectures/15_machine_learning.html#recognition-tasks-in-computer-vision",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Recognition Tasks in Computer Vision",
+    "text": "Recognition Tasks in Computer Vision\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClassification: is there a person? \\(\\rightarrow\\) one label for the image.\nDetection: where is each person? \\(\\rightarrow\\) a box per person.\nSemantic segmentation: which pixels are “person”? \\(\\rightarrow\\) a label per pixel.\nInstance segmentation: which pixels belong to which person? \\(\\rightarrow\\) a mask per person.\nOthers: scene categorization, activity/event recognition, …"
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#why-is-recognition-hard",
+    "href": "lectures/15_machine_learning.html#why-is-recognition-hard",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Why Is Recognition Hard?",
+    "text": "Why Is Recognition Hard?\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow many different object classes are there? Roughly 10,000 to 30,000.\nObjects of same class can have very different pixels."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#the-data-driven-approach",
+    "href": "lectures/15_machine_learning.html#the-data-driven-approach",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "The Data-Driven Approach",
+    "text": "The Data-Driven Approach\n\n\n\n\n\n\n\n\n\n\nTraining set: Images with ground truth labels\nLearning: A learning algorithm fits a model \\(f\\) to data: \\(f(\\text{image}) \\approx \\text{label}\\).\nInference: Use \\(f\\) on new images. What matters is how well \\(f\\) does on images it has never seen."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#types-of-learning",
+    "href": "lectures/15_machine_learning.html#types-of-learning",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Types of Learning",
+    "text": "Types of Learning\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nType\nTraining data\nVision examples\n\n\n\n\nSupervised\nimages and labels\nclassify clothing; detect pedestrians\n\n\nUnsupervised\nimages only\ngroup pixels by color (clustering); compress images (PCA)\n\n\nSelf-supervised\nimages only; the labels come from the data itself\npredict hidden patches; match images to their captions\n\n\n\n\n\n\nLabels cost effort, more so for richer labels: tag &lt; box &lt; mask."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#common-machine-learning-datasets-for-computer-vision",
+    "href": "lectures/15_machine_learning.html#common-machine-learning-datasets-for-computer-vision",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Common Machine Learning Datasets for Computer Vision",
+    "text": "Common Machine Learning Datasets for Computer Vision\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataset\nYear\nImages\nClasses\nImage size\nTask\n\n\n\n\nMNIST\n1998\n60,000 train + 10,000 test\n10 digits\n28 × 28, gray\nclassification\n\n\nFashionMNIST\n2017\n60,000 train + 10,000 test\n10 clothing types\n28 × 28, gray\nclassification\n\n\nCIFAR-10\n2009\n50,000 train + 10,000 test\n10 objects and animals\n32 × 32, color\nclassification\n\n\nImageNet\n2012\n1.28 M train + 50,000 val\n1,000\nvaries, color\nclassification\n\n\nCOCO\n2014\n118,000 train + 5,000 val\n80\nvaries, color\ndetection, segmentation, captions\n\n\nPenn-Fudan\n2007\n170\npedestrians\nvaries, color\ndetection, segmentation\n\n\n\n\n\nThese are benchmarks that are widely used to compare methods on the same data.\nImageNet’s size made deep learning practical (2012)."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#fashionmnist-our-running-example",
+    "href": "lectures/15_machine_learning.html#fashionmnist-our-running-example",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "FashionMNIST: Our Running Example",
+    "text": "FashionMNIST: Our Running Example\n\n\n\n\n\n\n\nImages\nPer class\n\n\n\n\nTraining\n60,000\n6,000\n\n\nTest\n10,000\n1,000\n\n\n\n\n\n28 × 28 gray images: 784 pixels, values 0 to 255.\nSame format as MNIST, but harder: T-shirt, pullover, coat, and shirt look alike.\nSmall enough to train on a laptop CPU.\nWe compare our classifiers on this benchmark."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#a-toy-learning-problem",
+    "href": "lectures/15_machine_learning.html#a-toy-learning-problem",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "A Toy Learning Problem",
+    "text": "A Toy Learning Problem\n\n\n\n\nTask: predict \\(y\\) from \\(x\\), using only the noisy points.\nModel: a polynomial of degree \\(M\\):\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\hat{y} = w_0 + w_1 x + w_2 x^2 + \\dots + w_M x^M}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{polynomial}\\\\ \\textbf{model}\\end{array}}}\n\\]\n\n\\(x\\): input; \\(\\hat{y}\\): prediction\n\\(w_0, \\dots, w_M\\): parameters learned from the data.\nLearning: pick the \\(w\\)’s with the smallest mean squared error (MSE) on the training points:\n\n\\[\n\\text{MSE} = \\frac{1}{N} \\sum_{i=1}^{N} \\left(y_i - \\hat{y}_i\\right)^2\n\\]\n\n\\(y_i\\): true value; \\(\\hat{y}_i\\): prediction for point \\(i\\); \\(N\\): number of points."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#model-complexity-underfitting-vs.-overfitting",
+    "href": "lectures/15_machine_learning.html#model-complexity-underfitting-vs.-overfitting",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Model Complexity: Underfitting vs. Overfitting",
+    "text": "Model Complexity: Underfitting vs. Overfitting\n\n\n\n\n\n\n\n\n\n\nUnderfit: too simple to follow the pattern \\(\\rightarrow\\) high error everywhere.\nOverfit: so flexible that it fits the noise \\(\\rightarrow\\) lowest training error, huge error on new data.\nThe goal is generalization: low error on data the model has not seen. Training error alone does not tell us that."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#train-validation-test",
+    "href": "lectures/15_machine_learning.html#train-validation-test",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Train / Validation / Test",
+    "text": "Train / Validation / Test\n\n\n\n\n\n\nTraining set: fit the parameters \\((w_0, \\dots, w_M)\\).\nValidation set: choose the hyperparameters: settings we pick, not learned (here, the degree \\(M\\)).\nTest set: measure the final error once, at the end. Never use it to make choices."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#choosing-the-degree",
+    "href": "lectures/15_machine_learning.html#choosing-the-degree",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Choosing the Degree",
+    "text": "Choosing the Degree\n\n\n\n\n\n\n\n\nChoosing a Hyperparameter\n\n\n\nFor each candidate \\(M\\): fit on the training set.\nMeasure the error on the validation set.\nKeep the \\(M\\) with the lowest validation error.\nReport the test error of that model, once.\n\n\n\n\n\n\nTraining error keeps falling as \\(M\\) grows. Validation error falls, then rises.\nBest: \\(M\\) = 3 (validation MSE 0.097). Its test MSE: 0.072."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#biasvariance-trade-off",
+    "href": "lectures/15_machine_learning.html#biasvariance-trade-off",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Bias–Variance Trade-Off",
+    "text": "Bias–Variance Trade-Off\n\n\n\n\n\n\n\n\n\n\n\n\n\nEach thin line: a fit to a different training set (same \\(x\\), new noise). Black: their average.\nBias: the average fit misses the truth \\(\\rightarrow\\) the model is too simple.\nVariance: the fit changes a lot from one training set to the next \\(\\rightarrow\\) the model is too flexible.\nNew-data error \\(\\approx\\) bias² + variance + noise. The best complexity balances the two."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#more-data-helps",
+    "href": "lectures/15_machine_learning.html#more-data-helps",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "More Data Helps",
+    "text": "More Data Helps\n\n\n\n  \n  \n    Restart\n    Play\n    \n    \n  \n\n\n\n\n\nWith few points, the flexible model fits the noise. With many, it cannot fit the noise, so it follows the true curve.\nTraining and new-data errors meet at the noise level, which no model can beat.\nMore data is often the best cure for overfitting."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#polynomial-fitting-in-code",
+    "href": "lectures/15_machine_learning.html#polynomial-fitting-in-code",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Polynomial Fitting in Code",
+    "text": "Polynomial Fitting in Code\n\n\n\n\nPolynomial.fit(x, y, deg): finds the \\(w\\)’s with the smallest training MSE (least squares).\nmodel(x): evaluates the fitted polynomial at x.\nmse(...): the mean squared error from before.\nmin(val_mse, key=val_mse.get): the degree with the lowest validation error.\n\n\n\nOn our data: best \\(M\\) = 3, test MSE = 0.072.\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport numpy as np\nfrom numpy.polynomial import Polynomial\n\ndef mse(model, x, y):\n    return np.mean((model(x) - y) ** 2)\n\n# (x_tr, y_tr), (x_val, y_val), (x_te, y_te): splits\nval_mse = {}\nfor M in range(16):\n    model = Polynomial.fit(x_tr, y_tr, deg=M)\n    val_mse[M] = mse(model, x_val, y_val)\n\nbest_M = min(val_mse, key=val_mse.get)\nmodel = Polynomial.fit(x_tr, y_tr, deg=best_M)\nprint(best_M, mse(model, x_te, y_te))   # test: once"
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#poly-full-code",
+    "href": "lectures/15_machine_learning.html#poly-full-code",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Polynomial Fitting: Full Code",
+    "text": "Polynomial Fitting: Full Code\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom numpy.polynomial import Polynomial\n\n# 1. Data: noisy samples of y = sin(2 pi x). Split 20 / 10 / 10.\nrng = np.random.default_rng(0)\nx = rng.uniform(0, 1, 40)\ny = np.sin(2 * np.pi * x) + rng.normal(0, 0.25, 40)\nx_tr, y_tr = x[:20], y[:20]\nx_val, y_val = x[20:30], y[20:30]\nx_te, y_te = x[30:], y[30:]\n\ndef mse(model, x, y):\n    return np.mean((model(x) - y) ** 2)\n\n# 2. Fit every degree on the training set; measure training and validation error.\ndegrees = range(16)\ntrain_mse, val_mse = [], []\nfor M in degrees:\n    model = Polynomial.fit(x_tr, y_tr, deg=M)\n    train_mse.append(mse(model, x_tr, y_tr))\n    val_mse.append(mse(model, x_val, y_val))\n\n# 3. Choose the degree on the validation set; report the test error once.\nbest_M = int(np.argmin(val_mse))\nmodel = Polynomial.fit(x_tr, y_tr, deg=best_M)\nprint(\"best degree:\", best_M)\nprint(\"test MSE:\", mse(model, x_te, y_te))\n\n# 4. Plot the errors and the chosen fit.\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4.5))\nax1.semilogy(degrees, train_mse, \"o-\", label=\"training\")\nax1.semilogy(degrees, val_mse, \"s-\", label=\"validation\")\nax1.set_xlabel(\"degree\")\nax1.set_ylabel(\"MSE\")\nax1.legend()\n\nxs = np.linspace(0, 1, 400)\nax2.scatter(x_tr, y_tr, label=\"training points\")\nax2.plot(xs, model(xs), \"g\", label=f\"degree {best_M} fit\")\nax2.plot(xs, np.sin(2 * np.pi * xs), \"k--\", label=\"true curve\")\nax2.legend()\nplt.tight_layout()\nplt.savefig(\"poly_fit.png\")\nplt.show()"
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#evaluation-metrics-depend-on-the-task",
+    "href": "lectures/15_machine_learning.html#evaluation-metrics-depend-on-the-task",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Evaluation Metrics Depend on the Task",
+    "text": "Evaluation Metrics Depend on the Task\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTask\nOutput\nCommon metrics\n\n\n\n\nRegression\nnumber(s)\nmean squared error (MSE)\n\n\nClassification\na category\naccuracy; confusion matrix (which classes get mixed up)\n\n\nDetection\na box and class per object\nintersection over union (IoU); precision and recall; average precision (AP)\n\n\nSegmentation\na label per pixel\nIoU per class"
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#when-accuracy-misleads",
+    "href": "lectures/15_machine_learning.html#when-accuracy-misleads",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "When Accuracy Misleads",
+    "text": "When Accuracy Misleads\n\n\n\n\n\n\n\n\n\n\n10,000 images, only 1% contain a person. Method A finds nobody, yet has a higher accuracy than method B that finds most people (99.0% vs. 97.8%).\nNeed to look at both precision and recall. Precision: fraction of correct detections (A: undefined (no detections), B: 29%). Recall: fraction of people found (A: 0%, B: 80%).\nAccuracy is fine when the classes are balanced (as in FashionMNIST)."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#learning-objectives",
+    "href": "lectures/15_machine_learning.html#learning-objectives",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nName the main recognition tasks (classification, detection, semantic and instance segmentation) and explain why recognition is hard.\nDescribe the data-driven approach, and distinguish supervised, unsupervised, and self-supervised learning.\nExplain underfitting, overfitting, and the bias–variance trade-off, and why more data helps.\nUse training, validation, and test sets to fit parameters, choose hyperparameters, and report a final error.\nChoose an evaluation metric that fits the task, and explain why accuracy can mislead when classes are imbalanced."
+  },
+  {
+    "objectID": "lectures/15_machine_learning.html#key-takeaways",
+    "href": "lectures/15_machine_learning.html#key-takeaways",
+    "title": "Lecture 15 — Machine Learning for Computer Vision",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nRecognition tasks differ in their output: one label per image (classification), a box per object (detection), a label per pixel (semantic segmentation), a mask per object (instance segmentation).\nThe same class can look very different (viewpoint, lighting, scale, deformation, occlusion, clutter), so we learn from labeled examples instead of writing rules. Benchmarks such as FashionMNIST let us compare methods on the same data.\nSupervised learning uses images and labels; unsupervised uses images only; self-supervised creates its labels from the data itself. Richer labels cost more effort.\nTraining error is not the goal: a model that is too simple underfits (bias), one that is too flexible overfits (variance). We want generalization: low error on unseen data.\nFit parameters on the training set, choose hyperparameters on the validation set, and report the test error once. More data reduces overfitting.\nPick the metric for the task (MSE, accuracy, IoU, precision and recall). With imbalanced classes, accuracy alone misleads."
   }
 ]
