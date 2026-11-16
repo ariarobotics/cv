@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 16 — Classical Object Detection\n    \n\n    \n    Classical object detection methods for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -6739,5 +6739,166 @@
     "title": "Lecture 15 — Machine Learning for Computer Vision",
     "section": "Our FashionMNIST Benchmark",
     "text": "Our FashionMNIST Benchmark\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nInput\nTest accuracy\nTraining time\nTime per image\nModel size\n\n\n\n\nKNN (\\(k\\) = 6)\n784 pixels\n85.0%\nnone\n1.4 ms\n157 MB\n\n\nKNN (\\(k\\) = 6)\n50 PCA features\n85.6%\nPCA only\n0.1 ms\n10 MB\n\n\nSVM (RBF)\n50 PCA features\n88.9%\n16.5 s\n0.1 ms\n3.1 MB\n\n\n\n\nSVM: best so far, +3.9 points over KNN on pixels.\nAll three methods use pixel-based features. Neural networks learn their own features; we will compare them later."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#learning-objectives",
+    "href": "lectures/16_classical_detection.html#learning-objectives",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you should be able to:\n\nExplain why raw pixels are poor features for pedestrians, and describe a window with HOG: gradient histograms in cells, normalized over blocks.\nClassify a window with a linear SVM on its HOG vector.\nTurn a classifier into a detector with sliding windows, an image pyramid, and non-maximum suppression (IoU).\nRun the Dalal–Triggs pedestrian detector in OpenCV, step by step and with detectMultiScale.\nEvaluate a detector with precision, recall, the precision–recall curve, and AP (and mAP).\nExplain how Viola–Jones makes face detection fast: Haar features, the integral image, AdaBoost, and the attentional cascade.\nCompute a rectangle sum and a Haar feature from the integral image, and run AdaBoost on a small example.\nDetect faces with OpenCV’s CascadeClassifier, and recognize its limits."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#pedestrian-classification-1",
+    "href": "lectures/16_classical_detection.html#pedestrian-classification-1",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Pedestrian Classification",
+    "text": "Pedestrian Classification\n\n\n\n\nPedestrian classification: is there a pedestrian in a 64 × 128 window or not?\nPedestrians look very different: pose, viewpoint, clothing, occlusion and background clutter.\nThe same pedestrian also changes with lighting, position, rotation and size in the window.\nThese changes alter the pixel values far more than they alter the person, so KNN or an SVM on raw pixels works poorly.\nWe need features that stay the same under these changes but still separate pedestrians from everything else."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#histogram-of-oriented-gradients-hog",
+    "href": "lectures/16_classical_detection.html#histogram-of-oriented-gradients-hog",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Histogram of Oriented Gradients (HOG)",
+    "text": "Histogram of Oriented Gradients (HOG)\n\n\n\n\nIdea: describe a window by its edge directions. The shape of a person is in the gradients, not in the pixel values.\n\n\n\n\n\n\n\n\nHOG Descriptor\n\n\n\nCompute the gradient magnitude and angle at every pixel.\nSplit the 64 × 128 window into 8 × 8-pixel cells.\nFor each cell, a histogram of gradient angles: 9 bins over 0°–180°; each pixel adds its magnitude to the bin of its angle.\nGroup 2 × 2 cells into a block and normalize it, so lighting changes cancel out.\nConcatenate all blocks into the HOG vector."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#hog-vector",
+    "href": "lectures/16_classical_detection.html#hog-vector",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "HOG Vector",
+    "text": "HOG Vector\n\n\n\nA window has 7 × 15 = 105 blocks of 2 × 2 cells. Neighboring blocks overlap by one cell.\nEach block: its 4 cell histograms (36 numbers), normalized to unit length.\nHOG vector: all normalized blocks, one after another: 105 × 36 = 3,780 numbers."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#hog-linear-svm-classifier",
+    "href": "lectures/16_classical_detection.html#hog-linear-svm-classifier",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "HOG + Linear SVM Classifier",
+    "text": "HOG + Linear SVM Classifier\n\n\n\nClassifier: a linear SVM on the HOG vector \\(\\mathbf{x}\\) of the window:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{s = \\mathbf{w}^\\top \\mathbf{x} + b}\\;\\;{\\color{#c53030}{\\textbf{pedestrian if } s &gt; 0}}\n\\]\n\nTrained on HOG vectors of pedestrian windows (positive) and background windows (negative).\nOpenCV includes a trained classifier: \\(\\mathbf{w}\\) (3,780 weights) and \\(b\\).\nPositive weights: where the SVM expects edges of a person. Negative weights: edges that suggest background."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#pedestrian-detection",
+    "href": "lectures/16_classical_detection.html#pedestrian-detection",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Pedestrian Detection",
+    "text": "Pedestrian Detection\n\n\n\n\nPedestrian detection: draw a bounding box around every person in the image.\nIdea: check every window. Slide the 64 × 128 window over the image, and classify each window.\nProblems, and how to solve them:\n\nToo many windows: move the window 8 pixels at a time (the stride). This image still has 7,524 windows.\nPeople come in many sizes, but the window has one size: image pyramid.\nA person gives positive scores in several overlapping windows: keep one box per person (non-maximum suppression).\n\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#image-pyramids",
+    "href": "lectures/16_classical_detection.html#image-pyramids",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Image Pyramids",
+    "text": "Image Pyramids\n\n\n\nPeople appear at many sizes, but the window has one size.\nImage pyramid: shrink the image a little at a time (by a factor of 1.05), and slide the same window over every level.\nLarge people fit the window at small levels. Smaller people fit at larger levels.\nA window found at scale \\(s\\) is a box \\(1/s\\) times larger in the original image.\nThis image: 34 levels and 63,958 windows in total."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#non-maximum-suppression",
+    "href": "lectures/16_classical_detection.html#non-maximum-suppression",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Non-Maximum Suppression",
+    "text": "Non-Maximum Suppression\n\n\n\n\nIntersection over union (IoU): how much two boxes overlap.\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\text{IoU}(A, B) = \\frac{\\text{area}(A \\cap B)}{\\text{area}(A \\cup B)}}\\;\\;{\\color{#c53030}{\\textbf{IoU}}}\n\\]\n\n\n\n\n\n\n\nNon-Maximum Suppression (NMS)\n\n\n\nDrop all windows with a score below a threshold (e.g., \\(s &lt; 0.5\\)).\nPick the highest-scoring remaining window and add it to the detections.\nDelete all remaining windows that overlap it with IoU &gt; 0.3 (they show the same person).\nRepeat steps 2–3 until no windows remain."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#dalaltriggs-pedestrian-detector",
+    "href": "lectures/16_classical_detection.html#dalaltriggs-pedestrian-detector",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Dalal–Triggs Pedestrian Detector",
+    "text": "Dalal–Triggs Pedestrian Detector\n\n\n\n\n\n\n\n\nDalal–Triggs Detector\n\n\n\nBuild an image pyramid.\nSlide a 64 × 128 window over every level.\nCompute the window’s HOG vector \\(\\mathbf{x}\\).\nLinear SVM score: \\(s = \\mathbf{w}^\\top \\mathbf{x} + b\\).\nKeep windows with \\(s\\) above a threshold, and apply NMS.\n\n\n\n\n\n\nThe same classifier, applied to every window at every scale, turns classification into detection."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#dalal-triggs-in-code",
+    "href": "lectures/16_classical_detection.html#dalal-triggs-in-code",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Dalal–Triggs Detector in Code",
+    "text": "Dalal–Triggs Detector in Code\n\n\n\n\nHOGDescriptor(): the Dalal–Triggs settings (64 × 128 window, 8 × 8 cells, 2 × 2-cell blocks, 9 bins).\ngetDefaultPeopleDetector(): the trained \\(\\mathbf{w}\\) and \\(b\\).\ngroupThreshold=0: all windows with \\(s &gt; 0\\), at every scale. NMSBoxes then applies NMS.\nFull detector: detectMultiScale alone runs every step, but merges overlapping windows with its own grouping instead of NMS.\n\n\n\n\nhog = cv2.HOGDescriptor()\nsvm = cv2.HOGDescriptor_getDefaultPeopleDetector()\nw, b = svm[:-1], svm[-1]             # 3,780 weights, bias\n\n# Classify one 64 x 128 window\nwindow = cv2.resize(image[y0:y1, x0:x1], (64, 128))\nx = hog.compute(window)              # HOG vector\ns = w @ x + b                        # pedestrian if s &gt; 0\n\n# Detect: all windows with s &gt; 0, then NMS\nhog.setSVMDetector(svm)\nboxes, scores = hog.detectMultiScale(\n    image, winStride=(8, 8), scale=1.05, groupThreshold=0)\nkeep = cv2.dnn.NMSBoxes(boxes, scores, 0.5, 0.3)\n\n\n\n\n\n# Full detector in one call\nhog = cv2.HOGDescriptor()\nhog.setSVMDetector(\n    cv2.HOGDescriptor_getDefaultPeopleDetector())\nboxes, scores = hog.detectMultiScale(\n    image, winStride=(8, 8), scale=1.05)"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#dalal-triggs-full-code",
+    "href": "lectures/16_classical_detection.html#dalal-triggs-full-code",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Dalal–Triggs Detector: Full Code",
+    "text": "Dalal–Triggs Detector: Full Code\n\n\n\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nimage = cv2.imread(\"assets/16_classical_detection/people.jpg\")\n\n# 1. HOG with the Dalal–Triggs settings, and OpenCV's trained linear SVM.\nhog = cv2.HOGDescriptor()\nprint(\"HOG vector length:\", hog.getDescriptorSize())          # 3,780\nsvm = cv2.HOGDescriptor_getDefaultPeopleDetector()            # 3,780 weights w, then the bias b\nw, b = svm[:-1], svm[-1]\nhog.setSVMDetector(svm)\n\n# 2. Image pyramid (scale 1.05), sliding windows (stride 8) and SVM scores.\n#    groupThreshold=0 returns every window with s &gt; 0, without merging.\nboxes, scores = hog.detectMultiScale(image, winStride=(8, 8), scale=1.05, groupThreshold=0)\nscores = scores.ravel()\nprint(\"windows with s &gt; 0:\", len(boxes))\n\n# 3. Non-maximum suppression: drop scores below 0.5, then remove boxes with IoU &gt; 0.3\n#    with a higher-scoring box.\nkeep = np.ravel(cv2.dnn.NMSBoxes(boxes.tolist(), scores.tolist(), 0.5, 0.3))\nboxes, scores = boxes[keep], scores[keep]\nprint(\"detections after NMS:\", len(boxes))\n\n# 4. Classify one window by hand: s = w . x + b for the window of the best detection.\nx0, y0, bw, bh = boxes[np.argmax(scores)]\nwindow = cv2.resize(image[y0:y0 + bh, x0:x0 + bw], (64, 128), interpolation=cv2.INTER_AREA)\nx = hog.compute(window)                                       # HOG vector of the window\nprint(f\"score of the window: {w @ x + b:.1f}\")\n\n# 5. Draw the detections and their scores.\nout = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\nfor (bx, by, bw, bh), s in zip(boxes, scores):\n    cv2.rectangle(out, (bx, by), (bx + bw, by + bh), (0, 200, 0), 2)\n    cv2.putText(out, f\"{s:.1f}\", (bx + 3, by + 18), cv2.FONT_HERSHEY_SIMPLEX, .6, (0, 200, 0), 2)\nplt.imshow(out)\nplt.axis(\"off\")\nplt.show()"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#precision-and-recall",
+    "href": "lectures/16_classical_detection.html#precision-and-recall",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Precision and Recall",
+    "text": "Precision and Recall\n\n\n\nCompare the detections with the ground-truth boxes (labeled by hand).\nTrue positive (TP): a detection with IoU ≥ 0.5 with a ground-truth box. Each ground-truth box can be matched only once.\nFalse positive (FP): any other detection.\nFalse negative (FN): a person with no matching detection.\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\text{precision} = \\frac{TP}{TP + FP}}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{how many}\\\\ \\textbf{detections}\\\\ \\textbf{are correct}\\end{array}}}\n\\]\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\text{recall} = \\frac{TP}{TP + FN}}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{how many}\\\\ \\textbf{people}\\\\ \\textbf{are found}\\end{array}}}\n\\]\n\n\n\n\n\n\n\n\n\n\nTP = 1, FP = 1, FN = 1: precision = 0.50, recall = 0.50"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#precisionrecall-curve",
+    "href": "lectures/16_classical_detection.html#precisionrecall-curve",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Precision–Recall Curve",
+    "text": "Precision–Recall Curve\n\n\n\nKeep only the detections whose score \\(s\\) is above a threshold.\nHigh threshold: few detections, mostly correct: high precision, low recall.\nLow threshold: more people found, but more false positives: higher recall, lower precision.\nPrecision–recall curve: precision and recall as the threshold goes down (also below 0), until recall stops increasing.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#average-precision-ap",
+    "href": "lectures/16_classical_detection.html#average-precision-ap",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Average Precision (AP)",
+    "text": "Average Precision (AP)\n\n\n\nOne number for the whole curve: the area under the precision–recall curve.\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\text{AP} = \\text{area under the curve}}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{higher}\\\\ \\textbf{is better}\\end{array}}}\n\\]\n\nDalal–Triggs on all 170 Penn-Fudan images: AP = 0.34. Even with every window, recall stops at 0.72.\nmAP (mean average precision): with several object classes, compute the AP of each class and take the mean."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#violajones-face-detector",
+    "href": "lectures/16_classical_detection.html#violajones-face-detector",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Viola–Jones Face Detector",
+    "text": "Viola–Jones Face Detector\n\n\n\nFace detection: draw a box around every face.\nSame approach as for pedestrians: classify every window (24 × 24 pixels) at every scale of an image pyramid.\nFaces are rare and windows are many, so each window must be classified very fast.\nFour ideas make it fast:\n\nHaar features\nIntegral image\nBoosting\nAttentional cascade."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#haar-features",
+    "href": "lectures/16_classical_detection.html#haar-features",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Haar Features",
+    "text": "Haar Features\n\n\n\nA Haar feature is a pattern of adjacent white and black rectangles.\nIts value: the sum of the pixels under white minus the sum of the pixels under black, which measures a brightness difference.\nEvery position and size of the five types fits in a 24 × 24 window: 162,336 features.\nViola–Jones uses only these five types (upright rectangles)."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#integral-image",
+    "href": "lectures/16_classical_detection.html#integral-image",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Integral Image",
+    "text": "Integral Image\n\n\n\nIntegral image: each pixel holds the sum of all pixels above and to the left of it (including itself).\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\text{sum} = D - B - C + A}\\;\\;{\\color{#c53030}{\\textbf{4 lookups}}}\n\\]\n\nWith the integral image, any rectangle sum takes 4 lookups, and any Haar feature only a few (6–9), whatever its size.\nBottom: a two-rectangle feature. Its rectangles share 2 corners: 6 lookups.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#adaboost",
+    "href": "lectures/16_classical_detection.html#adaboost",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "AdaBoost",
+    "text": "AdaBoost\n\n\n\nDecision stump \\(h\\): threshold one feature, e.g., \\(h(\\mathbf{x}) = +1\\) if \\(x_1 &gt; 0.4\\), else \\(-1\\). In 2D: a vertical or horizontal line.\n\n\n\n\n\n\n\nAdaBoost\n\n\n\nSame weight for all \\(n\\) points: \\(w_i = 1/n\\).\nPick the stump \\(h_t\\) with the smallest weighted error \\(\\varepsilon_t\\) (total weight of its wrong points).\nIts vote: \\(\\alpha_t = \\frac{1}{2}\\ln\\frac{1 - \\varepsilon_t}{\\varepsilon_t}\\).\nWrong points: weight \\(\\times\\, e^{\\alpha_t}\\). Correct points: \\(\\times\\, e^{-\\alpha_t}\\). Normalize.\nRepeat 2–4. Final: \\(H(\\mathbf{x}) = \\text{sign}\\big(\\sum_t \\alpha_t h_t(\\mathbf{x})\\big)\\).\n\n\n\n\n\nStop: after a set number of rounds, or once accurate enough (here: no mistakes after 3 rounds).\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#boosting-with-haar-features",
+    "href": "lectures/16_classical_detection.html#boosting-with-haar-features",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Boosting with Haar Features",
+    "text": "Boosting with Haar Features\n\n\n\nWeak classifier: a decision stump on one Haar feature value.\nTraining (once): each boosting round adds the best of the 162,336 features. A stage stops when it meets its target. Viola–Jones in OpenCV keeps 2,913 features in total.\nDetection: only these features are computed.\nThe first two features of OpenCV’s face cascade:\n\neyes darker than the forehead and cheeks;\nbridge of the nose brighter than the eyes."
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#attentional-cascade",
+    "href": "lectures/16_classical_detection.html#attentional-cascade",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Attentional Cascade",
+    "text": "Attentional Cascade\n\n\n\nMost windows are clearly not faces: reject them early, with only a few features.\nCascade: a chain of boosted classifiers that grow stronger. A 24 × 24-pixel window is a face only if it passes every stage.\nViola–Jones in OpenCV: 25 stages; stage 1 has 9 features, stage 25 has 200.\nExample: each stage keeps 99.5% of faces and passes 50% of non-faces:\n\nFaces kept: \\(0.995^{25} \\approx 88\\%\\)\nNon-faces passed: \\(0.5^{25} \\approx 3 \\times 10^{-8}\\)\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#violajones-in-code",
+    "href": "lectures/16_classical_detection.html#violajones-in-code",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Viola–Jones in Code",
+    "text": "Viola–Jones in Code\n\n\n\nCascadeClassifier(file): loads a trained cascade.\ndetectMultiScale(gray, scaleFactor, minNeighbors): pyramid, sliding window and cascade.\nminNeighbors: keep only places with at least this many overlapping detections, and merge them into one box (instead of NMS).\nFinds only frontal, upright faces.\nOpenCV 5 doesn’t include the trained cascades: download them from OpenCV’s GitHub.\n\n\n\n\ncascade = cv2.CascadeClassifier(\n    \"haarcascade_frontalface_default.xml\")\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nfaces = cascade.detectMultiScale(\n    gray, scaleFactor=1.1, minNeighbors=5)  # (x, y, w, h)"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#viola-jones-full-code",
+    "href": "lectures/16_classical_detection.html#viola-jones-full-code",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Viola–Jones: Full Code",
+    "text": "Viola–Jones: Full Code\n\n\n\nimport time\nimport xml.etree.ElementTree as ET\n\nimport cv2\nimport matplotlib.pyplot as plt\n\n# OpenCV 5 doesn't include the trained cascades. Download haarcascade_frontalface_default.xml from\n# https://github.com/opencv/opencv/tree/4.x/data/haarcascades\nfolder = \"assets/16_classical_detection/\"\ncascade_file = folder + \"haarcascade_frontalface_default.xml\"\nimage = cv2.imread(folder + \"faces.jpg\")\n\n# 1. The trained cascade: stages and features per stage (from the .xml file).\nstages = ET.parse(cascade_file).getroot()[0].find(\"stages\")\nsizes = [int(s.find(\"maxWeakCount\").text) for s in stages]\nprint(f\"{len(sizes)} stages, {sum(sizes)} features; first stages: {sizes[:3]}\")\n\n# 2. Detect: image pyramid (scale 1.1), sliding 24 x 24 window, cascade, and merging of\n#    overlapping detections (at least 5 neighbors).\ncascade = cv2.CascadeClassifier(cascade_file)\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\nt0 = time.perf_counter()\nfaces = cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)\nprint(f\"{len(faces)} faces in {time.perf_counter() - t0:.1f} s\")\n\n# 3. Draw the detections.\nout = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\nfor x, y, w, h in faces:\n    cv2.rectangle(out, (x, y), (x + w, y + h), (0, 200, 0), 2)\nplt.imshow(out)\nplt.axis(\"off\")\nplt.show()"
+  },
+  {
+    "objectID": "lectures/16_classical_detection.html#key-takeaways",
+    "href": "lectures/16_classical_detection.html#key-takeaways",
+    "title": "Lecture 16 — Classical Object Detection",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nHOG describes a window by its edge directions: gradient histograms in 8 × 8 cells, normalized over 2 × 2-cell blocks. A linear SVM scores it: \\(s = \\mathbf{w}^\\top \\mathbf{x} + b\\).\nClassification → detection: classify every window at every level of an image pyramid, then NMS keeps one box per object.\nA detection is a true positive if its IoU with a ground-truth box is ≥ 0.5. Lowering the threshold trades precision for recall. AP is the area under the precision–recall curve; mAP is its mean over classes.\nViola–Jones makes each window cheap: Haar features are brightness differences of rectangles, computed in a few lookups with the integral image (\\(D - B - C + A\\)).\nAdaBoost combines weak stumps: each round picks the stump with the lowest weighted error, gives it a vote \\(\\alpha_t\\), and increases the weight of its mistakes.\nThe attentional cascade rejects most windows in the first stages, with only a few features. Only face-like windows reach the later stages.\nBoth detectors use hand-designed features; neural networks learn the features from data."
   }
 ]
