@@ -6,7 +6,9 @@
       "/tutorials/02_git_github.html",
       "/tutorials/03_python_conda.html",
       "/tutorials/04_vscode.html",
-      "/tutorials/05_numpy.html"
+      "/tutorials/05_numpy.html",
+      "/tutorials/06_pytorch_basics.html",
+      "/tutorials/07_pytorch_training.html"
     ]
   },
   {
