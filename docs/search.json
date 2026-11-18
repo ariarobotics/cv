@@ -214,7 +214,7 @@
     "href": "lectures/index.html",
     "title": "Lectures",
     "section": "",
-    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 16 — Classical Object Detection\n    \n\n    \n    Classical object detection methods for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
+    "text": "Lecture slides and supporting materials will be added here throughout the semester.\nEach lecture is available as an interactive presentation and as a PDF for downloading, printing, or taking notes.\n\n\n\n\n\n\n\n  \n    \n      Lecture 01 — Introduction to Computer Vision\n    \n\n    \n    Course overview, computer vision applications, and important course logistics.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 02 — Image Formation and Digital Images\n    \n\n    \n    Images as signals, sampling, sensor arrays, resolution, quantization, image arrays, color images, and basic Python image representation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 03 — Image Filtering\n    \n\n    \n    Local image filtering, correlation, convolution, Gaussian and Sobel filters, separability, template matching, and nonlinear median filtering.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 04 — Image Pyramids\n    \n\n    \n    Image downsampling, aliasing, anti-aliasing, Gaussian image pyramids, Laplacian image pyramids, and multiscale image representations.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 05 — Fourier Transform\n    \n\n    \n    Fourier series, spatial frequency, the discrete Fourier transform, frequency-domain visualization, filtering, convolution, and image sampling.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 06 — Edge Detection\n    \n\n    \n    Image edges, gradients, Gaussian derivatives, and Canny edge detection.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 07 — Feature Points\n    \n\n    \n    Feature detection, description, and matching; Harris corners and SIFT.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 08 — Hough Transform\n    \n\n    \n    Detecting lines and parametric shapes through voting in parameter space.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 09 — Color\n    \n\n    \n    Color perception, representation, and processing in computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 10 — Optical Flow\n    \n\n    \n    Estimating apparent motion between image frames.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 11 — Camera Geometry\n    \n\n    \n    Pinhole and lens cameras, perspective projection, homogeneous coordinates, transformations, and the camera matrix.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 12 — Camera Calibration\n    \n\n    \n    Camera calibration, intrinsic and extrinsic parameters, and lens distortion.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 13 — Two-View Geometry\n    \n\n    \n    Two-view geometry, epipolar constraints, and 3D reconstruction.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 14 — Stereo Vision\n    \n\n    \n    Stereo vision, disparity, and depth estimation.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 15 — Machine Learning for Computer Vision\n    \n\n    \n    Machine learning foundations for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 16 — Classical Object Detection\n    \n\n    \n    Classical object detection methods for computer vision.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n  \n    \n      Lecture 17 — Neural Networks and Training\n    \n\n    \n    Neural networks and training.\n    \n\n    \n      \n        View Slides\n      \n      \n        PDF\n      \n    \n  \n\n\nNo matching items"
   },
   {
     "objectID": "lectures/07_features.html#learning-objectives",
@@ -6970,5 +6970,159 @@
     "title": "Homework 11: 3D Reconstruction",
     "section": "Submission",
     "text": "Submission\nSubmit hw11.py, your two photos, and calibration.json. Upload them together, or upload one ZIP file that contains hw11.py and your photos/ folder. Do not submit the evaluator, support file, public files, or results.\nYou have five Gradescope submissions. Submissions 6 and later receive zero for that submission; earlier submissions remain unchanged. Gradescope autograder failures do not count, while errors in your code do.\nThe regular course late policy allows submission for one additional week, with a 20% penalty. Work submitted after that period receives zero. The autograder reports the raw score before any late penalty."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#hand-engineered-vs.-learned-features",
+    "href": "lectures/17_neural_networks.html#hand-engineered-vs.-learned-features",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Hand-Engineered vs. Learned Features",
+    "text": "Hand-Engineered vs. Learned Features\n\n\n\nClassical detection: features are designed by hand (HOG, Haar); only the classifier is learned.\nNeural networks learn the features and the classifier together, from data."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#the-perceptron",
+    "href": "lectures/17_neural_networks.html#the-perceptron",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "The Perceptron",
+    "text": "The Perceptron\n\n\n\nA neuron: a weighted sum of the inputs plus a bias, followed by an activation function \\(\\varphi\\):\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{y = \\varphi(\\mathbf{w} \\cdot \\mathbf{x} + b)}\\;\\;{\\color{#c53030}{\\textbf{neuron}}}\n\\]\n\n\\(\\mathbf{w}\\): weights; \\(b\\): bias. Both are learned.\nPerceptron: a neuron with a step activation. It is a linear classifier: the boundary is the line \\(\\mathbf{w} \\cdot \\mathbf{x} + b = 0\\)."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#example-perceptron-classification",
+    "href": "lectures/17_neural_networks.html#example-perceptron-classification",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Example: Perceptron Classification",
+    "text": "Example: Perceptron Classification\n\n\n\nPerceptron is a linear classifier that can separate two classes.\nTrained weights and bias:\n\n\\[w_1 = 1.9,\\quad w_2 = 2.4,\\quad b = -0.9\\]\n\\[y = \\text{step}(1.9\\,x_1 +2.4\\,x_2 -0.9)\\]\n\nThe line \\(z = 0\\) is the decision boundary that splits the plane into the two classes.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#perceptron-vs.-svm",
+    "href": "lectures/17_neural_networks.html#perceptron-vs.-svm",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Perceptron vs. SVM",
+    "text": "Perceptron vs. SVM\n\n\n\nSame model: a line \\(\\mathbf{w} \\cdot \\mathbf{x} + b = 0\\).\nDifferent goal:\n\nSVM: the line with the largest margin.\nPerceptron: any line that separates the training points. Which one depends on the starting weights."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#activation-functions",
+    "href": "lectures/17_neural_networks.html#activation-functions",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Activation Functions",
+    "text": "Activation Functions\n\n\n\nActivation \\(\\varphi\\): turns the weighted sum \\(z\\) into the neuron’s output.\nWithout one, \\(\\varphi(z) = z\\): the output is linear, and combining linear neurons stays linear.\nStep: 0 or 1.\nSigmoid: smooth, from 0 to 1. Saturate: flat for large \\(|z|\\).\nTanh: similar to sigmoid, but from −1 to 1. Saturate: flat for large \\(|z|\\).\nReLU \\(= \\max(0, z)\\): 0 for \\(z &lt; 0\\), \\(z\\) otherwise. The default in neural networks.\n\nThe most common activation; smooth variants (e.g., GELU) are used in modern networks.\n\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#a-compact-neuron-diagram",
+    "href": "lectures/17_neural_networks.html#a-compact-neuron-diagram",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "A Compact Neuron Diagram",
+    "text": "A Compact Neuron Diagram\n\n\n\nTo draw networks, combine the weighted sum and the activation into one circle: \\(\\Sigma \\,|\\, \\varphi\\).\nThe bias is still there, but it is not drawn as an edge. It is written next to the neuron or left out.\nIn a network diagram, each circle is one neuron and each edge is one weight.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#multi-layer-perceptron-mlp",
+    "href": "lectures/17_neural_networks.html#multi-layer-perceptron-mlp",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Multi-Layer Perceptron (MLP)",
+    "text": "Multi-Layer Perceptron (MLP)\n\n\n\nNeurons in layers: an input layer, one or more hidden layers, an output layer.\nInput layer: just the input numbers.\nEach edge has a weight; each neuron after the input layer has a bias and an activation.\nHidden layers: weighted sum, bias and activation.\nOutput layer: weighted sum and bias, usually no activation.\nFully connected layer: every neuron is connected to every neuron of the previous layer.\nParameters: all the weights and biases. This network: 46.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#mlp-example",
+    "href": "lectures/17_neural_networks.html#mlp-example",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "MLP Example",
+    "text": "MLP Example\n\n\n  \n    Enter a point:  x1 \n    x2 \n    or click on the plot\n  \n  \n  \n  \n    x1 (right) and x2 (up), from −2.2 to 2.2"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#output-layer-softmax",
+    "href": "lectures/17_neural_networks.html#output-layer-softmax",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Output Layer: Softmax",
+    "text": "Output Layer: Softmax\n\n\n\nThe output layer has one neuron per class. Its outputs, the \\(z_i\\), can be any real numbers.\nSoftmax turns them into probabilities that sum to 1:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{p_i = \\frac{e^{z_i}}{\\sum_j e^{z_j}}}\\;\\;{\\color{#c53030}{\\textbf{softmax}}}\n\\]\n\nThe prediction is the class with the largest probability.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#loss-functions-training",
+    "href": "lectures/17_neural_networks.html#loss-functions-training",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Loss Functions & Training",
+    "text": "Loss Functions & Training\n\n\n\nLoss \\(L\\): one number that measures how far the predictions are from the labels.\nRegression: squared error of the NN output \\(y\\) and target \\(y_{t}\\): \\(\\;\\displaystyle L = (y - y_{t})^2\\)\nClassification: cross-entropy, with \\(p_{y_t}\\) the softmax probability for the target/correct class: \\(\\;\\displaystyle L = -\\log p_{y_t}\\)\nTraining: finding the NN weights and biases \\(\\theta\\) that minimize the loss over all training points (\\(L_n\\): loss of point \\(n\\)):\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\min_\\theta \\;  \\sum_{n}{L_n}\\;\\;{\\color{#c53030}{\\textbf{training minimizes loss}}} }\n\\]"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#example-weights-change-the-loss",
+    "href": "lectures/17_neural_networks.html#example-weights-change-the-loss",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Example: Weights Change the Loss",
+    "text": "Example: Weights Change the Loss\n\n\n\nTwo training points: A (blue) and B (orange).\nChange one weight \\(w\\) of the small MLP and keep others fixed.\nLoss:\n\n\\[\n\\begin{aligned}\nL &= L_A + L_B \\\\\nL_A &= -\\log p_{\\text{blue}}(A) \\\\\nL_B &= -\\log p_{\\text{orange}}(B)\n\\end{aligned}\n\\]\n\nTraining searches for the weights with the lowest loss.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#minimizing-loss-gradient-descent",
+    "href": "lectures/17_neural_networks.html#minimizing-loss-gradient-descent",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Minimizing Loss: Gradient Descent",
+    "text": "Minimizing Loss: Gradient Descent\n\n\n\nGradient \\(\\nabla_\\theta L\\): the direction in which the loss increases fastest. \\(\\theta\\): all weights and biases.\nStep against it:\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\theta \\leftarrow \\theta - \\eta\\, \\nabla_\\theta L}\\;\\;{\\color{#c53030}{\\begin{array}{l}\\textbf{gradient}\\\\ \\textbf{descent}\\end{array}}}\n\\]\n\n\\(\\eta\\): the learning rate (step size).\nThe end point depends on the start: it can be a local minimum, not the lowest one.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#learning-rate",
+    "href": "lectures/17_neural_networks.html#learning-rate",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Learning Rate",
+    "text": "Learning Rate\n\nThe learning rate \\(\\eta\\) sets the step size. Too small is slow; too large overshoots or diverges.\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#example-training-the-mlp",
+    "href": "lectures/17_neural_networks.html#example-training-the-mlp",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Example: Training the MLP",
+    "text": "Example: Training the MLP\n\n\n\nStart from random weights, then repeat gradient descent steps (\\(\\eta\\) = 0.5) on all 100 points, changing all 12 weights and biases at once.\nThe weights change, the orange band forms, and the loss drops.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#backpropagation-supplementary",
+    "href": "lectures/17_neural_networks.html#backpropagation-supplementary",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Backpropagation (Supplementary)",
+    "text": "Backpropagation (Supplementary)\n\n\n\nA network is a chain of functions. The chain rule gives each gradient as a product of local derivatives.\nBackward pass: start at the loss and go back layer by layer, reusing the products already computed.\nCost: about one forward pass.\n\n\\[\n\\bbox[border: 2px solid #c53030; padding: 2px 6px]{\\frac{\\partial L}{\\partial w} = \\frac{\\partial L}{\\partial h_1}\\, \\frac{\\partial h_1}{\\partial z_1}\\, \\frac{\\partial z_1}{\\partial w}}\n\\]\n\\[= (-0.38)\\,(1)\\,(1.0) = -0.38\\]"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#computing-gradients",
+    "href": "lectures/17_neural_networks.html#computing-gradients",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Computing Gradients",
+    "text": "Computing Gradients\n\n\n\nNumerical: nudge one weight and measure the change in loss. Simple, but approximate, and it needs one pass per weight.\nSymbolic: derive a formula. It becomes huge for deep networks.\nAutomatic differentiation (autodiff): record the forward pass, then apply the chain rule backward. Exact, and about as fast as a forward pass.\nCost per step: numerical needs 2 loss evaluations per weight; autodiff needs one forward and one backward pass.\nIn PyTorch, loss.backward() uses reverse-mode autodiff (backpropagation), the standard way to train."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#stochastic-gradient-descent-sgd",
+    "href": "lectures/17_neural_networks.html#stochastic-gradient-descent-sgd",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Stochastic Gradient Descent (SGD)",
+    "text": "Stochastic Gradient Descent (SGD)\n\n\n\nComputing the gradient over all training images at every step can be very slow (e.g., ~0.3 s for the 50,000 FashionMNIST images, vs. under 1 ms for a mini-batch of 64).\nStochastic gradient descent (SGD): use a random mini-batch (e.g., 64 images) for each step. Noisy convergence, but cheap.\nEpoch: one pass through the entire training set.\n\n\n\n\n\n  \n  \n    Restart\n    Play"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#momentum-and-adam",
+    "href": "lectures/17_neural_networks.html#momentum-and-adam",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Momentum and Adam",
+    "text": "Momentum and Adam\n\n\n\nSGD convergence can be improved with momentum or Adam.\nMomentum: averages recent steps. It smooths the noise and speeds up consistent directions.\nAdam: momentum plus a separate step size for each weight. A robust default."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#fashionmnist-classification-with-an-mlp",
+    "href": "lectures/17_neural_networks.html#fashionmnist-classification-with-an-mlp",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "FashionMNIST Classification with an MLP",
+    "text": "FashionMNIST Classification with an MLP\n\nTask: classify FashionMNIST images into 10 classes with an MLP: 784 pixels → 256 → 128 → 10 outputs."
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#mlp-in-code",
+    "href": "lectures/17_neural_networks.html#mlp-in-code",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "FashionMNIST MLP Classification in Code",
+    "text": "FashionMNIST MLP Classification in Code\n\n\n\n\nnn.Sequential: the layers, in order. nn.Linear(784, 256) is a fully connected layer.\nnn.CrossEntropyLoss: softmax and cross-entropy, applied to the outputs \\(z_i\\).\nEach step:\n\nForward pass and loss.\nzero_grad: clear the previous step’s gradients.\nbackward: compute the new gradients.\nstep: update the weights.\n\nSelf-study: the PyTorch Basics tutorial.\n\n\n\n\nmodel = nn.Sequential(nn.Flatten(),           # 28 x 28 -&gt; 784\n                      nn.Linear(784, 256), nn.ReLU(),\n                      nn.Linear(256, 128), nn.ReLU(),\n                      nn.Linear(128, 10))     # 10 outputs\nloss_fn = nn.CrossEntropyLoss()\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-3)\n\nfor epoch in range(10):\n    for images, labels in train_loader:       # batches of 64\n        loss = loss_fn(model(images), labels)\n        optimizer.zero_grad()\n        loss.backward()                       # autodiff\n        optimizer.step()                      # update\n\nwith torch.no_grad():\n    pred = model(X_test).argmax(1)\ntest_acc = (pred == y_test).float().mean()"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#mlp-full-code",
+    "href": "lectures/17_neural_networks.html#mlp-full-code",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "FashionMNIST MLP: Full Code",
+    "text": "FashionMNIST MLP: Full Code\n\n\n\nimport gzip\nimport time\nfrom pathlib import Path\n\nimport numpy as np\nimport torch\nfrom torch import nn\nfrom torch.utils.data import DataLoader, TensorDataset\n\ntorch.manual_seed(0)\ndata_dir = Path(\"assets/datasets/fashion_mnist\")\n\n# 1. Data: the same 50,000 / 10,000 / 10,000 split as before. Pixels scaled to 0–1.\ndef read_idx(name, offset):\n    with gzip.open(data_dir / name) as f:\n        return np.frombuffer(f.read(), np.uint8, offset=offset)\n\ndef images(name):\n    return torch.tensor(read_idx(name, 16).reshape(-1, 28, 28) / 255, dtype=torch.float32)\n\ndef labels(name):\n    return torch.tensor(read_idx(name, 8), dtype=torch.long)\n\nX, y = images(\"train-images-idx3-ubyte.gz\"), labels(\"train-labels-idx1-ubyte.gz\")\nX_test, y_test = images(\"t10k-images-idx3-ubyte.gz\"), labels(\"t10k-labels-idx1-ubyte.gz\")\ntrain_loader = DataLoader(TensorDataset(X[:50000], y[:50000]), batch_size=64, shuffle=True)\nX_val, y_val = X[50000:], y[50000:]\n\n# 2. The MLP: 784 pixels -&gt; 256 -&gt; 128 -&gt; 10 outputs.\nmodel = nn.Sequential(nn.Flatten(),\n                      nn.Linear(784, 256), nn.ReLU(),\n                      nn.Linear(256, 128), nn.ReLU(),\n                      nn.Linear(128, 10))\nloss_fn = nn.CrossEntropyLoss()                      # softmax + cross-entropy\noptimizer = torch.optim.Adam(model.parameters(), lr=1e-3)\n\ndef accuracy(images, labels):\n    with torch.no_grad():\n        return (model(images).argmax(1) == labels).float().mean().item()\n\n# 3. Training: mini-batch steps with Adam, 10 epochs.\nt0 = time.perf_counter()\nfor epoch in range(10):\n    for images, labels in train_loader:\n        loss = loss_fn(model(images), labels)        # forward pass and loss\n        optimizer.zero_grad()\n        loss.backward()                              # gradients (autodiff)\n        optimizer.step()                             # update the weights\n    print(f\"epoch {epoch + 1}: validation accuracy {100 * accuracy(X_val, y_val):.1f}%\")\ntrain_time = time.perf_counter() - t0\n\n# 4. Test.\nt0 = time.perf_counter()\ntest_acc = accuracy(X_test, y_test)\ntime_per_image = (time.perf_counter() - t0) / len(X_test)\nn_params = sum(p.numel() for p in model.parameters())\nprint(f\"test accuracy: {100 * test_acc:.1f}%\")\nprint(f\"training time: {train_time:.1f} s, time per image: {1e6 * time_per_image:.1f} µs\")\nprint(f\"parameters: {n_params:,}\")"
+  },
+  {
+    "objectID": "lectures/17_neural_networks.html#our-fashionmnist-benchmark",
+    "href": "lectures/17_neural_networks.html#our-fashionmnist-benchmark",
+    "title": "Lecture 17 — Neural Networks and Training",
+    "section": "Our FashionMNIST Benchmark",
+    "text": "Our FashionMNIST Benchmark\n\n\n\n\n\n\n\n\n\n\n\nMethod\nInput\nTest accuracy\nTraining time\nTime per image\nModel size\n\n\n\n\nKNN (\\(k\\) = 6)\n784 pixels\n85.0%\nnone\n5.5 ms\n157 MB\n\n\nKNN (\\(k\\) = 6)\n50 PCA features\n85.6%\nPCA only\n0.3 ms\n10 MB\n\n\nSVM (RBF)\n50 PCA features\n88.8%\n15.4 s\n0.2 ms\n3.1 MB\n\n\nMLP\n784 pixels\n88.2%\n16.6 s\n&lt; 0.1 ms\n0.9 MB\n\n\n\n\nThese results come from a separate run on a different machine, so some results differ slightly from the earlier table.\n\n\nMLP: -0.6 points vs. the SVM, learning its own features from the pixels.\nLike KNN on pixels, the MLP is sensitive to shifts: a 2-pixel shift of the test images drops it to 55.0%."
   }
 ]
